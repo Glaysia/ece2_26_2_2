@@ -1,0 +1,2 @@
+# Obsidian community plugin bundles can be large and are reproducible.
+.obsidian/plugins/*/main.js
