@@ -29,7 +29,7 @@
               "state": {
                 "file": "전전설2_환경설정_가이드.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "전전설2_환경설정_가이드"
@@ -197,8 +197,17 @@
   },
   "active": "dd5a2150e92064a2",
   "lastOpenFiles": [
-    "example/project1",
-    "example",
+    "example/project1/toplevel.vcd",
+    "example/project1/tb_toplevel.vvp",
+    "example/project1/tb_toplevel.v",
+    "veridian.vsix",
+    "example/project1/fulladder.v",
+    "example/project1/toplevel.v",
+    "example/project1/module_test.v",
+    "example/project1/flop_example.v",
+    "example/project1/src/module_test.v",
+    "example/project1/src/flop_example.v",
+    "example/project1/src",
     "README.md",
     "전전설2_환경설정_가이드.md"
   ]
