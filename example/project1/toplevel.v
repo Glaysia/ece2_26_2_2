@@ -21,6 +21,8 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
+// 순차논리회로: 스테이트를 가지며 과거부터 현재의 모든 입력에 의해 출력이 결정됨, 클럭이 있어야 이해하기 쉬움 
+
 fulladder fa (
     .a(flop1),
     .b(flop2),
@@ -28,6 +30,7 @@ fulladder fa (
     .sum(sum),
     .cout(cout)
 );
+// 조합논리회로: 스테이트를 가지지 않고 클력에 관련없이 무조건 같은 입력엔 같은 출력을 내는 함수 같은 개념 
 
 endmodule
 
