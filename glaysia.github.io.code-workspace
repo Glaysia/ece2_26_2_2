@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "example/project1"
+		},
+		{
+			"path": "example/vivado_project"
 		}
 	],
 	"settings": {}
