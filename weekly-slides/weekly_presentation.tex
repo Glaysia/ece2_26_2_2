@@ -9,22 +9,24 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 
-% Windows에 기본으로 있는 글꼴을 사용한다.
-\setmainfont{Arial}
-\setmainhangulfont{Malgun Gothic}
-\setsansfont{Arial}
-\setsanshangulfont{Malgun Gothic}
+% D2Coding을 저장소에 함께 넣어, 별도 설치 없이 같은 글꼴로 빌드한다.
+\setmainfont{D2Coding-Regular.ttf}[Path=assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmainhangulfont{D2Coding-Regular.ttf}[Path=assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setsansfont{D2Coding-Regular.ttf}[Path=assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setsanshangulfont{D2Coding-Regular.ttf}[Path=assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmonofont{D2Coding-Regular.ttf}[Path=assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
 
-\definecolor{LectureBlue}{HTML}{0B4D99}
+% University of Seoul identity color
+\definecolor{UOSBlue}{HTML}{005EB8}
 \definecolor{TextGray}{HTML}{303030}
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamercolor{normal text}{fg=TextGray,bg=white}
-\setbeamercolor{frametitle}{fg=LectureBlue,bg=white}
+\setbeamercolor{frametitle}{fg=UOSBlue,bg=white}
 \setbeamercolor{title}{fg=white}
-\setbeamercolor{structure}{fg=LectureBlue}
-\setbeamertemplate{itemize item}{\color{LectureBlue}\small$\bullet$}
-\setbeamertemplate{itemize subitem}{\color{LectureBlue}\scriptsize$\bullet$}
+\setbeamercolor{structure}{fg=UOSBlue}
+\setbeamertemplate{itemize item}{\color{UOSBlue}\small$\bullet$}
+\setbeamertemplate{itemize subitem}{\color{UOSBlue}\scriptsize$\bullet$}
 \setbeamertemplate{frametitle}{%
   \vspace{0.55cm}\hspace{0.48cm}\insertframetitle\par\vspace{0.12cm}}
 \setbeamerfont{frametitle}{series=\bfseries,size=\LARGE}
@@ -32,12 +34,8 @@
 % 기준 자료처럼 하단에 소속과 페이지 번호를 표시한다.
 \setbeamertemplate{footline}{%
   \begin{tikzpicture}[remember picture,overlay]
-    \fill[LectureBlue] (0,0) rectangle (0.18,0.30);
-    \foreach \x in {0.22,0.31,...,0.84} {
-      \draw[LectureBlue,line width=0.7pt] (\x,0) -- (\x,0.30);
-    }
-    \node[anchor=west,text=LectureBlue,font=\scriptsize\bfseries]
-      at (0.95,0.18) {과목명 | 발표자};
+    \node[anchor=west] at (0.40,0.26)
+      {\includegraphics[width=1.52cm]{assets/uos-logo-blue.png}};
     \node[anchor=east,text=gray,font=\scriptsize]
       at (15.65,0.18) {\insertframenumber};
   \end{tikzpicture}%
@@ -56,13 +54,13 @@
 
 % 표지
 {\setbeamertemplate{footline}{}
+\setbeamercolor{background canvas}{bg=UOSBlue}
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \fill[LectureBlue] (current page.south west) rectangle (current page.north east);
     \node[anchor=west,text=white,font=\bfseries\fontsize{27}{33}\selectfont,align=left]
       at ([xshift=1.15cm,yshift=1.3cm]current page.west) {\course\\\week. 발표 주제};
-    \node[anchor=west,text=white,font=\scriptsize\bfseries]
-      at ([xshift=1.15cm,yshift=-2.25cm]current page.west) {과목명 / 소속};
+    \node[anchor=west] at ([xshift=1.15cm,yshift=-2.35cm]current page.west)
+      {\includegraphics[width=1.85cm]{assets/uos-logo-white.png}};
     \node[anchor=south east,text=white,font=\small\bfseries,align=right]
       at ([xshift=-1.1cm,yshift=1.1cm]current page.south east)
       {\presentationdate\\\presenter};
