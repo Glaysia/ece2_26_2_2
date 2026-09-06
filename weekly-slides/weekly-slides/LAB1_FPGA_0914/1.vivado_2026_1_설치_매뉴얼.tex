@@ -343,6 +343,49 @@ Test-Path "$vivadoBin/xsim.bat"
 \end{itemize}
 \end{frame}
 
+\shotframe{19. 환경 변수 설정 열기}{14-system-properties.png}{화면 C · 2026.09.07 실제 Windows 설정 화면}{
+\begin{enumerate}
+\item Windows 시작 메뉴에서 \textbf{시스템 환경 변수 편집}을 검색한다.
+\item 시스템 속성의 \textbf{고급} 탭을 연다.
+\item \textbf{환경 변수...}를 누른다.
+\end{enumerate}
+PATH는 명령 이름으로 실행 파일을 찾을 때 검색하는 폴더 목록이다.
+}
+
+\begin{frame}{20. 사용자 PATH에 Vivado 추가}
+\begin{enumerate}
+\item 위쪽 \textbf{사용자 변수}에서 \textbf{Path}를 선택하고 편집한다.
+\item \textbf{새로 만들기}를 누르고 다음 폴더를 한 줄로 추가한다.
+\end{enumerate}
+\vspace{0.2cm}
+\centering\texttt{C:\textbackslash AMDDesignTools\textbackslash 2026.1\textbackslash Vivado\textbackslash bin}
+\par\vspace{0.25cm}
+\raggedright
+\begin{itemize}
+\item 기존 항목을 지우거나 전체 값을 덮어쓰지 않는다.
+\item 다른 위치에 설치했다면 실제 Vivado의 bin 폴더를 넣는다.
+\item 이미 같은 항목이 있으면 중복 추가하지 않는다.
+\item 열린 설정 창의 확인을 눌러 저장한다.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{21. PATH 적용 확인}
+VS Code와 터미널 앱을 완전히 종료한 뒤 다시 실행한다.
+\begin{verbatim}
+where.exe xvlog.bat
+where.exe xelab.bat
+where.exe xsim.bat
+xsim.bat -version
+\end{verbatim}
+\begin{itemize}
+\item 출력 경로가 등록한 Vivado 2026.1의 bin인지 확인한다.
+\item 버전 출력 예: \texttt{Vivado Simulator v2026.1}
+\item 계속 찾지 못하면 로그아웃·로그인 후 다시 확인한다.
+\end{itemize}
+\small PATH 등록 후에는 전체 경로 없이 도구를 호출할 수 있다.\\
+프로젝트 task가 절대 경로를 사용한다면 그 설정도 따로 확인한다.
+\end{frame}
+
 \begin{frame}{설치 후 문제 해결}
 \begin{itemize}
 \item \textbf{Hardware Manager만 사용 가능}\\
@@ -364,6 +407,7 @@ slang-server가 XSim 실행 파일을 대신하지는 않는다.
 \item BASIC 라이선스의 만료일과 Host ID 일치를 확인했다.
 \item \texttt{xc7s75fgga484-1} 부품을 검색할 수 있다.
 \item XSim 실행 파일 세 개가 설치 경로에 있다.
+\item 사용자 PATH에 Vivado bin을 등록하고 버전 출력을 확인했다.
 \end{enumerate}
 \vspace{0.4cm}
 다음 매뉴얼: VS Code 확장 설치, 조합회로 시뮬레이션\\
@@ -402,5 +446,14 @@ slang-server가 XSim 실행 파일을 대신하지는 않는다.
 \vspace{0.15cm}
 {\footnotesize 담당자 제공 녹화에서 화면 13장을 추출했다.\\
 개인정보가 있는 주변 영역은 제외하고 설치·라이선스 창만 사용했다.}
+\end{frame}
+
+\begin{frame}{PATH 설정 화면 출처}
+\begin{itemize}
+\item 화면 C는 2026.09.07에 Windows 시스템 속성을 열어\\
+직접 캡처한 화면이다.
+\item 사용자 PATH에는 Vivado 2026.1의 bin 폴더를 추가한다.
+\item 사용자마다 기존 PATH 항목과 설치 위치가 다를 수 있다.
+\end{itemize}
 \end{frame}
 \end{document}
