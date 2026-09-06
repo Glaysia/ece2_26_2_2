@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "example/fpga_projects_hdl"
+		},
+		{
+			"path": "example/mcu_projects_c/example_project_c"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path":"weekly-slides"
+		}
+	],
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"Hudson-River-Trading.vscode-slang",
+			"lramseyer.vaporview",
+			"James-Yu.latex-workshop",
+			"ms-vscode.vscode-serial-monitor"
+		]
+	}
+}

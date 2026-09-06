@@ -1,0 +1,492 @@
+% !TEX program = xelatex
+% 주차별 발표 자료 템플릿
+% 이 파일의 폴더에서 xelatex -interaction=nonstopmode -halt-on-error 02.LAB0_OT_0907.tex 를 두 번 실행한다.
+\documentclass[aspectratio=169,11pt,t]{beamer}
+
+\usepackage{fontspec}
+\usepackage{kotex}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,keywordstyle=\color{UOSBlue}\bfseries,commentstyle=\normalfont\ttfamily\small,showstringspaces=false,columns=fullflexible,keepspaces=true}
+\usetikzlibrary{positioning}
+
+% D2Coding을 저장소에 함께 넣어, 별도 설치 없이 같은 글꼴로 빌드한다.
+\setmainfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmainhangulfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setsansfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setsanshangulfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmonofont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+
+% University of Seoul identity color
+\definecolor{UOSBlue}{HTML}{005EB8}
+\definecolor{TextGray}{HTML}{303030}
+\definecolor{EmphasisRed}{HTML}{803838}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{normal text}{fg=TextGray,bg=white}
+\setbeamercolor{frametitle}{fg=UOSBlue,bg=white}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{structure}{fg=UOSBlue}
+\setbeamertemplate{itemize item}{\color{UOSBlue}\small$\bullet$}
+\setbeamertemplate{itemize subitem}{\color{UOSBlue}\scriptsize$\bullet$}
+\setbeamertemplate{frametitle}{%
+  \vspace{0.55cm}\hspace{0.48cm}\insertframetitle\par\vspace{0.12cm}}
+\setbeamerfont{frametitle}{series=\bfseries,size=\LARGE}
+
+% 기준 자료처럼 하단에 소속과 페이지 번호를 표시한다.
+\setbeamertemplate{footline}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south,inner sep=0pt] at ([yshift=0.52cm]current page.south)
+      {\includegraphics[width=2.64cm,trim=58bp 385bp 58bp 385bp,clip]{../../assets/uos-logo-horizontal.png}};
+    \node[anchor=east,text=gray,font=\scriptsize]
+      at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+  \end{tikzpicture}%
+  \vspace{0.38cm}}
+
+\newcommand{\week}{LAB 0}
+\newcommand{\course}{전자전기컴퓨터설계실험Ⅱ}
+\newcommand{\topic}{오리엔테이션}
+\newcommand{\presenter}{이해리}
+\newcommand{\presentationdate}{2026. 09. 07.}
+
+\title{\course\\\week. \topic}
+\author{\presenter}
+\date{\presentationdate}
+
+\begin{document}
+
+% 표지
+{\setbeamertemplate{footline}{}
+\setbeamercolor{background canvas}{bg=UOSBlue}
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west,inner sep=0pt,text=white,font=\bfseries\fontsize{27}{33}\selectfont,align=left]
+      at ([xshift=1.53cm,yshift=-1.5cm]current page.north west) {\course\\\week. \topic};
+    \node[anchor=south west,inner sep=0pt] at ([xshift=1.38cm,yshift=0.98cm]current page.south west)
+      {\includegraphics[width=1.45cm]{../../assets/uos-logo-white.png}};
+    \node[anchor=south east,text=white,font=\small\bfseries,align=right]
+      at ([xshift=-1.38cm,yshift=0.98cm]current page.south east)
+      {\presentationdate\\\presenter};
+  \end{tikzpicture}
+\end{frame}}
+
+% OT 내용과 수업 운영의 단일 기준 문서(SSOT)는 이 TeX 파일이다.
+% 내용 변경은 이 파일에 반영하고 PDF를 다시 빌드한다.
+% 이전 Markdown 최종본은 Git 커밋 50e953d에 보존되어 있다.
+\begin{frame}{이번 학기에 배우는 내용}
+\begin{itemize}
+\item Verilog언어와 C언어가 현실의 장치를 제어하는 원리를 이해한다.
+\item FPGA와 MCU를 활용한 디지털 회로 설계와 펌웨어 개발을 연습한다.
+\item 입출력·타이머·PWM·통신 기능을 구현하거나 설정한다.
+\item FPGA와 MCU 사이에 명령과 데이터를 주고받는다.
+\item 두 장치를 활용한 팀 프로젝트를 구현하고 검증한다.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{왜 배워야 하는가?}
+\begin{itemize}
+\item \textbf{코드 속 \texttt{if}문은 어떻게 현실을 움직일까?}
+\item 전기 신호가 정보가 되고, 회로와 프로그램이 판단하고, 그 결과가 실제 동작으로 이어진다.
+\item 기기들은 명령과 데이터를 주고받으며 함께 작동한다.
+\item 이 수업에서는 그 원리를 배우고, 직접 만들고 연결해 본다.
+\end{itemize}
+\vspace{0.25cm}
+{\color{EmphasisRed}\bfseries
+이 수업은 컴퓨터과학이 아닙니다.\par
+\small 모든 대학의 전자, 전기, 정보통신공학과에서 \par
+실제 회로·전기 신호·기기 연결을 배우는 핵심 전공 기초입니다.\par
+\small 발전기부터 컴퓨터까지 전부 만드는과 == ECE\par
+\small CS == 컴퓨터 위에서 뭔가를 하는 과\par}
+\end{frame}
+
+\begin{frame}{전전컴 5개 분야와의 연결}
+\begin{itemize}
+\item 반도체·회로·디스플레이
+\item 전기·제어·로봇
+\item 컴퓨터·디지털시스템
+\item 통신·신호처리
+\item 전파·광·양자
+\end{itemize}
+\vspace{0.35cm}
+디지털 회로 설계, 펌웨어, 통신과 계측의 기초를 연습합니다.
+\end{frame}
+
+\begin{frame}{반도체·회로·디스플레이}
+\begin{itemize}
+\item 디지털 회로 설계·검증: HDL 논리 설계와 파형 검증
+\item 반도체 테스트·평가: 입출력 시험과 측정
+\item 장비·디스플레이 제어 펌웨어: 입출력·타이머·통신
+\end{itemize}
+\vspace{0.35cm}
+조합회로와 레지스터를 설계하고 시뮬레이션과 보드에서 확인합니다.
+\end{frame}
+
+\begin{frame}{전기·제어·로봇}
+\begin{itemize}
+\item 전력변환·모터 제어: ADC·PWM·인터럽트
+\item 로봇 제어: 센서 입력, 통신과 동작 상태 제어
+\item BMS 펌웨어: 측정, 조건 판단과 보호 상태 제어
+\end{itemize}
+\vspace{0.35cm}
+입력을 읽고 조건에 맞는 제어 신호를 만드는 과정을 연습합니다.
+\end{frame}
+
+\begin{frame}{컴퓨터·디지털시스템}
+\begin{itemize}
+\item XPU·SoC·네트워크 칩 설계·검증: 레지스터·FSM·시뮬레이션
+\item FPGA 개발: 논리 설계, 합성과 보드 검증
+\item 펌웨어·드라이버 개발: 주변장치 설정과 인터럽트
+\end{itemize}
+\vspace{0.35cm}
+회로의 동작과 소프트웨어의 제어를 함께 이해합니다.
+\end{frame}
+
+\begin{frame}{통신·신호처리}
+\begin{itemize}
+\item 모뎀·신호처리 회로: 데이터 경로와 타이밍 검증
+\item 통신장치 펌웨어: 송수신, 데이터 형식과 상태 제어
+\item 수업에서는 UART/SPI로 명령과 데이터를 전달한다.
+\end{itemize}
+\vspace{0.35cm}
+두 보드가 같은 데이터 형식과 통신 규칙을 사용하도록 설계합니다.
+\end{frame}
+
+\begin{frame}{전파·광·양자}
+\begin{itemize}
+\item 레이더·RF·광학 장비 제어: 타이밍·통신·계측
+\item 광송수신 모듈 펌웨어: 장치 설정과 상태 감시
+\item 양자 제어 전자장치: 펄스·동작 순서·측정 인터페이스
+\end{itemize}
+\vspace{0.35cm}
+분야별 전문 이론은 추가로 배우며, 이번에는 구현과 검증의 기초를 다룹니다.
+\end{frame}
+
+\begin{frame}{수업을 마치고 설명할 수 있어야 할 것}
+\begin{itemize}
+\item 내가 만든 장치의 입출력과 동작·시간 조건은 무엇인가?
+\item 왜 FPGA 회로 또는 MCU 프로그램·주변장치로 구현했는가?
+\item 어떤 입력으로 시험했고, 파형과 측정값은 무엇을 보여 주는가?
+\item 예상과 다른 동작의 원인을 어떻게 찾고 수정했는가?
+\end{itemize}
+\vspace{0.3cm}
+AI로 코드를 작성해도, \textbf{시험 조건과 결과에 대한 판단}은 설명할 수 있어야 합니다.
+\end{frame}
+
+\begin{frame}{수업 운영}
+\begin{itemize}
+\item 매주 월요일 14:00\textasciitilde{}18:00 / 강의실 19-213
+\item 수강인원 20명 / 2인 1조, 총 10개 조
+\item 실험은 팀별로 수행하고 보고서는 개인별로 작성·제출한다.
+\item LAB1\textasciitilde{}LAB3은 전체 시뮬레이션을 준비하고, 당일 조교가 무작위로 선정한 2개 실험을 시연한다.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{LAB1\textasciitilde{}LAB3 · 준비, 시연, 보고서}
+\begin{itemize}
+\item 실험 전 보고서: 해당 LAB의 \textbf{모든 실험}에 대한 VS Code 시뮬레이션 결과를 담는다.
+\item 실험 당일: 조교가 해당 LAB에서 \textbf{무작위로 2개}를 선정한다.
+\item 선정된 2개의 보드 동작을 시연하고, 조교가 실험 번호와 확인 결과를 \textbf{출석부에 기록}한다.
+\item 실험 후 보고서: \textbf{모든 실험의 Vivado 시뮬레이션}과 \textbf{선정된 2개의 시연 사진}을 담는다.
+\end{itemize}
+\vspace{0.2cm}
+LAB1 10개 · LAB2 8개 · LAB3 7개 모두 같은 방식으로 운영합니다.
+\end{frame}
+
+\begin{frame}{개발환경}
+\begin{itemize}
+\item VS Code: 코드 작성과 프로젝트 작업
+\item Verilog/SystemVerilog: FPGA 설계와 테스트벤치
+\item VaporView: 시뮬레이터가 생성한 파형 확인
+\item Vivado 2026.1: 시뮬레이션·합성·구현·보드 다운로드
+\item STM32: C와 HAL/LL, ST-LINK 다운로드·디버깅
+\item Git / GitHub: 소스 관리와 제출 버전 기록
+\end{itemize}
+\end{frame}
+
+\begin{frame}{실습장비와 관리}
+\begin{itemize}
+\item FPGA: Spartan-7 XC7S75 교육용 보드
+\item MCU: STM32 NUCLEO-G474RE, 팀당 1대 지급 후 프로젝트 종료 시 반납
+\item 오실로스코프·함수발생기·전원공급기 등을 사용한다.
+\item 연결 전에 전원·핀 기능·I/O 전압을 확인한다.
+\item 배선 변경은 전원을 끈 상태에서 진행하고, 불확실한 연결은 조교에게 확인한다.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{학기 구성}
+\begin{itemize}
+\item 9/7 OT / 10/5 휴강
+\item FPGA 새 실험 3주: 9/14\textasciitilde{}9/28 / 보완: 10/12 전반부
+\item STM32 3.5주: 10/12 후반부, 10/19\textasciitilde{}11/2
+\item 프로젝트 6주: 11/9\textasciitilde{}12/14
+\item 최종 시연·발표: 12/21
+\end{itemize}
+\end{frame}
+
+\begin{frame}{기초 실험 일정: LAB1\textasciitilde{}LAB4}
+\textbf{설치는 사전 준비, 새 실험은 3주 동안 총 25개}
+\vspace{0.25cm}
+\begin{itemize}
+\item 9/14 LAB1: 조합논리 10개 --- 연산·선택·부호화·표시
+\item 9/21 LAB2: 순차논리 8개 --- 계수·저장·상태·표시 스캔
+\item 9/28 LAB3: 응용·통신 7개 --- 주변장치 제어와 PC--FPGA UART
+\item 10/5: 휴강
+\item 10/12 LAB4: 전반부 FPGA 보완·확인 / 후반부 STM32 도입
+\end{itemize}
+\vspace{0.2cm}
+기존 번호 실습 24개를 선택하고 UART 1개를 추가합니다.
+\end{frame}
+
+% 교육 번호 01--25는 2026년 배정 번호. 기존 번호는 2022년 교안의 실습 번호다.
+\begin{frame}{LAB1 · 조합논리 10개 / 9월 14일}
+\small
+\begin{tabular}{rll}
+\textbf{교육 번호} & \textbf{실습} & \textbf{기존 번호}\\\hline
+01 & AND·OR·XOR 논리 게이트 & 1\\
+02 & 전가산기: 반가산기 두 개의 연결 & 3\\
+03 & 4비트 가산기 & 13\\
+04 & 4비트 감산기 & 14\\
+05 & 4비트 크기 비교기 & 9\\
+06 & 4:1 멀티플렉서 & 7\\
+07 & 1:8 디멀티플렉서 & 8\\
+08 & 8:3 인코더 & 5\\
+09 & 3:8 디코더 & 6\\
+10 & 7세그먼트 디코더 & 11
+\end{tabular}
+\vspace{0.2cm}\par
+\textbf{확인할 것}: 입력 조합과 출력의 관계를 진리표·파형으로 설명한다.
+\end{frame}
+
+\begin{frame}{LAB2 · 순차논리 8개 / 9월 21일}
+\small
+\begin{tabular}{rll}
+\textbf{교육 번호} & \textbf{실습} & \textbf{기존 번호}\\\hline
+11 & 업/다운 카운터 & 16\\
+12 & 클록 분주 & 17\\
+13 & 레지스터: 데이터 저장과 이동 & 26\\
+14 & 시프트 레지스터 & 27\\
+15 & PISO: 병렬 입력·직렬 출력 & 28\\
+16 & Moore 상태 머신 & 29\\
+17 & Mealy 상태 머신 & 30\\
+18 & 7세그먼트 배열의 자리 스캔 & 12
+\end{tabular}
+\vspace{0.25cm}\par
+\textbf{확인할 것}: 클록·리셋·상태 전이를 설명하고 시간에 따른 출력을 검증한다.\par
+입력 동기화·디바운스와 blocking/nonblocking은 공통 설명에 포함한다.
+\end{frame}
+
+\begin{frame}{LAB3 · 주변장치와 통신 7개 / 9월 28일}
+\small
+\begin{tabular}{rll}
+\textbf{교육 번호} & \textbf{실습} & \textbf{기존 번호}\\\hline
+19 & PWM으로 LED 밝기 제어 & 22\\
+20 & RGB LED의 PWM 제어 & 24\\
+21 & 피에조 단일 음 발생 & 19\\
+22 & 스텝모터 위상 제어 & 18\\
+23 & MM:SS 시계: 계수와 표시의 결합 & 21\\
+24 & 문자 LCD 제어 & 32\\
+25 & PC--FPGA UART 통신과 에코 & 추가
+\end{tabular}
+\vspace{0.25cm}\par
+\textbf{확인할 것}: 앞서 만든 계수·상태·표시 회로를 실제 장치와 연결한다.\par
+UART는 PC에서 보낸 바이트를 FPGA가 수신하고 다시 돌려주는 것으로 확인한다.
+\end{frame}
+
+\begin{frame}{3주 안에 진행하는 방법}
+\begin{itemize}
+\item 실험 전: 코드를 준비하고 입력 조건·예상값·시뮬레이션을 확인한다.
+\item 수업 중: 보드 동작을 준비하고, 조교가 무작위로 고른 2개를 시연한다.
+\item 앞 실험의 모듈을 다음 실험에서 재사용한다.
+\item 시계·LCD·UART는 제공 모듈의 구조를 이해하고 수정·통합하는 방식으로 진행한다.
+\item 10/12 전반부는 미완료 동작의 보완·확인에 사용한다.
+\end{itemize}
+\vspace{0.2cm}
+\small 별도 실험에서 제외: NOT(2), 전감산기(4), BCD 변환(10), 곱셈기(15), 피아노(20), RGB 순차 제어(23).\par
+NOT와 감산의 기초는 논리 게이트·4비트 감산기에서 함께 설명한다.
+\end{frame}
+
+\begin{frame}{UART · 컴퓨터와 FPGA를 연결하기}
+\textbf{PC 터미널 → USB--UART → FPGA 수신 → 송신 → PC 표시}
+\vspace{0.25cm}
+\begin{itemize}
+\item PC와 FPGA의 보레이트·데이터 비트·패리티·정지 비트를 맞춘다.
+\item 한 바이트를 전송하고 같은 값이 돌아오는지 확인한다.
+\item 터미널의 로컬 에코를 끄고, FPGA가 돌려준 결과를 확인한다.
+\item 연속 전송과 리셋 후 재전송도 확인한다.
+\end{itemize}
+\vspace{0.2cm}
+\small 장비 제공 \texttt{usb232.v}는 수신 데이터를 재송신하는 원본 예제다.\par
+수업용 코드는 보드 핀·전압·클록·수신 동기화를 확인한 뒤 배포한다.
+\end{frame}
+
+\begin{frame}{기초 실험 일정: LAB5\textasciitilde{}LAB7}
+\begin{itemize}
+\item 10/19 LAB5: C 기초, 프로젝트 구성, GPIO·클록·디지털 입출력과 디버깅
+\item 10/26 LAB6: 타이머·인터럽트·PWM·ADC 등 주변장치
+\item 11/2 LAB7: UART/SPI 통신, STM32-FPGA 연결과 간단한 통합 실험
+\end{itemize}
+\vspace{0.35cm}
+7회의 기초 실험에서 실험 전·후 보고서를 각각 제출합니다.
+\end{frame}
+
+\begin{frame}{프로젝트 주제 선정}
+\begin{itemize}
+\item 2인 1조로 진행하며 가능한 경우 FPGA와 STM32를 모두 사용한다.
+\item 조교가 제시하는 약 10\textasciitilde{}20개 예시에서 선택하거나 자유주제를 제안한다.
+\item 자유주제는 11/16 제안서 제출 전까지 범위와 난이도를 조교와 협의한다.
+\item 요구사항, FPGA·MCU 역할과 통신 인터페이스를 정의한다.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{프로젝트 주제 예시}
+\begin{itemize}
+\item 로직 분석기 / 디지털 주파수 측정기
+\item 다채널 PWM 제어기 / 모터·엔코더 제어기
+\item UART/SPI 프로토콜 분석기 / FPGA GPIO 확장기
+\item 신호 발생기 / VGA 출력
+\item 센서 인터페이스 / 데이터 수집 시스템
+\end{itemize}
+\end{frame}
+
+\begin{frame}{프로젝트 일정과 운영}
+\begin{itemize}
+\item 11/9: 조별 리포트 피드백과 질문 답변
+\item 11/16: 프로젝트 제안서 제출과 조별 주차별 계획 발표
+\item 11/23, 11/30, 12/7, 12/14: 조별 계획에 따른 자유 프로젝트 실습
+\item 12/21: 최종 동작 시연과 발표
+\end{itemize}
+\vspace{0.35cm}
+자유 실습에는 공통 강의·필수 진도·정기 중간 시연을 부과하지 않습니다. 조교는 출석 확인, 질문 답변과 디버깅을 지원합니다.
+\end{frame}
+
+\begin{frame}{프로젝트 평가 기준}
+\begin{itemize}
+\item 정한 요구사항을 실제로 만족하는가?
+\item 시뮬레이션과 하드웨어 결과를 비교하고 검증했는가?
+\item FPGA·MCU의 역할과 사용 이유를 설명할 수 있는가?
+\item 장치 간 인터페이스를 명확히 설계했는가?
+\item 팀원이 설계 구조와 디버깅 과정을 이해하고 있는가?
+\end{itemize}
+\vspace{0.35cm}
+범위가 작더라도 안정적으로 동작하고 충분히 검증된 프로젝트를 높게 평가합니다.
+\end{frame}
+
+\begin{frame}{생성형 AI 사용}
+\begin{itemize}
+\item Codex, Claude 등 생성형 AI 사용을 허용한다.
+\item 모듈·함수 역할, 주요 신호와 상태 전이를 설명할 수 있어야 한다.
+\item 타이밍, 주변장치 설정, 통신 규칙과 측정 결과를 이해해야 한다.
+\item 실험 확인 중 코드나 파형에 대한 구두 질문을 할 수 있다.
+\item AI 코드의 오류를 포함한 설계와 결과의 책임은 팀과 작성자에게 있다.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{보고서 종류와 수량}
+\begin{itemize}
+\item LAB1\textasciitilde{}LAB7: 실험 전 보고서 7개 + 실험 후 보고서 7개
+\item 프로젝트: 제안서 + 계획서 + 결과보고서 3개
+\item 개인별 학기 전체 제출 수량: 총 17개
+\end{itemize}
+\vspace{0.35cm}
+실험은 팀별로 수행하고 보고서는 개인별로 작성·제출합니다.
+\end{frame}
+
+\begin{frame}{보고서 공통 형식}
+\begin{itemize}
+\item 표지: 이름과 학번
+\item 본문: 좌우 2단 구성 / PDF 제출
+\item 설계 목표·방법, 핵심 코드·회로 구조와 검증 결과
+\item 예상과 실제 결과 비교, 문제 해결 과정과 결론
+\item 허용된 출처 1개 이상 인용 / 본문 표시와 참고문헌 대응
+\end{itemize}
+\end{frame}
+
+\begin{frame}{실험 전 보고서 · LAB1\textasciitilde{}LAB3}
+\begin{itemize}
+\item 해당 LAB의 \textbf{모든 실험}을 포함한다: LAB1 10개 / LAB2 8개 / LAB3 7개.
+\item 실험별 설계 내용, 핵심 코드, 입력 조건과 예상 결과를 정리한다.
+\item VS Code에서 시뮬레이션을 실행하고 VaporView 파형 스크린샷을 첨부한다.
+\item 파형에서 확인한 동작과 예상 결과의 일치 여부를 설명한다.
+\end{itemize}
+\vspace{0.25cm}
+시연할 2개는 당일 선정하므로, 모든 실험을 준비합니다.
+\end{frame}
+
+\begin{frame}{실험 후 보고서 · LAB1\textasciitilde{}LAB3}
+\begin{itemize}
+\item 해당 LAB의 \textbf{모든 실험}에 대한 Vivado 시뮬레이션 파형과 해석을 담는다.
+\item 보드 동작 사진은 \textbf{조교가 선정한 2개 실험만} 첨부한다.
+\item 사진마다 실험 번호, 입력 조건과 확인한 동작을 설명한다.
+\item 출석부에 기록된 시연 실험 번호와 보고서의 사진을 대응시킨다.
+\item 예상 결과와 실제 결과를 비교하고, 수정·재검증한 내용이 있으면 정리한다.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{소스코드와 시연 자료}
+\begin{itemize}
+\item 보고서에는 핵심 코드를 제시한다.
+\item 전체 소스코드는 GitHub에서 확인할 수 있도록 한다.
+\item 저장소 주소, 제출 버전의 태그와 커밋 해시를 기재한다.
+\item LAB1\textasciitilde{}LAB3의 시연 자료는 조교가 선정한 2개의 사진으로 제출한다.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{인용 가능한 출처}
+\begin{itemize}
+\item 위키: 인용 출처로 인정하지 않음
+\item GitHub: 스타 10개 이상 / 주소·참조 버전 또는 커밋·확인일
+\item 교과서: 저자·제목·판본·출판 정보
+\item 논문: 저자·제목·학술지 또는 학회·연도·DOI 또는 URL
+\item 일반 도서: ISBN이 있는 책 / 저자·제목·출판 정보·ISBN
+\end{itemize}
+\end{frame}
+
+\begin{frame}{인용 표시와 보고서 감점}
+\begin{itemize}
+\item 직접 인용: 따옴표나 인용문 형식, 출처와 쪽수(있는 경우) 표시
+\item 요약하거나 바꾸어 서술한 내용에도 출처 표시
+\item 본문의 [1] 등과 참고문헌 목록을 대응
+\end{itemize}
+\vspace{0.35cm}
+보고서당 10점 만점 / 제출 요건 미충족 항목당 1점 감점 / 내용 미비 1점 감점 / 표절 10점 감점
+\end{frame}
+
+\begin{frame}{보고서 제출 일정}
+\begin{itemize}
+\item 실험 전 보고서: 월요일 18:00
+\item 실험 후 보고서: 월요일 14:00
+\item 프로젝트 제안서: 11/16
+\item 프로젝트 계획서·결과보고서 마감: 별도 안내
+\end{itemize}
+\vspace{0.35cm}
+실험 전·후 보고서의 기준 주차는 추가 안내합니다. LAB1 실험 전 보고서는 다음 수업인 9/14까지 준비합니다.
+\end{frame}
+
+\begin{frame}{다음 수업 준비: LAB1 실험 전 보고서}
+\begin{itemize}
+\item Vivado 2026.1 설치와 실행 확인
+\item GitHub 계정 생성과 계정 주소 기재
+\item FPGA와 ASIC의 차이 조사
+\item FPGA를 사용하는 두 가지 이유를 반도체 공정과 관련지어 조사
+\item LAB1 전체 10개 실험의 VS Code 시뮬레이션 수행과 결과 정리
+\end{itemize}
+\vspace{0.35cm}
+9월 14일 수업까지 개인별 PDF로 작성합니다.
+\end{frame}
+
+\begin{frame}{LAB1 보고서에 포함할 자료}
+\begin{itemize}
+\item Vivado 설치·실행 확인 내용과 GitHub 계정 주소
+\item FPGA·ASIC 조사 내용과 인용 출처
+\item LAB1 전체 10개 실험의 코드, 입력 조건과 예상 결과
+\item VaporView 파형 스크린샷, 실행 결과와 해석
+\end{itemize}
+\vspace{0.35cm}
+공통 보고서 형식과 인용 기준을 적용합니다.
+\end{frame}
+
+\end{document}
+
+
+
