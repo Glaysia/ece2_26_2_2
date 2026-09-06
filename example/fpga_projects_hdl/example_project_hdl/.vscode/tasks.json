@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "HDL: 시뮬레이션 로그 정리",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "$ErrorActionPreference = 'Stop'; Get-ChildItem -LiteralPath . -File | Where-Object { $_.Extension -in '.log', '.pb', '.jou', '.vcd', '.wdb', '.tcl'} | ForEach-Object { Remove-Item -LiteralPath $_.FullName; Write-Host ('Removed: ' + $_.Name) }; $srcPath = (Resolve-Path -LiteralPath .).Path; $simPath = Join-Path $srcPath 'xsim.dir'; if (Test-Path -LiteralPath $simPath) { $simDir = Get-Item -LiteralPath $simPath -Force; if (!$simDir.PSIsContainer -or $simDir.Parent.FullName -ne $srcPath -or ($simDir.Attributes -band [IO.FileAttributes]::ReparsePoint)) { throw 'Unsafe xsim.dir path.' }; Remove-Item -LiteralPath $simDir.FullName -Recurse -Force; Write-Host 'Removed: xsim.dir' }"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "HDL: 시뮬레이션 및 VCD 생성",
+            "dependsOn": "HDL: 시뮬레이션 로그 정리",
+            "dependsOrder": "sequence",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "$vivadoBin = 'C:/AMDDesignTools/2026.1/Vivado/bin'; $sources = @(Get-ChildItem -Path *.v,*.sv -File | Sort-Object Name | Select-Object -ExpandProperty FullName); if ($sources.Count -eq 0) { throw 'No HDL sources found.' }; & \"$vivadoBin/xvlog.bat\" --sv @sources; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; & \"$vivadoBin/xelab.bat\" tb_top_main --debug typical --snapshot top_sim; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; & \"$vivadoBin/xsim.bat\" top_sim --runall; exit $LASTEXITCODE"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true
+            }
+        }
+    ]
+}
