@@ -46,7 +46,7 @@
 \newcommand{\course}{전자전기컴퓨터설계실험Ⅱ}
 \newcommand{\topic}{VS Code Verilog\\환경설정 매뉴얼}
 \newcommand{\presenter}{이해리}
-\newcommand{\presentationdate}{2026. 09. 14.}
+\newcommand{\presentationdate}{2026. 09. 07.}
 
 \title{\course\\\week. \topic}
 \author{\presenter}
@@ -61,6 +61,13 @@ backgroundcolor=\color{UOSBlue!4},frame=single,rulecolor=\color{UOSBlue!20},
 xleftmargin=0.12cm,xrightmargin=0.12cm,aboveskip=0.2cm,belowskip=0.2cm}
 \newcommand{\source}[2]{\par\vspace{0.18cm}{\scriptsize\color{gray}\href{#1}{#2}}}
 \newcommand{\checkline}[1]{\par\vspace{0.25cm}{\color{UOSBlue}\bfseries 확인: }#1}
+% 녹화 캡처: 2026-09-07 03-15-00.mp4 및 07-10-20.mp4.
+% 캡처는 v1.0.0에서 촬영. v1.0.1은 다음 배포 예정 태그이며 아직 생성하지 않았다.
+\newcommand{\videoshot}[3]{%
+\begin{frame}{#1}\centering
+\includegraphics[width=0.98\textwidth,height=5.45cm,keepaspectratio]{assets/vscode-v1.0.0/#2}
+\par\vspace{0.12cm}{\small #3}
+\end{frame}}
 \begin{document}
 
 % 표지
@@ -162,14 +169,27 @@ xsim -version
 \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{2. PATH를 등록했는데도 실행되지 않는다면}
+\begin{itemize}
+\item 이미 열려 있던 PowerShell은 변경 전 PATH를 사용한다.
+\item 기존 PowerShell과 VS Code의 모든 창을 종료한다.
+\item 시작 메뉴에서 PowerShell을 새로 열어 아래 명령을 확인한다.
+\item 이전 PowerShell에서 \texttt{code}를 실행하면 VS Code도 이전 환경을 물려받을 수 있다.
+\end{itemize}
+\begin{lstlisting}
+Get-Command xvlog.bat, xelab.bat, xsim.bat
+\end{lstlisting}
+\checkline{녹화에서는 오래 열어둔 PowerShell 대신 새로 실행하니 정상 동작했다.}
+\end{frame}
+
 \begin{frame}[fragile]{3. GitHub에서 예제 받기}
 예제를 저장할 상위 폴더에서 다음 명령을 실행한다.
 \begin{lstlisting}
-git clone --branch v1.0.0 --depth 1 https://github.com/Glaysia/ece2_26_2_2.git
+git clone --branch v1.0.1 --depth 1 https://github.com/Glaysia/ece2_26_2_2.git
 cd ece2_26_2_2
 \end{lstlisting}
 \begin{itemize}
-\item \texttt{v1.0.0} 태그로 고정된 수업 자료와 예제를 내려받는다.
+\item \texttt{v1.0.1} 태그로 고정된 수업 자료와 예제를 내려받는다.
 \item 마지막 줄은 내려받은 저장소 폴더로 이동한다.
 \item 태그로 받으면 나오는 \texttt{detached HEAD} 안내는 오류가 아니다.
 \end{itemize}
@@ -187,6 +207,28 @@ code ece2_26_2_2.code-workspace
 \end{itemize}\checkline{탐색기의 fpga\_projects\_hdl 아래에서 example\_full\_adder\_hdl을 펼친다.}
 \end{frame}
 
+\begin{frame}[fragile]{3. 워크스페이스 신뢰하기}
+\begin{itemize}
+\item 처음 열 때 작성자를 신뢰하는지 묻는 창이 나타날 수 있다.
+\item 수업 GitHub 저장소에서 받은 자료인지 확인한다.
+\item 확인한 수업 자료라면 \textbf{Yes, I trust the authors}를 선택한다.
+\item 상위 폴더 전체를 신뢰하는 옵션은 선택할 필요가 없다.
+\item 이미 제한 모드라면 상단 \textbf{Manage} 또는 명령 팔레트의
+\textbf{Workspaces: Manage Workspace Trust}에서 상태를 확인한다.
+\end{itemize}
+\checkline{Restricted Mode에서는 작업 실행과 일부 확장 기능이 제한된다.}
+\end{frame}
+
+\begin{frame}{3. 실제 화면: 제한 모드 확인}
+\centering
+\includegraphics[width=0.94\textwidth,height=5.5cm,keepaspectratio]{assets/vscode-v1.0.0/01-restricted-mode.png}
+\par\small 상단 안내와 왼쪽 아래 Restricted Mode를 확인한다.
+\end{frame}
+
+% 03-15-00 영상 03:50:16: Workspace Trust 관리 화면.
+\videoshot{3. 실제 화면: Trust 선택}{03-trust-video.png}
+{수업 저장소임을 확인한 뒤 왼쪽 Trust를 선택한다.}
+
 \begin{frame}[fragile]{3. 예제 파일의 역할}
 \small
 \begin{tabular}{p{6cm}p{7cm}}
@@ -195,7 +237,7 @@ code ece2_26_2_2.code-workspace
 \texttt{src/full\_adder.v} & 반가산기 두 개로 구성한 전가산기\\[0.16cm]
 \texttt{sim/tb\_full\_adder.sv} & 8개 입력을 자동 검사하는 테스트벤치\\[0.16cm]
 \texttt{.slang/server.json}, \texttt{sources.f} & 언어 서버 설정과 HDL 소스 목록\\[0.16cm]
-\texttt{.vscode/tasks.json} & 도구 확인·시뮬레이션 작업\\[0.16cm]
+\texttt{../.vscode/tasks.json} & 상위 HDL 폴더의 공용 작업 설정\\[0.16cm]
 \texttt{scripts/} & 실행 스크립트\\[0.16cm]
 \texttt{build/} & 실행 후 생성되는 파형과 로그
 \end{tabular}
@@ -229,6 +271,25 @@ code --list-extensions --show-versions |
 \item 이미 서버가 설치된 PC에서는 알림이 다시 나오지 않을 수 있다.
 \end{itemize}\checkline{자동 설치에서는 서버를 PATH에 추가하거나 slang.path를 지정하지 않는다.}\source{https://hudson-trading.github.io/slang-server/start/installing/}{공식 안내: 서버 자동 설치 · 알림 문구는 버전에 따라 다를 수 있음}
 \end{frame}
+
+\begin{frame}[fragile]{4. 설치된 확장도 활성화 여부 확인}
+\begin{itemize}
+\item Ctrl+Shift+X에서 slang과 VaporView를 각각 찾는다.
+\item 비활성화돼 있다면 톱니바퀴 메뉴의 \textbf{Enable (Workspace)}를 선택한다.
+\item 이미 활성화돼 있다면 다시 설정할 필요가 없다.
+\item 재시작 안내가 나오면 따르고, 필요하면 Developer: Reload Window를 실행한다.
+\item \texttt{.v} 파일의 오른쪽 아래가 Plain Text가 아닌 Verilog인지 확인한다.
+\end{itemize}
+\checkline{워크스페이스 신뢰와 개별 확장의 활성화는 따로 확인한다.}
+\end{frame}
+
+% 03-15-00 영상 03:54:06.5: 확장 메뉴.
+\videoshot{4. 실제 화면: Enable (Workspace)}{04-enable-workspace-video.png}
+{확장을 설치했어도 현재 워크스페이스에서 꺼져 있으면 활성화한다.}
+
+% 07-10-20 영상 00:02:20: 활성화 후 전가산기 소스.
+\videoshot{5. 실제 화면: 전가산기 코드}{05-source-video.png}
+{반가산기 두 개의 연결을 확인한다. 색상 표시만으로 분석 성공을 판단하지 않는다.}
 
 \begin{frame}[fragile]{5. 언어 서버가 필요한 이유}
 \begin{itemize}
@@ -360,6 +421,21 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 \checkline{그림을 저장하기 전에 8개 입력이 진리표와 일치하는지 확인한다.}
 \end{frame}
 
+% 07-10-20 영상 00:03:10: 파형과 실행 결과를 각각 확대.
+\videoshot{8. 실제 화면: 8개 입력의 파형}{06-wave-video.png}
+{시간 단위는 ps이다. 10,000 ps마다 입력이 바뀌며 80 ns까지 비교한다.}
+
+\begin{frame}{8. 실제 화면: 실행 완료와 별도 오류 구분}
+\centering
+\includegraphics[width=0.98\textwidth]{assets/vscode-v1.0.0/07-result-video.png}
+\par\vspace{0.3cm}
+\begin{itemize}
+\item 터미널에 80 ns 종료와 생성된 VCD 경로가 표시된다.
+\item 오른쪽 소스 경로 오류 알림은 파형 생성 결과와 구분한다.
+\item 소스 분석·이동 문제가 남으면 언어 서버 설정의 상대경로 기준을 확인한다.
+\end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]{8. 수정한 코드의 결과 다시 확인}
 \begin{itemize}
 \item 저장 → 시뮬레이션 재실행 → 파형 다시 열기 또는 새로고침
@@ -400,7 +476,7 @@ Get-Command xvlog.bat, xelab.bat, xsim.bat -All
 $env:VIVADO_BIN
 \end{lstlisting}\begin{itemize}
 \item 실제로 호출되는 버전과 경로 순서를 확인한다.
-\item PATH 수정 후 VS Code와 터미널을 다시 실행한다.
+\item PATH 수정 전부터 켜 둔 PowerShell과 VS Code를 모두 종료하고 새로 실행한다.
 \item VIVADO\_BIN이 설정되어 있으면 스크립트가 그 경로를 사용할 수 있다.
 \end{itemize}\small 개별 실행에서 실제 설치 경로를 지정하는 방법:\begin{lstlisting}
 powershell.exe -NoProfile -ExecutionPolicy Bypass `
