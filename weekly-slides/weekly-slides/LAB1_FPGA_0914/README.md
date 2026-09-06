@@ -1,3 +1,11 @@
+- 꼭 들어가야 하는 내용:
+    - vscode 세팅 방법(git clone https://github.com/Glaysia/ece2_26_2_2.git@OT)
+    - vivado 설치 방법
+    - 각 소스코드 설명
+    - 시뮬레이션 결과(vscode, 자세히)
+    - 시뮬레시션 결과(vivado, 간단히)
+    - vivado 프로젝트 구성 방법 설명(simulation-synthesize-implementation-generate bitstream-jtag)
+        - jtag은 7일에 실험실에 내가 직접 해보고 되는지 검증 예정
 # LAB1 — FPGA·Verilog 입문과 조합회로
 
 - 수업: 2026년 9월 14일 월요일, 14:00~18:00
