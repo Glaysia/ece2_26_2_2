@@ -18,7 +18,8 @@
 		"recommendations": [
 			"Hudson-River-Trading.vscode-slang",
 			"lramseyer.vaporview",
-			"James-Yu.latex-workshop"
+			"James-Yu.latex-workshop",
+			"ms-vscode.vscode-serial-monitor"
 		]
 	}
 }
