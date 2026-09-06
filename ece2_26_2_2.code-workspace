@@ -8,13 +8,17 @@
 		},
 		{
 			"path": "."
+		},
+		{
+			"path":"weekly-slides"
 		}
 	],
 	"settings": {},
 	"extensions": {
 		"recommendations": [
 			"Hudson-River-Trading.vscode-slang",
-			"lramseyer.vaporview"
+			"lramseyer.vaporview",
+			"James-Yu.latex-workshop"
 		]
 	}
 }

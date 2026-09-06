@@ -1,6 +1,6 @@
 % !TEX program = xelatex
 % 주차별 발표 자료 템플릿
-% 컴파일: xelatex weekly_presentation.tex
+% templates 폴더에서 xelatex weekly_presentation_template.tex 명령을 두 번 실행한다.
 \documentclass[aspectratio=169,11pt]{beamer}
 
 \usepackage{fontspec}
@@ -10,11 +10,11 @@
 \usetikzlibrary{positioning}
 
 % D2Coding을 저장소에 함께 넣어, 별도 설치 없이 같은 글꼴로 빌드한다.
-\setmainfont{D2Coding-Regular.ttf}[Path=assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
-\setmainhangulfont{D2Coding-Regular.ttf}[Path=assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
-\setsansfont{D2Coding-Regular.ttf}[Path=assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
-\setsanshangulfont{D2Coding-Regular.ttf}[Path=assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
-\setmonofont{D2Coding-Regular.ttf}[Path=assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmainfont{D2Coding-Regular.ttf}[Path=../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmainhangulfont{D2Coding-Regular.ttf}[Path=../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setsansfont{D2Coding-Regular.ttf}[Path=../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setsanshangulfont{D2Coding-Regular.ttf}[Path=../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmonofont{D2Coding-Regular.ttf}[Path=../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
 
 % University of Seoul identity color
 \definecolor{UOSBlue}{HTML}{005EB8}
@@ -34,19 +34,20 @@
 % 기준 자료처럼 하단에 소속과 페이지 번호를 표시한다.
 \setbeamertemplate{footline}{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=west] at (0.40,0.26)
-      {\includegraphics[width=1.52cm]{assets/uos-logo-blue.png}};
+    \node[anchor=south,inner sep=0pt] at ([yshift=0.52cm]current page.south)
+      {\includegraphics[width=2.64cm,trim=58bp 385bp 58bp 385bp,clip]{../assets/uos-logo-horizontal.png}};
     \node[anchor=east,text=gray,font=\scriptsize]
-      at (15.65,0.18) {\insertframenumber};
+      at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
   \end{tikzpicture}%
   \vspace{0.38cm}}
 
-\newcommand{\week}{1주차}
-\newcommand{\course}{과목명}
-\newcommand{\presenter}{발표자 이름}
-\newcommand{\presentationdate}{2026. 08. 26.}
+\newcommand{\week}{LAB 0}
+\newcommand{\course}{전자전기컴퓨터설계실험Ⅱ}
+\newcommand{\topic}{오리엔테이션}
+\newcommand{\presenter}{이해리}
+\newcommand{\presentationdate}{2026. 09. 07.}
 
-\title{\course\\\week. 발표 주제}
+\title{\course\\\week. \topic}
 \author{\presenter}
 \date{\presentationdate}
 
@@ -57,12 +58,12 @@
 \setbeamercolor{background canvas}{bg=UOSBlue}
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=west,text=white,font=\bfseries\fontsize{27}{33}\selectfont,align=left]
-      at ([xshift=1.15cm,yshift=1.3cm]current page.west) {\course\\\week. 발표 주제};
-    \node[anchor=west] at ([xshift=1.15cm,yshift=-2.35cm]current page.west)
-      {\includegraphics[width=1.85cm]{assets/uos-logo-white.png}};
+    \node[anchor=north west,inner sep=0pt,text=white,font=\bfseries\fontsize{27}{33}\selectfont,align=left]
+      at ([xshift=1.53cm,yshift=-1.5cm]current page.north west) {\course\\\week. \topic};
+    \node[anchor=south west,inner sep=0pt] at ([xshift=1.38cm,yshift=0.98cm]current page.south west)
+      {\includegraphics[width=1.45cm]{../assets/uos-logo-white.png}};
     \node[anchor=south east,text=white,font=\small\bfseries,align=right]
-      at ([xshift=-1.1cm,yshift=1.1cm]current page.south east)
+      at ([xshift=-1.38cm,yshift=0.98cm]current page.south east)
       {\presentationdate\\\presenter};
   \end{tikzpicture}
 \end{frame}}
@@ -111,3 +112,4 @@
 \end{frame}
 
 \end{document}
+
