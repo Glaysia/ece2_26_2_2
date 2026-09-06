@@ -1,2 +1,0 @@
-# Preserve exact captured bytes so the SHA-256 manifest survives checkout.
-simulation/** -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof

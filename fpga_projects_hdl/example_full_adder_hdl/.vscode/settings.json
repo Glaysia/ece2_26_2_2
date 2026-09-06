@@ -1,0 +1,5 @@
+{
+  "editor.semanticHighlighting.enabled": true,
+  "files.associations": { "*.v": "verilog", "*.sv": "systemverilog" },
+  "search.exclude": { "build/**": true }
+}

@@ -1,0 +1,8 @@
+/build/
+/.slang/local/
+*.log
+*.jou
+*.pb
+*.wdb
+/.Xil/
+/xsim.dir/
