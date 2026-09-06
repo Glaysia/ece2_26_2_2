@@ -5,8 +5,8 @@
       "label": "HDL: Check tools",
       "type": "process",
       "command": "powershell.exe",
-      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/check-tools.ps1"],
-      "options": { "cwd": "${workspaceFolder}" },
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/example_full_adder_hdl/scripts/check-tools.ps1"],
+      "options": { "cwd": "${workspaceFolder}/example_full_adder_hdl" },
       "problemMatcher": [],
       "presentation": { "reveal": "always", "panel": "dedicated", "clear": true }
     },
@@ -14,8 +14,8 @@
       "label": "HDL: Simulate full adder",
       "type": "process",
       "command": "powershell.exe",
-      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/simulate.ps1"],
-      "options": { "cwd": "${workspaceFolder}" },
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/example_full_adder_hdl/scripts/simulate.ps1"],
+      "options": { "cwd": "${workspaceFolder}/example_full_adder_hdl" },
       "problemMatcher": [],
       "group": { "kind": "build", "isDefault": true },
       "presentation": { "reveal": "always", "panel": "dedicated", "clear": true }

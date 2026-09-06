@@ -1,6 +1,0 @@
-{
-  "folders": [{ "path": "." }],
-  "extensions": {
-    "recommendations": ["Hudson-River-Trading.vscode-slang", "lramseyer.vaporview"]
-  }
-}

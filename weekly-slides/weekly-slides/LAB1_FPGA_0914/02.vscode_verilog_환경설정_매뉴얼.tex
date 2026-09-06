@@ -165,25 +165,26 @@ xsim -version
 \begin{frame}[fragile]{3. GitHub에서 예제 받기}
 예제를 저장할 상위 폴더에서 다음 명령을 실행한다.
 \begin{lstlisting}
-git clone https://github.com/Glaysia/ece2_26_2_2.git
+git clone --branch v1.0.0 --depth 1 https://github.com/Glaysia/ece2_26_2_2.git
 cd ece2_26_2_2
 \end{lstlisting}
 \begin{itemize}
-\item 첫 줄은 수업 예제 저장소를 내려받는다.
-\item 두 번째 줄은 내려받은 저장소 폴더로 이동한다.
+\item \texttt{v1.0.0} 태그로 고정된 수업 자료와 예제를 내려받는다.
+\item 마지막 줄은 내려받은 저장소 폴더로 이동한다.
+\item 태그로 받으면 나오는 \texttt{detached HEAD} 안내는 오류가 아니다.
 \end{itemize}
 \source{https://github.com/Glaysia/ece2_26_2_2}{수업 예제: GitHub 저장소 열기}
 \end{frame}
 
-\begin{frame}[fragile]{3. 프로젝트 폴더를 정확히 열기}
+\begin{frame}[fragile]{3. 수업 워크스페이스 열기}
 저장소 루트에서 실행한다.\begin{lstlisting}
-cd fpga_projects_hdl/example_full_adder_hdl
-code example_full_adder_hdl.code-workspace
+code ece2_26_2_2.code-workspace
 \end{lstlisting}\begin{itemize}
-\item GUI: File → Open Workspace from File…에서 \texttt{.code-workspace} 선택
-\item 또는 File → Open Folder…에서 \texttt{example\_full\_adder\_hdl} 선택
+\item GUI: File → Open Workspace from File…에서 저장소 루트의
+\texttt{ece2\_26\_2\_2.code-workspace}를 선택한다.
+\item HDL 프로젝트별 워크스페이스 파일은 필요하지 않다.
 \item 수업 예제임을 확인하고 작업 영역 신뢰를 선택한다.
-\end{itemize}\checkline{탐색기 최상위에 src, sim, scripts, .vscode가 보인다.}
+\end{itemize}\checkline{탐색기의 fpga\_projects\_hdl 아래에서 example\_full\_adder\_hdl을 펼친다.}
 \end{frame}
 
 \begin{frame}[fragile]{3. 예제 파일의 역할}
@@ -308,7 +309,7 @@ a & b & carry\_in & carry\_out & sum\\\hline
 \item Vivado 도구 세 개의 경로와 버전을 확인한다.
 \item Ctrl+Shift+B → HDL: Simulate full adder
 \item 또는 Tasks: Run Task에서 같은 시뮬레이션 작업을 선택한다.
-\end{itemize}\checkline{작업이 없으면 example\_full\_adder\_hdl 폴더를 열었는지 확인한다.}
+\end{itemize}\checkline{작업이 없으면 수업 워크스페이스와 작업 설정의 등록 위치를 확인한다.}
 \end{frame}
 
 \begin{frame}[fragile]{7. 성공 결과 확인}
@@ -323,7 +324,8 @@ PASS: all 8 full-adder input combinations
 \end{frame}
 
 \begin{frame}[fragile]{7. 터미널에서 직접 실행할 때}
-프로젝트 폴더의 PowerShell에서 실행한다.\begin{lstlisting}
+저장소 루트의 PowerShell에서 예제 폴더로 이동한 뒤 실행한다.\begin{lstlisting}
+cd example/fpga_projects_hdl/example_full_adder_hdl
 powershell.exe -NoProfile -ExecutionPolicy Bypass `
   -File scripts/check-tools.ps1
 powershell.exe -NoProfile -ExecutionPolicy Bypass `
@@ -421,7 +423,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 \small
 \begin{tabular}{p{3.5cm}p{9.5cm}}
 \textbf{증상} & \textbf{확인할 것}\\\hline
-작업 메뉴가 없음 & 예제 폴더 자체 또는 .code-workspace를 열었는가?\\[0.25cm]
+작업 메뉴가 없음 & 수업 워크스페이스와 작업 설정의 등록 위치를 확인했는가?\\[0.25cm]
 컴파일 실패 & compile.txt의 첫 오류, 세미콜론 복원 여부\\[0.25cm]
 모듈 연결 실패 & elaborate.txt의 최상위·모듈 연결 오류\\[0.25cm]
 PASS가 없음 & simulation.txt의 실패 입력·예상값·실제값\\[0.25cm]
