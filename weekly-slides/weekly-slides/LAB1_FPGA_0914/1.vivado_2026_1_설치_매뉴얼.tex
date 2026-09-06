@@ -401,6 +401,22 @@ slang-server가 XSim 실행 파일을 대신하지는 않는다.
 계정 정보·라이선스 내용·Host ID는 가린다.
 \end{frame}
 
+\begin{frame}{설치 후 문제 해결: 한글 이름}
+\begin{itemize}
+\item \textbf{사용자명·장치 이름에 한글이 포함된 경우}\\
+Vivado와 관련 도구가 정상 작동하지 않을 수 있다.
+\item PowerShell에서 \texttt{whoami}를 실행해 이름을 확인한다.\\
+로컬 계정은 \texttt{장치이름\textbackslash 사용자명} 형태로 출력된다.\\
+장치 이름만 따로 확인하려면 \texttt{hostname}을 실행한다.
+\item 한글 장치 이름은 영문으로 변경하고 재부팅한다.\\
+한글 사용자명은 영문 이름의 새 Windows 계정으로 해결한다.
+\item 계정의 표시 이름만 바꿔도 사용자 폴더 경로는 남을 수 있다.\\
+기존 사용자 폴더의 이름을 탐색기에서 직접 바꾸지 않는다.
+\end{itemize}
+\vspace{0.25cm}
+\textbf{설치 후에도 해결할 수 있다.} 문제가 생기면 이름부터 확인한다.
+\end{frame}
+
 \begin{frame}{설치 완료 기준}
 \begin{enumerate}
 \item Vivado 2026.1이 라이선스 오류 없이 열린다.
