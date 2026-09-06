@@ -1,0 +1,17 @@
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.synctex(busy)
+build-console.txt
+simulation/verification-console.txt
+__pycache__/
+simulation/**/xsim.dir/
+simulation/**/.Xil/
+simulation/**/*.pb
+simulation/**/*.wdb
+simulation/**/*.jou
+# Keep the deliverable and the exact waveform evidence for this example.
+!example_project_pre_lab.pdf
+!simulation/exp*/top_main.vcd

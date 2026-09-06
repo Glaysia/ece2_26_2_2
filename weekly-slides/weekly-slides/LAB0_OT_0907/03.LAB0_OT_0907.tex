@@ -216,7 +216,7 @@ LAB1 10개 · LAB2 8개 · LAB3 7개 모두 같은 방식으로 운영합니다.
 
 \begin{frame}{학기 구성}
 \begin{itemize}
-\item 9/7 OT / 10/5 휴강
+\item 9/7 OT , 10/5 휴강
 \item FPGA 새 실험 3주: 9/14\textasciitilde{}9/28 / 보완: 10/12 전반부
 \item STM32 3.5주: 10/12 후반부, 10/19\textasciitilde{}11/2
 \item 프로젝트 6주: 11/9\textasciitilde{}12/14
@@ -231,7 +231,7 @@ LAB1 10개 · LAB2 8개 · LAB3 7개 모두 같은 방식으로 운영합니다.
 \item 9/14 LAB1: 조합논리 10개 --- 연산·선택·부호화·표시
 \item 9/21 LAB2: 순차논리 8개 --- 계수·저장·상태·표시 스캔
 \item 9/28 LAB3: 응용·통신 7개 --- 주변장치 제어와 PC--FPGA UART
-\item 10/5: 휴강
+\item 10/5: 휴강(개천절 대체공휴일)
 \item 10/12 LAB4: 전반부 FPGA 보완·확인 / 후반부 STM32 도입
 \end{itemize}
 \vspace{0.2cm}
@@ -333,19 +333,59 @@ NOT와 감산의 기초는 논리 게이트·4비트 감산기에서 함께 설�
 \begin{frame}{프로젝트 주제 선정}
 \begin{itemize}
 \item 2인 1조로 진행하며 가능한 경우 FPGA와 STM32를 모두 사용한다.
-\item 조교가 제시하는 약 10\textasciitilde{}20개 예시에서 선택하거나 자유주제를 제안한다.
+\item 조교가 제시하는 난이도별 3개씩 총 9개 예시에서 선택하거나 자유주제를 제안한다.
 \item 자유주제는 11/16 제안서 제출 전까지 범위와 난이도를 조교와 협의한다.
 \item 요구사항, FPGA·MCU 역할과 통신 인터페이스를 정의한다.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{프로젝트 주제 예시}
+% 난이도는 최소 구현 범위 기준. VGA/Pong은 보드 동작 미확인으로 제외.
+\begin{frame}{프로젝트 예시: 난이도 하}
+\footnotesize
+\setlength{\tabcolsep}{5pt}\renewcommand{\arraystretch}{1.65}
+\begin{tabular}{@{}p{3.8cm}p{4.4cm}p{4.2cm}@{}}
+\textbf{주제} & \textbf{FPGA 역할} & \textbf{STM32 역할}\\\hline
+스톱워치·랩타이머 & 시간 계수, 버튼 디바운싱 & 랩 기록 관리, UART 출력\\
+반응속도 측정 게임 & 의사난수 대기, 반응 시간 측정 & 결과 저장·통계·메뉴\\
+주파수·주기 측정기 & 에지 계수, 시간 기준 생성 & 측정값 계산·표시\\
+\end{tabular}
+\par\vspace{0.4cm}\small
+기본 입력·계수·표시부터 완성한다. 측정 범위와 분해능을 정하고 기준값과 비교한다.
+\end{frame}
+
+\begin{frame}{프로젝트 예시: 난이도 중}
+\footnotesize
+\setlength{\tabcolsep}{5pt}\renewcommand{\arraystretch}{1.65}
+\begin{tabular}{@{}p{3.8cm}p{4.4cm}p{4.2cm}@{}}
+\textbf{주제} & \textbf{FPGA 역할} & \textbf{STM32 역할}\\\hline
+다채널 PWM 발생기 & 8--16채널 PWM 병렬 생성 & 채널별 주파수·듀티 설정\\
+GPIO 확장 칩 만들기 & GPIO 입출력, 제어 레지스터 & SPI로 방향·출력 설정\\
+교통신호 제어 모형 & 여러 교차로 FSM, 타이머 & 운전 모드·시간 설정\\
+\end{tabular}
+\par\vspace{0.4cm}\small
+여러 채널·상태를 동시에 처리한다. 통신 명령과 동시 입력·reset 동작까지 검증한다.
+\end{frame}
+
+\begin{frame}{프로젝트 예시: 난이도 상}
+\footnotesize
+\setlength{\tabcolsep}{5pt}\renewcommand{\arraystretch}{1.65}
+\begin{tabular}{@{}p{3.8cm}p{4.4cm}p{4.2cm}@{}}
+\textbf{주제} & \textbf{FPGA 역할} & \textbf{STM32 역할}\\\hline
+8채널 로직 애널라이저 & 동시 샘플링, 트리거, 버퍼 & 수집 설정, PC 전송\\
+DC모터 속도 제어기 & PWM, 엔코더 펄스 계수 & PI 제어, 목표 속도 설정\\
+UART/SPI 분석기 & 외부 신호 캡처·디코딩 & 결과 표시·저장·PC 전송\\
+\end{tabular}
+\par\vspace{0.4cm}\small
+분석기는 UART 또는 SPI 하나부터 시작한다. 모터는 별도 드라이버·전원·엔코더를 준비한다.
+\end{frame}
+
+\begin{frame}{예시에서 우리 팀의 요구사항으로}
 \begin{itemize}
-\item 로직 분석기 / 디지털 주파수 측정기
-\item 다채널 PWM 제어기 / 모터·엔코더 제어기
-\item UART/SPI 프로토콜 분석기 / FPGA GPIO 확장기
-\item 신호 발생기 / VGA 출력
-\item 센서 인터페이스 / 데이터 수집 시스템
+\item 상·중·하는 최소 구현의 상대 난이도다. 기능·속도·채널 수에 따라 달라진다.
+\item 쉬운 주제는 STM32만으로도 가능하다. FPGA에 맡길 병렬 처리·타이밍 기능을 설명한다.
+\item 두 장치 사이의 UART/SPI 등 인터페이스와 명령·데이터 형식을 정한다.
+\item 필요한 모터·드라이버·엔코더 등 추가 부품의 확보 가능성을 먼저 확인한다.
+\item 기본 기능을 완성한 뒤 확장한다. 시연할 입력과 성공 판정 기준을 제안서에 적는다.
 \end{itemize}
 \end{frame}
 
