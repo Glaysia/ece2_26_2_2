@@ -22,8 +22,8 @@
 \fancyhead[R]{\small 실험 전 보고서 · 예시}
 \fancyfoot[C]{\small\thepage}
 \newcommand{\topic}[2]{\clearpage{\Large\bfseries\color{UOSBlue}#1\par}\smallskip{\small #2\par}\medskip}
-\newcommand{\sourcefig}[3]{\begin{center}\includegraphics[width=#3\textwidth]{evidence/exp#1-source-print.png}\captionof{figure}{#2}\end{center}}
-\newcommand{\wavefig}[2]{\begin{center}\includegraphics[width=\textwidth]{evidence/exp#1-wave-print.png}\captionof{figure}{#2}\end{center}}
+\newcommand{\sourcefig}[3]{\begin{center}\includegraphics[width=\linewidth]{evidence/exp#1-source-print.png}\captionof{figure}{#2}\end{center}}
+\newcommand{\wavefig}[2]{\begin{center}\includegraphics[width=\linewidth]{evidence/exp#1-wave-print.png}\captionof{figure}{#2}\end{center}}
 \begin{document}
 \begin{titlepage}
 \centering
@@ -121,158 +121,176 @@ generate 블록이 해당 회로를 선택한다. 사용하지 않는 출력은 
 \end{multicols}
 
 \topic{2. 실험 16 · 4비트 업/다운 카운터}{설계 파일: counter.v / 유효 신호: clk, rst, up, q[3:0]}
-\begin{multicols}{2}
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{설계와 예상 결과}\par
 리셋 시 $q=0$이며 상승 에지마다 up=1이면 1 증가, up=0이면 1 감소한다.
 4비트 저장값이므로 $q_{k+1}=(q_k\pm1)\bmod16$이다.
 증가 시 F에서 0, 감소 시 0에서 F로 돌아와야 한다.
 리셋 해제 후 25 ns에서 1, 175 ns에서 0을 예상한다.
-\par\columnbreak\noindent
+
+\sourcefig{16}{상승 에지의 증가·감소와 비동기 리셋을 기술한 코드.}{0.95}
+\textbf{보드에서 확인할 것}\par
+LED 비트 순서를 확인하고 낮은 속도의 계수 조건으로 방향과 순환을 관찰한다.
+외부 스위치 입력은 동기화와 디바운스가 필요한지 확인한다.
+\end{minipage}\hfill
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{사전 검증과 파형 해석}\par
 그림의 q는 16진수로 표시된다. 초기 1 $\mu$s에서 증가와 순환이 보인다.
 50,020 ns의 방향 변경 직전 q=8이며 다음 상승 에지 50,025 ns에서 7이 된다.
 전체 VCD에서 증가·감소 및 경계 순환을 확인했고 종료값은 C다.
 방향 전환은 이 초기 확대 그림의 바깥 구간에 있다.
-\end{multicols}
-\sourcefig{16}{상승 에지의 증가·감소와 비동기 리셋을 기술한 코드.}{0.95}
+
 \wavefig{16}{VaporView에서 확인한 카운터의 초기 구간. q는 0, 1, 2, \ldots, F, 0 순으로 변한다.}
-\begin{multicols}{2}
-\textbf{보드에서 확인할 것}\par
-LED 비트 순서를 확인하고 낮은 속도의 계수 조건으로 방향과 순환을 관찰한다.
-외부 스위치 입력은 동기화와 디바운스가 필요한지 확인한다.
-\par\columnbreak\noindent
 \textbf{추가 시험}\par
 계수 중 비동기 리셋을 인가하여 즉시 0이 되는지 확인하고,
 리셋 해제 후 첫 상승 에지의 동작을 검사한다.
-\end{multicols}
+\end{minipage}
+
 
 \topic{3. 실험 17 · 클록 분주기}{설계 파일: clock\_divider.v / 유효 출력: o\_100, o\_50, o\_10, o\_2}
-\begin{multicols}{2}
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{설계와 예상 결과}\par
 o\_100은 리셋 해제 시 입력 클록을 전달한다.
 나머지 출력은 각각 1, 5, 25개 상승 에지마다 반전한다.
 출력 한 주기는 반전 두 번이므로 분주비는 각각 2, 10, 50이다.
 입력이 100 Hz일 때 출력 이름대로 100, 50, 10, 2 Hz가 된다.
-\par\columnbreak\noindent
+
+\sourcefig{17}{계수 종료값 4와 24에서 출력을 반전하고 카운터를 0으로 되돌린다.}{0.90}
+\textbf{보드 검증 계획}\par
+입력의 실제 주파수를 먼저 측정하고 각 출력 주파수를 비교한다.
+파형의 듀티비와 리셋 상태도 확인한다.
+\end{minipage}\hfill
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{사전 검증과 파형 해석}\par
 10 ns 입력에 대한 출력 주기는 10, 20, 100, 500 ns다.
 VCD의 매 상승 에지에서 분주 출력을 확인했으며 계산한 비율과 일치했다.
 o\_10의 첫 상승은 65 ns, o\_2의 첫 상승은 265 ns다.
 서로 다른 주기를 보려면 리셋 직후 한 펄스만 비교하지 않고 반복 간격을 읽는다.
-\end{multicols}
-\sourcefig{17}{계수 종료값 4와 24에서 출력을 반전하고 카운터를 0으로 되돌린다.}{0.90}
+
 \wavefig{17}{입력 대비 1, 2, 10, 50배인 출력 주기. 이번 시간축의 출력은 Hz 이름과 다르다.}
-\begin{multicols}{2}
-\textbf{보드 검증 계획}\par
-입력의 실제 주파수를 먼저 측정하고 각 출력 주파수를 비교한다.
-파형의 듀티비와 리셋 상태도 확인한다.
-\par\columnbreak\noindent
 \textbf{설계상 주의점}\par
 이번 출력은 관찰용 분주 신호다. 다른 레지스터의 클록으로 사용할 경우
 클록 배선·타이밍 제약을 별도로 설계해야 한다.
-\end{multicols}
+\end{minipage}
+
 
 \topic{4. 실험 18 · 스텝모터 위상 순서}{설계 파일: stepper.v / 유효 출력: phase[3:0]}
-\begin{multicols}{2}
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{설계와 예상 결과}\par
 2비트 상태를 0, 1, 2, 3으로 순환시키고 조합논리로 위상을 출력한다.
 상태 0부터 0011, 0110, 1100, 1001로 대응한다.
 각 상태에서 두 출력이 활성화되며 네 번의 상승 에지 후 원래 위상으로 돌아온다.
-\par\columnbreak\noindent
+
+\sourcefig{18}{상태 레지스터와 4상 출력의 대응. 리셋은 상태를 0으로 설정한다.}{0.95}
+\textbf{보드 검증 계획}\par
+모터 드라이버의 입력 순서·활성 레벨과 코일 연결을 확인한다.
+모터 전류는 적절한 드라이버로 공급하고 위상 전환 주기를 실제 모터에 맞춘다.
+\end{minipage}\hfill
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{사전 검증과 파형 해석}\par
 리셋 상태의 phase는 0이 아니라 3이다.
 25, 35, 45, 55 ns에서 각각 6, C, 9, 3이 관측된다.
 한 위상은 10 ns, 네 위상의 반복 주기는 40 ns다.
 전체 실행에서 이 순서가 유지됨을 확인했다. 이는 구동 논리 검증이며 모터의 회전을 관측한 결과는 아니다.
-\end{multicols}
-\sourcefig{18}{상태 레지스터와 4상 출력의 대응. 리셋은 상태를 0으로 설정한다.}{0.95}
+
 \wavefig{18}{phase의 16진수 표현 3 → 6 → C → 9 → 3. 비트 순서는 코드의 phase[3:0] 기준이다.}
-\begin{multicols}{2}
-\textbf{보드 검증 계획}\par
-모터 드라이버의 입력 순서·활성 레벨과 코일 연결을 확인한다.
-모터 전류는 적절한 드라이버로 공급하고 위상 전환 주기를 실제 모터에 맞춘다.
-\par\columnbreak\noindent
 \textbf{추가 시험}\par
 실행 중 리셋에 따른 위상 복귀를 확인한다.
 현재 회로에는 역회전·정지 입력이 없으므로 해당 기능을 구현했다고 해석하지 않는다.
-\end{multicols}
+\end{minipage}
+
 
 \topic{5. 실험 19 · 피에조 단일 음 발생}{설계 파일: tone.v / 유효 출력: sound}
-\begin{multicols}{2}
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{설계와 예상 결과}\par
 반주기 계수값 $H$만큼 입력 에지를 세고 sound를 반전한다.
 목표 294 Hz, 설정 클록 1 MHz에서 정수 반올림으로 $H=1701$이다.
 따라서 실제 1 MHz 입력일 때 $f=10^6/(2H)\simeq293.945$ Hz를 예상한다.
-\par\columnbreak\noindent
+
+\sourcefig{19}{공통 반주기 카운터와 294 Hz 설정을 사용하는 피에조 모듈.}{0.90}
+\textbf{보드 검증 계획}\par
+실제 입력 클록을 파라미터와 일치시킨 뒤 주기와 듀티비를 계측한다.
+피에조의 종류와 구동 조건을 확인한 후 소리를 관찰한다.
+\end{minipage}\hfill
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{사전 검증과 파형 해석}\par
 이번 10 ns 클록에서는 반주기가 17,010 ns, 주기가 34,020 ns다.
 sound는 17,025 ns에서 처음 1이 되고 34,035 ns에서 0이 된다.
 그 뒤 전이 간격도 17,010 ns로 일치한다.
 key와 up의 변경은 이 실험의 음 출력에 영향을 주지 않는다.
-\end{multicols}
-\sourcefig{19}{공통 반주기 카운터와 294 Hz 설정을 사용하는 피에조 모듈.}{0.90}
+
 \wavefig{19}{전체 실행 구간의 sound. 시간축은 ps이며 17,010,000 ps마다 반전한다.}
-\begin{multicols}{2}
-\textbf{보드 검증 계획}\par
-실제 입력 클록을 파라미터와 일치시킨 뒤 주기와 듀티비를 계측한다.
-피에조의 종류와 구동 조건을 확인한 후 소리를 관찰한다.
-\par\columnbreak\noindent
 \textbf{추가 시험}\par
 공통 tone 모듈의 enable=0과 재활성화를 별도로 시험한다.
 출력의 정수 분주 오차와 실측 클록 오차를 구분하여 기록한다.
-\end{multicols}
+\end{minipage}
+
 
 \topic{6. 실험 20 · 키 입력에 따른 피아노}{설계 파일: piano.v, tone.v / 유효 신호: key[7:0], sound}
-\begin{multicols}{2}
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{설계와 예상 결과}\par
 key의 one-hot 입력을 8개 음의 반주기 값에 대응시킨다.
 80은 262 Hz, 40은 294 Hz 설정이며 각각 $H=1908,1701$이다.
 실제 1 MHz 입력이면 약 262.055, 293.945 Hz다.
 입력이 없거나 여러 비트가 켜지면 default 분기로 무음 처리한다.
-\par\columnbreak\noindent
+
+\sourcefig{20}{key[7]부터 낮은 도·레·미·파·솔·라·시·높은 도에 대응하는 정수 분주값.}{0.90}
+\textbf{추가 시뮬레이션}\par
+나머지 6개 음과 동시 키 입력은 이번 테스트벤치에 없었다.
+각 키의 정상 주기, 잘못된 조합의 무음, 키 해제·재입력을 추가 확인한다.
+\end{minipage}\hfill
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{사전 검증과 파형 해석}\par
 이번 시나리오는 80 → 40 → 00이다.
 초기 반주기는 19,080 ns이고 50,020 ns 이후 17,010 ns로 바뀐다.
 키 변경 시 내부 count를 초기화하지 않으므로 새 키 입력 시각에서 반주기를 다시 재면 안 된다.
 00 입력 후 첫 상승 에지인 100,025 ns에서 sound=0을 확인했다.
-\end{multicols}
-\sourcefig{20}{key[7]부터 낮은 도·레·미·파·솔·라·시·높은 도에 대응하는 정수 분주값.}{0.90}
+
 \wavefig{20}{key의 80 → 40 전환 후 주기 감소와 00 입력 후 무음 상태.}
-\begin{multicols}{2}
-\textbf{추가 시뮬레이션}\par
-나머지 6개 음과 동시 키 입력은 이번 테스트벤치에 없었다.
-각 키의 정상 주기, 잘못된 조합의 무음, 키 해제·재입력을 추가 확인한다.
-\par\columnbreak\noindent
 \textbf{보드 검증 계획}\par
 키의 실제 활성 레벨, 동기화와 접점 바운스를 확인한다.
 음 전환 시 첫 펄스의 길이가 달라지는 현상과 정상상태의 주기를 구분해 측정한다.
-\end{multicols}
+\end{minipage}
+
 
 \topic{7. 실험 21 · MM:SS 시계와 표시 스캔}{설계 파일: watch.v / 유효 출력: 시간 4자리, seg\_com, seg\_data}
-\begin{multicols}{2}
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{설계와 예상 결과}\par
 1,000개 상승 에지마다 초를 증가시키고 00:00부터 59:59까지 계수한다.
 초의 일의 자리 9에서 십의 자리로 올림하고, 초 59에서 분으로 올림한다.
 scan은 매 에지마다 다음 표시 자리를 선택한다. 네 자리 전체 스캔에는 4클록이 필요하다.
-\par\columnbreak\noindent
+
+\sourcefig{21}{시계의 계수와 자리올림을 담당하는 순차 블록 발췌. 표시 디코더는 같은 파일의 아래에 있다.}{0.90}
+\textbf{표시 인터페이스}\par
+자리 선택은 active-low이며 F7, FB, FD, FE 순서다.
+세그먼트는 \{a,b,c,d,e,f,g,dp\} active-high이며 숫자 0은 FC, 1은 60이다.
+리셋 때는 자리 FF, 데이터 00으로 표시를 끈다.
+\end{minipage}\hfill
+\begin{minipage}[t]{\dimexpr(\textwidth-\columnsep)/2\relax}
+\vspace{0pt}
 \textbf{사전 검증과 파형 해석}\par
 표시 초의 첫 증가는 10,015 ns이고 이후 간격은 10,000 ns다.
 90,015 ns에 00:09, 100,015 ns에 00:10이 된다.
 매 에지의 네 자리 값과 선택 신호·세그먼트 코드를 검사했다.
 전체 구간 그림에서는 빠른 스캔 신호가 촘촘하게 뭉쳐 보인다.
-\end{multicols}
-\sourcefig{21}{시계의 계수와 자리올림을 담당하는 순차 블록 발췌. 표시 디코더는 같은 파일의 아래에 있다.}{0.90}
+
 \wavefig{21}{sec\_ones의 0--9 순환과 끝부분의 sec\_tens=1. 종료 시 표시값은 00:10이다.}
-\begin{multicols}{2}
-\textbf{표시 인터페이스}\par
-자리 선택은 active-low이며 F7, FB, FD, FE 순서다.
-세그먼트는 \{a,b,c,d,e,f,g,dp\} active-high이며 숫자 0은 FC, 1은 60이다.
-리셋 때는 자리 FF, 데이터 00으로 표시를 끈다.
-\par\columnbreak\noindent
 \textbf{추가 시험·보드 검증}\par
 00:59 → 01:00 및 59:59 → 00:00은 별도 장시간 시험이 필요하다.
 보드에서는 실제 1 kHz 기준과 자리·세그먼트 배선을 확인하고 깜박임과 잔상을 관찰한다.
-\end{multicols}
+\end{minipage}
+
 
 \topic{8. 사전 검증 정리와 실험 수행 계획}{시뮬레이션에서 확인한 사실과 다음 검증 항목}
 \begin{multicols}{2}
