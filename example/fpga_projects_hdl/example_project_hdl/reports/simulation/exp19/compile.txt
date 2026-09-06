@@ -1,0 +1,17 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/example_project_hdl/reports/simulation/exp19/clock_divider.v" into library work
+INFO: [VRFC 10-311] analyzing module lab5_clock_divider
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/example_project_hdl/reports/simulation/exp19/counter.v" into library work
+INFO: [VRFC 10-311] analyzing module lab5_counter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/example_project_hdl/reports/simulation/exp19/piano.v" into library work
+INFO: [VRFC 10-311] analyzing module lab5_piano
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/example_project_hdl/reports/simulation/exp19/stepper.v" into library work
+INFO: [VRFC 10-311] analyzing module lab5_stepper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/example_project_hdl/reports/simulation/exp19/tb_top_main.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_top_main
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/example_project_hdl/reports/simulation/exp19/tone.v" into library work
+INFO: [VRFC 10-311] analyzing module lab5_tone
+INFO: [VRFC 10-311] analyzing module lab5_piezo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/example_project_hdl/reports/simulation/exp19/top_main.v" into library work
+INFO: [VRFC 10-311] analyzing module top_main
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/example_project_hdl/reports/simulation/exp19/watch.v" into library work
+INFO: [VRFC 10-311] analyzing module lab5_watch
