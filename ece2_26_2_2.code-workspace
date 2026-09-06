@@ -1,13 +1,13 @@
 {
 	"folders": [
 		{
+			"path": "example/fpga_projects_hdl/example_project_hdl"
+		},
+		{
+			"path": "example/mcu_projects_c/example_project_c"
+		},
+		{
 			"path": "."
-		},
-		{
-			"path": "example/mcu_project_c"
-		},
-		{
-			"path": "example/fpga_project_hdl"
 		}
 	],
 	"settings": {},

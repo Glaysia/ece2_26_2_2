@@ -1,0 +1,24 @@
+\frametitle{if와 while은 어떻게 동작할까?}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{lstlisting}[language=C]
+int count = 0;
+while (count < 10) {
+    if (count < 5) {
+        // Action A
+    } else {
+        // Action B
+    }
+    count = count + 1;
+}
+\end{lstlisting}
+\end{column}
+\begin{column}{0.47\textwidth}
+\begin{itemize}
+\item \texttt{count}는 어디에 기억될까?
+\item 5보다 작은지는 무엇이 판단할까?
+\item A와 B는 어떻게 선택할까?
+\item 다음 반복의 값은 언제 바뀔까?
+\end{itemize}
+\end{column}
+\end{columns}

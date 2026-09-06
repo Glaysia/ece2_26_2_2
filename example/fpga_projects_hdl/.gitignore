@@ -1,2 +1,43 @@
+# Vivado generated directories (keep .xpr and .srcs sources).
+.Xil/
+*.cache/
+*.runs/
+*.sim/
+*.hw/
+*.gen/
+*.ip_user_files/
+xsim.dir/
+
+# Tool logs and session files.
+*.log
+*.jou
+*.pb
+*.str
+*.backup.jou
+*.backup.log
+
+# Simulation executables and generated waveforms.
 lab5_sim
+*.vvp
 *.vcd
+*.wdb
+*.fst
+
+# LaTeX report build products (keep .tex, .bib and screenshot assets).
+**/reports/*.aux
+**/reports/*.log
+**/reports/*.out
+**/reports/*.toc
+**/reports/*.lof
+**/reports/*.lot
+**/reports/*.fls
+**/reports/*.fdb_latexmk
+**/reports/*.synctex*
+**/reports/*.xdv
+**/reports/*.bbl
+**/reports/*.blg
+**/reports/*.bcf
+**/reports/*.run.xml
+**/reports/*.pdf
+**/reports/build/
+**/reports/out/
