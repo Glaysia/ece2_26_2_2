@@ -4,10 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "example/project1"
+			"path": "example/mcu_project_c"
 		},
 		{
-			"path": "example/vivado_project"
+			"path": "example/fpga_project_hdl"
 		}
 	],
 	"settings": {}
