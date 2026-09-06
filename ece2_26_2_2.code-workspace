@@ -10,5 +10,11 @@
 			"path": "example/fpga_project_hdl"
 		}
 	],
-	"settings": {}
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"Hudson-River-Trading.vscode-slang",
+			"lramseyer.vaporview"
+		]
+	}
 }
