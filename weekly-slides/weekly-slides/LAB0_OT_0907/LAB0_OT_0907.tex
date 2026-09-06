@@ -1,14 +1,14 @@
 % !TEX program = xelatex
 % 주차별 발표 자료 템플릿
-% 이 파일이 있는 폴더에서: xelatex -interaction=nonstopmode -halt-on-error LAB0_OT_0907.tex
-\documentclass[aspectratio=169,11pt]{beamer}
+% 이 파일의 폴더에서 xelatex -interaction=nonstopmode -halt-on-error LAB0_OT_0907.tex 를 두 번 실행한다.
+\documentclass[aspectratio=169,11pt,t]{beamer}
 
 \usepackage{fontspec}
 \usepackage{kotex}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{listings}
-\lstset{basicstyle=\ttfamily\small,keywordstyle=\color{UOSBlue}\bfseries,showstringspaces=false,columns=fullflexible,keepspaces=true}
+\lstset{basicstyle=\ttfamily\small,keywordstyle=\color{UOSBlue}\bfseries,commentstyle=\normalfont\ttfamily\small,showstringspaces=false,columns=fullflexible,keepspaces=true}
 \usetikzlibrary{positioning}
 
 % D2Coding을 저장소에 함께 넣어, 별도 설치 없이 같은 글꼴로 빌드한다.
@@ -36,19 +36,20 @@
 % 기준 자료처럼 하단에 소속과 페이지 번호를 표시한다.
 \setbeamertemplate{footline}{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=west] at (0.40,0.26)
-      {\includegraphics[width=1.52cm]{../../assets/uos-logo-blue.png}};
+    \node[anchor=south,inner sep=0pt] at ([yshift=0.52cm]current page.south)
+      {\includegraphics[width=2.64cm,trim=58bp 385bp 58bp 385bp,clip]{../../assets/uos-logo-horizontal.png}};
     \node[anchor=east,text=gray,font=\scriptsize]
-      at (15.65,0.18) {\insertframenumber};
+      at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
   \end{tikzpicture}%
   \vspace{0.38cm}}
 
 \newcommand{\week}{LAB 0}
 \newcommand{\course}{전자전기컴퓨터설계실험Ⅱ}
-\newcommand{\presenter}{서울시립대학교}
+\newcommand{\topic}{오리엔테이션}
+\newcommand{\presenter}{이해리}
 \newcommand{\presentationdate}{2026. 09. 07.}
 
-\title{\course\\\week. 오리엔테이션}
+\title{\course\\\week. \topic}
 \author{\presenter}
 \date{\presentationdate}
 
@@ -59,12 +60,12 @@
 \setbeamercolor{background canvas}{bg=UOSBlue}
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=west,text=white,font=\bfseries\fontsize{27}{33}\selectfont,align=left]
-      at ([xshift=1.15cm,yshift=1.3cm]current page.west) {\course\\\week. 오리엔테이션};
-    \node[anchor=west] at ([xshift=1.15cm,yshift=-2.35cm]current page.west)
-      {\includegraphics[width=1.85cm]{../../assets/uos-logo-white.png}};
+    \node[anchor=north west,inner sep=0pt,text=white,font=\bfseries\fontsize{27}{33}\selectfont,align=left]
+      at ([xshift=1.53cm,yshift=-1.5cm]current page.north west) {\course\\\week. \topic};
+    \node[anchor=south west,inner sep=0pt] at ([xshift=1.38cm,yshift=0.98cm]current page.south west)
+      {\includegraphics[width=1.45cm]{../../assets/uos-logo-white.png}};
     \node[anchor=south east,text=white,font=\small\bfseries,align=right]
-      at ([xshift=-1.1cm,yshift=1.1cm]current page.south east)
+      at ([xshift=-1.38cm,yshift=0.98cm]current page.south east)
       {\presentationdate\\\presenter};
   \end{tikzpicture}
 \end{frame}}
@@ -83,6 +84,7 @@
 \end{enumerate}
 \end{frame}
 
+\section{분기와 반복을 회로로 이해하기}
 \begin{frame}[fragile]{if와 while은 어떻게 동작할까?}
 \begin{columns}[T]
 \begin{column}{0.48\textwidth}
@@ -144,6 +146,7 @@ PWM & 신호의 주기와 high 구간 제어 \\
 \end{tabular}
 \end{frame}
 
+\section{FPGA와 STM32}
 \begin{frame}{FPGA: 디지털 회로 구성}
 \begin{itemize}
 \item Verilog HDL로 회로의 동작과 연결을 기술한다.
@@ -213,17 +216,7 @@ PWM & 신호의 주기와 high 구간 제어 \\
 분야별 전문 이론은 추가로 배우며, 이번에는 구현과 검증의 기초를 다룹니다.
 \end{frame}
 
-\begin{frame}{AI 사용과 설계의 책임}
-\begin{itemize}
-\item 생성형 AI를 코드 작성과 수정에 활용할 수 있다.
-\item 입력·출력, 초기 상태, 동작 조건은 먼저 정의한다.
-\item 생성한 코드를 실행하고 예상 결과와 대조한다.
-\item 파형과 계측 결과를 근거로 동작을 설명한다.
-\item 제출한 코드와 결과에 대한 책임은 작성자에게 있다.
-\end{itemize}
-\vspace{0.3cm}
-실험 확인 중 코드·신호·상태 전이에 대한 짧은 질문을 할 수 있습니다.
-\end{frame}
+
 
 \begin{frame}{이번 학기의 목표}
 \begin{enumerate}
@@ -235,6 +228,7 @@ PWM & 신호의 주기와 high 구간 제어 \\
 \end{enumerate}
 \end{frame}
 
+\section{실험과 프로젝트 운영}
 \begin{frame}{수업 운영}
 \begin{itemize}
 \item 수업시간: 월요일 14:00--18:00
@@ -283,6 +277,18 @@ FPGA 통신 모듈은 이후 STM32 통신 실습에서 연결합니다.
 \end{enumerate}
 \end{frame}
 
+\begin{frame}{AI 사용과 설계의 책임}
+\begin{itemize}
+\item 생성형 AI를 코드 작성과 수정에 활용할 수 있다.
+\item 입력·출력, 초기 상태, 동작 조건은 먼저 정의한다.
+\item 생성한 코드를 실행하고 예상 결과와 대조한다.
+\item 파형과 계측 결과를 근거로 동작을 설명한다.
+\item 제출한 코드와 결과에 대한 책임은 작성자에게 있다.
+\end{itemize}
+\vspace{0.3cm}
+실험 확인 중 코드·신호·상태 전이에 대한 짧은 질문을 할 수 있습니다.
+\end{frame}
+
 \begin{frame}{프로젝트 진행과 점검}
 \begin{itemize}
 \item 기획: 요구사항, 블록도, FPGA·MCU 역할 분담
@@ -295,6 +301,7 @@ FPGA 통신 모듈은 이후 STM32 통신 실습에서 연결합니다.
 작은 범위라도 안정적으로 동작하고, 설계 이유를 설명할 수 있어야 합니다.
 \end{frame}
 
+\section{보고서 제출과 평가}
 \begin{frame}{보고서 종류와 수량 — 기준안}
 \renewcommand{\arraystretch}{1.7}
 \begin{tabular}{p{0.28\textwidth}p{0.46\textwidth}r}
@@ -373,6 +380,7 @@ Lab 1~7 & 실험 전·후 보고서 각 1개 & 14개 \\
 % 기준 주차와 전·후 시간의 의도를 확인하기 전에는 확정값으로 안내하지 않는다.
 \end{frame}
 
+\section{개발환경과 다음 실습 준비}
 \begin{frame}{개발환경과 도구의 역할}
 \renewcommand{\arraystretch}{1.6}
 \begin{tabular}{p{0.33\textwidth}p{0.57\textwidth}}
@@ -420,3 +428,4 @@ Git / GitHub & 소스 버전 관리와 제출 버전 기록
 \end{frame}
 
 \end{document}
+
