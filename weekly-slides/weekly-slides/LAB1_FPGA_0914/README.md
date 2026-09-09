@@ -9,13 +9,13 @@
 | Vivado 설치 | [TeX](01.vivado_2026_1_설치_매뉴얼.tex) | [PDF](01.vivado_2026_1_설치_매뉴얼.pdf) |
 | VS Code Verilog 환경설정 | [TeX](02.vscode_verilog_환경설정_매뉴얼.tex) | [PDF](02.vscode_verilog_환경설정_매뉴얼.pdf) |
 | LAB1 목차·공통 안내 — 4:3, 5쪽 | [TeX](04.LAB1_00_CONTENTS.tex) | [PDF](04.LAB1_00_CONTENTS.pdf) |
-| 01 논리 게이트 — 레거시 Vivado, 69쪽 | [TeX](04.LAB1_01_LOGIC_GATES_LEGACY.tex) | [PDF](04.LAB1_01_LOGIC_GATES_LEGACY.pdf) |
+| 01 논리 게이트 — VS Code 사전 실습 + 레거시 Vivado, 101쪽 | [TeX](04.LAB1_01_LOGIC_GATES_LEGACY.tex) | [PDF](04.LAB1_01_LOGIC_GATES_LEGACY.pdf) |
 
 학생 배포용: [PDF 묶음 ZIP](04.LAB1_0910_PDF.zip). ZIP 전체를 풀고 `04.LAB1_00_CONTENTS.pdf`부터 연다. 각 PDF 좌하단의 ‘목차’는 같은 파일의 목차로 이동한다. 레거시 01에서는 2쪽의 실습 목차로 돌아간다. ‘전체 목차 PDF’는 별도 파일로 이동하는 링크다. 폴더 구조와 파일명을 유지한다. PDF 뷰어에 따라 외부 파일 링크 지원이 다르므로 링크가 동작하지 않으면 같은 폴더의 대상 PDF를 직접 연다.
 
-현재 묶음에는 목차·레거시 01·기존 Vivado 설치·VS Code 환경설정 PDF가 포함된다. 나머지 실습은 제작 후 추가한다. 레거시 01은 원본의 프로젝트 생성부터 비트스트림 기록·동작 확인까지 재구성했으며, 원본 화면은 새로 실행한 검증 결과를 뜻하지 않는다. [레거시 01 본문](sections/legacy_01_logic_gates.tex)과 [사진·원문 대응표](assets/legacy-01/README.md)를 함께 확인한다.
+현재 묶음에는 목차·레거시 01·기존 Vivado 설치·VS Code 환경설정 PDF가 포함된다. 01번은 [VS Code 사전 실습 32쪽](sections/vscode_01_logic_gates.tex)부터 시작한다. 새 창·workspace·확장 활성화·작업 선택·실행 로그·VaporView 파형·실험 전 레포트를 안내하며 [실행용 프로젝트와 workspace](../../../example/fpga_projects_hdl/LAB1/legacy/01_logic_gates/README.md)를 제공한다. 뒤의 [레거시 원문 69쪽](sections/legacy_01_logic_gates.tex)은 원본의 프로젝트 생성부터 보드 동작 확인까지 보존한다. [원문 대응표](assets/legacy-01/README.md)와 [새 캡처의 검증 범위](assets/vscode-01/README.md)를 구분한다. 나머지 21개 프로젝트의 상세 안내는 이후 추가한다.
 
-TeX는 `04.LAB1_번호_내용.tex` 형식으로 분리한다. [공통 서식](shared/lab1_preamble.tex)과 [목차 본문](sections/lab1_overview.tex)을 재사용한다. 기존 [통합 검토용 TeX](04.LAB1_COMB_0910.tex)는 같은 본문을 합쳐 확인하기 위한 용도다. 새 캡처 PNG는 로컬 빌드 자료로 Git에서 무시하며, 다른 장치의 TeX 재빌드는 요구하지 않는다. PDF와 ZIP을 배포·커밋한다.
+TeX는 `04.LAB1_번호_내용.tex` 형식으로 분리한다. [공통 서식](shared/lab1_preamble.tex)과 [목차 본문](sections/lab1_overview.tex)을 재사용한다. 중복된 COMB 통합 검토본은 사용하지 않는다. 새 캡처 PNG는 로컬 빌드 자료로 Git에서 무시하며, 다른 장치의 TeX 재빌드는 요구하지 않는다. PDF와 ZIP을 배포·커밋한다.
 
 PDF 빌드 후 [묶음 생성 스크립트](../../tools/package_lab1_pdfs.py)를 실행하면 PDF의 파일 간 링크·목적지와 ZIP 압축 해제 후의 연결을 검사한다. 실행에는 Python과 `pypdf`가 필요하다.
 

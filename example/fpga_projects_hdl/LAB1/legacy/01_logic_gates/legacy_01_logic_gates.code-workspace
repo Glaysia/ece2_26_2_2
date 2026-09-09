@@ -1,0 +1,28 @@
+{
+  "folders": [
+    { "name": "01_LOGIC_GATES", "path": "." },
+    { "name": "COMMON", "path": "../../common" }
+  ],
+  "settings": {
+    "editor.fontSize": 18,
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "off",
+    "workbench.startupEditor": "none"
+  },
+  "extensions": {
+    "recommendations": ["hudson-river-trading.vscode-slang", "lramseyer.vaporview"]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [{
+      "label": "LAB1 01: Simulate logic gates",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-File", "${workspaceFolder:01_LOGIC_GATES}/scripts/simulate.ps1"],
+      "options": { "cwd": "${workspaceFolder:01_LOGIC_GATES}" },
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    }]
+  }
+}

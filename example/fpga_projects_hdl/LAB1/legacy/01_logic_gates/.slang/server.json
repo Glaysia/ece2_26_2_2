@@ -1,0 +1,5 @@
+{
+  "flags": "-f sources.f",
+  "build": "sources.f",
+  "index": [{ "dirs": ["../../common/rtl", "../../common/tb"], "excludeDirs": ["build"] }]
+}
