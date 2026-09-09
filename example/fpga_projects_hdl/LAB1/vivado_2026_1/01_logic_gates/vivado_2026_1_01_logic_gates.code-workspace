@@ -1,0 +1,190 @@
+{
+  "folders": [
+    {
+      "name": "PROJECT",
+      "path": "."
+    },
+    {
+      "name": "COMMON",
+      "path": "../../common"
+    }
+  ],
+  "settings": {
+    "editor.fontSize": 18,
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "off"
+  },
+  "extensions": {
+    "recommendations": [
+      "hudson-river-trading.vscode-slang",
+      "lramseyer.vaporview"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "01 Check tools",
+        "type": "process",
+        "command": "python3",
+        "windows": {
+          "command": "python"
+        },
+        "args": [
+          "../../tools/lab1.py",
+          "check",
+          "--project",
+          "."
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:PROJECT}"
+        },
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated",
+          "clear": true
+        }
+      },
+      {
+        "label": "02 Simulate",
+        "type": "process",
+        "command": "python3",
+        "windows": {
+          "command": "python"
+        },
+        "args": [
+          "../../tools/lab1.py",
+          "simulate",
+          "--project",
+          "."
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:PROJECT}"
+        },
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated",
+          "clear": true
+        }
+      },
+      {
+        "label": "03 Open waveform",
+        "type": "process",
+        "command": "python3",
+        "windows": {
+          "command": "python"
+        },
+        "args": [
+          "../../tools/lab1.py",
+          "wave",
+          "--project",
+          "."
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:PROJECT}"
+        },
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated",
+          "clear": true
+        }
+      },
+      {
+        "label": "04 Create Vivado project",
+        "type": "process",
+        "command": "python3",
+        "windows": {
+          "command": "python"
+        },
+        "args": [
+          "../../tools/lab1.py",
+          "create",
+          "--project",
+          "."
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:PROJECT}"
+        },
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated",
+          "clear": true
+        }
+      },
+      {
+        "label": "05 Vivado simulation",
+        "type": "process",
+        "command": "python3",
+        "windows": {
+          "command": "python"
+        },
+        "args": [
+          "../../tools/lab1.py",
+          "vivado-sim",
+          "--project",
+          "."
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:PROJECT}"
+        },
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated",
+          "clear": true
+        }
+      },
+      {
+        "label": "06 Build bitstream",
+        "type": "process",
+        "command": "python3",
+        "windows": {
+          "command": "python"
+        },
+        "args": [
+          "../../tools/lab1.py",
+          "build",
+          "--project",
+          "."
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:PROJECT}"
+        },
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated",
+          "clear": true
+        }
+      }
+    ]
+  }
+}

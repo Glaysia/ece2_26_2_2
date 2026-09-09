@@ -1,0 +1,15 @@
+{
+  "id": "vivado_2026_1_01_logic_gates",
+  "title": "AND OR XOR",
+  "edition": "vivado_2026_1",
+  "top": "logic_gate",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "../../common/rtl/logic_gate.v"
+  ],
+  "testbench": "../../common/tb/tb_logic_gate_modern.sv",
+  "simulation_top": "tb_logic_gate_modern",
+  "cases": 4,
+  "constraints": "../../common/constraints/logic_gate.xdc",
+  "expected_legacy_issue": null
+}
