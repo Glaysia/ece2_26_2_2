@@ -3,6 +3,9 @@
 
 reference/*
 
+# Lecture PNG captures are local build assets; published PDFs are versioned.
+weekly-slides/weekly-slides/**/assets/**/*.png
+
 # XeLaTeX/Beamer build products
 weekly-slides/build/
 weekly-slides/*.aux

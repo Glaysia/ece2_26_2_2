@@ -12,8 +12,11 @@ TeX가 강의 내용의 SSOT이며 PDF는 배포본이다. 아래 목록은 파�
 | 오리엔테이션 | [TeX](weekly-slides/LAB0_OT_0907/02.LAB0_OT_0907.tex) | [PDF](weekly-slides/LAB0_OT_0907/02.LAB0_OT_0907.pdf) |
 | Vivado 2026.1 설치 | [TeX](weekly-slides/LAB1_FPGA_0914/01.vivado_2026_1_설치_매뉴얼.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/01.vivado_2026_1_설치_매뉴얼.pdf) |
 | VS Code Verilog 환경설정 | [TeX](weekly-slides/LAB1_FPGA_0914/02.vscode_verilog_환경설정_매뉴얼.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/02.vscode_verilog_환경설정_매뉴얼.pdf) |
+| LAB1 목차·공통 안내 | [TeX](weekly-slides/LAB1_FPGA_0914/04.LAB1_00_CONTENTS.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/04.LAB1_00_CONTENTS.pdf) |
+| LAB1 01 논리 게이트 — 레거시 | [TeX](weekly-slides/LAB1_FPGA_0914/04.LAB1_01_LOGIC_GATES_LEGACY.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/04.LAB1_01_LOGIC_GATES_LEGACY.pdf) |
 
 - [LAB1 안내](weekly-slides/LAB1_FPGA_0914/README.md)
+- [LAB1 PDF 묶음 ZIP](weekly-slides/LAB1_FPGA_0914/04.LAB1_0910_PDF.zip) — 전체 압축 해제 후 목차 PDF에서 시작
 - [레거시 교재 편집·재빌드 상태](weekly-slides/LAB0_OT_0907/00.legacy_hdl.README.md)
 - [공용 템플릿 4:3](templates/weekly_presentation_template_4x3.tex) — LAB1 조합회로 자료에 사용
 - [기존 공용 템플릿 16:9](templates/weekly_presentation_template.tex)
@@ -26,6 +29,7 @@ TeX가 강의 내용의 SSOT이며 PDF는 배포본이다. 아래 목록은 파�
 - 도식·표는 TeX/TikZ를 사용하고, 실제 화면·파형 캡처와 설명용 도식을 구분한다.
 - 공용 시립대 로고, UOS Blue (`#005EB8`), D2Coding을 사용한다. LAB1 조합회로 자료는 4:3 Beamer 템플릿을 사용하며 기존 16:9 템플릿과 자료는 보존한다.
 - 리소스 경로는 해당 TeX 기준 상대경로로 유지한다.
+- 새 슬라이드 캡처 PNG는 로컬 빌드 자료로 무시하고 PDF를 커밋한다. 기존 추적 PNG는 유지하며 다른 장치에서 TeX를 재빌드할 필요는 없다.
 - 기존 Markdown 원고는 [초안·기록 보관소](../docs/README.md)로 분리했다. 병행 원본으로 관리하지 않는다.
 
 ## 빌드

@@ -1,0 +1,15 @@
+% !TEX program = xelatex
+% LAB1 실습 01: AND·OR·XOR, 레거시 Vivado.
+\input{shared/lab1_preamble.tex}
+% 좌하단 목차는 외부 파일을 열지 않고 이 PDF의 실습 목차로 이동한다.
+\renewcommand{\labonehome}{\hyperlink{legacy-01-contents}{\contentsbutton}}
+\renewcommand{\navlink}[2]{%
+  \ifstrequal{#1}{lab1-contents}%
+    {\href{04.LAB1_00_CONTENTS.pdf\#lab1-contents}{\textcolor{UOSBlue}{#2}}}%
+    {\ifstrequal{#1}{lab1-reports}%
+      {\href{04.LAB1_00_CONTENTS.pdf\#lab1-reports}{\textcolor{UOSBlue}{#2}}}%
+      {\hyperlink{#1}{\textcolor{UOSBlue}{#2}}}}}
+\hypersetup{pdftitle={LAB1 01 AND OR XOR — 레거시 Vivado}}
+\begin{document}
+\input{sections/legacy_01_logic_gates.tex}
+\end{document}

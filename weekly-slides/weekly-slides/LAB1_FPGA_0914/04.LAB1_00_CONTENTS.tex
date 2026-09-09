@@ -1,0 +1,11 @@
+% !TEX program = xelatex
+% LAB1 목차와 공통 안내. PDF를 실습별 PDF와 같은 폴더에 둔다.
+\input{shared/lab1_preamble.tex}
+\renewcommand{\navlink}[2]{%
+  \ifstrequal{#1}{legacy-01}%
+    {\href{04.LAB1_01_LOGIC_GATES_LEGACY.pdf\#legacy-01}{\textcolor{UOSBlue}{#2}}}%
+    {\hyperlink{#1}{\textcolor{UOSBlue}{#2}}}}
+\hypersetup{pdftitle={LAB1 목차와 공통 안내}}
+\begin{document}
+\input{sections/lab1_overview.tex}
+\end{document}

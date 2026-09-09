@@ -1,0 +1,58 @@
+% !TEX program = xelatex
+% LAB1 도입부와 레거시 01 실습. 나머지 본문은 이후 이어 작성한다.
+% 이 폴더에서 xelatex -interaction=nonstopmode -halt-on-error로 두 번 빌드한다.
+% 디자인 원본: ../../templates/weekly_presentation_template_4x3.tex
+% 구성 기준: ../../../daily_goal/GOAL0910.md
+\documentclass[aspectratio=43,11pt,t]{beamer}
+
+\usepackage{fontspec}
+\usepackage{kotex}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{etoolbox}
+\setmainfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmainhangulfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setsansfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setsanshangulfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmonofont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+
+\definecolor{UOSBlue}{HTML}{005EB8}
+\definecolor{TextGray}{HTML}{303030}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{normal text}{fg=TextGray,bg=white}
+\setbeamercolor{frametitle}{fg=UOSBlue,bg=white}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{structure}{fg=UOSBlue}
+\setbeamertemplate{itemize item}{\color{UOSBlue}\small$\bullet$}
+\setbeamertemplate{frametitle}{%
+  \vspace{0.55cm}\hspace{0.48cm}\insertframetitle\par\vspace{0.12cm}}
+\setbeamerfont{frametitle}{series=\bfseries,size=\LARGE}
+\setbeamertemplate{footline}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south,inner sep=0pt] at ([yshift=0.52cm]current page.south)
+      {\includegraphics[width=2.64cm,trim=58bp 385bp 58bp 385bp,clip]{../../assets/uos-logo-horizontal.png}};
+    \node[anchor=west,text=UOSBlue,font=\scriptsize]
+      at ([xshift=0.65cm,yshift=0.52cm]current page.south west)
+      {\labonehome};
+    \node[anchor=east,text=gray,font=\scriptsize]
+      at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+  \end{tikzpicture}%
+  \vspace{0.38cm}}
+
+\newcommand{\course}{전자전기컴퓨터설계실험Ⅱ}
+\newcommand{\presenter}{이해리}
+% 표지 날짜는 수업일이 아니라 자료 작성일이다.
+\newcommand{\materialdate}{2026. 09. 10.}
+\newcommand{\contentsbutton}{\beamerbutton{\strut\hspace{0.5em}목차\hspace{0.5em}}}
+\newcommand{\labonehome}{\hyperlink{lab1-contents}{\contentsbutton}}
+\newcommand{\navlink}[2]{\hyperlink{#1}{\textcolor{UOSBlue}{#2}}}
+\newcommand{\legacySource}[1]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=west,text=gray,font=\tiny]
+      at ([xshift=0.65cm,yshift=1.02cm]current page.south west)
+      {원본: 논리 게이트 구현, p.#1\quad\hyperlink{legacy-01}{레거시 01}};
+  \end{tikzpicture}}
+\title{\course\\LAB 1. 조합회로 실습}
+\author{\presenter}
+\date{\materialdate}
+\hypersetup{pdftitle={LAB1 조합회로 실습 — 레거시 01},pdfauthor={이해리}}
