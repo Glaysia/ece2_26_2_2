@@ -1,6 +1,8 @@
 """Validate relative PDF links and package the current LAB1 handouts."""
 from pathlib import Path
 import json
+import re
+import hashlib
 import tempfile
 from urllib.parse import unquote
 import zipfile
@@ -12,43 +14,18 @@ SLIDES = Path(__file__).resolve().parents[1]
 BASE = SLIDES / 'weekly-slides/LAB1_FPGA_0914'
 ARCHIVE = BASE / '04.LAB1_0910_PDF.zip'
 PACKAGE_ROOT = '04.LAB1_0910_PDF'
-PDFS = [
-    '04.LAB1_00_CONTENTS.pdf',
-    '04.LAB1_01_LOGIC_GATES_LEGACY.pdf',
-    '01.vivado_2026_1_설치_매뉴얼.pdf',
-    '02.vscode_verilog_환경설정_매뉴얼.pdf',
-]
+PDFS = ['04.LAB1_00_CONTENTS.pdf'] + ['04.LAB1_01_LOGIC_GATES_VIVADO.pdf'] + [p['file']+'.pdf' for p in json.loads((BASE/'series-inventory.json').read_text(encoding='utf-8'))] + ['01.vivado_2026_1_설치_매뉴얼.pdf','02.vscode_verilog_환경설정_매뉴얼.pdf']
+PDFS[:23] = sorted(PDFS[:23], key=lambda name:(int(re.match(r'04\.LAB1_(\d+)',name)[1]), re.match(r'04\.LAB1_\d+([AB]?)_',name)[1]))
+README = '''# LAB1 실습 자료 · 2026-09-10 작성
 
-README = '''# LAB1 실습 자료 — 2026-09-10 작성
+ZIP을 전부 푼 뒤 04.LAB1_00_CONTENTS.pdf를 여세요. 22개 실습 PDF와 설치·VS Code 보조 자료를 같은 폴더에 둡니다. 각 실습 좌하단 목차는 같은 PDF 2쪽으로 이동합니다. PDF 간 링크가 열리지 않는 뷰어에서는 해당 파일을 직접 여세요.
 
-## 열기
+순서: 최신 Vivado 01–10 → 최신 통합 10A → CLI 통합 10B → 레거시 11–20. 모든 실습은 VS Code 사전 시뮬레이션과 실험 전 레포트부터 시작합니다. Vivado 과정은 GUI 메뉴로 진행합니다.
 
-1. ZIP 전체를 압축 해제합니다.
-2. `04.LAB1_00_CONTENTS.pdf`를 먼저 엽니다.
-3. 논리 게이트 또는 레거시 실습 링크를 누르면 실습 01 PDF로 이동합니다.
-4. 각 PDF 좌하단의 ‘목차’를 누르면 같은 PDF의 목차로 돌아갑니다. 레거시 01의 실습 목차는 2쪽입니다.
-5. ‘전체 목차 PDF’는 별도 파일로 이동하는 링크입니다. 외부 링크를 지원하지 않는 뷰어에서는 같은 폴더의 파일을 직접 여세요.
+학생 템플릿: https://github.com/Glaysia/fpga-lab-template
+검증 현황: https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/validation.md
 
-PDF를 같은 폴더에 두고 파일명을 유지하세요. 외부 PDF 링크의 동작은 뷰어에 따라 다릅니다. 데스크톱 Acrobat Reader에서 열어 사용하고, 링크가 동작하지 않는 뷰어에서는 아래 파일을 직접 여세요.
-
-## 포함 자료
-
-- [목차·공통 안내](04.LAB1_00_CONTENTS.pdf): 5쪽
-- [01 AND·OR·XOR — VS Code 사전 실습 + 레거시 Vivado](04.LAB1_01_LOGIC_GATES_LEGACY.pdf): 101쪽 (사전 실습 32쪽 + 레거시 69쪽)
-- [Vivado 2026.1 설치](01.vivado_2026_1_설치_매뉴얼.pdf): 기존 보조 자료
-- [VS Code Verilog 환경설정](02.vscode_verilog_환경설정_매뉴얼.pdf): 기존 보조 자료
-
-이 묶음에는 현재 작성된 레거시 01만 포함됩니다. 나머지 회로·최신 Vivado·통합 프로젝트·CLI 자료는 이후 추가합니다. VS Code 사전 시뮬레이션을 실험 전 레포트에 자세히 기록하고, Vivado 시뮬레이션·실제 보드 기록·사진·영상·GitHub 자료를 실험 후 레포트에 정리합니다.
-
-## 원자료와 검증 범위
-
-01번의 앞부분은 새로 작성한 VS Code 사전 실습입니다. 새 창에서 workspace를 열고 확장을 확인하여, 시뮬레이션 작업·로그·파형·실험 전 레포트를 순서대로 다룹니다. XSim 2026.1에서 네 입력 조합과 800ns 종료를 확인하고 Nord VS Code의 실제 파일·파형을 캡처했습니다. 실행 프로젝트는 Git 저장소의 example/fpga_projects_hdl/LAB1/legacy/01_logic_gates에 있습니다.
-
-뒤의 레거시 01은 서울시립대학교 박동욱 교수의 「논리 게이트 구현」 PDF p.3–52를 재구성했습니다. 원본 문구와 GUI·코드 이미지를 보존하고 긴 설명과 복수 이미지를 나누었습니다. 원본의 `LVCMOSS33` 표기는 별도 보충 페이지에서 `LVCMOS33`으로 설명합니다.
-
-원본 화면은 이번 제작 과정에서 새로 실행한 Vivado·보드 검증 증빙이 아닙니다. PDF는 제작 PC에서 빌드했으며 이 ZIP은 PDF 열람용입니다. TeX·PNG는 포함하지 않습니다.
-
-PDF 간 링크 안내: https://helpx.adobe.com/acrobat/using/links-attachments-pdfs.html
+원본 레거시 이미지와 새 제작자의 실행 결과를 구분합니다. 실제 보드 기록·사진·영상은 아직 미수행이며 레포트 예시에도 그 상태를 명시했습니다. 새 PNG는 제작 PC의 빌드 자료이고 배포물에는 PDF를 넣습니다.
 '''
 
 
@@ -109,7 +86,12 @@ def validate(folder):
             assert abs(float(box.width)/float(box.height)-4/3) < .001
         for page_index, page in enumerate(reader.pages):
             if name.startswith('04.') and (page_index > 0 or 'LEGACY' in name):
-                expected = 'legacy-01-contents' if 'LEGACY' in name else 'lab1-contents'
+                if name=='04.LAB1_00_CONTENTS.pdf':expected='lab1-contents'
+                elif name=='04.LAB1_01_LOGIC_GATES_VIVADO.pdf':expected='modern01-contents'
+                elif '_10A_' in name:expected='integrated-vivado-contents'
+                elif '_10B_' in name:expected='integrated-cli-contents'
+                else:
+                    number=int(name.split('_')[1]);expected=('legacy-'+str(number-10).zfill(2) if 'LEGACY' in name else 'modern-'+str(number).zfill(2))+'-contents'
                 footer = [ref.get_object() for ref in page.get('/Annots', [])
                           if float(ref.get_object().get('/Rect', [999,999])[0]) < 60
                           and float(ref.get_object().get('/Rect', [999,999])[1]) < 22]
@@ -162,13 +144,15 @@ def main():
         (package/'README.md').write_text(README, encoding='utf-8')
         stats = validate(package)
         with zipfile.ZipFile(ARCHIVE, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
-            for path in sorted(package.iterdir()):
+            for path in [package/name for name in [*PDFS,'README.md']]:
                 archive.write(path, f'{PACKAGE_ROOT}/{path.name}')
         extracted = staging/'extracted'
         with zipfile.ZipFile(ARCHIVE) as archive:
             assert archive.testzip() is None
             archive.extractall(extracted)
         assert validate(extracted/PACKAGE_ROOT) == stats
+    record={**stats,'archive':ARCHIVE.name,'bytes':ARCHIVE.stat().st_size,'sha256':hashlib.sha256(ARCHIVE.read_bytes()).hexdigest(),'checks':['4:3 manuals','all local contents to page 2','internal and relative PDF destinations','fresh ZIP extraction'],'visual_review':'22 manuals (1117 pages) and 10-page contents rendered and inspected; original setup PDFs included unchanged'}
+    (BASE/'pdf-package-validation.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'archive':str(ARCHIVE),'bytes':ARCHIVE.stat().st_size,**stats},ensure_ascii=False))
 
 

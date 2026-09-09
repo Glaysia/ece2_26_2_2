@@ -1,0 +1,107 @@
+[
+  {
+    "file": "04.LAB1_11_LOGIC_GATES_LEGACY",
+    "pages": 93,
+    "project": "legacy/01_logic_gates"
+  },
+  {
+    "file": "04.LAB1_02_FULL_ADDER_VIVADO",
+    "pages": 38,
+    "project": "vivado_2026_1/02_full_adder"
+  },
+  {
+    "file": "04.LAB1_12_FULL_ADDER_LEGACY",
+    "pages": 63,
+    "project": "legacy/02_full_adder"
+  },
+  {
+    "file": "04.LAB1_03_ADDER4_VIVADO",
+    "pages": 39,
+    "project": "vivado_2026_1/03_adder4"
+  },
+  {
+    "file": "04.LAB1_13_ADDER4_LEGACY",
+    "pages": 60,
+    "project": "legacy/03_adder4"
+  },
+  {
+    "file": "04.LAB1_04_SUBTRACTOR4_VIVADO",
+    "pages": 39,
+    "project": "vivado_2026_1/04_subtractor4"
+  },
+  {
+    "file": "04.LAB1_14_SUBTRACTOR4_LEGACY",
+    "pages": 61,
+    "project": "legacy/04_subtractor4"
+  },
+  {
+    "file": "04.LAB1_05_COMPARATOR4_VIVADO",
+    "pages": 38,
+    "project": "vivado_2026_1/05_comparator4"
+  },
+  {
+    "file": "04.LAB1_15_COMPARATOR4_LEGACY",
+    "pages": 61,
+    "project": "legacy/05_comparator4"
+  },
+  {
+    "file": "04.LAB1_06_MUX4TO1_VIVADO",
+    "pages": 38,
+    "project": "vivado_2026_1/06_mux4to1"
+  },
+  {
+    "file": "04.LAB1_16_MUX4TO1_LEGACY",
+    "pages": 61,
+    "project": "legacy/06_mux4to1"
+  },
+  {
+    "file": "04.LAB1_07_DEMUX1TO8_VIVADO",
+    "pages": 38,
+    "project": "vivado_2026_1/07_demux1to8"
+  },
+  {
+    "file": "04.LAB1_17_DEMUX1TO8_LEGACY",
+    "pages": 61,
+    "project": "legacy/07_demux1to8"
+  },
+  {
+    "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
+    "pages": 38,
+    "project": "vivado_2026_1/08_encoder8to3"
+  },
+  {
+    "file": "04.LAB1_18_ENCODER8TO3_LEGACY",
+    "pages": 61,
+    "project": "legacy/08_encoder8to3"
+  },
+  {
+    "file": "04.LAB1_09_DECODER3TO8_VIVADO",
+    "pages": 38,
+    "project": "vivado_2026_1/09_decoder3to8"
+  },
+  {
+    "file": "04.LAB1_19_DECODER3TO8_LEGACY",
+    "pages": 61,
+    "project": "legacy/09_decoder3to8"
+  },
+  {
+    "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+    "pages": 38,
+    "project": "vivado_2026_1/10_seven_segment"
+  },
+  {
+    "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY",
+    "pages": 62,
+    "project": "legacy/10_seven_segment"
+  },
+  {
+    "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+    "pages": 38,
+    "project": "vivado_2026_1/11_integrated"
+  },
+  {
+    "file": "04.LAB1_10B_INTEGRATED_CLI",
+    "pages": 32,
+    "project": "opensource_cli/integrated"
+  }
+]

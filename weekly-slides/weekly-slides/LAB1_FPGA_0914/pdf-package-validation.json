@@ -1,0 +1,41 @@
+{
+  "pdfs": {
+    "04.LAB1_00_CONTENTS.pdf": 10,
+    "04.LAB1_01_LOGIC_GATES_VIVADO.pdf": 59,
+    "04.LAB1_02_FULL_ADDER_VIVADO.pdf": 38,
+    "04.LAB1_03_ADDER4_VIVADO.pdf": 39,
+    "04.LAB1_04_SUBTRACTOR4_VIVADO.pdf": 39,
+    "04.LAB1_05_COMPARATOR4_VIVADO.pdf": 38,
+    "04.LAB1_06_MUX4TO1_VIVADO.pdf": 38,
+    "04.LAB1_07_DEMUX1TO8_VIVADO.pdf": 38,
+    "04.LAB1_08_ENCODER8TO3_VIVADO.pdf": 38,
+    "04.LAB1_09_DECODER3TO8_VIVADO.pdf": 38,
+    "04.LAB1_10_SEVEN_SEGMENT_VIVADO.pdf": 38,
+    "04.LAB1_10A_INTEGRATED_VIVADO.pdf": 38,
+    "04.LAB1_10B_INTEGRATED_CLI.pdf": 32,
+    "04.LAB1_11_LOGIC_GATES_LEGACY.pdf": 93,
+    "04.LAB1_12_FULL_ADDER_LEGACY.pdf": 63,
+    "04.LAB1_13_ADDER4_LEGACY.pdf": 60,
+    "04.LAB1_14_SUBTRACTOR4_LEGACY.pdf": 61,
+    "04.LAB1_15_COMPARATOR4_LEGACY.pdf": 61,
+    "04.LAB1_16_MUX4TO1_LEGACY.pdf": 61,
+    "04.LAB1_17_DEMUX1TO8_LEGACY.pdf": 61,
+    "04.LAB1_18_ENCODER8TO3_LEGACY.pdf": 61,
+    "04.LAB1_19_DECODER3TO8_LEGACY.pdf": 61,
+    "04.LAB1_20_SEVEN_SEGMENT_LEGACY.pdf": 62,
+    "01.vivado_2026_1_설치_매뉴얼.pdf": 32,
+    "02.vscode_verilog_환경설정_매뉴얼.pdf": 42
+  },
+  "remote_links": 121,
+  "local_links": 1235,
+  "archive": "04.LAB1_0910_PDF.zip",
+  "bytes": 66774761,
+  "sha256": "180563d5d4696e982b8f3454d5296ef7a9c810247e765354771b6b51dfd467be",
+  "checks": [
+    "4:3 manuals",
+    "all local contents to page 2",
+    "internal and relative PDF destinations",
+    "fresh ZIP extraction"
+  ],
+  "visual_review": "22 manuals (1117 pages) and 10-page contents rendered and inspected; original setup PDFs included unchanged"
+}

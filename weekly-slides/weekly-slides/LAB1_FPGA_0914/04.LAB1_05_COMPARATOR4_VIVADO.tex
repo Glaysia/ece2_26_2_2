@@ -1,0 +1,309 @@
+% !TEX program = xelatex
+\input{shared/lab1_preamble.tex}
+\renewcommand{\labonehome}{\hyperlink{modern-05-contents}{\contentsbutton}}
+\renewcommand{\legacySource}[1]{}
+\hypersetup{pdftitle={4비트 크기 비교기}}
+\begin{document}
+\begingroup
+\renewcommand{\small}{\fontsize{9}{11}\selectfont}
+\begin{frame}{05 · 4비트 크기 비교기}\relax
+\small
+VS Code 사전 시뮬레이션 → Vivado 2026.1 → 보드 실험\par\vspace{0.22cm}o[2]는 a>b, o[1]은 a=b, o[0]은 a<b를 나타낸다. 세 결과 중 하나만 1이다.\par\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 템플릿을 clone하고 이 회로의 workspace를 연다.
+\item 예상값·코드·테스트벤치를 읽고 시뮬레이션한다.
+\item Vivado 결과와 실제 보드 동작을 비교한다.
+\item 자신의 사진·영상·레포트를 GitHub에 연결한다.
+\end{enumerate}
+작성일 2026. 09. 10. · 이해리\par
+\end{frame}
+
+\begin{frame}[label=modern-05-contents]{실습 목차}\relax
+\small
+1부 · VS Code 사전 실습\par\navlink{modern-05-setup}{새 창·workspace·확장·코드 열기}\par\vspace{0.2cm}
+\navlink{modern-05-sim}{예상값·작업 실행·로그·파형·실험 전 레포트}\par\vspace{0.4cm}
+2부 · Vivado 실습\par\navlink{modern-05-vivado}{프로젝트·소스·top·시뮬레이션·핀·비트스트림}\par\vspace{0.4cm}
+3부 · 결과 정리\par\navlink{modern-05-post}{보드·사진·영상·GitHub·실험 후 레포트}\par\vspace{0.35cm}
+\href{04.LAB1_00_CONTENTS.pdf}{전체 목차 PDF 열기}
+\end{frame}
+
+\begin{frame}[label=modern-05-setup]{준비할 프로그램}\relax
+\small
+Git·Python 3·VS Code·slang-server·VaporView를 준비한다.\par\vspace{0.22cm}Vivado GUI를 열기 전에도 XSim 도구가 필요하므로 Vivado는 미리 설치한다.\par\vspace{0.22cm}git --version / python --version / code --version\par\vspace{0.22cm}vivado -version / xvlog --version / xelab --version / xsim --version\par\vspace{0.22cm}명령이 없으면 설치와 PATH 또는 VIVADO\_BIN을 확인하고 VS Code를 다시 연다.\par\href{01.vivado_2026_1_설치_매뉴얼.pdf}{Vivado 설치 PDF}\quad\href{02.vscode_verilog_환경설정_매뉴얼.pdf}{VS Code 환경설정 PDF}
+\end{frame}
+
+\begin{frame}{별도 템플릿 clone}\relax
+\small
+PowerShell에서 실습 폴더를 둘 위치로 이동한 뒤 실행한다.\par\vspace{0.22cm}git clone https://github.com/Glaysia/fpga-lab-template.git\par\vspace{0.22cm}cd fpga-lab-template\par\vspace{0.22cm}자신의 저장소를 만들려면 GitHub의 Use this template → Create a new repository를 사용하고 자신의 주소를 clone한다.\par\href{https://github.com/Glaysia/fpga-lab-template/tree/main/}{학생용 템플릿 열기}
+\end{frame}
+
+\begin{frame}{File → New Window}\relax
+\small
+VS Code 상단 File → New Window를 누른다. Ctrl+Shift+N도 같은 동작이다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=3.3cm,keepaspectratio,trim=27.75bp 229.5bp 645bp 20.25bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+새 창에서 File → Open Workspace from File...을 선택한다.\par\vspace{0.22cm}Open File...로 코드 하나만 여는 것과 구분한다.\par
+\end{frame}
+
+\begin{frame}{이 회로의 workspace 선택}\relax
+\small
+clone한 폴더에서 다음 경로로 이동한다.\par\vspace{0.22cm}vivado\_2026\_1/05\_comparator4\par\vspace{0.22cm}vivado\_2026\_1\_05\_comparator4.code-workspace\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.6cm,keepaspectratio,trim=31.5bp 229.5bp 639.75bp 24.75bp,clip]{assets/modern-01/02-workspace.png}\par}\vspace{0.16cm}
+PROJECT는 이 회로의 실행 설정과 결과, COMMON은 공유 RTL·TB·XDC다.\par\vspace{0.22cm}위 화면은 공통 폴더 구조 예이며 선택할 파일명은 이 슬라이드의 경로를 따른다.\par
+\end{frame}
+
+\begin{frame}{확장 설치·활성화}\relax
+\small
+Extensions에서 slang-server와 VaporView를 검색한다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.8cm,keepaspectratio,trim=263.25bp 381bp 1.5bp 52.5bp,clip]{assets/modern-01/03-enable-slang.png}\par}\vspace{0.16cm}
+없으면 Install, 꺼져 있으면 Enable 또는 Enable (Workspace).\par\vspace{0.22cm}Verilog 구문 강조가 보여도 시뮬레이션이 통과했다는 뜻은 아니다.\par
+\end{frame}
+
+\begin{frame}{Explorer에서 파일 열기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item PROJECT와 COMMON 왼쪽 화살표를 눌러 펼친다.
+\item RTL: compare\_4.v. 파일을 두 번 누르면 탭으로 열린다.
+\item 검증 TB: tb\_compare\_4.sv.
+\item 핀 제약: compare\_4.xdc.
+\item 수정 후 File → Save All. 저장한 뒤에 시뮬레이션한다.
+\end{enumerate}
+\href{https://github.com/Glaysia/fpga-lab-template/tree/main/vivado_2026_1/05_comparator4}{이 프로젝트 소스·workspace 열기}
+\end{frame}
+
+\begin{frame}[label=modern-05-sim]{입출력과 동작 규칙}\relax
+\small
+입력 a[3:0], b[3:0] / 출력 o[2:0]\par\vspace{0.22cm}o[2]는 a>b, o[1]은 a=b, o[0]은 a<b를 나타낸다. 세 결과 중 하나만 1이다.\par\vspace{0.22cm}DIP1–4=a[3:0], DIP5–8=b[3:0]. LED1=큼, LED2=같음, LED3=작음.\par
+\end{frame}
+
+\begin{frame}{실행 전에 예상값 작성}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+입력 또는 조건 & 예상 결과\\\hline
+0 대 0 & 010\\
+0 대 1 & 001\\
+1 대 0 & 100\\
+\end{tabular}\end{center}
+0–10ns, 10–20ns, 160–170ns에서 같음·작음·큼을 각각 읽는다.\par\vspace{0.22cm}예상값을 계산한 근거를 자신의 말로 설명한다.\par
+\end{frame}
+
+\begin{frame}{RTL 구조를 설명한다}\relax
+\small
+설계 top: compare\_4\par\vspace{0.22cm}RTL 파일: compare\_4.v\par\vspace{0.22cm}o[2]는 a>b, o[1]은 a=b, o[0]은 a<b를 나타낸다. 세 결과 중 하나만 1이다.\par\vspace{0.22cm}소스를 저장소에서 직접 열고 포트 선언·비트 폭·출력 연결을 짚어 설명한다. 저장소 소스를 복사해 사용해도 된다.\par\href{https://github.com/Glaysia/fpga-lab-template/tree/main/vivado_2026_1/05_comparator4}{배포 소스 확인}
+\end{frame}
+
+\begin{frame}{테스트벤치와 통과 기준}\relax
+\small
+시뮬레이션 top: tb\_compare\_4\par\vspace{0.22cm}256개 입력 조합을 모두 검사한다. 각 자극은 10ns, 종료 시각은 2560ns다.\par\vspace{0.22cm}기대값과 실제 출력이 다르면 \$fatal로 중단한다. 검사 횟수와 watchdog도 확인한다.\par\vspace{0.22cm}통과 문구: LAB1\_PASS compare\_4 cases=256\par\vspace{0.22cm}원본 레거시 testbench.v와 별도의 자기검사 TB는 파일과 역할을 구분한다.\par
+\end{frame}
+
+\begin{frame}{저장 → Terminal → Run Task}\relax
+\small
+File → Save All 다음 Terminal → Run Task...을 누른다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.1cm,keepaspectratio,trim=219.75bp 507.75bp 219.75bp 0bp,clip]{assets/modern-01/06-tasks.png}\par}\vspace{0.16cm}
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 01 Check tools를 실행하고 도구 버전을 확인한다.
+\item 02 Simulate를 선택하고 종료까지 기다린다.
+\item 03 Open waveform으로 생성된 VCD를 연다.
+\end{enumerate}
+작업이 없으면 올바른 .code-workspace를 열었는지 확인한다.\par
+\end{frame}
+
+\begin{frame}{실행 로그 확인}\relax
+\small
+PROJECT → build → vscode → simulation.log를 연다.\par\vspace{0.22cm}LAB1\_PASS compare\_4 cases=256\par\vspace{0.22cm}정상 종료 시각: 2560ns. PASS 문구와 검사 수를 함께 확인한다.\par\vspace{0.22cm}실패하면 compile.log → elaborate.log → simulation.log 순서로 원인을 찾는다.\par\vspace{0.22cm}코드 저장 → 02 Simulate 재실행 → 새 로그 확인 순서로 복귀한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/vivado_2026_1/05_comparator4/README.md}{프로젝트 검증 안내}
+\end{frame}
+
+\begin{frame}{VCD를 파형으로 열기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 03 Open waveform 또는 build/vscode/wave.vcd를 연다.
+\item 텍스트로 열리면 탭 우클릭 → Reopen Editor With... → VaporView.
+\item Netlist View에서 tb\_compare\_4을 펼친다.
+\item 신호 a[3:0], b[3:0], o[2:0]를 각각 두 번 눌러 추가한다.
+\item Zoom to Fit를 누르고 Time Units를 ns로 맞춘다.
+\item 전환 경계 대신 구간 중간에 커서를 두고 값을 읽는다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{파형 화면의 읽는 순서}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=3.4cm,keepaspectratio,trim=264bp 249.75bp 0bp 27.75bp,clip]{assets/modern-01/08-vapor-wave.png}\par}\vspace{0.16cm}
+위는 공통 파형 조작 예다. 이번 회로에서는 앞 장의 신호 이름을 선택한다.\par\vspace{0.22cm}0–10ns, 10–20ns, 160–170ns에서 같음·작음·큼을 각각 읽는다.\par\vspace{0.22cm}신호 이름 → 시간 구간 → 커서 값 → 예상 결과 순서로 비교한다.\par
+\end{frame}
+
+\begin{frame}{실제 VCD의 구간 중간값}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l|l|l}
+시간(ns) & a[3:0] & b[3:0] & o[2:0]\\\hline
+5 & 0000 & 0000 & 010\\
+15 & 0000 & 0001 & 001\\
+35 & 0000 & 0011 & 001\\
+1285 & 1000 & 0000 & 100\\
+2555 & 1111 & 1111 & 010\\
+\end{tabular}\end{center}
+이 표는 실행된 VCD에서 읽은 값이다. 다중 비트는 이진수다.\par\vspace{0.22cm}표의 시간으로 파형 커서를 옮겨 직접 대조하고, 추가 경계 조건도 확인한다.\par
+\end{frame}
+
+\begin{frame}{실험 전 레포트}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 목적·포트·비트 폭·예상표와 동작 원리를 설명한다.
+\item 소스와 TB 링크, 코드 커밋, 도구 버전을 남긴다.
+\item 입력 조합·기대값·자동 비교·종료 조건을 설명한다.
+\item 자신의 PASS 로그와 파형 원본·캡처를 첨부한다.
+\item 시간 구간별 값을 해석하고 예상값과 비교한다.
+\item 오류·수정·재실행, 보드에서 확인할 입력과 출력을 적는다.
+\end{enumerate}
+교재 캡처를 자신의 실행 결과로 제출하지 않는다.\par
+\end{frame}
+
+\begin{frame}[label=modern-05-vivado]{Vivado GUI에서 이어서 실습}\relax
+\small
+사전 시뮬레이션과 실험 전 레포트를 마친 뒤 Vivado 2026.1을 연다.\par\vspace{0.22cm}이후 단계는 메뉴와 버튼을 직접 누른다.\par\vspace{0.22cm}공통 클릭 화면은 첫 회로에서 실제 캡처했다. 이번 회로의 입력 파일과 top은 다음 슬라이드의 값을 따른다.\par\href{04.LAB1_01_LOGIC_GATES_VIVADO.pdf}{첫 회로의 상세 GUI 매뉴얼}
+\end{frame}
+
+\begin{frame}{File → Project → New...}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.3cm,keepaspectratio,trim=6bp 593.25bp 783bp 24bp,clip]{assets/modern-01/40-new-project-menu.png}\par}\vspace{0.16cm}
+New Project 안내에서 Next. Project name: compare\_4\par\vspace{0.22cm}Project location: 자신의 clone 폴더 / vivado\_2026\_1/05\_comparator4 / vivado\par\vspace{0.22cm}Create project subdirectory를 해제하고 Next. RTL Project와 Do not specify sources at this time을 선택한다.\par
+\end{frame}
+
+\begin{frame}{정확한 부품 선택}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=3.1cm,keepaspectratio,trim=174.75bp 317.25bp 534.75bp 249bp,clip]{assets/modern-01/43-select-part.png}\par}\vspace{0.16cm}
+Parts에서 xc7s75fgga484-1 검색 → 정확히 같은 행 선택 → Next.\par\vspace{0.22cm}요약에서 Spartan-7, fgga484, -1을 확인하고 Finish.\par
+\end{frame}
+
+\begin{frame}{RTL을 Design Sources에 추가}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.1cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{assets/modern-01/46-design-kind.png}\par}\vspace{0.16cm}
+왼쪽 Add Sources → Add or create design sources → Next → Add Files.\par\vspace{0.22cm}등록할 RTL: compare\_4.v\par\vspace{0.22cm}Copy sources into project를 해제하고 Finish. VS Code와 같은 원본을 참조한다.\par
+\end{frame}
+
+\begin{frame}{Simulation Sources에 TB 추가}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.1cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 272.25bp,clip]{assets/modern-01/50-simulation-kind.png}\par}\vspace{0.16cm}
+Add Sources → Add or create simulation sources → Next → Add Files.\par\vspace{0.22cm}tb\_compare\_4.sv를 선택한다. sim\_1을 유지한다.\par\vspace{0.22cm}Copy sources into project는 해제, Include all design sources for simulation은 체크 → Finish.\par
+\end{frame}
+
+\begin{frame}{XDC를 Constraints에 추가}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.1cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 272.25bp,clip]{assets/modern-01/53-constraints-kind.png}\par}\vspace{0.16cm}
+Add Sources → Add or create constraints → Next → Add Files.\par\vspace{0.22cm}compare\_4.xdc 선택 → Copy constraints files into project 해제 → Finish.\par\vspace{0.22cm}소스 중복 등록이나 잘못된 종류로 추가한 파일이 없는지 확인한다.\par
+\end{frame}
+
+\begin{frame}{두 top을 구분한다}\relax
+\small
+Design Sources의 top: compare\_4\par\vspace{0.22cm}Simulation Sources → sim\_1의 top: tb\_compare\_4\par\vspace{0.22cm}Sources의 화살표를 눌러 계층을 펼친다. 굵은 이름이 top이다.\par\vspace{0.22cm}잘못 지정되었다면 올바른 모듈 우클릭 → Set as Top. 이미 top이면 해당 메뉴가 비활성인 것이 정상이다.\par\vspace{0.22cm}테스트벤치를 합성할 설계 top으로 지정하지 않는다.\par
+\end{frame}
+
+\begin{frame}{Run Behavioral Simulation}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=3.0cm,keepaspectratio,trim=9bp 231bp 764.25bp 316.5bp,clip]{assets/modern-01/58-run-behavioral.png}\par}\vspace{0.16cm}
+Run Simulation → Run Behavioral Simulation. 컴파일과 elaboration을 기다린다.\par\vspace{0.22cm}파형에서 신호를 선택하고 Zoom Fit, 시간 단위, 커서 값을 확인한다.\par\vspace{0.22cm}Tcl Console의 PASS 문구와 종료 시각을 확인한다. 오류면 Messages의 첫 오류로 돌아간다.\par
+\end{frame}
+
+\begin{frame}{VS Code 결과와 비교}\relax
+\small
+두 실행은 같은 RTL과 자기검사 TB를 사용한다.\par\vspace{0.22cm}LAB1\_PASS compare\_4 cases=256\par\vspace{0.22cm}VS Code 로그: build/vscode/. GUI 로그: vivado/compare\_4.sim/sim\_1/behav/xsim/.\par\vspace{0.22cm}0–10ns, 10–20ns, 160–170ns에서 같음·작음·큼을 각각 읽는다.\par\vspace{0.22cm}로그·파형을 서로 다른 이름으로 보관하고 네 가지 정보인 입력·출력·시간·검사 수를 비교한다.\par
+\end{frame}
+
+\begin{frame}{대상 부품·핀 제약 (1)}\relax
+\small
+xc7s75fgga484-1 · IOSTANDARD=LVCMOS33\par\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+포트 & PACKAGE\_PIN\\\hline
+a[3] & Y1\\
+a[2] & W3\\
+a[1] & U2\\
+a[0] & T1\\
+b[3] & W4\\
+b[2] & W1\\
+\end{tabular}\end{center}
+XDC에서 포트·핀 번호를 대조한다. 다른 보드에는 그대로 쓰지 않는다.\par
+\end{frame}
+
+\begin{frame}{대상 부품·핀 제약 (2)}\relax
+\small
+xc7s75fgga484-1 · IOSTANDARD=LVCMOS33\par\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+포트 & PACKAGE\_PIN\\\hline
+b[1] & V4\\
+b[0] & U4\\
+o[2] & L4\\
+o[1] & M4\\
+o[0] & M2\\
+\end{tabular}\end{center}
+XDC에서 포트·핀 번호를 대조한다. 다른 보드에는 그대로 쓰지 않는다.\par
+\end{frame}
+
+\begin{frame}{Run Synthesis}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.1cm,keepaspectratio,trim=7.5bp 180bp 919.5bp 453bp,clip]{assets/modern-01/62-run-synthesis.png}\par}\vspace{0.16cm}
+File → Close Simulation → OK. Flow Navigator → Run Synthesis.\par\vspace{0.22cm}Launch Runs: 기본 디렉터리, Launch runs on local host, PC 자원에 맞는 jobs → OK.\par\vspace{0.22cm}Synthesis successfully completed를 확인한다. 실패했으면 다음 단계로 넘어가지 않는다.\par
+\end{frame}
+
+\begin{frame}{Run Implementation}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.8cm,keepaspectratio,trim=418.5bp 339.75bp 426bp 226.5bp,clip]{assets/modern-01/64-synthesis-complete.png}\par}\vspace{0.16cm}
+합성 완료 창에서 Run Implementation → OK. Launch Runs에서 OK.\par\vspace{0.22cm}완료 창을 닫았다면 Flow Navigator → Run Implementation.\par\vspace{0.22cm}Implementation successfully completed가 나올 때까지 기다린다.\par
+\end{frame}
+
+\begin{frame}{Generate Bitstream}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.8cm,keepaspectratio,trim=418.5bp 339.75bp 426bp 226.5bp,clip]{assets/modern-01/66-implementation-complete.png}\par}\vspace{0.16cm}
+구현 완료 창에서 Generate Bitstream → OK → Launch Runs의 OK.\par\vspace{0.22cm}또는 Program and Debug → Generate Bitstream.\par\vspace{0.22cm}최종 상태 write\_bitstream Complete!를 확인한다. 파일 생성과 보드 기록은 다른 단계다.\par
+\end{frame}
+
+\begin{frame}{생성 파일과 보고서}\relax
+\small
+생성 bit: vivado/compare\_4.runs/impl\_1/compare\_4.bit\par\vspace{0.22cm}제작 실행 결과와 증빙은 프로젝트의 evidence/validation.json과 README 검증표를 확인한다.\par\vspace{0.22cm}DRC 오류를 확인하고 CFGBVS / CONFIG\_VOLTAGE 경고는 실제 보드 구성 전압과 대조한다.\par\vspace{0.22cm}클록 없는 조합회로의 setup/hold NA를 타이밍 검증 완료로 해석하지 않는다.\par\vspace{0.22cm}사용한 커밋·bit 해시·DRC·타이밍 보고서를 결과와 함께 남긴다.\par
+\end{frame}
+
+\begin{frame}[label=modern-05-post]{실제 보드 연결}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=3.0cm,keepaspectratio,trim=202.5bp 476.25bp 586.5bp 92.25bp,clip]{assets/modern-01/70-auto-connect.png}\par}\vspace{0.16cm}
+Open Hardware Manager → Open target → Auto Connect.\par\vspace{0.22cm}DIP1–4=a[3:0], DIP5–8=b[3:0]. LED1=큼, LED2=같음, LED3=작음.\par\vspace{0.22cm}장치가 없으면 보드 전원·USB JTAG·드라이버·VM USB 연결을 점검한다.\par
+\end{frame}
+
+\begin{frame}{Program Device와 동작 확인}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 연결된 장치 이름이 xc7s75인지 확인한다.
+\item 장치 우클릭 → Program Device.
+\item 이번 프로젝트의 compare\_4.bit를 선택하고 Program.
+\item 기록 완료를 확인한 뒤 입력을 바꾸고 출력과 예상값을 비교한다.
+\item 기록 성공 화면과 실제 보드 동작은 각각 증빙한다.
+\end{enumerate}
+제작 환경의 실제 보드 기록·촬영 검증 여부는 검증표를 따른다. 파일 생성만으로 보드 동작 성공을 선언하지 않는다.\par
+\end{frame}
+
+\begin{frame}{사진과 시연 영상 촬영}\relax
+\small
+DIP1–4=a[3:0], DIP5–8=b[3:0]. LED1=큼, LED2=같음, LED3=작음.\par\vspace{0.22cm}사진에는 보드 연결과 입력·출력 위치가 함께 보이게 한다.\par\vspace{0.22cm}영상에는 입력을 조작하는 과정과 그에 따른 출력 변화를 담는다.\par\vspace{0.22cm}예상표의 정상·경계 조건을 직접 보여주고 회로 번호를 파일명에 적는다.\par\vspace{0.22cm}통합 영상이라면 각 회로의 타임스탬프를 레포트에서 연결한다.\par
+\end{frame}
+
+\begin{frame}{GitHub 결과 정리}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item reports/pre와 reports/post에 실험 전·후 레포트를 둔다.
+\item evidence/vscode와 evidence/vivado에 로그·파형·캡처를 구분한다.
+\item evidence/board/photos와 videos에 직접 촬영한 자료를 둔다.
+\item 큰 영상·bit는 배포 위치를 정하고 README와 레포트에서 연결한다.
+\item 웹에서 사진 표시와 영상 재생 또는 다운로드가 되는지 확인한다.
+\end{enumerate}
+\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/reports.md}{레포트 양식·예시·GitHub 안내}
+\end{frame}
+
+\begin{frame}{실험 후 레포트}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item Vivado 버전·part·top·핀 제약·코드 커밋을 기록한다.
+\item VS Code와 Vivado의 입력·출력·시간·검사 수를 비교한다.
+\item 합성·구현·bit 경로와 경고·수정 사항을 설명한다.
+\item 장치 기록 화면·사진·영상과 해당 조건을 연결한다.
+\item 예상값·두 시뮬레이션·실측의 일치 또는 차이 원인을 해석한다.
+\item 미수행 항목은 미완료로 남기고 후속 확인을 적는다.
+\end{enumerate}
+\href{04.LAB1_00_CONTENTS.pdf}{전체 목차 PDF}\quad\href{https://github.com/Glaysia/fpga-lab-template/tree/main/vivado_2026_1/05_comparator4}{프로젝트로 돌아가기}
+\end{frame}
+\endgroup
+\end{document}

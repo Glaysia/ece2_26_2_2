@@ -1,11 +1,96 @@
 % !TEX program = xelatex
-% LAB1 목차와 공통 안내. PDF를 실습별 PDF와 같은 폴더에 둔다.
 \input{shared/lab1_preamble.tex}
-\renewcommand{\navlink}[2]{%
-  \ifstrequal{#1}{legacy-01}%
-    {\href{04.LAB1_01_LOGIC_GATES_LEGACY.pdf\#legacy-01}{\textcolor{UOSBlue}{#2}}}%
-    {\hyperlink{#1}{\textcolor{UOSBlue}{#2}}}}
+\renewcommand{\labonehome}{\hyperlink{lab1-contents}{\contentsbutton}}
+\renewcommand{\legacySource}[1]{}
 \hypersetup{pdftitle={LAB1 목차와 공통 안내}}
 \begin{document}
-\input{sections/lab1_overview.tex}
+\begingroup
+\renewcommand{\small}{\fontsize{9}{11}\selectfont}
+\begin{frame}{LAB 1 · 조합회로 실습}\relax
+\small
+전자전기컴퓨터설계실험Ⅱ\par\vspace{0.22cm}VS Code에서 먼저 검증하고, Vivado와 보드에서 확인한다.\par\vspace{0.22cm}개별 회로 10개 · 레거시 10개 · 통합 2개\par\vspace{0.22cm}작성일 2026. 09. 10. · 이해리\par\href{https://github.com/Glaysia/fpga-lab-template}{학생용 템플릿 저장소}
+\end{frame}
+
+\begin{frame}[label=lab1-contents]{전체 목차}\relax
+\small
+A · Vivado 2026.1\par\navlink{lab1-modern}{개별 회로 01–10}\quad\href{04.LAB1_10A_INTEGRATED_VIVADO.pdf}{버튼·LCD 통합}\par\vspace{0.45cm}
+B · 오픈소스 CLI\par\href{04.LAB1_10B_INTEGRATED_CLI.pdf}{macOS ARM64 배포·WSL 실행·통합 프로젝트}\par\vspace{0.45cm}
+C · 레거시 Vivado\par\navlink{lab1-legacy}{원본 교안과 개별 회로 10개}\par\vspace{0.45cm}
+\navlink{lab1-reports}{실험 전·후 레포트와 제출}\quad\navlink{lab1-start}{시작·설치·PDF 사용법}
+\end{frame}
+
+\begin{frame}[label=lab1-start]{시작과 자료 사용법}\relax
+\small
+ZIP을 모두 푼 뒤 같은 폴더에 PDF를 둔다.\par\vspace{0.22cm}각 PDF 좌하단 목차 버튼은 그 PDF 2쪽으로 이동한다.\par\vspace{0.22cm}다른 PDF 링크가 뷰어에서 열리지 않으면 같은 폴더의 해당 파일을 직접 연다.\par\vspace{0.22cm}VS Code 사전 시뮬레이션 → 실험 전 레포트 → Vivado/CLI → 보드 → 실험 후 레포트 순서다.\par\href{01.vivado_2026_1_설치_매뉴얼.pdf}{Vivado 설치}\quad\href{02.vscode_verilog_환경설정_매뉴얼.pdf}{VS Code 환경설정}
+\end{frame}
+
+\begin{frame}[label=lab1-modern]{A · Vivado 2026.1 · 01–05}\relax
+\small
+\href{04.LAB1_01_LOGIC_GATES_VIVADO.pdf}{01 · AND·OR·XOR 논리 게이트}\par\vspace{0.35cm}
+\href{04.LAB1_02_FULL_ADDER_VIVADO.pdf}{02 · 전가산기}\par\vspace{0.35cm}
+\href{04.LAB1_03_ADDER4_VIVADO.pdf}{03 · 4비트 가산기}\par\vspace{0.35cm}
+\href{04.LAB1_04_SUBTRACTOR4_VIVADO.pdf}{04 · 4비트 감산기}\par\vspace{0.35cm}
+\href{04.LAB1_05_COMPARATOR4_VIVADO.pdf}{05 · 4비트 크기 비교기}\par\vspace{0.35cm}
+
+\end{frame}
+
+\begin{frame}{A · Vivado 2026.1 · 06–10}\relax
+\small
+\href{04.LAB1_06_MUX4TO1_VIVADO.pdf}{06 · 4:1 멀티플렉서}\par\vspace{0.35cm}
+\href{04.LAB1_07_DEMUX1TO8_VIVADO.pdf}{07 · 1:8 디멀티플렉서}\par\vspace{0.35cm}
+\href{04.LAB1_08_ENCODER8TO3_VIVADO.pdf}{08 · 8:3 인코더}\par\vspace{0.35cm}
+\href{04.LAB1_09_DECODER3TO8_VIVADO.pdf}{09 · 3:8 디코더}\par\vspace{0.35cm}
+\href{04.LAB1_10_SEVEN_SEGMENT_VIVADO.pdf}{10 · 7세그먼트 디코더}\par\vspace{0.35cm}
+
+\end{frame}
+
+\begin{frame}{통합 프로젝트와 제작 검증}\relax
+\small
+KEY1은 reset, KEY2는 다음 모드. DIP로 입력하고 LED·LCD·7세그먼트로 확인한다.\par\vspace{0.22cm}VS Code 작업은 도구 확인·시뮬레이션·파형의 세 가지다. Vivado에서는 GUI를 직접 누른다.\par\href{04.LAB1_10A_INTEGRATED_VIVADO.pdf}{Vivado 통합}\quad\href{04.LAB1_10B_INTEGRATED_CLI.pdf}{CLI 통합}\par\vspace{0.4cm}\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/validation.md}{제작 검증 현황·로그·미완료 항목}
+\end{frame}
+
+\begin{frame}[label=lab1-legacy]{C · 레거시 Vivado · 01–05}\relax
+\small
+\href{04.LAB1_11_LOGIC_GATES_LEGACY.pdf}{01 · AND·OR·XOR 논리 게이트}\par\vspace{0.35cm}
+\href{04.LAB1_12_FULL_ADDER_LEGACY.pdf}{02 · 전가산기}\par\vspace{0.35cm}
+\href{04.LAB1_13_ADDER4_LEGACY.pdf}{03 · 4비트 가산기}\par\vspace{0.35cm}
+\href{04.LAB1_14_SUBTRACTOR4_LEGACY.pdf}{04 · 4비트 감산기}\par\vspace{0.35cm}
+\href{04.LAB1_15_COMPARATOR4_LEGACY.pdf}{05 · 4비트 크기 비교기}\par\vspace{0.35cm}
+
+\end{frame}
+
+\begin{frame}{C · 레거시 Vivado · 06–10}\relax
+\small
+\href{04.LAB1_16_MUX4TO1_LEGACY.pdf}{06 · 4:1 멀티플렉서}\par\vspace{0.35cm}
+\href{04.LAB1_17_DEMUX1TO8_LEGACY.pdf}{07 · 1:8 디멀티플렉서}\par\vspace{0.35cm}
+\href{04.LAB1_18_ENCODER8TO3_LEGACY.pdf}{08 · 8:3 인코더}\par\vspace{0.35cm}
+\href{04.LAB1_19_DECODER3TO8_LEGACY.pdf}{09 · 3:8 디코더}\par\vspace{0.35cm}
+\href{04.LAB1_20_SEVEN_SEGMENT_LEGACY.pdf}{10 · 7세그먼트 디코더}\par\vspace{0.35cm}
+
+\end{frame}
+
+\begin{frame}[label=lab1-reports]{실험 전 레포트}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 목적·포트·예상표와 소스·TB를 설명한다.
+\item VS Code 새 창·workspace·도구 버전을 기록한다.
+\item Check tools → Simulate → Open waveform을 수행한다.
+\item 로그·파형 캡처·구간별 값과 해석을 연결한다.
+\item 오류·수정·재실행과 보드 실험 계획을 적는다.
+\end{enumerate}
+\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/reports.md}{양식·첫 회로 예시·GitHub 안내}
+\end{frame}
+
+\begin{frame}{실험 후 레포트}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item Vivado 시뮬레이션을 사전 결과와 비교한다.
+\item 합성·구현·bit·DRC·타이밍 결과를 기록한다.
+\item 실제 장치에 기록하고 입력·출력을 확인한다.
+\item 사진과 조작 영상을 GitHub 레포트에 연결한다.
+\item 예상값·두 시뮬레이션·실측의 차이를 설명한다.
+\end{enumerate}
+미수행 항목을 실제 수행 결과로 작성하지 않는다.\par
+\end{frame}
+\endgroup
 \end{document}

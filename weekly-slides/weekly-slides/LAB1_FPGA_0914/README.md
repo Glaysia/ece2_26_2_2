@@ -1,37 +1,50 @@
-# LAB1 — FPGA
+# LAB1 — FPGA 실습 22개
 
-[전체 강의자료](../../README.md) · [문서 관리](../../../docs/README.md)
+작성일 2026-09-10 · 4:3 슬라이드 · 09-14 수업 전 예습
 
-## 현재 자료
+[전체 목차 PDF](04.LAB1_00_CONTENTS.pdf) · [PDF 25개 ZIP](04.LAB1_0910_PDF.zip) · [학생용 템플릿](https://github.com/Glaysia/fpga-lab-template) · [22개 프로젝트](../../../example/fpga_projects_hdl/LAB1/README.md) · [검증 현황](../../../example/fpga_projects_hdl/LAB1/docs/validation.md) · [제작 목표](../../../daily_goal/GOAL0910.md)
 
-첫 회로 최신 검토본: [PDF](04.LAB1_01_LOGIC_GATES_VIVADO.pdf) · [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/01_logic_gates/README.md). 템플릿 clone부터 두 시뮬레이션과 비트스트림 생성까지 포함한다.
+VS Code 새 창 → workspace → 예상값·소스·TB → task 01·02·03 → 실험 전 레포트 → Vivado GUI 또는 CLI → 보드 기록·촬영 → GitHub·실험 후 레포트 순서입니다. 최신 첫 회로는 실제 GUI를 세분화한 59쪽 안내이며, 이후 회로는 공통 화면과 회로별 파일·핀·검사값을 구분합니다.
 
-| 자료 | 원본 | 배포본 |
-|---|---|---|
-| Vivado 설치 | [TeX](01.vivado_2026_1_설치_매뉴얼.tex) | [PDF](01.vivado_2026_1_설치_매뉴얼.pdf) |
-| VS Code Verilog 환경설정 | [TeX](02.vscode_verilog_환경설정_매뉴얼.tex) | [PDF](02.vscode_verilog_환경설정_매뉴얼.pdf) |
-| 01 논리 게이트 — VS Code → Vivado 2026.1, 59쪽 | [TeX](04.LAB1_01_LOGIC_GATES_VIVADO.tex) | [PDF](04.LAB1_01_LOGIC_GATES_VIVADO.pdf) |
-| LAB1 목차·공통 안내 — 4:3, 5쪽 | [TeX](04.LAB1_00_CONTENTS.tex) | [PDF](04.LAB1_00_CONTENTS.pdf) |
-| 01 논리 게이트 — VS Code 사전 실습 + 레거시 Vivado, 101쪽 | [TeX](04.LAB1_11_LOGIC_GATES_LEGACY.tex) | [PDF](04.LAB1_11_LOGIC_GATES_LEGACY.pdf) |
+ZIP 전체를 풀고 목차 PDF부터 엽니다. 각 실습 좌하단 목차는 같은 PDF 2쪽입니다. 외부 PDF 링크를 지원하지 않는 뷰어에서는 같은 폴더의 파일을 직접 여세요.
 
-학생 배포용: [PDF 묶음 ZIP](04.LAB1_0910_PDF.zip). ZIP 전체를 풀고 `04.LAB1_00_CONTENTS.pdf`부터 연다. 각 PDF 좌하단의 ‘목차’는 같은 파일의 목차로 이동한다. 레거시 01에서는 2쪽의 실습 목차로 돌아간다. ‘전체 목차 PDF’는 별도 파일로 이동하는 링크다. 폴더 구조와 파일명을 유지한다. PDF 뷰어에 따라 외부 파일 링크 지원이 다르므로 링크가 동작하지 않으면 같은 폴더의 대상 PDF를 직접 연다.
+| 실습 | 쪽 | 강의자료 | 실행 프로젝트 |
+|---|---:|---|---|
+| 01_LOGIC_GATES_VIVADO | 59 | [PDF](04.LAB1_01_LOGIC_GATES_VIVADO.pdf) · [TeX](04.LAB1_01_LOGIC_GATES_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/01_logic_gates/README.md) |
+| 02_FULL_ADDER_VIVADO | 38 | [PDF](04.LAB1_02_FULL_ADDER_VIVADO.pdf) · [TeX](04.LAB1_02_FULL_ADDER_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/02_full_adder/README.md) |
+| 03_ADDER4_VIVADO | 39 | [PDF](04.LAB1_03_ADDER4_VIVADO.pdf) · [TeX](04.LAB1_03_ADDER4_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/03_adder4/README.md) |
+| 04_SUBTRACTOR4_VIVADO | 39 | [PDF](04.LAB1_04_SUBTRACTOR4_VIVADO.pdf) · [TeX](04.LAB1_04_SUBTRACTOR4_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/04_subtractor4/README.md) |
+| 05_COMPARATOR4_VIVADO | 38 | [PDF](04.LAB1_05_COMPARATOR4_VIVADO.pdf) · [TeX](04.LAB1_05_COMPARATOR4_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/05_comparator4/README.md) |
+| 06_MUX4TO1_VIVADO | 38 | [PDF](04.LAB1_06_MUX4TO1_VIVADO.pdf) · [TeX](04.LAB1_06_MUX4TO1_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/06_mux4to1/README.md) |
+| 07_DEMUX1TO8_VIVADO | 38 | [PDF](04.LAB1_07_DEMUX1TO8_VIVADO.pdf) · [TeX](04.LAB1_07_DEMUX1TO8_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/07_demux1to8/README.md) |
+| 08_ENCODER8TO3_VIVADO | 38 | [PDF](04.LAB1_08_ENCODER8TO3_VIVADO.pdf) · [TeX](04.LAB1_08_ENCODER8TO3_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/08_encoder8to3/README.md) |
+| 09_DECODER3TO8_VIVADO | 38 | [PDF](04.LAB1_09_DECODER3TO8_VIVADO.pdf) · [TeX](04.LAB1_09_DECODER3TO8_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/09_decoder3to8/README.md) |
+| 10_SEVEN_SEGMENT_VIVADO | 38 | [PDF](04.LAB1_10_SEVEN_SEGMENT_VIVADO.pdf) · [TeX](04.LAB1_10_SEVEN_SEGMENT_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/10_seven_segment/README.md) |
+| 10A_INTEGRATED_VIVADO | 38 | [PDF](04.LAB1_10A_INTEGRATED_VIVADO.pdf) · [TeX](04.LAB1_10A_INTEGRATED_VIVADO.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/vivado_2026_1/11_integrated/README.md) |
+| 10B_INTEGRATED_CLI | 32 | [PDF](04.LAB1_10B_INTEGRATED_CLI.pdf) · [TeX](04.LAB1_10B_INTEGRATED_CLI.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/opensource_cli/integrated/README.md) |
+| 11_LOGIC_GATES_LEGACY | 93 | [PDF](04.LAB1_11_LOGIC_GATES_LEGACY.pdf) · [TeX](04.LAB1_11_LOGIC_GATES_LEGACY.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/legacy/01_logic_gates/README.md) |
+| 12_FULL_ADDER_LEGACY | 63 | [PDF](04.LAB1_12_FULL_ADDER_LEGACY.pdf) · [TeX](04.LAB1_12_FULL_ADDER_LEGACY.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/legacy/02_full_adder/README.md) |
+| 13_ADDER4_LEGACY | 60 | [PDF](04.LAB1_13_ADDER4_LEGACY.pdf) · [TeX](04.LAB1_13_ADDER4_LEGACY.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/legacy/03_adder4/README.md) |
+| 14_SUBTRACTOR4_LEGACY | 61 | [PDF](04.LAB1_14_SUBTRACTOR4_LEGACY.pdf) · [TeX](04.LAB1_14_SUBTRACTOR4_LEGACY.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/legacy/04_subtractor4/README.md) |
+| 15_COMPARATOR4_LEGACY | 61 | [PDF](04.LAB1_15_COMPARATOR4_LEGACY.pdf) · [TeX](04.LAB1_15_COMPARATOR4_LEGACY.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/legacy/05_comparator4/README.md) |
+| 16_MUX4TO1_LEGACY | 61 | [PDF](04.LAB1_16_MUX4TO1_LEGACY.pdf) · [TeX](04.LAB1_16_MUX4TO1_LEGACY.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/legacy/06_mux4to1/README.md) |
+| 17_DEMUX1TO8_LEGACY | 61 | [PDF](04.LAB1_17_DEMUX1TO8_LEGACY.pdf) · [TeX](04.LAB1_17_DEMUX1TO8_LEGACY.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/legacy/07_demux1to8/README.md) |
+| 18_ENCODER8TO3_LEGACY | 61 | [PDF](04.LAB1_18_ENCODER8TO3_LEGACY.pdf) · [TeX](04.LAB1_18_ENCODER8TO3_LEGACY.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/legacy/08_encoder8to3/README.md) |
+| 19_DECODER3TO8_LEGACY | 61 | [PDF](04.LAB1_19_DECODER3TO8_LEGACY.pdf) · [TeX](04.LAB1_19_DECODER3TO8_LEGACY.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/legacy/09_decoder3to8/README.md) |
+| 20_SEVEN_SEGMENT_LEGACY | 62 | [PDF](04.LAB1_20_SEVEN_SEGMENT_LEGACY.pdf) · [TeX](04.LAB1_20_SEVEN_SEGMENT_LEGACY.tex) | [소스·workspace·검증](../../../example/fpga_projects_hdl/LAB1/legacy/10_seven_segment/README.md) |
 
-기존 묶음에는 목차·레거시 01·기존 Vivado 설치·VS Code 환경설정 PDF가 포함된다. 01번은 [VS Code 사전 실습 32쪽](sections/vscode_01_logic_gates.tex)부터 시작한다. 새 창·workspace·확장 활성화·작업 선택·실행 로그·VaporView 파형·실험 전 레포트를 안내하며 [실행용 프로젝트와 workspace](../../../example/fpga_projects_hdl/LAB1/legacy/01_logic_gates/README.md)를 제공한다. 뒤의 [레거시 원문 69쪽](sections/legacy_01_logic_gates.tex)은 원본의 프로젝트 생성부터 보드 동작 확인까지 보존한다. [원문 대응표](assets/legacy-01/README.md)와 [새 캡처의 검증 범위](assets/vscode-01/README.md)를 구분한다. 나머지 21개 프로젝트의 상세 안내는 이후 추가한다.
+보조 자료: [Vivado 설치](01.vivado_2026_1_설치_매뉴얼.pdf) · [VS Code 환경설정](02.vscode_verilog_환경설정_매뉴얼.pdf). ZIP은 실습 22개·전체 목차 1개·보조 2개를 포함합니다.
 
-TeX는 `04.LAB1_번호_내용.tex` 형식으로 분리한다. [공통 서식](shared/lab1_preamble.tex)과 [목차 본문](sections/lab1_overview.tex)을 재사용한다. 중복된 COMB 통합 검토본은 사용하지 않는다. 새 캡처 PNG는 로컬 빌드 자료로 Git에서 무시하며, 다른 장치의 TeX 재빌드는 요구하지 않는다. PDF와 ZIP을 배포·커밋한다.
+## 검증 범위
 
-PDF 빌드 후 [묶음 생성 스크립트](../../tools/package_lab1_pdfs.py)를 실행하면 PDF의 파일 간 링크·목적지와 ZIP 압축 해제 후의 연결을 검사한다. 실행에는 Python과 `pypdf`가 필요하다.
+실제 로그·VCD·비트스트림과 SHA-256은 프로젝트 evidence와 release에서 확인합니다. 레거시 원본 2020.1 XPR과 보충 자기검사 TB를 구분합니다. 원본 감산기의 동일 입력 borrow 오류는 원본을 보존하고 corrected 소스로 수정했습니다.
 
-수업 내용과 도구 사용 절차는 위 TeX에서 수정한다. 이 README에는 강의 본문·실습 명세를 중복 작성하지 않는다. 빌드 방법은 [공통 안내](../../README.md)를 따른다.
+CLI는 macOS ARM64 배포를 확인하고 WSL에서 실행했습니다. 통합 시뮬레이션·Yosys 합성은 통과했으나 사용한 S75 데이터베이스의 핀 누락으로 배치배선에 실패하여 CLI bit는 미생성입니다. [실패 로그와 분석](../../../example/fpga_projects_hdl/LAB1/docs/cli.md)을 확인하세요.
 
-## 제작 대기
+추가 회로 전용 VS Code·Vivado 캡처, Vivado 2020.1 실행, 실제 보드 기록·사진·영상은 미완료입니다. 실제 VCD 도표는 측정된 시뮬레이션 데이터이며 GUI 캡처로 표시하지 않습니다. 미확보 결과를 성공 자료로 대체하지 않았습니다.
 
-- LAB1 조합회로 본문: [현재 제작 목표](../../../daily_goal/GOAL0910.md)에 따라 나머지 레거시 실습, 최신 Vivado, 통합 프로젝트, 상세 VS Code 사전 시뮬레이션·실험 전·후 레포트와 CLI 절차를 이어 작성.
-- 별도 조합회로 시뮬레이션 자료와 보고서 예시: 현재 배포할 파일을 확정한 뒤 목록에 추가.
-- 예제 경로와 실행 절차: 기존 HDL 프로젝트 삭제 이후 현재 저장소 기준으로 재검증.
+## 제작 파일
 
-기존 README의 상세 실습 구상은 초안으로 보존했다. 기존 VS Code Markdown 원고는 [이전 원고](../../../docs/archive/LAB1_VSCode_환경설정_이전원고.md)로 보관하며, 현재 매뉴얼은 TeX만 수정한다.
+[실험 전·후 레포트 양식과 예시](../../../example/fpga_projects_hdl/LAB1/docs/reports.md) · [공통 TeX 서식](shared/lab1_preamble.tex) · [분할 문서 생성기](../../tools/lab1_series.py) · [PDF 링크·ZIP 검증기](../../tools/package_lab1_pdfs.py)
 
-첫 회로 검토용 별도 묶음: [PDF 3개 ZIP](04.LAB1_01_REVIEW.zip). 최신 01 실습과 설치·환경설정 보조 PDF를 포함하며 기존 레거시 묶음과 구분한다.
-
-학생용 실행 템플릿: [Glaysia/fpga-lab-template](https://github.com/Glaysia/fpga-lab-template). clone 후 루트의 LAB1.code-workspace를 열며, 최신 01 PDF도 이 주소를 기준으로 안내합니다.
+새 PNG는 로컬 빌드 자료로 무시하고 TeX·PDF·ZIP을 커밋합니다. 다른 장치에서 TeX를 다시 빌드하는 것은 배포 요건이 아닙니다. 프로젝트 소스·workspace는 clone 후 실행할 수 있도록 상대경로를 검증합니다.
