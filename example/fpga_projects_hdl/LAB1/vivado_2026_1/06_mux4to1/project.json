@@ -1,0 +1,15 @@
+{
+  "id": "vivado_2026_1_06_mux4to1",
+  "title": "4:1 multiplexer",
+  "edition": "vivado_2026_1",
+  "top": "mux_4x1",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "../../common/rtl/mux_4x1.v"
+  ],
+  "testbench": "../../common/tb/tb_mux_4x1.sv",
+  "simulation_top": "tb_mux_4x1",
+  "cases": 64,
+  "constraints": "../../common/constraints/mux_4x1.xdc",
+  "expected_legacy_issue": null
+}

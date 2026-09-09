@@ -1,0 +1,17 @@
+{
+  "id": "legacy_02_full_adder",
+  "title": "Full adder",
+  "edition": "legacy",
+  "top": "full_adder",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "original/full_adder.v",
+    "original/half_adder.v"
+  ],
+  "testbench": "../../common/tb/tb_full_adder.sv",
+  "simulation_top": "tb_full_adder",
+  "cases": 8,
+  "constraints": "../../common/constraints/full_adder.xdc",
+  "expected_legacy_issue": null,
+  "original_testbench": "original/testbench.v"
+}

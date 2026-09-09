@@ -1,0 +1,16 @@
+{
+  "id": "legacy_01_logic_gates",
+  "title": "AND OR XOR",
+  "edition": "legacy",
+  "top": "logic_gate",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "original/logic_gate.v"
+  ],
+  "testbench": "../../common/tb/tb_logic_gate.sv",
+  "simulation_top": "tb_logic_gate",
+  "cases": 4,
+  "constraints": "../../common/constraints/logic_gate.xdc",
+  "expected_legacy_issue": null,
+  "original_testbench": "original/testbench.v"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "zip": "seg_decoder.zip",
+    "member": "seg_decoder.v",
+    "file": "legacy/10_seven_segment/original/seg_decoder.v",
+    "sha256": "2d660c034085991a21d1aee27823682ac0fd1092673e640445caf70c227ca330"
+  },
+  {
+    "zip": "seg_decoder.zip",
+    "member": "testbench.v",
+    "file": "legacy/10_seven_segment/original/testbench.v",
+    "sha256": "3968b412f55115354bdf3ea5e8a73b1721d7736a76c8cec0e590df5063d407e4"
+  },
+  {
+    "zip": "seg_decoder.zip",
+    "member": "seg_decoder.srcs/constrs_1/new/seg_decoder.xdc",
+    "file": "legacy/10_seven_segment/original/seg_decoder.xdc",
+    "sha256": "ab2a5331c6a268ff62fd3a4c22b73558094c190af872905f32dcb321550d974d"
+  },
+  {
+    "zip": "seg_decoder.zip",
+    "member": "seg_decoder.xpr",
+    "file": "legacy/10_seven_segment/original/seg_decoder.xpr",
+    "sha256": "c3967f426af223868b2573dde999a70b2c92fc7a354ef1b1d6cc1ba9e1a6c364"
+  }
+]

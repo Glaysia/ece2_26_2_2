@@ -1,0 +1,16 @@
+{
+  "id": "vivado_2026_1_02_full_adder",
+  "title": "Full adder",
+  "edition": "vivado_2026_1",
+  "top": "full_adder",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "../../common/rtl/full_adder.v",
+    "../../common/rtl/half_adder.v"
+  ],
+  "testbench": "../../common/tb/tb_full_adder.sv",
+  "simulation_top": "tb_full_adder",
+  "cases": 8,
+  "constraints": "../../common/constraints/full_adder.xdc",
+  "expected_legacy_issue": null
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "zip": "decoder3x8.zip",
+    "member": "decoder3x8.v",
+    "file": "legacy/09_decoder3to8/original/decoder3x8.v",
+    "sha256": "cd0a3e34bc61b4ee09b5afc27020677f0b5503f569c30e1f24979cc965ad27ac"
+  },
+  {
+    "zip": "decoder3x8.zip",
+    "member": "testbench.v",
+    "file": "legacy/09_decoder3to8/original/testbench.v",
+    "sha256": "5ed7c9fa1fc92b05f1fc6d462248d8af3902d6fa5351020e7428fb0ab43da117"
+  },
+  {
+    "zip": "decoder3x8.zip",
+    "member": "decoder3x8.srcs/constrs_1/new/decoder3x8.xdc",
+    "file": "legacy/09_decoder3to8/original/decoder3x8.xdc",
+    "sha256": "92f7b8825dfafad257ea5a76de3d5bebfbce6e7cfcc2f9dc99575a6dde1f0c07"
+  },
+  {
+    "zip": "decoder3x8.zip",
+    "member": "decoder3x8.xpr",
+    "file": "legacy/09_decoder3to8/original/decoder3x8.xpr",
+    "sha256": "ddafa33125d210676145153b1b5d0131e4fd4a25304a301c320d3d910dc5969f"
+  }
+]

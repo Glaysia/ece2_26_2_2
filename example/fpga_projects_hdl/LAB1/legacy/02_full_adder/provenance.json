@@ -1,0 +1,32 @@
+[
+  {
+    "zip": "full_adder.zip",
+    "member": "full_adder.v",
+    "file": "legacy/02_full_adder/original/full_adder.v",
+    "sha256": "0acb0572610de489b94b902a3fe2b254315f41ca711e790cff185acc5ee5c898"
+  },
+  {
+    "zip": "full_adder.zip",
+    "member": "testbench.v",
+    "file": "legacy/02_full_adder/original/testbench.v",
+    "sha256": "05242202e6959cbe5b8fda9a985f7dee0f4d500d3348918b0d07671aed453fd0"
+  },
+  {
+    "zip": "full_adder.zip",
+    "member": "half_adder.v",
+    "file": "legacy/02_full_adder/original/half_adder.v",
+    "sha256": "959405ba290ffdfbc82521fc5458a706c131082deef0ebb3f539c6bd3d6a4700"
+  },
+  {
+    "zip": "full_adder.zip",
+    "member": "full_adder.srcs/constrs_1/new/full_adder.xdc",
+    "file": "legacy/02_full_adder/original/full_adder.xdc",
+    "sha256": "ab5bf891e60223d96e1e4eff1b15e3125b023561ccdc869aa941f09501573956"
+  },
+  {
+    "zip": "full_adder.zip",
+    "member": "full_adder.xpr",
+    "file": "legacy/02_full_adder/original/full_adder.xpr",
+    "sha256": "9a54aa3e32c9d6cb91c271df1541e8302d40914191e9ff567054858625430270"
+  }
+]

@@ -1,0 +1,15 @@
+../../common/rtl/logic_gate.v
+../../common/rtl/half_adder.v
+../../common/rtl/full_adder.v
+../../common/rtl/adder_4bit.v
+../../common/rtl/sub_4bit.v
+../../common/rtl/compare_4.v
+../../common/rtl/mux_4x1.v
+../../common/rtl/demux_1x8.v
+../../common/rtl/encoder8x3.v
+../../common/rtl/decoder3x8.v
+../../common/rtl/seg_decoder.v
+../../common/rtl/button_onepulse.v
+../../common/rtl/lcd_modes.v
+../../common/rtl/lab1_integrated.v
+../../common/tb/tb_lab1_integrated.sv

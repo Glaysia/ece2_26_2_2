@@ -1,0 +1,149 @@
+[
+  {
+    "project": "vivado_2026_1_01_logic_gates",
+    "status": "PASS",
+    "cases": 4,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_01_logic_gates/simulation.txt"
+  },
+  {
+    "project": "legacy_01_logic_gates",
+    "status": "PASS",
+    "cases": 4,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/legacy_01_logic_gates/simulation.txt"
+  },
+  {
+    "project": "vivado_2026_1_02_full_adder",
+    "status": "PASS",
+    "cases": 8,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_02_full_adder/simulation.txt"
+  },
+  {
+    "project": "legacy_02_full_adder",
+    "status": "PASS",
+    "cases": 8,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/legacy_02_full_adder/simulation.txt"
+  },
+  {
+    "project": "vivado_2026_1_03_adder4",
+    "status": "PASS",
+    "cases": 256,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_03_adder4/simulation.txt"
+  },
+  {
+    "project": "legacy_03_adder4",
+    "status": "PASS",
+    "cases": 256,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/legacy_03_adder4/simulation.txt"
+  },
+  {
+    "project": "vivado_2026_1_04_subtractor4",
+    "status": "PASS",
+    "cases": 256,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_04_subtractor4/simulation.txt"
+  },
+  {
+    "project": "legacy_04_subtractor4",
+    "status": "PASS",
+    "cases": 256,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/legacy_04_subtractor4/simulation.txt"
+  },
+  {
+    "project": "vivado_2026_1_05_comparator4",
+    "status": "PASS",
+    "cases": 256,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_05_comparator4/simulation.txt"
+  },
+  {
+    "project": "legacy_05_comparator4",
+    "status": "PASS",
+    "cases": 256,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/legacy_05_comparator4/simulation.txt"
+  },
+  {
+    "project": "vivado_2026_1_06_mux4to1",
+    "status": "PASS",
+    "cases": 64,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_06_mux4to1/simulation.txt"
+  },
+  {
+    "project": "legacy_06_mux4to1",
+    "status": "PASS",
+    "cases": 64,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/legacy_06_mux4to1/simulation.txt"
+  },
+  {
+    "project": "vivado_2026_1_07_demux1to8",
+    "status": "PASS",
+    "cases": 16,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_07_demux1to8/simulation.txt"
+  },
+  {
+    "project": "legacy_07_demux1to8",
+    "status": "PASS",
+    "cases": 16,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/legacy_07_demux1to8/simulation.txt"
+  },
+  {
+    "project": "vivado_2026_1_08_encoder8to3",
+    "status": "PASS",
+    "cases": 256,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_08_encoder8to3/simulation.txt"
+  },
+  {
+    "project": "legacy_08_encoder8to3",
+    "status": "PASS",
+    "cases": 256,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/legacy_08_encoder8to3/simulation.txt"
+  },
+  {
+    "project": "vivado_2026_1_09_decoder3to8",
+    "status": "PASS",
+    "cases": 8,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_09_decoder3to8/simulation.txt"
+  },
+  {
+    "project": "legacy_09_decoder3to8",
+    "status": "PASS",
+    "cases": 8,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/legacy_09_decoder3to8/simulation.txt"
+  },
+  {
+    "project": "vivado_2026_1_10_seven_segment",
+    "status": "PASS",
+    "cases": 16,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_10_seven_segment/simulation.txt"
+  },
+  {
+    "project": "legacy_10_seven_segment",
+    "status": "PASS",
+    "cases": 16,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/legacy_10_seven_segment/simulation.txt"
+  },
+  {
+    "project": "vivado_2026_1_integrated",
+    "status": "PASS",
+    "cases": 2560,
+    "simulator": "Icarus Verilog 14.0",
+    "log": "opensource_cli/integrated/build/crosscheck/vivado_2026_1_integrated/simulation.txt"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "id": "vivado_2026_1_03_adder4",
+  "title": "4-bit adder",
+  "edition": "vivado_2026_1",
+  "top": "adder_4bit",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "../../common/rtl/adder_4bit.v"
+  ],
+  "testbench": "../../common/tb/tb_adder_4bit.sv",
+  "simulation_top": "tb_adder_4bit",
+  "cases": 256,
+  "constraints": "../../common/constraints/adder_4bit.xdc",
+  "expected_legacy_issue": null
+}

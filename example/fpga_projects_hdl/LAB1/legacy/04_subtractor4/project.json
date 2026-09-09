@@ -1,0 +1,20 @@
+{
+  "id": "legacy_04_subtractor4",
+  "title": "4-bit subtractor",
+  "edition": "legacy",
+  "top": "sub_4bit",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "corrected/sub_4bit.v"
+  ],
+  "testbench": "../../common/tb/tb_sub_4bit.sv",
+  "simulation_top": "tb_sub_4bit",
+  "cases": 256,
+  "constraints": "../../common/constraints/sub_4bit.xdc",
+  "expected_legacy_issue": "borrow asserted when a==b",
+  "original_testbench": "original/testbench.v",
+  "original_sources": [
+    "original/sub_4bit.v"
+  ],
+  "correction": "Borrow is 0 for equal operands; original preserved."
+}

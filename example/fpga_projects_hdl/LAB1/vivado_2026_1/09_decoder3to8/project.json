@@ -1,0 +1,15 @@
+{
+  "id": "vivado_2026_1_09_decoder3to8",
+  "title": "3:8 decoder",
+  "edition": "vivado_2026_1",
+  "top": "decoder3x8",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "../../common/rtl/decoder3x8.v"
+  ],
+  "testbench": "../../common/tb/tb_decoder3x8.sv",
+  "simulation_top": "tb_decoder3x8",
+  "cases": 8,
+  "constraints": "../../common/constraints/decoder3x8.xdc",
+  "expected_legacy_issue": null
+}

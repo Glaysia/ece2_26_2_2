@@ -1,0 +1,15 @@
+{
+  "id": "vivado_2026_1_05_comparator4",
+  "title": "4-bit comparator",
+  "edition": "vivado_2026_1",
+  "top": "compare_4",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "../../common/rtl/compare_4.v"
+  ],
+  "testbench": "../../common/tb/tb_compare_4.sv",
+  "simulation_top": "tb_compare_4",
+  "cases": 256,
+  "constraints": "../../common/constraints/compare_4.xdc",
+  "expected_legacy_issue": null
+}

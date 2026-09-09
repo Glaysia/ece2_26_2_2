@@ -1,0 +1,10 @@
+build/
+.Xil/
+vivado/*.cache/
+vivado/*.gen/
+vivado/*.hw/
+vivado/*.ip_user_files/
+vivado/*.runs/
+vivado/*.sim/
+*.log
+*.jou

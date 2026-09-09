@@ -1,0 +1,15 @@
+{
+  "id": "vivado_2026_1_08_encoder8to3",
+  "title": "8:3 encoder",
+  "edition": "vivado_2026_1",
+  "top": "encoder8x3",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "../../common/rtl/encoder8x3.v"
+  ],
+  "testbench": "../../common/tb/tb_encoder8x3.sv",
+  "simulation_top": "tb_encoder8x3",
+  "cases": 256,
+  "constraints": "../../common/constraints/encoder8x3.xdc",
+  "expected_legacy_issue": null
+}

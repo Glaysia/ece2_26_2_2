@@ -1,4 +1,4 @@
-# LAB1 준비 — 첫 회로 검토본
+# LAB1 준비와 22개 workspace
 [LAB1 홈](../README.md) · [첫 회로](../vivado_2026_1/01_logic_gates/README.md)
 
 ## 1. 설치와 버전
@@ -40,4 +40,22 @@ Vivado 단계는 task로 실행하지 않습니다. Vivado GUI에서 새 프로�
 VCD가 글자로 열리면 파일 탭을 오른쪽 클릭 → Reopen Editor With... → VaporView.
 Netlist에서 tb_logic_gate_modern을 펼쳐 a,b,x,y,z를 추가하고 Zoom to Fit를 누릅니다.
 첫 회로는 00→01→10→11, 각 10ns, 총 40ns를 검사합니다.
-최신 검토본의 결과와 기존 레거시 교안의 200ns 간격은 구분하세요.
+배포 자기검사 TB의 시간과 원본 교안 testbench의 시간은 구분하세요.
+
+## 4. 다른 회로와 통합본
+
+[전체 목록](../README.md)에서 회로를 고르고 해당 폴더의 `.code-workspace`를 엽니다. 최신은 `vivado_2026_1`, 레거시는 `legacy`, CLI 통합은 `opensource_cli/integrated`입니다. 프로젝트마다 실행 디렉터리와 TB가 달라지므로 파일 하나만 여는 대신 전용 workspace를 사용합니다. 통합본의 모드·DIP·LCD 연결은 [통합 안내](integrated.md)를 봅니다.
+
+레거시 XPR은 Vivado 2020.1 원본 형식을 유지했습니다. 설치된 2026.1 XSim으로 먼저 RTL을 검사할 수 있지만 2020.1 GUI·합성 검증과 같지 않습니다. 새 버전에서 XPR을 열면 변환될 수 있으므로 원본은 `original/`에 보존했습니다.
+
+CLI 사용자는 [macOS ARM64·WSL 설치](cli.md)를 따릅니다. 해당 workspace는 Icarus Verilog를 실행합니다. WSL에서 열었다면 Python·도구·확장도 WSL 환경을 사용해야 합니다.
+
+## 5. 실행 문제에서 복귀
+
+- 작업이 보이지 않음: File → Open Workspace from File...로 올바른 전용 workspace를 다시 선택합니다.
+- 파일을 못 찾음: 전체 템플릿을 clone했는지 확인합니다. 프로젝트 폴더만 따로 옮기면 `../../common` 연결이 끊어집니다.
+- 컴파일 오류: 실제 실행 폴더 `build/vscode/run-...`의 compile.log부터 확인합니다. elaborate.log와 simulation.log를 차례로 읽습니다.
+- 파형이 오래된 것 같음: File → Save All, 02 Simulate를 다시 실행한 뒤 wave.vcd를 닫았다 엽니다. PASS와 검사 수·종료 시각을 확인합니다.
+- 버전 명령 실패: 설치 경로와 PATH 또는 VIVADO_BIN을 확인하고 VS Code를 다시 실행합니다.
+
+[실험 전·후 레포트](reports.md)에 자신의 오류·수정·재실행 기록까지 남깁니다.

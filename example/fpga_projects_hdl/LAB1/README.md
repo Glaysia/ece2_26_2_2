@@ -1,11 +1,34 @@
-# LAB1 프로젝트
+# LAB1: 22개 프로젝트
 
-[제작 목표와 22개 구성](../../../daily_goal/GOAL0910.md) · [강의자료](../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/README.md)
+[학생용 별도 템플릿](https://github.com/Glaysia/fpga-lab-template) · [설치·시작](docs/setup.md) · [10개 회로](docs/circuits.md) · [버튼·LCD 통합](docs/integrated.md) · [오픈소스 CLI](docs/cli.md) · [레포트](docs/reports.md) · [검증 현황](docs/validation.md) · [레거시 원본](docs/legacy-provenance.md)
 
-모든 프로젝트는 VS Code 사전 시뮬레이션과 실험 전 레포트부터 시작한다. 그 뒤 Vivado GUI 또는 CLI 빌드로 진행한다.
+작성일 2026-09-10. 모든 프로젝트는 VS Code 사전 시뮬레이션과 실험 전 레포트부터 시작합니다. Vivado에서는 메뉴를 직접 눌러 시뮬레이션·합성·구현·bit 생성을 수행하고, 보드 기록·사진·영상은 실험 후 레포트에 넣습니다.
 
-| 현재 제공 항목 | 상태 |
-|---|---|
-| [레거시 01 논리 게이트](legacy/01_logic_gates/README.md) · [workspace](legacy/01_logic_gates/legacy_01_logic_gates.code-workspace) | VS Code 사전 시뮬레이션용 소스·테스트벤치·작업 |
+프로젝트별 workspace는 22개입니다. `template/LAB1.code-workspace`는 첫 회로를 여는 편의 진입점입니다. 최신 개별 10 + 최신 통합 1 + CLI 통합 1 + 레거시 10입니다.
 
-22개 중 나머지 프로젝트와 Vivado 프로젝트 파일·보드 검증은 제작 목표에 따라 추가한다.
+| 프로젝트 | 강의 PDF | 사전 시뮬레이션 | Vivado 시뮬레이션 | Vivado bit |
+|---|---|---|---|---|
+| [vivado_2026_1_01_logic_gates](vivado_2026_1/01_logic_gates/README.md) | [04.LAB1_01_LOGIC_GATES_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_01_LOGIC_GATES_VIVADO.pdf) | PASS | NOT_RUN | PASS |
+| [legacy_01_logic_gates](legacy/01_logic_gates/README.md) | [04.LAB1_11_LOGIC_GATES_LEGACY.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_11_LOGIC_GATES_LEGACY.pdf) | PASS | 구버전 미실행 | 아래 검증 안내 |
+| [vivado_2026_1_02_full_adder](vivado_2026_1/02_full_adder/README.md) | [04.LAB1_02_FULL_ADDER_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_02_FULL_ADDER_VIVADO.pdf) | PASS | PASS | PASS |
+| [legacy_02_full_adder](legacy/02_full_adder/README.md) | [04.LAB1_12_FULL_ADDER_LEGACY.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_12_FULL_ADDER_LEGACY.pdf) | PASS | 구버전 미실행 | 아래 검증 안내 |
+| [vivado_2026_1_03_adder4](vivado_2026_1/03_adder4/README.md) | [04.LAB1_03_ADDER4_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_03_ADDER4_VIVADO.pdf) | PASS | PASS | PASS |
+| [legacy_03_adder4](legacy/03_adder4/README.md) | [04.LAB1_13_ADDER4_LEGACY.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_13_ADDER4_LEGACY.pdf) | PASS | 구버전 미실행 | 아래 검증 안내 |
+| [vivado_2026_1_04_subtractor4](vivado_2026_1/04_subtractor4/README.md) | [04.LAB1_04_SUBTRACTOR4_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_04_SUBTRACTOR4_VIVADO.pdf) | PASS | PASS | PASS |
+| [legacy_04_subtractor4](legacy/04_subtractor4/README.md) | [04.LAB1_14_SUBTRACTOR4_LEGACY.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_14_SUBTRACTOR4_LEGACY.pdf) | PASS | 구버전 미실행 | 아래 검증 안내 |
+| [vivado_2026_1_05_comparator4](vivado_2026_1/05_comparator4/README.md) | [04.LAB1_05_COMPARATOR4_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_05_COMPARATOR4_VIVADO.pdf) | PASS | PASS | PASS |
+| [legacy_05_comparator4](legacy/05_comparator4/README.md) | [04.LAB1_15_COMPARATOR4_LEGACY.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_15_COMPARATOR4_LEGACY.pdf) | PASS | 구버전 미실행 | 아래 검증 안내 |
+| [vivado_2026_1_06_mux4to1](vivado_2026_1/06_mux4to1/README.md) | [04.LAB1_06_MUX4TO1_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_06_MUX4TO1_VIVADO.pdf) | PASS | RUNNING | NOT_RUN |
+| [legacy_06_mux4to1](legacy/06_mux4to1/README.md) | [04.LAB1_16_MUX4TO1_LEGACY.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_16_MUX4TO1_LEGACY.pdf) | PASS | 구버전 미실행 | 아래 검증 안내 |
+| [vivado_2026_1_07_demux1to8](vivado_2026_1/07_demux1to8/README.md) | [04.LAB1_07_DEMUX1TO8_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_07_DEMUX1TO8_VIVADO.pdf) | PASS | RUNNING | NOT_RUN |
+| [legacy_07_demux1to8](legacy/07_demux1to8/README.md) | [04.LAB1_17_DEMUX1TO8_LEGACY.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_17_DEMUX1TO8_LEGACY.pdf) | PASS | 구버전 미실행 | 아래 검증 안내 |
+| [vivado_2026_1_08_encoder8to3](vivado_2026_1/08_encoder8to3/README.md) | [04.LAB1_08_ENCODER8TO3_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_08_ENCODER8TO3_VIVADO.pdf) | PASS | NOT_RUN | NOT_RUN |
+| [legacy_08_encoder8to3](legacy/08_encoder8to3/README.md) | [04.LAB1_18_ENCODER8TO3_LEGACY.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_18_ENCODER8TO3_LEGACY.pdf) | PASS | 구버전 미실행 | 아래 검증 안내 |
+| [vivado_2026_1_09_decoder3to8](vivado_2026_1/09_decoder3to8/README.md) | [04.LAB1_09_DECODER3TO8_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_09_DECODER3TO8_VIVADO.pdf) | PASS | NOT_RUN | NOT_RUN |
+| [legacy_09_decoder3to8](legacy/09_decoder3to8/README.md) | [04.LAB1_19_DECODER3TO8_LEGACY.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_19_DECODER3TO8_LEGACY.pdf) | PASS | 구버전 미실행 | 아래 검증 안내 |
+| [vivado_2026_1_10_seven_segment](vivado_2026_1/10_seven_segment/README.md) | [04.LAB1_10_SEVEN_SEGMENT_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_10_SEVEN_SEGMENT_VIVADO.pdf) | PASS | NOT_RUN | NOT_RUN |
+| [legacy_10_seven_segment](legacy/10_seven_segment/README.md) | [04.LAB1_20_SEVEN_SEGMENT_LEGACY.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_20_SEVEN_SEGMENT_LEGACY.pdf) | PASS | 구버전 미실행 | 아래 검증 안내 |
+| [vivado_2026_1_integrated](vivado_2026_1/11_integrated/README.md) | [04.LAB1_21_INTEGRATED_VIVADO.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_21_INTEGRATED_VIVADO.pdf) | PASS | NOT_RUN | NOT_RUN |
+| [opensource_cli_integrated](opensource_cli/integrated/README.md) | [04.LAB1_22_INTEGRATED_CLI.pdf](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_22_INTEGRATED_CLI.pdf) | PASS | 해당 없음 | 아래 검증 안내 |
+
+실제 보드 기록·촬영은 아직 수행하지 않았습니다. 레거시의 PASS는 2026.1 XSim의 RTL 검사 결과이며 2020.1 도구 실행 완료를 의미하지 않습니다. 최신 첫 회로의 별도 템플릿 GUI 검증은 [상세 기록](vivado_2026_1/01_logic_gates/VALIDATION.md)을 봅니다.

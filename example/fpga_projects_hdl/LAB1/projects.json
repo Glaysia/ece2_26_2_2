@@ -1,0 +1,394 @@
+[
+  {
+    "path": "vivado_2026_1/01_logic_gates",
+    "id": "vivado_2026_1_01_logic_gates",
+    "title": "AND OR XOR",
+    "edition": "vivado_2026_1",
+    "top": "logic_gate",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/logic_gate.v"
+    ],
+    "testbench": "../../common/tb/tb_logic_gate_modern.sv",
+    "simulation_top": "tb_logic_gate_modern",
+    "cases": 4,
+    "constraints": "../../common/constraints/logic_gate.xdc",
+    "expected_legacy_issue": null
+  },
+  {
+    "path": "legacy/01_logic_gates",
+    "id": "legacy_01_logic_gates",
+    "title": "AND OR XOR",
+    "edition": "legacy",
+    "top": "logic_gate",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "original/logic_gate.v"
+    ],
+    "testbench": "../../common/tb/tb_logic_gate.sv",
+    "simulation_top": "tb_logic_gate",
+    "cases": 4,
+    "constraints": "../../common/constraints/logic_gate.xdc",
+    "expected_legacy_issue": null,
+    "original_testbench": "original/testbench.v"
+  },
+  {
+    "path": "vivado_2026_1/02_full_adder",
+    "id": "vivado_2026_1_02_full_adder",
+    "title": "Full adder",
+    "edition": "vivado_2026_1",
+    "top": "full_adder",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/full_adder.v",
+      "../../common/rtl/half_adder.v"
+    ],
+    "testbench": "../../common/tb/tb_full_adder.sv",
+    "simulation_top": "tb_full_adder",
+    "cases": 8,
+    "constraints": "../../common/constraints/full_adder.xdc",
+    "expected_legacy_issue": null
+  },
+  {
+    "path": "legacy/02_full_adder",
+    "id": "legacy_02_full_adder",
+    "title": "Full adder",
+    "edition": "legacy",
+    "top": "full_adder",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "original/full_adder.v",
+      "original/half_adder.v"
+    ],
+    "testbench": "../../common/tb/tb_full_adder.sv",
+    "simulation_top": "tb_full_adder",
+    "cases": 8,
+    "constraints": "../../common/constraints/full_adder.xdc",
+    "expected_legacy_issue": null,
+    "original_testbench": "original/testbench.v"
+  },
+  {
+    "path": "vivado_2026_1/03_adder4",
+    "id": "vivado_2026_1_03_adder4",
+    "title": "4-bit adder",
+    "edition": "vivado_2026_1",
+    "top": "adder_4bit",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/adder_4bit.v"
+    ],
+    "testbench": "../../common/tb/tb_adder_4bit.sv",
+    "simulation_top": "tb_adder_4bit",
+    "cases": 256,
+    "constraints": "../../common/constraints/adder_4bit.xdc",
+    "expected_legacy_issue": null
+  },
+  {
+    "path": "legacy/03_adder4",
+    "id": "legacy_03_adder4",
+    "title": "4-bit adder",
+    "edition": "legacy",
+    "top": "adder_4bit",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "original/adder_4bit.v"
+    ],
+    "testbench": "../../common/tb/tb_adder_4bit.sv",
+    "simulation_top": "tb_adder_4bit",
+    "cases": 256,
+    "constraints": "../../common/constraints/adder_4bit.xdc",
+    "expected_legacy_issue": null,
+    "original_testbench": "original/testbench.v"
+  },
+  {
+    "path": "vivado_2026_1/04_subtractor4",
+    "id": "vivado_2026_1_04_subtractor4",
+    "title": "4-bit subtractor",
+    "edition": "vivado_2026_1",
+    "top": "sub_4bit",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/sub_4bit.v"
+    ],
+    "testbench": "../../common/tb/tb_sub_4bit.sv",
+    "simulation_top": "tb_sub_4bit",
+    "cases": 256,
+    "constraints": "../../common/constraints/sub_4bit.xdc",
+    "expected_legacy_issue": null
+  },
+  {
+    "id": "legacy_04_subtractor4",
+    "title": "4-bit subtractor",
+    "edition": "legacy",
+    "top": "sub_4bit",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "corrected/sub_4bit.v"
+    ],
+    "testbench": "../../common/tb/tb_sub_4bit.sv",
+    "simulation_top": "tb_sub_4bit",
+    "cases": 256,
+    "constraints": "../../common/constraints/sub_4bit.xdc",
+    "expected_legacy_issue": "borrow asserted when a==b",
+    "original_testbench": "original/testbench.v",
+    "original_sources": [
+      "original/sub_4bit.v"
+    ],
+    "correction": "Borrow is 0 for equal operands; original preserved.",
+    "path": "legacy/04_subtractor4"
+  },
+  {
+    "path": "vivado_2026_1/05_comparator4",
+    "id": "vivado_2026_1_05_comparator4",
+    "title": "4-bit comparator",
+    "edition": "vivado_2026_1",
+    "top": "compare_4",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/compare_4.v"
+    ],
+    "testbench": "../../common/tb/tb_compare_4.sv",
+    "simulation_top": "tb_compare_4",
+    "cases": 256,
+    "constraints": "../../common/constraints/compare_4.xdc",
+    "expected_legacy_issue": null
+  },
+  {
+    "path": "legacy/05_comparator4",
+    "id": "legacy_05_comparator4",
+    "title": "4-bit comparator",
+    "edition": "legacy",
+    "top": "compare_4",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "original/compare_4.v"
+    ],
+    "testbench": "../../common/tb/tb_compare_4.sv",
+    "simulation_top": "tb_compare_4",
+    "cases": 256,
+    "constraints": "../../common/constraints/compare_4.xdc",
+    "expected_legacy_issue": null,
+    "original_testbench": "original/testbench.v"
+  },
+  {
+    "path": "vivado_2026_1/06_mux4to1",
+    "id": "vivado_2026_1_06_mux4to1",
+    "title": "4:1 multiplexer",
+    "edition": "vivado_2026_1",
+    "top": "mux_4x1",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/mux_4x1.v"
+    ],
+    "testbench": "../../common/tb/tb_mux_4x1.sv",
+    "simulation_top": "tb_mux_4x1",
+    "cases": 64,
+    "constraints": "../../common/constraints/mux_4x1.xdc",
+    "expected_legacy_issue": null
+  },
+  {
+    "path": "legacy/06_mux4to1",
+    "id": "legacy_06_mux4to1",
+    "title": "4:1 multiplexer",
+    "edition": "legacy",
+    "top": "mux_4x1",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "original/mux_4x1.v"
+    ],
+    "testbench": "../../common/tb/tb_mux_4x1.sv",
+    "simulation_top": "tb_mux_4x1",
+    "cases": 64,
+    "constraints": "../../common/constraints/mux_4x1.xdc",
+    "expected_legacy_issue": null,
+    "original_testbench": "original/testbench.v"
+  },
+  {
+    "path": "vivado_2026_1/07_demux1to8",
+    "id": "vivado_2026_1_07_demux1to8",
+    "title": "1:8 demultiplexer",
+    "edition": "vivado_2026_1",
+    "top": "demux_1x8",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/demux_1x8.v"
+    ],
+    "testbench": "../../common/tb/tb_demux_1x8.sv",
+    "simulation_top": "tb_demux_1x8",
+    "cases": 16,
+    "constraints": "../../common/constraints/demux_1x8.xdc",
+    "expected_legacy_issue": null
+  },
+  {
+    "path": "legacy/07_demux1to8",
+    "id": "legacy_07_demux1to8",
+    "title": "1:8 demultiplexer",
+    "edition": "legacy",
+    "top": "demux_1x8",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "original/demux_1x8.v"
+    ],
+    "testbench": "../../common/tb/tb_demux_1x8.sv",
+    "simulation_top": "tb_demux_1x8",
+    "cases": 16,
+    "constraints": "../../common/constraints/demux_1x8.xdc",
+    "expected_legacy_issue": null,
+    "original_testbench": "original/testbench.v"
+  },
+  {
+    "path": "vivado_2026_1/08_encoder8to3",
+    "id": "vivado_2026_1_08_encoder8to3",
+    "title": "8:3 encoder",
+    "edition": "vivado_2026_1",
+    "top": "encoder8x3",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/encoder8x3.v"
+    ],
+    "testbench": "../../common/tb/tb_encoder8x3.sv",
+    "simulation_top": "tb_encoder8x3",
+    "cases": 256,
+    "constraints": "../../common/constraints/encoder8x3.xdc",
+    "expected_legacy_issue": null
+  },
+  {
+    "path": "legacy/08_encoder8to3",
+    "id": "legacy_08_encoder8to3",
+    "title": "8:3 encoder",
+    "edition": "legacy",
+    "top": "encoder8x3",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "original/encoder8x3.v"
+    ],
+    "testbench": "../../common/tb/tb_encoder8x3.sv",
+    "simulation_top": "tb_encoder8x3",
+    "cases": 256,
+    "constraints": "../../common/constraints/encoder8x3.xdc",
+    "expected_legacy_issue": null,
+    "original_testbench": "original/testbench.v"
+  },
+  {
+    "path": "vivado_2026_1/09_decoder3to8",
+    "id": "vivado_2026_1_09_decoder3to8",
+    "title": "3:8 decoder",
+    "edition": "vivado_2026_1",
+    "top": "decoder3x8",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/decoder3x8.v"
+    ],
+    "testbench": "../../common/tb/tb_decoder3x8.sv",
+    "simulation_top": "tb_decoder3x8",
+    "cases": 8,
+    "constraints": "../../common/constraints/decoder3x8.xdc",
+    "expected_legacy_issue": null
+  },
+  {
+    "path": "legacy/09_decoder3to8",
+    "id": "legacy_09_decoder3to8",
+    "title": "3:8 decoder",
+    "edition": "legacy",
+    "top": "decoder3x8",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "original/decoder3x8.v"
+    ],
+    "testbench": "../../common/tb/tb_decoder3x8.sv",
+    "simulation_top": "tb_decoder3x8",
+    "cases": 8,
+    "constraints": "../../common/constraints/decoder3x8.xdc",
+    "expected_legacy_issue": null,
+    "original_testbench": "original/testbench.v"
+  },
+  {
+    "path": "vivado_2026_1/10_seven_segment",
+    "id": "vivado_2026_1_10_seven_segment",
+    "title": "Hex seven-segment decoder",
+    "edition": "vivado_2026_1",
+    "top": "seg_decoder",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/seg_decoder.v"
+    ],
+    "testbench": "../../common/tb/tb_seg_decoder.sv",
+    "simulation_top": "tb_seg_decoder",
+    "cases": 16,
+    "constraints": "../../common/constraints/seg_decoder.xdc",
+    "expected_legacy_issue": null
+  },
+  {
+    "path": "legacy/10_seven_segment",
+    "id": "legacy_10_seven_segment",
+    "title": "Hex seven-segment decoder",
+    "edition": "legacy",
+    "top": "seg_decoder",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "original/seg_decoder.v"
+    ],
+    "testbench": "../../common/tb/tb_seg_decoder.sv",
+    "simulation_top": "tb_seg_decoder",
+    "cases": 16,
+    "constraints": "../../common/constraints/seg_decoder.xdc",
+    "expected_legacy_issue": null,
+    "original_testbench": "original/testbench.v"
+  },
+  {
+    "path": "vivado_2026_1/11_integrated",
+    "id": "vivado_2026_1_integrated",
+    "title": "10 modes with button and LCD",
+    "edition": "vivado_2026_1",
+    "top": "lab1_integrated",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/logic_gate.v",
+      "../../common/rtl/half_adder.v",
+      "../../common/rtl/full_adder.v",
+      "../../common/rtl/adder_4bit.v",
+      "../../common/rtl/sub_4bit.v",
+      "../../common/rtl/compare_4.v",
+      "../../common/rtl/mux_4x1.v",
+      "../../common/rtl/demux_1x8.v",
+      "../../common/rtl/encoder8x3.v",
+      "../../common/rtl/decoder3x8.v",
+      "../../common/rtl/seg_decoder.v",
+      "../../common/rtl/button_onepulse.v",
+      "../../common/rtl/lcd_modes.v",
+      "../../common/rtl/lab1_integrated.v"
+    ],
+    "testbench": "../../common/tb/tb_lab1_integrated.sv",
+    "simulation_top": "tb_lab1_integrated",
+    "cases": 2560,
+    "constraints": "../../common/constraints/lab1_integrated.xdc"
+  },
+  {
+    "path": "opensource_cli/integrated",
+    "id": "opensource_cli_integrated",
+    "title": "10 modes with button and LCD",
+    "edition": "opensource_cli",
+    "top": "lab1_integrated",
+    "part": "xc7s75fgga484-1",
+    "sources": [
+      "../../common/rtl/logic_gate.v",
+      "../../common/rtl/half_adder.v",
+      "../../common/rtl/full_adder.v",
+      "../../common/rtl/adder_4bit.v",
+      "../../common/rtl/sub_4bit.v",
+      "../../common/rtl/compare_4.v",
+      "../../common/rtl/mux_4x1.v",
+      "../../common/rtl/demux_1x8.v",
+      "../../common/rtl/encoder8x3.v",
+      "../../common/rtl/decoder3x8.v",
+      "../../common/rtl/seg_decoder.v",
+      "../../common/rtl/button_onepulse.v",
+      "../../common/rtl/lcd_modes.v",
+      "../../common/rtl/lab1_integrated.v"
+    ],
+    "testbench": "../../common/tb/tb_lab1_integrated.sv",
+    "simulation_top": "tb_lab1_integrated",
+    "cases": 2560,
+    "constraints": "../../common/constraints/lab1_integrated.xdc"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "id": "legacy_10_seven_segment",
+  "title": "Hex seven-segment decoder",
+  "edition": "legacy",
+  "top": "seg_decoder",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "original/seg_decoder.v"
+  ],
+  "testbench": "../../common/tb/tb_seg_decoder.sv",
+  "simulation_top": "tb_seg_decoder",
+  "cases": 16,
+  "constraints": "../../common/constraints/seg_decoder.xdc",
+  "expected_legacy_issue": null,
+  "original_testbench": "original/testbench.v"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "legacy_08_encoder8to3",
+  "title": "8:3 encoder",
+  "edition": "legacy",
+  "top": "encoder8x3",
+  "part": "xc7s75fgga484-1",
+  "sources": [
+    "original/encoder8x3.v"
+  ],
+  "testbench": "../../common/tb/tb_encoder8x3.sv",
+  "simulation_top": "tb_encoder8x3",
+  "cases": 256,
+  "constraints": "../../common/constraints/encoder8x3.xdc",
+  "expected_legacy_issue": null,
+  "original_testbench": "original/testbench.v"
+}

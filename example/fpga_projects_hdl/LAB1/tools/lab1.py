@@ -75,6 +75,7 @@ def main():
         elif action in ['simulate','original-sim']:
             sources=source_paths(project,cfg)
             if action=='original-sim':
+                sources=[(project/s).resolve() for s in cfg.get('original_sources',cfg['sources'])]
                 sources.append((project/cfg['original_testbench']).resolve());top='testbench'
             else:
                 sources.append((project/cfg['testbench']).resolve());top=cfg['simulation_top']
