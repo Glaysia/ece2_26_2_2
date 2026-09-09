@@ -1,9 +1,9 @@
 % !TEX program = xelatex
 % LAB1 도입부와 목차. 본문 실습 절차는 이후 이 파일에 이어 작성한다.
 % 이 폴더에서 xelatex -interaction=nonstopmode -halt-on-error로 두 번 빌드한다.
-% 디자인 원본: ../../templates/weekly_presentation_template.tex
+% 디자인 원본: ../../templates/weekly_presentation_template_4x3.tex
 % 구성 기준: ../../../daily_goal/GOAL0910.md
-\documentclass[aspectratio=169,11pt,t]{beamer}
+\documentclass[aspectratio=43,11pt,t]{beamer}
 
 \usepackage{fontspec}
 \usepackage{kotex}
@@ -40,11 +40,12 @@
 
 \newcommand{\course}{전자전기컴퓨터설계실험Ⅱ}
 \newcommand{\presenter}{이해리}
-\newcommand{\presentationdate}{2026. 09. 14.}
+% 표지 날짜는 수업일이 아니라 자료 작성일이다.
+\newcommand{\materialdate}{2026. 09. 10.}
 \newcommand{\navlink}[2]{\hyperlink{#1}{\textcolor{UOSBlue}{#2}}}
 \title{\course\\LAB 1. 조합회로 실습}
 \author{\presenter}
-\date{\presentationdate}
+\date{\materialdate}
 \hypersetup{pdftitle={LAB1 조합회로 실습 — 목차},pdfauthor={이해리}}
 
 \begin{document}
@@ -54,17 +55,17 @@
 \setbeamercolor{background canvas}{bg=UOSBlue}
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=north west,inner sep=0pt,text=white,font=\bfseries\fontsize{27}{33}\selectfont,align=left]
-      at ([xshift=1.53cm,yshift=-1.5cm]current page.north west)
+    \node[anchor=north west,inner sep=0pt,text=white,font=\bfseries\fontsize{22}{29}\selectfont,align=left]
+      at ([xshift=1.15cm,yshift=-1.5cm]current page.north west)
       {\course\\LAB 1. 조합회로 실습};
-    \node[anchor=north west,inner sep=0pt,text=white,font=\large,align=left]
-      at ([xshift=1.53cm,yshift=-3.65cm]current page.north west)
+    \node[anchor=north west,inner sep=0pt,text=white,font=\normalsize,align=left]
+      at ([xshift=1.15cm,yshift=-3.65cm]current page.north west)
       {VS Code 시뮬레이션 · Vivado · FPGA 구현};
-    \node[anchor=south west,inner sep=0pt] at ([xshift=1.38cm,yshift=0.98cm]current page.south west)
+    \node[anchor=south west,inner sep=0pt] at ([xshift=1.15cm,yshift=0.98cm]current page.south west)
       {\includegraphics[width=1.45cm]{../../assets/uos-logo-white.png}};
     \node[anchor=south east,text=white,font=\small\bfseries,align=right]
-      at ([xshift=-1.38cm,yshift=0.98cm]current page.south east)
-      {\presentationdate\\\presenter};
+      at ([xshift=-1.15cm,yshift=0.98cm]current page.south east)
+      {작성일 \materialdate\\\presenter};
   \end{tikzpicture}
 \end{frame}}
 
@@ -85,6 +86,7 @@
 
 % 3. 회로별 목차: 교육 번호를 프로젝트와 통합 모드에서 공통 사용한다.
 \begin{frame}[label=lab1-circuits]{조합회로 실습 10개}
+\small
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.49\textwidth}
     \begin{tabular}{@{}rl@{}}
@@ -113,24 +115,25 @@
 % 4. 제공할 프로젝트의 구성. 파일별 링크는 실제 프로젝트 작성 후 연결한다.
 \begin{frame}[label=lab1-projects]{실습 환경과 프로젝트 구성}
 \small
-\begin{tabular}{@{}p{4.0cm}cp{7.8cm}@{}}
+\begin{tabular}{@{}p{3.25cm}cp{5.75cm}@{}}
 \textbf{환경} & \textbf{개수} & \textbf{실습 내용}\\\hline
 레거시 Vivado & 10 & 원본 교안에 맞춘 회로별 구현\\[0.22cm]
 Vivado 2026.1 & 10 & 최신 환경에서 회로별 구현\\[0.22cm]
-Vivado 2026.1 통합 & 1 & 버튼으로 모드 01--10 순환, LCD에 현재 모드 표시\\[0.22cm]
+Vivado 2026.1 통합 & 1 & 버튼 모드 전환·LCD 표시\\[0.22cm]
 오픈소스 CLI 통합 & 1 & 같은 통합 RTL로 비트스트림 생성\\\hline
-\textbf{합계} & \textbf{22} & 프로젝트마다 전용 \texttt{.code-workspace} 구성
+\textbf{합계} & \textbf{22} & 각 프로젝트에 전용 workspace
 \end{tabular}
 \vspace{0.38cm}
 \begin{itemize}
-  \item workspace에서 소스·테스트벤치를 열고 먼저 시뮬레이션한다.
-  \item 통합본은 비트스트림 하나에서 선택한 회로의 입출력을 연결한다.
-  \item CLI: macOS ARM64 배포 확인, WSL의 Linux 도구로 실행 검증.
+  \item workspace에서 소스·테스트벤치를 열어 시뮬레이션한다.
+  \item 통합본은 비트스트림 하나에서 모드 01--10을 선택한다.
+  \item CLI: macOS ARM64 배포 확인, WSL에서 실행 검증.
 \end{itemize}
 \end{frame}
 
 % 5. 실습 순서와 레포트 범위를 처음 목차에서 명시한다.
 \begin{frame}[label=lab1-reports]{실험 전·후 레포트의 범위}
+\small
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.47\textwidth}
     {\color{UOSBlue}\large\bfseries 실험 전: VS Code}\par\vspace{0.22cm}
@@ -138,7 +141,7 @@ Vivado 2026.1 통합 & 1 & 버튼으로 모드 01--10 순환, LCD에 현재 모�
       \setlength{\itemsep}{0.16cm}
       \item 회로 원리·입출력·예상값
       \item 설계 코드·테스트벤치
-      \item 시뮬레이터 실행·로그 확인
+      \item 시뮬레이션·로그 확인
       \item 파형과 예상값 비교
     \end{enumerate}
     \vspace{0.23cm}
@@ -148,17 +151,17 @@ Vivado 2026.1 통합 & 1 & 버튼으로 모드 01--10 순환, LCD에 현재 모�
     {\color{UOSBlue}\large\bfseries 실험 후: Vivado·보드}\par\vspace{0.22cm}
     \begin{enumerate}
       \setlength{\itemsep}{0.16cm}
-      \item Vivado 시뮬레이션·결과 비교
+      \item Vivado 시뮬레이션
       \item 합성·구현·비트스트림 생성
-      \item 실제 FPGA에 기록·동작 확인
+      \item FPGA 기록·동작 확인
       \item 코드·사진·영상 업로드
     \end{enumerate}
     \vspace{0.23cm}
-    {\small 실제 결과와 고찰을 쓰고\\GitHub의 사진·영상·소스를 연결한다.}
+    {\small 사전 결과와 비교·고찰하고\\GitHub 증빙 링크를 연결한다.}
   \end{column}
 \end{columns}
 \vspace{0.38cm}
-{\small 통합본은 모드 전환·LCD 표시·선택한 회로의 동작을 영상으로 기록한다.}
+{\small 통합본 영상: 모드 전환·LCD 표시·선택한 회로의 동작.}
 \end{frame}
 
 % 이후 본문: 공통 VS Code 실습 → 레거시/최신 Vivado 개별 실습

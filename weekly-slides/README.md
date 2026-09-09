@@ -15,7 +15,8 @@ TeX가 강의 내용의 SSOT이며 PDF는 배포본이다. 아래 목록은 파�
 
 - [LAB1 안내](weekly-slides/LAB1_FPGA_0914/README.md)
 - [레거시 교재 편집·재빌드 상태](weekly-slides/LAB0_OT_0907/00.legacy_hdl.README.md)
-- [공용 템플릿](templates/weekly_presentation_template.tex)
+- [공용 템플릿 4:3](templates/weekly_presentation_template_4x3.tex) — LAB1 조합회로 자료에 사용
+- [기존 공용 템플릿 16:9](templates/weekly_presentation_template.tex)
 
 자료에는 두 자리 번호를 사용하고 같은 자료의 TeX·PDF 이름을 맞춘다. 현재 OT와 VS Code 매뉴얼은 서로 다른 주차 폴더에서 `02`를 사용한다. 파일명은 그대로 두었으며, 기존의 “저장소 전체에서 고유한 연속 번호”라는 안내는 적용하지 않는다. 예정 파일을 완성된 자료처럼 목록에 넣지 않는다.
 
@@ -23,7 +24,7 @@ TeX가 강의 내용의 SSOT이며 PDF는 배포본이다. 아래 목록은 파�
 
 - 설명·일정·정책·실습 요구사항은 해당 TeX에서 수정한다.
 - 도식·표는 TeX/TikZ를 사용하고, 실제 화면·파형 캡처와 설명용 도식을 구분한다.
-- 공용 시립대 로고, UOS Blue (`#005EB8`), D2Coding, 16:9 Beamer 템플릿을 사용한다.
+- 공용 시립대 로고, UOS Blue (`#005EB8`), D2Coding을 사용한다. LAB1 조합회로 자료는 4:3 Beamer 템플릿을 사용하며 기존 16:9 템플릿과 자료는 보존한다.
 - 리소스 경로는 해당 TeX 기준 상대경로로 유지한다.
 - 기존 Markdown 원고는 [초안·기록 보관소](../docs/README.md)로 분리했다. 병행 원본으로 관리하지 않는다.
 

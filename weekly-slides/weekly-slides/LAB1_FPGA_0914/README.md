@@ -8,7 +8,7 @@
 |---|---|---|
 | Vivado 설치 | [TeX](01.vivado_2026_1_설치_매뉴얼.tex) | [PDF](01.vivado_2026_1_설치_매뉴얼.pdf) |
 | VS Code Verilog 환경설정 | [TeX](02.vscode_verilog_환경설정_매뉴얼.tex) | [PDF](02.vscode_verilog_환경설정_매뉴얼.pdf) |
-| 조합회로 실습 — 도입부·목차 5장 | [TeX](04.LAB1_COMB_0910.tex) | [PDF](04.LAB1_COMB_0910.pdf) |
+| 조합회로 실습 — 4:3 도입부·목차 5장 | [TeX](04.LAB1_COMB_0910.tex) | [PDF](04.LAB1_COMB_0910.pdf) |
 
 수업 내용과 도구 사용 절차는 위 TeX에서 수정한다. 이 README에는 강의 본문·실습 명세를 중복 작성하지 않는다. 빌드 방법은 [공통 안내](../../README.md)를 따른다.
 
