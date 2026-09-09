@@ -1,12 +1,19 @@
 {
   "date": "2026-09-10",
-  "source_commit": "70c8036",
+  "source_commit": "740aef5",
   "vivado": "2026.1",
   "part": "xc7s75fgga484-1",
   "files": {
-    "release/logic_gate.bit": "e36808fdc53e1b0cb455c778ed97338fde9919dbc39437270d1b281eda3a7989",
+    "release/logic_gate.bit": "4fa6b520781887fa7e6452867b69e462a34064895da66aa3c74970bd16070771",
     "../../common/rtl/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
     "../../common/tb/tb_logic_gate_modern.sv": "8815d26ae87ee452a7cec9e99d54cab62ab72d35ec1e090e3af6afc154ffb232",
     "../../common/constraints/logic_gate.xdc": "2e5671a832643a1755be7dcd935ab3ad615f4a09a20f1703db6af009d2c7e263"
+  },
+  "source_repository": "https://github.com/Glaysia/fpga-lab-template",
+  "execution": "Fresh anonymous clone; project creation, source import, simulation, synthesis, implementation and bitstream through Vivado GUI",
+  "template_inputs": {
+    "common/rtl/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+    "common/tb/tb_logic_gate_modern.sv": "8815d26ae87ee452a7cec9e99d54cab62ab72d35ec1e090e3af6afc154ffb232",
+    "common/constraints/logic_gate.xdc": "08f31f9eee31a81549c142610cca990bcf9a6f7e1155bb2bfe4927f2277d6ac2"
   }
 }

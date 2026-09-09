@@ -10,7 +10,7 @@
 |---|---|---|
 | Vivado 설치 | [TeX](01.vivado_2026_1_설치_매뉴얼.tex) | [PDF](01.vivado_2026_1_설치_매뉴얼.pdf) |
 | VS Code Verilog 환경설정 | [TeX](02.vscode_verilog_환경설정_매뉴얼.tex) | [PDF](02.vscode_verilog_환경설정_매뉴얼.pdf) |
-| 01 논리 게이트 — VS Code → Vivado 2026.1, 33쪽 | [TeX](04.LAB1_01_LOGIC_GATES_VIVADO.tex) | [PDF](04.LAB1_01_LOGIC_GATES_VIVADO.pdf) |
+| 01 논리 게이트 — VS Code → Vivado 2026.1, 59쪽 | [TeX](04.LAB1_01_LOGIC_GATES_VIVADO.tex) | [PDF](04.LAB1_01_LOGIC_GATES_VIVADO.pdf) |
 | LAB1 목차·공통 안내 — 4:3, 5쪽 | [TeX](04.LAB1_00_CONTENTS.tex) | [PDF](04.LAB1_00_CONTENTS.pdf) |
 | 01 논리 게이트 — VS Code 사전 실습 + 레거시 Vivado, 101쪽 | [TeX](04.LAB1_11_LOGIC_GATES_LEGACY.tex) | [PDF](04.LAB1_11_LOGIC_GATES_LEGACY.pdf) |
 
@@ -33,3 +33,5 @@ PDF 빌드 후 [묶음 생성 스크립트](../../tools/package_lab1_pdfs.py)를
 기존 README의 상세 실습 구상은 초안으로 보존했다. 기존 VS Code Markdown 원고는 [이전 원고](../../../docs/archive/LAB1_VSCode_환경설정_이전원고.md)로 보관하며, 현재 매뉴얼은 TeX만 수정한다.
 
 첫 회로 검토용 별도 묶음: [PDF 3개 ZIP](04.LAB1_01_REVIEW.zip). 최신 01 실습과 설치·환경설정 보조 PDF를 포함하며 기존 레거시 묶음과 구분한다.
+
+학생용 실행 템플릿: [Glaysia/fpga-lab-template](https://github.com/Glaysia/fpga-lab-template). clone 후 루트의 LAB1.code-workspace를 열며, 최신 01 PDF도 이 주소를 기준으로 안내합니다.

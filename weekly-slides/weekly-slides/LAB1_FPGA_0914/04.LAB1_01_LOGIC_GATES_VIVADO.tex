@@ -22,13 +22,14 @@
 
 \begin{frame}[label=modern01-contents]{01 · 실습 목차}\relax
 {\large\color{UOSBlue}\bfseries 1부 · VS Code}\par\vspace{0.2cm}
-\navlink{modern01-setup}{도구 확인·템플릿 clone·새 창 열기}\par\vspace{0.15cm}
-\navlink{modern01-code}{RTL·테스트벤치·예상값}\par\vspace{0.15cm}
-\navlink{modern01-sim}{실행 task·로그·VaporView·실험 전 레포트}\par\vspace{0.4cm}
+\navlink{modern01-setup}{도구 확인·템플릿 clone·새 창 열기}\par\vspace{0.08cm}
+\navlink{modern01-code}{RTL·테스트벤치·예상값}\par\vspace{0.08cm}
+\navlink{modern01-sim}{실행 task·로그·VaporView·실험 전 레포트}\par\vspace{0.2cm}
 {\large\color{UOSBlue}\bfseries 2부 · Vivado 2026.1}\par\vspace{0.2cm}
-\navlink{modern01-import}{프로젝트 생성·소스 임포트·top 지정}\par\vspace{0.15cm}
-\navlink{modern01-vsim}{Behavioral Simulation·파형 비교}\par\vspace{0.15cm}
-\navlink{modern01-bit}{핀 확인·합성·구현·비트스트림}\par\vspace{0.35cm}
+\navlink{modern01-import}{프로젝트 생성·소스 임포트·top 지정}\par\vspace{0.08cm}
+\navlink{modern01-vsim}{Behavioral Simulation·파형 비교}\par\vspace{0.08cm}
+\navlink{modern01-bit}{핀 확인·합성·구현·비트스트림}\par\vspace{0.08cm}
+\navlink{modern01-board}{보드 연결·사진·영상·GitHub·실험 후 레포트}\par\vspace{0.12cm}
 \explain{좌하단 \textbf{목차}는 이 PDF의 2쪽으로 돌아온다.}
 \end{frame}
 
@@ -77,22 +78,21 @@ Vivado 2026.1&XSim, FPGA 합성·배치배선·비트스트림 생성.
 PC마다 다르므로 경로를 그대로 외우지 않는다. \textbf{버전 출력이 있어야} 다음으로 간다.}
 \end{frame}
 
-\begin{frame}{4. 공개 템플릿 clone}
-\small 실습 폴더를 둘 위치에서 아래 명령을 실행한다.
+\begin{frame}{4. 별도 템플릿 저장소 clone}
+\small 실습 폴더를 둘 위치에서 아래 명령을 한 줄씩 실행한다.\par
 \vspace{0.3cm}
 {\footnotesize\ttfamily
-git clone --depth 1 --filter=blob:none --sparse\\
-\hspace*{1em}--branch daily/0910\\
-\hspace*{1em}https://github.com/Glaysia/ece2\_26\_2\_2.git lab1
-}\par
-\explain{\textbf{위 세 줄은 한 명령이다.} README의 한 줄 명령을 복사해 실행한다.\\
-\texttt{daily/0910}은 이번 검토본 브랜치다.}
+git clone https://github.com/Glaysia/fpga-lab-template.git\par
+cd fpga-lab-template\par
+code -n LAB1.code-workspace
+}
+\explain{강의자료 저장소와 분리된 \textbf{학생용 실행 템플릿}이다.\\
+폴더 맨 위의 workspace를 열면 PROJECT와 COMMON이 연결된다.}
 \vspace{0.3cm}
-{\small\ttfamily cd lab1\par
-git sparse-checkout set example/fpga\_projects\_hdl/LAB1}
-\explain{과거 교안 전체를 받지 않고 LAB1 실행 자료만 펼친다.\\
-이미 lab1 폴더가 있으면 다른 폴더명을 사용한다.}
-\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/setup.md}{▶ 설치·clone 명령 원문 열기}
+\small 자신의 GitHub 저장소가 필요하면 \textbf{Use this template → Create a new repository}로 만든 뒤 자신의 주소를 clone한다.
+\explain{이미 같은 폴더가 있으면 다른 위치에서 시작한다.\\
+PDF·레포트·완료한 실험의 검증 자료는 강의자료 저장소에서 확인한다.}
+\href{https://github.com/Glaysia/fpga-lab-template}{▶ 공개 템플릿 저장소 열기}
 \end{frame}
 
 \begin{frame}{5. VS Code 새 창과 workspace}
@@ -104,7 +104,7 @@ git sparse-checkout set example/fpga\_projects\_hdl/LAB1}
 \begin{frame}{6. 항상 같은 템플릿을 연다}
 \small clone한 폴더에서 아래 workspace를 선택한다.
 \vspace{0.2cm}{\scriptsize\ttfamily
-example/fpga\_projects\_hdl/LAB1/template/LAB1.code-workspace}
+fpga-lab-template/LAB1.code-workspace}
 \shot[trim=32bp 430bp 640bp 25bp,clip]{02-workspace}
 \explain{\textbf{PROJECT}: 실행 설정·결과·Vivado 프로젝트.\\
 \textbf{COMMON}: 공통 RTL·테스트벤치·핀 제약.\\
@@ -138,7 +138,7 @@ OR는 하나 이상 1, XOR는 서로 다른 입력일 때 1이다.\\
 \shot[trim=264bp 427bp 120bp 28bp,clip]{04-rtl}
 \explain{입력 a·b와 출력 x·y·z를 확인한다.\\
 \texttt{assign} 세 줄이 AND·OR·XOR 조합회로를 연결한다.\\
-슬라이드의 소스는 실제 Nord VS Code 캡처다. 실행 파일은 저장소에 있다.}
+실행 파일은 저장소에 있다. 코드를 직접 열고 각 출력을 설명한다.}
 \end{frame}
 
 \begin{frame}{10. 테스트벤치의 역할}
@@ -164,21 +164,18 @@ OR는 하나 이상 1, XOR는 서로 다른 입력일 때 1이다.\\
 
 \begin{frame}[label=modern01-sim]{12. 저장하고 작업 메뉴 열기}
 \small 코드를 수정했다면 \textbf{File → Save All}. 다음은 \textbf{Terminal → Run Task...}.
-\shot[trim=215bp 420bp 215bp 0bp,clip]{06-tasks}
+\shot[trim=220bp 508bp 220bp 0bp,clip]{06-tasks}
 \explain{창이 좁으면 상단 \textbf{…}에 Terminal 메뉴가 있다.\\
 먼저 \textbf{01 Check tools}, 다음에 \textbf{02 Simulate}를 선택한다.\\
 Ctrl+Shift+B 기본 작업도 02 Simulate다.}
 \end{frame}
 
-\begin{frame}{13. 여섯 작업의 의미}
+\begin{frame}{13. 세 작업의 의미}
 \small\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{@{}p{4.8cm}p{5.3cm}@{}}
 01 Check tools&설치·버전 검사\\
 02 Simulate&VS Code에서 XSim 실행\\
 03 Open waveform&생성한 VCD를 VS Code로 열기\\
-04 Create Vivado project&소스·테스트벤치·제약을 XPR에 등록\\
-05 Vivado simulation&Vivado 프로젝트 기반 재검사\\
-06 Build bitstream&합성·배치배선·비트스트림 생성
 \end{tabular}
 \explain{작업이 보이지 않으면 \textbf{LAB1.code-workspace}를 열었는지 확인한다.\\
 실행 스크립트는 공통 \texttt{tools/lab1.py}, 회로 설정은 \texttt{project.json}이다.}
@@ -228,94 +225,177 @@ Ctrl+Shift+B 기본 작업도 02 Simulate다.}
 교재 캡처를 자신의 실행 결과로 제출하지 않는다.}
 \end{frame}
 
-\begin{frame}[label=modern01-import]{18. 이제 Vivado로 넘어간다}
-\small 사전 레포트까지 작성했으면 \textbf{04 Create Vivado project}를 실행한다.
-\vspace{0.3cm}
-\begin{itemize}\setlength{\itemsep}{0.3cm}
-\item 현재 템플릿의 RTL·테스트벤치·XDC를 같은 프로젝트에 등록한다.
-\item part는 \texttt{xc7s75fgga484-1}, 설계 top은 \texttt{logic\_gate}.
-\item 생성 위치: PROJECT → \texttt{vivado/logic\_gate.xpr}.
-\item Vivado 2026.1 → \textbf{File → Project → Open...}에서 이 XPR을 연다.
-\end{itemize}
-\explain{이 작업은 재생성용 Tcl을 사용한다. 같은 작업을 다시 실행하면 생성 프로젝트가 다시 만들어지므로, 직접 바꾼 설정은 project.json·소스·제약에도 반영한다.}
+\begin{frame}[label=modern01-import]{18. Vivado에서 직접 이어서 실습}\relax
+\small VS Code에서 파형과 사전 레포트를 확인한 뒤 Vivado 2026.1을 연다.
+\vspace{0.5cm}
+\explain{이제부터는 Vivado의 메뉴와 버튼을 직접 누른다.\\프로젝트 생성, 파일 등록, 시뮬레이션, 합성, 구현, 비트스트림 순서다.\\실습 소스는 방금 clone한 템플릿의 common 폴더를 사용한다.}
 \end{frame}
 
-\begin{frame}{19. 프로젝트에서 확인할 세 가지}
-\shot[trim=196bp 205bp 0bp 80bp,clip]{20-vivado-project}
-\explain{\textbf{Product family: Spartan-7}, \textbf{Project part: xc7s75fgga484-1},\\
-\textbf{Top module name: logic\_gate}.\\
-Sources의 Design Sources·Simulation Sources·Constraints를 구분한다.}
+\begin{frame}{19. 새 프로젝트 메뉴}\relax
+\small 상단 File → Project → New...를 선택한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.8cm,keepaspectratio,trim=6bp 593.25bp 783bp 24bp,clip]{assets/modern-01/40-new-project-menu.png}\par}\vspace{0.08cm}
+\explain{기존 프로젝트가 열려 있어도 같은 메뉴에서 시작할 수 있다.\\처음 시작 화면에서는 Create Project를 선택해도 된다.\\New Project 안내 화면이 먼저 나오면 Next를 누른다.}
 \end{frame}
 
-\begin{frame}{20. 직접 임포트하는 경우}
-\small 새 프로젝트를 직접 만들 때는 \textbf{File → Project → New...}를 선택한다.
-\begin{enumerate}\setlength{\itemsep}{0.23cm}
-\item Project name: logic\_gate, 위치: 자신의 실습 폴더.
-\item RTL Project를 선택한다. part는 \texttt{xc7s75fgga484-1}.
-\item 프로젝트를 열고 왼쪽 \textbf{Add Sources}를 누른다.
-\item RTL은 \textbf{Add or create design sources}.
-\item 테스트벤치는 \textbf{Add or create simulation sources}.
-\item 핀 XDC는 \textbf{Add or create constraints}.
-\end{enumerate}
-\explain{템플릿 task로 생성했다면 이미 등록되어 있다. \textbf{같은 파일을 중복 추가하지 않는다.}\\
-다음 화면은 실제 테스트벤치를 임포트하는 절차다.}
+\begin{frame}{20. 프로젝트 이름과 저장 위치}\relax
+\small Project name은 logic\_gate로 입력한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.5cm,keepaspectratio,trim=172.5bp 354.75bp 174.75bp 244.5bp,clip]{assets/modern-01/41-project-name.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=799.5bp 107.25bp 173.25bp 561bp,clip]{assets/modern-01/41-project-name.png}\par}\vspace{0.08cm}
+\explain{Project location: 자신의 clone 폴더 / vivado\_2026\_1 / 01\_logic\_gates / vivado.\\Create project subdirectory를 해제한다. 생성 위치를 확인하고 Next.\\캡처의 사용자 폴더명을 그대로 입력하지 않는다.}
 \end{frame}
 
-\begin{frame}{21. RTL과 테스트벤치 구분}
-\small \textbf{Add Sources}에서 추가할 파일의 종류를 고른 뒤 Next.
-\shot[trim=239bp 118bp 239bp 117bp,clip]{22-simulation-source}
-\explain{RTL: \texttt{common/rtl/logic\_gate.v}\\
-시뮬레이션: \texttt{common/tb/tb\_logic\_gate\_modern.sv}\\
-테스트벤치를 합성할 회로 top으로 지정하지 않는다.}
+\begin{frame}{21. RTL Project 선택}\relax
+\small RTL Project와 Do not specify sources at this time을 선택한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.4cm,keepaspectratio,trim=172.5bp 386.25bp 516bp 245.25bp,clip]{assets/modern-01/42-rtl-project.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=804bp 107.25bp 173.25bp 561bp,clip]{assets/modern-01/42-rtl-project.png}\par}\vspace{0.08cm}
+\explain{파일은 빈 프로젝트를 만든 뒤 종류별로 추가한다.\\Project is an extensible Vitis platform은 선택하지 않는다. Next.}
 \end{frame}
 
-\begin{frame}{22. Add Files와 Copy 옵션}
-\small \textbf{Add Files} → 같은 테스트벤치 선택 → Open → Finish.
-\shot[trim=239bp 118bp 239bp 117bp,clip]{23-import-testbench}
-\explain{\textbf{Copy sources into project는 해제}하여 공유 원본을 참조한다.\\
-\textbf{Include all design sources for simulation}은 체크한다.\\
-이후 VS Code에서 원본을 수정하면 Vivado도 같은 파일을 사용한다.}
+\begin{frame}{22. FPGA part 검색과 선택}\relax
+\small Parts 탭의 검색란에 xc7s75fgga484-1을 입력한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.9cm,keepaspectratio,trim=174.75bp 317.25bp 534.75bp 249bp,clip]{assets/modern-01/43-select-part.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=804bp 107.25bp 173.25bp 561bp,clip]{assets/modern-01/43-select-part.png}\par}\vspace{0.08cm}
+\explain{검색 결과에서 정확히 xc7s75fgga484-1인 첫 행을 선택한다.\\뒤에 IL 또는 Q가 붙은 다른 part와 구분하고 Next.}
 \end{frame}
 
-\begin{frame}{23. 시뮬레이션 top 지정}
-\small Sources → Simulation Sources → sim\_1을 펼친다.
-\shot[trim=322bp 134bp 480bp 461bp,clip]{24-set-top}
-\explain{\textbf{tb\_logic\_gate\_modern} 우클릭 → \textbf{Set as Top}.\\
-Design Sources의 top은 logic\_gate로 유지한다.\\
-굵게 표시된 시뮬레이션 top 이름을 확인한다.}
+\begin{frame}{23. 생성 요약 확인}\relax
+\small 이름과 부품이 맞으면 Finish를 누른다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.9cm,keepaspectratio,trim=172.5bp 393bp 528bp 179.25bp,clip]{assets/modern-01/44-project-summary.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=804bp 107.25bp 173.25bp 561bp,clip]{assets/modern-01/44-project-summary.png}\par}\vspace{0.08cm}
+\explain{Family: Spartan-7 / Package: fgga484 / Speed Grade: -1.\\기존 프로젝트를 닫을지 물으면 자신의 작업을 저장한 뒤 진행한다.}
 \end{frame}
 
-\begin{frame}[label=modern01-vsim]{24. Vivado 시뮬레이션 실행}
-\small Flow Navigator → \textbf{Run Simulation → Run Behavioral Simulation}.
-\shot[trim=0bp 205bp 718bp 278bp,clip]{25-run-simulation}
-\explain{컴파일·elaboration이 끝나면 시뮬레이션 창이 열린다.\\
-템플릿의 \textbf{05 Vivado simulation}도 같은 프로젝트에서 같은 검사를 실행한다.}
+\begin{frame}{24. 빈 프로젝트 화면 읽기}\relax
+\small Sources와 Project Summary의 위치를 먼저 확인한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=1cm,keepaspectratio,trim=7.5bp 550.5bp 924bp 117bp,clip]{assets/modern-01/45-empty-project.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=2.5cm,keepaspectratio,trim=589.5bp 397.5bp 222bp 203.25bp,clip]{assets/modern-01/45-empty-project.png}\par}\vspace{0.08cm}
+\explain{아직 파일이 없으므로 Top module name이 Not defined인 것은 정상이다.\\왼쪽 Add Sources에서 RTL, 테스트벤치, 핀 제약을 차례로 등록한다.}
 \end{frame}
 
-\begin{frame}{25. Vivado 파형을 간단히 비교}
-\shot[trim=231bp 332bp 0bp 137bp,clip]{26-vivado-wave}
-\explain{파형에서 a·b·x·y·z를 확인하고 \textbf{Zoom Fit}로 0--40ns를 본다.\\
-Tcl Console의 \texttt{LAB1\_PASS logic\_gate cases=4}와 종료 시각을 확인한다.\\
-VS Code와 네 구간의 값이 같으면 두 실행 결과가 일치한다.}
+\begin{frame}{25. 설계 RTL 종류 선택}\relax
+\small Add Sources → Add or create design sources를 선택한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.5cm,keepaspectratio,trim=258bp 363.75bp 551.25bp 271.5bp,clip]{assets/modern-01/46-design-kind.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=715.5bp 132bp 256.5bp 537bp,clip]{assets/modern-01/46-design-kind.png}\par}\vspace{0.08cm}
+\explain{실제 FPGA 회로는 Design Sources에 넣는다.\\다른 종류를 선택하지 않았는지 확인한 뒤 Next.}
 \end{frame}
 
-\begin{frame}{26. 비교 결과를 남긴다}
-\small\renewcommand{\arraystretch}{1.55}
-\begin{center}
-\begin{tabular}{c|cc|ccc}
-시간(ns)&a&b&x&y&z\\\hline
-0--10&0&0&0&0&0\\
-10--20&0&1&0&1&1\\
-20--30&1&0&0&1&1\\
-30--40&1&1&1&1&0
-\end{tabular}\end{center}
-\explain{VS Code 사전 로그: \texttt{build/vscode/}.\\
-Vivado task 로그: \texttt{build/vivado-sim/}.\\
-GUI 실행 로그: \texttt{vivado/logic\_gate.sim/sim\_1/behav/xsim/}.\\
-경로와 결과를 구분해 보관한다.}
+\begin{frame}{26. 기존 파일은 Add Files}\relax
+\small 가운데 Add Files를 누른다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=1.8cm,keepaspectratio,trim=453.75bp 327bp 456.75bp 347.25bp,clip]{assets/modern-01/47-add-files.png}\par}\vspace{0.08cm}
+\explain{템플릿에 이미 소스가 있으므로 Create File로 다시 만들지 않는다.\\다음 창에서 common/rtl/logic\_gate.v를 선택한다.}
 \end{frame}
 
-\begin{frame}[label=modern01-bit]{27. 대상 보드와 핀 확인}
+\begin{frame}{27. 논리 게이트 RTL 선택}\relax
+\small File name에서 자신의 common/rtl/logic\_gate.v를 지정한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=65.25bp 177bp 360bp 481.5bp,clip]{assets/modern-01/48-rtl-file-picker.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=975bp 98.25bp 61.5bp 567.75bp,clip]{assets/modern-01/48-rtl-file-picker.png}\par}\vspace{0.08cm}
+\explain{폴더를 찾아 선택하거나 파일의 전체 경로를 입력하고 Open.\\확장자는 .v이며, 테스트벤치 .sv 파일을 고르는 단계가 아니다.}
+\end{frame}
+
+\begin{frame}{28. RTL 등록과 Copy 옵션}\relax
+\small 목록에 logic\_gate.v가 있는지 확인한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=262.5bp 362.25bp 509.25bp 297.75bp,clip]{assets/modern-01/49-rtl-copy-off.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=1.3cm,keepaspectratio,trim=261.75bp 210bp 501.75bp 440.25bp,clip]{assets/modern-01/49-rtl-copy-off.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=714.75bp 132bp 256.5bp 537bp,clip]{assets/modern-01/49-rtl-copy-off.png}\par}\vspace{0.08cm}
+\explain{Copy sources into project는 해제한다.\\VS Code에서 편집한 같은 원본을 Vivado도 참조하도록 Finish를 누른다.}
+\end{frame}
+
+\begin{frame}{29. 테스트벤치 종류 선택}\relax
+\small Add Sources를 다시 누른다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.5cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 272.25bp,clip]{assets/modern-01/50-simulation-kind.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=715.5bp 132bp 256.5bp 537bp,clip]{assets/modern-01/50-simulation-kind.png}\par}\vspace{0.08cm}
+\explain{이번에는 Add or create simulation sources를 선택하고 Next.\\테스트벤치는 실제 FPGA에 합성할 회로가 아니다.}
+\end{frame}
+
+\begin{frame}{30. 테스트벤치 파일 선택}\relax
+\small Add Files에서 common/tb/tb\_logic\_gate\_modern.sv를 고른다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=65.25bp 177bp 274.5bp 481.5bp,clip]{assets/modern-01/51-testbench-picker.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=975bp 98.25bp 61.5bp 567.75bp,clip]{assets/modern-01/51-testbench-picker.png}\par}\vspace{0.08cm}
+\explain{VS Code에서 네 입력을 검사한 동일한 파일이다.\\File name과 확장자 .sv를 확인하고 OK 또는 Open.}
+\end{frame}
+
+\begin{frame}{31. 시뮬레이션 등록 옵션}\relax
+\small Specify simulation set은 sim\_1로 둔다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2cm,keepaspectratio,trim=263.25bp 334.5bp 458.25bp 275.25bp,clip]{assets/modern-01/52-testbench-options.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=1.4cm,keepaspectratio,trim=262.5bp 206.25bp 475.5bp 421.5bp,clip]{assets/modern-01/52-testbench-options.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.6cm,keepaspectratio,trim=715.5bp 132bp 256.5bp 537bp,clip]{assets/modern-01/52-testbench-options.png}\par}\vspace{0.08cm}
+\explain{Copy sources into project는 해제한다.\\Include all design sources for simulation은 체크한 뒤 Finish.}
+\end{frame}
+
+\begin{frame}{32. 핀 제약 종류 선택}\relax
+\small 다시 Add Sources → Add or create constraints.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.5cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 272.25bp,clip]{assets/modern-01/53-constraints-kind.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=715.5bp 132bp 256.5bp 537bp,clip]{assets/modern-01/53-constraints-kind.png}\par}\vspace{0.08cm}
+\explain{XDC는 포트와 FPGA 핀, 전기 규격을 연결한다.\\Design Sources 또는 Simulation Sources에 넣지 않고 Next.}
+\end{frame}
+
+\begin{frame}{33. XDC 파일 선택}\relax
+\small Add Files에서 common/constraints/logic\_gate.xdc를 고른다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=65.25bp 177bp 274.5bp 481.5bp,clip]{assets/modern-01/54-xdc-picker.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=975bp 98.25bp 61.5bp 567.75bp,clip]{assets/modern-01/54-xdc-picker.png}\par}\vspace{0.08cm}
+\explain{File name과 확장자 .xdc를 확인하고 OK.\\이 XDC는 이번 강의의 원본 장비를 위한 핀 매핑이다.}
+\end{frame}
+
+\begin{frame}{34. 제약 파일 등록 완료}\relax
+\small 목록에 logic\_gate.xdc가 있는지 확인한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=1.7cm,keepaspectratio,trim=263.25bp 338.25bp 460.5bp 323.25bp,clip]{assets/modern-01/55-xdc-copy-off.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=1cm,keepaspectratio,trim=262.5bp 205.5bp 489bp 477bp,clip]{assets/modern-01/55-xdc-copy-off.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=715.5bp 132bp 256.5bp 537bp,clip]{assets/modern-01/55-xdc-copy-off.png}\par}\vspace{0.08cm}
+\explain{Copy constraints files into project를 해제하고 Finish.\\Constraints → constrs\_1 아래에서 등록된 파일을 확인한다.}
+\end{frame}
+
+\begin{frame}{35. 세 종류와 두 top 확인}\relax
+\small Sources의 화살표를 눌러 계층을 펼친다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=3.5cm,keepaspectratio,trim=201.75bp 348bp 534bp 162.75bp,clip]{assets/modern-01/56-sources-and-part.png}\par}\vspace{0.08cm}
+\explain{Design Sources: logic\_gate / Constraints: logic\_gate.xdc.\\Simulation Sources → sim\_1: tb\_logic\_gate\_modern.\\테스트벤치 아래 dut : logic\_gate가 연결되어 있어야 한다.}
+\end{frame}
+
+\begin{frame}{36. Set as Top은 언제 누르나}\relax
+\small 시뮬레이션의 가장 위 모듈은 tb\_logic\_gate\_modern이다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.5cm,keepaspectratio,trim=328.5bp 102.75bp 504.75bp 528bp,clip]{assets/modern-01/57-top-menu.png}\par}\vspace{0.08cm}
+\explain{올바른 모듈이 굵게 보이면 이미 top이므로 그대로 둔다.\\다른 모듈이 top이면 테스트벤치를 우클릭 → Set as Top.\\설계 top은 logic\_gate로 유지한다.}
+\end{frame}
+
+\begin{frame}[label=modern01-vsim]{37. Behavioral Simulation 실행}\relax
+\small Run Simulation → Run Behavioral Simulation을 선택한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=3.4cm,keepaspectratio,trim=9bp 231bp 764.25bp 316.5bp,clip]{assets/modern-01/58-run-behavioral.png}\par}\vspace{0.08cm}
+\explain{컴파일과 elaboration이 끝날 때까지 기다린다.\\실패하면 Messages 또는 Tcl Console의 오류를 먼저 확인한다.}
+\end{frame}
+
+\begin{frame}{38. 파형 탭과 Zoom Fit}\relax
+\small Untitled 파형 탭을 열고 탭을 두 번 눌러 크게 볼 수 있다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=3.5cm,keepaspectratio,trim=235.5bp 332.25bp 6.75bp 111.75bp,clip]{assets/modern-01/59-gui-wave.png}\par}\vspace{0.08cm}
+\explain{파형 도구 모음의 네 방향 화살표 Zoom Fit를 누른다.\\a, b, x, y, z의 0--40ns 네 구간을 VS Code 파형과 비교한다.}
+\end{frame}
+
+\begin{frame}{39. PASS와 실제 종료 시각}\relax
+\small 아래 Tcl Console 탭을 눌러 실행 결과를 확인한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.7cm,keepaspectratio,trim=239.25bp 121.5bp 306.75bp 504.75bp,clip]{assets/modern-01/60-gui-pass-log.png}\par}\vspace{0.08cm}
+\explain{LAB1\_PASS logic\_gate cases=4와 40ns의 \$finish를 확인한다.\\기본 실행 요청이 1000ns여도 테스트벤치가 40ns에서 종료한다.\\파형만 열렸다는 사실로 통과 판정을 하지 않는다.}
+\end{frame}
+
+\begin{frame}[label=modern01-bit]{40. 대상 보드와 핀 확인}
 \small \textbf{Constraints → logic\_gate.xdc}. 이번 원본 장비의 매핑이다.
 \begin{center}\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{c|c|c}
@@ -330,38 +410,120 @@ z&M2&LED3 / XOR
 다른 보드의 핀 번호로 바꾸지 않는다. 이 회로는 클록이 없는 조합회로다.}
 \end{frame}
 
-\begin{frame}{28. 합성 → 구현 → 비트스트림}
-\small
-\begin{enumerate}\setlength{\itemsep}{0.28cm}
-\item 시뮬레이션을 닫고 Flow Navigator의 \textbf{Run Synthesis}.
-\item 완료 후 \textbf{Run Implementation}. 실패 메시지가 없는지 확인.
-\item 완료 후 \textbf{Generate Bitstream}. 이전 단계가 필요하다는 안내가 뜨면 합성·구현부터 진행한다.
-\item 완료 상태는 \textbf{write\_bitstream Complete!}.
-\end{enumerate}
-\explain{workspace의 \textbf{06 Build bitstream}은 위 순서를 자동 실행한다.\\
-결과가 나올 때까지 기다린다. 단순히 작업을 시작한 화면은 성공 증거가 아니다.}
+\begin{frame}{41. 시뮬레이션 닫기}\relax
+\small 결과를 저장했으면 File → Close Simulation.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=3.4cm,keepaspectratio,trim=6bp 519bp 912.75bp 23.25bp,clip]{assets/modern-01/61-close-simulation.png}\par}\vspace{0.08cm}
+\explain{프로젝트 자체를 닫는 File → Project → Close와 구분한다.\\이후 Project Manager에서 합성과 구현을 진행한다.}
 \end{frame}
 
-\begin{frame}{29. 실제 비트스트림 생성 완료}
-\shot[trim=192bp 54bp 0bp 372bp,clip]{29-bitstream-complete}
-\explain{Design Runs에서 synth\_1과 impl\_1의 완료 표시를 확인한다.\\
-최종 상태는 \textbf{write\_bitstream Complete!}.\\
-이 단계는 파일 생성이며 아직 FPGA에 기록한 상태는 아니다.}
+\begin{frame}{42. 종료 확인 대화상자}\relax
+\small 닫을 시뮬레이션 이름을 확인하고 OK.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=3.5cm,keepaspectratio,trim=328.5bp 255.75bp 328.5bp 256.5bp,clip]{assets/modern-01/61b-close-confirm.png}\par}\vspace{0.08cm}
+\explain{검사 로그와 VCD는 프로젝트 폴더에 남는다.\\이 화면을 지나면 Flow Navigator의 Run Synthesis를 선택한다.}
 \end{frame}
 
-\begin{frame}{30. 생성 파일과 경고 읽기}
-\small
-\begin{itemize}\setlength{\itemsep}{0.24cm}
-\item Vivado 원본: \texttt{vivado/logic\_gate.runs/impl\_1/logic\_gate.bit}
-\item task가 복사하는 결과: \texttt{build/build/design.bit}
-\item DRC: CFGBVS-1 경고 1건. 구성 bank 전압 속성이 없어 실제 보드 회로도 확인 후 지정해야 한다.
-\item 클록이 없는 회로라 setup/hold 타이밍 표에 \textbf{NA}가 나올 수 있다. 이를 클록 회로의 타이밍 통과와 혼동하지 않는다.
-\end{itemize}
-\explain{핀 미지정 UCIO·전기 규격 미지정 NSTD 같은 오류를 무시하고 비트스트림을 만들지 않는다.\\
-다음 실험에서는 Hardware Manager로 실제 장치에 기록하고 스위치·LED 동작을 촬영한다.}
+\begin{frame}{43. 합성 시작}\relax
+\small Flow Navigator → Synthesis → Run Synthesis.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.6cm,keepaspectratio,trim=7.5bp 180bp 919.5bp 453bp,clip]{assets/modern-01/62-run-synthesis.png}\par}\vspace{0.08cm}
+\explain{Verilog 설계를 FPGA 자원으로 변환하는 단계다.\\테스트벤치가 아닌 logic\_gate를 설계 top으로 선택했는지 확인한다.}
 \end{frame}
 
-\begin{frame}{31. 실습 완료 점검}
+\begin{frame}{44. 합성 Launch Runs 설정}\relax
+\small Launch directory는 기본값, Launch runs on local host를 선택한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.7cm,keepaspectratio,trim=380.25bp 330bp 384.75bp 208.5bp,clip]{assets/modern-01/63-synthesis-launch.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=661.5bp 183bp 380.25bp 480.75bp,clip]{assets/modern-01/63-synthesis-launch.png}\par}\vspace{0.08cm}
+\explain{Number of jobs는 이 PC에서 4로 실행했다. PC 자원에 맞게 선택한다.\\Generate scripts only 대신 실제 실행을 선택하고 OK. 완료를 기다린다.}
+\end{frame}
+
+\begin{frame}{45. 합성 완료 후 구현 선택}\relax
+\small Synthesis successfully completed를 확인한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=3.7cm,keepaspectratio,trim=405.75bp 197.25bp 405.75bp 196.5bp,clip]{assets/modern-01/64-synthesis-complete.png}\par}\vspace{0.08cm}
+\explain{Run Implementation을 선택하고 OK.\\구현은 합성된 회로를 FPGA 안에 배치하고 배선한다.}
+\end{frame}
+
+\begin{frame}{46. 구현 Launch Runs 설정}\relax
+\small Launch runs on local host와 작업 수를 확인한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.7cm,keepaspectratio,trim=383.25bp 331.5bp 393.75bp 207.75bp,clip]{assets/modern-01/65-implementation-launch.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=654bp 192bp 387bp 475.5bp,clip]{assets/modern-01/65-implementation-launch.png}\par}\vspace{0.08cm}
+\explain{기본 Launch directory를 유지하고 OK.\\완료 창이 나올 때까지 기다리며 실패하면 Messages를 확인한다.}
+\end{frame}
+
+\begin{frame}{47. 구현 완료 후 비트스트림 선택}\relax
+\small Implementation successfully completed를 확인한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.6cm,keepaspectratio,trim=418.5bp 339.75bp 426bp 226.5bp,clip]{assets/modern-01/66-implementation-complete.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=618bp 207bp 414.75bp 454.5bp,clip]{assets/modern-01/66-implementation-complete.png}\par}\vspace{0.08cm}
+\explain{Generate Bitstream을 선택하고 OK.\\완료 창을 닫았다면 왼쪽 Program and Debug → Generate Bitstream.}
+\end{frame}
+
+\begin{frame}{48. 비트스트림 Launch Runs 설정}\relax
+\small 비트스트림 생성 실행 창에서 설정을 확인한다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.8cm,keepaspectratio,trim=379.5bp 322.5bp 387.75bp 201.75bp,clip]{assets/modern-01/67-bitstream-launch.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=660bp 178.5bp 378.75bp 484.5bp,clip]{assets/modern-01/67-bitstream-launch.png}\par}\vspace{0.08cm}
+\explain{Launch runs on local host, 기본 디렉터리와 작업 수를 확인하고 OK.\\write\_bitstream이 완료될 때까지 기다린다.}
+\end{frame}
+
+\begin{frame}{49. 비트스트림 생성 완료 확인}\relax
+\small Bitstream Generation successfully completed가 성공 기준이다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=1cm,keepaspectratio,trim=418.5bp 463.5bp 427.5bp 216.75bp,clip]{assets/modern-01/68-bitstream-complete.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=2cm,keepaspectratio,trim=201bp 89.25bp 611.25bp 554.25bp,clip]{assets/modern-01/68-bitstream-complete.png}\par}\vspace{0.08cm}
+\explain{Design Runs의 impl\_1은 write\_bitstream Complete!로 바뀐다.\\이 화면은 파일 생성 성공이며 실제 FPGA 기록 결과는 다음 단계다.}
+\end{frame}
+
+\begin{frame}{50. 생성 파일과 경고 확인}\relax
+\small 프로젝트 폴더에서 생성한 logic\_gate.bit를 확인한다.
+\vspace{0.5cm}
+\explain{파일: vivado/logic\_gate.runs/impl\_1/logic\_gate.bit.\\이 실행의 DRC 오류는 0건이다. CFGBVS-1 경고는 보드의 구성 전압 확인이 필요하다.\\클록 없는 조합회로의 타이밍 NA를 클록 회로의 통과로 해석하지 않는다.\\Messages의 경고와 실행 로그를 실험 후 레포트에 함께 보관한다.}
+\end{frame}
+
+\begin{frame}[label=modern01-board]{51. Hardware Manager로 이동}\relax
+\small 보드 실험은 Open Hardware Manager를 선택하고 OK.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=2.5cm,keepaspectratio,trim=424.5bp 322.5bp 426bp 284.25bp,clip]{assets/modern-01/69-open-hardware.png}\par}\vspace{0.08cm}
+{\centering\includegraphics[width=\textwidth,height=0.7cm,keepaspectratio,trim=621.75bp 193.5bp 417bp 471bp,clip]{assets/modern-01/69-open-hardware.png}\par}\vspace{0.08cm}
+\explain{전원과 USB JTAG 연결을 확인한다.\\완료 창을 닫았다면 Flow Navigator → Open Hardware Manager.}
+\end{frame}
+
+\begin{frame}{52. Open target → Auto Connect}\relax
+\small Hardware Manager 위쪽 Open target을 누른다.
+\par\vspace{0.16cm}
+{\centering\includegraphics[width=\textwidth,height=3.4cm,keepaspectratio,trim=202.5bp 476.25bp 586.5bp 92.25bp,clip]{assets/modern-01/70-auto-connect.png}\par}\vspace{0.08cm}
+\explain{Auto Connect를 선택하고 연결된 장치 목록을 기다린다.\\장치가 없으면 전원·USB 케이블·JTAG 드라이버·VM USB 연결을 점검한다.}
+\end{frame}
+
+\begin{frame}{53. 장치에 기록할 때 확인할 것}\relax
+\small 장치가 연결되면 이름이 xc7s75인지 먼저 확인한다.
+\vspace{0.5cm}
+\explain{대상 장치를 우클릭 → Program Device.\\Bitstream file에서 이번 프로젝트의 logic\_gate.bit를 선택한다.\\Program을 누르고 진행 완료와 장치 상태를 확인한다.\\현재 제작 환경에서 장치 기록을 수행했는지는 검증표에 별도로 남긴다.}
+\end{frame}
+
+\begin{frame}{54. 스위치·LED 사진과 시연 영상}\relax
+\small a와 b를 00 → 01 → 10 → 11로 바꾸며 확인한다.
+\vspace{0.5cm}
+\explain{LED1 AND: 0,0,0,1 / LED2 OR: 0,1,1,1 / LED3 XOR: 0,1,1,0.\\사진에는 보드 전체 연결과 스위치·LED의 위치가 함께 보여야 한다.\\영상은 입력을 바꾸는 손과 출력 변화를 한 화면에서 보여준다.\\교재 사진이 아닌 자신의 실제 실험 결과를 기록한다.}
+\end{frame}
+
+\begin{frame}{55. GitHub에 실행 결과 연결}\relax
+\small 자신의 저장소에 소스와 결과 자료를 올린다.
+\vspace{0.5cm}
+\explain{reports/pre, reports/post에 레포트를 두고 evidence/vscode, vivado, board로 구분한다.\\사진·영상 파일명에는 회로 번호와 입력 또는 모드를 적는다.\\큰 영상은 GitHub Release 등 배포 위치를 정하고 레포트에서 링크한다.\\업로드 후 웹에서 사진 표시·영상 재생 또는 다운로드를 직접 확인한다.}
+\end{frame}
+
+\begin{frame}{56. 실험 후 레포트의 비교와 해석}\relax
+\small 예상값 → VS Code → Vivado → 실제 보드를 비교한다.
+\vspace{0.5cm}
+\explain{Vivado 버전·part·top·XDC·생성 bit·실행 소스 커밋을 기록한다.\\두 시뮬레이션의 파형, 합성·구현 결과와 경고를 해석한다.\\장치 기록 화면·입출력 사진·시연 영상의 링크를 함께 붙인다.\\미수행 항목은 미완료로 표시하고 원인과 다음 확인 순서를 적는다.}
+\end{frame}
+
+\begin{frame}{57. 실습 완료 점검}
 \small
 \begin{enumerate}\setlength{\itemsep}{0.26cm}
 \item 템플릿 clone부터 workspace 열기까지 직접 실행했는가?
@@ -372,7 +534,7 @@ z&M2&LED3 / XOR
 \explain{사전 레포트에 자신의 실행 결과와 해석을 정리한다.\\
 실험 후 레포트에는 Vivado 결과와 실제 보드 기록·사진·영상·GitHub 링크를 추가한다.}
 \vspace{0.3cm}
-\href{https://github.com/Glaysia/ece2_26_2_2/tree/daily/0910/example/fpga_projects_hdl/LAB1/vivado_2026_1/01_logic_gates}{▶ 첫 회로 소스·workspace·검증 안내}
+\href{https://github.com/Glaysia/fpga-lab-template/tree/main/vivado_2026_1/01_logic_gates}{▶ 첫 회로 소스·workspace·검증 안내}
 \end{frame}
 \endgroup
 \end{document}

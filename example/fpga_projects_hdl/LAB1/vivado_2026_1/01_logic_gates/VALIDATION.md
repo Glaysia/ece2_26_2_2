@@ -27,4 +27,14 @@ VS Code에 등록된 것과 동일한 Python task 실행기를 명령행에서 �
 
 비트스트림의 SHA-256과 입력 소스 해시는 [manifest](evidence/manifest.json)에 기록했다.
 
-PDF 검수: 33쪽, 4:3, 모든 목차 버튼의 2쪽 목적지와 외부 PDF 대상 확인. 전 페이지 렌더링을 검토했으며 화면 잘림과 잘못 저장된 캡처를 수정했다. 설치·환경설정 PDF를 포함한 별도 ZIP은 압축 해제 내용과 원본 일치를 검사했다.
+PDF 검수: 59쪽, 4:3, 모든 목차 버튼의 2쪽 목적지와 외부 PDF 대상 확인. 전 페이지 렌더링을 검토했으며 화면 잘림과 잘못 저장된 캡처를 수정했다. 설치·환경설정 PDF를 포함한 별도 ZIP은 압축 해제 내용과 원본 일치를 검사했다.
+
+## 별도 템플릿과 GUI 재실행
+
+공개 [fpga-lab-template](https://github.com/Glaysia/fpga-lab-template) 커밋 `740aef5`를 인증 없이 공백이 포함된 새 경로에 clone했다. 학생 workspace는 01 Check tools, 02 Simulate, 03 Open waveform의 세 작업만 제공한다.
+
+- 새 clone의 VS Code 실행기: [4개 입력·40ns PASS](evidence/template-clone-vscode.log).
+- Vivado 2026.1 GUI에서 New Project, RTL·TB·XDC Add Sources, top/part 확인, Behavioral Simulation을 직접 실행: [PASS 로그](evidence/template-gui-simulation.log).
+- Run Synthesis → Run Implementation → Generate Bitstream을 버튼으로 실행: [생성 로그](evidence/template-gui-build.log), [최신 bit](release/logic_gate.bit). 실제 입력·산출물 SHA-256은 manifest에 기록했다.
+- Hardware Manager → Auto Connect를 시도했으나 Windows 방화벽 권한 창으로 실제 장치 검색·기록 확인을 완료하지 못했다. 보드 동작·사진·영상은 미검증이다.
+- 첫 회로 PDF는 GUI의 버튼과 입력값을 실제 화면으로 세분화했다. 전체 22개 확장은 취침 전 사용자 요청에 따라 계속 진행한다.
