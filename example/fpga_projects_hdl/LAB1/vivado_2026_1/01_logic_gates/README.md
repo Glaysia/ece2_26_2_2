@@ -19,3 +19,5 @@
 - [설계 소스](../../common/rtl/logic_gate.v) · [검증 테스트벤치](../../common/tb/tb_logic_gate_modern.sv) · [제약](../../common/constraints/logic_gate.xdc) · [프로젝트 설정](project.json)
 - 로그/파형: build/vscode/, build/vivado-sim/. 도구·검사 결과는 result.json에 기록됩니다.
 - 보드 쓰기와 촬영은 자동 시뮬레이션 성공과 별개입니다.
+
+[33쪽 실습 PDF](../../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_01_LOGIC_GATES_VIVADO.pdf) · [생성된 비트스트림](release/logic_gate.bit) · [검증 로그·DRC·해시](VALIDATION.md)
