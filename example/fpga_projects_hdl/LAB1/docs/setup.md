@@ -16,6 +16,6 @@ GUI에서는 File → New Window → Open Workspace from File... → 새 폴더�
 
 Vivado 실습은 사전 작업 뒤 Vivado GUI를 열고 자신의 src·sim·constraints 파일을 가져온다. 정확한 part는 `xc7s75fgga484-1`이다. 최신 교안은 2026.1 GUI를 사용하며 레거시 원문은 원래 버전의 화면을 보존한다. 구버전 실행 여부는 [검증 기록](validation.md)을 확인한다.
 
-CLI 통합 실습은 Vivado를 설치하거나 XSim을 실행하지 않는다. [CLI 안내](cli.md)의 오픈소스 도구·장치 DB·bit·openFPGALoader 흐름을 따른다. 현재 DB와 bit 검증의 미완료 항목도 해당 문서에서 구분한다.
+CLI 통합 실습은 Vivado를 설치하거나 XSim을 실행하지 않는다. [CLI 안내](cli.md)의 오픈소스 도구·장치 DB·bit·openFPGALoader 흐름을 따른다. 정확한 S75 bit 생성·파일 검사 결과와 실제 보드 기록의 검증 범위를 해당 문서에서 구분한다.
 
 완성 예시를 참고하려면 강의 저장소에서 `git submodule update --init --recursive`를 실행한다. 각 예시는 독립 저장소이며 해당 디렉터리의 LAB1.code-workspace만 열면 된다. 이 과정은 학생이 빈 프로젝트를 만드는 clone 명령과 구분한다.

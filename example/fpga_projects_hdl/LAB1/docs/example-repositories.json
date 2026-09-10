@@ -150,7 +150,7 @@
     "project": "opensource_cli/integrated",
     "repository": "https://github.com/Glaysia/fpga-lab-example-opensource-cli-integrated.git",
     "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
-    "commit": "2c1e00f7ca38de27f1b933e836de210fb7682ca0",
+    "commit": "b7c6c1d8c16270797abe140cc0c44c9b1a78c0d2",
     "status": "PUBLISHED"
   }
 ]

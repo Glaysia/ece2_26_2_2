@@ -27,7 +27,7 @@ ZIP을 전부 푼 뒤 04.LAB1_00_CONTENTS.pdf를 여세요. 22개 실습 PDF와 
 템플릿 clone에는 --branch v2.0.0을 지정합니다. 레거시 11–20의 VS Code 과정은 대응 최신 01–10과 같은 코드·검사를 재사용합니다.
 검증 현황: https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/validation.md
 
-통합 CLI의 S75 bit 생성은 아직 데이터베이스 문제 해결 중입니다. 이 ZIP의 해당 원고는 미완료 상태를 명시하며, 다른 FPGA 또는 Vivado bit로 대체하지 않습니다.
+통합 CLI는 정확한 S75에서 Yosys·nextpnr·프레임 변환·bit 생성과 9,104프레임 체크섬 검사를 통과했습니다. 보조 도구는 예시 저장소 v2.0.1의 고정 파일을 사용하며 학생 빈 템플릿은 v2.0.0입니다.
 
 원본 레거시 이미지와 새 제작자의 실행 결과를 구분합니다. 실제 보드 기록·사진·영상은 아직 미수행이며 레포트 예시에도 그 상태를 명시했습니다. 새 PNG는 제작 PC의 빌드 자료이고 배포물에는 PDF를 넣습니다.
 '''

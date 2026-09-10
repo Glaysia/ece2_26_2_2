@@ -4,6 +4,16 @@
 
 [전체 프로젝트](../README.md) · [기계 판독 결과](validation-results.json) · [Icarus 교차검사](cli-simulation-results.json) · [VS Code·Vivado VCD 대조](simulation-comparison.json) · [CLI 빌드](cli.md) · [첫 회로 GUI](https://github.com/Glaysia/ece2_26_2_2/blob/3a521984ac1e0b6a2f69865aad1acf72b05959da/example/fpga_projects_hdl/LAB1/vivado_2026_1/01_logic_gates/VALIDATION.md)
 
+## 현재 단일 프로젝트와 CLI 검증
+
+현재 학생 템플릿은 **v2.0.0**의 프로젝트 하나입니다. 22개 완성 예시는 독립 저장소·서브모듈이며 [원격 clone 검사](submodule-validation.json)를 통과했습니다. CLI 갱신분은 [새 원격 clone·입력 해시·시뮬레이션·보조 도구 다운로드 검사](cli-pr15-evidence/fresh-clone-validation.json)로 추가 확인했습니다.
+
+정확한 xc7s75fgga484-1에서 오픈소스 합성·배치배선·프레임·bit 생성이 모두 통과했습니다. [첫 실행](cli-pr15-evidence/validation.json), [학생 명령 재현](https://github.com/Glaysia/fpga-lab-example-opensource-cli-integrated/blob/v2.0.1/evidence/openxc7/student-command-validation.json), [9,104프레임 체크섬 검사](cli-pr15-evidence/bitread.txt)를 제공합니다. 이 결과는 Vivado bit를 가져온 것이 아닙니다.
+
+openFPGALoader v0.13.1의 지원 목록과 장치 탐색을 실행했습니다. [탐색 기록](cli-pr15-evidence/loader-validation.json)은 JTAG 장치 없음이며 실제 기록·촬영 성공으로 표시하지 않습니다. 학생용 매뉴얼은 SRAM 기록·LCD·10모드 촬영·레포트·GitHub 제출까지 안내합니다.
+
+## 이전 Vivado 제작 이력
+
 작성일 2026-09-10. PASS는 표의 해당 단계에 한정합니다. NOT_RUN은 미실행, RUNNING은 진행 중, FAIL은 실패입니다. 각 프로젝트의 evidence에 실제 로그·결과·소스 SHA-256을 보관합니다.
 
 | 프로젝트 | 사전 시뮬레이션 | Vivado 시뮬레이션 | Vivado bit | 보드 기록·촬영 |
@@ -35,12 +45,12 @@
 
 레거시 원본 XPR은 2020.1 형식을 유지했습니다. 표의 레거시 사전 PASS는 2026.1 XSim 검사이며, Vivado 2020.1 GUI·합성·보드 실행은 미수행입니다. CLI 통합은 Icarus와 별도 openXC7 결과를 확인합니다.
 
-## 화면 확보와 남아 있는 실물 검증
+## 이전 제작 기록과 실물 검증 범위
 
 최신 RTL·개별 자기검사 TB·통합 top·버튼·LCD·통합 TB의 실제 VS Code 화면을 확보했습니다. 코드 패널 52개의 [소스 줄 범위·해시](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/assets/lab1-circuits/provenance.json)를 기록했습니다. 최신 02–10의 실제 파형·PASS 로그·기존 구현 상태 패널 27개와 통합 LCD ASCII 파형·전체 종료 로그를 추가했습니다. [개별 GUI 출처](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/assets/latest-gui/provenance.json) · [통합 GUI 출처](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/assets/integrated-gui/provenance.json).
 
-공개 템플릿 66a8b43을 인증 없이 공백 포함 새 경로에 clone했습니다. 22개 workspace·21개 XPR·원본 41개 파일과 로컬 링크 검사가 통과했습니다. 실제 workspace 명령으로 첫 회로 도구 검사·시뮬레이션과 통합 회로 시뮬레이션도 통과했습니다. [새 clone 검증](template-clone-validation.json)에 명령별 로그를 연결했습니다.
+이전 다중 프로젝트 템플릿 66a8b43을 인증 없이 공백 포함 새 경로에 clone했습니다. 22개 workspace·21개 XPR·원본 41개 파일과 로컬 링크 검사가 통과했습니다. 실제 workspace 명령으로 첫 회로 도구 검사·시뮬레이션과 통합 회로 시뮬레이션도 통과했습니다. [새 clone 검증](template-clone-validation.json)에 명령별 로그를 연결했습니다.
 
 최신 11개 bit 생성은 모두 PASS입니다. 통합 구현의 내부 1kHz 타이밍은 WNS 999994.562ns, WHS 0.193ns, 실패 endpoint 0개입니다. 외부 I/O 지연 미지정(TIMING-18)과 구성 전압 미지정(CFGBVS-1) 경고는 남아 있습니다. [타이밍·DRC 해석](integrated.md#구현-타이밍과-drc)에서 범위를 확인합니다.
 
-실제 FPGA 기록, LCD 실물 동작, 보드 사진·영상은 미수행입니다. 레포트 양식과 촬영 절차는 제공하지만 결과를 꾸며 채우지 않습니다. 이 항목이 남아 있으므로 GOAL의 전체 완료로 표시하지 않습니다.
+실제 FPGA 기록, LCD 실물 동작, 보드 사진·영상은 미수행입니다. 레포트 양식과 촬영 절차는 제공하지만 결과를 꾸며 채우지 않습니다. 이 항목은 학생이 실제 실험에서 수행하고 제출할 실물 검증이며 교안·소프트웨어 빌드의 검증과 구분합니다.

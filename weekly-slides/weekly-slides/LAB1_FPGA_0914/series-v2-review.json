@@ -1,7 +1,7 @@
 {
   "date": "2026-09-10",
   "pdf_count": 25,
-  "page_count": 1493,
+  "page_count": 1498,
   "files": [
     {
       "file": "04.LAB1_00_CONTENTS.pdf",
@@ -77,8 +77,8 @@
     },
     {
       "file": "04.LAB1_10B_INTEGRATED_CLI.pdf",
-      "pages": 86,
-      "sha256": "7b8159d1e3d7de28865dc4b645422f3ffb22bf96379cfcd780a2ab0450c5dd95",
+      "pages": 91,
+      "sha256": "0868ab8f972263fa17a2d9e54da9ea2f86be78b7f1003e66e46f34cc813f3a91",
       "build": "PASS"
     },
     {
@@ -164,7 +164,8 @@
       "Vivado installation shotframe macro lost the second frame body; expanded to explicit frames.",
       "Vivado installation dense troubleshooting page overlapped footer.",
       "Obsolete Vivado task configuration reference replaced with user PATH."
-    ]
+    ],
+    "cli_success_update": "First 65 pages pixel-identical to reviewed version at scale 1.2; all final pages 66-91 rendered and visually inspected. Command pages have no clipping or overlap. CLI build has zero overfull and missing-glyph diagnostics."
   },
   "link_checks": {
     "internal": 1603,
@@ -173,7 +174,7 @@
     "contents_buttons": true
   },
   "remaining": [
-    "Exact S75 open-source bitstream generation is still under investigation; this visual/build review does not assert CLI hardware implementation success.",
-    "Physical board programming, photos and video are student experiment instructions, not claimed author execution."
-  ]
+    "Physical board programming and 10-mode/button/LCD photos/video have not been performed; hardware is absent. Instructions are complete."
+  ],
+  "cli_software": "Exact S75 logic gates and integrated bitstreams generated. Integrated student commands reproduced with fresh DB; bitread 9104 frames and checksum PASS."
 }

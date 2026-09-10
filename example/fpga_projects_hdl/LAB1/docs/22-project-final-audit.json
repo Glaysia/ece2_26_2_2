@@ -1,0 +1,260 @@
+{
+  "status": "PACKAGE_AND_CLI_SOFTWARE_PASS_FULL_GOAL_AUDIT_PENDING",
+  "manuals": 22,
+  "projects": [
+    {
+      "project": "vivado_2026_1/01_logic_gates",
+      "commit": "8d25deb5c064edd95d61488a32d643c4bb331fb8",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_01_LOGIC_GATES_VIVADO.pdf",
+      "pages": 65,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "legacy/01_logic_gates",
+      "commit": "9055c8002ec5149907f393a1c781000d44125e38",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_11_LOGIC_GATES_LEGACY.pdf",
+      "pages": 101,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "vivado_2026_1/02_full_adder",
+      "commit": "8b506af67d1e0cb7bc63854c8bb2a2633d3326be",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_02_FULL_ADDER_VIVADO.pdf",
+      "pages": 47,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "legacy/02_full_adder",
+      "commit": "0fe260d299847628fd01626c76ae87150f601ca1",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_12_FULL_ADDER_LEGACY.pdf",
+      "pages": 72,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "vivado_2026_1/03_adder4",
+      "commit": "08543696c146164de20930270b01bfbd12ccdd72",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_03_ADDER4_VIVADO.pdf",
+      "pages": 49,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "legacy/03_adder4",
+      "commit": "14578fedf93bb22b3366f2070d80cfe4a46ff62e",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_13_ADDER4_LEGACY.pdf",
+      "pages": 69,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "vivado_2026_1/04_subtractor4",
+      "commit": "f7d79cd1f95d423edaa3746b75002b0ecf8c5eea",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_04_SUBTRACTOR4_VIVADO.pdf",
+      "pages": 49,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "legacy/04_subtractor4",
+      "commit": "6383aa022813906c7f438351eabe580c132879d5",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_14_SUBTRACTOR4_LEGACY.pdf",
+      "pages": 70,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "vivado_2026_1/05_comparator4",
+      "commit": "913b0f41c48c2351cdaba21380d0d83770c43445",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_05_COMPARATOR4_VIVADO.pdf",
+      "pages": 48,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "legacy/05_comparator4",
+      "commit": "d8e0f25d8058df9c07084f03cf997ae649fd84af",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_15_COMPARATOR4_LEGACY.pdf",
+      "pages": 70,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "vivado_2026_1/06_mux4to1",
+      "commit": "009d192cb7f873a2b31d0386ea68cc451fdec89b",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_06_MUX4TO1_VIVADO.pdf",
+      "pages": 47,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "legacy/06_mux4to1",
+      "commit": "80d65af6339ade695aad964c39f66efb37ac7367",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_16_MUX4TO1_LEGACY.pdf",
+      "pages": 69,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "vivado_2026_1/07_demux1to8",
+      "commit": "3e8c1e3f1cef7f602d586e152754182f43ac3679",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_07_DEMUX1TO8_VIVADO.pdf",
+      "pages": 48,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "legacy/07_demux1to8",
+      "commit": "2e2ab8cf96476f44e9357cc4aa48570b7e18b613",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_17_DEMUX1TO8_LEGACY.pdf",
+      "pages": 70,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "vivado_2026_1/08_encoder8to3",
+      "commit": "485a6c588c7c9230222c4763deb372f36e5b3384",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_08_ENCODER8TO3_VIVADO.pdf",
+      "pages": 48,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "legacy/08_encoder8to3",
+      "commit": "7f88377d78cf60cece52021e238a9ecc62d70a0b",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_18_ENCODER8TO3_LEGACY.pdf",
+      "pages": 70,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "vivado_2026_1/09_decoder3to8",
+      "commit": "d5a11d33868dfb9ff71b7e598644099a9ce59b65",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_09_DECODER3TO8_VIVADO.pdf",
+      "pages": 48,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "legacy/09_decoder3to8",
+      "commit": "e4d6725666068c25fb4a261ba10512cd2e350ad7",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_19_DECODER3TO8_LEGACY.pdf",
+      "pages": 70,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "vivado_2026_1/10_seven_segment",
+      "commit": "6cad34ce6d1385cd261b510024d50936dccb8f45",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_10_SEVEN_SEGMENT_VIVADO.pdf",
+      "pages": 51,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "legacy/10_seven_segment",
+      "commit": "ccd38e3159da27d975bcb65cb2a34911d881a701",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_20_SEVEN_SEGMENT_LEGACY.pdf",
+      "pages": 74,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "vivado_2026_1/11_integrated",
+      "commit": "5a553ee802270caf3f909395f5e29bdcbbd48352",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_10A_INTEGRATED_VIVADO.pdf",
+      "pages": 97,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    },
+    {
+      "project": "opensource_cli/integrated",
+      "commit": "b7c6c1d8c16270797abe140cc0c44c9b1a78c0d2",
+      "workspace": "PASS",
+      "input_files": "PASS",
+      "manual": "04.LAB1_10B_INTEGRATED_CLI.pdf",
+      "pages": 91,
+      "tagged_clone": "PASS",
+      "xdc_image_section": "PASS",
+      "pre_post_reports": "PASS"
+    }
+  ],
+  "cli_software_evidence": [
+    "cli-pr15-evidence/logic-gate-validation.json",
+    "cli-pr15-evidence/student-command-validation.json",
+    "cli-pr15-evidence/fresh-clone-validation.json"
+  ],
+  "visual_evidence": "../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/series-v2-review.json",
+  "package_evidence": "../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/pdf-package-validation.json",
+  "remaining_goal_requirements": [
+    "Audit the planned XOR-to-OR failure/recovery demonstration and real syntax-error GUI evidence.",
+    "Audit concrete modification exercises in the remaining 21 manuals.",
+    "Physical CLI programming, 10 modes/buttons/LCD photos/video: no JTAG device available."
+  ]
+}

@@ -27,7 +27,7 @@
 | `vivado_2026_1/10_seven_segment` | [예시 열기](https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-10-seven-segment/tree/6cad34ce6d1385cd261b510024d50936dccb8f45) | `6cad34ce` |
 | `legacy/10_seven_segment` | [예시 열기](https://github.com/Glaysia/fpga-lab-example-legacy-10-seven-segment/tree/ccd38e3159da27d975bcb65cb2a34911d881a701) | `ccd38e31` |
 | `vivado_2026_1/11_integrated` | [예시 열기](https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated/tree/5a553ee802270caf3f909395f5e29bdcbbd48352) | `5a553ee8` |
-| `opensource_cli/integrated` | [예시 열기](https://github.com/Glaysia/fpga-lab-example-opensource-cli-integrated/tree/2c1e00f7ca38de27f1b933e836de210fb7682ca0) | `2c1e00f7` |
+| `opensource_cli/integrated` | [예시 열기](https://github.com/Glaysia/fpga-lab-example-opensource-cli-integrated/tree/b7c6c1d8c16270797abe140cc0c44c9b1a78c0d2) | `b7c6c1d8` |
 
 각 예시의 `evidence/standalone-simulation.txt`는 새 독립 구성으로 실행한 Windows Icarus 로그다. 이전 GUI·bit·DB 조사는 `evidence/historical-course/`에서 구분한다. 원본 레거시 파일은 `original/`에 보존하며, 과거 XPR의 외부 경로는 당시 원본의 일부다. 새 실습은 src·sim·constraints에 작성한 파일을 GUI로 가져온다.
 

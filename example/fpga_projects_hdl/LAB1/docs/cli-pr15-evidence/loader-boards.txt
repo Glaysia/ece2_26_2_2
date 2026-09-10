@@ -1,0 +1,138 @@
+empty
+board name               cable_name
+LD-KONFEKT               
+LD-KONFEKT-DFU           dfu
+LD-SCHOKO                
+LD-SCHOKO-DFU            dfu
+ac701                    digilent
+acornCle215              
+alchitry_au              ft2232
+alchitry_au_plus         ft2232
+alinx_ax516              
+alinx_ax7101             
+alinx_ax7102             
+analogMax                ft2232
+antmicro_ddr4_tester     ft4232
+antmicro_ddr5_tester     ft4232
+antmicro_lpddr4_tester   ft4232
+arty                     digilent
+arty_a7_100t             digilent
+arty_a7_35t              digilent
+arty_s7_25               digilent
+arty_s7_50               digilent
+arty_z7_10               digilent
+arty_z7_20               digilent
+axu2cga                  
+basys3                   digilent
+c10lp-refkit             ft2232
+c5g                      usb-blaster
+certusnx_versa_evn       ft2232
+certuspronx_evn          ft2232
+certuspronx_versa_evn    ft2232
+cmod_s7                  digilent
+cmoda7_15t               digilent
+cmoda7_35t               digilent
+colorlight               
+colorlight-i5            cmsisdap
+colorlight-i9            cmsisdap
+colorlight-i9+           
+crosslinknx_evn          ft2232
+cyc1000                  ft2232
+cyc5000                  ft2232
+de0                      usb-blaster
+de0nano                  usb-blaster
+de0nanoSoc               usb-blasterII
+de10lite                 usb-blaster
+de10nano                 usb-blasterII
+de1Soc                   usb-blasterII
+deca                     usb-blasterII
+dragonL                  
+ecp5_evn                 ft2232
+ecpix5                   ecpix5-debug
+ecpix5_r03               ft4232
+fireant                  ft232
+fomu                     dfu
+ft2232_spi               ft2232
+gatemate_evb_jtag        gatemate_evb_jtag
+gatemate_evb_spi         gatemate_evb_spi
+gatemate_pgm_spi         gatemate_pgm
+genesys2                 digilent_b
+gr740-mini               ft4232hp_b
+hseda-xc6slx16           
+ice40_generic            ft2232
+icebreaker-bitsy         dfu
+kc705                    digilent
+kcu105                   jtag-smt2-nc
+kcu116                   jtag-smt2-nc
+licheeTang               anlogicCable
+lilygo-t-fpga            gwu2x
+litex-acorn-baseboard-mini
+littleBee                ft2232
+machXO2EVN               ft2232
+machXO3EVN               ft2232
+machXO3SK                ft2232
+mimas_a7                 numato
+mini_itx                 jtag-smt2-nc
+minispartan6             ft2232
+nexysVideo               digilent_b
+nexys_a7_100             digilent
+nexys_a7_50              digilent
+olimex_gatemateevb       dirtyJtag
+orangeCrab               dfu
+orbtrace_dfu             dfu
+papilio_one              papilio
+pipistrello              ft2232
+pynq_z1                  ft2232
+pynq_z2                  ft2232
+qmtechCyclone10          
+qmtechCycloneIV          
+qmtechCycloneIVGX        
+qmtechCycloneV           
+qmtechCycloneV_5ce523    
+qmtechKintex7            
+redpitaya14              
+runber                   ft232
+spartanEdgeAccelBoard    
+spec150                  
+spec45                   
+stlv7325                 ft4232
+tangmega138k             ft2232
+tangnano                 ch552_jtag
+tangnano1k               ft2232
+tangnano20k              ft2232
+tangnano4k               ft2232
+tangnano9k               ft2232
+tangprimer20k            ft2232
+tangprimer25k            ft2232
+te0712_8                 
+tec0117                  ft2232
+tec0330                  
+titanium_ti60_f225       efinix_spi_ft4232
+titanium_ti60_f225_jtag  efinix_jtag_ft4232
+trion_t120_bga576        efinix_spi_ft2232
+trion_t120_bga576_jtag   ft2232_b
+trion_t20_bga256_jtag    efinix_jtag_ft2232
+ulx2s                    ft232RL
+ulx3s                    ft231X
+ulx3s_dfu                dfu
+usrpx300                 digilent
+usrpx310                 digilent
+vc709                    digilent
+vcu108                   jtag-smt2-nc
+vcu118                   jtag-smt2-nc
+vcu128                   ft4232
+vcu1525                  ft4232
+vec_v6                   ft2232
+vmm3                     ft2232
+xem8320                  
+xtrx                     
+xyloni_jtag              efinix_jtag_ft4232
+xyloni_spi               efinix_spi_ft4232
+zc702                    digilent
+zc706                    jtag-smt2-nc
+zcu102                   jtag-smt2-nc
+zcu106                   jtag-smt2-nc
+zedboard                 digilent_hs2
+zybo_z7_10               digilent
+zybo_z7_20               digilent
+

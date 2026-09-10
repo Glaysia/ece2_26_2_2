@@ -1,0 +1,4 @@
+Bitstream size: 3686916 bytes
+Config size: 921690 words
+Number of configuration frames: 9104
+DONE

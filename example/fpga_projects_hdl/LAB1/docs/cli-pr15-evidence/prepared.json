@@ -1,0 +1,12 @@
+{
+  "part": "xc7s75fgga484-1",
+  "database_commit": "a3cc0736a90c697b7d4c40319f847a5b6988df62",
+  "package_pins": 338,
+  "package_pins_sha256": "34f526ca240f522b9b971e470dd72f5884f7e311e18bc460a6f49431bf80675e",
+  "chipdb_sha256": "d2fa710e4130fc6de89115efaf028eb1a29519f848503f1a2da86bb655b18605",
+  "tilegrid_sha256": "57424f62beae07818b5024d0e1c60df77927a1e101b6de511abcbbacd6539d7a",
+  "part_yaml_sha256": "ded7a32b276d89e5d0d15f1376d839cee4727a845e0476de71c037bf0cee0aac",
+  "exporter_sha256": "acc19ef0e44f0640c2efad5aa43bb575518110cd261ad5e302fc2fb2df1502dd",
+  "db_root": "/home/uos/fpga-cli/lab1-s75/prjxray-db/spartan7",
+  "chipdb": "/home/uos/fpga-cli/lab1-s75/xc7s75fgga484-1.bin"
+}

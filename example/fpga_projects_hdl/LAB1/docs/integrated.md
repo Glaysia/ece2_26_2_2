@@ -1,6 +1,6 @@
 # 버튼과 LCD로 10개 회로 선택
 
-[전체 프로젝트](../README.md) · [Vivado 통합](https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated/blob/5a553ee802270caf3f909395f5e29bdcbbd48352/README.md) · [CLI 통합](https://github.com/Glaysia/fpga-lab-example-opensource-cli-integrated/blob/2c1e00f7ca38de27f1b933e836de210fb7682ca0/README.md) · [검증](validation.md)
+[전체 프로젝트](../README.md) · [Vivado 통합](https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated/blob/5a553ee802270caf3f909395f5e29bdcbbd48352/README.md) · [CLI 통합](https://github.com/Glaysia/fpga-lab-example-opensource-cli-integrated/blob/b7c6c1d8c16270797abe140cc0c44c9b1a78c0d2/README.md) · [검증](validation.md)
 
 두 통합 프로젝트는 같은 [lab1_integrated.v](../common/rtl/lab1_integrated.v), [버튼 처리](../common/rtl/button_onepulse.v), [LCD 제어](../common/rtl/lcd_modes.v), [자기검사 TB](../common/tb/tb_lab1_integrated.sv), [보드 핀](../common/constraints/lab1_integrated.xdc)을 사용합니다. 디바이스는 `xc7s75fgga484-1`입니다.
 

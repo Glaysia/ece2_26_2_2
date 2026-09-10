@@ -476,61 +476,83 @@ lab1\_integrated → 10개 조합회로 + button\_onepulse + lcd\_modes.\par\vsp
 
 \begin{frame}[label=integrated-cli-vivado]{CLI 실행 환경}\relax
 \small
-macOS ARM64 바이너리 배포를 확인하고 WSL Ubuntu-26.04에서 Linux x86-64 바이너리를 실행했다.\par\vspace{0.22cm}제작자에게 Mac이 없으므로 Mac 실행·보드 기록을 검증했다고 쓰지 않는다.\par\vspace{0.22cm}APIO 1.5.1, OSS CAD Suite 2026.08.19, openXC7 2026.08.20.\par\vspace{0.22cm}Yosys 0.63+173 / nextpnr-xilinx 68aeeb3 / Icarus Verilog 14.0 개발 버전.\par\href{https://github.com/FPGAwars/tools-openxc7/releases/tag/2026-08-20}{openXC7 공식 ARM64·Linux 배포}
+macOS ARM64 공식 바이너리 배포를 확인하고 WSL Ubuntu-26.04에서 Linux x86-64 바이너리로 실행했다.\par\vspace{0.22cm}APIO 1.5.1, OSS CAD Suite 2026.08.19, openXC7 2026.08.20.\par\vspace{0.22cm}Yosys → nextpnr → frames → bit까지 정확한 S75로 성공했다.\par\vspace{0.22cm}Mac 직접 실행과 실제 보드 프로그래밍은 이 제작 검증에 포함하지 않는다.\par\href{https://github.com/FPGAwars/tools-openxc7/releases/tag/2026-08-20}{공식 ARM64·Linux 배포}
 \end{frame}
 
-\begin{frame}{설치와 경로}\relax
+\begin{frame}{도구 설치}\relax
 \small
-Python 3의 venv를 만들고 pip install apio==1.5.1을 실행한다.\par\vspace{0.22cm}apio packages install로 oss-cad-suite와 openxc7을 준비한다.\par\vspace{0.22cm}도구 경로는 \textasciitilde{}/.apio/packages/oss-cad-suite/bin 및 openxc7/bin이다.\par\vspace{0.22cm}LD\_LIBRARY\_PATH를 두 묶음의 lib로 전역 지정하지 않는다. 각 배포의 실행 래퍼가 자신의 라이브러리를 선택한다.\par\vspace{0.22cm}macOS는 darwin-arm64, WSL은 linux-x86-64 자산을 사용한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{복사 가능한 전체 설치·실행 명령}
+macOS·WSL의 Bash/Zsh 터미널에서 실행한다.\par\terminalbox{python3 -m venv \textasciitilde{}/.local/share/fpga-apio\\source \textasciitilde{}/.local/share/fpga-apio/bin/activate\\pip install apio==1.5.1\\apio packages install}
+WSL에 venv가 없으면 먼저 python3-venv를 설치한다.\par\vspace{0.22cm}macOS는 darwin-arm64, WSL은 linux-x86-64 배포를 사용한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{설치·실행 명령 전체}
 \end{frame}
 
-\begin{frame}{대상 부품 데이터베이스}\relax
+\begin{frame}{도구 경로 확인}\relax
 \small
-대상은 xc7s75fgga484-1이다. xc7s50으로 바꾸지 않는다.\par\vspace{0.22cm}배포에 포함된 S50 chipdb만으로는 S75를 빌드할 수 없다.\par\vspace{0.22cm}openXC7/prjxray-db의 spartan7 자료와 bbaexport.py·bbasm으로 정확한 부품의 chipdb를 준비한다.\par\vspace{0.22cm}데이터베이스 버전, 내보내기 결과와 실패 로그를 보관한다.\par\href{https://github.com/openXC7/prjxray-db}{공식 디바이스 데이터베이스}
+\terminalbox{export PATH="\$HOME/.apio/packages/oss-cad-suite/bin:\$PATH"\\export PATH="\$HOME/.apio/packages/openxc7/bin:\$PATH"\\yosys --version\\nextpnr-xilinx --version}
+새 터미널에는 PATH 설정을 다시 적용한다.\par\vspace{0.22cm}LD\_LIBRARY\_PATH로 두 묶음의 lib를 섞지 않는다. 배포 래퍼가 자신의 라이브러리를 선택한다.\par
 \end{frame}
 
-\begin{frame}{실제 실행 결과와 남은 제약}\relax
+\begin{frame}{정확한 S75 데이터 준비}\relax
 \small
-Icarus: 2,560개 통과. Yosys: 논리 게이트·통합 합성 성공.\par\vspace{0.22cm}nextpnr: 논리 게이트 K4, 통합 클록 B6 핀을 찾지 못해 실패. 프레임·bit 단계는 실행하지 못했다.\par\vspace{0.22cm}검증한 S75 DB의 필수 핀 38개 중 28개가 빠져 있다. S75 tilegrid는 S50 파일과 바이트 단위로 같았다.\par\vspace{0.22cm}Vivado 공식 부품 데이터에는 K4와 B6가 존재한다. 다른 핀·다른 FPGA로 바꾸어 성공 처리하지 않는다.\par\vspace{0.22cm}CLI bit 목표는 미완료이며, 실행 로그·DB 해시·후속 작업을 공개한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{실패 근거와 데이터베이스 대조}
+대상 부품은 xc7s75fgga484-1이다.\par\vspace{0.22cm}upstream PR 15가 S75를 올바른 S100 fabric에 연결한다. S75와 같은 실리콘 구조를 공유하는 매핑이며 부품명·IDCODE는 S75다.\par\vspace{0.22cm}해당 fgga484 패키지의 실제 338개 I/O 핀을 적용한다. 학생은 Vivado를 설치·실행할 필요가 없다.\par\vspace{0.22cm}준비 도구는 공개 DB 커밋과 핀 표 해시를 고정하고 모두 검사한다.\par\href{https://github.com/openXC7/prjxray-db/pull/15}{데이터 수정의 근거}
 \end{frame}
 
-\begin{frame}{검증 가능한 순서로 실행}\relax
+\begin{frame}{도구 보조 파일 받기}\relax
 \small
-\begin{enumerate}\setlength{\itemsep}{0.22cm}
-\item 02 Simulate: Icarus Verilog의 2,560개 검사와 VCD.
-\item Yosys: synth\_xilinx로 RTL을 Xilinx 셀에 매핑.
-\item nextpnr-xilinx: 정확한 chipdb와 XDC로 배치·배선.
-\item fasm2frames: FASM을 디바이스 프레임으로 변환.
-\item xc7frames2bit: 정확한 part.yaml로 bit 생성.
-\end{enumerate}
-각 단계의 입력·출력·종료 코드를 확인한다. 앞 단계 실패 후 오래된 산출물을 사용하지 않는다.\par
+아래는 회로 프로젝트와 별개인 도구 데이터 폴더다.\par\terminalbox{mkdir -p \textasciitilde{}/fpga-cli/lab1-tools\\cd \textasciitilde{}/fpga-cli/lab1-tools\\repo=fpga-lab-example-opensource-cli-integrated\\base=https://raw.githubusercontent.com/Glaysia/\$repo/v2.0.1/tools\\curl --fail --location "\$base/prepare\_s75.py" -o prepare\_s75.py\\pins=xc7s75fgga484-1-package-pins.csv\\curl --fail --location "\$base/\$pins" -o "\$pins"}
+고정된 보조 도구 태그는 v2.0.1, 학생 빈 템플릿 태그는 v2.0.0이다.\par
+\end{frame}
+
+\begin{frame}{S75 chipdb 생성}\relax
+\small
+\terminalbox{python3 prepare\_s75.py}
+다운로드·bbaexport·bbasm 종료를 기다린다.\par\vspace{0.22cm}\textasciitilde{}/fpga-cli/lab1-s75/prepared.json에서 part와 338개 핀, DB 커밋·chipdb 해시를 확인한다.\par\vspace{0.22cm}실패하면 같은 폴더의 export.log·bbasm.log를 읽는다. 메모리 부족일 때 다른 무거운 앱을 닫고 다시 실행한다.\par\vspace{0.22cm}이후 VS Code의 학생 프로젝트 터미널로 돌아간다.\par
 \end{frame}
 
 \begin{frame}{내 프로젝트에서 사전 검사}\relax
 \small
-clone 폴더의 LAB1.code-workspace를 열고 RTL·TB·XDC를 직접 작성한다.\par\vspace{0.22cm}프로젝트 루트에서 python3 tools/lab1.py simulate를 실행한다.\par\vspace{0.22cm}2,560개 입력 검사와 버튼·LCD 검사를 확인한 뒤 다음 단계로 이동한다.\par\vspace{0.22cm}터미널에서 mkdir -p build/cli로 결과 폴더를 만든다.\par\vspace{0.22cm}RTL 14개가 src에 있고 constraints/lab1\_integrated.xdc가 자신의 파일인지 확인한다.\par
+clone한 workspace에서 RTL 14개·TB·XDC·simulation.json을 직접 작성한다.\par\vspace{0.22cm}프로젝트 루트는 src·sim·constraints가 있는 폴더다.\par\terminalbox{python3 tools/lab1.py simulate\\mkdir -p build/cli}
+2,560개 입력 검사와 버튼·LCD 검사를 확인한다.\par\vspace{0.22cm}실험 전 레포트의 예상값·로그·파형을 저장한 뒤 합성으로 이동한다.\par
 \end{frame}
 
 \begin{frame}{합성 명령 파일을 직접 작성}\relax
 \small
 Explorer의 PROJECT 우클릭 → New File → synth.ys. 다음 네 줄을 작성하고 저장한다.\par\terminalbox{read\_verilog src/*.v\\synth\_xilinx -family xc7 -top lab1\_integrated\\write\_json build/cli/design.json\\stat}
-이 파일은 Yosys 명령이다. src에는 합성할 RTL만 두고 TB는 sim에 둔다.\par
+src에는 합성할 RTL만 두고 TB는 sim에 둔다.\par
 \end{frame}
 
 \begin{frame}{Yosys 실행과 결과 읽기}\relax
 \small
-프로젝트 루트의 터미널에서 실행한다.\par\terminalbox{mkdir -p build/cli\\yosys -l build/cli/synthesis.log -s synth.ys}
-오류 없이 끝나는지와 build/cli/design.json의 갱신을 확인한다.\par\vspace{0.22cm}stat의 셀 종류·개수를 읽고 상위 모듈이 lab1\_integrated인지 확인한다.\par\vspace{0.22cm}합성 로그를 evidence/cli에 보관한다. 합성만으로 bit 생성이나 장치 동작이 검증된 것은 아니다.\par
+\terminalbox{yosys -l build/cli/synthesis.log -s synth.ys}
+오류 없이 끝나는지와 build/cli/design.json의 갱신을 확인한다.\par\vspace{0.22cm}stat의 셀 종류·개수를 읽고 top이 lab1\_integrated인지 확인한다.\par\vspace{0.22cm}합성 로그를 evidence/cli에 보관한다. 실패했으면 원인을 수정하고 이 명령부터 다시 실행한다.\par
 \end{frame}
 
-\begin{frame}{배치배선부터 bit까지의 입력·출력}\relax
+\begin{frame}{nextpnr 배치배선}\relax
 \small
-\begin{enumerate}\setlength{\itemsep}{0.22cm}
-\item nextpnr-xilinx: S75 chipdb·XDC·design.json을 읽어 design.fasm을 만든다.
-\item fasm2frames: S75 DB·part와 FASM을 읽어 design.frames를 만든다.
-\item xc7frames2bit: part.yaml과 frames를 읽어 lab1\_integrated.bit를 만든다.
-\end{enumerate}
-이 교안의 S75 배치배선 문제는 아직 해결·재검증 중이다. 정확한 실행 명령과 실패 근거는 아래 문서를 따른다. 실패 다음 단계를 성공으로 기록하지 않는다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{S75 도구·DB 검증 기록}
+\terminalbox{chip="\$HOME/fpga-cli/lab1-s75/xc7s75fgga484-1.bin"\\db="\$HOME/fpga-cli/lab1-s75/prjxray-db/spartan7"\\part=xc7s75fgga484-1\\nextpnr-xilinx --chipdb "\$chip" \textbackslash{}\\  --xdc constraints/lab1\_integrated.xdc \textbackslash{}\\  --json build/cli/design.json --fasm build/cli/design.fasm \textbackslash{}\\  --freq 0.001 --log build/cli/place-route.log}
+B6의 1kHz를 MHz로 표현하면 0.001이다. XDC와 같은 클록이다.\par\vspace{0.22cm}K4/B6 핀 오류가 나면 이전 S50 기반 chipdb를 사용했는지 확인한다.\par
+\end{frame}
+
+\begin{frame}{프레임 변환}\relax
+\small
+\terminalbox{fasm2frames --db-root "\$db" --part "\$part" \textbackslash{}\\  build/cli/design.fasm build/cli/design.frames}
+앞 장과 같은 터미널을 사용한다. db와 part 변수를 유지한다.\par\vspace{0.22cm}배치배선이 성공한 새 design.fasm을 사용한다.\par\vspace{0.22cm}종료 코드 0과 design.frames의 갱신을 확인한다.\par\vspace{0.22cm}해당 S75 DB와 다른 부품의 part.yaml을 섞지 않는다.\par
+\end{frame}
+
+\begin{frame}{bit 파일 생성}\relax
+\small
+\terminalbox{xc7frames2bit --part\_file "\$db/\$part/part.yaml" \textbackslash{}\\  --part\_name "\$part" --frm\_file build/cli/design.frames \textbackslash{}\\  --output\_file build/cli/lab1\_integrated.bit}
+build/cli/lab1\_integrated.bit가 이번 실행으로 생성됐는지 확인한다.\par\vspace{0.22cm}실행 명령·종료 코드·파일 크기·생성 시각을 실험 후 레포트에 보관한다.\par\vspace{0.22cm}제작 검증에서는 3,686,926바이트가 생성됐다.\par
+\end{frame}
+
+\begin{frame}{생성한 bit 다시 읽기}\relax
+\small
+\terminalbox{bitread --part\_file "\$db/\$part/part.yaml" -C -z -y \textbackslash{}\\  -o build/cli/bits.txt build/cli/lab1\_integrated.bit}
+체크섬 검사와 Number of configuration frames: 9104, DONE을 확인한다.\par\vspace{0.22cm}이 검사는 파일 구조를 확인한다. 실제 장치 기록·LCD·버튼 동작은 다음 실험 단계에서 확인한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli-pr15-evidence/bitread.txt}{제작 실행의 9,104프레임 읽기 로그}
+\end{frame}
+
+\begin{frame}{검증 결과와 다음 실험}\relax
+\small
+Icarus 통합 자기검사 2,560개 통과.\par\vspace{0.22cm}Yosys·nextpnr·fasm2frames·xc7frames2bit 종료 코드 모두 0.\par\vspace{0.22cm}정확한 S75 bit 생성 및 9,104프레임 체크섬 검사 통과.\par\vspace{0.22cm}소스·XDC·DB·chipdb 해시와 실행 로그를 공개했다.\par\vspace{0.22cm}다음은 openFPGALoader로 실제 장치에 기록하고 모드·LCD·입출력을 사진과 영상으로 검증한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{전체 명령·근거·기록 절차}
 \end{frame}
 
 \begin{frame}{대상 부품·핀 제약 (1)}\relax

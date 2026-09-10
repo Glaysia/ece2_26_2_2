@@ -12,7 +12,7 @@
     "04.LAB1_09_DECODER3TO8_VIVADO.pdf": 48,
     "04.LAB1_10_SEVEN_SEGMENT_VIVADO.pdf": 51,
     "04.LAB1_10A_INTEGRATED_VIVADO.pdf": 97,
-    "04.LAB1_10B_INTEGRATED_CLI.pdf": 86,
+    "04.LAB1_10B_INTEGRATED_CLI.pdf": 91,
     "04.LAB1_11_LOGIC_GATES_LEGACY.pdf": 101,
     "04.LAB1_12_FULL_ADDER_LEGACY.pdf": 72,
     "04.LAB1_13_ADDER4_LEGACY.pdf": 69,
@@ -27,15 +27,15 @@
     "02.vscode_verilog_환경설정_매뉴얼.pdf": 21
   },
   "remote_links": 98,
-  "local_links": 1603,
+  "local_links": 1608,
   "archive": "04.LAB1_0910_PDF.zip",
-  "bytes": 93721431,
-  "sha256": "fdea23a0f437c652116bcbfa7b6469431e3442131c74b9d26095722234d7fd4e",
+  "bytes": 93727382,
+  "sha256": "1f7a1e6612a6a9306514d7e86d24277a6a8fac99c5659a7ecafbcfd18c91df11",
   "checks": [
     "4:3 manuals",
     "all local contents to page 2",
     "internal and relative PDF destinations",
     "fresh ZIP extraction"
   ],
-  "visual_review": "22 manuals (1418 pages). See series-v2-review.json for the current visual review scope and remaining work. Prior code-page-validation.json and gui-page-validation.json describe earlier versions."
+  "visual_review": "22 manuals (1423 pages). See series-v2-review.json for the current visual review scope and remaining work. Prior code-page-validation.json and gui-page-validation.json describe earlier versions."
 }
