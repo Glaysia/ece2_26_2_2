@@ -1,0 +1,66 @@
+[
+  {
+    "education_number": 11,
+    "title": "업/다운 카운터",
+    "original_experiment": 16,
+    "path": "vivado_2026_1/01_counter",
+    "top": "counter4",
+    "status": "core-simulation-draft"
+  },
+  {
+    "education_number": 12,
+    "title": "클록 분주",
+    "original_experiment": 17,
+    "path": "vivado_2026_1/02_clock_divider",
+    "top": "clock_divider",
+    "status": "core-simulation-draft"
+  },
+  {
+    "education_number": 13,
+    "title": "레지스터: 데이터 저장과 이동",
+    "original_experiment": 26,
+    "path": "vivado_2026_1/03_register",
+    "top": "register_pair",
+    "status": "core-simulation-draft"
+  },
+  {
+    "education_number": 14,
+    "title": "시프트 레지스터",
+    "original_experiment": 27,
+    "path": "vivado_2026_1/04_shift_register",
+    "top": "shift_register4",
+    "status": "core-simulation-draft"
+  },
+  {
+    "education_number": 15,
+    "title": "PISO",
+    "original_experiment": 28,
+    "path": "vivado_2026_1/05_piso",
+    "top": "piso4",
+    "status": "core-simulation-draft"
+  },
+  {
+    "education_number": 16,
+    "title": "Moore 상태 머신",
+    "original_experiment": 29,
+    "path": "vivado_2026_1/06_moore",
+    "top": "moore_cycle",
+    "status": "core-simulation-draft"
+  },
+  {
+    "education_number": 17,
+    "title": "Mealy 상태 머신",
+    "original_experiment": 30,
+    "path": "vivado_2026_1/07_mealy",
+    "top": "mealy_toggle",
+    "status": "core-simulation-draft"
+  },
+  {
+    "education_number": 18,
+    "title": "7세그먼트 자리 스캔",
+    "original_experiment": 12,
+    "path": "vivado_2026_1/08_segment_scan",
+    "top": "segment_scan8",
+    "status": "core-simulation-draft"
+  }
+]

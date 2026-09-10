@@ -1,0 +1,161 @@
+{
+  "file": "05.LAB2_00_START.pdf",
+  "pages": 26,
+  "sha256": "60e5e9d34e0ac0c4a3eb662d0549b694e73e6086fc9f0b0fe7514f5bcc2d2535",
+  "ratio": "4:3",
+  "internal_links": [
+    {
+      "page": 1,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 2,
+      "destination": "start",
+      "target_page": 5
+    },
+    {
+      "page": 2,
+      "destination": "clock",
+      "target_page": 9
+    },
+    {
+      "page": 2,
+      "destination": "circuits",
+      "target_page": 3
+    },
+    {
+      "page": 2,
+      "destination": "reports",
+      "target_page": 24
+    },
+    {
+      "page": 2,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 3,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 4,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 5,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 6,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 7,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 8,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 9,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 10,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 11,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 12,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 13,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 14,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 15,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 16,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 17,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 18,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 19,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 20,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 21,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 22,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 23,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 24,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 25,
+      "destination": "lab2-contents",
+      "target_page": 2
+    },
+    {
+      "page": 26,
+      "destination": "lab2-contents",
+      "target_page": 2
+    }
+  ],
+  "footer_destination_page": 2,
+  "visual_review": "All 26 pages reviewed; page 11 hexadecimal notation clarified and rerendered",
+  "scope": "Common pre-lab primer only, not 18 completed manuals"
+}

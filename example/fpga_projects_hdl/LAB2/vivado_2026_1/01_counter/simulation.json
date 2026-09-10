@@ -1,0 +1,7 @@
+{
+  "sources": [
+    "src/counter4.v"
+  ],
+  "testbench": "sim/tb_counter4.sv",
+  "simulation_top": "tb_counter4"
+}

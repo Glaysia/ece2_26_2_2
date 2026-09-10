@@ -1,0 +1,345 @@
+{
+  "created_utc": "2026-09-10T12:31:09.688860+00:00",
+  "execution": "CLI, no GUI actions",
+  "scope": "8 functional cores; no board wrapper, XDC, Vivado or hardware validation",
+  "iverilog": "Icarus Verilog version 13.0 (stable) (v13_0)",
+  "projects": [
+    {
+      "path": "vivado_2026_1/01_counter",
+      "top": "counter4",
+      "edit": "증가량을 1에서 2로 바꾸기",
+      "inputs_sha256": {
+        ".gitignore": "de2b8a7ebd8cc6dfac96cdf7dc0e1def40498c451ef7bbb0986a92e8b63493f8",
+        "LAB1.code-workspace": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+        "simulation.json": "03660d38cfb33e0c41bf99e3a38ad8e419da64aac6c1dbeb4bba116ae11b5fd7",
+        "sim/tb_counter4.sv": "439c4e2bf639d1e6c08c994c68aa3acc28944274b62e92226d824fd32f8f4ade",
+        "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+        "tools/lab1.py": "73ef0e7932d2d733064b26f16049d34055372fc23ca7beff002caeabf4f4aa73"
+      },
+      "runs": [
+        {
+          "stage": "baseline",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS counter4 checks=36\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\01_counter\\sim\\tb_counter4.sv:19: $finish called at 356000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+          "wave_sha256": "6f9c6385ae94d148ea4e88eadc0dbb3ef2ebd8d2178e03cabfa2d8e06b0c68ed",
+          "wave_without_date_sha256": "73988949d7848061188bd355095949885d11d4b53a74a4385710a5477479fdda"
+        },
+        {
+          "stage": "changed",
+          "exit_code": 1,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_FAIL up including 15 to 0 time=16000\nFATAL: C:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\01_counter\\sim\\tb_counter4.sv:12: check failed\n       Time: 16000  Scope: tb_counter4.check\n",
+          "compile_log": "",
+          "rtl_sha256": "aaa92068f8e622902a5a029b5c25fbad2daa075e8ce3450bcc97eba107830a51",
+          "wave_sha256": null,
+          "wave_without_date_sha256": "a5bce2416d6051a7fda71b36529602e353544eb38263244ff4b3307c608d8f63"
+        },
+        {
+          "stage": "restored",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS counter4 checks=36\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\01_counter\\sim\\tb_counter4.sv:19: $finish called at 356000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+          "wave_sha256": "6f9c6385ae94d148ea4e88eadc0dbb3ef2ebd8d2178e03cabfa2d8e06b0c68ed",
+          "wave_without_date_sha256": "73988949d7848061188bd355095949885d11d4b53a74a4385710a5477479fdda"
+        }
+      ]
+    },
+    {
+      "path": "vivado_2026_1/02_clock_divider",
+      "top": "clock_divider",
+      "edit": "출력의 첫 전이를 한 클록 늦추기",
+      "inputs_sha256": {
+        ".gitignore": "de2b8a7ebd8cc6dfac96cdf7dc0e1def40498c451ef7bbb0986a92e8b63493f8",
+        "LAB1.code-workspace": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+        "simulation.json": "de058c59713191813cd10c4ef229177ab27242b38b9edce23b08f29ae2264dce",
+        "sim/tb_clock_divider.sv": "1a18d85d870139717f6190caf6c016def9c67d7be42ec51e20f2732cef19abb0",
+        "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+        "tools/lab1.py": "73ef0e7932d2d733064b26f16049d34055372fc23ca7beff002caeabf4f4aa73"
+      },
+      "runs": [
+        {
+          "stage": "baseline",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS clock_divider checks=129\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\02_clock_divider\\sim\\tb_clock_divider.sv:19: $finish called at 436000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+          "wave_sha256": "e5b8576901c4f099fec5504e76b6d58020d811d10692211335fb681d7e8d5615",
+          "wave_without_date_sha256": "7bc6e214c612301ddb17f0b8318a8e28cdbf3f339433a01e40750b17ae10d12a"
+        },
+        {
+          "stage": "changed",
+          "exit_code": 1,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_FAIL minimum divisor duty time=16000\nFATAL: C:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\02_clock_divider\\sim\\tb_clock_divider.sv:12: check failed\n       Time: 16000  Scope: tb_clock_divider.check\n",
+          "compile_log": "",
+          "rtl_sha256": "82f6a39b282354b0bbd199757859e7ff0ec94dd941ee63cd86faa9db86ba3e01",
+          "wave_sha256": null,
+          "wave_without_date_sha256": "aa2b182dbf30e09fe2e80bd1525ed07b527522c443efc3a36cd0d0ecfa466c5d"
+        },
+        {
+          "stage": "restored",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS clock_divider checks=129\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\02_clock_divider\\sim\\tb_clock_divider.sv:19: $finish called at 436000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+          "wave_sha256": "126392725a617f01ad58bb0f32d7e3da4c2331eb558af25d3565ae1bdf6f9b30",
+          "wave_without_date_sha256": "7bc6e214c612301ddb17f0b8318a8e28cdbf3f339433a01e40750b17ae10d12a"
+        }
+      ]
+    },
+    {
+      "path": "vivado_2026_1/03_register",
+      "top": "register_pair",
+      "edit": "이전 저장값 대신 현재 입력 전달하기",
+      "inputs_sha256": {
+        ".gitignore": "de2b8a7ebd8cc6dfac96cdf7dc0e1def40498c451ef7bbb0986a92e8b63493f8",
+        "LAB1.code-workspace": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+        "simulation.json": "ab444147d6fe1d8db6840c61a101fb18002f9a2b829856030a7216a9b93060cb",
+        "sim/tb_register_pair.sv": "623b0d84bab55735ed5dded6061b3cd60ccee27c4bd66c049969e1245f963b7b",
+        "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+        "tools/lab1.py": "73ef0e7932d2d733064b26f16049d34055372fc23ca7beff002caeabf4f4aa73"
+      },
+      "runs": [
+        {
+          "stage": "baseline",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS register_pair checks=7\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\03_register\\sim\\tb_register_pair.sv:19: $finish called at 66000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+          "wave_sha256": "20c410c410134f542438db17b2a8f9b5cdceb1ae8b96a0c20c69f5dbe63ed1c5",
+          "wave_without_date_sha256": "15dc811e31a3bb81fd60746660637b70fad9cc6693e61c07a1d9960ddcb9b61c"
+        },
+        {
+          "stage": "changed",
+          "exit_code": 1,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_FAIL transfer stored not live input time=26000\nFATAL: C:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\03_register\\sim\\tb_register_pair.sv:12: check failed\n       Time: 26000  Scope: tb_register_pair.check\n",
+          "compile_log": "",
+          "rtl_sha256": "f2f9afe6228412093ca9374c18403d1e2cb615791fc4d0cb03a7f70f3aa4dee3",
+          "wave_sha256": null,
+          "wave_without_date_sha256": "7bf80072bb8da7acd67f76da0c01d902ae5e343da1c3043f40baea357f818766"
+        },
+        {
+          "stage": "restored",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS register_pair checks=7\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\03_register\\sim\\tb_register_pair.sv:19: $finish called at 66000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+          "wave_sha256": "deaca4593000f2d1ab20aa0aaf383859b13fe75224fa3d24ae1d59017861f970",
+          "wave_without_date_sha256": "15dc811e31a3bb81fd60746660637b70fad9cc6693e61c07a1d9960ddcb9b61c"
+        }
+      ]
+    },
+    {
+      "path": "vivado_2026_1/04_shift_register",
+      "top": "shift_register4",
+      "edit": "시프트 방향 반대로 바꾸기",
+      "inputs_sha256": {
+        ".gitignore": "de2b8a7ebd8cc6dfac96cdf7dc0e1def40498c451ef7bbb0986a92e8b63493f8",
+        "LAB1.code-workspace": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+        "simulation.json": "41e953efb912325f00b183e686dabc4fad094969cd9a32b836f5e5f92c21151b",
+        "sim/tb_shift_register4.sv": "1683da25534c5ea9284a14877303d5e5cd2ee6fca439036a5eee79515cad13a3",
+        "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+        "tools/lab1.py": "73ef0e7932d2d733064b26f16049d34055372fc23ca7beff002caeabf4f4aa73"
+      },
+      "runs": [
+        {
+          "stage": "baseline",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS shift_register4 checks=8\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\04_shift_register\\sim\\tb_shift_register4.sv:19: $finish called at 106000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+          "wave_sha256": "d1e6810e9b0ec25c855dcebdf59a100cf24ba9c50c2dfb841879022b9266d426",
+          "wave_without_date_sha256": "985576d4e8c15c440269cece12efd4574ec8901d2437d7bd1ad7ec8224ebad37"
+        },
+        {
+          "stage": "changed",
+          "exit_code": 1,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_FAIL input enters MSB time=16000\nFATAL: C:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\04_shift_register\\sim\\tb_shift_register4.sv:12: check failed\n       Time: 16000  Scope: tb_shift_register4.check\n",
+          "compile_log": "",
+          "rtl_sha256": "333661b3845fe5f1c29f3795c4321f0afc66078b6f3ee0b7c86e0bc136e5e6ea",
+          "wave_sha256": null,
+          "wave_without_date_sha256": "6db9e5fc42973c2db40942e9b222dc8ed899e3d44717b60cd4960db539530e2a"
+        },
+        {
+          "stage": "restored",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS shift_register4 checks=8\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\04_shift_register\\sim\\tb_shift_register4.sv:19: $finish called at 106000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+          "wave_sha256": "d1e6810e9b0ec25c855dcebdf59a100cf24ba9c50c2dfb841879022b9266d426",
+          "wave_without_date_sha256": "985576d4e8c15c440269cece12efd4574ec8901d2437d7bd1ad7ec8224ebad37"
+        }
+      ]
+    },
+    {
+      "path": "vivado_2026_1/05_piso",
+      "top": "piso4",
+      "edit": "MSB 대신 LSB 출력하기",
+      "inputs_sha256": {
+        ".gitignore": "de2b8a7ebd8cc6dfac96cdf7dc0e1def40498c451ef7bbb0986a92e8b63493f8",
+        "LAB1.code-workspace": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+        "simulation.json": "e497df0dd483c631401abbc36215e24431a642a9133822ff9626209dbbd28f02",
+        "sim/tb_piso4.sv": "c07306c7c8c7f17cda4a6ac6ca1cd849a0d6b10fa0bab5beaeca8a6243450dc5",
+        "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+        "tools/lab1.py": "73ef0e7932d2d733064b26f16049d34055372fc23ca7beff002caeabf4f4aa73"
+      },
+      "runs": [
+        {
+          "stage": "baseline",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS piso4 checks=114\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\05_piso\\sim\\tb_piso4.sv:19: $finish called at 976000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+          "wave_sha256": "eb7bf64371bc6dfe7598243cfa0ef3b9fbeba7b9624964fca52f2f92f6e12e1e",
+          "wave_without_date_sha256": "425843cc846c9fdf815c8410289b4a7bc9afd77015e610df25c437a5216ce707"
+        },
+        {
+          "stage": "changed",
+          "exit_code": 1,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_FAIL MSB first before edge time=86000\nFATAL: C:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\05_piso\\sim\\tb_piso4.sv:12: check failed\n       Time: 86000  Scope: tb_piso4.check\n",
+          "compile_log": "",
+          "rtl_sha256": "bdcb46f4ac49394855f56553d68a93e974b96dce2386f7d35d9284c86d40ab81",
+          "wave_sha256": null,
+          "wave_without_date_sha256": "d32de0d902b8222c77255dd0ddf6e23bc55cc2a275e084a91baa8d8b07aecb5a"
+        },
+        {
+          "stage": "restored",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS piso4 checks=114\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\05_piso\\sim\\tb_piso4.sv:19: $finish called at 976000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+          "wave_sha256": "eb7bf64371bc6dfe7598243cfa0ef3b9fbeba7b9624964fca52f2f92f6e12e1e",
+          "wave_without_date_sha256": "425843cc846c9fdf815c8410289b4a7bc9afd77015e610df25c437a5216ce707"
+        }
+      ]
+    },
+    {
+      "path": "vivado_2026_1/06_moore",
+      "top": "moore_cycle",
+      "edit": "S1 다음 상태를 S0로 바꾸기",
+      "inputs_sha256": {
+        ".gitignore": "de2b8a7ebd8cc6dfac96cdf7dc0e1def40498c451ef7bbb0986a92e8b63493f8",
+        "LAB1.code-workspace": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+        "simulation.json": "c72fa831e254b6b97aa2b8805ca7eaeed20e45bce0951c58a366486ae83b0f49",
+        "sim/tb_moore_cycle.sv": "c3c9b42204daea82209604a197c975bd3aee71b2e3fb4f9b458ba21da1ff3c6f",
+        "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+        "tools/lab1.py": "73ef0e7932d2d733064b26f16049d34055372fc23ca7beff002caeabf4f4aa73"
+      },
+      "runs": [
+        {
+          "stage": "baseline",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS moore_cycle checks=23\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\06_moore\\sim\\tb_moore_cycle.sv:19: $finish called at 226000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+          "wave_sha256": "4c5da8fa35530e67ef9956cfcdc0f6133fde97f787d2013f8ac927adea6f3749",
+          "wave_without_date_sha256": "b9a11f4b38dec296cc0771191794783eab07ed04559888e787cfe633df4f688c"
+        },
+        {
+          "stage": "changed",
+          "exit_code": 1,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_FAIL S1 to S2 time=46000\nFATAL: C:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\06_moore\\sim\\tb_moore_cycle.sv:12: check failed\n       Time: 46000  Scope: tb_moore_cycle.check\n",
+          "compile_log": "",
+          "rtl_sha256": "02ad2d7825ddaeed56d82a46f1451ed099f89f357479612177a0c6cc6795b3ed",
+          "wave_sha256": null,
+          "wave_without_date_sha256": "72cdda2a78fccaa0eda6ceeb7e9223793d9a76de0ed1265cadb9ec534aa5fae9"
+        },
+        {
+          "stage": "restored",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS moore_cycle checks=23\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\06_moore\\sim\\tb_moore_cycle.sv:19: $finish called at 226000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+          "wave_sha256": "8e0fadd8b5773c735c5e9710c391a752d43b4b011f046f55b43148749cc5d285",
+          "wave_without_date_sha256": "b9a11f4b38dec296cc0771191794783eab07ed04559888e787cfe633df4f688c"
+        }
+      ]
+    },
+    {
+      "path": "vivado_2026_1/07_mealy",
+      "top": "mealy_toggle",
+      "edit": "두 상태의 입력 1 출력을 서로 바꾸기",
+      "inputs_sha256": {
+        ".gitignore": "de2b8a7ebd8cc6dfac96cdf7dc0e1def40498c451ef7bbb0986a92e8b63493f8",
+        "LAB1.code-workspace": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+        "simulation.json": "ecc933d7ef41695d3ac9970928742931a651b1beb335b231708217cbb0ed881e",
+        "sim/tb_mealy_toggle.sv": "37b462465bfda7d9cf32a44b0f63cc1a02274b41db1f10a1c932674ae6f2eff0",
+        "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+        "tools/lab1.py": "73ef0e7932d2d733064b26f16049d34055372fc23ca7beff002caeabf4f4aa73"
+      },
+      "runs": [
+        {
+          "stage": "baseline",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS mealy_toggle checks=11\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\07_mealy\\sim\\tb_mealy_toggle.sv:19: $finish called at 67000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+          "wave_sha256": "947a9b5fd38523350a511198f6de971532093706372d5f79d3ac96952ed2d4c9",
+          "wave_without_date_sha256": "88a03eba1c830c1468c9809bfe6beb1e99f0b2b4ea0e0e7e462937281514bb19"
+        },
+        {
+          "stage": "changed",
+          "exit_code": 1,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_FAIL S0 input changes between clocks time=7000\nFATAL: C:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\07_mealy\\sim\\tb_mealy_toggle.sv:12: check failed\n       Time: 7000  Scope: tb_mealy_toggle.check\n",
+          "compile_log": "",
+          "rtl_sha256": "9e2c1a0aa92131ecb58274d056a9a8ab4d4c8071bcd4bc85f7114e27a68a54c2",
+          "wave_sha256": null,
+          "wave_without_date_sha256": "46ccc9c4c464d4db3455d6cbb836841a56de5ce2697754c19be40562de6ba68f"
+        },
+        {
+          "stage": "restored",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS mealy_toggle checks=11\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\07_mealy\\sim\\tb_mealy_toggle.sv:19: $finish called at 67000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+          "wave_sha256": "4c8e2fc8307cfcac5b5853ddc719bb2f4fb99dc8a6dac7966d0d932d4db20613",
+          "wave_without_date_sha256": "88a03eba1c830c1468c9809bfe6beb1e99f0b2b4ea0e0e7e462937281514bb19"
+        }
+      ]
+    },
+    {
+      "path": "vivado_2026_1/08_segment_scan",
+      "top": "segment_scan8",
+      "edit": "자리 전환 blanking 제거하기",
+      "inputs_sha256": {
+        ".gitignore": "de2b8a7ebd8cc6dfac96cdf7dc0e1def40498c451ef7bbb0986a92e8b63493f8",
+        "LAB1.code-workspace": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+        "simulation.json": "61abbf0848ef92b1f713f0625c0aa73c62e6aa886078bb462c56bb7da68b3fd6",
+        "sim/tb_segment_scan8.sv": "4b684e66d3206a377fceecbddd1d7c9fb250eaa95518b6ffa00d2ed661c71102",
+        "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+        "tools/lab1.py": "73ef0e7932d2d733064b26f16049d34055372fc23ca7beff002caeabf4f4aa73"
+      },
+      "runs": [
+        {
+          "stage": "baseline",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS segment_scan8 checks=194\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\08_segment_scan\\sim\\tb_segment_scan8.sv:19: $finish called at 1306000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+          "wave_sha256": "d2a7343b61935d16025a015b886c5f3acf92e2c9daf6dd99fd931a9b8f9504d7",
+          "wave_without_date_sha256": "19747526e566e45a4e90167fc4618fd9d0ec9b52300923da8e741ee753dd7396"
+        },
+        {
+          "stage": "changed",
+          "exit_code": 1,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_FAIL reset blanks digit zero time=6000\nFATAL: C:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\08_segment_scan\\sim\\tb_segment_scan8.sv:12: check failed\n       Time: 6000  Scope: tb_segment_scan8.check\n",
+          "compile_log": "",
+          "rtl_sha256": "c1dcf949e34d9109aa75d24bf50b88bf32dc3c8306e611e1263f2c2c41c6b33a",
+          "wave_sha256": null,
+          "wave_without_date_sha256": "168bbabbf3157be0dc366d870cfa3a619f9f2a0a8045eabcdb93dee5a2840f00"
+        },
+        {
+          "stage": "restored",
+          "exit_code": 0,
+          "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS segment_scan8 checks=194\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-core-check-0gevd9rn\\08_segment_scan\\sim\\tb_segment_scan8.sv:19: $finish called at 1306000 (1ps)\n",
+          "compile_log": "",
+          "rtl_sha256": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+          "wave_sha256": "d2a7343b61935d16025a015b886c5f3acf92e2c9daf6dd99fd931a9b8f9504d7",
+          "wave_without_date_sha256": "19747526e566e45a4e90167fc4618fd9d0ec9b52300923da8e741ee753dd7396"
+        }
+      ]
+    }
+  ],
+  "result": "PASS: 8 baseline + 8 changed failures + 8 restored"
+}
