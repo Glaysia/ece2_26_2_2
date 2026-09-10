@@ -1,6 +1,6 @@
 # 레거시 원본과 수정 범위
 
-[전체 프로젝트](../README.md) · [감산기](../legacy/04_subtractor4/README.md)
+[전체 프로젝트](../README.md) · [감산기](https://github.com/Glaysia/fpga-lab-example-legacy-04-subtractor4/blob/6383aa022813906c7f438351eabe580c132879d5/README.md)
 
 10개 프로젝트의 `original/` RTL·testbench·XPR은 저장소의 장비 제공 ZIP에서 추출했습니다. 각 프로젝트의 `provenance.json`에 원본 ZIP·파일 해시를 기록합니다. 원본 XPR은 Vivado 2020.1 형식입니다.
 
@@ -12,7 +12,7 @@
 
 원본 `sub_4bit.v`는 `a>b`일 때 borrow=0, 나머지는 1로 설정합니다. 그래서 a=b에서 잘못된 borrow=1이 발생합니다. 보충 파일 `corrected/sub_4bit.v`는 `a>=b`일 때 borrow=0으로 고쳤습니다. 차이의 하위 4비트는 같은 규칙입니다.
 
-원본은 그대로 보존하고 workspace·배포 XPR은 수정본을 참조합니다. 256개 전체 입력의 자기검사는 a=b에서도 borrow=0을 기대합니다. [원본 오류 검출](../legacy/04_subtractor4/evidence/original-borrow-negative.txt)과 수정본 [실행 결과](../legacy/04_subtractor4/evidence/validation.json)를 비교합니다. 원본 교안 이미지는 고치지 않고 앞부분에 보충 설명을 넣었습니다.
+원본은 그대로 보존하고 workspace·배포 XPR은 수정본을 참조합니다. 256개 전체 입력의 자기검사는 a=b에서도 borrow=0을 기대합니다. [원본 오류 검출](https://github.com/Glaysia/fpga-lab-example-legacy-04-subtractor4/blob/6383aa022813906c7f438351eabe580c132879d5/evidence/historical-course/original-borrow-negative.txt)과 수정본 [실행 결과](https://github.com/Glaysia/fpga-lab-example-legacy-04-subtractor4/blob/6383aa022813906c7f438351eabe580c132879d5/evidence/historical-course/validation.json)를 비교합니다. 원본 교안 이미지는 고치지 않고 앞부분에 보충 설명을 넣었습니다.
 
 ## 원본 교안 이미지
 

@@ -1,3 +1,0 @@
-Time resolution is 1 ps
-LAB1_PASS mux_4x1 cases=64
-$finish called at time : 640 ns : File "C:/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/common/tb/tb_mux_4x1.sv" Line 19

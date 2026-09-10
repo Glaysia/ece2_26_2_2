@@ -1,9 +1,0 @@
-{
-  "project": "vivado_2026_1_07_demux1to8",
-  "action": "vivado-sim",
-  "started_utc": "2026-09-09T19:30:50.118345+00:00",
-  "status": "PASS",
-  "run": "run-d986df09eedc4c4088a48fecd58d848f",
-  "vivado_version": "vivado v2026.1 (64-bit)",
-  "finished_utc": "2026-09-09T19:34:37.419900+00:00"
-}

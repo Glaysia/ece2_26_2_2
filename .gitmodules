@@ -1,0 +1,88 @@
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/01_logic_gates"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/01_logic_gates
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-01-logic-gates.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/legacy/01_logic_gates"]
+	path = example/fpga_projects_hdl/LAB1/legacy/01_logic_gates
+	url = https://github.com/Glaysia/fpga-lab-example-legacy-01-logic-gates.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/02_full_adder"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/02_full_adder
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-02-full-adder.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/legacy/02_full_adder"]
+	path = example/fpga_projects_hdl/LAB1/legacy/02_full_adder
+	url = https://github.com/Glaysia/fpga-lab-example-legacy-02-full-adder.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/03_adder4"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/03_adder4
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-03-adder4.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/legacy/03_adder4"]
+	path = example/fpga_projects_hdl/LAB1/legacy/03_adder4
+	url = https://github.com/Glaysia/fpga-lab-example-legacy-03-adder4.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/04_subtractor4"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/04_subtractor4
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-04-subtractor4.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/legacy/04_subtractor4"]
+	path = example/fpga_projects_hdl/LAB1/legacy/04_subtractor4
+	url = https://github.com/Glaysia/fpga-lab-example-legacy-04-subtractor4.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/05_comparator4"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/05_comparator4
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-05-comparator4.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/legacy/05_comparator4"]
+	path = example/fpga_projects_hdl/LAB1/legacy/05_comparator4
+	url = https://github.com/Glaysia/fpga-lab-example-legacy-05-comparator4.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/06_mux4to1"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/06_mux4to1
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-06-mux4to1.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/legacy/06_mux4to1"]
+	path = example/fpga_projects_hdl/LAB1/legacy/06_mux4to1
+	url = https://github.com/Glaysia/fpga-lab-example-legacy-06-mux4to1.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/07_demux1to8"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/07_demux1to8
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-07-demux1to8.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/legacy/07_demux1to8"]
+	path = example/fpga_projects_hdl/LAB1/legacy/07_demux1to8
+	url = https://github.com/Glaysia/fpga-lab-example-legacy-07-demux1to8.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/08_encoder8to3"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/08_encoder8to3
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-08-encoder8to3.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/legacy/08_encoder8to3"]
+	path = example/fpga_projects_hdl/LAB1/legacy/08_encoder8to3
+	url = https://github.com/Glaysia/fpga-lab-example-legacy-08-encoder8to3.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/09_decoder3to8"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/09_decoder3to8
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-09-decoder3to8.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/legacy/09_decoder3to8"]
+	path = example/fpga_projects_hdl/LAB1/legacy/09_decoder3to8
+	url = https://github.com/Glaysia/fpga-lab-example-legacy-09-decoder3to8.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/10_seven_segment"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/10_seven_segment
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-10-seven-segment.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/legacy/10_seven_segment"]
+	path = example/fpga_projects_hdl/LAB1/legacy/10_seven_segment
+	url = https://github.com/Glaysia/fpga-lab-example-legacy-10-seven-segment.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/vivado_2026_1/11_integrated"]
+	path = example/fpga_projects_hdl/LAB1/vivado_2026_1/11_integrated
+	url = https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated.git
+	branch = main
+[submodule "example/fpga_projects_hdl/LAB1/opensource_cli/integrated"]
+	path = example/fpga_projects_hdl/LAB1/opensource_cli/integrated
+	url = https://github.com/Glaysia/fpga-lab-example-opensource-cli-integrated.git
+	branch = main

@@ -1,3 +1,0 @@
-Time resolution is 1 ps
-LAB1_PASS logic_gate cases=4
-$finish called at time : 40 ns : File "C:/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/common/tb/tb_logic_gate_modern.sv" Line 19

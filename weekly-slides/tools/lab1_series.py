@@ -10,10 +10,11 @@ CIRCUITS = json.loads((LAB/'docs/circuits.json').read_text(encoding='utf-8'))
 PROJECTS = json.loads((LAB/'projects.json').read_text(encoding='utf-8'))
 COURSE = 'https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/'
 TEMPLATE = 'https://github.com/Glaysia/fpga-lab-template/tree/v2.0.0'
+EXAMPLES = {p['project']:p for p in json.loads((LAB/'docs/example-repositories.json').read_text(encoding='utf-8'))}
 
 def example_url(p):
-    # Until submodule publication, the course still contains the reference files.
-    return COURSE+'example/fpga_projects_hdl/LAB1/'+p['path']
+    entry=EXAMPLES[p['path']]
+    return entry['repository'].removesuffix('.git')+'/tree/'+entry['commit']
 
 def student_setup(d,p):
     folder='lab1_'+p['id']

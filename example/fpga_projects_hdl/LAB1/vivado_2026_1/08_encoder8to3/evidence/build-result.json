@@ -1,9 +1,0 @@
-{
-  "project": "vivado_2026_1_08_encoder8to3",
-  "action": "build",
-  "started_utc": "2026-09-09T19:57:06.087803+00:00",
-  "status": "PASS",
-  "run": "run-6506f492e3484dd1af0ea74eba73c9d4",
-  "vivado_version": "vivado v2026.1 (64-bit)",
-  "finished_utc": "2026-09-09T20:15:46.572923+00:00"
-}

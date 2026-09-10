@@ -1,3 +1,0 @@
-VCD info: dumpfile wave.vcd opened for output.
-LAB1_PASS lab1_integrated cases=2560
-/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/common/tb/tb_lab1_integrated.sv:96: $finish called at 72430000 (1ps)

@@ -1,0 +1,156 @@
+[
+  {
+    "project": "vivado_2026_1/01_logic_gates",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-01-logic-gates.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "8d25deb5c064edd95d61488a32d643c4bb331fb8",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/01_logic_gates",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-legacy-01-logic-gates.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "9055c8002ec5149907f393a1c781000d44125e38",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/02_full_adder",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-02-full-adder.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "8b506af67d1e0cb7bc63854c8bb2a2633d3326be",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/02_full_adder",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-legacy-02-full-adder.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "0fe260d299847628fd01626c76ae87150f601ca1",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/03_adder4",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-03-adder4.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "08543696c146164de20930270b01bfbd12ccdd72",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/03_adder4",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-legacy-03-adder4.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "14578fedf93bb22b3366f2070d80cfe4a46ff62e",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/04_subtractor4",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-04-subtractor4.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "f7d79cd1f95d423edaa3746b75002b0ecf8c5eea",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/04_subtractor4",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-legacy-04-subtractor4.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "6383aa022813906c7f438351eabe580c132879d5",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/05_comparator4",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-05-comparator4.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "913b0f41c48c2351cdaba21380d0d83770c43445",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/05_comparator4",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-legacy-05-comparator4.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "d8e0f25d8058df9c07084f03cf997ae649fd84af",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/06_mux4to1",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-06-mux4to1.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "009d192cb7f873a2b31d0386ea68cc451fdec89b",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/06_mux4to1",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-legacy-06-mux4to1.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "80d65af6339ade695aad964c39f66efb37ac7367",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/07_demux1to8",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-07-demux1to8.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "3e8c1e3f1cef7f602d586e152754182f43ac3679",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/07_demux1to8",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-legacy-07-demux1to8.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "2e2ab8cf96476f44e9357cc4aa48570b7e18b613",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/08_encoder8to3",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-08-encoder8to3.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "485a6c588c7c9230222c4763deb372f36e5b3384",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/08_encoder8to3",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-legacy-08-encoder8to3.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "7f88377d78cf60cece52021e238a9ecc62d70a0b",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/09_decoder3to8",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-09-decoder3to8.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "d5a11d33868dfb9ff71b7e598644099a9ce59b65",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/09_decoder3to8",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-legacy-09-decoder3to8.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "e4d6725666068c25fb4a261ba10512cd2e350ad7",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/10_seven_segment",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-10-seven-segment.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "6cad34ce6d1385cd261b510024d50936dccb8f45",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/10_seven_segment",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-legacy-10-seven-segment.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "ccd38e3159da27d975bcb65cb2a34911d881a701",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/11_integrated",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "5a553ee802270caf3f909395f5e29bdcbbd48352",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "opensource_cli/integrated",
+    "repository": "https://github.com/Glaysia/fpga-lab-example-opensource-cli-integrated.git",
+    "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+    "commit": "2c1e00f7ca38de27f1b933e836de210fb7682ca0",
+    "status": "PUBLISHED"
+  }
+]

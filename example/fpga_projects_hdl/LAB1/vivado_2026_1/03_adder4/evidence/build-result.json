@@ -1,9 +1,0 @@
-{
-  "project": "vivado_2026_1_03_adder4",
-  "action": "build",
-  "started_utc": "2026-09-09T18:45:29.160654+00:00",
-  "status": "PASS",
-  "run": "run-2503eb3ba1a74e44bfaaf395de168f27",
-  "vivado_version": "vivado v2026.1 (64-bit)",
-  "finished_utc": "2026-09-09T19:06:52.477633+00:00"
-}

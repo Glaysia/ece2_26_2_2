@@ -1,9 +1,0 @@
-{
-  "project": "vivado_2026_1_05_comparator4",
-  "action": "vivado-sim",
-  "started_utc": "2026-09-09T19:07:13.265698+00:00",
-  "status": "PASS",
-  "run": "run-07626b9899fd4edc9e4d19907d578ff7",
-  "vivado_version": "vivado v2026.1 (64-bit)",
-  "finished_utc": "2026-09-09T19:10:59.034690+00:00"
-}

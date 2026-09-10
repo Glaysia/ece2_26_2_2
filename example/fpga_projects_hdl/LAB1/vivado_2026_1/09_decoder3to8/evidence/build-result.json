@@ -1,9 +1,0 @@
-{
-  "project": "vivado_2026_1_09_decoder3to8",
-  "action": "build",
-  "started_utc": "2026-09-09T19:57:06.100334+00:00",
-  "status": "PASS",
-  "run": "run-3678234110124f41810bdf264dcba5d9",
-  "vivado_version": "vivado v2026.1 (64-bit)",
-  "finished_utc": "2026-09-09T20:15:48.614688+00:00"
-}

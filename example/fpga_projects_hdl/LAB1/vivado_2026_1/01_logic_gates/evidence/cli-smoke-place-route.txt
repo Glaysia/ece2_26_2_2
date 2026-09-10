@@ -1,9 +1,0 @@
-Info: Packing constants..
-Info: Inserting IO buffers..
-Info:     IO port 'a' driven by IBUF '$iopadmap$logic_gate.a'
-Info:     IO port 'b' driven by IBUF '$iopadmap$logic_gate.b'
-Info:     IO port 'x' driven by OBUF '$iopadmap$logic_gate.x'
-Info:     IO port 'y' driven by OBUF '$iopadmap$logic_gate.y'
-Info:     IO port 'z' driven by OBUF '$iopadmap$logic_gate.z'
-ERROR: Unable to constrain IO 'a', device does not have a pin named 'K4'
-0 warnings, 1 error

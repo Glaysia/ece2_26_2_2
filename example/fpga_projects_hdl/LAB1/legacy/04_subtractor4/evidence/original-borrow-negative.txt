@@ -1,3 +1,0 @@
-VCD info: dumpfile wave.vcd opened for output.
-FATAL: /mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/common/tb/tb_sub_4bit.sv:14: FAIL sub_4bit vector=0 expected=00 actual=10
-       Time: 10000  Scope: tb_sub_4bit

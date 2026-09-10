@@ -1,9 +1,0 @@
-{
-  "project": "vivado_2026_1_integrated",
-  "action": "build",
-  "started_utc": "2026-09-09T20:19:13.834343+00:00",
-  "status": "PASS",
-  "run": "run-14e10459cfe44b70b42ce7efc74e8531",
-  "vivado_version": "vivado v2026.1 (64-bit)",
-  "finished_utc": "2026-09-09T20:25:51.533748+00:00"
-}

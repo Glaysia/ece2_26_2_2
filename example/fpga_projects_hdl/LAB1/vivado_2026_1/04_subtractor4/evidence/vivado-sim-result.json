@@ -1,9 +1,0 @@
-{
-  "project": "vivado_2026_1_04_subtractor4",
-  "action": "vivado-sim",
-  "started_utc": "2026-09-09T19:07:13.326042+00:00",
-  "status": "PASS",
-  "run": "run-471df3e9aeee49c398c91ebf40c3654e",
-  "vivado_version": "vivado v2026.1 (64-bit)",
-  "finished_utc": "2026-09-09T19:10:59.051247+00:00"
-}

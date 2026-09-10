@@ -1,9 +1,0 @@
-{
-  "project": "vivado_2026_1_02_full_adder",
-  "action": "vivado-sim",
-  "started_utc": "2026-09-09T18:42:10.118767+00:00",
-  "status": "PASS",
-  "run": "run-3b9ead2ab5d542f6b338cfca9d86b51e",
-  "vivado_version": "vivado v2026.1 (64-bit)",
-  "finished_utc": "2026-09-09T18:45:28.232066+00:00"
-}

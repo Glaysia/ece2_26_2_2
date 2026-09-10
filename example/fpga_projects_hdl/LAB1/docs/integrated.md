@@ -1,6 +1,6 @@
 # 버튼과 LCD로 10개 회로 선택
 
-[전체 프로젝트](../README.md) · [Vivado 통합](../vivado_2026_1/11_integrated/README.md) · [CLI 통합](../opensource_cli/integrated/README.md) · [검증](validation.md)
+[전체 프로젝트](../README.md) · [Vivado 통합](https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated/blob/5a553ee802270caf3f909395f5e29bdcbbd48352/README.md) · [CLI 통합](https://github.com/Glaysia/fpga-lab-example-opensource-cli-integrated/blob/2c1e00f7ca38de27f1b933e836de210fb7682ca0/README.md) · [검증](validation.md)
 
 두 통합 프로젝트는 같은 [lab1_integrated.v](../common/rtl/lab1_integrated.v), [버튼 처리](../common/rtl/button_onepulse.v), [LCD 제어](../common/rtl/lcd_modes.v), [자기검사 TB](../common/tb/tb_lab1_integrated.sv), [보드 핀](../common/constraints/lab1_integrated.xdc)을 사용합니다. 디바이스는 `xc7s75fgga484-1`입니다.
 
@@ -39,13 +39,13 @@ TB는 검사 속도를 위해 클록을 10ns로, 디바운스 4클록·전원 �
 
 성공 문구는 `LAB1_PASS lab1_integrated cases=2560`입니다. XSim 검증은 72430ns에 끝났습니다. 축소된 TB 시간만으로 실제 LCD의 전기적 연결·전압·실물 표시를 검증했다고 해석하지 않습니다.
 
-별도 [기본 타이밍 TB](../common/tb/tb_board_timing.sv)는 제어 모듈의 파라미터를 바꾸지 않고 **실제 1kHz 클록**으로 검사합니다. 2ms 바운스 무시, 100ms 길게 누르기에서 한 펄스, 다시 누를 때 두 번째 펄스, LCD 50ms 전원 대기·1ms E 펄스·1ms 데이터 setup·최소 4ms 바이트 간격·첫 초기 명령의 4.1ms 이상 대기를 외부 신호에서 확인했습니다. 494ms 시뮬레이션에서 `LAB1_TIMING_PASS clock=1kHz pulses=2 lcd_bytes=110`이 나왔습니다. [실제 로그](../vivado_2026_1/11_integrated/evidence/board-default-timing.txt)를 참고합니다. 이 검사 역시 실제 보드 측정은 아닙니다.
+별도 [기본 타이밍 TB](../common/tb/tb_board_timing.sv)는 제어 모듈의 파라미터를 바꾸지 않고 **실제 1kHz 클록**으로 검사합니다. 2ms 바운스 무시, 100ms 길게 누르기에서 한 펄스, 다시 누를 때 두 번째 펄스, LCD 50ms 전원 대기·1ms E 펄스·1ms 데이터 setup·최소 4ms 바이트 간격·첫 초기 명령의 4.1ms 이상 대기를 외부 신호에서 확인했습니다. 494ms 시뮬레이션에서 `LAB1_TIMING_PASS clock=1kHz pulses=2 lcd_bytes=110`이 나왔습니다. [실제 로그](https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated/blob/5a553ee802270caf3f909395f5e29bdcbbd48352/evidence/historical-course/board-default-timing.txt)를 참고합니다. 이 검사 역시 실제 보드 측정은 아닙니다.
 
 ## 구현 타이밍과 DRC
 
-Vivado 2026.1에서 합성·구현·bit 생성까지 통과했습니다. [타이밍 보고서](../vivado_2026_1/11_integrated/evidence/build-timing_summary.txt)의 `trainer_1khz` 주기는 1,000,000ns이며 WNS 999994.562ns, WHS 0.193ns, 실패 endpoint 0개입니다. 내부 경로의 제약 통과 결과입니다.
+Vivado 2026.1에서 합성·구현·bit 생성까지 통과했습니다. [타이밍 보고서](https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated/blob/5a553ee802270caf3f909395f5e29bdcbbd48352/evidence/historical-course/build-timing_summary.txt)의 `trainer_1khz` 주기는 1,000,000ns이며 WNS 999994.562ns, WHS 0.193ns, 실패 endpoint 0개입니다. 내부 경로의 제약 통과 결과입니다.
 
-외부 입력 2개와 출력 25개의 I/O 지연이 지정되지 않아 TIMING-18 경고가 남습니다. 이 수치만으로 보드 외부 I/O 타이밍까지 완료됐다고 해석하지 않습니다. [DRC 보고서](../vivado_2026_1/11_integrated/evidence/build-drc.txt)는 오류 0개, CFGBVS-1 경고 1개이며 구성 전압 설정을 보드 자료와 확인해야 합니다. 실제 LCD와 버튼의 전기적 동작은 보드 실험에서 확인합니다.
+외부 입력 2개와 출력 25개의 I/O 지연이 지정되지 않아 TIMING-18 경고가 남습니다. 이 수치만으로 보드 외부 I/O 타이밍까지 완료됐다고 해석하지 않습니다. [DRC 보고서](https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated/blob/5a553ee802270caf3f909395f5e29bdcbbd48352/evidence/historical-course/build-drc.txt)는 오류 0개, CFGBVS-1 경고 1개이며 구성 전압 설정을 보드 자료와 확인해야 합니다. 실제 LCD와 버튼의 전기적 동작은 보드 실험에서 확인합니다.
 
 ## 실제 실험에서 촬영할 내용
 
@@ -57,4 +57,4 @@ reset 직후 MODE 01, KEY2를 눌러 다음 모드로 바뀌는 장면, 길게 �
 
 2026-09-10에 배포된 `lab1_integrated.xpr`을 Vivado 2026.1 GUI로 열어 12개 직속 인스턴스와 기존 `write_bitstream Complete!` 상태를 확인했다. RTL 파일 수는 반가산기와 통합 top을 포함해 14개다. 이 열기 작업으로 비트스트림을 새로 생성했다고 표시하지 않는다.
 
-`Run Simulation → Run Behavioral Simulation`을 직접 실행한 [로그](../vivado_2026_1/11_integrated/evidence/gui-simulation.log)는 2,560개 PASS, 종료 72,430ns다. [입력 해시·GUI 수행 기록](../vivado_2026_1/11_integrated/evidence/gui-simulation.json)에 기존 사전 실행과 대조한 범위를 기록했다. 화면 접근 복구 후 실제 파형·ASCII LCD 두 줄·PASS 로그를 캡처했다. 시뮬레이터를 GUI에서 정상 종료하고 VCD를 다시 보관했다. 날짜·버전·공백을 제외한 모든 선언·시간·값이 사전 VCD와 마지막 72,430ns까지 완전히 일치했다. 이전에 남아 있던 마지막 5ns 기록 확인도 완료했다.
+`Run Simulation → Run Behavioral Simulation`을 직접 실행한 [로그](https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated/blob/5a553ee802270caf3f909395f5e29bdcbbd48352/evidence/historical-course/gui-simulation.log)는 2,560개 PASS, 종료 72,430ns다. [입력 해시·GUI 수행 기록](https://github.com/Glaysia/fpga-lab-example-vivado-2026-1-integrated/blob/5a553ee802270caf3f909395f5e29bdcbbd48352/evidence/historical-course/gui-simulation.json)에 기존 사전 실행과 대조한 범위를 기록했다. 화면 접근 복구 후 실제 파형·ASCII LCD 두 줄·PASS 로그를 캡처했다. 시뮬레이터를 GUI에서 정상 종료하고 VCD를 다시 보관했다. 날짜·버전·공백을 제외한 모든 선언·시간·값이 사전 VCD와 마지막 72,430ns까지 완전히 일치했다. 이전에 남아 있던 마지막 5ns 기록 확인도 완료했다.

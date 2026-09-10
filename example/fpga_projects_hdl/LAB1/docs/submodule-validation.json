@@ -1,0 +1,428 @@
+{
+  "results": [
+    {
+      "project": "vivado_2026_1/01_logic_gates",
+      "commit": "8d25deb5c064edd95d61488a32d643c4bb331fb8",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-b1349690fd06478086c512519cce5d4c",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "701e521940e34e7fc2c3c5c5d670b4da48d16dd3ac12306ad7e6cd0fcfee751c",
+          "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+          "sim/tb_logic_gate_modern.sv": "8815d26ae87ee452a7cec9e99d54cab62ab72d35ec1e090e3af6afc154ffb232"
+        },
+        "wave_sha256": "08aaeccb4e690ba1ce6cefd5ac7a38892348066aab28f8e4127938f8c1d1b00a"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-01_logic_gates\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-01_logic_gates\\sim -s tb_logic_gate_modern -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-01_logic_gates\\build\\sim\\run-b1349690fd06478086c512519cce5d4c\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-01_logic_gates\\src\\logic_gate.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-01_logic_gates\\sim\\tb_logic_gate_modern.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module logic_gate declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-01_logic_gates\\src\\logic_gate.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-01_logic_gates\\build\\sim\\run-b1349690fd06478086c512519cce5d4c\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS logic_gate cases=4\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-01_logic_gates\\sim\\tb_logic_gate_modern.sv:19: $finish called at 40000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-01_logic_gates\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "legacy/01_logic_gates",
+      "commit": "9055c8002ec5149907f393a1c781000d44125e38",
+      "status": "PASS",
+      "original_files_equal": 4,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-89d20e884bf44438b6e9a0911dfc797f",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "c1913032941d6da664c572f6cf59b1b7d2e2f07b4226e7744b878d726dfd3834",
+          "src/logic_gate.v": "323f477f44b2ac72c0ab0d77364a6d85140001f84e6aa19d1c3094aa58df2372",
+          "sim/tb_logic_gate.sv": "f5cd77fd26bda75ce41621b01a4e80a1d485cae5a95cd8f9c1903dfc4dcf1e71"
+        },
+        "wave_sha256": "483e29e1d1db343f05fbb162b754e498b943fd975d6bba498ed7aa38a3dfafb5"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-01_logic_gates\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-01_logic_gates\\sim -s tb_logic_gate -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-01_logic_gates\\build\\sim\\run-89d20e884bf44438b6e9a0911dfc797f\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-01_logic_gates\\src\\logic_gate.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-01_logic_gates\\sim\\tb_logic_gate.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module logic_gate declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-01_logic_gates\\src\\logic_gate.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-01_logic_gates\\build\\sim\\run-89d20e884bf44438b6e9a0911dfc797f\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS logic_gate cases=4\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-01_logic_gates\\sim\\tb_logic_gate.sv:19: $finish called at 40000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-01_logic_gates\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "vivado_2026_1/02_full_adder",
+      "commit": "8b506af67d1e0cb7bc63854c8bb2a2633d3326be",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-dea6acc350ff414fabcf4947052e261f",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "876bc61f5f16a529e70df53e226707083f5cdee706913d9a6971d6ecb40eaa33",
+          "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+          "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+          "sim/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f"
+        },
+        "wave_sha256": "afb3b08400f9fb477e6f59860faa4f4da973075edbdc9ef55b174e4c6f90a8ed"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\sim -s tb_full_adder -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\build\\sim\\run-dea6acc350ff414fabcf4947052e261f\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\src\\full_adder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\src\\half_adder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\sim\\tb_full_adder.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module full_adder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\src\\full_adder.v:1\n       :   -- module half_adder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\src\\half_adder.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\build\\sim\\run-dea6acc350ff414fabcf4947052e261f\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS full_adder cases=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\sim\\tb_full_adder.sv:19: $finish called at 80000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "legacy/02_full_adder",
+      "commit": "0fe260d299847628fd01626c76ae87150f601ca1",
+      "status": "PASS",
+      "original_files_equal": 5,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-454eeb2b468e4fae9c5425b404b8a2d9",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "876bc61f5f16a529e70df53e226707083f5cdee706913d9a6971d6ecb40eaa33",
+          "src/full_adder.v": "0acb0572610de489b94b902a3fe2b254315f41ca711e790cff185acc5ee5c898",
+          "src/half_adder.v": "959405ba290ffdfbc82521fc5458a706c131082deef0ebb3f539c6bd3d6a4700",
+          "sim/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f"
+        },
+        "wave_sha256": "297b4db540a0c9d040e2610f99adbf4196710756d35ea6dbdc4055d09ee6078e"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\sim -s tb_full_adder -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\build\\sim\\run-454eeb2b468e4fae9c5425b404b8a2d9\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\src\\full_adder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\src\\half_adder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\sim\\tb_full_adder.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module full_adder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\src\\full_adder.v:2\n       :   -- module half_adder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\src\\half_adder.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\build\\sim\\run-454eeb2b468e4fae9c5425b404b8a2d9\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS full_adder cases=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\sim\\tb_full_adder.sv:19: $finish called at 80000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-02_full_adder\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "vivado_2026_1/03_adder4",
+      "commit": "08543696c146164de20930270b01bfbd12ccdd72",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-1df0afe7fc3d434a920daac669b2edd5",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "15454c6412d6bf9299ff651940893951f976cdf1be342bb954aeaacffe9b7fde",
+          "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+          "sim/tb_adder_4bit.sv": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df"
+        },
+        "wave_sha256": "ff8a7f6dc5bd977cd8f7e42ec2188559ed1ff1233b91335ab28c9cab2fc2acb5"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-03_adder4\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-03_adder4\\sim -s tb_adder_4bit -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-03_adder4\\build\\sim\\run-1df0afe7fc3d434a920daac669b2edd5\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-03_adder4\\src\\adder_4bit.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-03_adder4\\sim\\tb_adder_4bit.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module adder_4bit declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-03_adder4\\src\\adder_4bit.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-03_adder4\\build\\sim\\run-1df0afe7fc3d434a920daac669b2edd5\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS adder_4bit cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-03_adder4\\sim\\tb_adder_4bit.sv:19: $finish called at 2560000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-03_adder4\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "legacy/03_adder4",
+      "commit": "14578fedf93bb22b3366f2070d80cfe4a46ff62e",
+      "status": "PASS",
+      "original_files_equal": 4,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-662e82fc271e4e85bc483f655af55aaa",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "15454c6412d6bf9299ff651940893951f976cdf1be342bb954aeaacffe9b7fde",
+          "src/adder_4bit.v": "d244da1c9ba1bc6aa2f21656102333b2e8bbbf2b32bf49a985963617aaba6758",
+          "sim/tb_adder_4bit.sv": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df"
+        },
+        "wave_sha256": "68439103124a8e59e23a996feeda79576ed97eedc5c57cd50f32b36faefcf18b"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-03_adder4\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-03_adder4\\sim -s tb_adder_4bit -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-03_adder4\\build\\sim\\run-662e82fc271e4e85bc483f655af55aaa\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-03_adder4\\src\\adder_4bit.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-03_adder4\\sim\\tb_adder_4bit.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module adder_4bit declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-03_adder4\\src\\adder_4bit.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-03_adder4\\build\\sim\\run-662e82fc271e4e85bc483f655af55aaa\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS adder_4bit cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-03_adder4\\sim\\tb_adder_4bit.sv:19: $finish called at 2560000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-03_adder4\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "vivado_2026_1/04_subtractor4",
+      "commit": "f7d79cd1f95d423edaa3746b75002b0ecf8c5eea",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-fdee9cedaf914705b581568c3c831d51",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "3535d901ed8497fbb23516f777eafb80574dcf54df5d9fcbff267e9952a02b4a",
+          "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+          "sim/tb_sub_4bit.sv": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35"
+        },
+        "wave_sha256": "fc493f1db3b0358b638ac8eea01f202c38034111f6fc42ea897c6edbe7be1a17"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-04_subtractor4\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-04_subtractor4\\sim -s tb_sub_4bit -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-04_subtractor4\\build\\sim\\run-fdee9cedaf914705b581568c3c831d51\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-04_subtractor4\\src\\sub_4bit.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-04_subtractor4\\sim\\tb_sub_4bit.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module sub_4bit declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-04_subtractor4\\src\\sub_4bit.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-04_subtractor4\\build\\sim\\run-fdee9cedaf914705b581568c3c831d51\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS sub_4bit cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-04_subtractor4\\sim\\tb_sub_4bit.sv:19: $finish called at 2560000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-04_subtractor4\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "legacy/04_subtractor4",
+      "commit": "6383aa022813906c7f438351eabe580c132879d5",
+      "status": "PASS",
+      "original_files_equal": 4,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-ee043647057243c6a24ab0d13cd39417",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "3535d901ed8497fbb23516f777eafb80574dcf54df5d9fcbff267e9952a02b4a",
+          "src/sub_4bit.v": "0dda5e18283aef717ad0f967e46f9ecd0d5caa980ef34076e027e7bbfd803d4d",
+          "sim/tb_sub_4bit.sv": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35"
+        },
+        "wave_sha256": "82395c39c539dbacb2199a0131a8f1f39b48e7d68d23e29912263cfb70f22c63"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-04_subtractor4\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-04_subtractor4\\sim -s tb_sub_4bit -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-04_subtractor4\\build\\sim\\run-ee043647057243c6a24ab0d13cd39417\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-04_subtractor4\\src\\sub_4bit.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-04_subtractor4\\sim\\tb_sub_4bit.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module sub_4bit declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-04_subtractor4\\src\\sub_4bit.v:4\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-04_subtractor4\\build\\sim\\run-ee043647057243c6a24ab0d13cd39417\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS sub_4bit cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-04_subtractor4\\sim\\tb_sub_4bit.sv:19: $finish called at 2560000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-04_subtractor4\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "vivado_2026_1/05_comparator4",
+      "commit": "913b0f41c48c2351cdaba21380d0d83770c43445",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-7709a10faa274aae8131db4374c1ba1e",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "909d938c1cdc35bc0ff0e51e582db7442e996999c29f086471eae840cf5973bf",
+          "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+          "sim/tb_compare_4.sv": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602"
+        },
+        "wave_sha256": "2703a68791823226f5a95edfe48a31a7a6e8bc80ffd7a8642f68a597151c8223"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-05_comparator4\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-05_comparator4\\sim -s tb_compare_4 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-05_comparator4\\build\\sim\\run-7709a10faa274aae8131db4374c1ba1e\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-05_comparator4\\src\\compare_4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-05_comparator4\\sim\\tb_compare_4.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module compare_4 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-05_comparator4\\src\\compare_4.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-05_comparator4\\build\\sim\\run-7709a10faa274aae8131db4374c1ba1e\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS compare_4 cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-05_comparator4\\sim\\tb_compare_4.sv:19: $finish called at 2560000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-05_comparator4\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "legacy/05_comparator4",
+      "commit": "d8e0f25d8058df9c07084f03cf997ae649fd84af",
+      "status": "PASS",
+      "original_files_equal": 4,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-a8143580a1344fed9de1646103c7fc64",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "909d938c1cdc35bc0ff0e51e582db7442e996999c29f086471eae840cf5973bf",
+          "src/compare_4.v": "615443f9cdd0ec1a3a2d389605abb631323bed978a66f740b0e4b743856cd9b3",
+          "sim/tb_compare_4.sv": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602"
+        },
+        "wave_sha256": "5f64142e6e7d087065c31078253dc88d3d8fa0b921e34adce6ffdff1dd5584fd"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-05_comparator4\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-05_comparator4\\sim -s tb_compare_4 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-05_comparator4\\build\\sim\\run-a8143580a1344fed9de1646103c7fc64\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-05_comparator4\\src\\compare_4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-05_comparator4\\sim\\tb_compare_4.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module compare_4 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-05_comparator4\\src\\compare_4.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-05_comparator4\\build\\sim\\run-a8143580a1344fed9de1646103c7fc64\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS compare_4 cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-05_comparator4\\sim\\tb_compare_4.sv:19: $finish called at 2560000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-05_comparator4\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "vivado_2026_1/06_mux4to1",
+      "commit": "009d192cb7f873a2b31d0386ea68cc451fdec89b",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-f2740726d1ca4451a3915a29e9005281",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "68110938fc1d3b4018a49fc213d896e3af4225a2340460ba722562c0537951ae",
+          "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+          "sim/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9"
+        },
+        "wave_sha256": "b66e9d86fbc0f40d675245e6526c1875b12e8b2270d9c0bac3f2f61bc64624a9"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-06_mux4to1\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-06_mux4to1\\sim -s tb_mux_4x1 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-06_mux4to1\\build\\sim\\run-f2740726d1ca4451a3915a29e9005281\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-06_mux4to1\\src\\mux_4x1.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-06_mux4to1\\sim\\tb_mux_4x1.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module mux_4x1 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-06_mux4to1\\src\\mux_4x1.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-06_mux4to1\\build\\sim\\run-f2740726d1ca4451a3915a29e9005281\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS mux_4x1 cases=64\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-06_mux4to1\\sim\\tb_mux_4x1.sv:19: $finish called at 640000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-06_mux4to1\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "legacy/06_mux4to1",
+      "commit": "80d65af6339ade695aad964c39f66efb37ac7367",
+      "status": "PASS",
+      "original_files_equal": 4,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-581181475213457dbaa484da76a32f91",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "68110938fc1d3b4018a49fc213d896e3af4225a2340460ba722562c0537951ae",
+          "src/mux_4x1.v": "3f8e5ef35951c76c21f2ef7b721cdd9464650a7d6e699fdcdf1b0b98f5205d0f",
+          "sim/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9"
+        },
+        "wave_sha256": "1550a4fe34617d1d3f0202bfc1d418f9bab6b39c23ab76613efba7a8f3b1ceb5"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-06_mux4to1\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-06_mux4to1\\sim -s tb_mux_4x1 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-06_mux4to1\\build\\sim\\run-581181475213457dbaa484da76a32f91\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-06_mux4to1\\src\\mux_4x1.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-06_mux4to1\\sim\\tb_mux_4x1.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module mux_4x1 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-06_mux4to1\\src\\mux_4x1.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-06_mux4to1\\build\\sim\\run-581181475213457dbaa484da76a32f91\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS mux_4x1 cases=64\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-06_mux4to1\\sim\\tb_mux_4x1.sv:19: $finish called at 640000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-06_mux4to1\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "vivado_2026_1/07_demux1to8",
+      "commit": "3e8c1e3f1cef7f602d586e152754182f43ac3679",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-1df1f375bee546218a6049c8dedcdbff",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "0329d5b29405a5dc0394720362d54f579315d65d100584ef3f9de2691403a2c5",
+          "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+          "sim/tb_demux_1x8.sv": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702"
+        },
+        "wave_sha256": "66ef399d441b54e3c22b929c46e142c5e2b08de653b383ba480303a60c463811"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-07_demux1to8\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-07_demux1to8\\sim -s tb_demux_1x8 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-07_demux1to8\\build\\sim\\run-1df1f375bee546218a6049c8dedcdbff\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-07_demux1to8\\src\\demux_1x8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-07_demux1to8\\sim\\tb_demux_1x8.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module demux_1x8 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-07_demux1to8\\src\\demux_1x8.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-07_demux1to8\\build\\sim\\run-1df1f375bee546218a6049c8dedcdbff\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS demux_1x8 cases=16\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-07_demux1to8\\sim\\tb_demux_1x8.sv:19: $finish called at 160000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-07_demux1to8\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "legacy/07_demux1to8",
+      "commit": "2e2ab8cf96476f44e9357cc4aa48570b7e18b613",
+      "status": "PASS",
+      "original_files_equal": 4,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-1d54af24f63043b8b3deac01217eea5b",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "0329d5b29405a5dc0394720362d54f579315d65d100584ef3f9de2691403a2c5",
+          "src/demux_1x8.v": "e40749e472c542f59332a22d0d344bbc9c129d5b34d3593e8d48ba500eb2129b",
+          "sim/tb_demux_1x8.sv": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702"
+        },
+        "wave_sha256": "31220a4caf3de69b5f6e845a4017b1b362d6b52646ebe4afa26164c753f3ea3a"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-07_demux1to8\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-07_demux1to8\\sim -s tb_demux_1x8 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-07_demux1to8\\build\\sim\\run-1d54af24f63043b8b3deac01217eea5b\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-07_demux1to8\\src\\demux_1x8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-07_demux1to8\\sim\\tb_demux_1x8.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module demux_1x8 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-07_demux1to8\\src\\demux_1x8.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-07_demux1to8\\build\\sim\\run-1d54af24f63043b8b3deac01217eea5b\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS demux_1x8 cases=16\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-07_demux1to8\\sim\\tb_demux_1x8.sv:19: $finish called at 160000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-07_demux1to8\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "vivado_2026_1/08_encoder8to3",
+      "commit": "485a6c588c7c9230222c4763deb372f36e5b3384",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-30a733d3c2684247bef8c63733d19bfa",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "a2502dbf7e27746e2f19afa29872d6c242c3dbca59be82a2780af26ed4a7128a",
+          "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+          "sim/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82"
+        },
+        "wave_sha256": "d7988452f30d3485600a91db64314d83e9d29c601919530a4f9569de59795352"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-08_encoder8to3\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-08_encoder8to3\\sim -s tb_encoder8x3 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-08_encoder8to3\\build\\sim\\run-30a733d3c2684247bef8c63733d19bfa\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-08_encoder8to3\\src\\encoder8x3.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-08_encoder8to3\\sim\\tb_encoder8x3.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module encoder8x3 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-08_encoder8to3\\src\\encoder8x3.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-08_encoder8to3\\build\\sim\\run-30a733d3c2684247bef8c63733d19bfa\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS encoder8x3 cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-08_encoder8to3\\sim\\tb_encoder8x3.sv:20: $finish called at 2560000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-08_encoder8to3\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "legacy/08_encoder8to3",
+      "commit": "7f88377d78cf60cece52021e238a9ecc62d70a0b",
+      "status": "PASS",
+      "original_files_equal": 4,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-1c6abe556d764f1e92581bd17bcc032f",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "a2502dbf7e27746e2f19afa29872d6c242c3dbca59be82a2780af26ed4a7128a",
+          "src/encoder8x3.v": "f068253ad43bba6845ede49a0563eb375024f4b09392c164d8fddd67d1a6586d",
+          "sim/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82"
+        },
+        "wave_sha256": "d205346786df802779b7936cdcd22fa6419f4a08b64ea9e9a476fd8a3396aadb"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-08_encoder8to3\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-08_encoder8to3\\sim -s tb_encoder8x3 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-08_encoder8to3\\build\\sim\\run-1c6abe556d764f1e92581bd17bcc032f\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-08_encoder8to3\\src\\encoder8x3.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-08_encoder8to3\\sim\\tb_encoder8x3.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module encoder8x3 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-08_encoder8to3\\src\\encoder8x3.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-08_encoder8to3\\build\\sim\\run-1c6abe556d764f1e92581bd17bcc032f\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS encoder8x3 cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-08_encoder8to3\\sim\\tb_encoder8x3.sv:20: $finish called at 2560000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-08_encoder8to3\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "vivado_2026_1/09_decoder3to8",
+      "commit": "d5a11d33868dfb9ff71b7e598644099a9ce59b65",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-7b6741d1b4274e61abe0ffd828b23cd8",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "5a142c22f099427a5b25c6b31cb92e6b21ba9258d11c850968ac589e3ac83595",
+          "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+          "sim/tb_decoder3x8.sv": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa"
+        },
+        "wave_sha256": "bd40522411e2748c122860ec2b04651186045a04d79b403984b8c3a6e9e04fa5"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-09_decoder3to8\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-09_decoder3to8\\sim -s tb_decoder3x8 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-09_decoder3to8\\build\\sim\\run-7b6741d1b4274e61abe0ffd828b23cd8\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-09_decoder3to8\\src\\decoder3x8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-09_decoder3to8\\sim\\tb_decoder3x8.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module decoder3x8 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-09_decoder3to8\\src\\decoder3x8.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-09_decoder3to8\\build\\sim\\run-7b6741d1b4274e61abe0ffd828b23cd8\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS decoder3x8 cases=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-09_decoder3to8\\sim\\tb_decoder3x8.sv:19: $finish called at 80000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-09_decoder3to8\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "legacy/09_decoder3to8",
+      "commit": "e4d6725666068c25fb4a261ba10512cd2e350ad7",
+      "status": "PASS",
+      "original_files_equal": 4,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-6d62636678124a5c81a94fe0c6d082c8",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "5a142c22f099427a5b25c6b31cb92e6b21ba9258d11c850968ac589e3ac83595",
+          "src/decoder3x8.v": "cd0a3e34bc61b4ee09b5afc27020677f0b5503f569c30e1f24979cc965ad27ac",
+          "sim/tb_decoder3x8.sv": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa"
+        },
+        "wave_sha256": "a31cde41d97819c095703251390885d6851654a67e8f11319080f0797d582f09"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-09_decoder3to8\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-09_decoder3to8\\sim -s tb_decoder3x8 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-09_decoder3to8\\build\\sim\\run-6d62636678124a5c81a94fe0c6d082c8\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-09_decoder3to8\\src\\decoder3x8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-09_decoder3to8\\sim\\tb_decoder3x8.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module decoder3x8 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-09_decoder3to8\\src\\decoder3x8.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-09_decoder3to8\\build\\sim\\run-6d62636678124a5c81a94fe0c6d082c8\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS decoder3x8 cases=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-09_decoder3to8\\sim\\tb_decoder3x8.sv:19: $finish called at 80000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-09_decoder3to8\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "vivado_2026_1/10_seven_segment",
+      "commit": "6cad34ce6d1385cd261b510024d50936dccb8f45",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-c243c049e7a54808a1ff8cb3937d28bf",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "57ad2b9c34027f47e1a642be955fd1f8aa7a7e29b26cd9140eaacf4ee9ef2e5a",
+          "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+          "sim/tb_seg_decoder.sv": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1"
+        },
+        "wave_sha256": "5d1007feec7ea2bd844c708b00317daeec054296978cfa8df233db0885afbecc"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-10_seven_segment\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-10_seven_segment\\sim -s tb_seg_decoder -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-10_seven_segment\\build\\sim\\run-c243c049e7a54808a1ff8cb3937d28bf\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-10_seven_segment\\src\\seg_decoder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-10_seven_segment\\sim\\tb_seg_decoder.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module seg_decoder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-10_seven_segment\\src\\seg_decoder.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-10_seven_segment\\build\\sim\\run-c243c049e7a54808a1ff8cb3937d28bf\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS seg_decoder cases=16\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-10_seven_segment\\sim\\tb_seg_decoder.sv:34: $finish called at 160000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-10_seven_segment\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "legacy/10_seven_segment",
+      "commit": "ccd38e3159da27d975bcb65cb2a34911d881a701",
+      "status": "PASS",
+      "original_files_equal": 4,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-bb80c5bea959469abc41002a6cc641ef",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "57ad2b9c34027f47e1a642be955fd1f8aa7a7e29b26cd9140eaacf4ee9ef2e5a",
+          "src/seg_decoder.v": "2d660c034085991a21d1aee27823682ac0fd1092673e640445caf70c227ca330",
+          "sim/tb_seg_decoder.sv": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1"
+        },
+        "wave_sha256": "87d974b488ec1396d2cf2a01d7db0abc2323f1e3798d5c6c5f9d18e72673c6e9"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-10_seven_segment\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-10_seven_segment\\sim -s tb_seg_decoder -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-10_seven_segment\\build\\sim\\run-bb80c5bea959469abc41002a6cc641ef\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-10_seven_segment\\src\\seg_decoder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-10_seven_segment\\sim\\tb_seg_decoder.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module seg_decoder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-10_seven_segment\\src\\seg_decoder.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-10_seven_segment\\build\\sim\\run-bb80c5bea959469abc41002a6cc641ef\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS seg_decoder cases=16\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-10_seven_segment\\sim\\tb_seg_decoder.sv:34: $finish called at 160000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\legacy-10_seven_segment\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "vivado_2026_1/11_integrated",
+      "commit": "5a553ee802270caf3f909395f5e29bdcbbd48352",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-75cd0e8f1c154255a253fac12d2dad00",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "f998785c84c1cd302815a0626e07977052c08869c7a9e772ca11ee86908d032a",
+          "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+          "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+          "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+          "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+          "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+          "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+          "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+          "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+          "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+          "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+          "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+          "src/button_onepulse.v": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3",
+          "src/lcd_modes.v": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f",
+          "src/lab1_integrated.v": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69",
+          "sim/tb_lab1_integrated.sv": "ab1353be5e972cd9c571f7cddb588cd4e33c3e46ea26c8ec93f34a5ddd1dee04"
+        },
+        "wave_sha256": "1a8db8de3e79213288b8cbb46c9010c9a3adb5ab69a125326b5a2d4aef24f7c9"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\sim -s tb_lab1_integrated -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\build\\sim\\run-75cd0e8f1c154255a253fac12d2dad00\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\logic_gate.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\half_adder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\full_adder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\adder_4bit.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\sub_4bit.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\compare_4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\mux_4x1.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\demux_1x8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\encoder8x3.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\decoder3x8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\seg_decoder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\button_onepulse.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\lcd_modes.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\lab1_integrated.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\sim\\tb_lab1_integrated.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module adder_4bit declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\adder_4bit.v:1\n       :   -- module button_onepulse declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\button_onepulse.v:1\n       :   -- module compare_4 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\compare_4.v:1\n       :   -- module decoder3x8 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\decoder3x8.v:1\n       :   -- module demux_1x8 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\demux_1x8.v:1\n       :   -- module encoder8x3 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\encoder8x3.v:1\n       :   -- module full_adder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\full_adder.v:1\n       :   -- module half_adder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\half_adder.v:1\n       :   -- module lab1_integrated declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\lab1_integrated.v:3\n       :   -- module lcd_modes declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\lcd_modes.v:3\n       :   -- module logic_gate declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\logic_gate.v:1\n       :   -- module mux_4x1 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\mux_4x1.v:1\n       :   -- module seg_decoder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\seg_decoder.v:1\n       :   -- module sub_4bit declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\src\\sub_4bit.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\build\\sim\\run-75cd0e8f1c154255a253fac12d2dad00\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS lab1_integrated cases=2560\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\sim\\tb_lab1_integrated.sv:96: $finish called at 72430000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated\\build\\sim\\wave.vcd"
+    },
+    {
+      "project": "opensource_cli/integrated",
+      "commit": "2c1e00f7ca38de27f1b933e836de210fb7682ca0",
+      "status": "PASS",
+      "original_files_equal": 0,
+      "simulation": {
+        "status": "SIMULATED",
+        "run": "run-1939ee4bdcba41268b2d9b36f78ea1f4",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "f998785c84c1cd302815a0626e07977052c08869c7a9e772ca11ee86908d032a",
+          "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+          "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+          "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+          "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+          "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+          "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+          "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+          "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+          "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+          "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+          "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+          "src/button_onepulse.v": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3",
+          "src/lcd_modes.v": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f",
+          "src/lab1_integrated.v": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69",
+          "sim/tb_lab1_integrated.sv": "ab1353be5e972cd9c571f7cddb588cd4e33c3e46ea26c8ec93f34a5ddd1dee04"
+        },
+        "wave_sha256": "bde2e820b06cf435921126d3a3c8c670fe78df288b14c025ec91ecd6c9abc7bd"
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\sim -s tb_lab1_integrated -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\build\\sim\\run-1939ee4bdcba41268b2d9b36f78ea1f4\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\logic_gate.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\half_adder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\full_adder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\adder_4bit.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\sub_4bit.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\compare_4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\mux_4x1.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\demux_1x8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\encoder8x3.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\decoder3x8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\seg_decoder.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\button_onepulse.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\lcd_modes.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\lab1_integrated.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\sim\\tb_lab1_integrated.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module adder_4bit declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\adder_4bit.v:1\n       :   -- module button_onepulse declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\button_onepulse.v:1\n       :   -- module compare_4 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\compare_4.v:1\n       :   -- module decoder3x8 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\decoder3x8.v:1\n       :   -- module demux_1x8 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\demux_1x8.v:1\n       :   -- module encoder8x3 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\encoder8x3.v:1\n       :   -- module full_adder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\full_adder.v:1\n       :   -- module half_adder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\half_adder.v:1\n       :   -- module lab1_integrated declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\lab1_integrated.v:3\n       :   -- module lcd_modes declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\lcd_modes.v:3\n       :   -- module logic_gate declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\logic_gate.v:1\n       :   -- module mux_4x1 declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\mux_4x1.v:1\n       :   -- module seg_decoder declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\seg_decoder.v:1\n       :   -- module sub_4bit declared here: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\src\\sub_4bit.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\build\\sim\\run-1939ee4bdcba41268b2d9b36f78ea1f4\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS lab1_integrated cases=2560\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\sim\\tb_lab1_integrated.sv:96: $finish called at 72430000 (1ps)\n\n\uc2dc\ubbac\ub808\uc774\uc158 \uc2e4\ud589 \uc644\ub8cc. \uc9c4\ub9ac\ud45c\u00b7\uc790\uae30\uac80\uc0ac\u00b7\ud30c\ud615\uc73c\ub85c \ud68c\ub85c\uc758 \uc815\ub2f5 \uc5ec\ubd80\ub97c \ud655\uc778\ud558\uc138\uc694.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\submodule-checkout-v2\\opensource_cli-integrated\\build\\sim\\wave.vcd"
+    }
+  ]
+}
