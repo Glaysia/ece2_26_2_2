@@ -1,0 +1,503 @@
+{
+  "status": "PASS",
+  "course_commit": "7d13e541de354b87a8be748f305559af31d6d55d",
+  "method": "Public HTTPS filtered clone; sparse checkout of LAB1; git submodule update --init --recursive; fresh standalone simulation in all 22 pinned checkouts. PDF archive will be checked separately after final publication.",
+  "projects": [
+    {
+      "project": "vivado_2026_1/01_logic_gates",
+      "commit": "8d25deb5c064edd95d61488a32d643c4bb331fb8",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-aeb5a3b3569e4e63832b83610463504a",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "701e521940e34e7fc2c3c5c5d670b4da48d16dd3ac12306ad7e6cd0fcfee751c",
+          "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+          "sim/tb_logic_gate_modern.sv": "8815d26ae87ee452a7cec9e99d54cab62ab72d35ec1e090e3af6afc154ffb232"
+        },
+        "wave_sha256": "2ef9537136251f3a10b823977be4c406c1f4181c1ca02b769873188cb3076a3d"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS logic_gate cases=4\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\01_logic_gates\\sim\\tb_logic_gate_modern.sv:19: $finish called at 40000 (1ps)\n"
+    },
+    {
+      "project": "legacy/01_logic_gates",
+      "commit": "9055c8002ec5149907f393a1c781000d44125e38",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-20d3c5327c024074b9d553f91320e0e3",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "c1913032941d6da664c572f6cf59b1b7d2e2f07b4226e7744b878d726dfd3834",
+          "src/logic_gate.v": "323f477f44b2ac72c0ab0d77364a6d85140001f84e6aa19d1c3094aa58df2372",
+          "sim/tb_logic_gate.sv": "f5cd77fd26bda75ce41621b01a4e80a1d485cae5a95cd8f9c1903dfc4dcf1e71"
+        },
+        "wave_sha256": "9b14674e52b149b1d9988149a1391c626722356c429fe63c54b207508df7f2a6"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS logic_gate cases=4\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\legacy\\01_logic_gates\\sim\\tb_logic_gate.sv:19: $finish called at 40000 (1ps)\n"
+    },
+    {
+      "project": "vivado_2026_1/02_full_adder",
+      "commit": "8b506af67d1e0cb7bc63854c8bb2a2633d3326be",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-d1cf0be96a3147f497093862aca35899",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "876bc61f5f16a529e70df53e226707083f5cdee706913d9a6971d6ecb40eaa33",
+          "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+          "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+          "sim/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f"
+        },
+        "wave_sha256": "b7a3122611b9110279d6981e911850d07e82769b87a6b2ed9b5c44fa7eb871f4"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS full_adder cases=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\02_full_adder\\sim\\tb_full_adder.sv:19: $finish called at 80000 (1ps)\n"
+    },
+    {
+      "project": "legacy/02_full_adder",
+      "commit": "0fe260d299847628fd01626c76ae87150f601ca1",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-cd748f13a4544fbb9c702e90a19b84e0",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "876bc61f5f16a529e70df53e226707083f5cdee706913d9a6971d6ecb40eaa33",
+          "src/full_adder.v": "0acb0572610de489b94b902a3fe2b254315f41ca711e790cff185acc5ee5c898",
+          "src/half_adder.v": "959405ba290ffdfbc82521fc5458a706c131082deef0ebb3f539c6bd3d6a4700",
+          "sim/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f"
+        },
+        "wave_sha256": "67ca52e418158bb8033dc1f80c19ea7805bd0ed7df0b4a27660341146039c7b6"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS full_adder cases=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\legacy\\02_full_adder\\sim\\tb_full_adder.sv:19: $finish called at 80000 (1ps)\n"
+    },
+    {
+      "project": "vivado_2026_1/03_adder4",
+      "commit": "08543696c146164de20930270b01bfbd12ccdd72",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-de78fafb240543dd83838e48ed80bbfc",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "15454c6412d6bf9299ff651940893951f976cdf1be342bb954aeaacffe9b7fde",
+          "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+          "sim/tb_adder_4bit.sv": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df"
+        },
+        "wave_sha256": "aae67082d6a28a64dc3322da3a9efdd24285955067d90c139a407f1205b66ae5"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS adder_4bit cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\03_adder4\\sim\\tb_adder_4bit.sv:19: $finish called at 2560000 (1ps)\n"
+    },
+    {
+      "project": "legacy/03_adder4",
+      "commit": "14578fedf93bb22b3366f2070d80cfe4a46ff62e",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-7c45e5f289d74a2a8f00924f448c857c",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "15454c6412d6bf9299ff651940893951f976cdf1be342bb954aeaacffe9b7fde",
+          "src/adder_4bit.v": "d244da1c9ba1bc6aa2f21656102333b2e8bbbf2b32bf49a985963617aaba6758",
+          "sim/tb_adder_4bit.sv": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df"
+        },
+        "wave_sha256": "783004d22d01282f511f246cfd0115d733ffd9fe90d2caf897160e0b3e7f2e81"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS adder_4bit cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\legacy\\03_adder4\\sim\\tb_adder_4bit.sv:19: $finish called at 2560000 (1ps)\n"
+    },
+    {
+      "project": "vivado_2026_1/04_subtractor4",
+      "commit": "f7d79cd1f95d423edaa3746b75002b0ecf8c5eea",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-662810827f8a4382b762ddda12d85d01",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "3535d901ed8497fbb23516f777eafb80574dcf54df5d9fcbff267e9952a02b4a",
+          "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+          "sim/tb_sub_4bit.sv": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35"
+        },
+        "wave_sha256": "9df8c39f91ae60d7a464a785ebe5137fc8722d8ab36372e5e9d4466b155f7ecc"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS sub_4bit cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\04_subtractor4\\sim\\tb_sub_4bit.sv:19: $finish called at 2560000 (1ps)\n"
+    },
+    {
+      "project": "legacy/04_subtractor4",
+      "commit": "6383aa022813906c7f438351eabe580c132879d5",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-62225a995fa6476cac43efea3ff7227a",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "3535d901ed8497fbb23516f777eafb80574dcf54df5d9fcbff267e9952a02b4a",
+          "src/sub_4bit.v": "0dda5e18283aef717ad0f967e46f9ecd0d5caa980ef34076e027e7bbfd803d4d",
+          "sim/tb_sub_4bit.sv": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35"
+        },
+        "wave_sha256": "9605d6c39c35472a86176f169f1a41aeb2b23446408abc01dd69175b92f33f99"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS sub_4bit cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\legacy\\04_subtractor4\\sim\\tb_sub_4bit.sv:19: $finish called at 2560000 (1ps)\n"
+    },
+    {
+      "project": "vivado_2026_1/05_comparator4",
+      "commit": "913b0f41c48c2351cdaba21380d0d83770c43445",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-bc5df4e229104f3ca4fd3fbea4423b8f",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "909d938c1cdc35bc0ff0e51e582db7442e996999c29f086471eae840cf5973bf",
+          "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+          "sim/tb_compare_4.sv": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602"
+        },
+        "wave_sha256": "f787b96aea6d9eabdd4fc3f97d686d3f716b0cb027855f5e252507d3099959bc"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS compare_4 cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\05_comparator4\\sim\\tb_compare_4.sv:19: $finish called at 2560000 (1ps)\n"
+    },
+    {
+      "project": "legacy/05_comparator4",
+      "commit": "d8e0f25d8058df9c07084f03cf997ae649fd84af",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-6113d87d103842a9a873aa3c9640cc6a",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "909d938c1cdc35bc0ff0e51e582db7442e996999c29f086471eae840cf5973bf",
+          "src/compare_4.v": "615443f9cdd0ec1a3a2d389605abb631323bed978a66f740b0e4b743856cd9b3",
+          "sim/tb_compare_4.sv": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602"
+        },
+        "wave_sha256": "5ce7ce650245fb989615600529207ae498b0cc07de6c23e4754e12d74aa5844c"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS compare_4 cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\legacy\\05_comparator4\\sim\\tb_compare_4.sv:19: $finish called at 2560000 (1ps)\n"
+    },
+    {
+      "project": "vivado_2026_1/06_mux4to1",
+      "commit": "009d192cb7f873a2b31d0386ea68cc451fdec89b",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-90d4dd19b67c4c6c813239c152bc8f5d",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "68110938fc1d3b4018a49fc213d896e3af4225a2340460ba722562c0537951ae",
+          "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+          "sim/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9"
+        },
+        "wave_sha256": "d50a0e140406dabe97f59cfd8b7624a3ca1c132367e824a0b9394901c1f26210"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS mux_4x1 cases=64\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\06_mux4to1\\sim\\tb_mux_4x1.sv:19: $finish called at 640000 (1ps)\n"
+    },
+    {
+      "project": "legacy/06_mux4to1",
+      "commit": "80d65af6339ade695aad964c39f66efb37ac7367",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-d1efa82f14874435926bbaf0ae52d1ec",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "68110938fc1d3b4018a49fc213d896e3af4225a2340460ba722562c0537951ae",
+          "src/mux_4x1.v": "3f8e5ef35951c76c21f2ef7b721cdd9464650a7d6e699fdcdf1b0b98f5205d0f",
+          "sim/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9"
+        },
+        "wave_sha256": "9fbe15f3bf286eb1734781f90681da2d6890ca8a141d47517f37c1471ae9e8c0"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS mux_4x1 cases=64\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\legacy\\06_mux4to1\\sim\\tb_mux_4x1.sv:19: $finish called at 640000 (1ps)\n"
+    },
+    {
+      "project": "vivado_2026_1/07_demux1to8",
+      "commit": "3e8c1e3f1cef7f602d586e152754182f43ac3679",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-8e9871583e3a4b7795a81380cd617d34",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "0329d5b29405a5dc0394720362d54f579315d65d100584ef3f9de2691403a2c5",
+          "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+          "sim/tb_demux_1x8.sv": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702"
+        },
+        "wave_sha256": "8406a2d696b7b94e9d16679ffbc2615075a01c7014e1dfc067e08cc2bc50ec79"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS demux_1x8 cases=16\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\07_demux1to8\\sim\\tb_demux_1x8.sv:19: $finish called at 160000 (1ps)\n"
+    },
+    {
+      "project": "legacy/07_demux1to8",
+      "commit": "2e2ab8cf96476f44e9357cc4aa48570b7e18b613",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-d7c66cff2fae463c9e5c4b20e001bc72",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "0329d5b29405a5dc0394720362d54f579315d65d100584ef3f9de2691403a2c5",
+          "src/demux_1x8.v": "e40749e472c542f59332a22d0d344bbc9c129d5b34d3593e8d48ba500eb2129b",
+          "sim/tb_demux_1x8.sv": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702"
+        },
+        "wave_sha256": "4088c38a02242f9abb9211cbfbd1b43f776fc05131440d73ed85a9c8bf27d640"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS demux_1x8 cases=16\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\legacy\\07_demux1to8\\sim\\tb_demux_1x8.sv:19: $finish called at 160000 (1ps)\n"
+    },
+    {
+      "project": "vivado_2026_1/08_encoder8to3",
+      "commit": "485a6c588c7c9230222c4763deb372f36e5b3384",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-86cb1f18ae8446ec9f2aa3269694d1da",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "a2502dbf7e27746e2f19afa29872d6c242c3dbca59be82a2780af26ed4a7128a",
+          "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+          "sim/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82"
+        },
+        "wave_sha256": "78db3d6cea8dea334d4e16084e1aca96040bc0fdda92d08ce9be978d3c2444aa"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS encoder8x3 cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\08_encoder8to3\\sim\\tb_encoder8x3.sv:20: $finish called at 2560000 (1ps)\n"
+    },
+    {
+      "project": "legacy/08_encoder8to3",
+      "commit": "7f88377d78cf60cece52021e238a9ecc62d70a0b",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-dadcd801edf447b98750b870d1feaf39",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "a2502dbf7e27746e2f19afa29872d6c242c3dbca59be82a2780af26ed4a7128a",
+          "src/encoder8x3.v": "f068253ad43bba6845ede49a0563eb375024f4b09392c164d8fddd67d1a6586d",
+          "sim/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82"
+        },
+        "wave_sha256": "78db3d6cea8dea334d4e16084e1aca96040bc0fdda92d08ce9be978d3c2444aa"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS encoder8x3 cases=256\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\legacy\\08_encoder8to3\\sim\\tb_encoder8x3.sv:20: $finish called at 2560000 (1ps)\n"
+    },
+    {
+      "project": "vivado_2026_1/09_decoder3to8",
+      "commit": "d5a11d33868dfb9ff71b7e598644099a9ce59b65",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-e69aff3b02324087898ad26ffd011f8a",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "5a142c22f099427a5b25c6b31cb92e6b21ba9258d11c850968ac589e3ac83595",
+          "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+          "sim/tb_decoder3x8.sv": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa"
+        },
+        "wave_sha256": "bcfddad51f987c14ede9d038ee665323655c0981479acd8e9cd5f539343155b7"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS decoder3x8 cases=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\09_decoder3to8\\sim\\tb_decoder3x8.sv:19: $finish called at 80000 (1ps)\n"
+    },
+    {
+      "project": "legacy/09_decoder3to8",
+      "commit": "e4d6725666068c25fb4a261ba10512cd2e350ad7",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-f455003de9c745eab26e50db2bc31b19",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "5a142c22f099427a5b25c6b31cb92e6b21ba9258d11c850968ac589e3ac83595",
+          "src/decoder3x8.v": "cd0a3e34bc61b4ee09b5afc27020677f0b5503f569c30e1f24979cc965ad27ac",
+          "sim/tb_decoder3x8.sv": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa"
+        },
+        "wave_sha256": "f443566459ca1c25c120de6ea2d77f57474258b5f311aee688f97c811ae54111"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS decoder3x8 cases=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\legacy\\09_decoder3to8\\sim\\tb_decoder3x8.sv:19: $finish called at 80000 (1ps)\n"
+    },
+    {
+      "project": "vivado_2026_1/10_seven_segment",
+      "commit": "6cad34ce6d1385cd261b510024d50936dccb8f45",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-6a7862e62db34dd2bb6c2cc458df5168",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "57ad2b9c34027f47e1a642be955fd1f8aa7a7e29b26cd9140eaacf4ee9ef2e5a",
+          "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+          "sim/tb_seg_decoder.sv": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1"
+        },
+        "wave_sha256": "1fcc209ab4155f38022f97da5cf0af4cf4a59364a8cf83a3947502d8ccb690fe"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS seg_decoder cases=16\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\10_seven_segment\\sim\\tb_seg_decoder.sv:34: $finish called at 160000 (1ps)\n"
+    },
+    {
+      "project": "legacy/10_seven_segment",
+      "commit": "ccd38e3159da27d975bcb65cb2a34911d881a701",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-a02ae17d5e764f099334972b06a9cab3",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "57ad2b9c34027f47e1a642be955fd1f8aa7a7e29b26cd9140eaacf4ee9ef2e5a",
+          "src/seg_decoder.v": "2d660c034085991a21d1aee27823682ac0fd1092673e640445caf70c227ca330",
+          "sim/tb_seg_decoder.sv": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1"
+        },
+        "wave_sha256": "1fcc209ab4155f38022f97da5cf0af4cf4a59364a8cf83a3947502d8ccb690fe"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS seg_decoder cases=16\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\legacy\\10_seven_segment\\sim\\tb_seg_decoder.sv:34: $finish called at 160000 (1ps)\n"
+    },
+    {
+      "project": "vivado_2026_1/11_integrated",
+      "commit": "5a553ee802270caf3f909395f5e29bdcbbd48352",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-ca8878dada804b3ebb9867182bfa229e",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "f998785c84c1cd302815a0626e07977052c08869c7a9e772ca11ee86908d032a",
+          "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+          "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+          "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+          "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+          "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+          "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+          "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+          "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+          "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+          "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+          "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+          "src/button_onepulse.v": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3",
+          "src/lcd_modes.v": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f",
+          "src/lab1_integrated.v": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69",
+          "sim/tb_lab1_integrated.sv": "ab1353be5e972cd9c571f7cddb588cd4e33c3e46ea26c8ec93f34a5ddd1dee04"
+        },
+        "wave_sha256": "f94b5a6bb160e238d8730b3c012690a6417e08ce2bd3c0438eb9041c6bbba701"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS lab1_integrated cases=2560\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\vivado_2026_1\\11_integrated\\sim\\tb_lab1_integrated.sv:96: $finish called at 72430000 (1ps)\n"
+    },
+    {
+      "project": "opensource_cli/integrated",
+      "commit": "b7c6c1d8c16270797abe140cc0c44c9b1a78c0d2",
+      "result": {
+        "status": "SIMULATED",
+        "run": "run-493de1b6bbc94f4eb5e6582b645986b1",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "f998785c84c1cd302815a0626e07977052c08869c7a9e772ca11ee86908d032a",
+          "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+          "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+          "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+          "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+          "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+          "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+          "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+          "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+          "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+          "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+          "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+          "src/button_onepulse.v": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3",
+          "src/lcd_modes.v": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f",
+          "src/lab1_integrated.v": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69",
+          "sim/tb_lab1_integrated.sv": "ab1353be5e972cd9c571f7cddb588cd4e33c3e46ea26c8ec93f34a5ddd1dee04"
+        },
+        "wave_sha256": "10b40f6c220f1dec88870379aa4e97c0d924883d48380f02a274d6863a54379e"
+      },
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS lab1_integrated cases=2560\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\course-recursive-final\\example\\fpga_projects_hdl\\LAB1\\opensource_cli\\integrated\\sim\\tb_lab1_integrated.sv:96: $finish called at 72430000 (1ps)\n"
+    }
+  ],
+  "independent_clones": [
+    {
+      "project": "vivado_2026_1/01_logic_gates",
+      "commit": "8d25deb5c064edd95d61488a32d643c4bb331fb8",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-01_logic_gates"
+    },
+    {
+      "project": "legacy/01_logic_gates",
+      "commit": "9055c8002ec5149907f393a1c781000d44125e38",
+      "clone": "tmp\\submodule-checkout-v2\\legacy-01_logic_gates"
+    },
+    {
+      "project": "vivado_2026_1/02_full_adder",
+      "commit": "8b506af67d1e0cb7bc63854c8bb2a2633d3326be",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-02_full_adder"
+    },
+    {
+      "project": "legacy/02_full_adder",
+      "commit": "0fe260d299847628fd01626c76ae87150f601ca1",
+      "clone": "tmp\\submodule-checkout-v2\\legacy-02_full_adder"
+    },
+    {
+      "project": "vivado_2026_1/03_adder4",
+      "commit": "08543696c146164de20930270b01bfbd12ccdd72",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-03_adder4"
+    },
+    {
+      "project": "legacy/03_adder4",
+      "commit": "14578fedf93bb22b3366f2070d80cfe4a46ff62e",
+      "clone": "tmp\\submodule-checkout-v2\\legacy-03_adder4"
+    },
+    {
+      "project": "vivado_2026_1/04_subtractor4",
+      "commit": "f7d79cd1f95d423edaa3746b75002b0ecf8c5eea",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-04_subtractor4"
+    },
+    {
+      "project": "legacy/04_subtractor4",
+      "commit": "6383aa022813906c7f438351eabe580c132879d5",
+      "clone": "tmp\\submodule-checkout-v2\\legacy-04_subtractor4"
+    },
+    {
+      "project": "vivado_2026_1/05_comparator4",
+      "commit": "913b0f41c48c2351cdaba21380d0d83770c43445",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-05_comparator4"
+    },
+    {
+      "project": "legacy/05_comparator4",
+      "commit": "d8e0f25d8058df9c07084f03cf997ae649fd84af",
+      "clone": "tmp\\submodule-checkout-v2\\legacy-05_comparator4"
+    },
+    {
+      "project": "vivado_2026_1/06_mux4to1",
+      "commit": "009d192cb7f873a2b31d0386ea68cc451fdec89b",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-06_mux4to1"
+    },
+    {
+      "project": "legacy/06_mux4to1",
+      "commit": "80d65af6339ade695aad964c39f66efb37ac7367",
+      "clone": "tmp\\submodule-checkout-v2\\legacy-06_mux4to1"
+    },
+    {
+      "project": "vivado_2026_1/07_demux1to8",
+      "commit": "3e8c1e3f1cef7f602d586e152754182f43ac3679",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-07_demux1to8"
+    },
+    {
+      "project": "legacy/07_demux1to8",
+      "commit": "2e2ab8cf96476f44e9357cc4aa48570b7e18b613",
+      "clone": "tmp\\submodule-checkout-v2\\legacy-07_demux1to8"
+    },
+    {
+      "project": "vivado_2026_1/08_encoder8to3",
+      "commit": "485a6c588c7c9230222c4763deb372f36e5b3384",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-08_encoder8to3"
+    },
+    {
+      "project": "legacy/08_encoder8to3",
+      "commit": "7f88377d78cf60cece52021e238a9ecc62d70a0b",
+      "clone": "tmp\\submodule-checkout-v2\\legacy-08_encoder8to3"
+    },
+    {
+      "project": "vivado_2026_1/09_decoder3to8",
+      "commit": "d5a11d33868dfb9ff71b7e598644099a9ce59b65",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-09_decoder3to8"
+    },
+    {
+      "project": "legacy/09_decoder3to8",
+      "commit": "e4d6725666068c25fb4a261ba10512cd2e350ad7",
+      "clone": "tmp\\submodule-checkout-v2\\legacy-09_decoder3to8"
+    },
+    {
+      "project": "vivado_2026_1/10_seven_segment",
+      "commit": "6cad34ce6d1385cd261b510024d50936dccb8f45",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-10_seven_segment"
+    },
+    {
+      "project": "legacy/10_seven_segment",
+      "commit": "ccd38e3159da27d975bcb65cb2a34911d881a701",
+      "clone": "tmp\\submodule-checkout-v2\\legacy-10_seven_segment"
+    },
+    {
+      "project": "vivado_2026_1/11_integrated",
+      "commit": "5a553ee802270caf3f909395f5e29bdcbbd48352",
+      "clone": "tmp\\submodule-checkout-v2\\vivado_2026_1-11_integrated"
+    },
+    {
+      "project": "opensource_cli/integrated",
+      "commit": "b7c6c1d8c16270797abe140cc0c44c9b1a78c0d2",
+      "clone": "tmp\\cli-published-final"
+    }
+  ],
+  "independent_execution_evidence": [
+    "submodule-validation.json (21 unchanged examples)",
+    "cli-pr15-evidence/fresh-clone-validation.json (updated CLI example)"
+  ]
+}

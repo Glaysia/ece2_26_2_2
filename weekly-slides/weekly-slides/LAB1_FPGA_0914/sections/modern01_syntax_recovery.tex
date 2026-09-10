@@ -1,0 +1,22 @@
+\begin{frame}{문법 오류 위치 찾기}
+\small 연습: logic\_gate.v 4행 끝의 세미콜론 하나를 지우고 저장한 뒤 02 Simulate.
+\par\vspace{0.15cm}
+\includegraphics[width=\textwidth,height=1.2cm,keepaspectratio,trim=45bp 105.75bp 91.5bp 450bp,clip]{assets/modern-01/student-syntax-error.png}
+\par\vspace{0.12cm}
+\includegraphics[width=\textwidth,height=1.1cm,keepaspectratio,trim=45bp 186.75bp 526.5bp 363.75bp,clip]{assets/modern-01/student-syntax-location.png}
+\explain{터미널의 syntax error와 종료 코드로 컴파일 실패를 확인한다.\\
+아래 \textbf{Problems} → logic\_gate.v 아래 \textbf{expected `;'}를 두 번 누른다.\\
+편집기의 4행으로 이동한다. 컴파일러는 다음 5행에서 오류를 발견할 수도 있으므로 바로 앞 문장의 끝도 확인한다.}
+\end{frame}
+
+\begin{frame}{수정하고 다시 검사한다}
+\small 4행 끝에 세미콜론을 다시 입력하고 File → Save All → 02 Simulate.
+\par\vspace{0.15cm}
+\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=60bp 439.5bp 331.5bp 64.5bp,clip]{assets/modern-01/student-syntax-restored.png}
+\par\vspace{0.15cm}
+\includegraphics[width=\textwidth,height=1.1cm,keepaspectratio,trim=45bp 110.25bp 106.5bp 456bp,clip]{assets/modern-01/student-syntax-restored.png}
+\explain{문법 오류 표시가 사라지고 \textbf{LAB1\_PASS logic\_gate cases=4},\\
+\textbf{40000ps = 40ns} 종료가 보이는지 확인한다.\\
+실패 로그와 복구 로그는 서로 다른 run 폴더에 있다. 둘 다 레포트에 연결한다.\\
+Save settings 창이 뜨면 VaporView 표시 설정을 저장한 뒤 계속한다.}
+\end{frame}

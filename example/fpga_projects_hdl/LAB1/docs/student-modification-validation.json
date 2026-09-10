@@ -1,0 +1,408 @@
+{
+  "status": "PASS",
+  "projects": [
+    {
+      "project": "vivado_2026_1/01_logic_gates",
+      "top": "logic_gate",
+      "file": "src/logic_gate.v",
+      "edit": "z의 XOR 연산자를 OR로 바꾼다.",
+      "expected": "a=b=1이면 z의 정상값은 0, 변경 후 값은 1이다.",
+      "inputs_sha256": {
+        "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+        "sim/tb_logic_gate_modern.sv": "8815d26ae87ee452a7cec9e99d54cab62ab72d35ec1e090e3af6afc154ffb232",
+        "simulation.json": "701e521940e34e7fc2c3c5c5d670b4da48d16dd3ac12306ad7e6cd0fcfee751c"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS logic_gate cases=4\nsim/tb_logic_gate_modern.sv:19: $finish called at 40000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_logic_gate_modern.sv:14: FAIL logic_gate vector=3 expected=6 actual=7\n       Time: 40000  Scope: tb_logic_gate_modern\n",
+          "stderr": "",
+          "rtl_sha256": "9440c3221ad2ffba44b95740107926cfaca27f68962d61d4239407749123d891"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS logic_gate cases=4\nsim/tb_logic_gate_modern.sv:19: $finish called at 40000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b"
+        }
+      ]
+    },
+    {
+      "project": "vivado_2026_1/02_full_adder",
+      "top": "full_adder",
+      "file": "src/full_adder.v",
+      "edit": "cout의 OR 연산자를 AND로 바꾼다.",
+      "expected": "a=0, b=1, cin=1에서 정상 carry는 1이다. 변경 후 carry는 0이다.",
+      "inputs_sha256": {
+        "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+        "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+        "sim/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f",
+        "simulation.json": "876bc61f5f16a529e70df53e226707083f5cdee706913d9a6971d6ecb40eaa33"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS full_adder cases=8\nsim/tb_full_adder.sv:19: $finish called at 80000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_full_adder.sv:14: FAIL full_adder vector=3 expected=2 actual=0\n       Time: 40000  Scope: tb_full_adder\n",
+          "stderr": "",
+          "rtl_sha256": "8a2c852841bcded47106bceca073ce7b71c9f4a8c7d5d161f585d2cf89accc87"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS full_adder cases=8\nsim/tb_full_adder.sv:19: $finish called at 80000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51"
+        }
+      ]
+    },
+    {
+      "project": "vivado_2026_1/03_adder4",
+      "top": "adder_4bit",
+      "file": "src/adder_4bit.v",
+      "edit": "덧셈 연산자를 뺄셈으로 바꾼다.",
+      "expected": "a=0, b=1의 정상 결과는 carry=0, sum=1이다. 변경 후 carry=1, sum=15다.",
+      "inputs_sha256": {
+        "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+        "sim/tb_adder_4bit.sv": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df",
+        "simulation.json": "15454c6412d6bf9299ff651940893951f976cdf1be342bb954aeaacffe9b7fde"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS adder_4bit cases=256\nsim/tb_adder_4bit.sv:19: $finish called at 2560000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_adder_4bit.sv:14: FAIL adder_4bit vector=1 expected=01 actual=1f\n       Time: 20000  Scope: tb_adder_4bit\n",
+          "stderr": "",
+          "rtl_sha256": "0b3651ef2255d5649263ef03582f4dd74a275fb87da77c32a095b19719d3909f"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS adder_4bit cases=256\nsim/tb_adder_4bit.sv:19: $finish called at 2560000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2"
+        }
+      ]
+    },
+    {
+      "project": "vivado_2026_1/04_subtractor4",
+      "top": "sub_4bit",
+      "file": "src/sub_4bit.v",
+      "edit": "borrow 비교에 등호를 추가한다.",
+      "expected": "a=b=0이면 정상 borrow는 0이다. 변경 후에는 1이 된다.",
+      "inputs_sha256": {
+        "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+        "sim/tb_sub_4bit.sv": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35",
+        "simulation.json": "3535d901ed8497fbb23516f777eafb80574dcf54df5d9fcbff267e9952a02b4a"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS sub_4bit cases=256\nsim/tb_sub_4bit.sv:19: $finish called at 2560000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_sub_4bit.sv:14: FAIL sub_4bit vector=0 expected=00 actual=10\n       Time: 10000  Scope: tb_sub_4bit\n",
+          "stderr": "",
+          "rtl_sha256": "e35b471c3c7bc1e3c122f722183dd1b3abe510289eca10cd7a9313052a7ae6a1"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS sub_4bit cases=256\nsim/tb_sub_4bit.sv:19: $finish called at 2560000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe"
+        }
+      ]
+    },
+    {
+      "project": "vivado_2026_1/05_comparator4",
+      "top": "compare_4",
+      "file": "src/compare_4.v",
+      "edit": "출력 가운데의 같음 비교를 다름 비교로 바꾼다.",
+      "expected": "a=b=0에서 정상 출력은 010이다. 변경 후에는 000이 된다.",
+      "inputs_sha256": {
+        "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+        "sim/tb_compare_4.sv": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602",
+        "simulation.json": "909d938c1cdc35bc0ff0e51e582db7442e996999c29f086471eae840cf5973bf"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS compare_4 cases=256\nsim/tb_compare_4.sv:19: $finish called at 2560000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_compare_4.sv:14: FAIL compare_4 vector=0 expected=2 actual=0\n       Time: 10000  Scope: tb_compare_4\n",
+          "stderr": "",
+          "rtl_sha256": "6350904e362cae11addb60860fb85bae896c02bc31214fab819c13a6ee74ed32"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS compare_4 cases=256\nsim/tb_compare_4.sv:19: $finish called at 2560000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23"
+        }
+      ]
+    },
+    {
+      "project": "vivado_2026_1/06_mux4to1",
+      "top": "mux_4x1",
+      "file": "src/mux_4x1.v",
+      "edit": "출력에 연결할 입력의 인덱스를 3-s에서 s로 바꾼다.",
+      "expected": "i=0001, s=00에서 정상 z=0이다. 변경 후에는 z=1이다.",
+      "inputs_sha256": {
+        "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+        "sim/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9",
+        "simulation.json": "68110938fc1d3b4018a49fc213d896e3af4225a2340460ba722562c0537951ae"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS mux_4x1 cases=64\nsim/tb_mux_4x1.sv:19: $finish called at 640000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_mux_4x1.sv:14: FAIL mux_4x1 vector=4 expected=0 actual=1\n       Time: 50000  Scope: tb_mux_4x1\n",
+          "stderr": "",
+          "rtl_sha256": "5aea522d816f73d80a40b057035c04d02792e86daee2a340f7aad29c14b788cd"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS mux_4x1 cases=64\nsim/tb_mux_4x1.sv:19: $finish called at 640000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129"
+        }
+      ]
+    },
+    {
+      "project": "vivado_2026_1/07_demux1to8",
+      "top": "demux_1x8",
+      "file": "src/demux_1x8.v",
+      "edit": "오른쪽 시프트를 왼쪽 시프트로 바꾼다.",
+      "expected": "i=1, s=1에서 정상 출력은 01000000이다. 변경 후에는 00000000이다.",
+      "inputs_sha256": {
+        "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+        "sim/tb_demux_1x8.sv": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702",
+        "simulation.json": "0329d5b29405a5dc0394720362d54f579315d65d100584ef3f9de2691403a2c5"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS demux_1x8 cases=16\nsim/tb_demux_1x8.sv:19: $finish called at 160000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_demux_1x8.sv:14: FAIL demux_1x8 vector=9 expected=40 actual=00\n       Time: 100000  Scope: tb_demux_1x8\n",
+          "stderr": "",
+          "rtl_sha256": "800e753e80ed9828dad0e29ae44715e8774103b1525776b7b61230493fc27e7a"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS demux_1x8 cases=16\nsim/tb_demux_1x8.sv:19: $finish called at 160000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03"
+        }
+      ]
+    },
+    {
+      "project": "vivado_2026_1/08_encoder8to3",
+      "top": "encoder8x3",
+      "file": "src/encoder8x3.v",
+      "edit": "입력 00000001에 대응하는 출력 상수를 7에서 6으로 바꾼다.",
+      "expected": "이 입력의 정상 출력은 111이다. 변경 후에는 110이다.",
+      "inputs_sha256": {
+        "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+        "sim/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82",
+        "simulation.json": "a2502dbf7e27746e2f19afa29872d6c242c3dbca59be82a2780af26ed4a7128a"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS encoder8x3 cases=256\nsim/tb_encoder8x3.sv:20: $finish called at 2560000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_encoder8x3.sv:15: FAIL encoder8x3 vector=1 expected=7 actual=6\n       Time: 20000  Scope: tb_encoder8x3\n",
+          "stderr": "",
+          "rtl_sha256": "f5df94737495591720ea6405d0817c336d66b503c2e3d50543d4578652188b4f"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS encoder8x3 cases=256\nsim/tb_encoder8x3.sv:20: $finish called at 2560000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0"
+        }
+      ]
+    },
+    {
+      "project": "vivado_2026_1/09_decoder3to8",
+      "top": "decoder3x8",
+      "file": "src/decoder3x8.v",
+      "edit": "왼쪽 시프트를 오른쪽 시프트로 바꾼다.",
+      "expected": "abc=001에서 정상 출력은 00000010이다. 변경 후에는 00000000이다.",
+      "inputs_sha256": {
+        "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+        "sim/tb_decoder3x8.sv": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa",
+        "simulation.json": "5a142c22f099427a5b25c6b31cb92e6b21ba9258d11c850968ac589e3ac83595"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS decoder3x8 cases=8\nsim/tb_decoder3x8.sv:19: $finish called at 80000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_decoder3x8.sv:14: FAIL decoder3x8 vector=1 expected=02 actual=00\n       Time: 20000  Scope: tb_decoder3x8\n",
+          "stderr": "",
+          "rtl_sha256": "f2ad1579d6cd6e055df7ed8d44b6c7c241af4f901baaaa257dde96b1212e60ea"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS decoder3x8 cases=8\nsim/tb_decoder3x8.sv:19: $finish called at 80000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5"
+        }
+      ]
+    },
+    {
+      "project": "vivado_2026_1/10_seven_segment",
+      "top": "seg_decoder",
+      "file": "src/seg_decoder.v",
+      "edit": "숫자 0의 패턴을 1의 패턴으로 바꾼다.",
+      "expected": "bcd=0의 정상 출력은 FC다. 변경 후에는 60이다.",
+      "inputs_sha256": {
+        "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+        "sim/tb_seg_decoder.sv": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1",
+        "simulation.json": "57ad2b9c34027f47e1a642be955fd1f8aa7a7e29b26cd9140eaacf4ee9ef2e5a"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS seg_decoder cases=16\nsim/tb_seg_decoder.sv:34: $finish called at 160000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_seg_decoder.sv:29: FAIL seg_decoder vector=0 expected=fc actual=60\n       Time: 10000  Scope: tb_seg_decoder\n",
+          "stderr": "",
+          "rtl_sha256": "41c2b0fec7e1fa40497aba88bf2d0c26026979492e4236afbb8b891efa9e933d"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS seg_decoder cases=16\nsim/tb_seg_decoder.sv:34: $finish called at 160000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7"
+        }
+      ]
+    },
+    {
+      "project": "vivado_2026_1/11_integrated",
+      "top": "lab1_integrated",
+      "file": "src/lab1_integrated.v",
+      "edit": "버튼 처리의 모드 순환 비교값을 9에서 8로 바꾼다.",
+      "expected": "내부 mode는 0부터 센다. 화면 MODE 09 다음에 MODE 10 대신 MODE 01로 돌아가면 실패다.",
+      "inputs_sha256": {
+        "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+        "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+        "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+        "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+        "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+        "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+        "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+        "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+        "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+        "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+        "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+        "src/button_onepulse.v": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3",
+        "src/lcd_modes.v": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f",
+        "src/lab1_integrated.v": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69",
+        "sim/tb_lab1_integrated.sv": "ab1353be5e972cd9c571f7cddb588cd4e33c3e46ea26c8ec93f34a5ddd1dee04",
+        "simulation.json": "f998785c84c1cd302815a0626e07977052c08869c7a9e772ca11ee86908d032a"
+      },
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS lab1_integrated cases=2560\nsim/tb_lab1_integrated.sv:96: $finish called at 72430000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69"
+        },
+        {
+          "phase": "modified",
+          "exit_code": 1,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nFATAL: sim/tb_lab1_integrated.sv:18: Mode expected 9 actual 0\n       Time: 63060000  Scope: tb_lab1_integrated.assert_mode\n",
+          "stderr": "",
+          "rtl_sha256": "02e9ccc9ba721f4c74442ad9ec4753bd9de2bb0f4e11174840d258d3f107592a"
+        },
+        {
+          "phase": "restored",
+          "exit_code": 0,
+          "stdout": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS lab1_integrated cases=2560\nsim/tb_lab1_integrated.sv:96: $finish called at 72430000 (1ps)\n",
+          "stderr": "",
+          "rtl_sha256": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69"
+        }
+      ]
+    }
+  ],
+  "reuse": {
+    "legacy": "All ten legacy preambles call the corresponding modern project prelude in lab1_series.py; each uses the same exercise and self-check bench.",
+    "cli_integrated": "All 14 RTL files and the testbench were byte-compared with vivado_2026_1/11_integrated and matched."
+  }
+}

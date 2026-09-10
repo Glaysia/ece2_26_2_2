@@ -1,113 +1,113 @@
 [
   {
     "file": "04.LAB1_01_LOGIC_GATES_VIVADO",
-    "pages": 65,
+    "pages": 68,
     "project": "vivado_2026_1/01_logic_gates",
     "hand_authored": true
   },
   {
     "file": "04.LAB1_11_LOGIC_GATES_LEGACY",
-    "pages": 101,
+    "pages": 102,
     "project": "legacy/01_logic_gates"
   },
   {
     "file": "04.LAB1_02_FULL_ADDER_VIVADO",
-    "pages": 47,
+    "pages": 48,
     "project": "vivado_2026_1/02_full_adder"
   },
   {
     "file": "04.LAB1_12_FULL_ADDER_LEGACY",
-    "pages": 72,
+    "pages": 73,
     "project": "legacy/02_full_adder"
   },
   {
     "file": "04.LAB1_03_ADDER4_VIVADO",
-    "pages": 49,
+    "pages": 50,
     "project": "vivado_2026_1/03_adder4"
   },
   {
     "file": "04.LAB1_13_ADDER4_LEGACY",
-    "pages": 69,
+    "pages": 70,
     "project": "legacy/03_adder4"
   },
   {
     "file": "04.LAB1_04_SUBTRACTOR4_VIVADO",
-    "pages": 49,
+    "pages": 50,
     "project": "vivado_2026_1/04_subtractor4"
   },
   {
     "file": "04.LAB1_14_SUBTRACTOR4_LEGACY",
-    "pages": 70,
+    "pages": 71,
     "project": "legacy/04_subtractor4"
   },
   {
     "file": "04.LAB1_05_COMPARATOR4_VIVADO",
-    "pages": 48,
+    "pages": 49,
     "project": "vivado_2026_1/05_comparator4"
   },
   {
     "file": "04.LAB1_15_COMPARATOR4_LEGACY",
-    "pages": 70,
+    "pages": 71,
     "project": "legacy/05_comparator4"
   },
   {
     "file": "04.LAB1_06_MUX4TO1_VIVADO",
-    "pages": 47,
+    "pages": 48,
     "project": "vivado_2026_1/06_mux4to1"
   },
   {
     "file": "04.LAB1_16_MUX4TO1_LEGACY",
-    "pages": 69,
+    "pages": 70,
     "project": "legacy/06_mux4to1"
   },
   {
     "file": "04.LAB1_07_DEMUX1TO8_VIVADO",
-    "pages": 48,
+    "pages": 49,
     "project": "vivado_2026_1/07_demux1to8"
   },
   {
     "file": "04.LAB1_17_DEMUX1TO8_LEGACY",
-    "pages": 70,
+    "pages": 71,
     "project": "legacy/07_demux1to8"
   },
   {
     "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
-    "pages": 48,
+    "pages": 49,
     "project": "vivado_2026_1/08_encoder8to3"
   },
   {
     "file": "04.LAB1_18_ENCODER8TO3_LEGACY",
-    "pages": 70,
+    "pages": 71,
     "project": "legacy/08_encoder8to3"
   },
   {
     "file": "04.LAB1_09_DECODER3TO8_VIVADO",
-    "pages": 48,
+    "pages": 49,
     "project": "vivado_2026_1/09_decoder3to8"
   },
   {
     "file": "04.LAB1_19_DECODER3TO8_LEGACY",
-    "pages": 70,
+    "pages": 71,
     "project": "legacy/09_decoder3to8"
   },
   {
     "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
-    "pages": 51,
+    "pages": 52,
     "project": "vivado_2026_1/10_seven_segment"
   },
   {
     "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY",
-    "pages": 74,
+    "pages": 75,
     "project": "legacy/10_seven_segment"
   },
   {
     "file": "04.LAB1_10A_INTEGRATED_VIVADO",
-    "pages": 97,
+    "pages": 98,
     "project": "vivado_2026_1/11_integrated"
   },
   {
     "file": "04.LAB1_10B_INTEGRATED_CLI",
-    "pages": 91,
+    "pages": 92,
     "project": "opensource_cli/integrated"
   }
 ]

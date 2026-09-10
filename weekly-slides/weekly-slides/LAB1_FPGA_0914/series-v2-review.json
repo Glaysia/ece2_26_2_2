@@ -1,7 +1,7 @@
 {
   "date": "2026-09-10",
   "pdf_count": 25,
-  "page_count": 1498,
+  "page_count": 1522,
   "files": [
     {
       "file": "04.LAB1_00_CONTENTS.pdf",
@@ -11,134 +11,134 @@
     },
     {
       "file": "04.LAB1_01_LOGIC_GATES_VIVADO.pdf",
-      "pages": 65,
-      "sha256": "4c79a0a4bcb9d4d45a6de65c52f820ccab7510ff93c9316d4efa11d2a69becea",
+      "pages": 68,
+      "sha256": "ff7b4113f02b2c7d6e6fd51cee9b0091c51fecff016289a70630e58ecc2665d9",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_02_FULL_ADDER_VIVADO.pdf",
-      "pages": 47,
-      "sha256": "eb5752853327256d235b04984f656888cad42f7d654dca4a5fe0716df08a611d",
+      "pages": 48,
+      "sha256": "1cf92d79fca854d3a3e83bb501db2032c86688d13c9f118c50ed0e1d26bbab8b",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_03_ADDER4_VIVADO.pdf",
-      "pages": 49,
-      "sha256": "5bc30744c6fcd35ee2472fef0984b6658eba543eaaec9ed29b67b363b0a85a21",
+      "pages": 50,
+      "sha256": "c6016b69faac98b3c38dc3a889e8d129c1fbeb4d1d9e00ad0c92a820ecdbb0f5",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_04_SUBTRACTOR4_VIVADO.pdf",
-      "pages": 49,
-      "sha256": "71ff2a802754a1f39b09b1e36b18b1669db66e6bda8157b028351551f91428f8",
+      "pages": 50,
+      "sha256": "f5da55fd4a30fb482242908e7974a140c9f537d954dccdfaf433a86a066bcb8c",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_05_COMPARATOR4_VIVADO.pdf",
-      "pages": 48,
-      "sha256": "488048fad1af988b1a7dea0de6b038798adc21dbf7d1bee8d316726a661e2351",
+      "pages": 49,
+      "sha256": "9cbc843ce371e6b8069bf1d65db2347ea70ce75f1fbdf8c4024ea78277786edf",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_06_MUX4TO1_VIVADO.pdf",
-      "pages": 47,
-      "sha256": "829a26145b8a6540c8f376c19c0db9d9b59dac077827028e8026f9d2abb4d280",
+      "pages": 48,
+      "sha256": "d98e9bb0fa418f44d62a1eaae4414bb309de38dcb76948f4ec70c24163ca1c51",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_07_DEMUX1TO8_VIVADO.pdf",
-      "pages": 48,
-      "sha256": "5e8b5ff865d8b24d2c211ca79059f39772f90bedda1f9c7dac8a365f3777ffe0",
+      "pages": 49,
+      "sha256": "e785062fe43f7d58f1c52e4c4429671397fd9ff50883f6a9980b3ea9407b8692",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_08_ENCODER8TO3_VIVADO.pdf",
-      "pages": 48,
-      "sha256": "0a020e48eac4a8da5db4879bb8cda2613082d5cc21b8e11160f040d29dc93db8",
+      "pages": 49,
+      "sha256": "ae704d6adb55597f9bc7173f80ddbdcaf94812b7960b649308faac6f9184d5ff",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_09_DECODER3TO8_VIVADO.pdf",
-      "pages": 48,
-      "sha256": "2d54e39c89bff5856925031c0579d6c8de22034355b638348197ea6d82a3dfee",
+      "pages": 49,
+      "sha256": "977e2977b0252a89f1ada9a78d79cec989c23395906a5d36e60750e8ecc2e749",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO.pdf",
-      "pages": 51,
-      "sha256": "c5f710348b28d4f9cdd3b714663ddd97ddf9e283153c92b4638cfede9899613c",
+      "pages": 52,
+      "sha256": "61e9794c6b070cf7193a79bfb931dcf7401129a11e8e107770d30d24b7d73409",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_10A_INTEGRATED_VIVADO.pdf",
-      "pages": 97,
-      "sha256": "a289a51a11c7e3642eea27c044efd3f1c8e5c6087340c0d2fb5137b0e6ea3138",
+      "pages": 98,
+      "sha256": "41daedecce11bd3cf30b3db13b07a5da18634b143ab3ab35c330f70e256bc8a5",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_10B_INTEGRATED_CLI.pdf",
-      "pages": 91,
-      "sha256": "0868ab8f972263fa17a2d9e54da9ea2f86be78b7f1003e66e46f34cc813f3a91",
+      "pages": 92,
+      "sha256": "17653413baa981b20bc029402deffc0f3aa3ccbfb53ef36c0cea3a3f852a1437",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_11_LOGIC_GATES_LEGACY.pdf",
-      "pages": 101,
-      "sha256": "7c475c629840a99f92a5a6bc5ae8fb35dde299947764052dc0133af0b594a19d",
+      "pages": 102,
+      "sha256": "97a3ecf58f8dee812717d3915f30658b4d6a17eb77303e680371eb7e9ec96572",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_12_FULL_ADDER_LEGACY.pdf",
-      "pages": 72,
-      "sha256": "f17a03c1e7a01e931b4ae575a0e95895162629f065e78541ae6d17f4ce601a0c",
+      "pages": 73,
+      "sha256": "5ac92afd08296734463331182bb1405e63c6b09f13d2a918d33a1b5772006939",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_13_ADDER4_LEGACY.pdf",
-      "pages": 69,
-      "sha256": "25701a714fe407f6b8ab84b83830ec1c62d3e2839abd699672bcb76825bb1c81",
+      "pages": 70,
+      "sha256": "8ef11f317937090bdb3552117b20436069b80d28f6415f437d0a6c17fc6e7c01",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_14_SUBTRACTOR4_LEGACY.pdf",
-      "pages": 70,
-      "sha256": "021bf933c2bce6bb63acf04f7998fe69f8d7c17aa73970bd5d2ca45cefd62845",
+      "pages": 71,
+      "sha256": "2c78fdbdf9ac17a140dc4b87e52c073ea584d9351e967887fb4d1517d8fafa56",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_15_COMPARATOR4_LEGACY.pdf",
-      "pages": 70,
-      "sha256": "1bf9ad2d00d6521f27ac84f35b656f644d0cb5a23cb592e01c1ac48c9a840e0d",
+      "pages": 71,
+      "sha256": "dfb4a3b1cfaedcec8c973651b6ea01b0c777e62e9896739a4c2b851ac7a8adda",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_16_MUX4TO1_LEGACY.pdf",
-      "pages": 69,
-      "sha256": "a1d1b744ef2270843dae8476318fe010b72dba702e04f2519b53292761804b38",
+      "pages": 70,
+      "sha256": "2e894d1d2bd9f0d96da4aca334c0d293df001a0a139e9a7a418fc7bdead4e9f2",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_17_DEMUX1TO8_LEGACY.pdf",
-      "pages": 70,
-      "sha256": "f5b6eb78fb26a41a36fefb988565a75e59fa359782db096ab53b244a32212dd8",
+      "pages": 71,
+      "sha256": "653de4e0888b8fc132ffe825692e0412f1f90256f9bbed4433b829f8043fdfd6",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_18_ENCODER8TO3_LEGACY.pdf",
-      "pages": 70,
-      "sha256": "3c580552a6cade7347df29bac410cd6dcc156e4cf5d10c434ca688264cbe0004",
+      "pages": 71,
+      "sha256": "7a7ff6744ecb4344eda4e7ba38d9eeb4ae52924dd61277f5282091006bb77192",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_19_DECODER3TO8_LEGACY.pdf",
-      "pages": 70,
-      "sha256": "1473704fa9c5fa057c2dc134748956e6167eedb55bc67d44eb579b9a63ddae6a",
+      "pages": 71,
+      "sha256": "16117b9954f37f99ec9af271f64939860de2807827bed78dce9b6548e60d1e93",
       "build": "PASS"
     },
     {
       "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY.pdf",
-      "pages": 74,
-      "sha256": "dad250044759c83c0b5bf7e784453e736196e29a01648614c421390f5b02e75c",
+      "pages": 75,
+      "sha256": "57aca43c72c4cc5a9140df337a01c7b3c5413e2b8afb4ab5a278978dab80ea7c",
       "build": "PASS"
     },
     {
@@ -165,10 +165,22 @@
       "Vivado installation dense troubleshooting page overlapped footer.",
       "Obsolete Vivado task configuration reference replaced with user PATH."
     ],
-    "cli_success_update": "First 65 pages pixel-identical to reviewed version at scale 1.2; all final pages 66-91 rendered and visually inspected. Command pages have no clipping or overlap. CLI build has zero overfull and missing-glyph diagnostics."
+    "cli_success_update": "First 65 pages pixel-identical to reviewed version at scale 1.2; all final pages 66-91 rendered and visually inspected. Command pages have no clipping or overlap. CLI build has zero overfull and missing-glyph diagnostics.",
+    "student_edit_update": {
+      "evidence": "student-edit-page-review.json",
+      "new_pages": 24,
+      "unique_bodies": 13,
+      "unchanged_bodies": 1423,
+      "render_scale_for_comparison": 0.8,
+      "render_scale_for_visual_review": 2,
+      "defects_fixed": [
+        "Two-line exercise headings pushed lower text onto the footer; use one-line headings.",
+        "Syntax screenshots cropped to the actual diagnostic and restored code."
+      ]
+    }
   },
   "link_checks": {
-    "internal": 1603,
+    "internal": 1632,
     "relative_pdf": 98,
     "all_pages_4_3": true,
     "contents_buttons": true

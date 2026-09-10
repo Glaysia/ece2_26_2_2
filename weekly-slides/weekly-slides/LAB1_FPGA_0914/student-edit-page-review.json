@@ -1,0 +1,229 @@
+{
+  "files": [
+    {
+      "file": "04.LAB1_01_LOGIC_GATES_VIVADO.pdf",
+      "pages": 68,
+      "changed_body_pages": [
+        20,
+        21,
+        24
+      ],
+      "exercise_pages": [
+        24
+      ]
+    },
+    {
+      "file": "04.LAB1_11_LOGIC_GATES_LEGACY.pdf",
+      "pages": 102,
+      "changed_body_pages": [
+        26
+      ],
+      "exercise_pages": [
+        26
+      ]
+    },
+    {
+      "file": "04.LAB1_02_FULL_ADDER_VIVADO.pdf",
+      "pages": 48,
+      "changed_body_pages": [
+        26
+      ],
+      "exercise_pages": [
+        26
+      ]
+    },
+    {
+      "file": "04.LAB1_12_FULL_ADDER_LEGACY.pdf",
+      "pages": 73,
+      "changed_body_pages": [
+        27
+      ],
+      "exercise_pages": [
+        27
+      ]
+    },
+    {
+      "file": "04.LAB1_03_ADDER4_VIVADO.pdf",
+      "pages": 50,
+      "changed_body_pages": [
+        26
+      ],
+      "exercise_pages": [
+        26
+      ]
+    },
+    {
+      "file": "04.LAB1_13_ADDER4_LEGACY.pdf",
+      "pages": 70,
+      "changed_body_pages": [
+        27
+      ],
+      "exercise_pages": [
+        27
+      ]
+    },
+    {
+      "file": "04.LAB1_04_SUBTRACTOR4_VIVADO.pdf",
+      "pages": 50,
+      "changed_body_pages": [
+        26
+      ],
+      "exercise_pages": [
+        26
+      ]
+    },
+    {
+      "file": "04.LAB1_14_SUBTRACTOR4_LEGACY.pdf",
+      "pages": 71,
+      "changed_body_pages": [
+        27
+      ],
+      "exercise_pages": [
+        27
+      ]
+    },
+    {
+      "file": "04.LAB1_05_COMPARATOR4_VIVADO.pdf",
+      "pages": 49,
+      "changed_body_pages": [
+        26
+      ],
+      "exercise_pages": [
+        26
+      ]
+    },
+    {
+      "file": "04.LAB1_15_COMPARATOR4_LEGACY.pdf",
+      "pages": 71,
+      "changed_body_pages": [
+        27
+      ],
+      "exercise_pages": [
+        27
+      ]
+    },
+    {
+      "file": "04.LAB1_06_MUX4TO1_VIVADO.pdf",
+      "pages": 48,
+      "changed_body_pages": [
+        25
+      ],
+      "exercise_pages": [
+        25
+      ]
+    },
+    {
+      "file": "04.LAB1_16_MUX4TO1_LEGACY.pdf",
+      "pages": 70,
+      "changed_body_pages": [
+        26
+      ],
+      "exercise_pages": [
+        26
+      ]
+    },
+    {
+      "file": "04.LAB1_07_DEMUX1TO8_VIVADO.pdf",
+      "pages": 49,
+      "changed_body_pages": [
+        26
+      ],
+      "exercise_pages": [
+        26
+      ]
+    },
+    {
+      "file": "04.LAB1_17_DEMUX1TO8_LEGACY.pdf",
+      "pages": 71,
+      "changed_body_pages": [
+        27
+      ],
+      "exercise_pages": [
+        27
+      ]
+    },
+    {
+      "file": "04.LAB1_08_ENCODER8TO3_VIVADO.pdf",
+      "pages": 49,
+      "changed_body_pages": [
+        26
+      ],
+      "exercise_pages": [
+        26
+      ]
+    },
+    {
+      "file": "04.LAB1_18_ENCODER8TO3_LEGACY.pdf",
+      "pages": 71,
+      "changed_body_pages": [
+        27
+      ],
+      "exercise_pages": [
+        27
+      ]
+    },
+    {
+      "file": "04.LAB1_09_DECODER3TO8_VIVADO.pdf",
+      "pages": 49,
+      "changed_body_pages": [
+        26
+      ],
+      "exercise_pages": [
+        26
+      ]
+    },
+    {
+      "file": "04.LAB1_19_DECODER3TO8_LEGACY.pdf",
+      "pages": 71,
+      "changed_body_pages": [
+        27
+      ],
+      "exercise_pages": [
+        27
+      ]
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO.pdf",
+      "pages": 52,
+      "changed_body_pages": [
+        29
+      ],
+      "exercise_pages": [
+        29
+      ]
+    },
+    {
+      "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY.pdf",
+      "pages": 75,
+      "changed_body_pages": [
+        30
+      ],
+      "exercise_pages": [
+        30
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO.pdf",
+      "pages": 98,
+      "changed_body_pages": [
+        60
+      ],
+      "exercise_pages": [
+        60
+      ]
+    },
+    {
+      "file": "04.LAB1_10B_INTEGRATED_CLI.pdf",
+      "pages": 92,
+      "changed_body_pages": [
+        60
+      ],
+      "exercise_pages": [
+        60
+      ]
+    }
+  ],
+  "unique_changed_bodies": 13,
+  "status": "VISUALLY_REVIEWED",
+  "method": "All 22 old/new manuals rendered at scale 0.8 with footer excluded for comparison. Only 24 added page occurrences differ. All 13 unique new page bodies rendered at scale 2 and visually inspected on four sheets; no clipping or footer overlap after shortening titles. Existing 1,423 page bodies match the published baseline."
+}

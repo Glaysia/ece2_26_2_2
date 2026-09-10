@@ -2,6 +2,7 @@
 from pathlib import Path
 import json, re, bisect
 from lab1_code_panels import PANELS
+from lab1_mutations import EXERCISES
 
 ROOT = Path(__file__).resolve().parents[2]
 LAB = ROOT / 'example/fpga_projects_hdl/LAB1'
@@ -35,6 +36,19 @@ def student_setup(d,p):
     for start in range(0,len(names),6):
         d.frame('작성할 RTL 파일 목록'+(f' ({start//6+1})' if len(names)>6 else ''),table(['폴더','파일명'],[('src',n) for n in names[start:start+6]])+para('각 파일을 New File로 만들고 코드 이미지의 전체 내용을 작성한다. 파일마다 module 선언과 endmodule을 확인한다.'))
     d.frame('simulation.json을 내 파일에 맞추기',para('Explorer에서 simulation.json을 두 번 눌러 연다.','sources 배열: 앞의 모든 RTL 파일명 앞에 src/를 붙여 등록한다.','한 파일 예: "sources": ["src/'+names[0]+'"]','testbench: sim/'+Path(p['testbench']).name,'simulation_top: '+p['simulation_top'],'sources의 각 경로와 testbench·simulation_top 값은 큰따옴표로 감싼다. 여러 경로는 쉼표로 구분한다.','파일명·확장자·괄호·쉼표를 확인하고 Save All.'))
+
+
+def modification_exercise(d,p):
+    filename,_,_,edit,expected=EXERCISES[p['top']]
+    title='코드 수정 실험 · 실패와 복구'
+    d.frame(title,items([
+        '정상 PASS 로그를 보관한다. Explorer → src → '+filename+'을 연다.',
+        edit+' 테스트벤치의 기대값은 그대로 둔다.',
+        'File → Save All → Terminal → Run Task... → 02 Simulate.',
+        expected,
+        '이번 실행의 실패 로그에서 입력·기대값·실제값을 읽는다. 실행 폴더를 기록한다.',
+        '바꾼 부분을 원래대로 복구하고 Save All → 02 Simulate. 전체 PASS와 새 파형을 확인한다.'
+    ])+para('사전 레포트에 변경 이유·실패 원인·복구 결과를 비교한다. 복구 PASS 뒤에 구현으로 진행한다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/docs/student-modification-validation.json','제작 검증: 정상 → 실패 검출 → 복구'))
 
 def student_constraints(d,p):
     d.frame('constraints에 XDC 직접 작성',items(['constraints를 펼치고 pins.xdc 우클릭 → Rename.','파일명: '+Path(p['constraints']).name,'핀 표와 코드 이미지를 보며 PACKAGE_PIN·IOSTANDARD·get_ports를 입력한다.','get_ports의 이름과 비트 번호를 자신이 작성한 RTL의 포트와 대조한다.','File → Save All. Vivado 또는 CLI 구현에는 이 파일을 직접 가져간다.'])+para('XDC는 Icarus 기능 시뮬레이션에서 사용하지 않는다. 파형 통과만으로 핀 배치까지 검증됐다고 판단하지 않는다.'))
@@ -195,6 +209,7 @@ def prelude(d,c,p):
         rows=vcd_values(wave,p['simulation_top'],c['signals'],[n*10+5 for n in ns])
         d.frame('실제 VCD의 구간 중간값',table(['시간(ns)']+c['signals'],rows)+para('이 표는 실행된 VCD에서 읽은 값이다. 다중 비트는 이진수다.','표의 시간으로 파형 커서를 옮겨 직접 대조하고, 추가 경계 조건도 확인한다.'))
     student_constraints(d,p)
+    modification_exercise(d,p)
     d.frame('실험 전 레포트',items(['목적·포트·비트 폭·예상표와 동작 원리를 설명한다.','소스와 TB 링크, 코드 커밋, 도구 버전을 남긴다.','입력 조합·기대값·자동 비교·종료 조건을 설명한다.','자신의 PASS 로그와 파형 원본·캡처를 첨부한다.','시간 구간별 값을 해석하고 예상값과 비교한다.','오류·수정·재실행, 보드에서 확인할 입력과 출력을 적는다.'])+para('교재 캡처를 자신의 실행 결과로 제출하지 않는다.'))
 
 def pins(d,p):
@@ -274,6 +289,7 @@ def integrated_prelude(d,p):
     d.frame('통합 테스트의 검사 범위',para('10개 모드 × DIP 256개 = 2,560개 출력 비교.','reset → MODE 01, 짧은 바운스 무시, 길게 눌러도 한 번만 전환, 10→01 순환을 검사한다.','LCD 초기 명령과 외부 버스에서 완성된 두 줄의 번호·이름을 비교한다.','TB는 10ns 클록, 디바운스 4클록, 전원 대기 5클록으로 시간을 줄인다. 실제 합성은 1kHz 보드 설정이다.','Icarus 검사 종료: 72430ns. 실제 보드의 전압·LCD 연결은 별도로 확인한다.'))
     d.frame('VaporView에서 통합 파형 읽기',items(['wave.vcd가 텍스트면 탭 우클릭 → Reopen Editor With... → VaporView.','Netlist에서 tb_lab1_integrated를 펼친다.','clk, rst, mode_button, sw, led, seg_data를 추가한다.','dut 안의 mode와 lcd_e, lcd_rs, lcd_rw, lcd_data를 추가한다.','Zoom to Fit 뒤 모드가 바뀌는 구간을 확대한다.','버튼 입력부터 모드 변경까지의 지연과 LCD 한 화면 갱신을 구분한다.']))
     student_constraints(d,p)
+    modification_exercise(d,p)
     d.frame('실험 전 레포트에 넣을 것',items(['모드별 예상 입력·출력과 비트 순서를 표로 작성한다.','10개 회로·버튼·LCD 파일의 역할을 설명한다.','PASS 로그, VCD, 모드 전환 및 LCD 파형 캡처를 연결한다.','TB에서 줄인 시간과 실제 1kHz 설정을 구분한다.','실험에서 확인할 버튼·LCD·DIP·LED 장면을 계획한다.'])+link(COURSE+'example/fpga_projects_hdl/LAB1/docs/reports.md','레포트 양식과 예시'))
     d.frame('통합 구조와 입력 배치',para('lab1_integrated → 10개 조합회로 + button_onepulse + lcd_modes.','clk=B6(1kHz), KEY1=reset, KEY2=mode_button.','DIP1–8은 sw[7:0], LED1–8은 led[7:0]에 대응한다.','개별 실습의 KEY 입력은 통합본에서 DIP로 옮겨 모드 버튼과 충돌하지 않게 한다.','단일 7세그먼트는 모드 10에서만 동작한다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/docs/integrated.md','통합 동작 명세와 핀표'),label+'-modes')
     mode_rows=[('01','a=DIP1, b=DIP2','LED1=AND, 2=OR, 3=XOR'),('02','a,b,cin=DIP1,2,3','LED1=carry, 2=sum'),('03','a=DIP1–4, b=DIP5–8','LED1=carry, 2–5=sum'),('04','a=DIP1–4, b=DIP5–8','LED1=borrow, 2–5=diff'),('05','a=DIP1–4, b=DIP5–8','LED1=큼, 2=같음, 3=작음'),('06','i=DIP1–4, s=DIP7–8','LED1=i[3-s]'),('07','i=DIP1, s=DIP6–8','s=0→LED1, s=7→LED8'),('08','DIP1–8 중 하나만 1','LED1–3: DIP1→0, DIP8→7'),('09','abc=DIP6,7,8','0→LED8, 7→LED1'),('10','hex=DIP5–8','a–dp 패턴, 1이면 점등')]
@@ -318,7 +334,7 @@ def overview(inventory):
     d.write('04.LAB1_00_CONTENTS')
 
 def main():
-    inventory=[{'file':'04.LAB1_01_LOGIC_GATES_VIVADO','pages':65,'project':'vivado_2026_1/01_logic_gates','hand_authored':True}]
+    inventory=[{'file':'04.LAB1_01_LOGIC_GATES_VIVADO','pages':68,'project':'vivado_2026_1/01_logic_gates','hand_authored':True}]
     for c in CIRCUITS:
         for ed in ['vivado_2026_1','legacy']:
             if c['n']==1 and ed=='vivado_2026_1':continue

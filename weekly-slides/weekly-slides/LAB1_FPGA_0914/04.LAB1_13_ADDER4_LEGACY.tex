@@ -227,6 +227,19 @@ constraints/adder\_4bit.xdc · 실제 VS Code 화면을 보며 직접 작성한�
 constraints/adder\_4bit.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/adder_4bit-xdc-15.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
 \end{frame}
 
+\begin{frame}{코드 수정 실험 · 실패와 복구}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 정상 PASS 로그를 보관한다. Explorer → src → adder\_4bit.v을 연다.
+\item 덧셈 연산자를 뺄셈으로 바꾼다. 테스트벤치의 기대값은 그대로 둔다.
+\item File → Save All → Terminal → Run Task... → 02 Simulate.
+\item a=0, b=1의 정상 결과는 carry=0, sum=1이다. 변경 후 carry=1, sum=15다.
+\item 이번 실행의 실패 로그에서 입력·기대값·실제값을 읽는다. 실행 폴더를 기록한다.
+\item 바꾼 부분을 원래대로 복구하고 Save All → 02 Simulate. 전체 PASS와 새 파형을 확인한다.
+\end{enumerate}
+사전 레포트에 변경 이유·실패 원인·복구 결과를 비교한다. 복구 PASS 뒤에 구현으로 진행한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/student-modification-validation.json}{제작 검증: 정상 → 실패 검출 → 복구}
+\end{frame}
+
 \begin{frame}{실험 전 레포트}\relax
 \small
 \begin{enumerate}\setlength{\itemsep}{0.22cm}
