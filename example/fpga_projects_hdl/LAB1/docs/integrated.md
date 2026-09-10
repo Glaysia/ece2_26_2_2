@@ -57,4 +57,4 @@ reset 직후 MODE 01, KEY2를 눌러 다음 모드로 바뀌는 장면, 길게 �
 
 2026-09-10에 배포된 `lab1_integrated.xpr`을 Vivado 2026.1 GUI로 열어 12개 직속 인스턴스와 기존 `write_bitstream Complete!` 상태를 확인했다. RTL 파일 수는 반가산기와 통합 top을 포함해 14개다. 이 열기 작업으로 비트스트림을 새로 생성했다고 표시하지 않는다.
 
-`Run Simulation → Run Behavioral Simulation`을 직접 실행한 [로그](../vivado_2026_1/11_integrated/evidence/gui-simulation.log)는 2,560개 PASS, 종료 72,430ns다. [입력 해시·GUI 수행 기록](../vivado_2026_1/11_integrated/evidence/gui-simulation.json)에 기존 사전 실행과 대조한 범위를 기록했다. GUI를 닫기 전 복사한 VCD는 72,425ns까지 모든 선언·시간·값이 사전 VCD의 접두부와 일치하며 마지막 5ns의 파일 기록은 아직 확인하지 못했다. Windows 보안 창을 처리하고 시뮬레이터를 닫은 뒤 VCD를 다시 보관·비교해야 한다.
+`Run Simulation → Run Behavioral Simulation`을 직접 실행한 [로그](../vivado_2026_1/11_integrated/evidence/gui-simulation.log)는 2,560개 PASS, 종료 72,430ns다. [입력 해시·GUI 수행 기록](../vivado_2026_1/11_integrated/evidence/gui-simulation.json)에 기존 사전 실행과 대조한 범위를 기록했다. 화면 접근 복구 후 실제 파형·ASCII LCD 두 줄·PASS 로그를 캡처했다. 시뮬레이터를 GUI에서 정상 종료하고 VCD를 다시 보관했다. 날짜·버전·공백을 제외한 모든 선언·시간·값이 사전 VCD와 마지막 72,430ns까지 완전히 일치했다. 이전에 남아 있던 마지막 5ns 기록 확인도 완료했다.

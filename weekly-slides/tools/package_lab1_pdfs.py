@@ -152,7 +152,7 @@ def main():
             archive.extractall(extracted)
         assert validate(extracted/PACKAGE_ROOT) == stats
     manual_pages=sum(pages for name,pages in stats['pdfs'].items() if name.startswith('04.LAB1_') and name!='04.LAB1_00_CONTENTS.pdf')
-    record={**stats,'archive':ARCHIVE.name,'bytes':ARCHIVE.stat().st_size,'sha256':hashlib.sha256(ARCHIVE.read_bytes()).hexdigest(),'checks':['4:3 manuals','all local contents to page 2','internal and relative PDF destinations','fresh ZIP extraction'],'visual_review':f'22 manuals ({manual_pages} pages); revised manuals fully rendered, unchanged page bodies matched against the prior reviewed PDFs and all distinct changed pages inspected. See code-page-validation.json. Previously reviewed first manual, contents and setup PDFs included unchanged.'}
+    record={**stats,'archive':ARCHIVE.name,'bytes':ARCHIVE.stat().st_size,'sha256':hashlib.sha256(ARCHIVE.read_bytes()).hexdigest(),'checks':['4:3 manuals','all local contents to page 2','internal and relative PDF destinations','fresh ZIP extraction'],'visual_review':f'22 manuals ({manual_pages} pages); revised manuals fully rendered, unchanged page bodies matched against the prior reviewed PDFs and all distinct changed pages inspected. See code-page-validation.json and gui-page-validation.json. Previously reviewed first manual, contents and setup PDFs included unchanged.'}
     (BASE/'pdf-package-validation.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'archive':str(ARCHIVE),'bytes':ARCHIVE.stat().st_size,**stats},ensure_ascii=False))
 

@@ -283,6 +283,19 @@ File → Close Simulation → OK. Flow Navigator → Run Synthesis.\par\vspace{0
 생성 bit: vivado/adder\_4bit.runs/impl\_1/adder\_4bit.bit\par\vspace{0.22cm}제작 실행 결과와 증빙은 프로젝트의 evidence/validation.json과 README 검증표를 확인한다.\par\vspace{0.22cm}DRC 오류를 확인하고 CFGBVS / CONFIG\_VOLTAGE 경고는 실제 보드 구성 전압과 대조한다.\par\vspace{0.22cm}클록 없는 조합회로의 setup/hold NA를 타이밍 검증 완료로 해석하지 않는다.\par\vspace{0.22cm}사용한 커밋·bit 해시·DRC·타이밍 보고서를 결과와 함께 남긴다.\par
 \end{frame}
 
+\begin{frame}{이 회로의 실제 GUI 파형}\relax
+\small
+Untitled 파형 탭 → 오른쪽 위 사각형으로 패널 확대 → Zoom Fit.\par\vspace{0.22cm}신호가 촘촘하면 관심 시간의 파형을 클릭하고 돋보기 +로 확대한다.\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=2.1cm,keepaspectratio]{assets/latest-gui/03-wave-crop.png}\par}\vspace{0.2cm}
+위에서부터 a[3:0], b[3:0], s[3:0], cout 순서다.\par\vspace{0.22cm}310–320ns에서 a=1, b=f이면 s=0, cout=1이다. f는 16진수 15다.\par\vspace{0.22cm}전환 경계 대신 구간 중간에 커서를 놓고 사전 VCD와 대조한다.\par
+\end{frame}
+
+\begin{frame}{이 회로의 GUI 실행·구현 확인}\relax
+\small
+Log 탭 → Simulation에서 PASS·검사 수·종료 시각을 확인한다.\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=1.1cm,keepaspectratio]{assets/latest-gui/03-pass-crop.png}\par}\vspace{0.2cm}
+실제 GUI 실행: 256개 PASS, 종료 2560ns. 정상 종료 후 전체 VCD가 사전 결과와 일치했다.\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=1.3cm,keepaspectratio]{assets/latest-gui/03-build-crop.png}\par}\vspace{0.2cm}
+Design Runs의 impl\_1: write\_bitstream Complete!를 확인한다. 위 구현 화면은 기존 배치 빌드 결과를 GUI에서 연 기록이다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/vivado_2026_1/03_adder4/evidence/gui-simulation.json}{GUI 실행·전체 파형 비교 근거}
+\end{frame}
+
 \begin{frame}[label=modern-03-post]{실제 보드 연결}\relax
 \small
 \par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=3.0cm,keepaspectratio,trim=202.5bp 476.25bp 586.5bp 92.25bp,clip]{assets/modern-01/70-auto-connect.png}\par}\vspace{0.16cm}

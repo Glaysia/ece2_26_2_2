@@ -83,7 +83,35 @@ def integrated_gui(d):
         ('통합 프로젝트 · 구현 결과 읽기','build-runs',['아래 Design Runs에서 impl_1의 write_bitstream Complete!를 확인한다.','이 화면은 제작자가 배치 빌드한 결과를 GUI에서 연 기록이다. Methodology 경고 28개는 별도로 해석한다.']),
     ]:
         d.frame(title,'\\par\\vspace{0.2cm}{\\centering\\includegraphics[width=\\textwidth,height=3.5cm,keepaspectratio]{assets/integrated-gui/'+image+'.png}\\par}\\vspace{0.25cm}\n'+para(*notes))
-    d.frame('통합 프로젝트 · GUI 실행 검증',para('Run Simulation → Run Behavioral Simulation을 직접 실행했다.','GUI의 simulate.log에서도 LAB1_PASS lab1_integrated cases=2560과 종료 시각 72430ns를 확인했다.','GUI VCD는 72425ns까지 사전 결과와 일치한다. GUI가 열린 상태에서 복사해 마지막 5ns의 파일 기록 확인은 남아 있다.','현재 캡처된 계층·구현 완료 화면과 GUI 실행 로그의 검증 범위를 구분한다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/vivado_2026_1/11_integrated/evidence/gui-simulation.json','통합 GUI 실행 기록'))
+    def shot(name,height):
+        return '\\par\\vspace{0.15cm}{\\centering\\includegraphics[width=\\textwidth,height='+height+'cm,keepaspectratio]{assets/integrated-gui/'+name+'.png}\\par}\\vspace{0.2cm}\n'
+    d.frame('통합 파형 · 전체 구간 보기',para('시뮬레이션 뒤 Untitled 1 탭을 누르고 오른쪽 위 사각형으로 파형 패널을 확대한다.','돋보기 +는 확대, −는 축소, 네 방향 화살표는 Zoom Fit이다.')+shot('wave-controls','0.65')+shot('wave-io','2.4')+para('위에서부터 clk·rst·mode_button·sw·led·seg_data다. 전체 종료는 72.43µs이며 버튼 입력 사이에 회로별 256개 벡터를 검사한다.','빠른 TB의 10ns 클록이다. 실물 보드의 1kHz 시간으로 해석하지 않는다.'))
+    d.frame('통합 파형 · LCD 문자로 읽기',para('파형 목록을 아래로 스크롤해 completed_line1과 completed_line2를 찾는다.','첫 신호를 클릭하고 Shift+↓로 둘째 신호까지 선택한다. 우클릭 → Radix → ASCII를 누른다.')+shot('radix-parent','0.55')+shot('ascii-menu','1.6')+para('두 신호는 LCD 출력 버스에서 실제로 받은 바이트를 TB가 조립한 16문자다. 설정은 표시 형식만 바꾼다.'))
+    d.frame('통합 파형 · 모드와 회로명 대조',para('두 줄이 보이는 상태에서 초반 파형을 클릭하고 돋보기 +를 두 번 눌러 확대한다.')+shot('lcd-strings','1.5')+para('위 줄은 completed_line1: MODE 01 → MODE 02 → MODE 03이다.','아래 줄은 completed_line2: AND OR XOR → FULL ADDER → 4 BIT ADDER다.','번호와 회로명이 함께 바뀌는지 확인한다. 초기화·리셋 및 나머지 모드도 TB가 비교하며 외부 LCD의 실측은 별도로 수행한다.'))
+    d.frame('통합 프로젝트 · GUI 실행 검증',para('아래 Log 탭 → Simulation에서 검사 수와 종료 시각을 확인한다.')+shot('pass-log','1.2')+para('Run Simulation → Run Behavioral Simulation의 2,560개 PASS와 종료 72430ns를 실제 GUI에서 확인했다.','시뮬레이션을 정상 종료한 뒤 VCD를 다시 보관했다. 날짜·버전·공백을 제외한 모든 선언·시간·값이 사전 VCD와 마지막 72430ns까지 일치한다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/vivado_2026_1/11_integrated/evidence/gui-simulation.json','통합 GUI 실행·파형 비교 기록'))
+
+def individual_gui(d,c,p):
+    evidence=LAB/p['path']/'evidence/gui-simulation.json'
+    if not evidence.exists():
+        return
+    result=json.loads(evidence.read_text(encoding='utf-8'))
+    assert result['standalone_comparison']['status']=='PASS'
+    prefix=f"{c['n']:02d}"
+    def shot(name,height):
+        return '\\par\\vspace{0.15cm}{\\centering\\includegraphics[width=\\textwidth,height='+str(height)+'cm,keepaspectratio]{assets/latest-gui/'+prefix+'-'+name+'.png}\\par}\\vspace{0.2cm}\n'
+    notes={
+        2:'70–80ns에서 a=b=cin=1이면 s=1, cout=1이다.',
+        3:'310–320ns에서 a=1, b=f이면 s=0, cout=1이다. f는 16진수 15다.',
+        4:'170–180ns에서 a=b=1이면 d=0, bor=0이다. 180–190ns의 1−2에서는 d=f, bor=1이다.',
+        5:'160–170ns의 a=1, b=0과 170–180ns의 a=b=1을 비교한다. o의 세 비트는 대소 관계를 나타낸다.',
+        6:'i=8인 320–360ns에서 s=0일 때만 z=1이다. 8은 이진수 1000이며 이 회로는 i[3−s]를 선택한다.',
+        7:'i=1인 80–160ns에서 s가 0부터 7까지 바뀌며 o가 80부터 01까지 이동한다. 표시값은 16진수다.',
+        8:'i=01과 i=03을 비교한다. 단일 비트 입력과 여러 비트 입력의 인코딩 규칙을 확인한다.',
+        9:'a·b·c의 8개 조합에 따라 o의 한 비트만 1이 된다. 다중 비트 값은 16진수 표시다.',
+        10:'80–90ns의 bcd=8에서 seg_data=fe다. 10–15 입력에 대응하는 A–F의 표시값도 확인한다.',
+    }
+    d.frame('이 회로의 실제 GUI 파형',para('Untitled 파형 탭 → 오른쪽 위 사각형으로 패널 확대 → Zoom Fit.','신호가 촘촘하면 관심 시간의 파형을 클릭하고 돋보기 +로 확대한다.')+shot('wave-crop',2.1)+para('위에서부터 '+', '.join(c['signals'])+' 순서다.',notes[c['n']],'전환 경계 대신 구간 중간에 커서를 놓고 사전 VCD와 대조한다.'))
+    d.frame('이 회로의 GUI 실행·구현 확인',para('Log 탭 → Simulation에서 PASS·검사 수·종료 시각을 확인한다.')+shot('pass-crop',1.1)+para(f"실제 GUI 실행: {result['cases']}개 PASS, 종료 {result['end_ns']}ns. 정상 종료 후 전체 VCD가 사전 결과와 일치했다.")+shot('build-crop',1.3)+para('Design Runs의 impl_1: write_bitstream Complete!를 확인한다. 위 구현 화면은 기존 배치 빌드 결과를 GUI에서 연 기록이다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/'+p['path']+'/evidence/gui-simulation.json','GUI 실행·전체 파형 비교 근거'))
 
 def prelude(d,c,p):
     label=d.label;ed=p['edition'];legacy=ed=='legacy'
@@ -229,7 +257,9 @@ def main():
             name=f"04.LAB1_{number:02d}_{c['pdf']}_{'VIVADO' if modern else 'LEGACY'}"
             d=Deck(('modern-' if modern else 'legacy-')+f"{c['n']:02d}",c['title'])
             prelude(d,c,p)
-            if modern:vivado(d,c,p)
+            if modern:
+                vivado(d,c,p)
+                individual_gui(d,c,p)
             else:legacy_pages(d,c)
             post(d,c,p)
             if c['n']==1:

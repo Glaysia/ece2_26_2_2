@@ -1,0 +1,473 @@
+[
+  {
+    "image": "02-wave-crop.png",
+    "original": "02-wave.png",
+    "crop_box": [
+      720,
+      240,
+      1468,
+      415
+    ],
+    "original_sha256": "5e289931e6e9f64c82f40b9448f9101ee98aeb2063b0ffe04c024883a015c555",
+    "image_sha256": "6fd009e96be882625e97845d420bac5726a9edb4c23f26d1621080f63afbd21e",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/02_full_adder/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": [
+      "a",
+      "b",
+      "cin",
+      "s",
+      "cout"
+    ],
+    "date": "2026-09-10"
+  },
+  {
+    "image": "02-pass-crop.png",
+    "original": "02-pass.png",
+    "crop_box": [
+      315,
+      736,
+      650,
+      797
+    ],
+    "original_sha256": "5d9cd8c6fc157ac29727eee458688e39a869254324f9c6aa03e99baf241d5519",
+    "image_sha256": "9035586bbc5c63437fd13e5202cd7da48b3bc2c83eb060337b375dbde7d78ff7",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/02_full_adder/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "02-build-crop.png",
+    "original": "02-project.png",
+    "crop_box": [
+      269,
+      737,
+      649,
+      831
+    ],
+    "original_sha256": "3fe2f2efce718afed8e218635ff219ef450cc8f869d50086634b11a766c6c2ad",
+    "image_sha256": "da04b8b6df251c056d6ca7077b160e075460a5cb3c08fe4467580456a636a546",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/02_full_adder/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "03-wave-crop.png",
+    "original": "03-wave.png",
+    "crop_box": [
+      720,
+      240,
+      1468,
+      387
+    ],
+    "original_sha256": "4b7f8e4bbd3e5857726b024598a331b36835e642de338279e8c8f9e8dcc95198",
+    "image_sha256": "b0263b49d515b5d9946092fb6ff85d05d53cff5e7fe7d4f1faffc002e7a1c010",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/03_adder4/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": [
+      "a[3:0]",
+      "b[3:0]",
+      "s[3:0]",
+      "cout"
+    ],
+    "date": "2026-09-10"
+  },
+  {
+    "image": "03-pass-crop.png",
+    "original": "03-pass.png",
+    "crop_box": [
+      315,
+      736,
+      650,
+      797
+    ],
+    "original_sha256": "94b5c5c86ff4e2d579adc1e2aa52df41768d6b93aa9e7be9401d56ba056ca8fc",
+    "image_sha256": "aaebdd03549db4b49befd3b117011e0435fcf105fbaa43bef44f444e413ffee8",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/03_adder4/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "03-build-crop.png",
+    "original": "03-project.png",
+    "crop_box": [
+      269,
+      737,
+      649,
+      831
+    ],
+    "original_sha256": "f05d4e9a6231e0c2685d3a27e41a80353b1188005992ab0c575b0783c67c80cb",
+    "image_sha256": "da04b8b6df251c056d6ca7077b160e075460a5cb3c08fe4467580456a636a546",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/03_adder4/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "04-wave-crop.png",
+    "original": "04-wave.png",
+    "crop_box": [
+      720,
+      240,
+      1468,
+      387
+    ],
+    "original_sha256": "0241d21d44f110f431b8bd654b375208eaaebd496ebd953997c146e058f575c3",
+    "image_sha256": "5c1b8ed9f659eb39cecdf6d769f8b326e8bbe682047df165b52e56ee553a3704",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/04_subtractor4/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": [
+      "a[3:0]",
+      "b[3:0]",
+      "d[3:0]",
+      "bor"
+    ],
+    "date": "2026-09-10"
+  },
+  {
+    "image": "04-pass-crop.png",
+    "original": "04-pass.png",
+    "crop_box": [
+      315,
+      736,
+      650,
+      797
+    ],
+    "original_sha256": "9a99040841bf443369b63127cc7e81a04d94e0ecca5344fa6dc96d049df94f67",
+    "image_sha256": "2dd061a47d4cfb0e83e66617d5467b0ad0f6467db019e8a4a686eaf473845687",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/04_subtractor4/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "04-build-crop.png",
+    "original": "04-project.png",
+    "crop_box": [
+      269,
+      737,
+      649,
+      831
+    ],
+    "original_sha256": "93879cde06df095803f08bbf7d4629d3179a78eae3b56f54fe19a6e2641134e9",
+    "image_sha256": "da04b8b6df251c056d6ca7077b160e075460a5cb3c08fe4467580456a636a546",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/04_subtractor4/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "05-wave-crop.png",
+    "original": "05-wave.png",
+    "crop_box": [
+      720,
+      240,
+      1468,
+      359
+    ],
+    "original_sha256": "905cd4bd67f36d38313df359cf6cc159551d117e17dea57c1328819f003b0a03",
+    "image_sha256": "9e694bf50180c5e05c5a9848ff676934f6ea6498593d288245f2dc80d3484e6f",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/05_comparator4/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": [
+      "a[3:0]",
+      "b[3:0]",
+      "o[2:0]"
+    ],
+    "date": "2026-09-10"
+  },
+  {
+    "image": "05-pass-crop.png",
+    "original": "05-pass.png",
+    "crop_box": [
+      315,
+      736,
+      650,
+      797
+    ],
+    "original_sha256": "3c2596ec2a2b773f92ff92b6e68e3df624f3b012823d06c48e33a3cd92886951",
+    "image_sha256": "bb61f36fbea32e8ea314caa51dda88795ed8f46cc0cba0e4cea741ac903b05ae",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/05_comparator4/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "05-build-crop.png",
+    "original": "05-project.png",
+    "crop_box": [
+      269,
+      737,
+      649,
+      831
+    ],
+    "original_sha256": "ee64e6da51ea339843c27bce766c8f4c388a245275cda0e6dedd23dec13aff8c",
+    "image_sha256": "da04b8b6df251c056d6ca7077b160e075460a5cb3c08fe4467580456a636a546",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/05_comparator4/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "06-wave-crop.png",
+    "original": "06-wave.png",
+    "crop_box": [
+      720,
+      240,
+      1468,
+      359
+    ],
+    "original_sha256": "d2587b3d3070b79d9671c00d99dc3f988022cedb5f8a90326d003dfb7e3dcbca",
+    "image_sha256": "16e7ee4f21d90701834b371f5c1e2d32a4e22f893cd58421a0a91c7d307c8ee4",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/06_mux4to1/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": [
+      "i[3:0]",
+      "s[1:0]",
+      "z"
+    ],
+    "date": "2026-09-10"
+  },
+  {
+    "image": "06-pass-crop.png",
+    "original": "06-pass.png",
+    "crop_box": [
+      315,
+      736,
+      650,
+      797
+    ],
+    "original_sha256": "1be0feb393bfa2cbbfc0c31c228dd09ac8b84d77df88738b28d106730c05591a",
+    "image_sha256": "52c784ee24990b3e314355459c532c2306be60165286a3cb8a020fac43582a33",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/06_mux4to1/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "06-build-crop.png",
+    "original": "06-project.png",
+    "crop_box": [
+      269,
+      737,
+      649,
+      831
+    ],
+    "original_sha256": "3ee510b2007853398776ba53605eb28d298cefe673b7dfc087d7d5f6bafcb23d",
+    "image_sha256": "da04b8b6df251c056d6ca7077b160e075460a5cb3c08fe4467580456a636a546",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/06_mux4to1/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "07-wave-crop.png",
+    "original": "07-wave.png",
+    "crop_box": [
+      720,
+      240,
+      1468,
+      359
+    ],
+    "original_sha256": "a40c3b5eecb30b063711fa4d20a727ec12df16a020fa3af0ee06291405d6103f",
+    "image_sha256": "cdda57b6cfc9049c03abc3ab00b3b8afdd2c484cf70b42b71d59deb54b38e1a9",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/07_demux1to8/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": [
+      "i",
+      "s[2:0]",
+      "o[7:0]"
+    ],
+    "date": "2026-09-10"
+  },
+  {
+    "image": "07-pass-crop.png",
+    "original": "07-pass.png",
+    "crop_box": [
+      315,
+      736,
+      650,
+      797
+    ],
+    "original_sha256": "f5ec7c64ad58ac00351a2c2e9d9d323e49576fed0a6f21941f34928685648728",
+    "image_sha256": "ae3fa91544e3cc6be7026bd4daf4ce3005c36a61e9356824d08a61161b8c2bcf",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/07_demux1to8/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "07-build-crop.png",
+    "original": "07-project.png",
+    "crop_box": [
+      269,
+      737,
+      649,
+      831
+    ],
+    "original_sha256": "6f17dcf82e5eb56fa555eb43ffbf9750235f7afbf3e92954c45b7491051fa045",
+    "image_sha256": "da04b8b6df251c056d6ca7077b160e075460a5cb3c08fe4467580456a636a546",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/07_demux1to8/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "08-wave-crop.png",
+    "original": "08-wave.png",
+    "crop_box": [
+      720,
+      240,
+      1468,
+      331
+    ],
+    "original_sha256": "63c1a20e6cd788d7ed127c920fbcab3be9da3b6960b5592dd96152409a9791aa",
+    "image_sha256": "5b461e5843c7d6fd5523c705ede79db8084c039f3bb07b04e090ea6b16e19a00",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/08_encoder8to3/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": [
+      "i[7:0]",
+      "a[2:0]"
+    ],
+    "date": "2026-09-10"
+  },
+  {
+    "image": "08-pass-crop.png",
+    "original": "08-pass.png",
+    "crop_box": [
+      315,
+      736,
+      650,
+      797
+    ],
+    "original_sha256": "c406547c882824d237592111f2447fab125614a1b7fd59ead85fbd3f1f260f1f",
+    "image_sha256": "f85bc87cdaeed282bc12774d624908fe37cc22e2a8bddfc3a0056f785e2c9064",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/08_encoder8to3/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "08-build-crop.png",
+    "original": "08-project.png",
+    "crop_box": [
+      269,
+      737,
+      649,
+      831
+    ],
+    "original_sha256": "1341338262868c1948a936ccb6ed2464b3c01e30adc0200b69c922f6a28e952f",
+    "image_sha256": "da04b8b6df251c056d6ca7077b160e075460a5cb3c08fe4467580456a636a546",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/08_encoder8to3/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "09-wave-crop.png",
+    "original": "09-wave.png",
+    "crop_box": [
+      720,
+      240,
+      1468,
+      387
+    ],
+    "original_sha256": "77c7674a26421fc040eb3de41b883a30baf00021d70862aa154d9a0a1a15a3b2",
+    "image_sha256": "2eb9bcb4776ce5e7a85f9b822550228226b4118670eff30a679f1ef49894b97e",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/09_decoder3to8/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": [
+      "a",
+      "b",
+      "c",
+      "o[7:0]"
+    ],
+    "date": "2026-09-10"
+  },
+  {
+    "image": "09-pass-crop.png",
+    "original": "09-pass.png",
+    "crop_box": [
+      315,
+      736,
+      650,
+      797
+    ],
+    "original_sha256": "883cda4f91bad92a6e38395208b4a61ecf72fd862236d6fb06e2c9c0b55aff0d",
+    "image_sha256": "1490136f0ecd88907210212c716402c48f5e7f048d14e350219095c8ae3db9c0",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/09_decoder3to8/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "09-build-crop.png",
+    "original": "09-project.png",
+    "crop_box": [
+      269,
+      737,
+      649,
+      831
+    ],
+    "original_sha256": "e223c718f465fcaf58693d76a72c660cc778200594f8fa7c3f50830d4debba12",
+    "image_sha256": "da04b8b6df251c056d6ca7077b160e075460a5cb3c08fe4467580456a636a546",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/09_decoder3to8/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "10-wave-crop.png",
+    "original": "10-wave.png",
+    "crop_box": [
+      720,
+      240,
+      1468,
+      331
+    ],
+    "original_sha256": "fb0eb62297acea46f6969e9ce580f2105e43091c0f4b4338c456239a634a6250",
+    "image_sha256": "bda15cd7dcb5dd99e52135ca2b65bd8a93a2c05d8cc958320ddfe03591e6b3a6",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/10_seven_segment/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": [
+      "bcd[3:0]",
+      "seg_data[7:0]"
+    ],
+    "date": "2026-09-10"
+  },
+  {
+    "image": "10-pass-crop.png",
+    "original": "10-pass.png",
+    "crop_box": [
+      315,
+      736,
+      650,
+      797
+    ],
+    "original_sha256": "c43fdf1d5f94201c9ebfdbc851d28eb833a80d2eb07d2f75d65ac05312805137",
+    "image_sha256": "f8930a54444e75377ac59ad3ccee9dd9ea4c239b875dd88f0566ed9c8c05e5fd",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/10_seven_segment/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  },
+  {
+    "image": "10-build-crop.png",
+    "original": "10-project.png",
+    "crop_box": [
+      269,
+      737,
+      649,
+      831
+    ],
+    "original_sha256": "da1e5e4c38ee172eba58acfe1d2493ba22206aa2ee5bb7402f42696182c5c2e9",
+    "image_sha256": "da04b8b6df251c056d6ca7077b160e075460a5cb3c08fe4467580456a636a546",
+    "gui_evidence": "example/fpga_projects_hdl/LAB1/vivado_2026_1/10_seven_segment/evidence/gui-simulation.json",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "signals_top_to_bottom": null,
+    "date": "2026-09-10"
+  }
+]

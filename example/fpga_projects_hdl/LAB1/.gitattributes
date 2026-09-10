@@ -7,3 +7,6 @@
 *.code-workspace text eol=lf
 # Preserve ZIP source bytes, including original line endings.
 legacy/**/original/* -text
+
+# Preserve captured GUI VCD bytes so recorded SHA-256 survives clone.
+**/evidence/gui-wave.vcd -text

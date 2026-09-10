@@ -88,7 +88,7 @@ F & 8E: a,e,f,g\\
 \begin{frame}{RTL 구조를 설명한다}\relax
 \small
 실제 배포 RTL을 VS Code에서 연 화면이다.\par\vspace{0.22cm}설계 top: seg\_decoder\par\par\vspace{0.25cm}\includegraphics[width=\textwidth]{assets/lab1-circuits/seg_decoder-rtl-crop.png}\par\vspace{0.25cm}
-4비트 입력의 0–F를 표시한다. seg\_data[7:0] 순서는 a,b,c,d,e,f,g,dp이며 1에서 점등하고 dp는 항상 0이다.\par\vspace{0.22cm}\par\href{https://github.com/Glaysia/fpga-lab-template/tree/main/vivado_2026_1/10_seven_segment}{배포 소스 확인}
+4비트 입력의 0–F를 표시한다. seg\_data[7:0] 순서는 a,b,c,d,e,f,g,dp이며 1에서 점등하고 dp는 항상 0이다.\par\href{https://github.com/Glaysia/fpga-lab-template/tree/main/vivado_2026_1/10_seven_segment}{배포 소스 확인}
 \end{frame}
 
 \begin{frame}{테스트벤치와 통과 기준}\relax
@@ -290,6 +290,19 @@ File → Close Simulation → OK. Flow Navigator → Run Synthesis.\par\vspace{0
 \begin{frame}{생성 파일과 보고서}\relax
 \small
 생성 bit: vivado/seg\_decoder.runs/impl\_1/seg\_decoder.bit\par\vspace{0.22cm}제작 실행 결과와 증빙은 프로젝트의 evidence/validation.json과 README 검증표를 확인한다.\par\vspace{0.22cm}DRC 오류를 확인하고 CFGBVS / CONFIG\_VOLTAGE 경고는 실제 보드 구성 전압과 대조한다.\par\vspace{0.22cm}클록 없는 조합회로의 setup/hold NA를 타이밍 검증 완료로 해석하지 않는다.\par\vspace{0.22cm}사용한 커밋·bit 해시·DRC·타이밍 보고서를 결과와 함께 남긴다.\par
+\end{frame}
+
+\begin{frame}{이 회로의 실제 GUI 파형}\relax
+\small
+Untitled 파형 탭 → 오른쪽 위 사각형으로 패널 확대 → Zoom Fit.\par\vspace{0.22cm}신호가 촘촘하면 관심 시간의 파형을 클릭하고 돋보기 +로 확대한다.\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=2.1cm,keepaspectratio]{assets/latest-gui/10-wave-crop.png}\par}\vspace{0.2cm}
+위에서부터 bcd[3:0], seg\_data[7:0] 순서다.\par\vspace{0.22cm}80–90ns의 bcd=8에서 seg\_data=fe다. 10–15 입력에 대응하는 A–F의 표시값도 확인한다.\par\vspace{0.22cm}전환 경계 대신 구간 중간에 커서를 놓고 사전 VCD와 대조한다.\par
+\end{frame}
+
+\begin{frame}{이 회로의 GUI 실행·구현 확인}\relax
+\small
+Log 탭 → Simulation에서 PASS·검사 수·종료 시각을 확인한다.\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=1.1cm,keepaspectratio]{assets/latest-gui/10-pass-crop.png}\par}\vspace{0.2cm}
+실제 GUI 실행: 16개 PASS, 종료 160ns. 정상 종료 후 전체 VCD가 사전 결과와 일치했다.\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=1.3cm,keepaspectratio]{assets/latest-gui/10-build-crop.png}\par}\vspace{0.2cm}
+Design Runs의 impl\_1: write\_bitstream Complete!를 확인한다. 위 구현 화면은 기존 배치 빌드 결과를 GUI에서 연 기록이다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/vivado_2026_1/10_seven_segment/evidence/gui-simulation.json}{GUI 실행·전체 파형 비교 근거}
 \end{frame}
 
 \begin{frame}[label=modern-10-post]{실제 보드 연결}\relax

@@ -39,6 +39,10 @@ Open Hardware Manager → Open target → Auto Connect → 장치 확인 → Pro
 
 실제 보드 기록·사진·영상은 **미수행**입니다. 생성된 bit만으로 보드 실험 완료를 주장하지 않습니다.
 
+## 추가 GUI 확인
+
+배포 XPR을 GUI에서 열어 Behavioral Simulation을 직접 실행했습니다. 16개 검사 PASS와 160ns 종료를 확인하고 실제 파형·PASS 로그·기존 구현 완료 화면을 PDF에 반영했습니다. 정상 종료 후 최종 VCD의 신호 선언·모든 시각·값 변화가 사전 시뮬레이션과 일치했습니다. [GUI 로그](evidence/gui-simulation.log) · [입력 해시·수행 방식·전체 VCD 대조](evidence/gui-simulation.json) · [최종 GUI VCD](evidence/gui-wave.vcd). 이 추가 실행에서는 기존 배치 생성 bit의 완료 상태를 확인했으며 bit를 새로 생성하지 않았습니다.
+
 ## 실제 VCD 구간
 
 ![실제 XSim VCD의 구간 확대](evidence/waveform.svg)

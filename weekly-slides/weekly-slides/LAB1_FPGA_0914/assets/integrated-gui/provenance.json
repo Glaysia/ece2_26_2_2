@@ -37,5 +37,89 @@
     "original_sha256": "e0d68160c1a80800b8252e4ecd76df9c975ebd3be1b3fe20565a6f3080bf1c2e",
     "image_sha256": "68e23ca7fd7dbf867d664bd60c83d3f30f010c1ecb91ce5b51b96f03226e48c9",
     "method": "Actual Vivado 2026.1 GUI; crop only"
+  },
+  {
+    "image": "wave-controls.png",
+    "original": "04-wave-full.png",
+    "crop_box": [
+      314,
+      181,
+      486,
+      217
+    ],
+    "original_sha256": "4528b18545312665fbc15bd4916c18d60c0920ca89af86edc3ff0a3a68235b71",
+    "image_sha256": "fa9b3e6b07fdc1a1d18e19436c132b07c2f8bd4e851ade634a375ffa93057a9b",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "date": "2026-09-10"
+  },
+  {
+    "image": "wave-io.png",
+    "original": "04-wave-full.png",
+    "crop_box": [
+      720,
+      240,
+      1468,
+      443
+    ],
+    "original_sha256": "4528b18545312665fbc15bd4916c18d60c0920ca89af86edc3ff0a3a68235b71",
+    "image_sha256": "ec249efefd47773d54cd76befaab3208fc0539f803c07fface28e84dbfdb8c76",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "date": "2026-09-10"
+  },
+  {
+    "image": "lcd-strings.png",
+    "original": "07-lcd-zoom.png",
+    "crop_box": [
+      720,
+      720,
+      1468,
+      780
+    ],
+    "original_sha256": "eae5401e70d2a3d964b591e468edd3b2c91c13090b19984c03cfb41d63c4fd8c",
+    "image_sha256": "eb58f51692ae9c9b4038c46c1f1b4540b0c284b8f9627617fb1280005b564d79",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "date": "2026-09-10"
+  },
+  {
+    "image": "pass-log.png",
+    "original": "08-pass-log.png",
+    "crop_box": [
+      315,
+      736,
+      646,
+      796
+    ],
+    "original_sha256": "098a446c0223e03af769282459f0cb9e68766290d0b4ddb16e3f7cb920a5126f",
+    "image_sha256": "7856f96d3f29d687b18cfba847d71c7532987b2d509232e9e899e035d51d9b91",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "date": "2026-09-10"
+  },
+  {
+    "image": "ascii-menu.png",
+    "original": "05-ascii-menu.png",
+    "crop_box": [
+      741,
+      638,
+      909,
+      722
+    ],
+    "original_sha256": "93ba9a3448b96fd705a517a41b1b35dcff661523f46888539dd131f0da73e56d",
+    "image_sha256": "634a0de297219f9444b2fc8f6ae414eba3dc41f45f9dc992c91a9488dec23099",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "date": "2026-09-10"
+  },
+  {
+    "image": "radix-parent.png",
+    "original": "05-ascii-menu.png",
+    "crop_box": [
+      442,
+      838,
+      741,
+      871
+    ],
+    "original_sha256": "93ba9a3448b96fd705a517a41b1b35dcff661523f46888539dd131f0da73e56d",
+    "image_sha256": "b4b96eaa38092ff9be0f4703175ad121760b9886b1ab90b2cb923084459ae6ea",
+    "method": "Actual Vivado 2026.1 GUI; crop only",
+    "date": "2026-09-10"
   }
 ]

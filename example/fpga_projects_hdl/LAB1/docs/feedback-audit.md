@@ -23,10 +23,10 @@
 
 ## 추가 반영 결과와 남은 작업
 
-1. **추가 GUI 캡처:** 데스크톱 재개 후 최신 06–10 RTL, 개별 자기검사 TB, 통합 top·버튼·LCD·통합 TB를 실제 VS Code에서 촬영했다. 52개 코드 패널을 의미 단위로 나누고 최종 소스의 줄 범위·해시를 기록했다. 통합 Vivado 계층·기존 구현 완료 상태도 확보했고 GUI Behavioral Simulation의 2,560개 PASS 로그를 보관했다. 이후 Windows 보안 네트워크 허용 창이 화면을 가려 회로별 파형·나머지 Vivado 결과 캡처가 남아 있다. [통합 GUI 증거](../vivado_2026_1/11_integrated/evidence/gui-simulation.json)의 VCD는 72425ns까지 일치하며 마지막 5ns 파일 기록은 GUI 종료 후 확인한다.
-2. **캡처 반영·가독성:** 새 코드 화면마다 파일명·줄 범위·입력 생성·기대값·실패 처리 해설을 붙였다. 21개 TeX/PDF에 반영했고 원본 PNG는 새로 추적하지 않는다. 수정 PDF 1,154쪽을 렌더링해 기존 본문 1,009쪽의 동일성과 변경 화면 82종의 가독성을 확인했다. [화면 검수 기록](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/code-page-validation.json). PDF/ZIP의 최종 페이지 수와 검사 결과는 [강의자료 목록](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/README.md)과 [배포 검사](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/pdf-package-validation.json)를 따른다.
+1. **추가 GUI 캡처 완료:** 실제 VS Code 코드 패널 52개를 확보하고 최종 소스의 줄 범위·해시를 기록했다. 최신 개별 10개와 통합 1개 모두 Vivado GUI 파형·PASS를 확인했다. 최신 02–10의 파형·PASS 로그·기존 구현 상태 패널 27개를 추가했고 통합 LCD ASCII 문자열도 확보했다. GUI 정상 종료 후 02–10과 통합본의 전체 VCD가 사전 결과와 일치했다. [통합 GUI 증거](../vivado_2026_1/11_integrated/evidence/gui-simulation.json)는 2,560개 PASS와 72,430ns 종료를 포함한다. 02–10과 통합 bit는 기존 배치 빌드 결과이며 GUI에서는 완료 상태를 확인했다.
+2. **캡처 반영·가독성:** 새 코드 화면마다 파일명·줄 범위·입력 생성·기대값·실패 처리 해설을 붙였다. 21개 TeX/PDF에 반영했고 원본 PNG는 새로 추적하지 않는다. 수정 PDF 1,154쪽을 렌더링해 기존 본문 1,009쪽의 동일성과 변경 화면 82종의 가독성을 확인했다. [화면 검수 기록](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/code-page-validation.json). 추가 GUI 페이지는 [GUI 화면 검수](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/gui-page-validation.json)에 기록한다. PDF/ZIP의 최종 페이지 수와 검사 결과는 [강의자료 목록](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/README.md)과 [배포 검사](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/pdf-package-validation.json)를 따른다.
 3. **구버전 실행:** 실제 Vivado 2020.1 환경에서 레거시 XPR 열기·시뮬레이션·구현을 확인한다. 현재 PASS는 XSim 2026.1의 원본 RTL 검사다.
 4. **CLI bit:** 검증한 S75 DB에서 통합 필요 핀 38개 중 28개가 누락되어 nextpnr가 실패했다. 정확한 S75 핀·타일 DB를 확보한 뒤 [CLI 재개 절차](cli.md)를 따른다. 합성 성공을 bit 생성 완료로 바꾸지 않는다.
 5. **실물 실험:** 연결된 xc7s75 장치와 보드 전원·JTAG를 확인하고 각 bit를 기록한다. 입력·출력·10모드·버튼·LCD를 실측하고 직접 사진·영상을 촬영해 [사후 레포트](reports.md)에 연결한다. 이 자료는 현재 없다.
 
-위 항목 때문에 전체 GOAL은 미완료다. 보드·촬영 결과는 시뮬레이션이나 생성 이미지로 대신하지 않는다.
+3–5번 실물·도구 검증 항목 때문에 전체 실험 GOAL은 미완료다. 보드·촬영 결과는 시뮬레이션이나 생성 이미지로 대신하지 않는다.

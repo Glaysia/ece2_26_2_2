@@ -6,7 +6,7 @@
   },
   {
     "file": "04.LAB1_02_FULL_ADDER_VIVADO",
-    "pages": 40,
+    "pages": 42,
     "project": "vivado_2026_1/02_full_adder"
   },
   {
@@ -16,7 +16,7 @@
   },
   {
     "file": "04.LAB1_03_ADDER4_VIVADO",
-    "pages": 41,
+    "pages": 43,
     "project": "vivado_2026_1/03_adder4"
   },
   {
@@ -26,7 +26,7 @@
   },
   {
     "file": "04.LAB1_04_SUBTRACTOR4_VIVADO",
-    "pages": 41,
+    "pages": 43,
     "project": "vivado_2026_1/04_subtractor4"
   },
   {
@@ -36,7 +36,7 @@
   },
   {
     "file": "04.LAB1_05_COMPARATOR4_VIVADO",
-    "pages": 40,
+    "pages": 42,
     "project": "vivado_2026_1/05_comparator4"
   },
   {
@@ -46,7 +46,7 @@
   },
   {
     "file": "04.LAB1_06_MUX4TO1_VIVADO",
-    "pages": 40,
+    "pages": 42,
     "project": "vivado_2026_1/06_mux4to1"
   },
   {
@@ -56,7 +56,7 @@
   },
   {
     "file": "04.LAB1_07_DEMUX1TO8_VIVADO",
-    "pages": 40,
+    "pages": 42,
     "project": "vivado_2026_1/07_demux1to8"
   },
   {
@@ -66,7 +66,7 @@
   },
   {
     "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
-    "pages": 40,
+    "pages": 42,
     "project": "vivado_2026_1/08_encoder8to3"
   },
   {
@@ -76,7 +76,7 @@
   },
   {
     "file": "04.LAB1_09_DECODER3TO8_VIVADO",
-    "pages": 40,
+    "pages": 42,
     "project": "vivado_2026_1/09_decoder3to8"
   },
   {
@@ -86,7 +86,7 @@
   },
   {
     "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
-    "pages": 43,
+    "pages": 45,
     "project": "vivado_2026_1/10_seven_segment"
   },
   {
@@ -96,7 +96,7 @@
   },
   {
     "file": "04.LAB1_10A_INTEGRATED_VIVADO",
-    "pages": 66,
+    "pages": 69,
     "project": "vivado_2026_1/11_integrated"
   },
   {

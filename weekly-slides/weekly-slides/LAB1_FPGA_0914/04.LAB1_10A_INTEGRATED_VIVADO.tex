@@ -460,9 +460,30 @@ Design Sources의 lab1\_integrated 왼쪽 화살표를 펼친다.\par\vspace{0.2
 아래 Design Runs에서 impl\_1의 write\_bitstream Complete!를 확인한다.\par\vspace{0.22cm}이 화면은 제작자가 배치 빌드한 결과를 GUI에서 연 기록이다. Methodology 경고 28개는 별도로 해석한다.\par
 \end{frame}
 
+\begin{frame}{통합 파형 · 전체 구간 보기}\relax
+\small
+시뮬레이션 뒤 Untitled 1 탭을 누르고 오른쪽 위 사각형으로 파형 패널을 확대한다.\par\vspace{0.22cm}돋보기 +는 확대, −는 축소, 네 방향 화살표는 Zoom Fit이다.\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=0.65cm,keepaspectratio]{assets/integrated-gui/wave-controls.png}\par}\vspace{0.2cm}
+\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=2.4cm,keepaspectratio]{assets/integrated-gui/wave-io.png}\par}\vspace{0.2cm}
+위에서부터 clk·rst·mode\_button·sw·led·seg\_data다. 전체 종료는 72.43µs이며 버튼 입력 사이에 회로별 256개 벡터를 검사한다.\par\vspace{0.22cm}빠른 TB의 10ns 클록이다. 실물 보드의 1kHz 시간으로 해석하지 않는다.\par
+\end{frame}
+
+\begin{frame}{통합 파형 · LCD 문자로 읽기}\relax
+\small
+파형 목록을 아래로 스크롤해 completed\_line1과 completed\_line2를 찾는다.\par\vspace{0.22cm}첫 신호를 클릭하고 Shift+↓로 둘째 신호까지 선택한다. 우클릭 → Radix → ASCII를 누른다.\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=0.55cm,keepaspectratio]{assets/integrated-gui/radix-parent.png}\par}\vspace{0.2cm}
+\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio]{assets/integrated-gui/ascii-menu.png}\par}\vspace{0.2cm}
+두 신호는 LCD 출력 버스에서 실제로 받은 바이트를 TB가 조립한 16문자다. 설정은 표시 형식만 바꾼다.\par
+\end{frame}
+
+\begin{frame}{통합 파형 · 모드와 회로명 대조}\relax
+\small
+두 줄이 보이는 상태에서 초반 파형을 클릭하고 돋보기 +를 두 번 눌러 확대한다.\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=1.5cm,keepaspectratio]{assets/integrated-gui/lcd-strings.png}\par}\vspace{0.2cm}
+위 줄은 completed\_line1: MODE 01 → MODE 02 → MODE 03이다.\par\vspace{0.22cm}아래 줄은 completed\_line2: AND OR XOR → FULL ADDER → 4 BIT ADDER다.\par\vspace{0.22cm}번호와 회로명이 함께 바뀌는지 확인한다. 초기화·리셋 및 나머지 모드도 TB가 비교하며 외부 LCD의 실측은 별도로 수행한다.\par
+\end{frame}
+
 \begin{frame}{통합 프로젝트 · GUI 실행 검증}\relax
 \small
-Run Simulation → Run Behavioral Simulation을 직접 실행했다.\par\vspace{0.22cm}GUI의 simulate.log에서도 LAB1\_PASS lab1\_integrated cases=2560과 종료 시각 72430ns를 확인했다.\par\vspace{0.22cm}GUI VCD는 72425ns까지 사전 결과와 일치한다. GUI가 열린 상태에서 복사해 마지막 5ns의 파일 기록 확인은 남아 있다.\par\vspace{0.22cm}현재 캡처된 계층·구현 완료 화면과 GUI 실행 로그의 검증 범위를 구분한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/vivado_2026_1/11_integrated/evidence/gui-simulation.json}{통합 GUI 실행 기록}
+아래 Log 탭 → Simulation에서 검사 수와 종료 시각을 확인한다.\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=1.2cm,keepaspectratio]{assets/integrated-gui/pass-log.png}\par}\vspace{0.2cm}
+Run Simulation → Run Behavioral Simulation의 2,560개 PASS와 종료 72430ns를 실제 GUI에서 확인했다.\par\vspace{0.22cm}시뮬레이션을 정상 종료한 뒤 VCD를 다시 보관했다. 날짜·버전·공백을 제외한 모든 선언·시간·값이 사전 VCD와 마지막 72430ns까지 일치한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/vivado_2026_1/11_integrated/evidence/gui-simulation.json}{통합 GUI 실행·파형 비교 기록}
 \end{frame}
 
 \begin{frame}[label=integrated-vivado-post]{실제 보드 연결}\relax
