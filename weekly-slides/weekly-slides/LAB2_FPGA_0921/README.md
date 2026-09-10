@@ -29,3 +29,5 @@ python weekly-slides/tools/build_lab2_series.py
 - [레거시 페이지 출처](legacy-page-provenance.json)
 
 실제 캡처를 넣은 뒤 전체를 다시 빌드하고 모든 페이지를 시각 검수한다. `final-visual-review.json`에 각 PDF와 TeX 해시 및 전체 페이지 검수 기록을 남긴 후 `python weekly-slides/tools/package_lab2_pdfs.py`를 실행한다. 이 도구는 미완료 표시·누락 캡처·검수 기록·4:3·목차·상대 링크를 확인하고 ZIP을 새로 풀어 다시 검사한다.
+
+초안 구조 검사는 전체 빌드 후 `python weekly-slides/tools/audit_lab2_drafts.py`로 실행한다. 각 PDF의 실제 페이지 수·4:3·페이지별 목차·다른 PDF의 목적지·누락 표시 수·소스 해시를 확인한다. 이 결과는 전체 페이지 시각 검수나 배포 승인이 아니다.

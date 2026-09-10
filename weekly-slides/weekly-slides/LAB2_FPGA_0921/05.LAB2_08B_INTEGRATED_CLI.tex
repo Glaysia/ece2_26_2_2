@@ -429,10 +429,10 @@ macOS에서는 Homebrew로 설치한다. Linux에서는 배포 패키지 또는 
 \small
 \begin{enumerate}
 \item 보드 전원·JTAG·주 클록 1 kHz 설정을 확인한다.
-\item Vivado: Open Hardware Manager → Open target → Auto Connect.
-\item Program Device에서 방금 생성한 bit 파일을 선택한다.
-\item 초기화 뒤 입력·버튼·출력을 관찰하고 예상과 비교한다.
-\item CLI판은 앞 장의 openFPGALoader 명령으로 기록한다.
+\item 앞 장의 openFPGALoader --detect로 연결된 FPGA를 확인한다.
+\item 실제 케이블 이름으로 MY\_CABLE을 바꾸고 방금 생성한 bit를 SRAM에 기록한다.
+\item 종료 코드와 기록 로그를 확인한 뒤 리셋 버튼을 누른다.
+\item 모드 버튼으로 8개 모드를 순회하며 LCD 이름과 회로 출력을 예상과 비교한다.
 \end{enumerate}
 \end{frame}
 

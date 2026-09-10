@@ -36,7 +36,10 @@ class Deck:
 \renewcommand{\small}{\fontsize{9}{11}\selectfont}
 '''
         header=header.replace('\\begin{document}','\\hypersetup{pdftitle={'+esc(title)+'}}\n\\begin{document}')
-        (BASE/name).write_text(header+'\n'.join(self.pages)+'\\end{document}\n',encoding='utf-8')
+        content=header+'\n'.join(self.pages)+'\\end{document}\n'
+        target=BASE/name
+        if not target.exists() or target.read_text(encoding='utf-8')!=content:
+            target.write_text(content,encoding='utf-8')
         return {'file':name.removesuffix('.tex'),'title':title,'pages':len(self.pages),'missing_code_captures':self.missing,
                 'status':'DRAFT_MISSING_REAL_CAPTURES' if self.missing else 'RENDER_REVIEW_REQUIRED'}
 
@@ -165,7 +168,10 @@ def main():
         if p['edition']=='opensource_cli': cli(d,p)
         else: gui(d,p,config)
         if p['edition']=='legacy': legacy(d,p)
-        d.frame('장치에서 동작 확인',steps('보드 전원·JTAG·주 클록 1 kHz 설정을 확인한다.','Vivado: Open Hardware Manager → Open target → Auto Connect.','Program Device에서 방금 생성한 bit 파일을 선택한다.','초기화 뒤 입력·버튼·출력을 관찰하고 예상과 비교한다.','CLI판은 앞 장의 openFPGALoader 명령으로 기록한다.'))
+        if p['edition']=='opensource_cli':
+            d.frame('장치에서 동작 확인',steps('보드 전원·JTAG·주 클록 1 kHz 설정을 확인한다.','앞 장의 openFPGALoader --detect로 연결된 FPGA를 확인한다.','실제 케이블 이름으로 MY_CABLE을 바꾸고 방금 생성한 bit를 SRAM에 기록한다.','종료 코드와 기록 로그를 확인한 뒤 리셋 버튼을 누른다.','모드 버튼으로 8개 모드를 순회하며 LCD 이름과 회로 출력을 예상과 비교한다.'))
+        else:
+            d.frame('장치에서 동작 확인',steps('보드 전원·JTAG·주 클록 1 kHz 설정을 확인한다.','Vivado: Open Hardware Manager → Open target → Auto Connect.','Program Device에서 방금 생성한 bit 파일을 선택한다.','초기화 뒤 입력·버튼·출력을 관찰하고 예상과 비교한다.','CLI판은 앞 장의 openFPGALoader 명령으로 기록한다.'))
         d.frame('실험 후 레포트와 GitHub',steps('도구 버전·source commit·XDC·bit 해시·타이밍과 경고를 적는다.','실제 기록 화면과 보드 전체 사진을 포함한다.','버튼 누름과 출력 변화가 함께 보이는 영상을 찍는다.','통합판은 8개 모드 번호·LCD 이름·회로 출력을 보여 준다.','소스·실험 전후 레포트·사진·영상 링크를 GitHub에서 연결한다.'))
         inventory.append(d.write(p['pdf'].replace('.pdf','.tex'),p['title']))
     (BASE/'series-inventory.json').write_text(json.dumps(inventory,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

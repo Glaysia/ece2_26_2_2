@@ -51,6 +51,16 @@ def main():
     assert len(inventory)==18
     missing=sum(x['missing_code_captures'] for x in inventory)
     if missing: raise RuntimeError(f'Not a release: {missing} code-image occurrences still need actual captures')
+    captures=json.loads((BASE/'required-code-captures.json').read_text(encoding='utf-8'))
+    for capture in captures:
+        image=BASE/capture['image']
+        proof=json.loads(image.with_suffix('.json').read_text(encoding='utf-8'))
+        assert proof.get('actual_vscode_capture') is True,image
+        assert proof.get('source_sha256')==capture['sha256'],image
+        assert proof.get('lines')==capture['lines'],image
+        assert proof.get('image_sha256')==digest(image),image
+        for source in capture['sources']:
+            assert digest(ROOT/source)==capture['sha256'],source
     names=[x['file']+'.pdf' for x in inventory]+['05.LAB2_00_START.pdf','05.LAB2_00_CONTENTS.pdf']
     assert len(set(names))==20
     reviews=json.loads((BASE/'final-visual-review.json').read_text(encoding='utf-8'))
