@@ -1,0 +1,29 @@
+\begin{frame}{XOR를 바꾸고 실패를 확인한다}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item src/logic\_gate.v에서 XOR 연산자 \textasciicircum{}를 OR 연산자 |로 바꾼다.
+\item 어떤 입력에서 결과가 달라질지 진리표에 먼저 표시한다.
+\item File → Save All → Terminal → Run Task... → 02 Simulate.
+\item 실패 로그에서 입력 벡터·expected·actual을 읽고 예상한 오류인지 설명한다.
+\item 연산자를 \textasciicircum{}로 복구하고 저장한 뒤 02를 다시 실행한다.
+\item cases=4 통과와 새 파형을 확인하고 실패·복구 증빙을 남긴다.
+\end{enumerate}
+TB의 예상값은 함께 바꾸지 않는다. 설계만 바꿨을 때 검사가 오류를 찾아야 한다.\par
+\end{frame}
+
+\begin{frame}{constraints에 XDC 직접 작성}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item constraints를 펼치고 pins.xdc 우클릭 → Rename.
+\item 파일명: logic\_gate.xdc
+\item 핀 표와 코드 이미지를 보며 PACKAGE\_PIN·IOSTANDARD·get\_ports를 입력한다.
+\item get\_ports의 이름과 비트 번호를 자신이 작성한 RTL의 포트와 대조한다.
+\item File → Save All. Vivado 또는 CLI 구현에는 이 파일을 직접 가져간다.
+\end{enumerate}
+XDC는 Icarus 기능 시뮬레이션에서 사용하지 않는다. 파형 통과만으로 핀 배치까지 검증됐다고 판단하지 않는다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 내용 · 1--12행}\relax
+\small
+constraints/logic\_gate.xdc를 열고 아래 내용을 직접 입력한다.\par\shot{xdc-student}a=K4, b=N8, x=L4, y=M4, z=M2이며 다섯 포트 모두 LVCMOS33이다.\par\vspace{0.22cm}마지막 a 핀 지정까지 입력하고 Save All. Icarus는 이 파일을 읽지 않으므로 Vivado에서 핀도 확인한다.\par
+\end{frame}

@@ -1,0 +1,83 @@
+\begin{frame}[label=modern01-setup]{시뮬레이션 도구 확인}\relax
+\small
+Git·Python 3.10 이상·VS Code·Icarus Verilog를 설치한다. Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git --version\\python --version\\iverilog -V\\vvp -V}
+설치 경로를 PATH에 추가했다면 VS Code를 다시 연다. Linux·macOS·WSL은 python 대신 python3를 사용한다.\par
+\end{frame}
+
+\begin{frame}{v2.0.0 템플릿을 새 이름으로 clone}\relax
+\small
+아래는 Windows PowerShell 명령이다. 첫 줄 끝의 백틱(backtick)은 명령을 다음 줄로 이어 준다.\par\terminalbox{git clone --branch v2.0.0 `\\  https://github.com/Glaysia/fpga-lab-template.git lab1\_01\_logic\_gates\\cd lab1\_01\_logic\_gates\\git switch -c main\\code LAB1.code-workspace}
+태그로 같은 시작 파일을 받는다. git switch는 태그에서 학생 작업용 main 브랜치를 만든다. 다음 회로는 목적지 폴더 이름을 바꾼다.\par
+\end{frame}
+
+\begin{frame}{File → New Window}\relax
+\small
+VS Code 상단 File → New Window. Ctrl+Shift+N도 같은 동작이다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=27.75bp 522bp 652.5bp 21bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+새 창의 File → Open Workspace from File...을 누른다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=27.75bp 439.5bp 652.5bp 105bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+
+\end{frame}
+
+\begin{frame}{프로젝트 하나의 workspace 열기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 방금 clone한 lab1\_01\_logic\_gates 폴더를 연다.
+\item LAB1.code-workspace를 선택하고 Open. 모든 실습의 workspace 파일명은 같다.
+\item Explorer에 PROJECT 하나와 src·sim·constraints·tools 폴더가 보이는지 확인한다.
+\item src/design.v·sim/tb\_design.v·constraints/pins.xdc는 아직 주석뿐이다.
+\item simulation.json은 실행할 RTL·TB 파일과 TB top을 지정하는 설정이다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{추천 확장 설치}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 왼쪽 Extensions 아이콘을 누른다.
+\item 검색창에 @recommended를 입력한다.
+\item slang의 Install: Verilog/SystemVerilog 편집·진단.
+\item VaporView의 Install: VCD 파형 확인.
+\item vscode-pdf의 Install: 코드 옆에서 PDF 교안 열기.
+\end{enumerate}
+WSL 사용자는 WSL 창에서 필요할 경우 Install in WSL을 누른다. 확장 설치와 Python·Icarus 설치는 별개다.\par
+\end{frame}
+
+\begin{frame}{src에 RTL 파일 만들기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item Explorer에서 src 왼쪽 화살표를 눌러 펼친다.
+\item design.v 우클릭 → Rename → logic\_gate.v 입력.
+\item 파일을 두 번 눌러 열고 뒤의 코드 이미지를 보며 전체 코드를 입력한다.
+\item 추가 RTL이 있으면 src 우클릭 → New File로 만든다.
+\item 전체 RTL 파일 목록은 다음 장의 src 표를 따른다.
+\item File → Save All로 모든 파일을 저장한다.
+\end{enumerate}
+설계 모듈명: logic\_gate. 파일명과 module 이름을 구분한다.\par
+\end{frame}
+
+\begin{frame}{sim에 테스트벤치 만들기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item sim을 펼치고 tb\_design.v 우클릭 → Rename.
+\item 새 파일명: tb\_logic\_gate\_modern.sv
+\item 뒤의 TB 코드 이미지에 있는 선언·DUT 연결·입력 자극·예상값 검사를 직접 작성한다.
+\item wave.vcd를 만드는 dumpfile·dumpvars와 종료 조건까지 작성한다.
+\item TB 모듈명: tb\_logic\_gate\_modern
+\item File → Save All. TB를 합성용 RTL 폴더에 넣지 않는다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{작성할 RTL 파일 목록}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+폴더 & 파일명\\\hline
+src & logic\_gate.v\\
+\end{tabular}\end{center}
+각 파일을 New File로 만들고 코드 이미지의 전체 내용을 작성한다. 파일마다 module 선언과 endmodule을 확인한다.\par
+\end{frame}
+
+\begin{frame}{simulation.json을 내 파일에 맞추기}\relax
+\small
+Explorer에서 simulation.json을 두 번 눌러 연다.\par\vspace{0.22cm}sources 배열: 앞의 모든 RTL 파일명 앞에 src/를 붙여 등록한다.\par\vspace{0.22cm}한 파일 예: "sources": ["src/logic\_gate.v"]\par\vspace{0.22cm}testbench: sim/tb\_logic\_gate\_modern.sv\par\vspace{0.22cm}simulation\_top: tb\_logic\_gate\_modern\par\vspace{0.22cm}sources의 각 경로와 testbench·simulation\_top 값은 큰따옴표로 감싼다. 여러 경로는 쉼표로 구분한다.\par\vspace{0.22cm}파일명·확장자·괄호·쉼표를 확인하고 Save All.\par
+\end{frame}

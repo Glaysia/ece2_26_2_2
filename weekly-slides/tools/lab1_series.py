@@ -8,6 +8,10 @@ LAB = ROOT / 'example/fpga_projects_hdl/LAB1'
 BASE = ROOT / 'weekly-slides/weekly-slides/LAB1_FPGA_0914'
 CIRCUITS = json.loads((LAB/'docs/circuits.json').read_text(encoding='utf-8'))
 PROJECTS = json.loads((LAB/'projects.json').read_text(encoding='utf-8'))
+for project in PROJECTS:
+    configuration=json.loads((LAB/project['path']/'simulation.json').read_text(encoding='utf-8'))
+    project.update(configuration)
+    project['constraints']='constraints/'+Path(project['constraints']).name
 COURSE = 'https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/'
 TEMPLATE = 'https://github.com/Glaysia/fpga-lab-template/tree/v2.0.0'
 EXAMPLES = {p['project']:p for p in json.loads((LAB/'docs/example-repositories.json').read_text(encoding='utf-8'))}
@@ -34,7 +38,7 @@ def student_constraints(d,p):
     d.frame('constraints에 XDC 직접 작성',items(['constraints를 펼치고 pins.xdc 우클릭 → Rename.','파일명: '+Path(p['constraints']).name,'핀 표와 코드 이미지를 보며 PACKAGE_PIN·IOSTANDARD·get_ports를 입력한다.','get_ports의 이름과 비트 번호를 자신이 작성한 RTL의 포트와 대조한다.','File → Save All. Vivado 또는 CLI 구현에는 이 파일을 직접 가져간다.'])+para('XDC는 Icarus 기능 시뮬레이션에서 사용하지 않는다. 파형 통과만으로 핀 배치까지 검증됐다고 판단하지 않는다.'))
 
 def esc(value):
-    return ''.join({'\\':r'\textbackslash{}','_':r'\_','&':r'\&','%':r'\%','$':r'\$','#':r'\#','{':r'\{','}':r'\}'}.get(c,c) for c in str(value))
+    return ''.join({'\\':r'\textbackslash{}','_':r'\_','&':r'\&','%':r'\%','$':r'\$','#':r'\#','^':r'\textasciicircum{}','~':r'\textasciitilde{}','{':r'\{','}':r'\}'}.get(c,c) for c in str(value))
 
 def para(*lines):
     return r'\par\vspace{0.22cm}'.join(esc(x) for x in lines)+r'\par'
@@ -113,7 +117,7 @@ def integrated_gui(d):
     d.frame('통합 프로젝트 · GUI 실행 검증',para('아래 Log 탭 → Simulation에서 검사 수와 종료 시각을 확인한다.')+shot('pass-log','1.2')+para('Run Simulation → Run Behavioral Simulation의 2,560개 PASS와 종료 72430ns를 실제 GUI에서 확인했다.','시뮬레이션을 정상 종료한 뒤 VCD를 다시 보관했다. 날짜·버전·공백을 제외한 모든 선언·시간·값이 사전 VCD와 마지막 72430ns까지 일치한다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/vivado_2026_1/11_integrated/evidence/gui-simulation.json','통합 GUI 실행·파형 비교 기록'))
 
 def individual_gui(d,c,p):
-    evidence=LAB/p['path']/'evidence/gui-simulation.json'
+    evidence=LAB/p['path']/'evidence/historical-course/gui-simulation.json'
     if not evidence.exists():
         return
     result=json.loads(evidence.read_text(encoding='utf-8'))
@@ -133,7 +137,7 @@ def individual_gui(d,c,p):
         10:'80–90ns의 bcd=8에서 seg_data=fe다. 10–15 입력에 대응하는 A–F의 표시값도 확인한다.',
     }
     d.frame('이 회로의 실제 GUI 파형',para('Untitled 파형 탭 → 오른쪽 위 사각형으로 패널 확대 → Zoom Fit.','신호가 촘촘하면 관심 시간의 파형을 클릭하고 돋보기 +로 확대한다.')+shot('wave-crop',2.1)+para('위에서부터 '+', '.join(c['signals'])+' 순서다.',notes[c['n']],'전환 경계 대신 구간 중간에 커서를 놓고 사전 VCD와 대조한다.'))
-    d.frame('이 회로의 GUI 실행·구현 확인',para('Log 탭 → Simulation에서 PASS·검사 수·종료 시각을 확인한다.')+shot('pass-crop',1.1)+para(f"실제 GUI 실행: {result['cases']}개 PASS, 종료 {result['end_ns']}ns. 정상 종료 후 전체 VCD가 사전 결과와 일치했다.")+shot('build-crop',1.3)+para('Design Runs의 impl_1: write_bitstream Complete!를 확인한다. 위 구현 화면은 기존 배치 빌드 결과를 GUI에서 연 기록이다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/'+p['path']+'/evidence/gui-simulation.json','GUI 실행·전체 파형 비교 근거'))
+    d.frame('이 회로의 GUI 실행·구현 확인',para('Log 탭 → Simulation에서 PASS·검사 수·종료 시각을 확인한다.')+shot('pass-crop',1.1)+para(f"실제 GUI 실행: {result['cases']}개 PASS, 종료 {result['end_ns']}ns. 정상 종료 후 전체 VCD가 사전 결과와 일치했다.")+shot('build-crop',1.3)+para('Design Runs의 impl_1: write_bitstream Complete!를 확인한다. 위 구현 화면은 기존 배치 빌드 결과를 GUI에서 연 기록이다.')+link(example_url(p)+'/evidence/historical-course/gui-simulation.json','GUI 실행·전체 파형 비교 근거'))
 
 def prelude(d,c,p):
     label=d.label;ed=p['edition'];legacy=ed=='legacy'
@@ -154,17 +158,17 @@ def prelude(d,c,p):
     else:
         d.frame('RTL 구조를 설명한다',para('설계 top: '+p['top'],'RTL 파일: '+', '.join(srcs),c['rule'],'소스를 저장소에서 직접 열고 포트 선언·비트 폭·출력 연결을 짚어 설명한다. 저장소 소스를 복사해 사용해도 된다.')+link(example_url(p),'배포 소스 확인'))
     if legacy and c['n']==4:
-        d.frame('원본 감산기의 borrow 보충',para('원본은 a>b일 때만 borrow=0으로 두어 a=b에서도 borrow=1이 된다.','original/sub_4bit.v는 원본 바이트를 보존한다. corrected/sub_4bit.v는 비교를 a>=b로 고친 보충 파일이다.','배포 workspace와 XPR은 수정본으로 검사한다. 원본 오류 검출 로그와 수정 후 256개 통과 결과를 구분한다.'))
+        d.frame('원본 감산기의 borrow 보충',para('원본은 a>b일 때만 borrow=0으로 두어 a=b에서도 borrow=1이 된다.','original/sub_4bit.v는 원본 바이트를 보존한다. src/sub_4bit.v는 비교를 a>=b로 고친 보충 파일이다.','새 workspace의 sources에는 수정본을 등록한다. 원본 오류 검출 로그와 수정 후 256개 통과 결과를 구분한다.'))
     d.frame('테스트벤치와 통과 기준',para('시뮬레이션 top: '+p['simulation_top'],f"{c['cases']}개 입력 조합을 모두 검사한다. 각 자극은 10ns, 종료 시각은 {c['cases']*10}ns다.",'기대값과 실제 출력이 다르면 $fatal로 중단한다. 검사 횟수와 watchdog도 확인한다.','통과 문구: LAB1_PASS '+p['top']+' cases='+str(c['cases']),'원본 레거시 testbench.v와 별도의 자기검사 TB는 파일과 역할을 구분한다.'))
     code_panels(d,'common/tb/'+Path(p['testbench']).name)
     d.frame('저장 → Terminal → Run Task',para('File → Save All 다음 Terminal → Run Task...을 누른다.')+crop('vscode:06-tasks',(293,0,909,125),2.1)+items(['01 Check tools를 실행하고 도구 버전을 확인한다.','02 Simulate를 선택하고 종료까지 기다린다.','03 Open waveform으로 생성된 VCD를 연다.'])+para('작업이 없으면 올바른 .code-workspace를 열었는지 확인한다.'))
-    logfile=LAB/p['path']/'build/vscode/simulation.log'
+    logfile=LAB/p['path']/'evidence/standalone-simulation.txt'
     marker='LAB1_PASS '+p['top']+' cases='+str(c['cases'])
     measured=logfile.is_file() and marker in logfile.read_text(errors='replace')
-    d.frame('실행 로그 확인',para('터미널과 build/sim/run-.../simulation.log에서 이번 실행을 확인한다.',marker if measured else '이 프로젝트의 실제 실행 결과는 검증표에서 확인한다.',f"정상 종료 시각: {c['cases']*10}ns. PASS 문구와 검사 수를 함께 확인한다.",'실패하면 이번 실행 폴더의 compile.log와 simulation.log에서 첫 오류를 찾는다.','코드 저장 → 02 Simulate 재실행 → 새 로그 확인 순서로 복귀한다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/'+p['path']+'/README.md','프로젝트 검증 안내'))
+    d.frame('실행 로그 확인',para('터미널과 build/sim/run-.../simulation.log에서 이번 실행을 확인한다.',marker if measured else '이 프로젝트의 실제 실행 결과는 검증표에서 확인한다.',f"정상 종료 시각: {c['cases']*10}ns. PASS 문구와 검사 수를 함께 확인한다.",'실패하면 이번 실행 폴더의 compile.log와 simulation.log에서 첫 오류를 찾는다.','코드 저장 → 02 Simulate 재실행 → 새 로그 확인 순서로 복귀한다.')+link(example_url(p),'프로젝트 검증 안내'))
     d.frame('VCD를 파형으로 열기',items(['03 Open waveform 또는 build/sim/wave.vcd를 연다.','텍스트로 열리면 탭 우클릭 → Reopen Editor With... → VaporView.','Netlist View에서 '+p['simulation_top']+'을 펼친다.','신호 '+', '.join(c['signals'])+'를 각각 두 번 눌러 추가한다.','Zoom to Fit를 누르고 Time Units를 ns로 맞춘다.','전환 경계 대신 구간 중간에 커서를 두고 값을 읽는다.']))
     d.frame('파형 화면의 읽는 순서',crop('vscode:08-vapor-wave',(352,37,1202,469),3.4)+para('위는 공통 파형 조작 예다. 이번 회로에서는 앞 장의 신호 이름을 선택한다.',c['focus'],'신호 이름 → 시간 구간 → 커서 값 → 예상 결과 순서로 비교한다.'))
-    wave=LAB/p['path']/'build/vscode/wave.vcd'
+    wave=LAB/p['path']/'build/sim/wave.vcd'
     if measured and wave.is_file():
         ns=sorted(set([0,1,min(3,c['cases']-1),c['cases']//2,c['cases']-1]))
         rows=vcd_values(wave,p['simulation_top'],c['signals'],[n*10+5 for n in ns])
@@ -237,7 +241,7 @@ def integrated_prelude(d,p):
     for source in ['rtl/lab1_integrated.v','rtl/button_onepulse.v','rtl/lcd_modes.v','tb/tb_lab1_integrated.sv']:
         code_panels(d,'common/'+source)
     d.frame('세 작업을 순서대로 실행',crop('vscode:06-tasks',(293,0,909,125),2.1)+items(['Terminal → Run Task... → 01 Check tools.','02 Simulate → 종료까지 기다린다.','터미널과 build/sim/run-.../simulation.log를 확인한다.','LAB1_PASS lab1_integrated cases=2560을 확인한다.','03 Open waveform으로 wave.vcd를 연다.'])+para('모든 workspace의 사전 시뮬레이션은 Icarus Verilog다. SIMULATED와 TB의 실제 검사 결과를 구분한다.'))
-    d.frame('통합 테스트의 검사 범위',para('10개 모드 × DIP 256개 = 2,560개 출력 비교.','reset → MODE 01, 짧은 바운스 무시, 길게 눌러도 한 번만 전환, 10→01 순환을 검사한다.','LCD 초기 명령과 외부 버스에서 완성된 두 줄의 번호·이름을 비교한다.','TB는 10ns 클록, 디바운스 4클록, 전원 대기 5클록으로 시간을 줄인다. 실제 합성은 1kHz 보드 설정이다.','XSim 검사 종료: 72430ns. 실제 보드의 전압·LCD 연결은 별도로 확인한다.'))
+    d.frame('통합 테스트의 검사 범위',para('10개 모드 × DIP 256개 = 2,560개 출력 비교.','reset → MODE 01, 짧은 바운스 무시, 길게 눌러도 한 번만 전환, 10→01 순환을 검사한다.','LCD 초기 명령과 외부 버스에서 완성된 두 줄의 번호·이름을 비교한다.','TB는 10ns 클록, 디바운스 4클록, 전원 대기 5클록으로 시간을 줄인다. 실제 합성은 1kHz 보드 설정이다.','Icarus 검사 종료: 72430ns. 실제 보드의 전압·LCD 연결은 별도로 확인한다.'))
     d.frame('VaporView에서 통합 파형 읽기',items(['wave.vcd가 텍스트면 탭 우클릭 → Reopen Editor With... → VaporView.','Netlist에서 tb_lab1_integrated를 펼친다.','clk, rst, mode_button, sw, led, seg_data를 추가한다.','dut 안의 mode와 lcd_e, lcd_rs, lcd_rw, lcd_data를 추가한다.','Zoom to Fit 뒤 모드가 바뀌는 구간을 확대한다.','버튼 입력부터 모드 변경까지의 지연과 LCD 한 화면 갱신을 구분한다.']))
     student_constraints(d,p)
     d.frame('실험 전 레포트에 넣을 것',items(['모드별 예상 입력·출력과 비트 순서를 표로 작성한다.','10개 회로·버튼·LCD 파일의 역할을 설명한다.','PASS 로그, VCD, 모드 전환 및 LCD 파형 캡처를 연결한다.','TB에서 줄인 시간과 실제 1kHz 설정을 구분한다.','실험에서 확인할 버튼·LCD·DIP·LED 장면을 계획한다.'])+link(COURSE+'example/fpga_projects_hdl/LAB1/docs/reports.md','레포트 양식과 예시'))
@@ -253,7 +257,10 @@ def cli_steps(d,p):
     d.frame('대상 부품 데이터베이스',para('대상은 xc7s75fgga484-1이다. xc7s50으로 바꾸지 않는다.','배포에 포함된 S50 chipdb만으로는 S75를 빌드할 수 없다.','openXC7/prjxray-db의 spartan7 자료와 bbaexport.py·bbasm으로 정확한 부품의 chipdb를 준비한다.','데이터베이스 버전, 내보내기 결과와 실패 로그를 보관한다.')+link('https://github.com/openXC7/prjxray-db','공식 디바이스 데이터베이스'))
     d.frame('실제 실행 결과와 남은 제약',para('Icarus: 2,560개 통과. Yosys: 논리 게이트·통합 합성 성공.','nextpnr: 논리 게이트 K4, 통합 클록 B6 핀을 찾지 못해 실패. 프레임·bit 단계는 실행하지 못했다.','검증한 S75 DB의 필수 핀 38개 중 28개가 빠져 있다. S75 tilegrid는 S50 파일과 바이트 단위로 같았다.','Vivado 공식 부품 데이터에는 K4와 B6가 존재한다. 다른 핀·다른 FPGA로 바꾸어 성공 처리하지 않는다.','CLI bit 목표는 미완료이며, 실행 로그·DB 해시·후속 작업을 공개한다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/docs/cli.md','실패 근거와 데이터베이스 대조'))
     d.frame('검증 가능한 순서로 실행',items(['02 Simulate: Icarus Verilog의 2,560개 검사와 VCD.','Yosys: synth_xilinx로 RTL을 Xilinx 셀에 매핑.','nextpnr-xilinx: 정확한 chipdb와 XDC로 배치·배선.','fasm2frames: FASM을 디바이스 프레임으로 변환.','xc7frames2bit: 정확한 part.yaml로 bit 생성.'])+para('각 단계의 입력·출력·종료 코드를 확인한다. 앞 단계 실패 후 오래된 산출물을 사용하지 않는다.'))
-    d.frame('실행 명령과 결과 확인',para('프로젝트 폴더: opensource_cli/integrated.','python3 ../../tools/lab1.py simulate --project . --simulator iverilog','python3 ../../tools/openxc7_build.py --project .','생성 명령·실행 로그·상태·bit 해시는 프로젝트 build/cli와 검증 문서에서 확인한다.','합성 성공만으로 배치배선·bit 생성 완료를 선언하지 않는다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/docs/cli.md','실제 단계별 결과'))
+    d.frame('내 프로젝트에서 사전 검사',para('clone 폴더의 LAB1.code-workspace를 열고 RTL·TB·XDC를 직접 작성한다.','프로젝트 루트에서 python3 tools/lab1.py simulate를 실행한다.','2,560개 입력 검사와 버튼·LCD 검사를 확인한 뒤 다음 단계로 이동한다.','터미널에서 mkdir -p build/cli로 결과 폴더를 만든다.','RTL 14개가 src에 있고 constraints/lab1_integrated.xdc가 자신의 파일인지 확인한다.'))
+    d.frame('합성 명령 파일을 직접 작성',para('Explorer의 PROJECT 우클릭 → New File → synth.ys. 다음 줄을 작성하고 저장한다.','read_verilog src/*.v','synth_xilinx -family xc7 -top lab1_integrated','write_json build/cli/design.json','stat','이 파일은 Yosys 명령이다. src에는 합성할 RTL만 두고 TB는 sim에 둔다.'))
+    d.frame('Yosys 실행과 결과 읽기',para('프로젝트 루트에서 yosys -s synth.ys를 실행한다.','오류 없이 끝나는지와 build/cli/design.json의 갱신을 확인한다.','stat의 셀 종류·개수를 읽고 상위 모듈이 lab1_integrated인지 확인한다.','합성 로그를 evidence/cli에 보관한다. 합성만으로 bit 생성이나 장치 동작이 검증된 것은 아니다.'))
+    d.frame('배치배선부터 bit까지의 입력·출력',table(['단계','입력','출력'],[('nextpnr-xilinx','정확한 S75 chipdb·XDC·design.json','design.fasm'),('fasm2frames','S75 DB·part·FASM','design.frames'),('xc7frames2bit','part.yaml·frames','lab1_integrated.bit')])+para('이 교안의 S75 배치배선 문제는 아직 해결·재검증 중이다. 정확한 실행 명령과 실패 근거는 아래 문서를 따른다. 실패 다음 단계를 성공으로 기록하지 않는다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/docs/cli.md','S75 도구·DB 검증 기록'))
     pins(d,p)
 
 def overview(inventory):
