@@ -14,7 +14,8 @@ SLIDES = Path(__file__).resolve().parents[1]
 BASE = SLIDES / 'weekly-slides/LAB1_FPGA_0914'
 ARCHIVE = BASE / '04.LAB1_0910_PDF.zip'
 PACKAGE_ROOT = '04.LAB1_0910_PDF'
-PDFS = ['04.LAB1_00_CONTENTS.pdf'] + ['04.LAB1_01_LOGIC_GATES_VIVADO.pdf'] + [p['file']+'.pdf' for p in json.loads((BASE/'series-inventory.json').read_text(encoding='utf-8'))] + ['01.vivado_2026_1_설치_매뉴얼.pdf','02.vscode_verilog_환경설정_매뉴얼.pdf']
+PDFS = ['04.LAB1_00_CONTENTS.pdf'] + [p['file']+'.pdf' for p in json.loads((BASE/'series-inventory.json').read_text(encoding='utf-8'))] + ['01.vivado_2026_1_설치_매뉴얼.pdf','02.vscode_verilog_환경설정_매뉴얼.pdf']
+assert len(PDFS)==25 and len(set(PDFS))==25, 'Expected 22 manuals, contents, and two setup guides'
 PDFS[:23] = sorted(PDFS[:23], key=lambda name:(int(re.match(r'04\.LAB1_(\d+)',name)[1]), re.match(r'04\.LAB1_\d+([AB]?)_',name)[1]))
 README = '''# LAB1 실습 자료 · 2026-09-10 작성
 
@@ -22,8 +23,11 @@ ZIP을 전부 푼 뒤 04.LAB1_00_CONTENTS.pdf를 여세요. 22개 실습 PDF와 
 
 순서: 최신 Vivado 01–10 → 최신 통합 10A → CLI 통합 10B → 레거시 11–20. 모든 실습은 VS Code 사전 시뮬레이션과 실험 전 레포트부터 시작합니다. Vivado 과정은 GUI 메뉴로 진행합니다.
 
-학생 템플릿: https://github.com/Glaysia/fpga-lab-template
+학생 템플릿: https://github.com/Glaysia/fpga-lab-template/tree/v2.0.0
+템플릿 clone에는 --branch v2.0.0을 지정합니다. 레거시 11–20의 VS Code 과정은 대응 최신 01–10과 같은 코드·검사를 재사용합니다.
 검증 현황: https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/validation.md
+
+통합 CLI의 S75 bit 생성은 아직 데이터베이스 문제 해결 중입니다. 이 ZIP의 해당 원고는 미완료 상태를 명시하며, 다른 FPGA 또는 Vivado bit로 대체하지 않습니다.
 
 원본 레거시 이미지와 새 제작자의 실행 결과를 구분합니다. 실제 보드 기록·사진·영상은 아직 미수행이며 레포트 예시에도 그 상태를 명시했습니다. 새 PNG는 제작 PC의 빌드 자료이고 배포물에는 PDF를 넣습니다.
 '''
@@ -81,12 +85,13 @@ def validate(folder):
     stats = {'pdfs': {}, 'remote_links': 0, 'local_links': 0}
     for name, reader in readers.items():
         stats['pdfs'][name] = len(reader.pages)
-        if name.startswith('04.'):
-            box = reader.pages[0].mediabox
-            assert abs(float(box.width)/float(box.height)-4/3) < .001
         for page_index, page in enumerate(reader.pages):
-            if name.startswith('04.') and (page_index > 0 or 'LEGACY' in name):
-                if name=='04.LAB1_00_CONTENTS.pdf':expected='lab1-contents'
+            box=page.mediabox
+            assert abs(float(box.width)/float(box.height)-4/3)<.001,(name,page_index,'Not 4:3')
+            if page_index > 0 or 'LEGACY' in name:
+                if name.startswith('01.'):expected='vivado-install-contents'
+                elif name.startswith('02.'):expected='vscode-install-contents'
+                elif name=='04.LAB1_00_CONTENTS.pdf':expected='lab1-contents'
                 elif name=='04.LAB1_01_LOGIC_GATES_VIVADO.pdf':expected='modern01-contents'
                 elif '_10A_' in name:expected='integrated-vivado-contents'
                 elif '_10B_' in name:expected='integrated-cli-contents'
@@ -152,7 +157,7 @@ def main():
             archive.extractall(extracted)
         assert validate(extracted/PACKAGE_ROOT) == stats
     manual_pages=sum(pages for name,pages in stats['pdfs'].items() if name.startswith('04.LAB1_') and name!='04.LAB1_00_CONTENTS.pdf')
-    record={**stats,'archive':ARCHIVE.name,'bytes':ARCHIVE.stat().st_size,'sha256':hashlib.sha256(ARCHIVE.read_bytes()).hexdigest(),'checks':['4:3 manuals','all local contents to page 2','internal and relative PDF destinations','fresh ZIP extraction'],'visual_review':f'22 manuals ({manual_pages} pages); revised manuals fully rendered, unchanged page bodies matched against the prior reviewed PDFs and all distinct changed pages inspected. See code-page-validation.json and gui-page-validation.json. Previously reviewed first manual, contents and setup PDFs included unchanged.'}
+    record={**stats,'archive':ARCHIVE.name,'bytes':ARCHIVE.stat().st_size,'sha256':hashlib.sha256(ARCHIVE.read_bytes()).hexdigest(),'checks':['4:3 manuals','all local contents to page 2','internal and relative PDF destinations','fresh ZIP extraction'],'visual_review':f'22 manuals ({manual_pages} pages). See series-v2-review.json for the current visual review scope and remaining work. Prior code-page-validation.json and gui-page-validation.json describe earlier versions.'}
     (BASE/'pdf-package-validation.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'archive':str(ARCHIVE),'bytes':ARCHIVE.stat().st_size,**stats},ensure_ascii=False))
 

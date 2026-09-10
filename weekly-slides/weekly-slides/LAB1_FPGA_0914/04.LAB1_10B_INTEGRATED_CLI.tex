@@ -3,6 +3,7 @@
 \renewcommand{\labonehome}{\hyperlink{integrated-cli-contents}{\contentsbutton}}
 \renewcommand{\legacySource}[1]{}
 \hypersetup{pdftitle={버튼·LCD 통합 실습}}
+\providecommand{\terminalbox}[1]{\par\vspace{0.15cm}{\setlength{\fboxsep}{7pt}\colorbox{black}{\parbox{\dimexpr\textwidth-14pt\relax}{\color{white}\ttfamily\fontsize{7}{9}\selectfont #1}}}\par\vspace{0.15cm}}
 \begin{document}
 \begingroup
 \renewcommand{\small}{\fontsize{9}{11}\selectfont}
@@ -25,16 +26,180 @@ VS Code 사전 시뮬레이션 → 오픈소스 CLI → 보드 실험\par\vspace
 \href{04.LAB1_00_CONTENTS.pdf}{전체 목차 PDF}
 \end{frame}
 
-\begin{frame}[label=integrated-cli-setup]{템플릿과 새 창}\relax
+\begin{frame}[label=integrated-cli-setup]{시뮬레이션 도구 확인}\relax
 \small
-Git·Python 3·VS Code와 Icarus Verilog·Yosys·openXC7을 준비한다.\par\vspace{0.22cm}git clone https://github.com/Glaysia/fpga-lab-template.git\par\vspace{0.22cm}VS Code: File → New Window → Open Workspace from File...\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.7cm,keepaspectratio,trim=27.75bp 522bp 652.5bp 21bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
-opensource\_cli/integrated/opensource\_cli\_integrated.code-workspace\par
+Git·Python 3.10 이상·VS Code·Icarus Verilog를 설치한다. Windows PowerShell에서 한 줄씩 확인한다.\par\terminalbox{git --version\\python --version\\iverilog -V\\vvp -V}
+설치·PATH 변경 후 VS Code를 다시 연다. Linux·macOS·WSL은 python 대신 python3를 사용한다.\par\href{https://github.com/Glaysia/fpga-lab-template/tree/v2.0.0}{설치와 빈 템플릿 안내}
 \end{frame}
 
-\begin{frame}{확장과 Explorer}\relax
+\begin{frame}{v2.0.0 템플릿을 새 이름으로 clone}\relax
 \small
-Extensions에서 slang-server와 VaporView를 Install 또는 Enable (Workspace).\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.4cm,keepaspectratio,trim=263.25bp 381bp 1.5bp 52.5bp,clip]{assets/modern-01/03-enable-slang.png}\par}\vspace{0.16cm}
-Explorer에서 COMMON → rtl → lab1\_integrated.v를 두 번 누른다.\par\vspace{0.22cm}COMMON → tb → tb\_lab1\_integrated.sv, constraints → lab1\_integrated.xdc도 연다.\par\vspace{0.22cm}PROJECT에는 project.json·workspace·결과 폴더가 있다. File → Save All.\par
+아래는 macOS·Linux·WSL의 Bash/Zsh 명령이다. 줄 끝 문자는 다음 줄로 명령을 이어 준다.\par\terminalbox{git clone --branch v2.0.0 \textbackslash{}\\  https://github.com/Glaysia/fpga-lab-template.git \textbackslash{}\\  lab1\_integrated\_cli\\cd lab1\_integrated\_cli\\git switch -c main\\code LAB1.code-workspace}
+회로마다 마지막 폴더 이름을 바꾼다. 시작 파일은 주석뿐이며 코드 이미지를 보며 직접 작성한다.\par\href{https://github.com/Glaysia/fpga-lab-template/tree/v2.0.0}{고정된 수업 버전 v2.0.0}
+\end{frame}
+
+\begin{frame}{File → New Window}\relax
+\small
+VS Code 상단 File → New Window. Ctrl+Shift+N도 같은 동작이다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=27.75bp 522bp 652.5bp 21bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+새 창의 File → Open Workspace from File...을 누른다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=27.75bp 439.5bp 652.5bp 105bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+
+\end{frame}
+
+\begin{frame}{프로젝트 하나의 workspace 열기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 방금 clone한 lab1\_integrated\_cli 폴더를 연다.
+\item LAB1.code-workspace를 선택하고 Open. 모든 실습의 workspace 파일명은 같다.
+\item Explorer에 PROJECT 하나와 src·sim·constraints·tools 폴더가 보이는지 확인한다.
+\item src/design.v·sim/tb\_design.v·constraints/pins.xdc는 아직 주석뿐이다.
+\item simulation.json은 실행할 RTL·TB 파일과 TB top을 지정하는 설정이다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{추천 확장 설치}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 왼쪽 Extensions 아이콘을 누른다.
+\item 검색창에 @recommended를 입력한다.
+\item slang의 Install: Verilog/SystemVerilog 편집·진단.
+\item VaporView의 Install: VCD 파형 확인.
+\item vscode-pdf의 Install: 코드 옆에서 PDF 교안 열기.
+\end{enumerate}
+WSL 사용자는 WSL 창에서 필요할 경우 Install in WSL을 누른다. 확장 설치와 Python·Icarus 설치는 별개다.\par
+\end{frame}
+
+\begin{frame}{src에 RTL 파일 만들기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item Explorer에서 src 왼쪽 화살표를 눌러 펼친다.
+\item design.v 우클릭 → Rename → logic\_gate.v 입력.
+\item 파일을 두 번 눌러 열고 뒤의 코드 이미지를 보며 전체 코드를 입력한다.
+\item 추가 RTL이 있으면 src 우클릭 → New File로 만든다.
+\item 전체 RTL 파일 목록은 다음 장의 src 표를 따른다.
+\item File → Save All로 모든 파일을 저장한다.
+\end{enumerate}
+설계 모듈명: lab1\_integrated. 파일명과 module 이름을 구분한다.\par
+\end{frame}
+
+\begin{frame}{sim에 테스트벤치 만들기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item sim을 펼치고 tb\_design.v 우클릭 → Rename.
+\item 새 파일명: tb\_lab1\_integrated.sv
+\item 뒤의 TB 코드 이미지에 있는 선언·DUT 연결·입력 자극·예상값 검사를 직접 작성한다.
+\item wave.vcd를 만드는 dumpfile·dumpvars와 종료 조건까지 작성한다.
+\item TB 모듈명: tb\_lab1\_integrated
+\item File → Save All. TB를 합성용 RTL 폴더에 넣지 않는다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{작성할 RTL 파일 목록 (1)}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+폴더 & 파일명\\\hline
+src & logic\_gate.v\\
+src & half\_adder.v\\
+src & full\_adder.v\\
+src & adder\_4bit.v\\
+src & sub\_4bit.v\\
+src & compare\_4.v\\
+\end{tabular}\end{center}
+각 파일을 New File로 만들고 코드 이미지의 전체 내용을 작성한다. 파일마다 module 선언과 endmodule을 확인한다.\par
+\end{frame}
+
+\begin{frame}{작성할 RTL 파일 목록 (2)}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+폴더 & 파일명\\\hline
+src & mux\_4x1.v\\
+src & demux\_1x8.v\\
+src & encoder8x3.v\\
+src & decoder3x8.v\\
+src & seg\_decoder.v\\
+src & button\_onepulse.v\\
+\end{tabular}\end{center}
+각 파일을 New File로 만들고 코드 이미지의 전체 내용을 작성한다. 파일마다 module 선언과 endmodule을 확인한다.\par
+\end{frame}
+
+\begin{frame}{작성할 RTL 파일 목록 (3)}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+폴더 & 파일명\\\hline
+src & lcd\_modes.v\\
+src & lab1\_integrated.v\\
+\end{tabular}\end{center}
+각 파일을 New File로 만들고 코드 이미지의 전체 내용을 작성한다. 파일마다 module 선언과 endmodule을 확인한다.\par
+\end{frame}
+
+\begin{frame}{simulation.json을 내 파일에 맞추기}\relax
+\small
+Explorer에서 simulation.json을 두 번 눌러 연다.\par\vspace{0.22cm}sources 배열: 앞의 모든 RTL 파일명 앞에 src/를 붙여 등록한다.\par\vspace{0.22cm}한 파일 예: "sources": ["src/logic\_gate.v"]\par\vspace{0.22cm}testbench: sim/tb\_lab1\_integrated.sv\par\vspace{0.22cm}simulation\_top: tb\_lab1\_integrated\par\vspace{0.22cm}sources의 각 경로와 testbench·simulation\_top 값은 큰따옴표로 감싼다. 여러 경로는 쉼표로 구분한다.\par\vspace{0.22cm}파일명·확장자·괄호·쉼표를 확인하고 Save All.\par
+\end{frame}
+
+\begin{frame}{통합에 포함할 개별 회로}\relax
+\small
+01–10번에서 작성한 회로를 src에 모아 통합 top에 연결한다. 아래의 코드 화면도 그대로 재사용한다.\par\vspace{0.22cm}full\_adder.v와 half\_adder.v는 함께 필요하다. 통합 RTL·버튼·LCD까지 합성 파일은 총 14개다.\par\vspace{0.22cm}이미 작성한 파일은 복사해도 되며 simulation.json의 sources에 14개를 모두 등록한다.\par\href{04.LAB1_00_CONTENTS.pdf}{개별 회로별 상세 설명으로 이동}
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · logic\_gate}\relax
+\small
+src/logic\_gate.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=281.25bp 444bp 150bp 67.5bp,clip]{assets/modern-01/04-rtl.png}\par}\vspace{0.16cm}
+\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · half\_adder}\relax
+\small
+src/half\_adder.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,trim=265bp 410bp 0bp 28bp,clip]{assets/lab1-circuits/half_adder-rtl.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · full\_adder}\relax
+\small
+src/full\_adder.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,trim=265bp 410bp 0bp 28bp,clip]{assets/lab1-circuits/full_adder-rtl.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · adder\_4bit}\relax
+\small
+src/adder\_4bit.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/adder_4bit-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · sub\_4bit}\relax
+\small
+src/sub\_4bit.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/sub_4bit-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · compare\_4}\relax
+\small
+src/compare\_4.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/compare_4-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · mux\_4x1}\relax
+\small
+src/mux\_4x1.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/mux_4x1-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · demux\_1x8}\relax
+\small
+src/demux\_1x8.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/demux_1x8-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · encoder8x3}\relax
+\small
+src/encoder8x3.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/encoder8x3-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · decoder3x8}\relax
+\small
+src/decoder3x8.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/decoder3x8-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · seg\_decoder}\relax
+\small
+src/seg\_decoder.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/seg_decoder-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
 \end{frame}
 
 \begin{frame}{통합 RTL · 모드 번호}\relax
@@ -187,16 +352,16 @@ tb\_lab1\_integrated.sv · 88–99행 · 실제 VS Code 화면\par\par\vspace{0.
 \begin{enumerate}\setlength{\itemsep}{0.22cm}
 \item Terminal → Run Task... → 01 Check tools.
 \item 02 Simulate → 종료까지 기다린다.
-\item PROJECT/build/vscode/simulation.log를 연다.
+\item 터미널과 build/sim/run-.../simulation.log를 확인한다.
 \item LAB1\_PASS lab1\_integrated cases=2560을 확인한다.
 \item 03 Open waveform으로 wave.vcd를 연다.
 \end{enumerate}
-CLI workspace는 Icarus Verilog를 선택한다.\par
+모든 workspace의 사전 시뮬레이션은 Icarus Verilog다. SIMULATED와 TB의 실제 검사 결과를 구분한다.\par
 \end{frame}
 
 \begin{frame}{통합 테스트의 검사 범위}\relax
 \small
-10개 모드 × DIP 256개 = 2,560개 출력 비교.\par\vspace{0.22cm}reset → MODE 01, 짧은 바운스 무시, 길게 눌러도 한 번만 전환, 10→01 순환을 검사한다.\par\vspace{0.22cm}LCD 초기 명령과 외부 버스에서 완성된 두 줄의 번호·이름을 비교한다.\par\vspace{0.22cm}TB는 10ns 클록, 디바운스 4클록, 전원 대기 5클록으로 시간을 줄인다. 실제 합성은 1kHz 보드 설정이다.\par\vspace{0.22cm}XSim 검사 종료: 72430ns. 실제 보드의 전압·LCD 연결은 별도로 확인한다.\par
+10개 모드 × DIP 256개 = 2,560개 출력 비교.\par\vspace{0.22cm}reset → MODE 01, 짧은 바운스 무시, 길게 눌러도 한 번만 전환, 10→01 순환을 검사한다.\par\vspace{0.22cm}LCD 초기 명령과 외부 버스에서 완성된 두 줄의 번호·이름을 비교한다.\par\vspace{0.22cm}TB는 10ns 클록, 디바운스 4클록, 전원 대기 5클록으로 시간을 줄인다. 실제 합성은 1kHz 보드 설정이다.\par\vspace{0.22cm}Icarus 검사 종료: 72430ns. 실제 보드의 전압·LCD 연결은 별도로 확인한다.\par
 \end{frame}
 
 \begin{frame}{VaporView에서 통합 파형 읽기}\relax
@@ -210,6 +375,48 @@ CLI workspace는 Icarus Verilog를 선택한다.\par
 \item 버튼 입력부터 모드 변경까지의 지연과 LCD 한 화면 갱신을 구분한다.
 \end{enumerate}
 
+\end{frame}
+
+\begin{frame}{constraints에 XDC 직접 작성}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item constraints를 펼치고 pins.xdc 우클릭 → Rename.
+\item 파일명: lab1\_integrated.xdc
+\item 핀 표와 코드 이미지를 보며 PACKAGE\_PIN·IOSTANDARD·get\_ports를 입력한다.
+\item get\_ports의 이름과 비트 번호를 자신이 작성한 RTL의 포트와 대조한다.
+\item File → Save All. Vivado 또는 CLI 구현에는 이 파일을 직접 가져간다.
+\end{enumerate}
+XDC는 Icarus 기능 시뮬레이션에서 사용하지 않는다. 파형 통과만으로 핀 배치까지 검증됐다고 판단하지 않는다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 1–13행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-1.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 14–26행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-14.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 27–38행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-27.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 39–52행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-39.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 53–65행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-53.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 66–78행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-66.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
 \end{frame}
 
 \begin{frame}{실험 전 레포트에 넣을 것}\relax
@@ -274,7 +481,7 @@ macOS ARM64 바이너리 배포를 확인하고 WSL Ubuntu-26.04에서 Linux x86
 
 \begin{frame}{설치와 경로}\relax
 \small
-Python 3의 venv를 만들고 pip install apio==1.5.1을 실행한다.\par\vspace{0.22cm}apio packages install로 oss-cad-suite와 openxc7을 준비한다.\par\vspace{0.22cm}도구 경로는 ~/.apio/packages/oss-cad-suite/bin 및 openxc7/bin이다.\par\vspace{0.22cm}LD\_LIBRARY\_PATH를 두 묶음의 lib로 전역 지정하지 않는다. 각 배포의 실행 래퍼가 자신의 라이브러리를 선택한다.\par\vspace{0.22cm}macOS는 darwin-arm64, WSL은 linux-x86-64 자산을 사용한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{복사 가능한 전체 설치·실행 명령}
+Python 3의 venv를 만들고 pip install apio==1.5.1을 실행한다.\par\vspace{0.22cm}apio packages install로 oss-cad-suite와 openxc7을 준비한다.\par\vspace{0.22cm}도구 경로는 \textasciitilde{}/.apio/packages/oss-cad-suite/bin 및 openxc7/bin이다.\par\vspace{0.22cm}LD\_LIBRARY\_PATH를 두 묶음의 lib로 전역 지정하지 않는다. 각 배포의 실행 래퍼가 자신의 라이브러리를 선택한다.\par\vspace{0.22cm}macOS는 darwin-arm64, WSL은 linux-x86-64 자산을 사용한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{복사 가능한 전체 설치·실행 명령}
 \end{frame}
 
 \begin{frame}{대상 부품 데이터베이스}\relax
@@ -299,9 +506,31 @@ Icarus: 2,560개 통과. Yosys: 논리 게이트·통합 합성 성공.\par\vspa
 각 단계의 입력·출력·종료 코드를 확인한다. 앞 단계 실패 후 오래된 산출물을 사용하지 않는다.\par
 \end{frame}
 
-\begin{frame}{실행 명령과 결과 확인}\relax
+\begin{frame}{내 프로젝트에서 사전 검사}\relax
 \small
-프로젝트 폴더: opensource\_cli/integrated.\par\vspace{0.22cm}python3 ../../tools/lab1.py simulate --project . --simulator iverilog\par\vspace{0.22cm}python3 ../../tools/openxc7\_build.py --project .\par\vspace{0.22cm}생성 명령·실행 로그·상태·bit 해시는 프로젝트 build/cli와 검증 문서에서 확인한다.\par\vspace{0.22cm}합성 성공만으로 배치배선·bit 생성 완료를 선언하지 않는다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{실제 단계별 결과}
+clone 폴더의 LAB1.code-workspace를 열고 RTL·TB·XDC를 직접 작성한다.\par\vspace{0.22cm}프로젝트 루트에서 python3 tools/lab1.py simulate를 실행한다.\par\vspace{0.22cm}2,560개 입력 검사와 버튼·LCD 검사를 확인한 뒤 다음 단계로 이동한다.\par\vspace{0.22cm}터미널에서 mkdir -p build/cli로 결과 폴더를 만든다.\par\vspace{0.22cm}RTL 14개가 src에 있고 constraints/lab1\_integrated.xdc가 자신의 파일인지 확인한다.\par
+\end{frame}
+
+\begin{frame}{합성 명령 파일을 직접 작성}\relax
+\small
+Explorer의 PROJECT 우클릭 → New File → synth.ys. 다음 네 줄을 작성하고 저장한다.\par\terminalbox{read\_verilog src/*.v\\synth\_xilinx -family xc7 -top lab1\_integrated\\write\_json build/cli/design.json\\stat}
+이 파일은 Yosys 명령이다. src에는 합성할 RTL만 두고 TB는 sim에 둔다.\par
+\end{frame}
+
+\begin{frame}{Yosys 실행과 결과 읽기}\relax
+\small
+프로젝트 루트의 터미널에서 실행한다.\par\terminalbox{mkdir -p build/cli\\yosys -l build/cli/synthesis.log -s synth.ys}
+오류 없이 끝나는지와 build/cli/design.json의 갱신을 확인한다.\par\vspace{0.22cm}stat의 셀 종류·개수를 읽고 상위 모듈이 lab1\_integrated인지 확인한다.\par\vspace{0.22cm}합성 로그를 evidence/cli에 보관한다. 합성만으로 bit 생성이나 장치 동작이 검증된 것은 아니다.\par
+\end{frame}
+
+\begin{frame}{배치배선부터 bit까지의 입력·출력}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item nextpnr-xilinx: S75 chipdb·XDC·design.json을 읽어 design.fasm을 만든다.
+\item fasm2frames: S75 DB·part와 FASM을 읽어 design.frames를 만든다.
+\item xc7frames2bit: part.yaml과 frames를 읽어 lab1\_integrated.bit를 만든다.
+\end{enumerate}
+이 교안의 S75 배치배선 문제는 아직 해결·재검증 중이다. 정확한 실행 명령과 실패 근거는 아래 문서를 따른다. 실패 다음 단계를 성공으로 기록하지 않는다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{S75 도구·DB 검증 기록}
 \end{frame}
 
 \begin{frame}{대상 부품·핀 제약 (1)}\relax
@@ -405,57 +634,48 @@ lcd\_rw & D6\\
 XDC에서 포트·핀 번호를 대조한다. 다른 보드에는 그대로 쓰지 않는다.\par
 \end{frame}
 
-\begin{frame}{보드 실험으로 이어갈 때}\relax
+\begin{frame}[label=integrated-cli-post]{openFPGALoader 설치}\relax
 \small
-현재 검증한 CLI 흐름은 S75 데이터베이스의 핀 누락으로 bit를 생성하지 못했다.\par\vspace{0.22cm}보드 실험은 같은 RTL의 Vivado 통합 프로젝트에서 생성한 bit로 진행한다.\par\vspace{0.22cm}CLI 실행 결과와 Vivado bit의 생성 경로·해시를 구분하여 레포트에 적는다.\par\href{04.LAB1_10A_INTEGRATED_VIVADO.pdf}{Vivado 통합 매뉴얼}
+bit 생성과 FPGA 기록은 별도 단계다. macOS는 아래 명령을 사용한다.\par\terminalbox{brew install openfpgaloader}
+Windows MSYS2 UCRT64 환경에서는 다음 명령을 사용한다.\par\terminalbox{pacman -S mingw-w64-ucrt-x86\_64-openFPGALoader}
+Linux는 배포판 패키지 또는 공식 빌드 안내를 따른다. 설치한 환경에서 확인한다.\par\terminalbox{openFPGALoader --help}
+\href{https://trabucayre.github.io/openFPGALoader/guide/first-steps.html}{공식 설치·기록 안내}
 \end{frame}
 
-\begin{frame}[label=integrated-cli-post]{실제 보드 연결}\relax
-\small
-\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=3.0cm,keepaspectratio,trim=202.5bp 476.25bp 586.5bp 92.25bp,clip]{assets/modern-01/70-auto-connect.png}\par}\vspace{0.16cm}
-Open Hardware Manager → Open target → Auto Connect.\par\vspace{0.22cm}KEY1=reset, KEY2=다음 모드. DIP1–8=sw[7:0]. LED1–8=led[7:0].\par\vspace{0.22cm}장치가 없으면 보드 전원·USB JTAG·드라이버·VM USB 연결을 점검한다.\par
-\end{frame}
-
-\begin{frame}{Program Device와 동작 확인}\relax
+\begin{frame}{보드와 JTAG 케이블 확인}\relax
 \small
 \begin{enumerate}\setlength{\itemsep}{0.22cm}
-\item 연결된 장치 이름이 xc7s75인지 확인한다.
-\item 장치 우클릭 → Program Device.
-\item 이번 프로젝트의 lab1\_integrated.bit를 선택하고 Program.
-\item 기록 완료를 확인한 뒤 입력을 바꾸고 출력과 예상값을 비교한다.
-\item 기록 성공 화면과 실제 보드 동작은 각각 증빙한다.
+\item 보드 전원과 USB JTAG 케이블을 연결한다.
+\item openFPGALoader --list-cables로 지원 케이블 식별자를 확인한다.
+\item openFPGALoader --list-boards로 지원 보드 식별자를 확인한다.
+\item 보드가 목록에 없으면 실제 연결된 JTAG 케이블의 식별자를 -c에 지정한다.
+\item VM 또는 WSL에서는 해당 실행 환경에 USB 장치가 연결되어 있는지 확인한다.
 \end{enumerate}
-제작 환경의 실제 보드 기록·촬영 검증 여부는 검증표를 따른다. 파일 생성만으로 보드 동작 성공을 선언하지 않는다.\par
+다른 FPGA 보드 이름을 임의로 선택하지 않는다. 보드 모델과 케이블 모델은 별개의 정보다.\par
 \end{frame}
 
-\begin{frame}{사진과 시연 영상 촬영}\relax
+\begin{frame}{CLI로 생성한 bit를 SRAM에 기록}\relax
 \small
-KEY1=reset, KEY2=다음 모드. DIP1–8=sw[7:0]. LED1–8=led[7:0].\par\vspace{0.22cm}사진에는 보드 연결과 입력·출력 위치가 함께 보이게 한다.\par\vspace{0.22cm}영상에는 입력을 조작하는 과정과 그에 따른 출력 변화를 담는다.\par\vspace{0.22cm}예상표의 정상·경계 조건을 직접 보여주고 회로 번호를 파일명에 적는다.\par\vspace{0.22cm}통합 영상이라면 각 회로의 타임스탬프를 레포트에서 연결한다.\par
+아래 MY\_CABLE은 직전 단계에서 확인한 실제 케이블 식별자로 바꾼다.\par\terminalbox{openFPGALoader -c MY\_CABLE build/cli/lab1\_integrated.bit}
+자신의 소스로 만든 최신 bit인지 경로·생성 로그·해시를 확인한 뒤 실행한다.\par\vspace{0.22cm}터미널의 장치 정보·진행률·종료 코드와 최종 상태를 보관한다.\par\vspace{0.22cm}기본 기록은 SRAM이며 전원을 끄면 사라진다. -f는 Flash 기록 옵션이므로 이 SRAM 실습 명령에는 넣지 않는다.\par\href{https://trabucayre.github.io/openFPGALoader/guide/first-steps.html}{SRAM·Flash와 케이블 옵션}
 \end{frame}
 
-\begin{frame}{GitHub 결과 정리}\relax
+\begin{frame}{기록 뒤 모드·LCD 동작 확인}\relax
 \small
-\begin{enumerate}\setlength{\itemsep}{0.22cm}
-\item reports/pre와 reports/post에 실험 전·후 레포트를 둔다.
-\item evidence/vscode와 evidence/vivado에 로그·파형·캡처를 구분한다.
-\item evidence/board/photos와 videos에 직접 촬영한 자료를 둔다.
-\item 큰 영상·bit는 배포 위치를 정하고 README와 레포트에서 연결한다.
-\item 웹에서 사진 표시와 영상 재생 또는 다운로드가 되는지 확인한다.
-\end{enumerate}
-\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/reports.md}{레포트 양식·예시·GitHub 안내}
+KEY1=reset, KEY2=다음 모드. DIP1–8=sw[7:0]. LED1–8=led[7:0].\par\vspace{0.22cm}reset으로 01을 확인하고 버튼을 짧게·길게 눌러 한 번씩 전환되는지 본다.\par\vspace{0.22cm}10 다음 01로 돌아오는지, LCD 번호·이름이 실제 선택 회로와 일치하는지 확인한다.\par\vspace{0.22cm}모드마다 DIP를 조작하여 예상표의 정상·경계 조건과 LED·7세그먼트 출력을 비교한다.\par\vspace{0.22cm}기록 성공 로그와 실제 회로 동작을 각각 증빙한다.\par
 \end{frame}
 
-\begin{frame}{실험 후 레포트}\relax
+\begin{frame}{CLI 실험 후 레포트와 GitHub}\relax
 \small
 \begin{enumerate}\setlength{\itemsep}{0.22cm}
-\item Vivado 버전·part·top·핀 제약·코드 커밋을 기록한다.
-\item VS Code와 Vivado의 입력·출력·시간·검사 수를 비교한다.
-\item 합성·구현·bit 경로와 경고·수정 사항을 설명한다.
-\item 장치 기록 화면·사진·영상과 해당 조건을 연결한다.
-\item 예상값·두 시뮬레이션·실측의 일치 또는 차이 원인을 해석한다.
-\item 미수행 항목은 미완료로 남기고 후속 확인을 적는다.
+\item Icarus·Yosys·nextpnr·프레임 변환·openFPGALoader 버전과 실행 명령을 기록한다.
+\item RTL·TB·XDC 커밋, 정확한 part, DB 커밋과 bit 해시를 연결한다.
+\item evidence/cli에 합성·배치배선·bit 생성 로그를 보관한다.
+\item evidence/programming에 케이블·장치·기록 로그와 캡처를 보관한다.
+\item 보드 사진과 10개 모드 시연 영상에 조건·타임스탬프를 붙인다.
+\item 사전 파형·예상값·실측 차이를 해석하고 reports/post에서 증빙을 링크한다.
 \end{enumerate}
-\href{04.LAB1_00_CONTENTS.pdf}{전체 목차 PDF}\quad\href{https://github.com/Glaysia/fpga-lab-template/tree/main/opensource_cli/integrated}{프로젝트로 돌아가기}
+\href{04.LAB1_00_CONTENTS.pdf}{전체 목차 PDF}
 \end{frame}
 \endgroup
 \end{document}

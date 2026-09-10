@@ -1,0 +1,232 @@
+[
+  {
+    "source": "constraints/full_adder.xdc",
+    "image": "assets/student-v2/full_adder-xdc.png",
+    "lines": [
+      1,
+      13
+    ],
+    "source_sha256": "a19c228316ac26a0c0310a539cd5fe7e6f06ee0fbfdd4b479da1e92441da9146",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/adder_4bit.xdc",
+    "image": "assets/student-v2/adder_4bit-xdc-1.png",
+    "lines": [
+      1,
+      14
+    ],
+    "source_sha256": "db69b1122244939998fe14d2a5a42fd3174850ecf04d955a45990affbbe60b87",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/adder_4bit.xdc",
+    "image": "assets/student-v2/adder_4bit-xdc-15.png",
+    "lines": [
+      15,
+      28
+    ],
+    "source_sha256": "db69b1122244939998fe14d2a5a42fd3174850ecf04d955a45990affbbe60b87",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/sub_4bit.xdc",
+    "image": "assets/student-v2/sub_4bit-xdc-1.png",
+    "lines": [
+      1,
+      13
+    ],
+    "source_sha256": "9d725482e37d890fe23dc4f160d72ed44943740b3a8efeb2ed25c691501ffedf",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/sub_4bit.xdc",
+    "image": "assets/student-v2/sub_4bit-xdc-14.png",
+    "lines": [
+      14,
+      28
+    ],
+    "source_sha256": "9d725482e37d890fe23dc4f160d72ed44943740b3a8efeb2ed25c691501ffedf",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/compare_4.xdc",
+    "image": "assets/student-v2/compare_4-xdc-1.png",
+    "lines": [
+      1,
+      13
+    ],
+    "source_sha256": "7a117d4f7e776215a2fd06ec4b689c72fe1f9116841fa1e6788b6a17df7f24a4",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/compare_4.xdc",
+    "image": "assets/student-v2/compare_4-xdc-14.png",
+    "lines": [
+      14,
+      24
+    ],
+    "source_sha256": "7a117d4f7e776215a2fd06ec4b689c72fe1f9116841fa1e6788b6a17df7f24a4",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/mux_4x1.xdc",
+    "image": "assets/student-v2/mux_4x1-xdc-1.png",
+    "lines": [
+      1,
+      16
+    ],
+    "source_sha256": "2450722766506fa60b420c2351ae3aea415e29b9923a7879fd498802a4f51a76",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/demux_1x8.xdc",
+    "image": "assets/student-v2/demux_1x8-xdc-1.png",
+    "lines": [
+      1,
+      13
+    ],
+    "source_sha256": "25c329c1ff2c58d33fb7b74158d732a890214d1ba4d7abc770d14a3bfc0d09f4",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/demux_1x8.xdc",
+    "image": "assets/student-v2/demux_1x8-xdc-14.png",
+    "lines": [
+      14,
+      26
+    ],
+    "source_sha256": "25c329c1ff2c58d33fb7b74158d732a890214d1ba4d7abc770d14a3bfc0d09f4",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/encoder8x3.xdc",
+    "image": "assets/student-v2/encoder8x3-xdc-1.png",
+    "lines": [
+      1,
+      13
+    ],
+    "source_sha256": "b074acbc6a6f046fd87335f5494843935f83babc53243c5ddc567b83b17ddf9e",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/encoder8x3.xdc",
+    "image": "assets/student-v2/encoder8x3-xdc-14.png",
+    "lines": [
+      14,
+      25
+    ],
+    "source_sha256": "b074acbc6a6f046fd87335f5494843935f83babc53243c5ddc567b83b17ddf9e",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/decoder3x8.xdc",
+    "image": "assets/student-v2/decoder3x8-xdc-1.png",
+    "lines": [
+      1,
+      13
+    ],
+    "source_sha256": "262eacb753110029989462d70a6433125f55657a86c602f8102697abdc28c38b",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/decoder3x8.xdc",
+    "image": "assets/student-v2/decoder3x8-xdc-14.png",
+    "lines": [
+      14,
+      24
+    ],
+    "source_sha256": "262eacb753110029989462d70a6433125f55657a86c602f8102697abdc28c38b",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/seg_decoder.xdc",
+    "image": "assets/student-v2/seg_decoder-xdc-1.png",
+    "lines": [
+      1,
+      13
+    ],
+    "source_sha256": "b09ded76ba185f43cb3ce8c4968345ebda85f61620f00529c439ea62922e1aa8",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/seg_decoder.xdc",
+    "image": "assets/student-v2/seg_decoder-xdc-14.png",
+    "lines": [
+      14,
+      26
+    ],
+    "source_sha256": "b09ded76ba185f43cb3ce8c4968345ebda85f61620f00529c439ea62922e1aa8",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/logic_gate.xdc",
+    "image": "assets/modern-01/xdc-student.png",
+    "lines": [
+      1,
+      12
+    ],
+    "source_sha256": "2e5671a832643a1755be7dcd935ab3ad615f4a09a20f1703db6af009d2c7e263",
+    "method": "Reuse verified first-manual actual VS Code screenshot"
+  },
+  {
+    "source": "constraints/lab1_integrated.xdc",
+    "image": "assets/student-v2/lab1_integrated-xdc-1.png",
+    "lines": [
+      1,
+      13
+    ],
+    "source_sha256": "77fdfa05fe64bbe260f6cbecf988314a5f068873a731622252a10c37eb9a8069",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/lab1_integrated.xdc",
+    "image": "assets/student-v2/lab1_integrated-xdc-14.png",
+    "lines": [
+      14,
+      26
+    ],
+    "source_sha256": "77fdfa05fe64bbe260f6cbecf988314a5f068873a731622252a10c37eb9a8069",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/lab1_integrated.xdc",
+    "image": "assets/student-v2/lab1_integrated-xdc-27.png",
+    "lines": [
+      27,
+      38
+    ],
+    "source_sha256": "77fdfa05fe64bbe260f6cbecf988314a5f068873a731622252a10c37eb9a8069",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/lab1_integrated.xdc",
+    "image": "assets/student-v2/lab1_integrated-xdc-39.png",
+    "lines": [
+      39,
+      52
+    ],
+    "source_sha256": "77fdfa05fe64bbe260f6cbecf988314a5f068873a731622252a10c37eb9a8069",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/lab1_integrated.xdc",
+    "image": "assets/student-v2/lab1_integrated-xdc-53.png",
+    "lines": [
+      53,
+      65
+    ],
+    "source_sha256": "77fdfa05fe64bbe260f6cbecf988314a5f068873a731622252a10c37eb9a8069",
+    "method": "Actual VS Code screenshot; crop only"
+  },
+  {
+    "source": "constraints/lab1_integrated.xdc",
+    "image": "assets/student-v2/lab1_integrated-xdc-66.png",
+    "lines": [
+      66,
+      78
+    ],
+    "source_sha256": "77fdfa05fe64bbe260f6cbecf988314a5f068873a731622252a10c37eb9a8069",
+    "method": "Actual VS Code screenshot; crop only"
+  }
+]

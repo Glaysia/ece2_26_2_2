@@ -2,12 +2,13 @@
 % 주차별 발표 자료 템플릿
 % 이 파일이 있는 폴더에서 xelatex로 두 번 빌드한다.
 % 디자인 원본: ../../templates/weekly_presentation_template.tex
-\documentclass[aspectratio=169,11pt]{beamer}
+\documentclass[aspectratio=43,11pt]{beamer}
 
 \usepackage{fontspec}
 \usepackage{kotex}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{etoolbox}
 \usetikzlibrary{positioning}
 
 % D2Coding을 저장소에 함께 넣어, 별도 설치 없이 같은 글꼴로 빌드한다.
@@ -37,6 +38,7 @@
   \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=south,inner sep=0pt] at ([yshift=0.52cm]current page.south)
       {\includegraphics[width=2.64cm,trim=58bp 385bp 58bp 385bp,clip]{../../assets/uos-logo-horizontal.png}};
+    \node[anchor=west,rounded corners=2pt,fill=UOSBlue!55,text=white,font=\scriptsize] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\hyperlink{vivado-install-contents}{목차}};
     \node[anchor=east,text=gray,font=\scriptsize]
       at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
   \end{tikzpicture}%
@@ -46,7 +48,7 @@
 \newcommand{\course}{전자전기컴퓨터설계실험Ⅱ}
 \newcommand{\topic}{Vivado 2026.1\\설치 매뉴얼}
 \newcommand{\presenter}{이해리}
-\newcommand{\presentationdate}{2026. 09. 07.}
+\newcommand{\presentationdate}{2026. 09. 10.}
 
 \title{\course\\\week. \topic}
 \author{\presenter}
@@ -55,18 +57,20 @@
 
 \newcommand{\screen}[2]{%
 \begin{center}
-\includegraphics[width=\linewidth,height=5.25cm,keepaspectratio]{assets/vivado-install/#1}\\[-0.05cm]
+\includegraphics[width=\linewidth,height=5.0cm,keepaspectratio]{assets/vivado-install/#1}\\[-0.05cm]
 {\tiny\color{gray}#2}
 \end{center}}
 \newcommand{\source}[2]{\par\vspace{0.15cm}{\tiny\color{gray}출처: \href{#1}{#2}}}
 \newcommand{\shotframe}[4]{%
 \begin{frame}{#1}
-\begin{columns}[c,onlytextwidth]
-\begin{column}{0.64\textwidth}\screen{#2}{#3}\end{column}
-\begin{column}{0.33\textwidth}\small #4\end{column}
-\end{columns}
+\screen{#2}{#3}
+\end{frame}
+\begin{frame}{#1 · 누르는 순서}
+{\small #4}
 \end{frame}}
 
+\providecommand{\terminalbox}[1]{\par\vspace{0.15cm}{\setlength{\fboxsep}{7pt}\colorbox{black}{\parbox{\dimexpr\textwidth-14pt\relax}{\color{white}\ttfamily\fontsize{7}{9}\selectfont #1}}}\par\vspace{0.15cm}}
+\AtBeginEnvironment{frame}{\fontsize{9}{12}\selectfont}
 \begin{document}
 
 % 표지
@@ -74,7 +78,7 @@
 \setbeamercolor{background canvas}{bg=UOSBlue}
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=north west,inner sep=0pt,text=white,font=\bfseries\fontsize{27}{33}\selectfont,align=left]
+    \node[anchor=north west,inner sep=0pt,text=white,font=\bfseries\fontsize{21}{27}\selectfont,align=left]
       at ([xshift=1.53cm,yshift=-1.5cm]current page.north west) {\course\\\week. \topic};
     \node[anchor=south west,inner sep=0pt] at ([xshift=1.38cm,yshift=0.98cm]current page.south west)
       {\includegraphics[width=1.45cm]{../../assets/uos-logo-white.png}};
@@ -85,7 +89,7 @@
 \end{frame}}
 
 
-\begin{frame}{설치 순서}
+\begin{frame}[label=vivado-install-contents]{설치 순서}
 \begin{enumerate}
 \item 설치 파일 다운로드
 \item Vivado와 Spartan-7 디바이스 설치
@@ -134,7 +138,11 @@ Windows 기준 안내이며, 설치는 수업 전에 완료한다.
 이번 수업에는 시뮬레이션·합성·구현이 가능한 전체 Vivado가 필요하다.
 \end{frame}
 
-\shotframe{2. 로그인과 설치 방식}{08-install-login.png}{화면 B 01:10 · 계정 입력 전}{
+\begin{frame}{2. 로그인과 설치 방식}
+\screen{08-install-login.png}{화면 B 01:10 · 계정 입력 전}
+\end{frame}
+\begin{frame}{2. 로그인과 설치 방식 · 누르는 순서}
+
 \begin{enumerate}
 \item 설치 파일을 실행하고 압축 해제를 기다린다.
 \item AMD 이메일·비밀번호를 입력한다.
@@ -142,15 +150,25 @@ Windows 기준 안내이며, 설치는 수업 전에 완료한다.
 \end{enumerate}
 \vspace{0.2cm}
 Download Image는 설치 이미지만 받는 선택지다.
-}
 
-\shotframe{3. 제품 선택}{09-select-vivado.png}{화면 B 01:49}{
+\end{frame}
+
+\begin{frame}{3. 제품 선택}
+\screen{09-select-vivado.png}{화면 B 01:49}
+\end{frame}
+\begin{frame}{3. 제품 선택 · 누르는 순서}
+
 \textbf{Vivado}를 선택하고 Next를 누른다.
 \vspace{0.4cm}
 \par 이번 FPGA HDL 실습에서는 이 제품을 사용한다.
-}
 
-\shotframe{4. 도구와 드라이버}{10-install-options.png}{화면 B 01:55 · 디바이스는 다음 화면에서 확인}{
+\end{frame}
+
+\begin{frame}{4. 도구와 드라이버}
+\screen{10-install-options.png}{화면 B 01:55 · 디바이스는 다음 화면에서 확인}
+\end{frame}
+\begin{frame}{4. 도구와 드라이버 · 누르는 순서}
+
 \begin{itemize}
 \item Vivado의 필수 구성은 유지한다.
 \item Model Composer 등 불필요한 추가 도구는 해제한다.
@@ -158,9 +176,14 @@ Download Image는 설치 이미지만 받는 선택지다.
 \item \textbf{Acquire or Manage a License Key}를 확인한다.
 \end{itemize}
 {\footnotesize 드라이버 안내에 따라 Platform Cable USB를 분리한다.}
-}
 
-\shotframe{5. Spartan-7 선택}{11-device-selection.png}{화면 B 01:58 · 녹화에는 Virtex-7이 선택되어 있음}{
+\end{frame}
+
+\begin{frame}{5. Spartan-7 선택}
+\screen{11-device-selection.png}{화면 B 01:58 · 녹화에는 Virtex-7이 선택되어 있음}
+\end{frame}
+\begin{frame}{5. Spartan-7 선택 · 누르는 순서}
+
 \begin{enumerate}
 \item Devices의 \textbf{7 Series}를 펼친다.
 \item \textbf{Spartan-7 FPGAs}를 선택한다.
@@ -168,17 +191,27 @@ Download Image는 설치 이미지만 받는 선택지다.
 \item Selected Devices도 확인한다.
 \end{enumerate}
 \textbf{\color{UOSBlue}녹화의 Virtex-7 선택을 그대로 따라 하지 않는다.}
-}
 
-\shotframe{6. 약관 확인}{12-license-agreements.png}{화면 B 01:59 · 동의 전 화면}{
+\end{frame}
+
+\begin{frame}{6. 약관 확인}
+\screen{12-license-agreements.png}{화면 B 01:59 · 동의 전 화면}
+\end{frame}
+\begin{frame}{6. 약관 확인 · 누르는 순서}
+
 각 약관을 읽고 동의하는 항목의 \textbf{I Agree}를 선택한다.
 \vspace{0.4cm}
 \par 필요한 동의를 마치면 Next로 진행한다.
 \vspace{0.4cm}
 \par 약관 목록은 선택 구성에 따라 달라질 수 있다.
-}
 
-\shotframe{7. 설치 경로와 오류 확인}{13-destination-errors.png}{화면 B 02:12 · 오류 때문에 Next가 비활성화된 예시}{
+\end{frame}
+
+\begin{frame}{7. 설치 경로와 오류 확인}
+\screen{13-destination-errors.png}{화면 B 02:12 · 오류 때문에 Next가 비활성화된 예시}
+\end{frame}
+\begin{frame}{7. 설치 경로와 오류 확인 · 누르는 순서}
+
 설치 기준 경로 예:
 \par\texttt{C:\textbackslash AMDDesignTools}
 \vspace{0.3cm}
@@ -188,7 +221,8 @@ Download Image는 설치 이미지만 받는 선택지다.
 \item 빨간 오류가 있으면 해결한 뒤 진행한다.
 \end{itemize}
 \textbf{이 화면은 설치 완료 화면이 아니다.}
-}
+
+\end{frame}
 
 \begin{frame}{설치 경로 화면의 두 오류}
 \begin{itemize}
@@ -220,7 +254,11 @@ Spartan-7 선택 후 요구량을 다시 확인하고, 부족하면\\
 {\tiny\color{gray}9월 6일 녹화는 오류 화면까지다. 이후 설치 단계는 공식 절차를 따른다.}
 \end{frame}
 
-\shotframe{9. License Manager}{02-obtain-license.png}{화면 A 00:05}{
+\begin{frame}{9. License Manager}
+\screen{02-obtain-license.png}{화면 A 00:05}
+\end{frame}
+\begin{frame}{9. License Manager · 누르는 순서}
+
 시작 메뉴에서\\
 \textbf{Manage AMD Licenses}를 실행한다.
 \begin{enumerate}
@@ -229,9 +267,14 @@ Spartan-7 선택 후 요구량을 다시 확인하고, 부족하면\\
 \item Connect Now
 \end{enumerate}
 Purchased라는 표현이 있어도 무료 BASIC을 발급할 수 있다.
-}
 
-\shotframe{10. 무료 BASIC 선택}{03-basic-license.png}{화면 A 01:05}{
+\end{frame}
+
+\begin{frame}{10. 무료 BASIC 선택}
+\screen{03-basic-license.png}{화면 A 01:05}
+\end{frame}
+\begin{frame}{10. 무료 BASIC 선택 · 누르는 순서}
+
 AMD 사이트에 로그인하고 본인 정보를 확인한다.
 \begin{enumerate}
 \item Create New Licenses
@@ -240,16 +283,22 @@ AMD 사이트에 로그인하고 본인 정보를 확인한다.
 \item Generate Node-Locked License
 \end{enumerate}
 평가판이나 구형 WebPACK과 구분한다.
-}
 
-\shotframe{11. 사용할 PC 지정}{04-node-license.png}{화면 A 01:30 · Host ID 선택 전}{
+\end{frame}
+
+\begin{frame}{11. 사용할 PC 지정}
+\screen{04-node-license.png}{화면 A 01:30 · Host ID 선택 전}
+\end{frame}
+\begin{frame}{11. 사용할 PC 지정 · 누르는 순서}
+
 \begin{enumerate}
 \item 제품이 Vivado Basic인지 확인한다.
 \item Select a host에서 사용할 PC를 선택한다.
 \item 목록에 없으면 Add a Host로 등록한다.
 \end{enumerate}
 Host ID는 License Manager의 \textbf{View Host Information}에서 확인한다.
-}
+
+\end{frame}
 
 \begin{frame}{12. 라이선스 파일 받기}
 \begin{enumerate}
@@ -293,22 +342,32 @@ Node-locked 라이선스는 지정한 PC에 연결된다.\\
 BASIC이 목록에 있다는 것만으로 등록 성공을 판단하지 않는다.
 \end{frame}
 
-\shotframe{15. Vivado 실행}{06-vivado-basic.png}{화면 A 16:25}{
+\begin{frame}{15. Vivado 실행}
+\screen{06-vivado-basic.png}{화면 A 16:25}
+\end{frame}
+\begin{frame}{15. Vivado 실행 · 누르는 순서}
+
 Vivado 2026.1을 실행한다.
 \vspace{0.4cm}
 \par 라이선스 오류 없이 시작 화면이 열리는지 확인한다.
 \vspace{0.4cm}
 \par 이 단계와 실제 보드 프로그래밍 검증은 별개다.
-}
 
-\shotframe{16. 확인용 프로젝트}{07-rtl-project.png}{화면 A 18:00}{
+\end{frame}
+
+\begin{frame}{16. 확인용 프로젝트}
+\screen{07-rtl-project.png}{화면 A 18:00}
+\end{frame}
+\begin{frame}{16. 확인용 프로젝트 · 누르는 순서}
+
 \begin{enumerate}
 \item New Project를 누른다.
 \item 이름과 저장 위치를 정한다.
 \item \textbf{RTL Project}를 선택한다.
 \item \textbf{Do not specify sources at this time}을 선택한다.
 \end{enumerate}
-}
+
+\end{frame}
 
 \begin{frame}{17. Spartan-7 부품 검색}
 \begin{enumerate}
@@ -328,29 +387,29 @@ Vivado 2026.1을 실행한다.
 
 \begin{frame}[fragile]{18. XSim 실행 파일 확인}
 PowerShell에서 실행한다.
-\begin{verbatim}
-$vivadoBin = 'C:/AMDDesignTools/2026.1/Vivado/bin'
-Test-Path "$vivadoBin/xvlog.bat"
-Test-Path "$vivadoBin/xelab.bat"
-Test-Path "$vivadoBin/xsim.bat"
-\end{verbatim}
+\terminalbox{\$vivadoBin = 'C:/AMDDesignTools/2026.1/Vivado/bin'\\Test-Path "\$vivadoBin/xvlog.bat"\\Test-Path "\$vivadoBin/xelab.bat"\\Test-Path "\$vivadoBin/xsim.bat"}
+
 \begin{itemize}
 \item 세 결과가 모두 \texttt{True}인지 확인한다.
-\item 다른 위치에 설치했다면 위 경로와 배포 프로젝트의\\
-\texttt{.vscode/tasks.json} 경로를 맞춘다.
+\item 다른 위치에 설치했다면 위 확인 명령의 경로를 맞춘다.
 \item 파일 존재 확인 뒤 실제 시뮬레이션·VCD 생성은\\
 별도 조합회로 시뮬레이션 매뉴얼에서 진행한다.
 \end{itemize}
 \end{frame}
 
-\shotframe{19. 환경 변수 설정 열기}{14-system-properties.png}{화면 C · 2026.09.07 실제 Windows 설정 화면}{
+\begin{frame}{19. 환경 변수 설정 열기}
+\screen{14-system-properties.png}{화면 C · 2026.09.07 실제 Windows 설정 화면}
+\end{frame}
+\begin{frame}{19. 환경 변수 설정 열기 · 누르는 순서}
+
 \begin{enumerate}
 \item Windows 시작 메뉴에서 \textbf{시스템 환경 변수 편집}을 검색한다.
 \item 시스템 속성의 \textbf{고급} 탭을 연다.
 \item \textbf{환경 변수...}를 누른다.
 \end{enumerate}
 PATH는 명령 이름으로 실행 파일을 찾을 때 검색하는 폴더 목록이다.
-}
+
+\end{frame}
 
 \begin{frame}{20. 사용자 PATH에 Vivado 추가}
 \begin{enumerate}
@@ -371,19 +430,15 @@ PATH는 명령 이름으로 실행 파일을 찾을 때 검색하는 폴더 목�
 
 \begin{frame}[fragile]{21. PATH 적용 확인}
 VS Code와 터미널 앱을 완전히 종료한 뒤 다시 실행한다.
-\begin{verbatim}
-where.exe xvlog.bat
-where.exe xelab.bat
-where.exe xsim.bat
-xsim.bat -version
-\end{verbatim}
+\terminalbox{where.exe xvlog.bat\\where.exe xelab.bat\\where.exe xsim.bat\\xsim.bat -version}
+
 \begin{itemize}
 \item 출력 경로가 등록한 Vivado 2026.1의 bin인지 확인한다.
 \item 버전 출력 예: \texttt{Vivado Simulator v2026.1}
 \item 계속 찾지 못하면 로그아웃·로그인 후 다시 확인한다.
 \end{itemize}
 \small PATH 등록 후에는 전체 경로 없이 도구를 호출할 수 있다.\\
-프로젝트 task가 절대 경로를 사용한다면 그 설정도 따로 확인한다.
+VS Code 사전 실습은 Icarus를 사용하며 Vivado 실행은 별도 GUI 절차를 따른다.
 \end{frame}
 
 \begin{frame}{설치 후 문제 해결}
@@ -392,8 +447,8 @@ xsim.bat -version
 Lab Edition만 설치했는지 확인한다.
 \item \textbf{라이선스가 없다는 메시지}\\
 2026.1 BASIC 파일의 등록 여부와 만료일을 확인한다.
-\item \textbf{VS Code task가 도구를 찾지 못함}\\
-실제 설치 경로와 tasks.json의 vivadoBin을 비교한다.\\
+\item \textbf{터미널이 Vivado 도구를 찾지 못함}\\
+실제 설치 경로와 사용자 PATH를 비교한다.\\
 slang-server가 XSim 실행 파일을 대신하지는 않는다.
 \end{itemize}
 \vspace{0.25cm}
@@ -402,6 +457,7 @@ slang-server가 XSim 실행 파일을 대신하지는 않는다.
 \end{frame}
 
 \begin{frame}{설치 후 문제 해결: 한글 이름}
+\small
 \begin{itemize}
 \item \textbf{사용자명·장치 이름에 한글이 포함된 경우}\\
 Vivado와 관련 도구가 정상 작동하지 않을 수 있다.

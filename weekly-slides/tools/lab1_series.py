@@ -21,9 +21,11 @@ def example_url(p):
     return entry['repository'].removesuffix('.git')+'/tree/'+entry['commit']
 
 def student_setup(d,p):
-    folder='lab1_'+p['id']
-    d.frame('준비할 프로그램',para('Git·Python 3.10 이상·VS Code·Icarus Verilog를 설치한다.','iverilog와 vvp가 PATH에서 실행되어야 한다. 사전 시뮬레이션에는 Vivado가 필요하지 않다.','Windows: python --version / git --version / iverilog -V / vvp -V','Linux·macOS: python 대신 python3를 사용한다.','설치 또는 PATH 변경 뒤 VS Code를 다시 연다.')+link(TEMPLATE,'템플릿 설치 안내'),d.label+'-setup')
-    d.frame('같은 템플릿을 새 이름으로 clone',para('PowerShell 또는 터미널에서 실습 폴더를 둘 위치로 이동한다.','git clone https://github.com/Glaysia/fpga-lab-template.git '+folder,'다음 회로도 같은 주소를 clone하고 마지막 폴더 이름만 바꾼다.','시작 상태는 주석만 있는 RTL·TB·XDC다. 이 PDF의 코드 이미지를 보며 직접 작성한다.')+link(TEMPLATE,'빈 템플릿 v2.0.0'))
+    folder=p.get('student_folder','lab1_'+p['path'].split('/')[-1]+('_cli' if p['edition']=='opensource_cli' else ''))
+    d.frame('시뮬레이션 도구 확인',para('Git·Python 3.10 이상·VS Code·Icarus Verilog를 설치한다. Windows PowerShell에서 한 줄씩 확인한다.')+terminal('git --version','python --version','iverilog -V','vvp -V')+para('설치·PATH 변경 후 VS Code를 다시 연다. Linux·macOS·WSL은 python 대신 python3를 사용한다.')+link(TEMPLATE,'설치와 빈 템플릿 안내'),d.label+'-setup')
+    cli=p['edition']=='opensource_cli'
+    continuation=chr(92) if cli else '`'
+    d.frame('v2.0.0 템플릿을 새 이름으로 clone',para('아래는 '+('macOS·Linux·WSL의 Bash/Zsh' if cli else 'Windows PowerShell')+' 명령이다. 줄 끝 문자는 다음 줄로 명령을 이어 준다.')+terminal('git clone --branch v2.0.0 '+continuation,'  https://github.com/Glaysia/fpga-lab-template.git '+continuation,'  '+folder,'cd '+folder,'git switch -c main','code LAB1.code-workspace')+para('회로마다 마지막 폴더 이름을 바꾼다. 시작 파일은 주석뿐이며 코드 이미지를 보며 직접 작성한다.')+link(TEMPLATE,'고정된 수업 버전 v2.0.0'))
     d.frame('File → New Window',para('VS Code 상단 File → New Window. Ctrl+Shift+N도 같은 동작이다.')+crop('vscode:01-file-menu',(37,28,332,106),1.6)+para('새 창의 File → Open Workspace from File...을 누른다.')+crop('vscode:01-file-menu',(37,140,332,216),1.6))
     d.frame('프로젝트 하나의 workspace 열기',items(['방금 clone한 '+folder+' 폴더를 연다.','LAB1.code-workspace를 선택하고 Open. 모든 실습의 workspace 파일명은 같다.','Explorer에 PROJECT 하나와 src·sim·constraints·tools 폴더가 보이는지 확인한다.','src/design.v·sim/tb_design.v·constraints/pins.xdc는 아직 주석뿐이다.','simulation.json은 실행할 RTL·TB 파일과 TB top을 지정하는 설정이다.']))
     d.frame('추천 확장 설치',items(['왼쪽 Extensions 아이콘을 누른다.','검색창에 @recommended를 입력한다.','slang의 Install: Verilog/SystemVerilog 편집·진단.','VaporView의 Install: VCD 파형 확인.','vscode-pdf의 Install: 코드 옆에서 PDF 교안 열기.'])+para('WSL 사용자는 WSL 창에서 필요할 경우 Install in WSL을 누른다. 확장 설치와 Python·Icarus 설치는 별개다.'))
@@ -36,9 +38,19 @@ def student_setup(d,p):
 
 def student_constraints(d,p):
     d.frame('constraints에 XDC 직접 작성',items(['constraints를 펼치고 pins.xdc 우클릭 → Rename.','파일명: '+Path(p['constraints']).name,'핀 표와 코드 이미지를 보며 PACKAGE_PIN·IOSTANDARD·get_ports를 입력한다.','get_ports의 이름과 비트 번호를 자신이 작성한 RTL의 포트와 대조한다.','File → Save All. Vivado 또는 CLI 구현에는 이 파일을 직접 가져간다.'])+para('XDC는 Icarus 기능 시뮬레이션에서 사용하지 않는다. 파형 통과만으로 핀 배치까지 검증됐다고 판단하지 않는다.'))
+    manifest=BASE/'student-code-captures.json'
+    if manifest.exists():
+        for panel in json.loads(manifest.read_text(encoding='utf-8')):
+            if panel['source']==p['constraints']:
+                d.frame('XDC 전체 코드 · '+str(panel['lines'][0])+'–'+str(panel['lines'][1])+'행',para(p['constraints']+' · 실제 VS Code 화면을 보며 직접 작성한다.')+'\\includegraphics[width=\\textwidth,height=4.2cm,keepaspectratio]{'+panel['image']+'}\\par\\vspace{0.18cm}'+para('핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.'))
 
 def esc(value):
     return ''.join({'\\':r'\textbackslash{}','_':r'\_','&':r'\&','%':r'\%','$':r'\$','#':r'\#','^':r'\textasciicircum{}','~':r'\textasciitilde{}','{':r'\{','}':r'\}'}.get(c,c) for c in str(value))
+
+TERMINAL_MACRO = r'\providecommand{\terminalbox}[1]{\par\vspace{0.15cm}{\setlength{\fboxsep}{7pt}\colorbox{black}{\parbox{\dimexpr\textwidth-14pt\relax}{\color{white}\ttfamily\fontsize{7}{9}\selectfont #1}}}\par\vspace{0.15cm}}'
+
+def terminal(*commands):
+    return '\\terminalbox{'+r'\\'.join(esc(line) for line in commands)+'}\n'
 
 def para(*lines):
     return r'\par\vspace{0.22cm}'.join(esc(x) for x in lines)+r'\par'
@@ -68,6 +80,7 @@ class Deck:
         self.pages.append('\\begin{frame}'+('[label='+label+']' if label else '')+'{'+esc(title)+'}\\relax\n\\small\n'+body+'\n\\end{frame}\n')
     def write(self,name):
         pre='\\input{shared/lab1_preamble.tex}\n\\renewcommand{\\labonehome}{\\hyperlink{'+self.label+'-contents}{\\contentsbutton}}\n\\renewcommand{\\legacySource}[1]{}\n\\hypersetup{pdftitle={'+esc(self.title)+'}}\n\\begin{document}\n\\begingroup\n\\renewcommand{\\small}{\\fontsize{9}{11}\\selectfont}\n'
+        pre=pre.replace('\\begin{document}',TERMINAL_MACRO+'\n\\begin{document}')
         path=BASE/(name+'.tex');content='% !TEX program = xelatex\n'+pre+'\n'.join(self.pages)+'\\endgroup\n\\end{document}\n'
         if not path.exists() or path.read_text(encoding='utf-8')!=content:path.write_text(content,encoding='utf-8')
         return len(self.pages)+sum((BASE/'sections/legacy_01_logic_gates.tex').read_text(encoding='utf-8').count('\\begin{frame}')-1 for page in self.pages if '\\input{sections/legacy_01_logic_gates.tex}' in page)
@@ -114,7 +127,7 @@ def integrated_gui(d):
     d.frame('통합 파형 · 전체 구간 보기',para('시뮬레이션 뒤 Untitled 1 탭을 누르고 오른쪽 위 사각형으로 파형 패널을 확대한다.','돋보기 +는 확대, −는 축소, 네 방향 화살표는 Zoom Fit이다.')+shot('wave-controls','0.65')+shot('wave-io','2.4')+para('위에서부터 clk·rst·mode_button·sw·led·seg_data다. 전체 종료는 72.43µs이며 버튼 입력 사이에 회로별 256개 벡터를 검사한다.','빠른 TB의 10ns 클록이다. 실물 보드의 1kHz 시간으로 해석하지 않는다.'))
     d.frame('통합 파형 · LCD 문자로 읽기',para('파형 목록을 아래로 스크롤해 completed_line1과 completed_line2를 찾는다.','첫 신호를 클릭하고 Shift+↓로 둘째 신호까지 선택한다. 우클릭 → Radix → ASCII를 누른다.')+shot('radix-parent','0.55')+shot('ascii-menu','1.6')+para('두 신호는 LCD 출력 버스에서 실제로 받은 바이트를 TB가 조립한 16문자다. 설정은 표시 형식만 바꾼다.'))
     d.frame('통합 파형 · 모드와 회로명 대조',para('두 줄이 보이는 상태에서 초반 파형을 클릭하고 돋보기 +를 두 번 눌러 확대한다.')+shot('lcd-strings','1.5')+para('위 줄은 completed_line1: MODE 01 → MODE 02 → MODE 03이다.','아래 줄은 completed_line2: AND OR XOR → FULL ADDER → 4 BIT ADDER다.','번호와 회로명이 함께 바뀌는지 확인한다. 초기화·리셋 및 나머지 모드도 TB가 비교하며 외부 LCD의 실측은 별도로 수행한다.'))
-    d.frame('통합 프로젝트 · GUI 실행 검증',para('아래 Log 탭 → Simulation에서 검사 수와 종료 시각을 확인한다.')+shot('pass-log','1.2')+para('Run Simulation → Run Behavioral Simulation의 2,560개 PASS와 종료 72430ns를 실제 GUI에서 확인했다.','시뮬레이션을 정상 종료한 뒤 VCD를 다시 보관했다. 날짜·버전·공백을 제외한 모든 선언·시간·값이 사전 VCD와 마지막 72430ns까지 일치한다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/vivado_2026_1/11_integrated/evidence/gui-simulation.json','통합 GUI 실행·파형 비교 기록'))
+    d.frame('통합 프로젝트 · GUI 실행 검증',para('아래 Log 탭 → Simulation에서 검사 수와 종료 시각을 확인한다.')+shot('pass-log','1.2')+para('Run Simulation → Run Behavioral Simulation의 2,560개 PASS와 종료 72430ns를 실제 GUI에서 확인했다.','시뮬레이션을 정상 종료한 뒤 VCD를 다시 보관했다. 날짜·버전·공백을 제외한 모든 선언·시간·값이 사전 VCD와 마지막 72430ns까지 일치한다.')+link(example_url(next(p for p in PROJECTS if p['path']=='vivado_2026_1/11_integrated'))+'/evidence/historical-course/gui-simulation.json','통합 GUI 실행·파형 비교 기록'))
 
 def individual_gui(d,c,p):
     evidence=LAB/p['path']/'evidence/historical-course/gui-simulation.json'
@@ -141,13 +154,18 @@ def individual_gui(d,c,p):
 
 def prelude(d,c,p):
     label=d.label;ed=p['edition'];legacy=ed=='legacy'
-    d.frame(f"{c['n']:02d} · {c['title']}",para('VS Code 사전 시뮬레이션 → '+('레거시 Vivado' if legacy else 'Vivado 2026.1')+' → 보드 실험',c['rule'])+items(['템플릿을 clone하고 이 회로의 workspace를 연다.','예상값을 계산하고 RTL·TB·XDC를 직접 작성해 시뮬레이션한다.','Vivado 결과와 실제 보드 동작을 비교한다.','자신의 사진·영상·레포트를 GitHub에 연결한다.'])+para('작성일 2026. 09. 10. · 이해리'))
+    d.frame(f"{c['n']:02d} · {c['title']}",para('VS Code 사전 시뮬레이션 → '+('레거시 Vivado' if legacy or p.get('legacy_target') else 'Vivado 2026.1')+' → 보드 실험',c['rule'])+items(['템플릿을 clone하고 이 회로의 workspace를 연다.','예상값을 계산하고 RTL·TB·XDC를 직접 작성해 시뮬레이션한다.','Vivado 결과와 실제 보드 동작을 비교한다.','자신의 사진·영상·레포트를 GitHub에 연결한다.'])+para('작성일 2026. 09. 10. · 이해리'))
     d.frame('실습 목차',para('1부 · VS Code 사전 실습')+'\\navlink{'+label+'-setup}{새 창·workspace·확장·코드 열기}\\par\\vspace{0.2cm}\n\\navlink{'+label+'-sim}{예상값·작업 실행·로그·파형·실험 전 레포트}\\par\\vspace{0.4cm}\n'+para('2부 · Vivado 실습')+'\\navlink{'+label+'-vivado}{프로젝트·소스·top·시뮬레이션·핀·비트스트림}\\par\\vspace{0.4cm}\n'+para('3부 · 결과 정리')+'\\navlink{'+label+'-post}{보드·사진·영상·GitHub·실험 후 레포트}\\par\\vspace{0.35cm}\n'+link('04.LAB1_00_CONTENTS.pdf','전체 목차 PDF 열기'),label+'-contents')
     student_setup(d,p)
+    if p.get('legacy_target'):
+        modern_file=f"04.LAB1_{c['n']:02d}_{c['pdf']}_VIVADO.pdf"
+        d.frame('VS Code 실습은 대응 최신판을 재사용',para(f"이 PDF의 사전 실습은 {c['n']:02d}번 최신판과 같은 RTL·자기검사 TB·실행 방법이다.",'실습 폴더는 이번 레거시용 이름으로 만들되, 같은 코드 이미지를 보고 직접 작성한다.','VS Code의 PASS·파형·실험 전 레포트 뒤에 이 PDF의 원본 Vivado 강의자료를 진행한다.','원본 testbench.v는 자극 순서·시간이 다를 수 있다. 동일 결과 비교에는 앞에서 작성한 자기검사 TB를 등록한다.')+link(modern_file,f"{c['n']:02d}번 VS Code 상세 실습 열기"))
     srcs=[Path(x).name for x in p['sources']]
     d.frame('입출력과 동작 규칙',para(c['ports'],c['rule'],c['board']),label+'-sim')
     d.frame('실행 전에 예상값 작성',table(['입력 또는 조건','예상 결과'],c['examples'])+para(c['focus'],'예상값을 계산한 근거를 자신의 말로 설명한다.'))
-    if c['n']==2 and not legacy:
+    if c['n']==1 and not legacy:
+        d.frame('논리 게이트 RTL 직접 작성',para('src/logic_gate.v의 전체 내용을 입력하고 저장한다.')+crop('vscode:04-rtl',(375,90,1002,210),2.2)+para(c['rule']))
+    elif c['n']==2 and not legacy:
         for module in ['half_adder','full_adder']:
             d.frame(module+' 연결 읽기',para('실제 배포 RTL을 VS Code에서 연 화면이다.')+'\\par\\vspace{0.25cm}\\includegraphics[width=\\textwidth,trim=265bp 410bp 0bp 28bp,clip]{assets/lab1-circuits/'+module+'-rtl.png}\n'+para('반가산기는 두 입력의 XOR를 합, AND를 carry로 출력한다.' if module=='half_adder' else '첫 반가산기의 합과 cin을 두 번째 반가산기에 연결한다. 두 carry를 OR로 합친다.'))
     elif not legacy and c['n'] in range(3,11):
@@ -160,7 +178,10 @@ def prelude(d,c,p):
     if legacy and c['n']==4:
         d.frame('원본 감산기의 borrow 보충',para('원본은 a>b일 때만 borrow=0으로 두어 a=b에서도 borrow=1이 된다.','original/sub_4bit.v는 원본 바이트를 보존한다. src/sub_4bit.v는 비교를 a>=b로 고친 보충 파일이다.','새 workspace의 sources에는 수정본을 등록한다. 원본 오류 검출 로그와 수정 후 256개 통과 결과를 구분한다.'))
     d.frame('테스트벤치와 통과 기준',para('시뮬레이션 top: '+p['simulation_top'],f"{c['cases']}개 입력 조합을 모두 검사한다. 각 자극은 10ns, 종료 시각은 {c['cases']*10}ns다.",'기대값과 실제 출력이 다르면 $fatal로 중단한다. 검사 횟수와 watchdog도 확인한다.','통과 문구: LAB1_PASS '+p['top']+' cases='+str(c['cases']),'원본 레거시 testbench.v와 별도의 자기검사 TB는 파일과 역할을 구분한다.'))
-    code_panels(d,'common/tb/'+Path(p['testbench']).name)
+    if c['n']==1 and not legacy:
+        for image,lines in [('tb-student-01','1–12행'),('tb-student-02','13–22행')]:
+            d.frame('테스트벤치 직접 작성 · '+lines,para('sim/tb_logic_gate_modern.sv · 같은 파일에 순서대로 이어 입력한다.')+'\\includegraphics[width=\\textwidth,height=3.8cm,keepaspectratio]{assets/modern-01/'+image+'.png}\\par\\vspace{0.18cm}'+para('긴 오류 문자열은 화면 줄바꿈이다. 문자열 중간에 Enter를 넣지 않는다.'))
+    else:code_panels(d,'common/tb/'+Path(p['testbench']).name)
     d.frame('저장 → Terminal → Run Task',para('File → Save All 다음 Terminal → Run Task...을 누른다.')+crop('vscode:06-tasks',(293,0,909,125),2.1)+items(['01 Check tools를 실행하고 도구 버전을 확인한다.','02 Simulate를 선택하고 종료까지 기다린다.','03 Open waveform으로 생성된 VCD를 연다.'])+para('작업이 없으면 올바른 .code-workspace를 열었는지 확인한다.'))
     logfile=LAB/p['path']/'evidence/standalone-simulation.txt'
     marker='LAB1_PASS '+p['top']+' cases='+str(c['cases'])
@@ -217,14 +238,16 @@ def post(d,c,p):
 
 def cli_post(d,c,p):
     guide='https://trabucayre.github.io/openFPGALoader/guide/first-steps.html'
-    d.frame('openFPGALoader 설치',para('bit 생성과 FPGA 기록은 별도 단계다. 기록에는 openFPGALoader를 사용한다.','macOS: brew install openfpgaloader','Windows MSYS2 UCRT64: pacman -S mingw-w64-ucrt-x86_64-openFPGALoader','Linux는 배포판 패키지 또는 공식 설치 문서의 빌드를 사용한다.','설치한 환경의 터미널에서 openFPGALoader --help를 실행한다.')+link(guide,'공식 설치·기록 안내'),d.label+'-post')
+    d.frame('openFPGALoader 설치',para('bit 생성과 FPGA 기록은 별도 단계다. macOS는 아래 명령을 사용한다.')+terminal('brew install openfpgaloader')+para('Windows MSYS2 UCRT64 환경에서는 다음 명령을 사용한다.')+terminal('pacman -S mingw-w64-ucrt-x86_64-openFPGALoader')+para('Linux는 배포판 패키지 또는 공식 빌드 안내를 따른다. 설치한 환경에서 확인한다.')+terminal('openFPGALoader --help')+link(guide,'공식 설치·기록 안내'),d.label+'-post')
     d.frame('보드와 JTAG 케이블 확인',items(['보드 전원과 USB JTAG 케이블을 연결한다.','openFPGALoader --list-cables로 지원 케이블 식별자를 확인한다.','openFPGALoader --list-boards로 지원 보드 식별자를 확인한다.','보드가 목록에 없으면 실제 연결된 JTAG 케이블의 식별자를 -c에 지정한다.','VM 또는 WSL에서는 해당 실행 환경에 USB 장치가 연결되어 있는지 확인한다.'])+para('다른 FPGA 보드 이름을 임의로 선택하지 않는다. 보드 모델과 케이블 모델은 별개의 정보다.'))
-    d.frame('CLI로 생성한 bit를 SRAM에 기록',para('아래 MY_CABLE은 직전 단계에서 확인한 실제 케이블 식별자로 바꾼다.','openFPGALoader -c MY_CABLE build/cli/lab1_integrated.bit','자신의 소스로 만든 최신 bit인지 경로·생성 로그·해시를 확인한 뒤 실행한다.','터미널의 장치 정보·진행률·종료 코드와 최종 상태를 보관한다.','기본 기록은 SRAM이며 전원을 끄면 사라진다. -f는 Flash 기록 옵션이므로 이 SRAM 실습 명령에는 넣지 않는다.')+link(guide,'SRAM·Flash와 케이블 옵션'))
+    d.frame('CLI로 생성한 bit를 SRAM에 기록',para('아래 MY_CABLE은 직전 단계에서 확인한 실제 케이블 식별자로 바꾼다.')+terminal('openFPGALoader -c MY_CABLE build/cli/lab1_integrated.bit')+para('자신의 소스로 만든 최신 bit인지 경로·생성 로그·해시를 확인한 뒤 실행한다.','터미널의 장치 정보·진행률·종료 코드와 최종 상태를 보관한다.','기본 기록은 SRAM이며 전원을 끄면 사라진다. -f는 Flash 기록 옵션이므로 이 SRAM 실습 명령에는 넣지 않는다.')+link(guide,'SRAM·Flash와 케이블 옵션'))
     d.frame('기록 뒤 모드·LCD 동작 확인',para(c['board'],'reset으로 01을 확인하고 버튼을 짧게·길게 눌러 한 번씩 전환되는지 본다.','10 다음 01로 돌아오는지, LCD 번호·이름이 실제 선택 회로와 일치하는지 확인한다.','모드마다 DIP를 조작하여 예상표의 정상·경계 조건과 LED·7세그먼트 출력을 비교한다.','기록 성공 로그와 실제 회로 동작을 각각 증빙한다.'))
     d.frame('CLI 실험 후 레포트와 GitHub',items(['Icarus·Yosys·nextpnr·프레임 변환·openFPGALoader 버전과 실행 명령을 기록한다.','RTL·TB·XDC 커밋, 정확한 part, DB 커밋과 bit 해시를 연결한다.','evidence/cli에 합성·배치배선·bit 생성 로그를 보관한다.','evidence/programming에 케이블·장치·기록 로그와 캡처를 보관한다.','보드 사진과 10개 모드 시연 영상에 조건·타임스탬프를 붙인다.','사전 파형·예상값·실측 차이를 해석하고 reports/post에서 증빙을 링크한다.'])+link('04.LAB1_00_CONTENTS.pdf','전체 목차 PDF'))
 
 def legacy_pages(d,c):
     d.frame('원문 Vivado 실습으로 이동',para('이후 원문은 원본의 사진·문구·순서를 유지한다.','배포 프로젝트는 Vivado 2020.1 원본 XPR 형식을 기반으로 상대경로를 정리했다. 구버전 실행 검증은 별도로 확인한다.','수업에서는 원문의 합성·구현에 앞서 자기검사 TB로 Behavioral Simulation을 먼저 실행한다.','원본 testbench.v와 검증용 TB의 입력 순서·실행 시간은 서로 다를 수 있다.'),d.label+('-original-intro' if c['n']==1 else '-vivado'))
+    if c['n']==4:
+        d.frame('원본 감산기의 동등 입력 보충',para('원본 a>b 비교는 a=b에서도 borrow=1로 출력한다. 원본 강의 화면은 그대로 보존한다.','정상적인 감산에서 a=b이면 borrow=0이다. 사전 실습의 a<b와 같은 의미가 되도록 원본 if 비교를 a>=b로 수정한다.','a=b, a<b, a>b를 자기검사 TB로 다시 확인하고 원본·수정본 차이를 실험 후 레포트에 적는다.'))
     if c['n']==1:
         # Existing reconstruction retains every source page and its separate image crops.
         d.pages.append('\\input{sections/legacy_01_logic_gates.tex}\n')
@@ -238,6 +261,13 @@ def integrated_prelude(d,p):
     d.frame('버튼·LCD 통합 실습',para('VS Code 사전 시뮬레이션 → '+('오픈소스 CLI' if cli else 'Vivado 2026.1')+' → 보드 실험','같은 RTL에 10개 회로를 넣고 버튼으로 선택한다. LCD에 모드 번호와 회로 이름을 표시한다.','작성일 2026. 09. 10. · 이해리')+items(['먼저 2,560개 입력과 버튼·LCD 동작을 검사한다.','합성·배치배선·비트스트림을 생성한다.','보드에서 모드를 순환하고 사진·영상으로 설명한다.']))
     d.frame('통합 실습 목차',para('1부 · VS Code 사전 시뮬레이션')+'\\navlink{'+label+'-setup}{clone·새 창·workspace·실행·파형}\\par\\vspace{0.4cm}\n'+para('2부 · 통합 회로 이해')+'\\navlink{'+label+'-modes}{10개 모드·버튼·LCD·보드 연결}\\par\\vspace{0.4cm}\n'+para('3부 · 구현과 결과')+'\\navlink{'+label+'-vivado}{'+('CLI 설치·실행·검증 범위' if cli else 'Vivado GUI·핀·합성·구현·bit')+'}\\par\\vspace{0.2cm}\n\\navlink{'+label+'-post}{보드·사진·영상·실험 후 레포트}\\par\\vspace{0.3cm}\n'+link('04.LAB1_00_CONTENTS.pdf','전체 목차 PDF'),label+'-contents')
     student_setup(d,p)
+    d.frame('통합에 포함할 개별 회로',para('01–10번에서 작성한 회로를 src에 모아 통합 top에 연결한다. 아래의 코드 화면도 그대로 재사용한다.','full_adder.v와 half_adder.v는 함께 필요하다. 통합 RTL·버튼·LCD까지 합성 파일은 총 14개다.','이미 작성한 파일은 복사해도 되며 simulation.json의 sources에 14개를 모두 등록한다.')+link('04.LAB1_00_CONTENTS.pdf','개별 회로별 상세 설명으로 이동'))
+    for name in ['logic_gate','half_adder','full_adder','adder_4bit','sub_4bit','compare_4','mux_4x1','demux_1x8','encoder8x3','decoder3x8','seg_decoder']:
+        if name=='logic_gate':body=crop('vscode:04-rtl',(375,90,1002,210),2.2)
+        elif name in ['half_adder','full_adder']:
+            body='\\includegraphics[width=\\textwidth,trim=265bp 410bp 0bp 28bp,clip]{assets/lab1-circuits/'+name+'-rtl.png}'
+        else:body='\\includegraphics[width=\\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/'+name+'-rtl-crop.png}'
+        d.frame('개별 RTL 재사용 · '+name,para('src/'+name+'.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.')+body+'\\par\\vspace{0.18cm}'+para('모듈 이름과 입출력 폭을 유지하고 File → Save All.'))
     for source in ['rtl/lab1_integrated.v','rtl/button_onepulse.v','rtl/lcd_modes.v','tb/tb_lab1_integrated.sv']:
         code_panels(d,'common/'+source)
     d.frame('세 작업을 순서대로 실행',crop('vscode:06-tasks',(293,0,909,125),2.1)+items(['Terminal → Run Task... → 01 Check tools.','02 Simulate → 종료까지 기다린다.','터미널과 build/sim/run-.../simulation.log를 확인한다.','LAB1_PASS lab1_integrated cases=2560을 확인한다.','03 Open waveform으로 wave.vcd를 연다.'])+para('모든 workspace의 사전 시뮬레이션은 Icarus Verilog다. SIMULATED와 TB의 실제 검사 결과를 구분한다.'))
@@ -258,9 +288,9 @@ def cli_steps(d,p):
     d.frame('실제 실행 결과와 남은 제약',para('Icarus: 2,560개 통과. Yosys: 논리 게이트·통합 합성 성공.','nextpnr: 논리 게이트 K4, 통합 클록 B6 핀을 찾지 못해 실패. 프레임·bit 단계는 실행하지 못했다.','검증한 S75 DB의 필수 핀 38개 중 28개가 빠져 있다. S75 tilegrid는 S50 파일과 바이트 단위로 같았다.','Vivado 공식 부품 데이터에는 K4와 B6가 존재한다. 다른 핀·다른 FPGA로 바꾸어 성공 처리하지 않는다.','CLI bit 목표는 미완료이며, 실행 로그·DB 해시·후속 작업을 공개한다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/docs/cli.md','실패 근거와 데이터베이스 대조'))
     d.frame('검증 가능한 순서로 실행',items(['02 Simulate: Icarus Verilog의 2,560개 검사와 VCD.','Yosys: synth_xilinx로 RTL을 Xilinx 셀에 매핑.','nextpnr-xilinx: 정확한 chipdb와 XDC로 배치·배선.','fasm2frames: FASM을 디바이스 프레임으로 변환.','xc7frames2bit: 정확한 part.yaml로 bit 생성.'])+para('각 단계의 입력·출력·종료 코드를 확인한다. 앞 단계 실패 후 오래된 산출물을 사용하지 않는다.'))
     d.frame('내 프로젝트에서 사전 검사',para('clone 폴더의 LAB1.code-workspace를 열고 RTL·TB·XDC를 직접 작성한다.','프로젝트 루트에서 python3 tools/lab1.py simulate를 실행한다.','2,560개 입력 검사와 버튼·LCD 검사를 확인한 뒤 다음 단계로 이동한다.','터미널에서 mkdir -p build/cli로 결과 폴더를 만든다.','RTL 14개가 src에 있고 constraints/lab1_integrated.xdc가 자신의 파일인지 확인한다.'))
-    d.frame('합성 명령 파일을 직접 작성',para('Explorer의 PROJECT 우클릭 → New File → synth.ys. 다음 줄을 작성하고 저장한다.','read_verilog src/*.v','synth_xilinx -family xc7 -top lab1_integrated','write_json build/cli/design.json','stat','이 파일은 Yosys 명령이다. src에는 합성할 RTL만 두고 TB는 sim에 둔다.'))
-    d.frame('Yosys 실행과 결과 읽기',para('프로젝트 루트에서 yosys -s synth.ys를 실행한다.','오류 없이 끝나는지와 build/cli/design.json의 갱신을 확인한다.','stat의 셀 종류·개수를 읽고 상위 모듈이 lab1_integrated인지 확인한다.','합성 로그를 evidence/cli에 보관한다. 합성만으로 bit 생성이나 장치 동작이 검증된 것은 아니다.'))
-    d.frame('배치배선부터 bit까지의 입력·출력',table(['단계','입력','출력'],[('nextpnr-xilinx','정확한 S75 chipdb·XDC·design.json','design.fasm'),('fasm2frames','S75 DB·part·FASM','design.frames'),('xc7frames2bit','part.yaml·frames','lab1_integrated.bit')])+para('이 교안의 S75 배치배선 문제는 아직 해결·재검증 중이다. 정확한 실행 명령과 실패 근거는 아래 문서를 따른다. 실패 다음 단계를 성공으로 기록하지 않는다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/docs/cli.md','S75 도구·DB 검증 기록'))
+    d.frame('합성 명령 파일을 직접 작성',para('Explorer의 PROJECT 우클릭 → New File → synth.ys. 다음 네 줄을 작성하고 저장한다.')+terminal('read_verilog src/*.v','synth_xilinx -family xc7 -top lab1_integrated','write_json build/cli/design.json','stat')+para('이 파일은 Yosys 명령이다. src에는 합성할 RTL만 두고 TB는 sim에 둔다.'))
+    d.frame('Yosys 실행과 결과 읽기',para('프로젝트 루트의 터미널에서 실행한다.')+terminal('mkdir -p build/cli','yosys -l build/cli/synthesis.log -s synth.ys')+para('오류 없이 끝나는지와 build/cli/design.json의 갱신을 확인한다.','stat의 셀 종류·개수를 읽고 상위 모듈이 lab1_integrated인지 확인한다.','합성 로그를 evidence/cli에 보관한다. 합성만으로 bit 생성이나 장치 동작이 검증된 것은 아니다.'))
+    d.frame('배치배선부터 bit까지의 입력·출력',items(['nextpnr-xilinx: S75 chipdb·XDC·design.json을 읽어 design.fasm을 만든다.','fasm2frames: S75 DB·part와 FASM을 읽어 design.frames를 만든다.','xc7frames2bit: part.yaml과 frames를 읽어 lab1_integrated.bit를 만든다.'])+para('이 교안의 S75 배치배선 문제는 아직 해결·재검증 중이다. 정확한 실행 명령과 실패 근거는 아래 문서를 따른다. 실패 다음 단계를 성공으로 기록하지 않는다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/docs/cli.md','S75 도구·DB 검증 기록'))
     pins(d,p)
 
 def overview(inventory):
@@ -282,7 +312,7 @@ def overview(inventory):
     d.write('04.LAB1_00_CONTENTS')
 
 def main():
-    inventory=[]
+    inventory=[{'file':'04.LAB1_01_LOGIC_GATES_VIVADO','pages':65,'project':'vivado_2026_1/01_logic_gates','hand_authored':True}]
     for c in CIRCUITS:
         for ed in ['vivado_2026_1','legacy']:
             if c['n']==1 and ed=='vivado_2026_1':continue
@@ -290,7 +320,11 @@ def main():
             modern=ed=='vivado_2026_1';number=c['n'] if modern else c['n']+10
             name=f"04.LAB1_{number:02d}_{c['pdf']}_{'VIVADO' if modern else 'LEGACY'}"
             d=Deck(('modern-' if modern else 'legacy-')+f"{c['n']:02d}",c['title'])
-            prelude(d,c,p)
+            if modern:prelude(d,c,p)
+            else:
+                shared=dict(next(q for q in PROJECTS if q['path']=='vivado_2026_1/'+c['slug']))
+                shared.update(legacy_target=True,student_folder='lab1_legacy_'+c['slug'])
+                prelude(d,c,shared)
             if modern:
                 vivado(d,c,p)
                 individual_gui(d,c,p)
