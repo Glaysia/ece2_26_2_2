@@ -221,11 +221,15 @@ endmodule
 
 def main():
     manifest=[]
+    existing={x['path']:x for x in json.loads((LAB/'circuits.json').read_text(encoding='utf-8'))} if (LAB/'circuits.json').exists() else {}
     for number,(folder,top,title,original,body) in enumerate(LESSONS,11):
         project=LAB/'vivado_2026_1'/folder
         (project/'sim').mkdir(parents=True,exist_ok=True)
         (project/'sim'/f'tb_{top}.sv').write_text(HARNESS.format(top=top,body=body.strip()),encoding='utf-8')
         config={'sources':[f'src/{top}.v'],'testbench':f'sim/tb_{top}.sv','simulation_top':f'tb_{top}'}
+        if (project/'board.json').exists():
+            board=json.loads((project/'board.json').read_text(encoding='utf-8'))
+            config['sources'] += ['src/input_frontend.v',f"src/{board['top']}.v"]
         (project/'simulation.json').write_text(json.dumps(config,indent=2)+'\n',encoding='utf-8')
         # Template files are inspected separately; keep their recommended extensions.
         for relative in ['LAB1.code-workspace','tools/lab1.py']:
@@ -236,8 +240,9 @@ def main():
             destination.parent.mkdir(parents=True,exist_ok=True)
             shutil.copyfile(source,destination)
         (project/'.gitignore').write_text('/build/\n/.runs/\n/wave.vcd\n*.vvp\n',encoding='utf-8')
-        manifest.append({'education_number':number,'title':title,'original_experiment':original,
-                         'path':f'vivado_2026_1/{folder}','top':top,'status':'core-simulation-draft'})
+        manifest.append({'status':'core-simulation-draft',**existing.get(f'vivado_2026_1/{folder}',{}),
+                         'education_number':number,'title':title,'original_experiment':original,
+                         'path':f'vivado_2026_1/{folder}','top':top})
     (LAB/'circuits.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
 if __name__=='__main__': main()

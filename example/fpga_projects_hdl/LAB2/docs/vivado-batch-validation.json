@@ -1,0 +1,200 @@
+[
+  {
+    "project": "vivado_2026_1/01_counter",
+    "top": "lab2_counter",
+    "part": "xc7s75fgga484-1",
+    "execution": "Vivado 2026.1 batch, no GUI",
+    "exit_code": 0,
+    "seconds": 193.29,
+    "run_directory": "tmp/lab2-vivado/01_counter-1789044660877728000",
+    "inputs_sha256": {
+      "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_counter.v": "f4f0e5da3ce3c432fcc8fbcf7c814ea0d06040f29ae1106d3f979a316ed0fb10",
+      "constraints/lab2_counter.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    "status": "PASS",
+    "bitstream": {
+      "file": "lab2_counter.bit",
+      "bytes": 3687015,
+      "sha256": "b45f11f54f646092fdbcf926d105c68c2cbb54e37814c3c6007b666d17925097"
+    }
+  },
+  {
+    "project": "vivado_2026_1/02_clock_divider",
+    "top": "lab2_clock_divider",
+    "part": "xc7s75fgga484-1",
+    "execution": "Vivado 2026.1 batch, no GUI",
+    "exit_code": 0,
+    "seconds": 202.16,
+    "run_directory": "tmp/lab2-vivado/02_clock_divider-1789046394030511000",
+    "inputs_sha256": {
+      "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_clock_divider.v": "8b518a4017aabcf13e9ffd5fce2d1c8032fe9ef6569176083897fdad9f000a14",
+      "constraints/lab2_clock_divider.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    "status": "PASS",
+    "bitstream": {
+      "file": "lab2_clock_divider.bit",
+      "bytes": 3687021,
+      "sha256": "55e6a83ba3d684b0639da13f00778f423085560464ea5010d176f131bc27919f"
+    }
+  },
+  {
+    "project": "vivado_2026_1/03_register",
+    "top": "lab2_register",
+    "part": "xc7s75fgga484-1",
+    "execution": "Vivado 2026.1 batch, no GUI",
+    "exit_code": 0,
+    "seconds": 181.69,
+    "run_directory": "tmp/lab2-vivado/03_register-1789045023525393200",
+    "inputs_sha256": {
+      "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_register.v": "4638c821526b32593230b9f42bfb55f1152730301ee4327a039bc8e1326a8f7b",
+      "constraints/lab2_register.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    "status": "PASS",
+    "bitstream": {
+      "file": "lab2_register.bit",
+      "bytes": 3687016,
+      "sha256": "4d9a00858c31ce3a3edb2fa7b73367925b3c2ca086ec7eae29f9312dd0cb252c"
+    }
+  },
+  {
+    "project": "vivado_2026_1/04_shift_register",
+    "top": "lab2_shift_register",
+    "part": "xc7s75fgga484-1",
+    "execution": "Vivado 2026.1 batch, no GUI",
+    "exit_code": 0,
+    "seconds": 180.14,
+    "run_directory": "tmp/lab2-vivado/04_shift_register-1789045205236513800",
+    "inputs_sha256": {
+      "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_shift_register.v": "5212d5d01d655d09c5e341f766bd8681f96e5a9b77cef4c93146d36d20f8133c",
+      "constraints/lab2_shift_register.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    "status": "PASS",
+    "bitstream": {
+      "file": "lab2_shift_register.bit",
+      "bytes": 3687022,
+      "sha256": "695b9d1719b7df799e0991583d2ecef26a8ead9c8727a2b56cac68fe9083d63f"
+    }
+  },
+  {
+    "project": "vivado_2026_1/05_piso",
+    "top": "lab2_piso",
+    "part": "xc7s75fgga484-1",
+    "execution": "Vivado 2026.1 batch, no GUI",
+    "exit_code": 0,
+    "seconds": 168.67,
+    "run_directory": "tmp/lab2-vivado/05_piso-1789045385398803700",
+    "inputs_sha256": {
+      "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_piso.v": "aa7c90e77f50b10380fbda8a872ecc3d30e4d7fb4f905615b8c56c87a9a040dd",
+      "constraints/lab2_piso.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    "status": "PASS",
+    "bitstream": {
+      "file": "lab2_piso.bit",
+      "bytes": 3687012,
+      "sha256": "c46dfa77b8db56ab26fe7e5e82af33191810cccf2f42d648aaa7f7db10a2ffb5"
+    }
+  },
+  {
+    "project": "vivado_2026_1/06_moore",
+    "top": "lab2_moore",
+    "part": "xc7s75fgga484-1",
+    "execution": "Vivado 2026.1 batch, no GUI",
+    "exit_code": 0,
+    "seconds": 181.8,
+    "run_directory": "tmp/lab2-vivado/06_moore-1789045554103652900",
+    "inputs_sha256": {
+      "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_moore.v": "2f76e66014901d98ca17349842c173f666b215e786847ace458df17ccced9287",
+      "constraints/lab2_moore.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    "status": "PASS",
+    "bitstream": {
+      "file": "lab2_moore.bit",
+      "bytes": 3687013,
+      "sha256": "9535539505e85d4ce9c320c456053c7f236ea6e5fcb7efcba39e413be70c6155"
+    }
+  },
+  {
+    "project": "vivado_2026_1/07_mealy",
+    "top": "lab2_mealy",
+    "part": "xc7s75fgga484-1",
+    "execution": "Vivado 2026.1 batch, no GUI",
+    "exit_code": 0,
+    "seconds": 168.13,
+    "run_directory": "tmp/lab2-vivado/07_mealy-1789045735929439400",
+    "inputs_sha256": {
+      "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_mealy.v": "7828bd85034cac0e9c61bd23bd470df1d420310845ebe7263dc33344e09db5bf",
+      "constraints/lab2_mealy.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    "status": "PASS",
+    "bitstream": {
+      "file": "lab2_mealy.bit",
+      "bytes": 3687013,
+      "sha256": "99cb9f22fbf1e0d3522f95c0b8046737a6251341ba38afd19f2919c057e3ea78"
+    }
+  },
+  {
+    "project": "vivado_2026_1/08_segment_scan",
+    "top": "lab2_segment_scan",
+    "part": "xc7s75fgga484-1",
+    "execution": "Vivado 2026.1 batch, no GUI",
+    "exit_code": 0,
+    "seconds": 177.91,
+    "run_directory": "tmp/lab2-vivado/08_segment_scan-1789045904083995900",
+    "inputs_sha256": {
+      "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_segment_scan.v": "43517a0d6fc44bf06e2607888704f023e1c5279d145404ec76e23b2e6a496919",
+      "constraints/lab2_segment_scan.xdc": "43c61994a6fa774d6da65ce30c0f52fd0227d0aa695528da9d6fd728875bd44d"
+    },
+    "status": "PASS",
+    "bitstream": {
+      "file": "lab2_segment_scan.bit",
+      "bytes": 3687020,
+      "sha256": "0cc8df521a06aa6a7b3b843b397fc0cbeee8d73b4d9730a755ea5b8ac7738d3d"
+    }
+  },
+  {
+    "project": "vivado_2026_1/09_integrated",
+    "top": "lab2_integrated",
+    "part": "xc7s75fgga484-1",
+    "execution": "Vivado 2026.1 batch, no GUI",
+    "exit_code": 0,
+    "seconds": 189.93,
+    "run_directory": "tmp/lab2-vivado/09_integrated-1789046082037003500",
+    "inputs_sha256": {
+      "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+      "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+      "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+      "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+      "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+      "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+      "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+      "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/button_onepulse.v": "1c255068f06c91c722144411ef362503cad8de5184a0494b858e72410c4f155b",
+      "src/lcd_lab2_modes.v": "041115a6ecb765a8d3cd96115209b538485d073235fba64dbc4e6f464ad1bd59",
+      "src/lab2_integrated.v": "194bebed29cd3aa13e2f6c30dcff46dedebef571c15436a0501edfedd56b838a",
+      "constraints/lab2_integrated.xdc": "282389e1d0c33cd9a2f9ca2fedf969647ef419203cb04838e89b2cef3188d835"
+    },
+    "status": "PASS",
+    "bitstream": {
+      "file": "lab2_integrated.bit",
+      "bytes": 3687018,
+      "sha256": "d82908f15a78d644aa8ebab384bcf524cb3e41dbc87a3da7c0ceff20d04d4d56"
+    }
+  }
+]

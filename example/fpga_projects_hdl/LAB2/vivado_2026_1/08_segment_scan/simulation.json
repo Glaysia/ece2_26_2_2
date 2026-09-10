@@ -1,7 +1,0 @@
-{
-  "sources": [
-    "src/segment_scan8.v"
-  ],
-  "testbench": "sim/tb_segment_scan8.sv",
-  "simulation_top": "tb_segment_scan8"
-}

@@ -1,0 +1,128 @@
+[
+  {
+    "project": "vivado_2026_1/01_counter",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-vivado-01-counter.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/vivado_2026_1_01_counter",
+    "commit": "3bdaf407937c731862a4670dd63dd04ef6607333",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/01_counter",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-legacy-01-counter.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/legacy_01_counter",
+    "commit": "6751a9498b6fb96be9ec0c47d912a97b3fada8e3",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/02_clock_divider",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-vivado-02-clock-divider.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/vivado_2026_1_02_clock_divider",
+    "commit": "ded58ac24859214f75440612a94fe134c76dfb09",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/02_clock_divider",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-legacy-02-clock-divider.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/legacy_02_clock_divider",
+    "commit": "108f965aba6fb8c23322b626e7861b627c5fe467",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/03_register",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-vivado-03-register.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/vivado_2026_1_03_register",
+    "commit": "e87315981a53565aa8cd8ff1dda5814cfa9270cd",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/03_register",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-legacy-03-register.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/legacy_03_register",
+    "commit": "97a2dfb10b271da812f11f70e951eac7186bf7a7",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/04_shift_register",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-vivado-04-shift-register.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/vivado_2026_1_04_shift_register",
+    "commit": "bb812644b197ab98ec4887274e526a6b4566f8fe",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/04_shift_register",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-legacy-04-shift-register.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/legacy_04_shift_register",
+    "commit": "8cf6d59a776913ff822446ea84f5bfe17fbb7bfc",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/05_piso",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-vivado-05-piso.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/vivado_2026_1_05_piso",
+    "commit": "2093860d3dd889b465f5d3f742dd96ff4c05ca3f",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/05_piso",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-legacy-05-piso.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/legacy_05_piso",
+    "commit": "691889cb3aa70d203002dadf25ea41339e6a7b1d",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/06_moore",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-vivado-06-moore.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/vivado_2026_1_06_moore",
+    "commit": "87eaa8a9110b27f1f53266255f011d4045227894",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/06_moore",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-legacy-06-moore.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/legacy_06_moore",
+    "commit": "2337ddbf75f17aaf2a4f79a0c7da0f2985f883a1",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/07_mealy",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-vivado-07-mealy.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/vivado_2026_1_07_mealy",
+    "commit": "6b5ae99fbac77c798024015ac89373b7c35e14b7",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/07_mealy",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-legacy-07-mealy.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/legacy_07_mealy",
+    "commit": "ed8390e6ddb2a945732b8fa74efdc2fdd2b41823",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/08_segment_scan",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-vivado-08-segment-scan.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/vivado_2026_1_08_segment_scan",
+    "commit": "bf96576f614bef22ed75d5846151973b6fdc26c0",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "legacy/08_segment_scan",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-legacy-08-segment-scan.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/legacy_08_segment_scan",
+    "commit": "1d2200705e4be1d371b06e36347d30a308442d07",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "vivado_2026_1/09_integrated",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-vivado-09-integrated.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/vivado_2026_1_09_integrated",
+    "commit": "21b9d222cbda622747a69bc4c7990079d47c0f94",
+    "status": "PUBLISHED"
+  },
+  {
+    "project": "opensource_cli/09_integrated",
+    "repository": "https://github.com/Glaysia/fpga-lab2-example-cli-09-integrated.git",
+    "prepared": "tmp/lab2-publish-1789046655748819700/opensource_cli_09_integrated",
+    "commit": "27626dafed232a83e30c868c3aa6e665042a02ed",
+    "status": "PUBLISHED"
+  }
+]

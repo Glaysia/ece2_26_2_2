@@ -86,3 +86,57 @@
 	path = example/fpga_projects_hdl/LAB1/opensource_cli/integrated
 	url = https://github.com/Glaysia/fpga-lab-example-opensource-cli-integrated.git
 	branch = main
+[submodule "lab2-vivado-2026-1-01-counter"]
+	path = example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter
+	url = https://github.com/Glaysia/fpga-lab2-example-vivado-01-counter.git
+[submodule "lab2-legacy-01-counter"]
+	path = example/fpga_projects_hdl/LAB2/legacy/01_counter
+	url = https://github.com/Glaysia/fpga-lab2-example-legacy-01-counter.git
+[submodule "lab2-vivado-2026-1-02-clock-divider"]
+	path = example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider
+	url = https://github.com/Glaysia/fpga-lab2-example-vivado-02-clock-divider.git
+[submodule "lab2-legacy-02-clock-divider"]
+	path = example/fpga_projects_hdl/LAB2/legacy/02_clock_divider
+	url = https://github.com/Glaysia/fpga-lab2-example-legacy-02-clock-divider.git
+[submodule "lab2-vivado-2026-1-03-register"]
+	path = example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register
+	url = https://github.com/Glaysia/fpga-lab2-example-vivado-03-register.git
+[submodule "lab2-legacy-03-register"]
+	path = example/fpga_projects_hdl/LAB2/legacy/03_register
+	url = https://github.com/Glaysia/fpga-lab2-example-legacy-03-register.git
+[submodule "lab2-vivado-2026-1-04-shift-register"]
+	path = example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register
+	url = https://github.com/Glaysia/fpga-lab2-example-vivado-04-shift-register.git
+[submodule "lab2-legacy-04-shift-register"]
+	path = example/fpga_projects_hdl/LAB2/legacy/04_shift_register
+	url = https://github.com/Glaysia/fpga-lab2-example-legacy-04-shift-register.git
+[submodule "lab2-vivado-2026-1-05-piso"]
+	path = example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso
+	url = https://github.com/Glaysia/fpga-lab2-example-vivado-05-piso.git
+[submodule "lab2-legacy-05-piso"]
+	path = example/fpga_projects_hdl/LAB2/legacy/05_piso
+	url = https://github.com/Glaysia/fpga-lab2-example-legacy-05-piso.git
+[submodule "lab2-vivado-2026-1-06-moore"]
+	path = example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore
+	url = https://github.com/Glaysia/fpga-lab2-example-vivado-06-moore.git
+[submodule "lab2-legacy-06-moore"]
+	path = example/fpga_projects_hdl/LAB2/legacy/06_moore
+	url = https://github.com/Glaysia/fpga-lab2-example-legacy-06-moore.git
+[submodule "lab2-vivado-2026-1-07-mealy"]
+	path = example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy
+	url = https://github.com/Glaysia/fpga-lab2-example-vivado-07-mealy.git
+[submodule "lab2-legacy-07-mealy"]
+	path = example/fpga_projects_hdl/LAB2/legacy/07_mealy
+	url = https://github.com/Glaysia/fpga-lab2-example-legacy-07-mealy.git
+[submodule "lab2-vivado-2026-1-08-segment-scan"]
+	path = example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan
+	url = https://github.com/Glaysia/fpga-lab2-example-vivado-08-segment-scan.git
+[submodule "lab2-legacy-08-segment-scan"]
+	path = example/fpga_projects_hdl/LAB2/legacy/08_segment_scan
+	url = https://github.com/Glaysia/fpga-lab2-example-legacy-08-segment-scan.git
+[submodule "lab2-vivado-2026-1-09-integrated"]
+	path = example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated
+	url = https://github.com/Glaysia/fpga-lab2-example-vivado-09-integrated.git
+[submodule "lab2-opensource-cli-09-integrated"]
+	path = example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated
+	url = https://github.com/Glaysia/fpga-lab2-example-cli-09-integrated.git

@@ -1,0 +1,182 @@
+[
+  {
+    "path": "vivado_2026_1/01_counter",
+    "tool": "Vivado 2026.1 XSim",
+    "execution": "batch, no GUI",
+    "status": "PASS",
+    "marker": "LAB2_PASS counter4 checks=36",
+    "commands_exit_code": [
+      0,
+      0,
+      0
+    ],
+    "inputs_sha256": {
+      "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_counter.v": "f4f0e5da3ce3c432fcc8fbcf7c814ea0d06040f29ae1106d3f979a316ed0fb10",
+      "sim/tb_counter4.sv": "439c4e2bf639d1e6c08c994c68aa3acc28944274b62e92226d824fd32f8f4ade"
+    },
+    "run_directory": "tmp/lab2-xsim/01_counter-1789046405796425900"
+  },
+  {
+    "path": "vivado_2026_1/02_clock_divider",
+    "tool": "Vivado 2026.1 XSim",
+    "execution": "batch, no GUI",
+    "status": "PASS",
+    "marker": "LAB2_PASS clock_divider checks=129",
+    "commands_exit_code": [
+      0,
+      0,
+      0
+    ],
+    "inputs_sha256": {
+      "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_clock_divider.v": "8b518a4017aabcf13e9ffd5fce2d1c8032fe9ef6569176083897fdad9f000a14",
+      "sim/tb_clock_divider.sv": "1a18d85d870139717f6190caf6c016def9c67d7be42ec51e20f2732cef19abb0"
+    },
+    "run_directory": "tmp/lab2-xsim/02_clock_divider-1789046415416435700"
+  },
+  {
+    "path": "vivado_2026_1/03_register",
+    "tool": "Vivado 2026.1 XSim",
+    "execution": "batch, no GUI",
+    "status": "PASS",
+    "marker": "LAB2_PASS register_pair checks=7",
+    "commands_exit_code": [
+      0,
+      0,
+      0
+    ],
+    "inputs_sha256": {
+      "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_register.v": "4638c821526b32593230b9f42bfb55f1152730301ee4327a039bc8e1326a8f7b",
+      "sim/tb_register_pair.sv": "623b0d84bab55735ed5dded6061b3cd60ccee27c4bd66c049969e1245f963b7b"
+    },
+    "run_directory": "tmp/lab2-xsim/03_register-1789046420830178800"
+  },
+  {
+    "path": "vivado_2026_1/04_shift_register",
+    "tool": "Vivado 2026.1 XSim",
+    "execution": "batch, no GUI",
+    "status": "PASS",
+    "marker": "LAB2_PASS shift_register4 checks=8",
+    "commands_exit_code": [
+      0,
+      0,
+      0
+    ],
+    "inputs_sha256": {
+      "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_shift_register.v": "5212d5d01d655d09c5e341f766bd8681f96e5a9b77cef4c93146d36d20f8133c",
+      "sim/tb_shift_register4.sv": "1683da25534c5ea9284a14877303d5e5cd2ee6fca439036a5eee79515cad13a3"
+    },
+    "run_directory": "tmp/lab2-xsim/04_shift_register-1789046426259817600"
+  },
+  {
+    "path": "vivado_2026_1/05_piso",
+    "tool": "Vivado 2026.1 XSim",
+    "execution": "batch, no GUI",
+    "status": "PASS",
+    "marker": "LAB2_PASS piso4 checks=114",
+    "commands_exit_code": [
+      0,
+      0,
+      0
+    ],
+    "inputs_sha256": {
+      "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_piso.v": "aa7c90e77f50b10380fbda8a872ecc3d30e4d7fb4f905615b8c56c87a9a040dd",
+      "sim/tb_piso4.sv": "c07306c7c8c7f17cda4a6ac6ca1cd849a0d6b10fa0bab5beaeca8a6243450dc5"
+    },
+    "run_directory": "tmp/lab2-xsim/05_piso-1789046431456592100"
+  },
+  {
+    "path": "vivado_2026_1/06_moore",
+    "tool": "Vivado 2026.1 XSim",
+    "execution": "batch, no GUI",
+    "status": "PASS",
+    "marker": "LAB2_PASS moore_cycle checks=23",
+    "commands_exit_code": [
+      0,
+      0,
+      0
+    ],
+    "inputs_sha256": {
+      "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_moore.v": "2f76e66014901d98ca17349842c173f666b215e786847ace458df17ccced9287",
+      "sim/tb_moore_cycle.sv": "c3c9b42204daea82209604a197c975bd3aee71b2e3fb4f9b458ba21da1ff3c6f"
+    },
+    "run_directory": "tmp/lab2-xsim/06_moore-1789046436835817100"
+  },
+  {
+    "path": "vivado_2026_1/07_mealy",
+    "tool": "Vivado 2026.1 XSim",
+    "execution": "batch, no GUI",
+    "status": "PASS",
+    "marker": "LAB2_PASS mealy_toggle checks=11",
+    "commands_exit_code": [
+      0,
+      0,
+      0
+    ],
+    "inputs_sha256": {
+      "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_mealy.v": "7828bd85034cac0e9c61bd23bd470df1d420310845ebe7263dc33344e09db5bf",
+      "sim/tb_mealy_toggle.sv": "37b462465bfda7d9cf32a44b0f63cc1a02274b41db1f10a1c932674ae6f2eff0"
+    },
+    "run_directory": "tmp/lab2-xsim/07_mealy-1789046442100561800"
+  },
+  {
+    "path": "vivado_2026_1/08_segment_scan",
+    "tool": "Vivado 2026.1 XSim",
+    "execution": "batch, no GUI",
+    "status": "PASS",
+    "marker": "LAB2_PASS segment_scan8 checks=194",
+    "commands_exit_code": [
+      0,
+      0,
+      0
+    ],
+    "inputs_sha256": {
+      "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_segment_scan.v": "43517a0d6fc44bf06e2607888704f023e1c5279d145404ec76e23b2e6a496919",
+      "sim/tb_segment_scan8.sv": "4b684e66d3206a377fceecbddd1d7c9fb250eaa95518b6ffa00d2ed661c71102"
+    },
+    "run_directory": "tmp/lab2-xsim/08_segment_scan-1789046447446716600"
+  },
+  {
+    "path": "vivado_2026_1/09_integrated",
+    "tool": "Vivado 2026.1 XSim",
+    "execution": "batch, no GUI",
+    "status": "PASS",
+    "marker": "LAB2_INTEGRATED_PASS modes=8 checks=2848",
+    "commands_exit_code": [
+      0,
+      0,
+      0
+    ],
+    "inputs_sha256": {
+      "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+      "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+      "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+      "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+      "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+      "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+      "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+      "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/button_onepulse.v": "1c255068f06c91c722144411ef362503cad8de5184a0494b858e72410c4f155b",
+      "src/lcd_lab2_modes.v": "041115a6ecb765a8d3cd96115209b538485d073235fba64dbc4e6f464ad1bd59",
+      "src/lab2_integrated.v": "194bebed29cd3aa13e2f6c30dcff46dedebef571c15436a0501edfedd56b838a",
+      "sim/tb_lab2_integrated.sv": "42671df2a8fac680939236a87025b42cd96ce9da96cd73d38f77d4df280db946"
+    },
+    "run_directory": "tmp/lab2-xsim/09_integrated-1789046453259483100"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "projects": [
+    {
+      "path": "vivado_2026_1/09_integrated",
+      "baseline_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_INTEGRATED_PASS modes=8 checks=2848\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-tv_21n9r\\09_integrated\\sim\\tb_lab2_integrated.sv:129: $finish called at 34326000 (1ps)\n",
+      "edit": "counter4.v: increment 1 -> 2; leave TB expectations unchanged",
+      "runs": [
+        {
+          "stage": "changed",
+          "exit_code": 1,
+          "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_INTEGRATED_FAIL counter increments once time=346000\nFATAL: C:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-integrated-edit-y9rv8b00\\project\\sim\\tb_lab2_integrated.sv:23: check failed\n       Time: 346000  Scope: tb_lab2_integrated.check\n",
+          "rtl_sha256": "aaa92068f8e622902a5a029b5c25fbad2daa075e8ce3450bcc97eba107830a51"
+        },
+        {
+          "stage": "restored",
+          "exit_code": 0,
+          "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_INTEGRATED_PASS modes=8 checks=2848\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-integrated-edit-y9rv8b00\\project\\sim\\tb_lab2_integrated.sv:129: $finish called at 34326000 (1ps)\n",
+          "rtl_sha256": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880"
+        }
+      ]
+    },
+    {
+      "path": "opensource_cli/09_integrated",
+      "baseline_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_INTEGRATED_PASS modes=8 checks=2848\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-emejk9ue\\09_integrated\\sim\\tb_lab2_integrated.sv:129: $finish called at 34326000 (1ps)\n",
+      "edit": "counter4.v: increment 1 -> 2; leave TB expectations unchanged",
+      "runs": [
+        {
+          "stage": "changed",
+          "exit_code": 1,
+          "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_INTEGRATED_FAIL counter increments once time=346000\nFATAL: C:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-integrated-edit-9zjjgol3\\project\\sim\\tb_lab2_integrated.sv:23: check failed\n       Time: 346000  Scope: tb_lab2_integrated.check\n",
+          "rtl_sha256": "aaa92068f8e622902a5a029b5c25fbad2daa075e8ce3450bcc97eba107830a51"
+        },
+        {
+          "stage": "restored",
+          "exit_code": 0,
+          "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_INTEGRATED_PASS modes=8 checks=2848\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-integrated-edit-9zjjgol3\\project\\sim\\tb_lab2_integrated.sv:129: $finish called at 34326000 (1ps)\n",
+          "rtl_sha256": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+{
+  "status": "PASS",
+  "projects": [
+    {
+      "path": "vivado_2026_1/01_counter",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS counter4 checks=36\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-3dqspnl0\\01_counter\\sim\\tb_counter4.sv:19: $finish called at 356000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "e3211debf9bde4bf568ebe0dfaed612d8bdb781ae3e91941475d85c4ca850b55",
+        "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_counter.v": "f4f0e5da3ce3c432fcc8fbcf7c814ea0d06040f29ae1106d3f979a316ed0fb10",
+        "sim/tb_counter4.sv": "439c4e2bf639d1e6c08c994c68aa3acc28944274b62e92226d824fd32f8f4ade",
+        "sim/tb_board.sv": "afe33225e09363384f21142a9c7c24548b390ae92eb18c21e0b5e90cd49255aa"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "legacy/01_counter",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS counter4 checks=36\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-7dca_m1i\\01_counter\\sim\\tb_counter4.sv:19: $finish called at 356000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "e3211debf9bde4bf568ebe0dfaed612d8bdb781ae3e91941475d85c4ca850b55",
+        "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_counter.v": "f4f0e5da3ce3c432fcc8fbcf7c814ea0d06040f29ae1106d3f979a316ed0fb10",
+        "sim/tb_counter4.sv": "439c4e2bf639d1e6c08c994c68aa3acc28944274b62e92226d824fd32f8f4ade",
+        "sim/tb_board.sv": "afe33225e09363384f21142a9c7c24548b390ae92eb18c21e0b5e90cd49255aa"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "vivado_2026_1/02_clock_divider",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS clock_divider checks=129\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-f2dwdnya\\02_clock_divider\\sim\\tb_clock_divider.sv:19: $finish called at 436000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "c88bf7bf8dacb2a5badcc637049b7be4c5faf6d4e1b6868c4618ae38f82f352b",
+        "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_clock_divider.v": "8b518a4017aabcf13e9ffd5fce2d1c8032fe9ef6569176083897fdad9f000a14",
+        "sim/tb_clock_divider.sv": "1a18d85d870139717f6190caf6c016def9c67d7be42ec51e20f2732cef19abb0",
+        "sim/tb_board.sv": "53d0a01ced49ac0e390c3f9d49e723dc11417146277b1270f3feb6e0e47303e7"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "legacy/02_clock_divider",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS clock_divider checks=129\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-q2ik8dqv\\02_clock_divider\\sim\\tb_clock_divider.sv:19: $finish called at 436000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "c88bf7bf8dacb2a5badcc637049b7be4c5faf6d4e1b6868c4618ae38f82f352b",
+        "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_clock_divider.v": "8b518a4017aabcf13e9ffd5fce2d1c8032fe9ef6569176083897fdad9f000a14",
+        "sim/tb_clock_divider.sv": "1a18d85d870139717f6190caf6c016def9c67d7be42ec51e20f2732cef19abb0",
+        "sim/tb_board.sv": "53d0a01ced49ac0e390c3f9d49e723dc11417146277b1270f3feb6e0e47303e7"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "vivado_2026_1/03_register",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS register_pair checks=7\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-7l4q2iw6\\03_register\\sim\\tb_register_pair.sv:19: $finish called at 66000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "3bbd3e5da74260f1ba1b5da6da5bc80097515c5f11eb23d86e1210d69de35279",
+        "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_register.v": "4638c821526b32593230b9f42bfb55f1152730301ee4327a039bc8e1326a8f7b",
+        "sim/tb_register_pair.sv": "623b0d84bab55735ed5dded6061b3cd60ccee27c4bd66c049969e1245f963b7b",
+        "sim/tb_board.sv": "0fb13d114f4f96c18583c7e3cb307aec279af022add369ac202a81f019d14a26"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "legacy/03_register",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS register_pair checks=7\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-agiauy_p\\03_register\\sim\\tb_register_pair.sv:19: $finish called at 66000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "3bbd3e5da74260f1ba1b5da6da5bc80097515c5f11eb23d86e1210d69de35279",
+        "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_register.v": "4638c821526b32593230b9f42bfb55f1152730301ee4327a039bc8e1326a8f7b",
+        "sim/tb_register_pair.sv": "623b0d84bab55735ed5dded6061b3cd60ccee27c4bd66c049969e1245f963b7b",
+        "sim/tb_board.sv": "0fb13d114f4f96c18583c7e3cb307aec279af022add369ac202a81f019d14a26"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "vivado_2026_1/04_shift_register",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS shift_register4 checks=8\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-k1ut0fsy\\04_shift_register\\sim\\tb_shift_register4.sv:19: $finish called at 106000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "67c70f8adf2cd802d949e10b1420ceaa211930456b46c54f1d724c62743be30f",
+        "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_shift_register.v": "5212d5d01d655d09c5e341f766bd8681f96e5a9b77cef4c93146d36d20f8133c",
+        "sim/tb_shift_register4.sv": "1683da25534c5ea9284a14877303d5e5cd2ee6fca439036a5eee79515cad13a3",
+        "sim/tb_board.sv": "b6dc06da49651016343f7a9694147b61809a3ba7e38e3908223c99a58c8722f9"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "legacy/04_shift_register",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS shift_register4 checks=8\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-hhk3it18\\04_shift_register\\sim\\tb_shift_register4.sv:19: $finish called at 106000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "67c70f8adf2cd802d949e10b1420ceaa211930456b46c54f1d724c62743be30f",
+        "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_shift_register.v": "5212d5d01d655d09c5e341f766bd8681f96e5a9b77cef4c93146d36d20f8133c",
+        "sim/tb_shift_register4.sv": "1683da25534c5ea9284a14877303d5e5cd2ee6fca439036a5eee79515cad13a3",
+        "sim/tb_board.sv": "b6dc06da49651016343f7a9694147b61809a3ba7e38e3908223c99a58c8722f9"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "vivado_2026_1/05_piso",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS piso4 checks=114\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-wkyb8dbh\\05_piso\\sim\\tb_piso4.sv:19: $finish called at 976000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "8f851ff69cb73cf9e41c0ab2ad922edb3111cf1730e652c9fa7c20b6161d55c1",
+        "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_piso.v": "aa7c90e77f50b10380fbda8a872ecc3d30e4d7fb4f905615b8c56c87a9a040dd",
+        "sim/tb_piso4.sv": "c07306c7c8c7f17cda4a6ac6ca1cd849a0d6b10fa0bab5beaeca8a6243450dc5",
+        "sim/tb_board.sv": "3d4f1713338e1dd2b2bef36db047215ee704674ba4c98431932a7a91096c29a9"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "legacy/05_piso",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS piso4 checks=114\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-iqqsnput\\05_piso\\sim\\tb_piso4.sv:19: $finish called at 976000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "8f851ff69cb73cf9e41c0ab2ad922edb3111cf1730e652c9fa7c20b6161d55c1",
+        "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_piso.v": "aa7c90e77f50b10380fbda8a872ecc3d30e4d7fb4f905615b8c56c87a9a040dd",
+        "sim/tb_piso4.sv": "c07306c7c8c7f17cda4a6ac6ca1cd849a0d6b10fa0bab5beaeca8a6243450dc5",
+        "sim/tb_board.sv": "3d4f1713338e1dd2b2bef36db047215ee704674ba4c98431932a7a91096c29a9"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "vivado_2026_1/06_moore",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS moore_cycle checks=23\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-ap205ugn\\06_moore\\sim\\tb_moore_cycle.sv:19: $finish called at 226000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "d5528a8718e53afc2f42f8608080c5f006f88fe94a142f00ea737f104f1922a2",
+        "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_moore.v": "2f76e66014901d98ca17349842c173f666b215e786847ace458df17ccced9287",
+        "sim/tb_moore_cycle.sv": "c3c9b42204daea82209604a197c975bd3aee71b2e3fb4f9b458ba21da1ff3c6f",
+        "sim/tb_board.sv": "d6da6a6eda830c35edb4a2dfa8c0dfb8e12afd72ed27171f96bc9994be468e88"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "legacy/06_moore",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS moore_cycle checks=23\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-a94ak9sb\\06_moore\\sim\\tb_moore_cycle.sv:19: $finish called at 226000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "d5528a8718e53afc2f42f8608080c5f006f88fe94a142f00ea737f104f1922a2",
+        "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_moore.v": "2f76e66014901d98ca17349842c173f666b215e786847ace458df17ccced9287",
+        "sim/tb_moore_cycle.sv": "c3c9b42204daea82209604a197c975bd3aee71b2e3fb4f9b458ba21da1ff3c6f",
+        "sim/tb_board.sv": "d6da6a6eda830c35edb4a2dfa8c0dfb8e12afd72ed27171f96bc9994be468e88"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "vivado_2026_1/07_mealy",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS mealy_toggle checks=11\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-uvdd5tk6\\07_mealy\\sim\\tb_mealy_toggle.sv:19: $finish called at 67000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "5b756f01d48b06fc4661826fef6e4959e6c042e4059277e104bb19e548f2c0c1",
+        "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_mealy.v": "7828bd85034cac0e9c61bd23bd470df1d420310845ebe7263dc33344e09db5bf",
+        "sim/tb_mealy_toggle.sv": "37b462465bfda7d9cf32a44b0f63cc1a02274b41db1f10a1c932674ae6f2eff0",
+        "sim/tb_board.sv": "1e22e5af254c5e16cb4486cd6a9c3425f3896568a4133c6a798f3144b9d419d2"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "legacy/07_mealy",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS mealy_toggle checks=11\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-wui2xxxn\\07_mealy\\sim\\tb_mealy_toggle.sv:19: $finish called at 67000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "5b756f01d48b06fc4661826fef6e4959e6c042e4059277e104bb19e548f2c0c1",
+        "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_mealy.v": "7828bd85034cac0e9c61bd23bd470df1d420310845ebe7263dc33344e09db5bf",
+        "sim/tb_mealy_toggle.sv": "37b462465bfda7d9cf32a44b0f63cc1a02274b41db1f10a1c932674ae6f2eff0",
+        "sim/tb_board.sv": "1e22e5af254c5e16cb4486cd6a9c3425f3896568a4133c6a798f3144b9d419d2"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+    },
+    {
+      "path": "vivado_2026_1/08_segment_scan",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS segment_scan8 checks=194\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-_ktryjam\\08_segment_scan\\sim\\tb_segment_scan8.sv:19: $finish called at 1306000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "fd88996314d4f0012fd9ba4ad41845317cd47870bb1ad818de130321b9791277",
+        "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_segment_scan.v": "43517a0d6fc44bf06e2607888704f023e1c5279d145404ec76e23b2e6a496919",
+        "sim/tb_segment_scan8.sv": "4b684e66d3206a377fceecbddd1d7c9fb250eaa95518b6ffa00d2ed661c71102",
+        "sim/tb_board.sv": "2ff96bffcbc7a5adaee80813dd6943802afbd9025affd534a6989d2871d3116c"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "43c61994a6fa774d6da65ce30c0f52fd0227d0aa695528da9d6fd728875bd44d"
+    },
+    {
+      "path": "legacy/08_segment_scan",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS segment_scan8 checks=194\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-w8k4sdne\\08_segment_scan\\sim\\tb_segment_scan8.sv:19: $finish called at 1306000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "fd88996314d4f0012fd9ba4ad41845317cd47870bb1ad818de130321b9791277",
+        "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_segment_scan.v": "43517a0d6fc44bf06e2607888704f023e1c5279d145404ec76e23b2e6a496919",
+        "sim/tb_segment_scan8.sv": "4b684e66d3206a377fceecbddd1d7c9fb250eaa95518b6ffa00d2ed661c71102",
+        "sim/tb_board.sv": "2ff96bffcbc7a5adaee80813dd6943802afbd9025affd534a6989d2871d3116c"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "43c61994a6fa774d6da65ce30c0f52fd0227d0aa695528da9d6fd728875bd44d"
+    },
+    {
+      "path": "vivado_2026_1/09_integrated",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_INTEGRATED_PASS modes=8 checks=2848\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-tv_21n9r\\09_integrated\\sim\\tb_lab2_integrated.sv:129: $finish called at 34326000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "5bab5e83844a8858fe54aae9a22eca82257689efaf836693fa5e754510794cd5",
+        "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+        "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+        "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+        "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+        "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+        "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+        "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+        "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/button_onepulse.v": "1c255068f06c91c722144411ef362503cad8de5184a0494b858e72410c4f155b",
+        "src/lcd_lab2_modes.v": "041115a6ecb765a8d3cd96115209b538485d073235fba64dbc4e6f464ad1bd59",
+        "src/lab2_integrated.v": "194bebed29cd3aa13e2f6c30dcff46dedebef571c15436a0501edfedd56b838a",
+        "sim/tb_lab2_integrated.sv": "42671df2a8fac680939236a87025b42cd96ce9da96cd73d38f77d4df280db946"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "282389e1d0c33cd9a2f9ca2fedf969647ef419203cb04838e89b2cef3188d835"
+    },
+    {
+      "path": "opensource_cli/09_integrated",
+      "status": "PASS",
+      "execution": "fresh temporary directory; standalone CLI simulation",
+      "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_INTEGRATED_PASS modes=8 checks=2848\nC:\\Users\\UOS\\AppData\\Local\\Temp\\lab2-independent-emejk9ue\\09_integrated\\sim\\tb_lab2_integrated.sv:129: $finish called at 34326000 (1ps)\n",
+      "input_sha256": {
+        "simulation.json": "5bab5e83844a8858fe54aae9a22eca82257689efaf836693fa5e754510794cd5",
+        "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+        "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+        "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+        "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+        "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+        "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+        "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+        "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/button_onepulse.v": "1c255068f06c91c722144411ef362503cad8de5184a0494b858e72410c4f155b",
+        "src/lcd_lab2_modes.v": "041115a6ecb765a8d3cd96115209b538485d073235fba64dbc4e6f464ad1bd59",
+        "src/lab2_integrated.v": "194bebed29cd3aa13e2f6c30dcff46dedebef571c15436a0501edfedd56b838a",
+        "sim/tb_lab2_integrated.sv": "42671df2a8fac680939236a87025b42cd96ce9da96cd73d38f77d4df280db946"
+      },
+      "workspace_sha256": "3a7edfc88a18740676c2161c169db45b234f26066952ed723bb6b12128e7770d",
+      "constraints_sha256": "282389e1d0c33cd9a2f9ca2fedf969647ef419203cb04838e89b2cef3188d835"
+    }
+  ]
+}

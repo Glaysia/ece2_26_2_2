@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "01_counter",
+    "source": "legacy/교안 22년도/전자전기컴퓨터설계실습II-5.1_클럭의 이해와 순서 논리 회로.pdf",
+    "sha256": "b0d70c06fc1a4f739f5c4e08f57f649911227474bd68edeecb78869677533fc5",
+    "pages": [
+      3,
+      37
+    ],
+    "render_scale": 1.5,
+    "method": "PDFium rasterization; no added or altered source text"
+  },
+  {
+    "slug": "02_clock_divider",
+    "source": "legacy/교안 22년도/전자전기컴퓨터설계실습II-5.1_클럭의 이해와 순서 논리 회로.pdf",
+    "sha256": "b0d70c06fc1a4f739f5c4e08f57f649911227474bd68edeecb78869677533fc5",
+    "pages": [
+      38,
+      71
+    ],
+    "render_scale": 1.5,
+    "method": "PDFium rasterization; no added or altered source text"
+  },
+  {
+    "slug": "03_register",
+    "source": "legacy/교안 22년도/전자전기컴퓨터설계실습II_6.2_데이터의 저장.pdf",
+    "sha256": "af5a079807d4e6c69ae5c7a8f771b1acad956753ae81b32d3884433f2226e680",
+    "pages": [
+      3,
+      29
+    ],
+    "render_scale": 1.5,
+    "method": "PDFium rasterization; no added or altered source text"
+  },
+  {
+    "slug": "04_shift_register",
+    "source": "legacy/교안 22년도/전자전기컴퓨터설계실습II_6.2_데이터의 저장.pdf",
+    "sha256": "af5a079807d4e6c69ae5c7a8f771b1acad956753ae81b32d3884433f2226e680",
+    "pages": [
+      30,
+      62
+    ],
+    "render_scale": 1.5,
+    "method": "PDFium rasterization; no added or altered source text"
+  },
+  {
+    "slug": "05_piso",
+    "source": "legacy/교안 22년도/전자전기컴퓨터설계실습II_6.2_데이터의 저장.pdf",
+    "sha256": "af5a079807d4e6c69ae5c7a8f771b1acad956753ae81b32d3884433f2226e680",
+    "pages": [
+      63,
+      90
+    ],
+    "render_scale": 1.5,
+    "method": "PDFium rasterization; no added or altered source text"
+  },
+  {
+    "slug": "06_moore",
+    "source": "legacy/교안 22년도/전자전기컴퓨터설계실습II_9.1_스테이트 머신의 구현.pdf",
+    "sha256": "9fefb7f9ab847c822e2efb497db2436a31b4b4a15aed33b14953dde3076282cf",
+    "pages": [
+      3,
+      15
+    ],
+    "render_scale": 1.5,
+    "method": "PDFium rasterization; no added or altered source text"
+  },
+  {
+    "slug": "07_mealy",
+    "source": "legacy/교안 22년도/전자전기컴퓨터설계실습II_9.1_스테이트 머신의 구현.pdf",
+    "sha256": "9fefb7f9ab847c822e2efb497db2436a31b4b4a15aed33b14953dde3076282cf",
+    "pages": [
+      16,
+      29
+    ],
+    "render_scale": 1.5,
+    "method": "PDFium rasterization; no added or altered source text"
+  },
+  {
+    "slug": "08_segment_scan",
+    "source": "legacy/교안 22년도/전자전기컴퓨터설계실습II_4.1_고급 조합논리 회로 설계.pdf",
+    "sha256": "8fdc8c19f313983a948fa062086ecacb5c4010012eda17909df68303ca9ee078",
+    "pages": [
+      115,
+      151
+    ],
+    "render_scale": 1.5,
+    "method": "PDFium rasterization; no added or altered source text"
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "path": "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter",
+    "commit": "3bdaf407937c731862a4670dd63dd04ef6607333",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/vivado_2026_1/01_counter",
+    "status": "SUBMODULE",
+    "initial_commit": "6e2e6aee2ea768afcda6e9aa73df3156fac19c10"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/legacy/01_counter",
+    "commit": "6751a9498b6fb96be9ec0c47d912a97b3fada8e3",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/legacy/01_counter",
+    "status": "SUBMODULE",
+    "initial_commit": "e9c8982c4407e098eddd1d753c9949dc6072ab0c"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider",
+    "commit": "ded58ac24859214f75440612a94fe134c76dfb09",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/vivado_2026_1/02_clock_divider",
+    "status": "SUBMODULE",
+    "initial_commit": "94ccbd0c067694936344dce6f100a37bd348f4a2"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider",
+    "commit": "108f965aba6fb8c23322b626e7861b627c5fe467",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/legacy/02_clock_divider",
+    "status": "SUBMODULE",
+    "initial_commit": "22e1c8fcc82a4b2c431d7d103dfe86296745fcd0"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register",
+    "commit": "e87315981a53565aa8cd8ff1dda5814cfa9270cd",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/vivado_2026_1/03_register",
+    "status": "SUBMODULE",
+    "initial_commit": "bce29f827340ab948ab6bea81787b8860fd5239e"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/legacy/03_register",
+    "commit": "97a2dfb10b271da812f11f70e951eac7186bf7a7",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/legacy/03_register",
+    "status": "SUBMODULE",
+    "initial_commit": "15a1e9d05960fda5a1fbb07a82793b1fa5590df8"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register",
+    "commit": "bb812644b197ab98ec4887274e526a6b4566f8fe",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/vivado_2026_1/04_shift_register",
+    "status": "SUBMODULE",
+    "initial_commit": "efb0ba978ba995f7db8da9df29445b3bf7dfaf9d"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/legacy/04_shift_register",
+    "commit": "8cf6d59a776913ff822446ea84f5bfe17fbb7bfc",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/legacy/04_shift_register",
+    "status": "SUBMODULE",
+    "initial_commit": "8562fffdd8a1d16190e1f30f320774e0f0d48c3d"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso",
+    "commit": "2093860d3dd889b465f5d3f742dd96ff4c05ca3f",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/vivado_2026_1/05_piso",
+    "status": "SUBMODULE",
+    "initial_commit": "8b5d0629f021b996e9f323cad16c613c64af9dbf"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/legacy/05_piso",
+    "commit": "691889cb3aa70d203002dadf25ea41339e6a7b1d",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/legacy/05_piso",
+    "status": "SUBMODULE",
+    "initial_commit": "b4a79624d700d8fdf44ee0a7231edfb1a12e50bb"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore",
+    "commit": "87eaa8a9110b27f1f53266255f011d4045227894",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/vivado_2026_1/06_moore",
+    "status": "SUBMODULE",
+    "initial_commit": "12615b4f7f546076e60496263b4f00964afa6954"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/legacy/06_moore",
+    "commit": "2337ddbf75f17aaf2a4f79a0c7da0f2985f883a1",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/legacy/06_moore",
+    "status": "SUBMODULE",
+    "initial_commit": "801f90d4f7e2092a358a029e22b99a78018720d5"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy",
+    "commit": "6b5ae99fbac77c798024015ac89373b7c35e14b7",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/vivado_2026_1/07_mealy",
+    "status": "SUBMODULE",
+    "initial_commit": "714adb4e71072a32a9da6959d0b0533294fbdc48"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/legacy/07_mealy",
+    "commit": "ed8390e6ddb2a945732b8fa74efdc2fdd2b41823",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/legacy/07_mealy",
+    "status": "SUBMODULE",
+    "initial_commit": "c9d2a3d17f2f9eeeb19402e0c4e7a9bacc1db302"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan",
+    "commit": "bf96576f614bef22ed75d5846151973b6fdc26c0",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/vivado_2026_1/08_segment_scan",
+    "status": "SUBMODULE",
+    "initial_commit": "e4d8dbf53d614a472b96a243722742ed771d9272"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan",
+    "commit": "1d2200705e4be1d371b06e36347d30a308442d07",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/legacy/08_segment_scan",
+    "status": "SUBMODULE",
+    "initial_commit": "de8c93e190d2b4cabd593d5a431ce572711d05df"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated",
+    "commit": "21b9d222cbda622747a69bc4c7990079d47c0f94",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/vivado_2026_1/09_integrated",
+    "status": "SUBMODULE",
+    "initial_commit": "892ef3da15d8a570f0df45081e984ddceaea624c"
+  },
+  {
+    "path": "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated",
+    "commit": "27626dafed232a83e30c868c3aa6e665042a02ed",
+    "backup": "tmp/lab2-before-submodules-1789046997981503900/opensource_cli/09_integrated",
+    "status": "SUBMODULE",
+    "initial_commit": "48fd09d69400ce7ace07fe3af324be68a8710aa1"
+  }
+]

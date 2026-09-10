@@ -1,0 +1,449 @@
+% !TEX program = xelatex
+\input{shared/lab2_preamble.tex}
+\renewcommand{\legacySource}[1]{}
+\newcommand{\terminalbox}[1]{\par\vspace{0.15cm}{\setlength{\fboxsep}{7pt}\colorbox{black}{\parbox{\dimexpr\textwidth-14pt\relax}{\color{white}\ttfamily\fontsize{7}{9}\selectfont #1}}}\par\vspace{0.15cm}}
+\hypersetup{pdftitle={Moore 상태 머신}}
+\begin{document}
+\renewcommand{\small}{\fontsize{9}{11}\selectfont}
+\begin{frame}{LAB 2 · Moore 상태 머신}
+\small
+VS Code에서 직접 작성·검증한 다음 장비로 확인한다.\par\vspace{0.26cm}작성일 2026. 09. 10. · 이해리\par\vspace{0.26cm}레거시 원본 비교\par
+\end{frame}
+
+\begin{frame}[label=lab2-contents]{목차}
+\small
+\navlink{setup}{프로젝트 시작}\par\vspace{0.3cm}\navlink{code}{RTL·TB·XDC 직접 작성}\par\vspace{0.3cm}\navlink{simulation}{VS Code 시뮬레이션과 수정}\par\vspace{0.3cm}\navlink{implementation}{구현과 장치 기록}\par\vspace{0.3cm}\navlink{reports}{레포트}\quad\href{05.LAB2_00_START.pdf}{공통 예습}\quad\href{05.LAB2_00_CONTENTS.pdf}{전체 목차}\par\vspace{0.3cm}\href{05.LAB2_06_MOORE_VIVADO.pdf}{대응 Vivado판}\quad
+\end{frame}
+
+\begin{frame}[label=setup]{v2.0.0 템플릿을 새 이름으로 clone}
+\small
+Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.0 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab2\_legacy\_06\_moore\\cd lab2\_legacy\_06\_moore\\git switch -c main\\code LAB1.code-workspace}
+\end{frame}
+
+\begin{frame}{File → New Window}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=1.4cm,keepaspectratio,trim=27.75bp 522bp 652.5bp 21bp,clip]{../LAB1_FPGA_0914/assets/modern-01/01-file-menu.png}\par}\vspace{0.18cm}Ctrl+Shift+N 또는 File → New Window. 새 창을 연다.\par\par{\centering\includegraphics[width=\textwidth,height=1.4cm,keepaspectratio,trim=27.75bp 439.5bp 652.5bp 105bp,clip]{../LAB1_FPGA_0914/assets/modern-01/01-file-menu.png}\par}\vspace{0.18cm}File → Open Workspace from File...을 누른다.\par
+\end{frame}
+
+\begin{frame}{workspace와 추천 확장}
+\small
+\begin{enumerate}
+\item lab2\_legacy\_06\_moore 폴더에서 LAB1.code-workspace 선택 → Open.
+\item Explorer에 PROJECT 하나와 src·sim·constraints·tools가 보이는지 확인.
+\item Extensions → @recommended를 검색.
+\item slang·VaporView·vscode-pdf의 Install을 누른다.
+\item Python과 Icarus 실행 파일은 별도로 설치되어 있어야 한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{시뮬레이션 도구 확인}
+\small
+\begin{enumerate}
+\item Terminal → Run Task... → 01 Check tools.
+\item Git·Python·iverilog·vvp의 버전이 출력되는지 확인한다.
+\item 도구를 찾지 못하면 설치 경로를 PATH에 추가하고 VS Code를 다시 연다.
+\end{enumerate}\terminalbox{git --version\\python --version\\iverilog -V\\vvp -V}
+\end{frame}
+
+\begin{frame}{빈 파일에서 시작}
+\small
+\begin{enumerate}
+\item src/design.v를 우클릭 → Rename. 첫 RTL 파일명으로 바꾼다.
+\item 추가 RTL은 src를 우클릭 → New File로 만든다.
+\item sim/tb\_design.v를 이번 TB 파일명으로 바꾼다.
+\item constraints/pins.xdc를 이번 XDC 파일명으로 바꾼다.
+\item 뒤의 코드 화면을 보며 작성하고 File → Save All.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{이번 프로젝트에 작성할 파일}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{ll}
+역할 & 경로\\\hline
+src & src/moore\_cycle.v\\
+src & src/input\_frontend.v\\
+src & src/lab2\_moore.v\\
+sim & sim/tb\_moore\_cycle.sv\\
+constraints & constraints/lab2\_moore.xdc\\
+\end{tabular}\end{center}
+\end{frame}
+
+\begin{frame}{simulation.json의 세 항목}
+\small
+sources: 앞 표의 src/ 파일 경로를 배열로 넣는다.\par\vspace{0.26cm}testbench: sim/tb\_moore\_cycle.sv\par\vspace{0.26cm}simulation\_top: tb\_moore\_cycle\par\vspace{0.26cm}큰따옴표·대괄호·쉼표를 확인한다. module 이름에는 파일 확장자를 붙이지 않는다.\par
+\end{frame}
+
+\begin{frame}{simulation.json · 1–9행}
+\small
+simulation.json를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–9행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{원본과 현재 실습의 차이}
+\small
+원본은 x를 버튼 클록으로 사용하고 전용 클록 배선 검사를 해제한다. 현재 회로는 실제 주 클록과 디바운스된 enable을 쓴다. Moore와 Mealy의 구분은 출력이 상태에만 의존하는지, 상태와 입력 모두에 의존하는지다. 원본 주석의 다음 상태 설명만으로 둘을 구분하면 안 된다.\par\vspace{0.26cm}original/은 비교 자료로 보존한다. 현재 src/·sim/·XDC로 직접 작성·검증한다.\par
+\end{frame}
+
+\begin{frame}[label=code]{이번 회로의 관찰 방법}
+\small
+SW1(sw[7]): advance. 1에서 버튼을 누르면 00→01→10→00. SW1만 바꾸면 상태 출력은 유지. LED[1:0]=상태.\par\vspace{0.26cm}입력 스위치를 먼저 정한 다음 버튼을 누른다.\par
+\end{frame}
+
+\begin{frame}{moore\_cycle.v · 1–16행}
+\small
+src/moore\_cycle.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{input\_frontend.v · 1–16행}
+\small
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{input\_frontend.v · 17–32행}
+\small
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{input\_frontend.v · 33–46행}
+\small
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–46행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{lab2\_moore.v · 1–16행}
+\small
+src/lab2\_moore.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{tb\_moore\_cycle.sv · 1–16행}
+\small
+sim/tb\_moore\_cycle.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{tb\_moore\_cycle.sv · 17–32행}
+\small
+sim/tb\_moore\_cycle.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{tb\_moore\_cycle.sv · 33–40행}
+\small
+sim/tb\_moore\_cycle.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–40행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{XDC를 직접 작성한다}
+\small
+\begin{enumerate}
+\item constraints 폴더의 XDC를 열고 전체 내용을 입력한다.
+\item get\_ports의 이름과 비트 번호를 board top 선언과 대조한다.
+\item 같은 핀을 서로 다른 포트에 중복 지정하지 않는다.
+\item File → Save All. Icarus 기능 시뮬레이션은 XDC를 사용하지 않는다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{lab2\_moore.xdc · 1–16행}
+\small
+constraints/lab2\_moore.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{lab2\_moore.xdc · 17–32행}
+\small
+constraints/lab2\_moore.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}{lab2\_moore.xdc · 33–42행}
+\small
+constraints/lab2\_moore.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–42행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+\end{frame}
+
+\begin{frame}[label=simulation]{VS Code에서 먼저 시뮬레이션}
+\small
+\begin{enumerate}
+\item File → Save All.
+\item Terminal → Run Task... → 02 Simulate.
+\item 첫 오류가 있으면 파일 경로·행 번호와 이전 행의 세미콜론부터 확인.
+\item LAB2\_PASS 또는 LAB2\_INTEGRATED\_PASS와 검사 수·종료 시각 확인.
+\item Terminal → Run Task... → 03 Open waveform.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{파형에서 확인할 신호}
+\small
+\begin{enumerate}
+\item clk·rst·제어 입력·저장값·출력을 파형에 추가한다.
+\item 상승 에지 직전 입력과 에지 뒤 상태를 비교한다.
+\item 리셋 우선·enable=0 유지·마지막 검사 시각을 확인한다.
+\item 출력만 본 화면과 전체 파형을 각각 저장한다.
+\item 새 실행 로그와 파형인지 확인한다. 이전 PASS를 재사용하지 않는다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{정상 실행의 기준}
+\small
+\terminalbox{LAB2\_PASS moore\_cycle checks=23}Icarus 종료 시각: 226ns. 로그가 ps로 표시되면 1,000으로 나눠 ns와 비교한다.\par\vspace{0.26cm}이 수치는 교안의 입력 순서·TB·파라미터에 대한 기준이다.\par\vspace{0.26cm}검사 수만 보지 말고 예상 상태와 실제 파형이 일치하는 이유를 설명한다.\par
+\end{frame}
+
+\begin{frame}{수정 실험 · 실패와 복구}
+\small
+\begin{enumerate}
+\item 정상 로그와 파형을 먼저 보관한다.
+\item S1 다음 상태를 S0로 바꾸기 TB 기대값은 유지한다.
+\item Save All → 02 Simulate. LAB2\_FAIL의 검사 이름·시각을 읽는다.
+\item 어떤 입력과 이전 상태에서 불일치가 발생했는지 계산한다.
+\item RTL을 복구·저장·재실행하고 전체 PASS를 확인한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[label=reports]{실험 전 레포트}
+\small
+\begin{enumerate}
+\item 동작 표·상태 전이·타이밍을 예상한다.
+\item RTL·TB·XDC·설정의 역할을 설명한다.
+\item 정상/변경/복구 3행 비교표와 실행 로그를 넣는다.
+\item VS Code 파형을 확대해 입력·이전 상태·다음 상태를 설명한다.
+\item 장비 클록·핀·예상 LED 동작을 정리한 뒤 Vivado/CLI로 진행한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[label=implementation]{Vivado GUI에서 이어서 진행}
+\small
+사전 시뮬레이션과 실험 전 레포트를 마친 뒤 Vivado를 연다.\par\vspace{0.26cm}다음 클릭 화면은 기존 LAB1의 실제 캡처를 재사용한다. 화면 속 과거 폴더·파일명 대신 이 교안에 적힌 값을 사용한다.\par\vspace{0.26cm}설계 top: lab2\_moore\par\vspace{0.26cm}TB top: tb\_moore\_cycle\par
+\end{frame}
+
+\begin{frame}{새 프로젝트 시작}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=6bp 593.25bp 783bp 24bp,clip]{../LAB1_FPGA_0914/assets/modern-01/40-new-project-menu.png}\par}\vspace{0.18cm}\begin{enumerate}
+\item File → Project → New... → Next.
+\item Project name: lab2\_moore
+\item Project location: 자신의 lab2\_legacy\_06\_moore/vivado.
+\item Create project subdirectory를 해제하고 Next.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{RTL Project}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=172.5bp 386.25bp 515.25bp 246bp,clip]{../LAB1_FPGA_0914/assets/modern-01/42-rtl-project.png}\par}\vspace{0.18cm}RTL Project와 Do not specify sources at this time을 선택한다.\par\vspace{0.26cm}Next를 눌러 부품 선택으로 간다.\par
+\end{frame}
+
+\begin{frame}{정확한 S75 부품 선택}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=2.8cm,keepaspectratio,trim=174.75bp 317.25bp 534.75bp 249bp,clip]{../LAB1_FPGA_0914/assets/modern-01/43-select-part.png}\par}\vspace{0.18cm}Parts 검색란에 xc7s75fgga484-1을 입력한다.\par\vspace{0.26cm}같은 part 행 선택 → Next. Spartan-7·fgga484·-1 확인 → Finish.\par
+\end{frame}
+
+\begin{frame}{Design Sources 추가}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/46-design-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
+\item Add Sources → Add or create design sources → Next.
+\item Add Files에서 앞 목록의 src/ RTL 파일을 모두 선택한다.
+\item Copy sources into project 해제 → Finish. 같은 원본 파일을 참조한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Simulation Sources 추가}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/50-simulation-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
+\item Add Sources → Add or create simulation sources → Next.
+\item Add Files → sim/tb\_moore\_cycle.sv 선택.
+\item sim\_1 유지. Include all design sources for simulation 선택.
+\item Copy sources into project 해제 → Finish.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Constraints 추가}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/53-constraints-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
+\item Add Sources → Add or create constraints → Next.
+\item Add Files → constraints/lab2\_moore.xdc 선택.
+\item Copy constraints files into project 해제 → Finish.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{설계 top과 TB top 지정}
+\small
+\begin{enumerate}
+\item Sources에서 Design Sources의 계층을 펼친다.
+\item lab2\_moore 우클릭 → Set as Top.
+\item Simulation Sources → sim\_1의 계층을 펼친다.
+\item tb\_moore\_cycle 우클릭 → Set as Top.
+\item 이름이 이미 굵게 표시되면 해당 top이 선택된 상태다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Run Behavioral Simulation}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=2.7cm,keepaspectratio,trim=9bp 231bp 764.25bp 316.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/58-run-behavioral.png}\par}\vspace{0.18cm}Flow Navigator → Run Simulation → Run Behavioral Simulation.\par\vspace{0.26cm}컴파일과 elaboration을 기다린다. Tcl Console의 자기검사 PASS와 종료 시각을 확인한다.\par
+\end{frame}
+
+\begin{frame}{VS Code 결과와 비교}
+\small
+\begin{enumerate}
+\item 같은 RTL·TB로 실행했는지 Sources를 확인한다.
+\item clk·rst·입력·상태·출력의 파형을 추가하고 Zoom Fit.
+\item 상승 에지 전후를 확대해 VS Code 결과와 대조한다.
+\item 검사 이름·검사 수·종료 시각·파형의 차이를 기록한다.
+\item File → Close Simulation → OK로 돌아간다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{핀과 클록 확인}
+\small
+RTL Analysis → Open Elaborated Design → I/O Ports.\par\vspace{0.26cm}이번 XDC의 PACKAGE\_PIN과 LVCMOS33을 포트마다 대조한다.\par\vspace{0.26cm}B6 주 클록은 1 kHz, XDC 주기는 1,000,000ns다.\par\vspace{0.26cm}실제 장비의 클록 선택도 1 kHz로 맞춘다. 버튼을 클록으로 연결하지 않는다.\par
+\end{frame}
+
+\begin{frame}{Run Synthesis}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=2.3cm,keepaspectratio,trim=7.5bp 180bp 919.5bp 453bp,clip]{../LAB1_FPGA_0914/assets/modern-01/62-run-synthesis.png}\par}\vspace{0.18cm}\begin{enumerate}
+\item Flow Navigator → Run Synthesis.
+\item Launch runs on local host, PC 자원에 맞는 jobs → OK.
+\item 합성 오류가 없으면 완료 창에서 Run Implementation → OK.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Run Implementation}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=2.3cm,keepaspectratio,trim=418.5bp 339.75bp 426bp 226.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/64-synthesis-complete.png}\par}\vspace{0.18cm}\begin{enumerate}
+\item 구현 Launch Runs의 위치·jobs 확인 → OK.
+\item 완료 창에서 Generate Bitstream → OK.
+\item 실패하면 Messages의 첫 오류부터 수정한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Generate Bitstream}
+\small
+\begin{enumerate}
+\item Generate Bitstream의 Launch Runs에서 OK.
+\item 완료 창에서 Open Implemented Design으로 결과를 확인한다.
+\item vivado/lab2\_moore.runs/impl\_1/lab2\_moore.bit 확인.
+\item 타이밍·DRC 경고를 읽고 원인과 장비 설정을 기록한다.
+\item bit 생성과 실제 보드 기록은 별도 단계다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{원본 교안과 대조}
+\small
+이후에는 원본의 사진·문구·순서를 그대로 보존했다.\par\vspace{0.26cm}원본의 파일명·버튼 클록·핀·TB 시간과 현재 실습을 대조한다. 현재 프로젝트에는 앞서 작성한 RTL·TB·XDC를 사용한다.\par\vspace{0.26cm}원본의 전용 클록 배선 검사 해제나 비동기 데이터 로드를 현재 코드에 그대로 옮기지 않는다.\par
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-003.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-004.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-005.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-006.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-007.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-008.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-009.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-010.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-011.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-012.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-013.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-014.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{assets/legacy-06_moore/page-015.png}};
+\node[anchor=west] at ([xshift=0.65cm,yshift=0.52cm]current page.south west) {\labonehome};
+\node[anchor=east,text=gray,font=\scriptsize] at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{장치에서 동작 확인}
+\small
+\begin{enumerate}
+\item 보드 전원·JTAG·주 클록 1 kHz 설정을 확인한다.
+\item Vivado: Open Hardware Manager → Open target → Auto Connect.
+\item Program Device에서 방금 생성한 bit 파일을 선택한다.
+\item 초기화 뒤 입력·버튼·출력을 관찰하고 예상과 비교한다.
+\item CLI판은 앞 장의 openFPGALoader 명령으로 기록한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{실험 후 레포트와 GitHub}
+\small
+\begin{enumerate}
+\item 도구 버전·source commit·XDC·bit 해시·타이밍과 경고를 적는다.
+\item 실제 기록 화면과 보드 전체 사진을 포함한다.
+\item 버튼 누름과 출력 변화가 함께 보이는 영상을 찍는다.
+\item 통합판은 8개 모드 번호·LCD 이름·회로 출력을 보여 준다.
+\item 소스·실험 전후 레포트·사진·영상 링크를 GitHub에서 연결한다.
+\end{enumerate}
+\end{frame}
+\end{document}
