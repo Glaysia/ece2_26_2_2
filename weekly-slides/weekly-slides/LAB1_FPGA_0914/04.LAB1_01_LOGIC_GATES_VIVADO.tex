@@ -108,10 +108,23 @@ Ctrl+Shift+B 기본 작업도 02 Simulate다.}
 
 \begin{frame}{PASS와 종료 시각 확인}
 \small 터미널 또는 build/sim/run-.../simulation.log를 연다.
-\explain{실행 명령에 src/logic\_gate.v와 sim/tb\_logic\_gate\_modern.sv가 포함되는지 확인한다. SIMULATED는 새 파형 생성 완료를 뜻하며, TB의 정답 검사와 구분한다.}
-\explain{\texttt{LAB1\_PASS logic\_gate cases=4}와 \textbf{40ns 종료}를 확인한다.\\
-실패하면 이번 실행의 compile.log·simulation.log를 읽는다.\\
-실행기는 실패 후 예전 VCD를 새 성공 결과로 남기지 않는다.}
+\shot{student-gui-pass}
+\explain{실제 VS Code의 02 Simulate 실행 결과다.\\
+\texttt{LAB1\_PASS logic\_gate cases=4}와 \textbf{40000ps = 40ns 종료}를 확인한다.\\
+실행 완료 안내와 파일 생성만으로 정답이라고 판단하지 않는다.\\
+자기검사 PASS와 파형을 함께 확인한다.}
+\end{frame}
+
+\begin{frame}{작업이 실행되지 않을 때}
+\small
+\begin{enumerate}\setlength{\itemsep}{0.18cm}
+\item \textbf{Python / exit code 9009}: Python 설치 시 Add python.exe to PATH를 선택하고 VS Code의 모든 창을 닫았다가 다시 연다.
+\item 계속되면 \textbf{File → Open File... → LAB1.code-workspace}. 세 작업의 \texttt{windows} 안 \texttt{command}를 설치한 python.exe의 전체 경로로 바꾼다. 경로 구분은 /를 사용한다.
+\item \textbf{iverilog 또는 vvp를 찾지 못함}: 두 실행 파일이 있는 bin 폴더를 PATH에 추가하고 VS Code를 다시 연다.
+\item \textbf{파일·top을 찾지 못함}: simulation.json의 경로·확장자·TB module 이름을 실제 파일과 대조한다.
+\item \textbf{컴파일 오류}: 터미널의 파일:행을 Ctrl+클릭하고 해당 줄을 수정한다. File → Save All → 02 Simulate로 재검사한다.
+\end{enumerate}
+\explain{실패한 실행의 compile.log·simulation.log를 읽는다. 예전 파형을 새 성공 결과로 제출하지 않는다.}
 \end{frame}
 
 \begin{frame}{VCD를 VaporView로 열기}
@@ -126,11 +139,12 @@ Ctrl+Shift+B 기본 작업도 02 Simulate다.}
 \item 파형 도구 모음의 \textbf{Zoom to Fit}로 전체 시간을 맞춘다.
 \item 아래 \textbf{Time Units}를 ns로 맞춘다.
 \end{enumerate}
+\explain{VaporView가 목록에 없으면 Extensions에서 설치 상태를 확인한다.\\Enable이 보이면 화살표 → Enable (Workspace)를 누른다.}
 \end{frame}
 
 \begin{frame}{파형에서 실제 값을 읽는다}
 \small 시간 구간 안쪽을 클릭하여 세로 커서와 신호 값을 확인한다.
-\shot[trim=264bp 250bp 0bp 28bp,clip]{08-vapor-wave}
+\shot{student-gui-wave}
 \explain{0--10ns: 00 / 10--20ns: 01 / 20--30ns: 10 / 30--40ns: 11.\\
 마지막 구간에서 AND=1, OR=1, XOR=0인지 확인한다.\\
 입력이 전환되는 경계 대신 구간의 중간을 읽는다.}
