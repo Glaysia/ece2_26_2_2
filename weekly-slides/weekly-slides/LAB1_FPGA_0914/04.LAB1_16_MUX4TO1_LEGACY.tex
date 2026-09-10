@@ -38,13 +38,14 @@ PowerShell에서 실습 폴더를 둘 위치로 이동한 뒤 실행한다.\par\
 
 \begin{frame}{File → New Window}\relax
 \small
-VS Code 상단 File → New Window를 누른다. Ctrl+Shift+N도 같은 동작이다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=3.3cm,keepaspectratio,trim=27.75bp 229.5bp 645bp 20.25bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
-새 창에서 File → Open Workspace from File...을 선택한다.\par\vspace{0.22cm}Open File...로 코드 하나만 여는 것과 구분한다.\par
+VS Code 상단 File → New Window를 누른다. Ctrl+Shift+N도 같은 동작이다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=27.75bp 522bp 652.5bp 21bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+새 창에서 File → Open Workspace from File...을 선택한다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=27.75bp 439.5bp 652.5bp 105bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+Open File...로 코드 하나만 여는 것과 구분한다.\par
 \end{frame}
 
 \begin{frame}{이 회로의 workspace 선택}\relax
 \small
-clone한 폴더에서 다음 경로로 이동한다.\par\vspace{0.22cm}legacy/06\_mux4to1\par\vspace{0.22cm}legacy\_06\_mux4to1.code-workspace\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.6cm,keepaspectratio,trim=31.5bp 229.5bp 639.75bp 24.75bp,clip]{assets/modern-01/02-workspace.png}\par}\vspace{0.16cm}
+clone한 폴더에서 다음 경로로 이동한다.\par\vspace{0.22cm}legacy/06\_mux4to1\par\vspace{0.22cm}legacy\_06\_mux4to1.code-workspace\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=36bp 444.75bp 639.75bp 52.5bp,clip]{assets/modern-01/02-workspace.png}\par}\vspace{0.16cm}
 PROJECT는 이 회로의 실행 설정과 결과, COMMON은 공유 RTL·TB·XDC다.\par\vspace{0.22cm}위 화면은 공통 폴더 구조 예이며 선택할 파일명은 이 슬라이드의 경로를 따른다.\par
 \end{frame}
 
@@ -91,6 +92,18 @@ i=1000인 320–360ns에서 s를 바꿨을 때 선택된 입력을 추적한다.
 \begin{frame}{테스트벤치와 통과 기준}\relax
 \small
 시뮬레이션 top: tb\_mux\_4x1\par\vspace{0.22cm}64개 입력 조합을 모두 검사한다. 각 자극은 10ns, 종료 시각은 640ns다.\par\vspace{0.22cm}기대값과 실제 출력이 다르면 \$fatal로 중단한다. 검사 횟수와 watchdog도 확인한다.\par\vspace{0.22cm}통과 문구: LAB1\_PASS mux\_4x1 cases=64\par\vspace{0.22cm}원본 레거시 testbench.v와 별도의 자기검사 TB는 파일과 역할을 구분한다.\par
+\end{frame}
+
+\begin{frame}{TB · 입력과 기대값}\relax
+\small
+tb\_mux\_4x1.sv · 1–12행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_mux_4x1-input.png}\par}\vspace{0.18cm}
+입력 i의 16개 값과 선택선 s의 4개 값을 조합한다. s=0이 i[3]을 고르는 순서에 주의한다.\par\vspace{0.22cm}DUT는 검사할 회로다. dumpfile·dumpvars는 파형 파일에 신호를 남긴다.\par
+\end{frame}
+
+\begin{frame}{TB · 비교와 종료}\relax
+\small
+tb\_mux\_4x1.sv · 13–22행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_mux_4x1-check.png}\par}\vspace{0.18cm}
+!==는 X·Z를 포함한 불일치도 잡는다. 다르면 \$fatal로 중단하고 어떤 입력에서 틀렸는지 출력한다.\par\vspace{0.22cm}checked가 전체 검사 수와 같은지 확인한 뒤 PASS와 \$finish. watchdog은 종료되지 않는 테스트를 실패시킨다.\par
 \end{frame}
 
 \begin{frame}{저장 → Terminal → Run Task}\relax

@@ -1,0 +1,41 @@
+[
+  {
+    "image": "hierarchy-a.png",
+    "original": "02-hierarchy.png",
+    "crop_box": [
+      286,
+      216,
+      658,
+      405
+    ],
+    "original_sha256": "495247aed11d9d7a6458226f9d1627ce9fcaae424eec56cf6c0747f8b5158e07",
+    "image_sha256": "36ae612b8d4f4b5884b36267989abf8d986c378e54b4811c44efb185ac427c03",
+    "method": "Actual Vivado 2026.1 GUI; crop only"
+  },
+  {
+    "image": "hierarchy-b.png",
+    "original": "02-hierarchy.png",
+    "crop_box": [
+      286,
+      405,
+      658,
+      568
+    ],
+    "original_sha256": "495247aed11d9d7a6458226f9d1627ce9fcaae424eec56cf6c0747f8b5158e07",
+    "image_sha256": "d32dbb97f01f12664d303ea3663079cf729828390a35165e2b8499a47592aa06",
+    "method": "Actual Vivado 2026.1 GUI; crop only"
+  },
+  {
+    "image": "build-runs.png",
+    "original": "01-project-summary.png",
+    "crop_box": [
+      269,
+      735,
+      647,
+      829
+    ],
+    "original_sha256": "e0d68160c1a80800b8252e4ecd76df9c975ebd3be1b3fe20565a6f3080bf1c2e",
+    "image_sha256": "68e23ca7fd7dbf867d664bd60c83d3f30f010c1ecb91ce5b51b96f03226e48c9",
+    "method": "Actual Vivado 2026.1 GUI; crop only"
+  }
+]

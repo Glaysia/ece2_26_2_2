@@ -51,3 +51,7 @@ Open Hardware Manager → Open target → Auto Connect → 장치 확인 → Pro
 [실행 결과와 소스 SHA-256](evidence/validation.json): VS Code 단계 **PASS**, Vivado 시뮬레이션 **PASS**, Vivado bit 생성 **PASS**. 이는 제작 환경의 실행 기록이며 자신의 실행 증빙을 대신하지 않습니다. CLI 프로젝트는 [별도 검증](../../docs/cli.md)을 봅니다.
 
 실제 보드 기록·사진·영상은 **미수행**입니다. 생성된 bit만으로 보드 실험 완료를 주장하지 않습니다.
+
+## 추가 GUI 확인
+
+배포 XPR을 GUI에서 열어 계층과 기존 구현 완료 상태를 확인하고 Behavioral Simulation을 직접 실행했습니다. [GUI 로그](evidence/gui-simulation.log) · [입력 해시·수행 방식·VCD 비교 범위](evidence/gui-simulation.json). 2,560개 PASS와 72,430ns 종료를 확인했으며 GUI의 최종 VCD 파일 기록·파형 캡처는 해당 기록의 미완료 항목을 따릅니다.

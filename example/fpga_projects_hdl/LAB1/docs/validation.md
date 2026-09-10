@@ -29,13 +29,13 @@
 | [legacy_09_decoder3to8](../legacy/09_decoder3to8/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [legacy_10_seven_segment](../legacy/10_seven_segment/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 
-첫 최신 회로는 공개 템플릿 740aef5를 새로 clone하여 실제 Vivado GUI로 시뮬레이션·bit 생성을 수행했습니다. 나머지 최신 회로는 같은 입력 파일의 Vivado 2026.1 배치 실행으로 검증합니다. 두 XSim 경로의 VCD에서 날짜·버전 메타데이터만 제외하고 신호 선언·모든 시간과 값 변화를 대조한 결과도 별도로 보관합니다. 학생용 매뉴얼은 GUI 클릭 순서입니다. 이 두 수행 방식을 혼동하지 않습니다.
+첫 최신 회로는 공개 템플릿 740aef5를 새로 clone하여 실제 Vivado GUI로 시뮬레이션·bit 생성을 수행했습니다. 나머지 최신 회로는 같은 입력 파일의 Vivado 2026.1 배치 실행으로 검증했습니다. 통합본은 추가로 배포 XPR을 GUI에서 열고 Behavioral Simulation 2,560개 PASS를 확인했습니다. [통합 GUI 기록](../vivado_2026_1/11_integrated/evidence/gui-simulation.json)은 기존 배치 bit 생성과 구분합니다. 두 XSim 경로의 VCD에서 날짜·버전 메타데이터만 제외하고 신호 선언·모든 시간과 값 변화를 대조한 결과도 별도로 보관합니다. 학생용 매뉴얼은 GUI 클릭 순서입니다. 이 두 수행 방식을 혼동하지 않습니다.
 
 레거시 원본 XPR은 2020.1 형식을 유지했습니다. 표의 레거시 사전 PASS는 2026.1 XSim 검사이며, Vivado 2020.1 GUI·합성·보드 실행은 미수행입니다. CLI 통합은 Icarus와 별도 openXC7 결과를 확인합니다.
 
 ## 남아 있는 실제 장비·캡처 확인
 
-첫 회로 공통 GUI와 full_adder/half_adder, adder_4bit, sub_4bit, compare_4 소스 캡처는 실제 화면입니다. 추가 캡처 중 Windows 잠금 화면이 나타나 GUI 작업을 중단했습니다. 나머지 회로 전용 코드·파형·Vivado 결과 캡처는 미확보이며, 공통 예시 화면과 해당 회로의 실행 결과를 구분합니다.
+데스크톱 재개 후 최신 06–10 RTL, 개별 자기검사 TB, 통합 top·버튼·LCD·통합 TB의 실제 VS Code 화면을 추가했습니다. 새 코드 이미지 52개는 원본 화면을 의미 단위로 크롭했으며 [소스 줄 범위·해시](../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/assets/lab1-circuits/provenance.json)를 기록했습니다. 통합 Vivado의 계층·기존 구현 완료 화면도 확보했습니다. 추가 GUI 시뮬레이션은 PASS지만 Windows 보안 창이 이후 화면을 가려 회로별 파형·나머지 Vivado 결과 캡처는 아직 남아 있습니다. GUI VCD는 72425ns까지 사전 결과와 같은 접두부이고 마지막 5ns의 파일 기록 확인은 GUI 종료 후 진행합니다.
 
 공개 템플릿 66a8b43을 인증 없이 공백 포함 새 경로에 clone했습니다. 22개 workspace·21개 XPR·원본 41개 파일과 로컬 링크 검사가 통과했습니다. 실제 workspace 명령으로 첫 회로 도구 검사·시뮬레이션과 통합 회로 시뮬레이션도 통과했습니다. [새 clone 검증](template-clone-validation.json)에 명령별 로그를 연결했습니다.
 

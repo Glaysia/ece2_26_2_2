@@ -1,6 +1,7 @@
 """Generate editable LAB1 TeX from circuit metadata and measured simulation files."""
 from pathlib import Path
 import json, re, bisect
+from lab1_code_panels import PANELS
 
 ROOT = Path(__file__).resolve().parents[2]
 LAB = ROOT / 'example/fpga_projects_hdl/LAB1'
@@ -69,14 +70,29 @@ def vcd_values(path,top,signals,sample_ns):
         rows.append(row)
     return rows
 
+def code_panels(d, source):
+    for panel in (x for x in PANELS if x['source']==source):
+        first,last=panel['lines']
+        image='\\par\\vspace{0.15cm}{\\centering\\includegraphics[width=\\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/'+panel['image']+'}\\par}\\vspace{0.18cm}\n'
+        d.frame(panel['title'],para(Path(source).name+f' · {first}–{last}행 · 실제 VS Code 화면')+image+para(*panel['notes']))
+
+def integrated_gui(d):
+    for title,image,notes in [
+        ('통합 프로젝트 · 계층 확인 1','hierarchy-a',['Design Sources의 lab1_integrated 왼쪽 화살표를 펼친다.','버튼·논리 게이트·전가산기·가산기·감산기·비교기 연결을 확인한다.']),
+        ('통합 프로젝트 · 계층 확인 2','hierarchy-b',['아래로 스크롤해 MUX·DEMUX·인코더·디코더·7세그먼트·LCD를 확인한다.','RTL 14개 파일로 통합 top·10개 실험 회로·버튼·LCD를 구성한다. full_adder 아래의 반가산기도 포함한다.']),
+        ('통합 프로젝트 · 구현 결과 읽기','build-runs',['아래 Design Runs에서 impl_1의 write_bitstream Complete!를 확인한다.','이 화면은 제작자가 배치 빌드한 결과를 GUI에서 연 기록이다. Methodology 경고 28개는 별도로 해석한다.']),
+    ]:
+        d.frame(title,'\\par\\vspace{0.2cm}{\\centering\\includegraphics[width=\\textwidth,height=3.5cm,keepaspectratio]{assets/integrated-gui/'+image+'.png}\\par}\\vspace{0.25cm}\n'+para(*notes))
+    d.frame('통합 프로젝트 · GUI 실행 검증',para('Run Simulation → Run Behavioral Simulation을 직접 실행했다.','GUI의 simulate.log에서도 LAB1_PASS lab1_integrated cases=2560과 종료 시각 72430ns를 확인했다.','GUI VCD는 72425ns까지 사전 결과와 일치한다. GUI가 열린 상태에서 복사해 마지막 5ns의 파일 기록 확인은 남아 있다.','현재 캡처된 계층·구현 완료 화면과 GUI 실행 로그의 검증 범위를 구분한다.')+link(COURSE+'example/fpga_projects_hdl/LAB1/vivado_2026_1/11_integrated/evidence/gui-simulation.json','통합 GUI 실행 기록'))
+
 def prelude(d,c,p):
     label=d.label;ed=p['edition'];legacy=ed=='legacy'
     d.frame(f"{c['n']:02d} · {c['title']}",para('VS Code 사전 시뮬레이션 → '+('레거시 Vivado' if legacy else 'Vivado 2026.1')+' → 보드 실험',c['rule'])+items(['템플릿을 clone하고 이 회로의 workspace를 연다.','예상값·코드·테스트벤치를 읽고 시뮬레이션한다.','Vivado 결과와 실제 보드 동작을 비교한다.','자신의 사진·영상·레포트를 GitHub에 연결한다.'])+para('작성일 2026. 09. 10. · 이해리'))
     d.frame('실습 목차',para('1부 · VS Code 사전 실습')+'\\navlink{'+label+'-setup}{새 창·workspace·확장·코드 열기}\\par\\vspace{0.2cm}\n\\navlink{'+label+'-sim}{예상값·작업 실행·로그·파형·실험 전 레포트}\\par\\vspace{0.4cm}\n'+para('2부 · Vivado 실습')+'\\navlink{'+label+'-vivado}{프로젝트·소스·top·시뮬레이션·핀·비트스트림}\\par\\vspace{0.4cm}\n'+para('3부 · 결과 정리')+'\\navlink{'+label+'-post}{보드·사진·영상·GitHub·실험 후 레포트}\\par\\vspace{0.35cm}\n'+link('04.LAB1_00_CONTENTS.pdf','전체 목차 PDF 열기'),label+'-contents')
     d.frame('준비할 프로그램',para('Git·Python 3·VS Code·slang-server·VaporView를 준비한다.','Vivado GUI를 열기 전에도 XSim 도구가 필요하므로 Vivado는 미리 설치한다.','git --version / python --version / code --version','vivado -version / xvlog --version / xelab --version / xsim --version','명령이 없으면 설치와 PATH 또는 VIVADO_BIN을 확인하고 VS Code를 다시 연다.')+link('01.vivado_2026_1_설치_매뉴얼.pdf','Vivado 설치 PDF')+r'\quad'+link('02.vscode_verilog_환경설정_매뉴얼.pdf','VS Code 환경설정 PDF'),label+'-setup')
     d.frame('별도 템플릿 clone',para('PowerShell에서 실습 폴더를 둘 위치로 이동한 뒤 실행한다.','git clone https://github.com/Glaysia/fpga-lab-template.git','cd fpga-lab-template','자신의 저장소를 만들려면 GitHub의 Use this template → Create a new repository를 사용하고 자신의 주소를 clone한다.')+link(TEMPLATE,'학생용 템플릿 열기'))
-    d.frame('File → New Window',para('VS Code 상단 File → New Window를 누른다. Ctrl+Shift+N도 같은 동작이다.')+crop('vscode:01-file-menu',(37,27,342,496),3.3)+para('새 창에서 File → Open Workspace from File...을 선택한다.','Open File...로 코드 하나만 여는 것과 구분한다.'))
-    d.frame('이 회로의 workspace 선택',para('clone한 폴더에서 다음 경로로 이동한다.',p['path'],p['id']+'.code-workspace')+crop('vscode:02-workspace',(42,33,349,496),2.6)+para('PROJECT는 이 회로의 실행 설정과 결과, COMMON은 공유 RTL·TB·XDC다.','위 화면은 공통 폴더 구조 예이며 선택할 파일명은 이 슬라이드의 경로를 따른다.'))
+    d.frame('File → New Window',para('VS Code 상단 File → New Window를 누른다. Ctrl+Shift+N도 같은 동작이다.')+crop('vscode:01-file-menu',(37,28,332,106),1.6)+para('새 창에서 File → Open Workspace from File...을 선택한다.')+crop('vscode:01-file-menu',(37,140,332,216),1.6)+para('Open File...로 코드 하나만 여는 것과 구분한다.'))
+    d.frame('이 회로의 workspace 선택',para('clone한 폴더에서 다음 경로로 이동한다.',p['path'],p['id']+'.code-workspace')+crop('vscode:02-workspace',(48,70,349,209),2.2)+para('PROJECT는 이 회로의 실행 설정과 결과, COMMON은 공유 RTL·TB·XDC다.','위 화면은 공통 폴더 구조 예이며 선택할 파일명은 이 슬라이드의 경로를 따른다.'))
     d.frame('확장 설치·활성화',para('Extensions에서 slang-server와 VaporView를 검색한다.')+crop('vscode:03-enable-slang',(351,70,1200,294),2.8)+para('없으면 Install, 꺼져 있으면 Enable 또는 Enable (Workspace).','Verilog 구문 강조가 보여도 시뮬레이션이 통과했다는 뜻은 아니다.'))
     srcs=[Path(x).name for x in p['sources']]
     d.frame('Explorer에서 파일 열기',items(['PROJECT와 COMMON 왼쪽 화살표를 눌러 펼친다.','RTL: '+', '.join(srcs)+'. 파일을 두 번 누르면 탭으로 열린다.','검증 TB: '+Path(p['testbench']).name+'.','핀 제약: '+Path(p['constraints']).name+'.','수정 후 File → Save All. 저장한 뒤에 시뮬레이션한다.'])+link(TEMPLATE+p['path'],'이 프로젝트 소스·workspace 열기'))
@@ -85,14 +101,17 @@ def prelude(d,c,p):
     if c['n']==2 and not legacy:
         for module in ['half_adder','full_adder']:
             d.frame(module+' 연결 읽기',para('실제 배포 RTL을 VS Code에서 연 화면이다.')+'\\par\\vspace{0.25cm}\\includegraphics[width=\\textwidth,trim=265bp 410bp 0bp 28bp,clip]{assets/lab1-circuits/'+module+'-rtl.png}\n'+para('반가산기는 두 입력의 XOR를 합, AND를 carry로 출력한다.' if module=='half_adder' else '첫 반가산기의 합과 cin을 두 번째 반가산기에 연결한다. 두 carry를 OR로 합친다.'))
-    elif not legacy and c['n'] in [3,4,5]:
-        shot={3:'adder_4bit',4:'sub_4bit',5:'compare_4'}[c['n']]
-        d.frame('RTL 구조를 설명한다',para('실제 배포 RTL을 VS Code에서 연 화면이다.','설계 top: '+p['top'])+'\\par\\vspace{0.25cm}\\includegraphics[width=\\textwidth]{assets/lab1-circuits/'+shot+'-rtl-crop.png}\\par\\vspace{0.25cm}\n'+para(c['rule'],'포트 선언·비트 폭·출력 연결을 짚어 설명한다. 저장소 소스를 복사해 사용해도 된다.')+link(TEMPLATE+p['path'],'배포 소스 확인'))
+    elif not legacy and c['n'] in range(3,11):
+        shot={3:'adder_4bit',4:'sub_4bit',5:'compare_4',6:'mux_4x1',7:'demux_1x8',8:'encoder8x3',9:'decoder3x8',10:'seg_decoder'}[c['n']]
+        image_width='\\textwidth'
+        rtl_notes=[c['rule']] if c['n']==10 else [c['rule'],'포트 선언·비트 폭·출력 연결을 짚어 설명한다. 저장소 소스를 복사해 사용해도 된다.']
+        d.frame('RTL 구조를 설명한다',para('실제 배포 RTL을 VS Code에서 연 화면이다.','설계 top: '+p['top'])+'\\par\\vspace{0.25cm}\\includegraphics[width='+image_width+']{assets/lab1-circuits/'+shot+'-rtl-crop.png}\\par\\vspace{0.25cm}\n'+para(*rtl_notes)+link(TEMPLATE+p['path'],'배포 소스 확인'))
     else:
         d.frame('RTL 구조를 설명한다',para('설계 top: '+p['top'],'RTL 파일: '+', '.join(srcs),c['rule'],'소스를 저장소에서 직접 열고 포트 선언·비트 폭·출력 연결을 짚어 설명한다. 저장소 소스를 복사해 사용해도 된다.')+link(TEMPLATE+p['path'],'배포 소스 확인'))
     if legacy and c['n']==4:
         d.frame('원본 감산기의 borrow 보충',para('원본은 a>b일 때만 borrow=0으로 두어 a=b에서도 borrow=1이 된다.','original/sub_4bit.v는 원본 바이트를 보존한다. corrected/sub_4bit.v는 비교를 a>=b로 고친 보충 파일이다.','배포 workspace와 XPR은 수정본으로 검사한다. 원본 오류 검출 로그와 수정 후 256개 통과 결과를 구분한다.'))
     d.frame('테스트벤치와 통과 기준',para('시뮬레이션 top: '+p['simulation_top'],f"{c['cases']}개 입력 조합을 모두 검사한다. 각 자극은 10ns, 종료 시각은 {c['cases']*10}ns다.",'기대값과 실제 출력이 다르면 $fatal로 중단한다. 검사 횟수와 watchdog도 확인한다.','통과 문구: LAB1_PASS '+p['top']+' cases='+str(c['cases']),'원본 레거시 testbench.v와 별도의 자기검사 TB는 파일과 역할을 구분한다.'))
+    code_panels(d,'common/tb/'+Path(p['testbench']).name)
     d.frame('저장 → Terminal → Run Task',para('File → Save All 다음 Terminal → Run Task...을 누른다.')+crop('vscode:06-tasks',(293,0,909,125),2.1)+items(['01 Check tools를 실행하고 도구 버전을 확인한다.','02 Simulate를 선택하고 종료까지 기다린다.','03 Open waveform으로 생성된 VCD를 연다.'])+para('작업이 없으면 올바른 .code-workspace를 열었는지 확인한다.'))
     logfile=LAB/p['path']/'build/vscode/simulation.log'
     marker='LAB1_PASS '+p['top']+' cases='+str(c['cases'])
@@ -159,8 +178,10 @@ def integrated_prelude(d,p):
     cli=p['edition']=='opensource_cli';label=d.label
     d.frame('버튼·LCD 통합 실습',para('VS Code 사전 시뮬레이션 → '+('오픈소스 CLI' if cli else 'Vivado 2026.1')+' → 보드 실험','같은 RTL에 10개 회로를 넣고 버튼으로 선택한다. LCD에 모드 번호와 회로 이름을 표시한다.','작성일 2026. 09. 10. · 이해리')+items(['먼저 2,560개 입력과 버튼·LCD 동작을 검사한다.','합성·배치배선·비트스트림을 생성한다.','보드에서 모드를 순환하고 사진·영상으로 설명한다.']))
     d.frame('통합 실습 목차',para('1부 · VS Code 사전 시뮬레이션')+'\\navlink{'+label+'-setup}{clone·새 창·workspace·실행·파형}\\par\\vspace{0.4cm}\n'+para('2부 · 통합 회로 이해')+'\\navlink{'+label+'-modes}{10개 모드·버튼·LCD·보드 연결}\\par\\vspace{0.4cm}\n'+para('3부 · 구현과 결과')+'\\navlink{'+label+'-vivado}{'+('CLI 설치·실행·검증 범위' if cli else 'Vivado GUI·핀·합성·구현·bit')+'}\\par\\vspace{0.2cm}\n\\navlink{'+label+'-post}{보드·사진·영상·실험 후 레포트}\\par\\vspace{0.3cm}\n'+link('04.LAB1_00_CONTENTS.pdf','전체 목차 PDF'),label+'-contents')
-    d.frame('템플릿과 새 창',para('Git·Python 3·VS Code와 '+('Icarus Verilog·Yosys·openXC7' if cli else 'Vivado 2026.1 XSim')+'을 준비한다.','git clone https://github.com/Glaysia/fpga-lab-template.git','VS Code: File → New Window → Open Workspace from File...')+crop('vscode:01-file-menu',(37,27,342,496),2.5)+para(p['path']+'/'+p['id']+'.code-workspace'),label+'-setup')
+    d.frame('템플릿과 새 창',para('Git·Python 3·VS Code와 '+('Icarus Verilog·Yosys·openXC7' if cli else 'Vivado 2026.1 XSim')+'을 준비한다.','git clone https://github.com/Glaysia/fpga-lab-template.git','VS Code: File → New Window → Open Workspace from File...')+crop('vscode:01-file-menu',(37,28,332,106),1.7)+para(p['path']+'/'+p['id']+'.code-workspace'),label+'-setup')
     d.frame('확장과 Explorer',para('Extensions에서 slang-server와 VaporView를 Install 또는 Enable (Workspace).')+crop('vscode:03-enable-slang',(351,70,1200,294),2.4)+para('Explorer에서 COMMON → rtl → lab1_integrated.v를 두 번 누른다.','COMMON → tb → tb_lab1_integrated.sv, constraints → lab1_integrated.xdc도 연다.','PROJECT에는 project.json·workspace·결과 폴더가 있다. File → Save All.'))
+    for source in ['rtl/lab1_integrated.v','rtl/button_onepulse.v','rtl/lcd_modes.v','tb/tb_lab1_integrated.sv']:
+        code_panels(d,'common/'+source)
     d.frame('세 작업을 순서대로 실행',crop('vscode:06-tasks',(293,0,909,125),2.1)+items(['Terminal → Run Task... → 01 Check tools.','02 Simulate → 종료까지 기다린다.','PROJECT/build/vscode/simulation.log를 연다.','LAB1_PASS lab1_integrated cases=2560을 확인한다.','03 Open waveform으로 wave.vcd를 연다.'])+para('CLI workspace는 Icarus Verilog를 선택한다.' if cli else 'GUI를 열기 전에도 설치된 XSim 실행 파일은 사용한다.'))
     d.frame('통합 테스트의 검사 범위',para('10개 모드 × DIP 256개 = 2,560개 출력 비교.','reset → MODE 01, 짧은 바운스 무시, 길게 눌러도 한 번만 전환, 10→01 순환을 검사한다.','LCD 초기 명령과 외부 버스에서 완성된 두 줄의 번호·이름을 비교한다.','TB는 10ns 클록, 디바운스 4클록, 전원 대기 5클록으로 시간을 줄인다. 실제 합성은 1kHz 보드 설정이다.','XSim 검사 종료: 72430ns. 실제 보드의 전압·LCD 연결은 별도로 확인한다.'))
     d.frame('VaporView에서 통합 파형 읽기',items(['wave.vcd가 텍스트면 탭 우클릭 → Reopen Editor With... → VaporView.','Netlist에서 tb_lab1_integrated를 펼친다.','clk, rst, mode_button, sw, led, seg_data를 추가한다.','dut 안의 mode와 lcd_e, lcd_rs, lcd_rw, lcd_data를 추가한다.','Zoom to Fit 뒤 모드가 바뀌는 구간을 확대한다.','버튼 입력부터 모드 변경까지의 지연과 LCD 한 화면 갱신을 구분한다.']))
@@ -221,7 +242,9 @@ def main():
         integrated_prelude(d,p)
         c={'cases':2560,'focus':'모드 전환·버튼·LCD와 2,560개 입력 결과를 비교한다.','board':'KEY1=reset, KEY2=다음 모드. DIP1–8=sw[7:0]. LED1–8=led[7:0].'}
         if cli:cli_steps(d,p)
-        else:vivado(d,c,p)
+        else:
+            vivado(d,c,p)
+            integrated_gui(d)
         post(d,c,p)
         inventory.append({'file':name,'pages':d.write(name),'project':p['path']})
     overview(inventory)

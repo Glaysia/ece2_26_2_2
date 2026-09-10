@@ -12,7 +12,8 @@
   "settings": {
     "editor.fontSize": 18,
     "editor.minimap.enabled": false,
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "off",
+    "editor.inlayHints.enabled": "off"
   },
   "extensions": {
     "recommendations": [
