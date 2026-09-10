@@ -7,27 +7,27 @@
 | 프로젝트 | 사전 시뮬레이션 | Vivado 시뮬레이션 | Vivado bit | 보드 기록·촬영 |
 |---|---|---|---|---|
 | [vivado_2026_1_01_logic_gates](../vivado_2026_1/01_logic_gates/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
-| [legacy_01_logic_gates](../legacy/01_logic_gates/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [vivado_2026_1_02_full_adder](../vivado_2026_1/02_full_adder/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
-| [legacy_02_full_adder](../legacy/02_full_adder/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [vivado_2026_1_03_adder4](../vivado_2026_1/03_adder4/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
-| [legacy_03_adder4](../legacy/03_adder4/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [vivado_2026_1_04_subtractor4](../vivado_2026_1/04_subtractor4/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
-| [legacy_04_subtractor4](../legacy/04_subtractor4/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [vivado_2026_1_05_comparator4](../vivado_2026_1/05_comparator4/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
-| [legacy_05_comparator4](../legacy/05_comparator4/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [vivado_2026_1_06_mux4to1](../vivado_2026_1/06_mux4to1/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
-| [legacy_06_mux4to1](../legacy/06_mux4to1/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [vivado_2026_1_07_demux1to8](../vivado_2026_1/07_demux1to8/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
-| [legacy_07_demux1to8](../legacy/07_demux1to8/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [vivado_2026_1_08_encoder8to3](../vivado_2026_1/08_encoder8to3/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
-| [legacy_08_encoder8to3](../legacy/08_encoder8to3/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [vivado_2026_1_09_decoder3to8](../vivado_2026_1/09_decoder3to8/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
-| [legacy_09_decoder3to8](../legacy/09_decoder3to8/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [vivado_2026_1_10_seven_segment](../vivado_2026_1/10_seven_segment/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
-| [legacy_10_seven_segment](../legacy/10_seven_segment/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 | [vivado_2026_1_integrated](../vivado_2026_1/11_integrated/evidence/validation.json) | PASS | PASS | PASS | 미수행 |
 | [opensource_cli_integrated](../opensource_cli/integrated/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
+| [legacy_01_logic_gates](../legacy/01_logic_gates/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
+| [legacy_02_full_adder](../legacy/02_full_adder/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
+| [legacy_03_adder4](../legacy/03_adder4/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
+| [legacy_04_subtractor4](../legacy/04_subtractor4/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
+| [legacy_05_comparator4](../legacy/05_comparator4/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
+| [legacy_06_mux4to1](../legacy/06_mux4to1/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
+| [legacy_07_demux1to8](../legacy/07_demux1to8/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
+| [legacy_08_encoder8to3](../legacy/08_encoder8to3/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
+| [legacy_09_decoder3to8](../legacy/09_decoder3to8/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
+| [legacy_10_seven_segment](../legacy/10_seven_segment/evidence/validation.json) | PASS | NOT_RUN | NOT_RUN | 미수행 |
 
 첫 최신 회로는 공개 템플릿 740aef5를 새로 clone하여 실제 Vivado GUI로 시뮬레이션·bit 생성을 수행했습니다. 나머지 최신 회로는 같은 입력 파일의 Vivado 2026.1 배치 실행으로 검증합니다. 두 XSim 경로의 VCD에서 날짜·버전 메타데이터만 제외하고 신호 선언·모든 시간과 값 변화를 대조한 결과도 별도로 보관합니다. 학생용 매뉴얼은 GUI 클릭 순서입니다. 이 두 수행 방식을 혼동하지 않습니다.
 

@@ -4,6 +4,7 @@ import json, hashlib, shutil
 
 LAB=Path(__file__).resolve().parents[1]
 PROJECTS=json.loads((LAB/'projects.json').read_text(encoding='utf-8'))
+PROJECTS.sort(key=lambda p:({'vivado_2026_1':0,'opensource_cli':1,'legacy':2}[p['edition']],p['path']))
 CIRCUITS=json.loads((LAB/'docs/circuits.json').read_text(encoding='utf-8'))
 COURSE='https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/'
 PDF=COURSE+'weekly-slides/weekly-slides/LAB1_FPGA_0914/'
@@ -146,7 +147,7 @@ Open Hardware Manager → Open target → Auto Connect → 장치 확인 → Pro
                 f.write('\n## 실제 VCD 구간\n\n![실제 XSim VCD의 구간 확대](evidence/waveform.svg)\n\n위 그림은 실제 VCD 값으로 그린 타이밍 도표이며 VS Code 화면 캡처는 아닙니다. [원본 VCD](evidence/waveform-source.vcd) · [구간·신호·해시](evidence/waveform-plot.json). 다중 비트 표시는 16진수입니다.\n')
     write(LAB/'README.md','''# LAB1: 22개 프로젝트
 
-[학생용 별도 템플릿](https://github.com/Glaysia/fpga-lab-template) · [설치·시작](docs/setup.md) · [10개 회로](docs/circuits.md) · [버튼·LCD 통합](docs/integrated.md) · [오픈소스 CLI](docs/cli.md) · [레포트](docs/reports.md) · [검증 현황](docs/validation.md) · [레거시 원본](docs/legacy-provenance.md)
+[강의 저장소](../../../README.md) · [PDF·ZIP 목록](../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/README.md) · [학생용 별도 템플릿](https://github.com/Glaysia/fpga-lab-template) · [설치·시작](docs/setup.md) · [10개 회로](docs/circuits.md) · [버튼·LCD 통합](docs/integrated.md) · [오픈소스 CLI](docs/cli.md) · [레포트](docs/reports.md) · [검증 현황](docs/validation.md) · [레거시 원본](docs/legacy-provenance.md)
 
 작성일 2026-09-10. 모든 프로젝트는 VS Code 사전 시뮬레이션과 실험 전 레포트부터 시작합니다. Vivado에서는 메뉴를 직접 눌러 시뮬레이션·합성·구현·bit 생성을 수행하고, 보드 기록·사진·영상은 실험 후 레포트에 넣습니다.
 

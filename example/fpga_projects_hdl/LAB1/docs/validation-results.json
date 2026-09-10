@@ -48,36 +48,6 @@
     "legacy_tool_run": null
   },
   {
-    "project": "legacy_01_logic_gates",
-    "part": "xc7s75fgga484-1",
-    "stages": {
-      "vscode": {
-        "project": "legacy_01_logic_gates",
-        "action": "simulate",
-        "started_utc": "2026-09-09T17:42:19.633939+00:00",
-        "status": "PASS",
-        "run": "run-2b6a4354632741f7992754bbb5c9d16a",
-        "simulator": "xsim",
-        "cases": 4,
-        "finished_utc": "2026-09-09T17:42:25.245422+00:00"
-      },
-      "vivado-sim": {
-        "status": "NOT_RUN"
-      },
-      "build": {
-        "status": "NOT_RUN"
-      }
-    },
-    "sha256": {
-      "original/logic_gate.v": "323f477f44b2ac72c0ab0d77364a6d85140001f84e6aa19d1c3094aa58df2372",
-      "../../common/tb/tb_logic_gate.sv": "f5cd77fd26bda75ce41621b01a4e80a1d485cae5a95cd8f9c1903dfc4dcf1e71",
-      "../../common/constraints/logic_gate.xdc": "2e5671a832643a1755be7dcd935ab3ad615f4a09a20f1703db6af009d2c7e263"
-    },
-    "hardware_programmed": false,
-    "board_photos_video": false,
-    "legacy_tool_run": false
-  },
-  {
     "project": "vivado_2026_1_02_full_adder",
     "part": "xc7s75fgga484-1",
     "stages": {
@@ -120,37 +90,6 @@
     "hardware_programmed": false,
     "board_photos_video": false,
     "legacy_tool_run": null
-  },
-  {
-    "project": "legacy_02_full_adder",
-    "part": "xc7s75fgga484-1",
-    "stages": {
-      "vscode": {
-        "project": "legacy_02_full_adder",
-        "action": "simulate",
-        "started_utc": "2026-09-09T17:42:25.385572+00:00",
-        "status": "PASS",
-        "run": "run-1e5e89d52b244450ae7e07186bf6b042",
-        "simulator": "xsim",
-        "cases": 8,
-        "finished_utc": "2026-09-09T17:42:30.841321+00:00"
-      },
-      "vivado-sim": {
-        "status": "NOT_RUN"
-      },
-      "build": {
-        "status": "NOT_RUN"
-      }
-    },
-    "sha256": {
-      "original/full_adder.v": "0acb0572610de489b94b902a3fe2b254315f41ca711e790cff185acc5ee5c898",
-      "original/half_adder.v": "959405ba290ffdfbc82521fc5458a706c131082deef0ebb3f539c6bd3d6a4700",
-      "../../common/tb/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f",
-      "../../common/constraints/full_adder.xdc": "a19c228316ac26a0c0310a539cd5fe7e6f06ee0fbfdd4b479da1e92441da9146"
-    },
-    "hardware_programmed": false,
-    "board_photos_video": false,
-    "legacy_tool_run": false
   },
   {
     "project": "vivado_2026_1_03_adder4",
@@ -196,36 +135,6 @@
     "legacy_tool_run": null
   },
   {
-    "project": "legacy_03_adder4",
-    "part": "xc7s75fgga484-1",
-    "stages": {
-      "vscode": {
-        "project": "legacy_03_adder4",
-        "action": "simulate",
-        "started_utc": "2026-09-09T17:42:30.966859+00:00",
-        "status": "PASS",
-        "run": "run-bfdbe8aba00a4fd8ba0f554ec6d60b05",
-        "simulator": "xsim",
-        "cases": 256,
-        "finished_utc": "2026-09-09T17:42:36.257950+00:00"
-      },
-      "vivado-sim": {
-        "status": "NOT_RUN"
-      },
-      "build": {
-        "status": "NOT_RUN"
-      }
-    },
-    "sha256": {
-      "original/adder_4bit.v": "d244da1c9ba1bc6aa2f21656102333b2e8bbbf2b32bf49a985963617aaba6758",
-      "../../common/tb/tb_adder_4bit.sv": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df",
-      "../../common/constraints/adder_4bit.xdc": "db69b1122244939998fe14d2a5a42fd3174850ecf04d955a45990affbbe60b87"
-    },
-    "hardware_programmed": false,
-    "board_photos_video": false,
-    "legacy_tool_run": false
-  },
-  {
     "project": "vivado_2026_1_04_subtractor4",
     "part": "xc7s75fgga484-1",
     "stages": {
@@ -267,36 +176,6 @@
     "hardware_programmed": false,
     "board_photos_video": false,
     "legacy_tool_run": null
-  },
-  {
-    "project": "legacy_04_subtractor4",
-    "part": "xc7s75fgga484-1",
-    "stages": {
-      "vscode": {
-        "project": "legacy_04_subtractor4",
-        "action": "simulate",
-        "started_utc": "2026-09-09T18:43:35.323277+00:00",
-        "status": "PASS",
-        "run": "run-d9faa04d103f45b4b9ba39526abe2230",
-        "simulator": "xsim",
-        "cases": 256,
-        "finished_utc": "2026-09-09T18:44:18.829961+00:00"
-      },
-      "vivado-sim": {
-        "status": "NOT_RUN"
-      },
-      "build": {
-        "status": "NOT_RUN"
-      }
-    },
-    "sha256": {
-      "corrected/sub_4bit.v": "0dda5e18283aef717ad0f967e46f9ecd0d5caa980ef34076e027e7bbfd803d4d",
-      "../../common/tb/tb_sub_4bit.sv": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35",
-      "../../common/constraints/sub_4bit.xdc": "9d725482e37d890fe23dc4f160d72ed44943740b3a8efeb2ed25c691501ffedf"
-    },
-    "hardware_programmed": false,
-    "board_photos_video": false,
-    "legacy_tool_run": false
   },
   {
     "project": "vivado_2026_1_05_comparator4",
@@ -342,36 +221,6 @@
     "legacy_tool_run": null
   },
   {
-    "project": "legacy_05_comparator4",
-    "part": "xc7s75fgga484-1",
-    "stages": {
-      "vscode": {
-        "project": "legacy_05_comparator4",
-        "action": "simulate",
-        "started_utc": "2026-09-09T17:42:41.886444+00:00",
-        "status": "PASS",
-        "run": "run-01986d9d457d4746852f0650a88a877d",
-        "simulator": "xsim",
-        "cases": 256,
-        "finished_utc": "2026-09-09T17:42:47.367805+00:00"
-      },
-      "vivado-sim": {
-        "status": "NOT_RUN"
-      },
-      "build": {
-        "status": "NOT_RUN"
-      }
-    },
-    "sha256": {
-      "original/compare_4.v": "615443f9cdd0ec1a3a2d389605abb631323bed978a66f740b0e4b743856cd9b3",
-      "../../common/tb/tb_compare_4.sv": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602",
-      "../../common/constraints/compare_4.xdc": "7a117d4f7e776215a2fd06ec4b689c72fe1f9116841fa1e6788b6a17df7f24a4"
-    },
-    "hardware_programmed": false,
-    "board_photos_video": false,
-    "legacy_tool_run": false
-  },
-  {
     "project": "vivado_2026_1_06_mux4to1",
     "part": "xc7s75fgga484-1",
     "stages": {
@@ -413,36 +262,6 @@
     "hardware_programmed": false,
     "board_photos_video": false,
     "legacy_tool_run": null
-  },
-  {
-    "project": "legacy_06_mux4to1",
-    "part": "xc7s75fgga484-1",
-    "stages": {
-      "vscode": {
-        "project": "legacy_06_mux4to1",
-        "action": "simulate",
-        "started_utc": "2026-09-09T17:42:47.491209+00:00",
-        "status": "PASS",
-        "run": "run-4dc78e78b6fd4861b8fa5dcf7403d58e",
-        "simulator": "xsim",
-        "cases": 64,
-        "finished_utc": "2026-09-09T17:42:53.193519+00:00"
-      },
-      "vivado-sim": {
-        "status": "NOT_RUN"
-      },
-      "build": {
-        "status": "NOT_RUN"
-      }
-    },
-    "sha256": {
-      "original/mux_4x1.v": "3f8e5ef35951c76c21f2ef7b721cdd9464650a7d6e699fdcdf1b0b98f5205d0f",
-      "../../common/tb/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9",
-      "../../common/constraints/mux_4x1.xdc": "2450722766506fa60b420c2351ae3aea415e29b9923a7879fd498802a4f51a76"
-    },
-    "hardware_programmed": false,
-    "board_photos_video": false,
-    "legacy_tool_run": false
   },
   {
     "project": "vivado_2026_1_07_demux1to8",
@@ -488,36 +307,6 @@
     "legacy_tool_run": null
   },
   {
-    "project": "legacy_07_demux1to8",
-    "part": "xc7s75fgga484-1",
-    "stages": {
-      "vscode": {
-        "project": "legacy_07_demux1to8",
-        "action": "simulate",
-        "started_utc": "2026-09-09T17:42:53.317574+00:00",
-        "status": "PASS",
-        "run": "run-5ce19f68042447e89155919769667a7d",
-        "simulator": "xsim",
-        "cases": 16,
-        "finished_utc": "2026-09-09T17:42:58.762949+00:00"
-      },
-      "vivado-sim": {
-        "status": "NOT_RUN"
-      },
-      "build": {
-        "status": "NOT_RUN"
-      }
-    },
-    "sha256": {
-      "original/demux_1x8.v": "e40749e472c542f59332a22d0d344bbc9c129d5b34d3593e8d48ba500eb2129b",
-      "../../common/tb/tb_demux_1x8.sv": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702",
-      "../../common/constraints/demux_1x8.xdc": "25c329c1ff2c58d33fb7b74158d732a890214d1ba4d7abc770d14a3bfc0d09f4"
-    },
-    "hardware_programmed": false,
-    "board_photos_video": false,
-    "legacy_tool_run": false
-  },
-  {
     "project": "vivado_2026_1_08_encoder8to3",
     "part": "xc7s75fgga484-1",
     "stages": {
@@ -559,36 +348,6 @@
     "hardware_programmed": false,
     "board_photos_video": false,
     "legacy_tool_run": null
-  },
-  {
-    "project": "legacy_08_encoder8to3",
-    "part": "xc7s75fgga484-1",
-    "stages": {
-      "vscode": {
-        "project": "legacy_08_encoder8to3",
-        "action": "simulate",
-        "started_utc": "2026-09-09T17:42:58.880302+00:00",
-        "status": "PASS",
-        "run": "run-5a76f40a458048e3a3826fc22fce54a7",
-        "simulator": "xsim",
-        "cases": 256,
-        "finished_utc": "2026-09-09T17:43:04.352780+00:00"
-      },
-      "vivado-sim": {
-        "status": "NOT_RUN"
-      },
-      "build": {
-        "status": "NOT_RUN"
-      }
-    },
-    "sha256": {
-      "original/encoder8x3.v": "f068253ad43bba6845ede49a0563eb375024f4b09392c164d8fddd67d1a6586d",
-      "../../common/tb/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82",
-      "../../common/constraints/encoder8x3.xdc": "b074acbc6a6f046fd87335f5494843935f83babc53243c5ddc567b83b17ddf9e"
-    },
-    "hardware_programmed": false,
-    "board_photos_video": false,
-    "legacy_tool_run": false
   },
   {
     "project": "vivado_2026_1_09_decoder3to8",
@@ -634,36 +393,6 @@
     "legacy_tool_run": null
   },
   {
-    "project": "legacy_09_decoder3to8",
-    "part": "xc7s75fgga484-1",
-    "stages": {
-      "vscode": {
-        "project": "legacy_09_decoder3to8",
-        "action": "simulate",
-        "started_utc": "2026-09-09T17:43:04.475297+00:00",
-        "status": "PASS",
-        "run": "run-ed629de5e4a24b3788b90069b7cf3fd8",
-        "simulator": "xsim",
-        "cases": 8,
-        "finished_utc": "2026-09-09T17:43:10.427476+00:00"
-      },
-      "vivado-sim": {
-        "status": "NOT_RUN"
-      },
-      "build": {
-        "status": "NOT_RUN"
-      }
-    },
-    "sha256": {
-      "original/decoder3x8.v": "cd0a3e34bc61b4ee09b5afc27020677f0b5503f569c30e1f24979cc965ad27ac",
-      "../../common/tb/tb_decoder3x8.sv": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa",
-      "../../common/constraints/decoder3x8.xdc": "262eacb753110029989462d70a6433125f55657a86c602f8102697abdc28c38b"
-    },
-    "hardware_programmed": false,
-    "board_photos_video": false,
-    "legacy_tool_run": false
-  },
-  {
     "project": "vivado_2026_1_10_seven_segment",
     "part": "xc7s75fgga484-1",
     "stages": {
@@ -705,36 +434,6 @@
     "hardware_programmed": false,
     "board_photos_video": false,
     "legacy_tool_run": null
-  },
-  {
-    "project": "legacy_10_seven_segment",
-    "part": "xc7s75fgga484-1",
-    "stages": {
-      "vscode": {
-        "project": "legacy_10_seven_segment",
-        "action": "simulate",
-        "started_utc": "2026-09-09T17:43:10.629984+00:00",
-        "status": "PASS",
-        "run": "run-75088f9997bd4ecbbfab98a4f0a95742",
-        "simulator": "xsim",
-        "cases": 16,
-        "finished_utc": "2026-09-09T17:43:17.620333+00:00"
-      },
-      "vivado-sim": {
-        "status": "NOT_RUN"
-      },
-      "build": {
-        "status": "NOT_RUN"
-      }
-    },
-    "sha256": {
-      "original/seg_decoder.v": "2d660c034085991a21d1aee27823682ac0fd1092673e640445caf70c227ca330",
-      "../../common/tb/tb_seg_decoder.sv": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1",
-      "../../common/constraints/seg_decoder.xdc": "b09ded76ba185f43cb3ce8c4968345ebda85f61620f00529c439ea62922e1aa8"
-    },
-    "hardware_programmed": false,
-    "board_photos_video": false,
-    "legacy_tool_run": false
   },
   {
     "project": "vivado_2026_1_integrated",
@@ -915,5 +614,306 @@
     "hardware_programmed": false,
     "board_photos_video": false,
     "legacy_tool_run": null
+  },
+  {
+    "project": "legacy_01_logic_gates",
+    "part": "xc7s75fgga484-1",
+    "stages": {
+      "vscode": {
+        "project": "legacy_01_logic_gates",
+        "action": "simulate",
+        "started_utc": "2026-09-09T17:42:19.633939+00:00",
+        "status": "PASS",
+        "run": "run-2b6a4354632741f7992754bbb5c9d16a",
+        "simulator": "xsim",
+        "cases": 4,
+        "finished_utc": "2026-09-09T17:42:25.245422+00:00"
+      },
+      "vivado-sim": {
+        "status": "NOT_RUN"
+      },
+      "build": {
+        "status": "NOT_RUN"
+      }
+    },
+    "sha256": {
+      "original/logic_gate.v": "323f477f44b2ac72c0ab0d77364a6d85140001f84e6aa19d1c3094aa58df2372",
+      "../../common/tb/tb_logic_gate.sv": "f5cd77fd26bda75ce41621b01a4e80a1d485cae5a95cd8f9c1903dfc4dcf1e71",
+      "../../common/constraints/logic_gate.xdc": "2e5671a832643a1755be7dcd935ab3ad615f4a09a20f1703db6af009d2c7e263"
+    },
+    "hardware_programmed": false,
+    "board_photos_video": false,
+    "legacy_tool_run": false
+  },
+  {
+    "project": "legacy_02_full_adder",
+    "part": "xc7s75fgga484-1",
+    "stages": {
+      "vscode": {
+        "project": "legacy_02_full_adder",
+        "action": "simulate",
+        "started_utc": "2026-09-09T17:42:25.385572+00:00",
+        "status": "PASS",
+        "run": "run-1e5e89d52b244450ae7e07186bf6b042",
+        "simulator": "xsim",
+        "cases": 8,
+        "finished_utc": "2026-09-09T17:42:30.841321+00:00"
+      },
+      "vivado-sim": {
+        "status": "NOT_RUN"
+      },
+      "build": {
+        "status": "NOT_RUN"
+      }
+    },
+    "sha256": {
+      "original/full_adder.v": "0acb0572610de489b94b902a3fe2b254315f41ca711e790cff185acc5ee5c898",
+      "original/half_adder.v": "959405ba290ffdfbc82521fc5458a706c131082deef0ebb3f539c6bd3d6a4700",
+      "../../common/tb/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f",
+      "../../common/constraints/full_adder.xdc": "a19c228316ac26a0c0310a539cd5fe7e6f06ee0fbfdd4b479da1e92441da9146"
+    },
+    "hardware_programmed": false,
+    "board_photos_video": false,
+    "legacy_tool_run": false
+  },
+  {
+    "project": "legacy_03_adder4",
+    "part": "xc7s75fgga484-1",
+    "stages": {
+      "vscode": {
+        "project": "legacy_03_adder4",
+        "action": "simulate",
+        "started_utc": "2026-09-09T17:42:30.966859+00:00",
+        "status": "PASS",
+        "run": "run-bfdbe8aba00a4fd8ba0f554ec6d60b05",
+        "simulator": "xsim",
+        "cases": 256,
+        "finished_utc": "2026-09-09T17:42:36.257950+00:00"
+      },
+      "vivado-sim": {
+        "status": "NOT_RUN"
+      },
+      "build": {
+        "status": "NOT_RUN"
+      }
+    },
+    "sha256": {
+      "original/adder_4bit.v": "d244da1c9ba1bc6aa2f21656102333b2e8bbbf2b32bf49a985963617aaba6758",
+      "../../common/tb/tb_adder_4bit.sv": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df",
+      "../../common/constraints/adder_4bit.xdc": "db69b1122244939998fe14d2a5a42fd3174850ecf04d955a45990affbbe60b87"
+    },
+    "hardware_programmed": false,
+    "board_photos_video": false,
+    "legacy_tool_run": false
+  },
+  {
+    "project": "legacy_04_subtractor4",
+    "part": "xc7s75fgga484-1",
+    "stages": {
+      "vscode": {
+        "project": "legacy_04_subtractor4",
+        "action": "simulate",
+        "started_utc": "2026-09-09T18:43:35.323277+00:00",
+        "status": "PASS",
+        "run": "run-d9faa04d103f45b4b9ba39526abe2230",
+        "simulator": "xsim",
+        "cases": 256,
+        "finished_utc": "2026-09-09T18:44:18.829961+00:00"
+      },
+      "vivado-sim": {
+        "status": "NOT_RUN"
+      },
+      "build": {
+        "status": "NOT_RUN"
+      }
+    },
+    "sha256": {
+      "corrected/sub_4bit.v": "0dda5e18283aef717ad0f967e46f9ecd0d5caa980ef34076e027e7bbfd803d4d",
+      "../../common/tb/tb_sub_4bit.sv": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35",
+      "../../common/constraints/sub_4bit.xdc": "9d725482e37d890fe23dc4f160d72ed44943740b3a8efeb2ed25c691501ffedf"
+    },
+    "hardware_programmed": false,
+    "board_photos_video": false,
+    "legacy_tool_run": false
+  },
+  {
+    "project": "legacy_05_comparator4",
+    "part": "xc7s75fgga484-1",
+    "stages": {
+      "vscode": {
+        "project": "legacy_05_comparator4",
+        "action": "simulate",
+        "started_utc": "2026-09-09T17:42:41.886444+00:00",
+        "status": "PASS",
+        "run": "run-01986d9d457d4746852f0650a88a877d",
+        "simulator": "xsim",
+        "cases": 256,
+        "finished_utc": "2026-09-09T17:42:47.367805+00:00"
+      },
+      "vivado-sim": {
+        "status": "NOT_RUN"
+      },
+      "build": {
+        "status": "NOT_RUN"
+      }
+    },
+    "sha256": {
+      "original/compare_4.v": "615443f9cdd0ec1a3a2d389605abb631323bed978a66f740b0e4b743856cd9b3",
+      "../../common/tb/tb_compare_4.sv": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602",
+      "../../common/constraints/compare_4.xdc": "7a117d4f7e776215a2fd06ec4b689c72fe1f9116841fa1e6788b6a17df7f24a4"
+    },
+    "hardware_programmed": false,
+    "board_photos_video": false,
+    "legacy_tool_run": false
+  },
+  {
+    "project": "legacy_06_mux4to1",
+    "part": "xc7s75fgga484-1",
+    "stages": {
+      "vscode": {
+        "project": "legacy_06_mux4to1",
+        "action": "simulate",
+        "started_utc": "2026-09-09T17:42:47.491209+00:00",
+        "status": "PASS",
+        "run": "run-4dc78e78b6fd4861b8fa5dcf7403d58e",
+        "simulator": "xsim",
+        "cases": 64,
+        "finished_utc": "2026-09-09T17:42:53.193519+00:00"
+      },
+      "vivado-sim": {
+        "status": "NOT_RUN"
+      },
+      "build": {
+        "status": "NOT_RUN"
+      }
+    },
+    "sha256": {
+      "original/mux_4x1.v": "3f8e5ef35951c76c21f2ef7b721cdd9464650a7d6e699fdcdf1b0b98f5205d0f",
+      "../../common/tb/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9",
+      "../../common/constraints/mux_4x1.xdc": "2450722766506fa60b420c2351ae3aea415e29b9923a7879fd498802a4f51a76"
+    },
+    "hardware_programmed": false,
+    "board_photos_video": false,
+    "legacy_tool_run": false
+  },
+  {
+    "project": "legacy_07_demux1to8",
+    "part": "xc7s75fgga484-1",
+    "stages": {
+      "vscode": {
+        "project": "legacy_07_demux1to8",
+        "action": "simulate",
+        "started_utc": "2026-09-09T17:42:53.317574+00:00",
+        "status": "PASS",
+        "run": "run-5ce19f68042447e89155919769667a7d",
+        "simulator": "xsim",
+        "cases": 16,
+        "finished_utc": "2026-09-09T17:42:58.762949+00:00"
+      },
+      "vivado-sim": {
+        "status": "NOT_RUN"
+      },
+      "build": {
+        "status": "NOT_RUN"
+      }
+    },
+    "sha256": {
+      "original/demux_1x8.v": "e40749e472c542f59332a22d0d344bbc9c129d5b34d3593e8d48ba500eb2129b",
+      "../../common/tb/tb_demux_1x8.sv": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702",
+      "../../common/constraints/demux_1x8.xdc": "25c329c1ff2c58d33fb7b74158d732a890214d1ba4d7abc770d14a3bfc0d09f4"
+    },
+    "hardware_programmed": false,
+    "board_photos_video": false,
+    "legacy_tool_run": false
+  },
+  {
+    "project": "legacy_08_encoder8to3",
+    "part": "xc7s75fgga484-1",
+    "stages": {
+      "vscode": {
+        "project": "legacy_08_encoder8to3",
+        "action": "simulate",
+        "started_utc": "2026-09-09T17:42:58.880302+00:00",
+        "status": "PASS",
+        "run": "run-5a76f40a458048e3a3826fc22fce54a7",
+        "simulator": "xsim",
+        "cases": 256,
+        "finished_utc": "2026-09-09T17:43:04.352780+00:00"
+      },
+      "vivado-sim": {
+        "status": "NOT_RUN"
+      },
+      "build": {
+        "status": "NOT_RUN"
+      }
+    },
+    "sha256": {
+      "original/encoder8x3.v": "f068253ad43bba6845ede49a0563eb375024f4b09392c164d8fddd67d1a6586d",
+      "../../common/tb/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82",
+      "../../common/constraints/encoder8x3.xdc": "b074acbc6a6f046fd87335f5494843935f83babc53243c5ddc567b83b17ddf9e"
+    },
+    "hardware_programmed": false,
+    "board_photos_video": false,
+    "legacy_tool_run": false
+  },
+  {
+    "project": "legacy_09_decoder3to8",
+    "part": "xc7s75fgga484-1",
+    "stages": {
+      "vscode": {
+        "project": "legacy_09_decoder3to8",
+        "action": "simulate",
+        "started_utc": "2026-09-09T17:43:04.475297+00:00",
+        "status": "PASS",
+        "run": "run-ed629de5e4a24b3788b90069b7cf3fd8",
+        "simulator": "xsim",
+        "cases": 8,
+        "finished_utc": "2026-09-09T17:43:10.427476+00:00"
+      },
+      "vivado-sim": {
+        "status": "NOT_RUN"
+      },
+      "build": {
+        "status": "NOT_RUN"
+      }
+    },
+    "sha256": {
+      "original/decoder3x8.v": "cd0a3e34bc61b4ee09b5afc27020677f0b5503f569c30e1f24979cc965ad27ac",
+      "../../common/tb/tb_decoder3x8.sv": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa",
+      "../../common/constraints/decoder3x8.xdc": "262eacb753110029989462d70a6433125f55657a86c602f8102697abdc28c38b"
+    },
+    "hardware_programmed": false,
+    "board_photos_video": false,
+    "legacy_tool_run": false
+  },
+  {
+    "project": "legacy_10_seven_segment",
+    "part": "xc7s75fgga484-1",
+    "stages": {
+      "vscode": {
+        "project": "legacy_10_seven_segment",
+        "action": "simulate",
+        "started_utc": "2026-09-09T17:43:10.629984+00:00",
+        "status": "PASS",
+        "run": "run-75088f9997bd4ecbbfab98a4f0a95742",
+        "simulator": "xsim",
+        "cases": 16,
+        "finished_utc": "2026-09-09T17:43:17.620333+00:00"
+      },
+      "vivado-sim": {
+        "status": "NOT_RUN"
+      },
+      "build": {
+        "status": "NOT_RUN"
+      }
+    },
+    "sha256": {
+      "original/seg_decoder.v": "2d660c034085991a21d1aee27823682ac0fd1092673e640445caf70c227ca330",
+      "../../common/tb/tb_seg_decoder.sv": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1",
+      "../../common/constraints/seg_decoder.xdc": "b09ded76ba185f43cb3ce8c4968345ebda85f61620f00529c439ea62922e1aa8"
+    },
+    "hardware_programmed": false,
+    "board_photos_video": false,
+    "legacy_tool_run": false
   }
 ]

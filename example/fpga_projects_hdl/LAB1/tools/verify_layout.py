@@ -10,15 +10,30 @@ assert sum(p['edition']=='opensource_cli' for p in ps)==1
 errors=[];xprs=0
 for p in ps:
  folder=lab/p['path'];cfg=json.loads((folder/'project.json').read_text())
- assert cfg['id']==p['id'] and cfg['sources']==p['sources'],p['id']
+ for field in ['id','edition','top','part','sources','testbench','simulation_top','cases','constraints']:
+  assert cfg[field]==p[field],(p['id'],field)
  for rel in [*p['sources'],p['testbench'],p['constraints']]:assert (folder/rel).is_file(),(p['id'],rel)
  ws=list(folder.glob('*.code-workspace'));assert len(ws)==1,p['id']
  data=json.loads(ws[0].read_text(encoding='utf-8'));tasks=data['tasks']['tasks'];assert len(tasks)==3
  assert [t['label'][:2] for t in tasks]==['01','02','03']
- for task in tasks:assert (folder/task['args'][0]).is_file(),(p['id'],task)
+ for task,action in zip(tasks,['check','simulate','wave']):
+  assert (folder/task['args'][0]).resolve()==(lab/'tools/lab1.py').resolve(),(p['id'],task)
+  assert task['args'][1:4]==[action,'--project','.'],(p['id'],task)
+  assert task['options']['cwd']=='${workspaceFolder:PROJECT}',p['id']
+  assert task['group']['kind']=='build' and task['group']['isDefault']==(action=='simulate'),p['id']
+  if p['edition']=='opensource_cli' and action!='wave':
+   assert task['args'][4:]==['--simulator','iverilog'],p['id']
+ assert next(f['path'] for f in data['folders'] if f['name']=='PROJECT')=='.',p['id']
  for f in data['folders']:assert (folder/f['path']).is_dir()
  for xpr in (folder/'vivado').glob('*.xpr'):
   xprs+=1;tree=ET.parse(xpr)
+  assert tree.getroot().get('Path')==xpr.name,(p['id'],'nonportable XPR root')
+  assert tree.find('./Configuration/Option[@Name="Part"]').get('Val')==p['part'],p['id']
+  expected={'sources_1':p['sources'],'sim_1':[p['testbench']],'constrs_1':[p['constraints']]}
+  for name,paths in expected.items():
+   files=tree.findall('./FileSets/FileSet[@Name="'+name+'"]/File')
+   actual={Path(f.get('Path').replace('$PPRDIR',str(xpr.parent))).resolve() for f in files}
+   assert actual=={(folder/f).resolve() for f in paths},(p['id'],name)
   for f in tree.findall('.//File'):
    path=f.get('Path','').replace('$PPRDIR',str(xpr.parent))
    assert '$' not in path and Path(path).is_file(),(p['id'],path)
