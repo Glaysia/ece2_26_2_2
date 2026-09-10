@@ -4,6 +4,8 @@
 
 작성일 2026-09-10. 제작자는 Mac이 없으므로 **공식 macOS ARM64 바이너리 배포를 확인하고 WSL Ubuntu-26.04의 Linux x86-64 바이너리로 실행**합니다. Mac에서 직접 실행·보드 기록을 검증했다는 뜻이 아닙니다.
 
+**현재 검증한 릴리스는 시뮬레이션·Yosys 합성까지 성공하고 S75 배치배선에서 실패합니다. CLI bit는 생성하지 못했습니다.** 아래 bit 단계는 실행 스크립트와 실패 재현 안내이며, 완성된 S75 빌드 배포로 취급하지 않습니다.
+
 ## 선택한 도구
 
 | 구성 요소 | 설치 릴리스 | 확인한 버전·역할 |
@@ -76,4 +78,17 @@ python3 ../../tools/openxc7_build.py --project .
 
 ## 실제 실행 현황
 
-Icarus 시뮬레이션은 통과했습니다. 정확한 S75 chipdb 생성과 bit 흐름의 최종 결과는 검증 완료 후 이 절에 기록합니다. 현재 이 문장만으로 bit 생성 성공을 주장하지 않습니다. 실제 보드 기록·사진·영상은 미수행이며 실험실 Vivado 환경에서 수행한 뒤 실험 후 레포트에 추가합니다.
+| 대상 | Icarus | Yosys 합성 | nextpnr 배치배선 | 프레임·bit |
+|---|---|---|---|---|
+| 논리 게이트 지원 확인 | 4개 통과 | 성공 | K4 핀 없음으로 실패 | 미실행 |
+| 통합 10모드 | 2,560개 통과 | 성공 | B6 핀 없음으로 실패 | 미실행 |
+
+`bbaexport.py`와 `bbasm`은 실행을 마쳤지만, 생성한 chipdb로 배치배선할 때 `device does not have a pin named 'K4'` 또는 `'B6'` 오류가 납니다. [데이터베이스 대조 결과](../opensource_cli/integrated/evidence/s75-database-audit.json)에 필수 핀 38개 중 누락 28개와 파일 해시를 기록했습니다.
+
+해당 커밋의 `xc7s75/tilegrid.json`은 `xc7s50/tilegrid.json`과 바이트 단위로 같습니다. 두 SHA-256은 `478cd2342474f7114c138109ae836d2cd4a6fe5bafb487fafdb04afe3de05623`입니다. S75 패키지 CSV에는 핀 190개만 있고 필요한 K4·B6가 없습니다. 같은 부품의 Vivado 공식 데이터에서 K4는 bank 35의 `IOB_X1Y129`, B6는 bank 36의 `IOB_X1Y174`로 확인했습니다. 단순한 XDC 철자 문제로 처리할 수 없습니다.
+
+이 파일의 [추가 커밋](https://github.com/openXC7/prjxray-db/commit/e107361263e9a3f1340ce54bc1c3e625da438c5b)은 S75 자료를 APIO 패키지에서 가져왔다고 설명합니다. 현재 검증한 데이터의 부족을 다른 부품 핀으로 바꾸어 우회하지 않았습니다. 실패 실행의 [결과](../opensource_cli/integrated/evidence/cli-result.json), [합성 로그](../opensource_cli/integrated/evidence/cli-synthesis.txt), [배치배선 로그](../opensource_cli/integrated/evidence/cli-place-route.txt)를 보관합니다.
+
+대안으로 [F4PGA 기본 플랫폼](https://f4pga.readthedocs.io/en/latest/f4pga/Usage.html)을 확인했지만 공개 안내의 기본 구성은 Artix-7 계열이며 이 S75 보드의 대체 완성 흐름을 확인하지 못했습니다. 새 대상 지원에는 [Project X-Ray의 부품 추가 절차](https://f4pga.readthedocs.io/projects/prjxray/en/latest/db_dev_process/newpart.html)에 따라 실제 S75의 tilegrid·tileconn·패키지 핀·프레임 주소를 생성·검증하는 작업이 필요합니다. 도구 전체가 어떤 환경에서도 지원하지 않는다고 단정하는 것은 아니며, 여기서 선택·실행한 릴리스의 한계입니다.
+
+따라서 CLI 통합 bit 목표는 **미완료**입니다. 실험은 Vivado 통합 프로젝트로 이어갈 수 있습니다. 실제 보드 기록·사진·영상도 미수행이며 실험실에서 수행한 뒤 실험 후 레포트에 추가합니다.

@@ -78,5 +78,125 @@
         "log": "vivado_2026_1/05_comparator4/build/batch-build.log"
       }
     ]
+  },
+  {
+    "id": "vivado_2026_1_07_demux1to8",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/07_demux1to8/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/07_demux1to8/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/07_demux1to8/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_06_mux4to1",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/06_mux4to1/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/06_mux4to1/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/06_mux4to1/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_08_encoder8to3",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/08_encoder8to3/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/08_encoder8to3/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/08_encoder8to3/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_09_decoder3to8",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/09_decoder3to8/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/09_decoder3to8/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/09_decoder3to8/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_10_seven_segment",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/10_seven_segment/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/10_seven_segment/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/10_seven_segment/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_integrated",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/11_integrated/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/11_integrated/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/11_integrated/build/batch-build.log"
+      }
+    ]
   }
 ]

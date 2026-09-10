@@ -1,0 +1,15 @@
+{
+  "project": "vivado_2026_1_06_mux4to1",
+  "source": "waveform-source.vcd",
+  "source_sha256": "a9bb7412080f3ef40527d61afff552fde20dde5d70955bea20f2d1dcb13a5eca",
+  "interval_ns": [
+    320,
+    360
+  ],
+  "signals": [
+    "i[3:0]",
+    "s[1:0]",
+    "z"
+  ],
+  "kind": "plot of measured VCD, not a VS Code screenshot"
+}

@@ -1,0 +1,10 @@
+{
+  "project": "legacy_01_logic_gates",
+  "action": "simulate",
+  "started_utc": "2026-09-09T17:42:19.633939+00:00",
+  "status": "PASS",
+  "run": "run-2b6a4354632741f7992754bbb5c9d16a",
+  "simulator": "xsim",
+  "cases": 4,
+  "finished_utc": "2026-09-09T17:42:25.245422+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "project": "vivado_2026_1_10_seven_segment",
+  "source": "waveform-source.vcd",
+  "source_sha256": "a197306c8adba1a2559bf15bedbeddc0bc36bdf956015e8a1c485ed4b2eae167",
+  "interval_ns": [
+    60,
+    110
+  ],
+  "signals": [
+    "bcd[3:0]",
+    "seg_data[7:0]"
+  ],
+  "kind": "plot of measured VCD, not a VS Code screenshot"
+}

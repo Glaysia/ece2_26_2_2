@@ -85,6 +85,9 @@ def prelude(d,c,p):
     if c['n']==2 and not legacy:
         for module in ['half_adder','full_adder']:
             d.frame(module+' 연결 읽기',para('실제 배포 RTL을 VS Code에서 연 화면이다.')+'\\par\\vspace{0.25cm}\\includegraphics[width=\\textwidth,trim=265bp 410bp 0bp 28bp,clip]{assets/lab1-circuits/'+module+'-rtl.png}\n'+para('반가산기는 두 입력의 XOR를 합, AND를 carry로 출력한다.' if module=='half_adder' else '첫 반가산기의 합과 cin을 두 번째 반가산기에 연결한다. 두 carry를 OR로 합친다.'))
+    elif not legacy and c['n'] in [3,4,5]:
+        shot={3:'adder_4bit',4:'sub_4bit',5:'compare_4'}[c['n']]
+        d.frame('RTL 구조를 설명한다',para('실제 배포 RTL을 VS Code에서 연 화면이다.','설계 top: '+p['top'])+'\\par\\vspace{0.25cm}\\includegraphics[width=\\textwidth]{assets/lab1-circuits/'+shot+'-rtl-crop.png}\\par\\vspace{0.25cm}\n'+para(c['rule'],'포트 선언·비트 폭·출력 연결을 짚어 설명한다. 저장소 소스를 복사해 사용해도 된다.')+link(TEMPLATE+p['path'],'배포 소스 확인'))
     else:
         d.frame('RTL 구조를 설명한다',para('설계 top: '+p['top'],'RTL 파일: '+', '.join(srcs),c['rule'],'소스를 저장소에서 직접 열고 포트 선언·비트 폭·출력 연결을 짚어 설명한다. 저장소 소스를 복사해 사용해도 된다.')+link(TEMPLATE+p['path'],'배포 소스 확인'))
     if legacy and c['n']==4:

@@ -1,0 +1,10 @@
+{
+  "project": "vivado_2026_1_06_mux4to1",
+  "action": "simulate",
+  "started_utc": "2026-09-09T19:30:20.120611+00:00",
+  "status": "PASS",
+  "run": "run-531c42a3a59d4e99bb7adb3afc5bfd01",
+  "simulator": "xsim",
+  "cases": 64,
+  "finished_utc": "2026-09-09T19:30:49.425256+00:00"
+}

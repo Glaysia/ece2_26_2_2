@@ -1,0 +1,10 @@
+{
+  "project": "vivado_2026_1_04_subtractor4",
+  "action": "simulate",
+  "started_utc": "2026-09-09T19:06:54.218437+00:00",
+  "status": "PASS",
+  "run": "run-1f701cb692e94e6e88875fd5c2439689",
+  "simulator": "xsim",
+  "cases": 256,
+  "finished_utc": "2026-09-09T19:07:12.757972+00:00"
+}

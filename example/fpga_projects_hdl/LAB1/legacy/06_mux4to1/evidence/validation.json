@@ -1,0 +1,30 @@
+{
+  "project": "legacy_06_mux4to1",
+  "part": "xc7s75fgga484-1",
+  "stages": {
+    "vscode": {
+      "project": "legacy_06_mux4to1",
+      "action": "simulate",
+      "started_utc": "2026-09-09T17:42:47.491209+00:00",
+      "status": "PASS",
+      "run": "run-4dc78e78b6fd4861b8fa5dcf7403d58e",
+      "simulator": "xsim",
+      "cases": 64,
+      "finished_utc": "2026-09-09T17:42:53.193519+00:00"
+    },
+    "vivado-sim": {
+      "status": "NOT_RUN"
+    },
+    "build": {
+      "status": "NOT_RUN"
+    }
+  },
+  "sha256": {
+    "original/mux_4x1.v": "3f8e5ef35951c76c21f2ef7b721cdd9464650a7d6e699fdcdf1b0b98f5205d0f",
+    "../../common/tb/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9",
+    "../../common/constraints/mux_4x1.xdc": "2450722766506fa60b420c2351ae3aea415e29b9923a7879fd498802a4f51a76"
+  },
+  "hardware_programmed": false,
+  "board_photos_video": false,
+  "legacy_tool_run": false
+}

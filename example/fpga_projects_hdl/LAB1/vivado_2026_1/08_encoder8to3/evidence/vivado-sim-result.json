@@ -1,0 +1,9 @@
+{
+  "project": "vivado_2026_1_08_encoder8to3",
+  "action": "vivado-sim",
+  "started_utc": "2026-09-09T19:53:30.729182+00:00",
+  "status": "PASS",
+  "run": "run-cf6abd9c11af4ed5a8c48133e8e74538",
+  "vivado_version": "vivado v2026.1 (64-bit)",
+  "finished_utc": "2026-09-09T19:57:05.359777+00:00"
+}

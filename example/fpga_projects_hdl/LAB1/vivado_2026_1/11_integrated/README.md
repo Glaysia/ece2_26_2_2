@@ -1,6 +1,6 @@
 # 10 modes with button and LCD
 
-[전체 프로젝트](../../README.md) · [설치](../../docs/setup.md) · [회로별 규칙](../../docs/circuits.md) · [강의 PDF](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_21_INTEGRATED_VIVADO.pdf) · [실험 전·후 레포트](../../docs/reports.md)
+[전체 프로젝트](../../README.md) · [설치](../../docs/setup.md) · [회로별 규칙](../../docs/circuits.md) · [강의 PDF](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_10A_INTEGRATED_VIVADO.pdf) · [실험 전·후 레포트](../../docs/reports.md)
 
 ## VS Code에서 먼저 실행
 
@@ -13,6 +13,10 @@
 7. `build/vscode/simulation.log`, `wave.vcd`, 자신의 화면 캡처와 해석을 실험 전 레포트에 남깁니다.
 
 ## 프로젝트 입력
+
+[VS Code workspace](vivado_2026_1_integrated.code-workspace) · [Vivado 프로젝트](vivado/lab1_integrated.xpr) · [재생성 Tcl](create_project.tcl)
+
+[두 통합본의 공통 동작](../../docs/integrated.md)
 
 - FPGA: `xc7s75fgga484-1`
 - 설계 top: `lab1_integrated` / 시뮬레이션 top: `tb_lab1_integrated`
@@ -44,6 +48,6 @@ Open Hardware Manager → Open target → Auto Connect → 장치 확인 → Pro
 
 ## 제작 검증
 
-[실행 결과와 소스 SHA-256](evidence/validation.json): VS Code 단계 **PASS**, Vivado 시뮬레이션 **NOT_RUN**, Vivado bit 생성 **NOT_RUN**. 이는 제작 환경의 실행 기록이며 자신의 실행 증빙을 대신하지 않습니다. CLI 프로젝트는 [별도 검증](../../docs/cli.md)을 봅니다.
+[실행 결과와 소스 SHA-256](evidence/validation.json): VS Code 단계 **PASS**, Vivado 시뮬레이션 **PASS**, Vivado bit 생성 **PASS**. 이는 제작 환경의 실행 기록이며 자신의 실행 증빙을 대신하지 않습니다. CLI 프로젝트는 [별도 검증](../../docs/cli.md)을 봅니다.
 
 실제 보드 기록·사진·영상은 **미수행**입니다. 생성된 bit만으로 보드 실험 완료를 주장하지 않습니다.

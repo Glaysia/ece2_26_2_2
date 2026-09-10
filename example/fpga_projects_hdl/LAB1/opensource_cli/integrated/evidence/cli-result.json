@@ -1,0 +1,61 @@
+{
+  "project": "opensource_cli_integrated",
+  "part": "xc7s75fgga484-1",
+  "started_utc": "2026-09-09T19:31:02.229513+00:00",
+  "run": "run-e8940bede2c7487f83bb120260ea2302",
+  "status": "FAIL",
+  "steps": [
+    {
+      "name": "synthesis",
+      "command": [
+        "/home/uos/.apio/packages/oss-cad-suite/bin/yosys",
+        "-s",
+        "/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/build/cli/run-e8940bede2c7487f83bb120260ea2302/synth.ys"
+      ],
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "place-route",
+      "command": [
+        "/home/uos/.apio/packages/openxc7/bin/nextpnr-xilinx",
+        "--chipdb",
+        "/home/uos/fpga-cli/xc7s75fgga484-1.bin",
+        "--xdc",
+        "/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/common/constraints/lab1_integrated.xdc",
+        "--json",
+        "design.json",
+        "--write",
+        "routed.json",
+        "--fasm",
+        "design.fasm",
+        "--report",
+        "route-report.json",
+        "--freq",
+        "0.001"
+      ],
+      "status": "FAIL",
+      "returncode": 255
+    }
+  ],
+  "input_sha256": {
+    "../../common/rtl/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+    "../../common/rtl/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+    "../../common/rtl/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+    "../../common/rtl/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+    "../../common/rtl/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+    "../../common/rtl/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+    "../../common/rtl/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+    "../../common/rtl/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+    "../../common/rtl/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+    "../../common/rtl/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+    "../../common/rtl/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+    "../../common/rtl/button_onepulse.v": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3",
+    "../../common/rtl/lcd_modes.v": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f",
+    "../../common/rtl/lab1_integrated.v": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69",
+    "../../common/constraints/lab1_integrated.xdc": "77fdfa05fe64bbe260f6cbecf988314a5f068873a731622252a10c37eb9a8069"
+  },
+  "chipdb_sha256": "442f520c5490b1a7fc4a52e3a070fd589ca65a29053b2875ff5ce2c1a03617a3",
+  "error": "place-route failed: /mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/build/cli/run-e8940bede2c7487f83bb120260ea2302/place-route.log",
+  "finished_utc": "2026-09-09T19:32:50.811945+00:00"
+}

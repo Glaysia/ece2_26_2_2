@@ -1,0 +1,10 @@
+{
+  "project": "opensource_cli_integrated",
+  "action": "simulate",
+  "started_utc": "2026-09-09T19:18:56.282353+00:00",
+  "status": "PASS",
+  "run": "run-d200b4747ebb4ec9b1e8dbbce0659a9a",
+  "simulator": "iverilog",
+  "cases": 2560,
+  "finished_utc": "2026-09-09T19:19:07.008448+00:00"
+}

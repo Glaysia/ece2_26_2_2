@@ -23,3 +23,5 @@
 [59쪽 실습 PDF](../../../../../weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_01_LOGIC_GATES_VIVADO.pdf) · [생성된 비트스트림](release/logic_gate.bit) · [검증 로그·DRC·해시](VALIDATION.md)
 
 학생용 시작점은 별도 [fpga-lab-template](https://github.com/Glaysia/fpga-lab-template)입니다. clone한 폴더 루트의 LAB1.code-workspace를 엽니다. 이 저장소에는 강의·검증용 첫 회로를 유지합니다.
+
+[같은 회로의 레거시](../../legacy/01_logic_gates/README.md) · [통합 모드 01](../../docs/integrated.md#mode-01) · [Vivado XPR](vivado/logic_gate.xpr) · [재생성 Tcl](create_project.tcl) · [레포트 양식](../../docs/reports.md)

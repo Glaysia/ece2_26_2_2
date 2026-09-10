@@ -1,6 +1,6 @@
 # 10 modes with button and LCD
 
-[전체 프로젝트](../../README.md) · [설치](../../docs/setup.md) · [회로별 규칙](../../docs/circuits.md) · [강의 PDF](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_22_INTEGRATED_CLI.pdf) · [실험 전·후 레포트](../../docs/reports.md)
+[전체 프로젝트](../../README.md) · [설치](../../docs/setup.md) · [회로별 규칙](../../docs/circuits.md) · [강의 PDF](https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/weekly-slides/weekly-slides/LAB1_FPGA_0914/04.LAB1_10B_INTEGRATED_CLI.pdf) · [실험 전·후 레포트](../../docs/reports.md)
 
 ## VS Code에서 먼저 실행
 
@@ -13,6 +13,10 @@
 7. `build/vscode/simulation.log`, `wave.vcd`, 자신의 화면 캡처와 해석을 실험 전 레포트에 남깁니다.
 
 ## 프로젝트 입력
+
+[VS Code workspace](opensource_cli_integrated.code-workspace) · [CLI 빌드 스크립트](../../tools/openxc7_build.py)
+
+[두 통합본의 공통 동작](../../docs/integrated.md)
 
 - FPGA: `xc7s75fgga484-1`
 - 설계 top: `lab1_integrated` / 시뮬레이션 top: `tb_lab1_integrated`

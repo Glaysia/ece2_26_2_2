@@ -1,0 +1,43 @@
+{
+  "project": "vivado_2026_1_08_encoder8to3",
+  "part": "xc7s75fgga484-1",
+  "stages": {
+    "vscode": {
+      "project": "vivado_2026_1_08_encoder8to3",
+      "action": "simulate",
+      "started_utc": "2026-09-09T19:53:06.843694+00:00",
+      "status": "PASS",
+      "run": "run-a26431047ff44cdc8b48902a31d5e0b6",
+      "simulator": "xsim",
+      "cases": 256,
+      "finished_utc": "2026-09-09T19:53:30.152720+00:00"
+    },
+    "vivado-sim": {
+      "project": "vivado_2026_1_08_encoder8to3",
+      "action": "vivado-sim",
+      "started_utc": "2026-09-09T19:53:30.729182+00:00",
+      "status": "PASS",
+      "run": "run-cf6abd9c11af4ed5a8c48133e8e74538",
+      "vivado_version": "vivado v2026.1 (64-bit)",
+      "finished_utc": "2026-09-09T19:57:05.359777+00:00"
+    },
+    "build": {
+      "project": "vivado_2026_1_08_encoder8to3",
+      "action": "build",
+      "started_utc": "2026-09-09T19:57:06.087803+00:00",
+      "status": "PASS",
+      "run": "run-6506f492e3484dd1af0ea74eba73c9d4",
+      "vivado_version": "vivado v2026.1 (64-bit)",
+      "finished_utc": "2026-09-09T20:15:46.572923+00:00"
+    }
+  },
+  "sha256": {
+    "../../common/rtl/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+    "../../common/tb/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82",
+    "../../common/constraints/encoder8x3.xdc": "b074acbc6a6f046fd87335f5494843935f83babc53243c5ddc567b83b17ddf9e",
+    "release/encoder8x3.bit": "64186d1f2e0a25d0caaed60df041c6c0d707fd2ad2f5171b1a33cd0e8937f48a"
+  },
+  "hardware_programmed": false,
+  "board_photos_video": false,
+  "legacy_tool_run": null
+}

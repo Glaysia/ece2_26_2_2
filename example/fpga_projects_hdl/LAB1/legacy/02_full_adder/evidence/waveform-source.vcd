@@ -1,0 +1,154 @@
+$date
+   Thu Sep 10 02:42:30 2026
+$end
+
+$version
+  2026.1
+  $dumpfile ("wave.vcd") 
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module tb_full_adder $end
+$var reg 1 ! a $end
+$var reg 1 " b $end
+$var reg 1 # cin $end
+$var wire 1 $ s $end
+$var wire 1 % cout $end
+$var integer 32 & n [31:0] $end
+$var integer 32 ' checked [31:0] $end
+$var reg 2 ( expected [1:0] $end
+$scope module dut $end
+$var wire 1 ) a $end
+$var wire 1 * b $end
+$var wire 1 + cin $end
+$var wire 1 $ s $end
+$var wire 1 % cout $end
+$var wire 1 , reg_c1 $end
+$var wire 1 - reg_c2 $end
+$var wire 1 . reg_sum $end
+$scope module u1 $end
+$var wire 1 ) a $end
+$var wire 1 * b $end
+$var reg 1 / s $end
+$var reg 1 0 c $end
+$upscope $end
+$scope module u2 $end
+$var wire 1 + a $end
+$var wire 1 . b $end
+$var reg 1 1 s $end
+$var reg 1 2 c $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+0%
+b0 &
+b0 '
+b0 (
+0)
+0*
+0+
+0,
+0-
+0.
+0/
+00
+01
+02
+$end
+
+#10000
+1#
+1$
+b1 &
+b1 '
+b1 (
+1+
+11
+
+#20000
+1"
+0#
+b10 &
+b10 '
+1*
+0+
+1.
+1/
+
+#30000
+1#
+0$
+1%
+b11 &
+b11 '
+b10 (
+1+
+1-
+01
+12
+
+#40000
+1!
+0"
+0#
+1$
+0%
+b100 &
+b100 '
+b1 (
+1)
+0*
+0+
+0-
+11
+02
+
+#50000
+1#
+0$
+1%
+b101 &
+b101 '
+b10 (
+1+
+1-
+01
+12
+
+#60000
+1"
+0#
+b110 &
+b110 '
+1*
+0+
+1,
+0-
+0.
+0/
+10
+02
+
+#70000
+1#
+1$
+b111 &
+b111 '
+b11 (
+1+
+11
+
+#80000
+b1000 &
+b1000 '

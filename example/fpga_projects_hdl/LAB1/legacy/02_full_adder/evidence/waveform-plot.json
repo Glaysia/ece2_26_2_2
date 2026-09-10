@@ -1,0 +1,17 @@
+{
+  "project": "legacy_02_full_adder",
+  "source": "waveform-source.vcd",
+  "source_sha256": "b137cb44ed109af2ae0426b84e6f48f14d7f51500ef74539b1c6aac81ce61357",
+  "interval_ns": [
+    0,
+    80
+  ],
+  "signals": [
+    "a",
+    "b",
+    "cin",
+    "s",
+    "cout"
+  ],
+  "kind": "plot of measured VCD, not a VS Code screenshot"
+}

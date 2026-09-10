@@ -1,0 +1,10 @@
+**/build/
+**/__pycache__/
+**/.Xil/
+*.pyc
+*.jou
+*.log
+*.str
+
+# Keep student evidence logs; generated caches remain excluded.
+!**/evidence/**/*.log

@@ -13,9 +13,13 @@ TeX가 강의 내용의 SSOT이며 PDF는 배포본이다. 아래 목록은 파�
 | Vivado 2026.1 설치 | [TeX](weekly-slides/LAB1_FPGA_0914/01.vivado_2026_1_설치_매뉴얼.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/01.vivado_2026_1_설치_매뉴얼.pdf) |
 | VS Code Verilog 환경설정 | [TeX](weekly-slides/LAB1_FPGA_0914/02.vscode_verilog_환경설정_매뉴얼.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/02.vscode_verilog_환경설정_매뉴얼.pdf) |
 | LAB1 목차·공통 안내 | [TeX](weekly-slides/LAB1_FPGA_0914/04.LAB1_00_CONTENTS.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/04.LAB1_00_CONTENTS.pdf) |
-| LAB1 01 논리 게이트 — 레거시 | [TeX](weekly-slides/LAB1_FPGA_0914/04.LAB1_01_LOGIC_GATES_LEGACY.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/04.LAB1_01_LOGIC_GATES_LEGACY.pdf) |
+| LAB1 01 논리 게이트 — 최신 | [TeX](weekly-slides/LAB1_FPGA_0914/04.LAB1_01_LOGIC_GATES_VIVADO.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/04.LAB1_01_LOGIC_GATES_VIVADO.pdf) |
+| LAB1 버튼·LCD 통합 — 최신 | [TeX](weekly-slides/LAB1_FPGA_0914/04.LAB1_10A_INTEGRATED_VIVADO.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/04.LAB1_10A_INTEGRATED_VIVADO.pdf) |
+| LAB1 버튼·LCD 통합 — CLI | [TeX](weekly-slides/LAB1_FPGA_0914/04.LAB1_10B_INTEGRATED_CLI.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/04.LAB1_10B_INTEGRATED_CLI.pdf) |
+| LAB1 01 논리 게이트 — 레거시 | [TeX](weekly-slides/LAB1_FPGA_0914/04.LAB1_11_LOGIC_GATES_LEGACY.tex) | [PDF](weekly-slides/LAB1_FPGA_0914/04.LAB1_11_LOGIC_GATES_LEGACY.pdf) |
 
-- [LAB1 안내](weekly-slides/LAB1_FPGA_0914/README.md)
+- [LAB1 안내·22개 매뉴얼](weekly-slides/LAB1_FPGA_0914/README.md)
+- [22개 FPGA 프로젝트·workspace](../example/fpga_projects_hdl/LAB1/README.md) · [학생용 템플릿](https://github.com/Glaysia/fpga-lab-template)
 - [LAB1 PDF 묶음 ZIP](weekly-slides/LAB1_FPGA_0914/04.LAB1_0910_PDF.zip) — 전체 압축 해제 후 목차 PDF에서 시작
 - [레거시 교재 편집·재빌드 상태](weekly-slides/LAB0_OT_0907/00.legacy_hdl.README.md)
 - [공용 템플릿 4:3](templates/weekly_presentation_template_4x3.tex) — LAB1 조합회로 자료에 사용

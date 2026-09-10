@@ -1,0 +1,44 @@
+{
+  "project": "vivado_2026_1_02_full_adder",
+  "part": "xc7s75fgga484-1",
+  "stages": {
+    "vscode": {
+      "project": "vivado_2026_1_02_full_adder",
+      "action": "simulate",
+      "started_utc": "2026-09-09T18:41:48.164665+00:00",
+      "status": "PASS",
+      "run": "run-5ddda16974e643ffb2dc3304574b203c",
+      "simulator": "xsim",
+      "cases": 8,
+      "finished_utc": "2026-09-09T18:42:08.050710+00:00"
+    },
+    "vivado-sim": {
+      "project": "vivado_2026_1_02_full_adder",
+      "action": "vivado-sim",
+      "started_utc": "2026-09-09T18:42:10.118767+00:00",
+      "status": "PASS",
+      "run": "run-3b9ead2ab5d542f6b338cfca9d86b51e",
+      "vivado_version": "vivado v2026.1 (64-bit)",
+      "finished_utc": "2026-09-09T18:45:28.232066+00:00"
+    },
+    "build": {
+      "project": "vivado_2026_1_02_full_adder",
+      "action": "build",
+      "started_utc": "2026-09-09T18:45:28.896113+00:00",
+      "status": "PASS",
+      "run": "run-38c68017ff13429783e3f512bf13a96a",
+      "vivado_version": "vivado v2026.1 (64-bit)",
+      "finished_utc": "2026-09-09T19:06:52.477633+00:00"
+    }
+  },
+  "sha256": {
+    "../../common/rtl/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+    "../../common/rtl/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+    "../../common/tb/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f",
+    "../../common/constraints/full_adder.xdc": "a19c228316ac26a0c0310a539cd5fe7e6f06ee0fbfdd4b479da1e92441da9146",
+    "release/full_adder.bit": "79e1b3b9efab6ddb82fecbd6ebb68fbf51c840af09ea4a395b0d06d3d732df7d"
+  },
+  "hardware_programmed": false,
+  "board_photos_video": false,
+  "legacy_tool_run": null
+}

@@ -85,7 +85,8 @@ Extensions에서 slang-server와 VaporView를 검색한다.\par\par\vspace{0.18c
 
 \begin{frame}{RTL 구조를 설명한다}\relax
 \small
-설계 top: sub\_4bit\par\vspace{0.22cm}RTL 파일: sub\_4bit.v\par\vspace{0.22cm}d는 a-b의 하위 4비트이고 bor는 a<b일 때만 1이다. 같은 수끼리 빼면 borrow는 0이다.\par\vspace{0.22cm}소스를 저장소에서 직접 열고 포트 선언·비트 폭·출력 연결을 짚어 설명한다. 저장소 소스를 복사해 사용해도 된다.\par\href{https://github.com/Glaysia/fpga-lab-template/tree/main/vivado_2026_1/04_subtractor4}{배포 소스 확인}
+실제 배포 RTL을 VS Code에서 연 화면이다.\par\vspace{0.22cm}설계 top: sub\_4bit\par\par\vspace{0.25cm}\includegraphics[width=\textwidth]{assets/lab1-circuits/sub_4bit-rtl-crop.png}\par\vspace{0.25cm}
+d는 a-b의 하위 4비트이고 bor는 a<b일 때만 1이다. 같은 수끼리 빼면 borrow는 0이다.\par\vspace{0.22cm}포트 선언·비트 폭·출력 연결을 짚어 설명한다. 저장소 소스를 복사해 사용해도 된다.\par\href{https://github.com/Glaysia/fpga-lab-template/tree/main/vivado_2026_1/04_subtractor4}{배포 소스 확인}
 \end{frame}
 
 \begin{frame}{테스트벤치와 통과 기준}\relax

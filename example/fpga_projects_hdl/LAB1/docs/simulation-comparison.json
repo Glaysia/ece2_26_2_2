@@ -1,0 +1,101 @@
+[
+  {
+    "project": "vivado_2026_1_01_logic_gates",
+    "standalone": "vivado_2026_1/01_logic_gates/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/01_logic_gates/evidence/template-gui-wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "e10484bdb4b0cb8dd6c546a729fa22a43b78372e5ee19f7f96eeecea825d9ad0",
+    "vivado_sha256": "e10484bdb4b0cb8dd6c546a729fa22a43b78372e5ee19f7f96eeecea825d9ad0"
+  },
+  {
+    "project": "vivado_2026_1_02_full_adder",
+    "standalone": "vivado_2026_1/02_full_adder/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/02_full_adder/build/vivado-sim/wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "a52165c685b1cf869ab61404efb1a148397f8c9982159f255d0e7f9af1feab8d",
+    "vivado_sha256": "a52165c685b1cf869ab61404efb1a148397f8c9982159f255d0e7f9af1feab8d"
+  },
+  {
+    "project": "vivado_2026_1_03_adder4",
+    "standalone": "vivado_2026_1/03_adder4/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/03_adder4/build/vivado-sim/wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "22d486128cbf5a1d4be693e70b9d2a377a98462c9ec5b37b827af0f69b199253",
+    "vivado_sha256": "22d486128cbf5a1d4be693e70b9d2a377a98462c9ec5b37b827af0f69b199253"
+  },
+  {
+    "project": "vivado_2026_1_04_subtractor4",
+    "standalone": "vivado_2026_1/04_subtractor4/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/04_subtractor4/build/vivado-sim/wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "4fc83dae400ca3e1a65cbcd2bd2728fcdda0facf660d9c7cc8a2a9fad31abd6a",
+    "vivado_sha256": "4fc83dae400ca3e1a65cbcd2bd2728fcdda0facf660d9c7cc8a2a9fad31abd6a"
+  },
+  {
+    "project": "vivado_2026_1_05_comparator4",
+    "standalone": "vivado_2026_1/05_comparator4/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/05_comparator4/build/vivado-sim/wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "1c65d64d996968a5775e9269270475bd001f9c70a1ee76b6a7194d26959660b8",
+    "vivado_sha256": "1c65d64d996968a5775e9269270475bd001f9c70a1ee76b6a7194d26959660b8"
+  },
+  {
+    "project": "vivado_2026_1_06_mux4to1",
+    "standalone": "vivado_2026_1/06_mux4to1/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/06_mux4to1/build/vivado-sim/wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "9b32d2c87d80710877d3b5c66fad96ef983ff809020b35f4c600ee2b72b738a1",
+    "vivado_sha256": "9b32d2c87d80710877d3b5c66fad96ef983ff809020b35f4c600ee2b72b738a1"
+  },
+  {
+    "project": "vivado_2026_1_07_demux1to8",
+    "standalone": "vivado_2026_1/07_demux1to8/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/07_demux1to8/build/vivado-sim/wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "c8d0c93502638dc6edda845af69f5d435b4a740dd12f4af8ee7f35a796093a56",
+    "vivado_sha256": "c8d0c93502638dc6edda845af69f5d435b4a740dd12f4af8ee7f35a796093a56"
+  },
+  {
+    "project": "vivado_2026_1_08_encoder8to3",
+    "standalone": "vivado_2026_1/08_encoder8to3/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/08_encoder8to3/build/vivado-sim/wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "f29b9643a78af5f21b89d835ae04b163efe176ee9c76b0668448e50f27cb1e80",
+    "vivado_sha256": "f29b9643a78af5f21b89d835ae04b163efe176ee9c76b0668448e50f27cb1e80"
+  },
+  {
+    "project": "vivado_2026_1_09_decoder3to8",
+    "standalone": "vivado_2026_1/09_decoder3to8/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/09_decoder3to8/build/vivado-sim/wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "9f70cc422cc5391bfce71a19ffb891007be70ef9317a6679e3277030f18e9b2b",
+    "vivado_sha256": "9f70cc422cc5391bfce71a19ffb891007be70ef9317a6679e3277030f18e9b2b"
+  },
+  {
+    "project": "vivado_2026_1_10_seven_segment",
+    "standalone": "vivado_2026_1/10_seven_segment/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/10_seven_segment/build/vivado-sim/wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "e69301a61b5fb5e352fe060c71cdaaa008ba30e6199837d77f49f2e8cd4b6e21",
+    "vivado_sha256": "e69301a61b5fb5e352fe060c71cdaaa008ba30e6199837d77f49f2e8cd4b6e21"
+  },
+  {
+    "project": "vivado_2026_1_integrated",
+    "standalone": "vivado_2026_1/11_integrated/build/vscode/wave.vcd",
+    "vivado": "vivado_2026_1/11_integrated/build/vivado-sim/wave.vcd",
+    "method": "All VCD declarations, timestamps and value changes; whitespace normalized; date/version blocks excluded.",
+    "status": "PASS",
+    "standalone_sha256": "452e1737d9387f794fd751c8f11dba917203a8a31c056acaa1dc06ddb925f694",
+    "vivado_sha256": "452e1737d9387f794fd751c8f11dba917203a8a31c056acaa1dc06ddb925f694"
+  }
+]

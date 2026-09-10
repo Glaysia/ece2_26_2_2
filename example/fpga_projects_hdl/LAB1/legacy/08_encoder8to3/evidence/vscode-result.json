@@ -1,0 +1,10 @@
+{
+  "project": "legacy_08_encoder8to3",
+  "action": "simulate",
+  "started_utc": "2026-09-09T17:42:58.880302+00:00",
+  "status": "PASS",
+  "run": "run-5a76f40a458048e3a3826fc22fce54a7",
+  "simulator": "xsim",
+  "cases": 256,
+  "finished_utc": "2026-09-09T17:43:04.352780+00:00"
+}

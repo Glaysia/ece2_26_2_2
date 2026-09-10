@@ -1,0 +1,15 @@
+{
+  "project": "legacy_06_mux4to1",
+  "source": "waveform-source.vcd",
+  "source_sha256": "e8fd29c5a246d17e89d355db946a40d4dfac48dfe684e1f727438a229e1c3ed1",
+  "interval_ns": [
+    320,
+    360
+  ],
+  "signals": [
+    "i[3:0]",
+    "s[1:0]",
+    "z"
+  ],
+  "kind": "plot of measured VCD, not a VS Code screenshot"
+}

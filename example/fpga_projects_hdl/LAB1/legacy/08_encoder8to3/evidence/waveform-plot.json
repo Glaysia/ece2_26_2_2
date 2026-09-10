@@ -1,0 +1,14 @@
+{
+  "project": "legacy_08_encoder8to3",
+  "source": "waveform-source.vcd",
+  "source_sha256": "9ee62f0c0294bc06706e6b8f4eb2e453d1e8e911d2b31b7abf58c1eeee3ae549",
+  "interval_ns": [
+    0,
+    50
+  ],
+  "signals": [
+    "i[7:0]",
+    "a[2:0]"
+  ],
+  "kind": "plot of measured VCD, not a VS Code screenshot"
+}

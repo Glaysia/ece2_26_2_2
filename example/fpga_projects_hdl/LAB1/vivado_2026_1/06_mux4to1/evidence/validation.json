@@ -1,0 +1,43 @@
+{
+  "project": "vivado_2026_1_06_mux4to1",
+  "part": "xc7s75fgga484-1",
+  "stages": {
+    "vscode": {
+      "project": "vivado_2026_1_06_mux4to1",
+      "action": "simulate",
+      "started_utc": "2026-09-09T19:30:20.120611+00:00",
+      "status": "PASS",
+      "run": "run-531c42a3a59d4e99bb7adb3afc5bfd01",
+      "simulator": "xsim",
+      "cases": 64,
+      "finished_utc": "2026-09-09T19:30:49.425256+00:00"
+    },
+    "vivado-sim": {
+      "project": "vivado_2026_1_06_mux4to1",
+      "action": "vivado-sim",
+      "started_utc": "2026-09-09T19:30:50.156704+00:00",
+      "status": "PASS",
+      "run": "run-539b42eb73ab4a56a7ada56abd251fa8",
+      "vivado_version": "vivado v2026.1 (64-bit)",
+      "finished_utc": "2026-09-09T19:34:37.081338+00:00"
+    },
+    "build": {
+      "project": "vivado_2026_1_06_mux4to1",
+      "action": "build",
+      "started_utc": "2026-09-09T19:34:39.474140+00:00",
+      "status": "PASS",
+      "run": "run-b73ec8ed3f514777b8c048c82294885d",
+      "vivado_version": "vivado v2026.1 (64-bit)",
+      "finished_utc": "2026-09-09T19:53:06.248160+00:00"
+    }
+  },
+  "sha256": {
+    "../../common/rtl/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+    "../../common/tb/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9",
+    "../../common/constraints/mux_4x1.xdc": "2450722766506fa60b420c2351ae3aea415e29b9923a7879fd498802a4f51a76",
+    "release/mux_4x1.bit": "b04dc87d0735d590d1da7a70a3e14939cfcd069ef9ffd737a69fbe2cd850c5bf"
+  },
+  "hardware_programmed": false,
+  "board_photos_video": false,
+  "legacy_tool_run": null
+}

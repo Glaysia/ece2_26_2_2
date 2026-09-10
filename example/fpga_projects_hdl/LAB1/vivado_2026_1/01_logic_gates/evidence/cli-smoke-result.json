@@ -1,0 +1,46 @@
+{
+  "project": "vivado_2026_1_01_logic_gates",
+  "part": "xc7s75fgga484-1",
+  "started_utc": "2026-09-09T19:26:58.810244+00:00",
+  "run": "run-be390e4beed74edb8962327419672e03",
+  "status": "FAIL",
+  "steps": [
+    {
+      "name": "synthesis",
+      "command": [
+        "/home/uos/.apio/packages/oss-cad-suite/bin/yosys",
+        "-s",
+        "/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/vivado_2026_1/01_logic_gates/build/cli/run-be390e4beed74edb8962327419672e03/synth.ys"
+      ],
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "place-route",
+      "command": [
+        "/home/uos/.apio/packages/openxc7/bin/nextpnr-xilinx",
+        "--chipdb",
+        "/home/uos/fpga-cli/xc7s75fgga484-1.bin",
+        "--xdc",
+        "/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/common/constraints/logic_gate.xdc",
+        "--json",
+        "design.json",
+        "--write",
+        "routed.json",
+        "--fasm",
+        "design.fasm",
+        "--report",
+        "route-report.json"
+      ],
+      "status": "FAIL",
+      "returncode": 255
+    }
+  ],
+  "input_sha256": {
+    "../../common/rtl/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+    "../../common/constraints/logic_gate.xdc": "2e5671a832643a1755be7dcd935ab3ad615f4a09a20f1703db6af009d2c7e263"
+  },
+  "chipdb_sha256": "442f520c5490b1a7fc4a52e3a070fd589ca65a29053b2875ff5ce2c1a03617a3",
+  "error": "place-route failed: /mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/vivado_2026_1/01_logic_gates/build/cli/run-be390e4beed74edb8962327419672e03/place-route.log",
+  "finished_utc": "2026-09-09T19:27:28.134780+00:00"
+}

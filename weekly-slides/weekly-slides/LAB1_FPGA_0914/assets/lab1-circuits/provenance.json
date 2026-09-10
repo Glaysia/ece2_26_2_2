@@ -1,0 +1,44 @@
+[
+  {
+    "module": "adder_4bit",
+    "capture_date": "2026-09-10",
+    "method": "Actual VS Code window via computer-use",
+    "crop_box": [
+      65,
+      69,
+      1183,
+      166
+    ],
+    "full_capture_sha256": "5e155991bc7627802f4de8a2f85b6f7fd0053ca5e8c3d3a50e1158af49e113b3",
+    "crop_sha256": "23c471d365a91ed9d2208ff244288334f0ba1af9a8a54eb8987690c2f0dc6f70",
+    "rtl_sha256": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2"
+  },
+  {
+    "module": "sub_4bit",
+    "capture_date": "2026-09-10",
+    "method": "Actual VS Code window via computer-use",
+    "crop_box": [
+      65,
+      69,
+      1183,
+      190
+    ],
+    "full_capture_sha256": "e171df1d38411b42c16a2929d4c2441c30d472bc403524005fcb3016a33f5732",
+    "crop_sha256": "c501eac60bc6aba832060f59ea0b04e0bc2a72c77f77aee284bd4c6587f92ccf",
+    "rtl_sha256": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe"
+  },
+  {
+    "module": "compare_4",
+    "capture_date": "2026-09-10",
+    "method": "Actual VS Code window via computer-use",
+    "crop_box": [
+      65,
+      69,
+      1183,
+      166
+    ],
+    "full_capture_sha256": "ca5513fe5384987fdb96b7d778874a47ca8a9969f75960b762d7ef7af284d3b8",
+    "crop_sha256": "4e193a62abb70753c8896cc946dc5302a34baa888b944e4626e3b15316252879",
+    "rtl_sha256": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23"
+  }
+]

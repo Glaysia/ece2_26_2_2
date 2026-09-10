@@ -1,0 +1,10 @@
+{
+  "project": "vivado_2026_1_10_seven_segment",
+  "action": "simulate",
+  "started_utc": "2026-09-09T20:15:47.101619+00:00",
+  "status": "PASS",
+  "run": "run-72cd5adadd0f4adb8798e6747cc33417",
+  "simulator": "xsim",
+  "cases": 16,
+  "finished_utc": "2026-09-09T20:16:10.589344+00:00"
+}

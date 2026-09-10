@@ -14,6 +14,10 @@
 
 ## 프로젝트 입력
 
+[VS Code workspace](vivado_2026_1_09_decoder3to8.code-workspace) · [Vivado 프로젝트](vivado/decoder3x8.xpr) · [재생성 Tcl](create_project.tcl)
+
+[같은 회로의 다른 버전](../../legacy/09_decoder3to8/README.md) · [통합 모드 09](../../docs/integrated.md#mode-09)
+
 - FPGA: `xc7s75fgga484-1`
 - 설계 top: `decoder3x8` / 시뮬레이션 top: `tb_decoder3x8`
 - [자기검사 TB](../../common/tb/tb_decoder3x8.sv) / [핀 제약](../../common/constraints/decoder3x8.xdc) / [파일 목록](sources.f)
@@ -31,6 +35,12 @@ Open Hardware Manager → Open target → Auto Connect → 장치 확인 → Pro
 
 ## 제작 검증
 
-[실행 결과와 소스 SHA-256](evidence/validation.json): VS Code 단계 **PASS**, Vivado 시뮬레이션 **NOT_RUN**, Vivado bit 생성 **NOT_RUN**. 이는 제작 환경의 실행 기록이며 자신의 실행 증빙을 대신하지 않습니다. CLI 프로젝트는 [별도 검증](../../docs/cli.md)을 봅니다.
+[실행 결과와 소스 SHA-256](evidence/validation.json): VS Code 단계 **PASS**, Vivado 시뮬레이션 **PASS**, Vivado bit 생성 **PASS**. 이는 제작 환경의 실행 기록이며 자신의 실행 증빙을 대신하지 않습니다. CLI 프로젝트는 [별도 검증](../../docs/cli.md)을 봅니다.
 
 실제 보드 기록·사진·영상은 **미수행**입니다. 생성된 bit만으로 보드 실험 완료를 주장하지 않습니다.
+
+## 실제 VCD 구간
+
+![실제 XSim VCD의 구간 확대](evidence/waveform.svg)
+
+위 그림은 실제 VCD 값으로 그린 타이밍 도표이며 VS Code 화면 캡처는 아닙니다. [원본 VCD](evidence/waveform-source.vcd) · [구간·신호·해시](evidence/waveform-plot.json). 다중 비트 표시는 16진수입니다.

@@ -1,0 +1,10 @@
+{
+  "project": "legacy_02_full_adder",
+  "action": "simulate",
+  "started_utc": "2026-09-09T17:42:25.385572+00:00",
+  "status": "PASS",
+  "run": "run-1e5e89d52b244450ae7e07186bf6b042",
+  "simulator": "xsim",
+  "cases": 8,
+  "finished_utc": "2026-09-09T17:42:30.841321+00:00"
+}

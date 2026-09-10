@@ -39,6 +39,14 @@ TB는 검사 속도를 위해 클록을 10ns로, 디바운스 4클록·전원 �
 
 성공 문구는 `LAB1_PASS lab1_integrated cases=2560`입니다. XSim 검증은 72430ns에 끝났습니다. 축소된 TB 시간만으로 실제 LCD의 전기적 연결·전압·실물 표시를 검증했다고 해석하지 않습니다.
 
+별도 [기본 타이밍 TB](../common/tb/tb_board_timing.sv)는 제어 모듈의 파라미터를 바꾸지 않고 **실제 1kHz 클록**으로 검사합니다. 2ms 바운스 무시, 100ms 길게 누르기에서 한 펄스, 다시 누를 때 두 번째 펄스, LCD 50ms 전원 대기·1ms E 펄스·1ms 데이터 setup·최소 4ms 바이트 간격·첫 초기 명령의 4.1ms 이상 대기를 외부 신호에서 확인했습니다. 494ms 시뮬레이션에서 `LAB1_TIMING_PASS clock=1kHz pulses=2 lcd_bytes=110`이 나왔습니다. [실제 로그](../vivado_2026_1/11_integrated/evidence/board-default-timing.txt)를 참고합니다. 이 검사 역시 실제 보드 측정은 아닙니다.
+
+## 구현 타이밍과 DRC
+
+Vivado 2026.1에서 합성·구현·bit 생성까지 통과했습니다. [타이밍 보고서](../vivado_2026_1/11_integrated/evidence/build-timing_summary.txt)의 `trainer_1khz` 주기는 1,000,000ns이며 WNS 999994.562ns, WHS 0.193ns, 실패 endpoint 0개입니다. 내부 경로의 제약 통과 결과입니다.
+
+외부 입력 2개와 출력 25개의 I/O 지연이 지정되지 않아 TIMING-18 경고가 남습니다. 이 수치만으로 보드 외부 I/O 타이밍까지 완료됐다고 해석하지 않습니다. [DRC 보고서](../vivado_2026_1/11_integrated/evidence/build-drc.txt)는 오류 0개, CFGBVS-1 경고 1개이며 구성 전압 설정을 보드 자료와 확인해야 합니다. 실제 LCD와 버튼의 전기적 동작은 보드 실험에서 확인합니다.
+
 ## 실제 실험에서 촬영할 내용
 
 reset 직후 MODE 01, KEY2를 눌러 다음 모드로 바뀌는 장면, 길게 눌렀을 때 한 번만 바뀌는 장면, 10→01 순환을 촬영합니다. 각 모드에서 정상·경계 입력 하나씩을 선택해 DIP와 출력이 동시에 보이도록 기록합니다. LCD 화면이 갱신될 시간을 준 뒤 읽습니다. 영상 타임스탬프 10개를 레포트의 모드 표와 연결합니다.

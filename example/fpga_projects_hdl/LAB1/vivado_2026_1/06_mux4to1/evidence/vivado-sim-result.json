@@ -1,0 +1,9 @@
+{
+  "project": "vivado_2026_1_06_mux4to1",
+  "action": "vivado-sim",
+  "started_utc": "2026-09-09T19:30:50.156704+00:00",
+  "status": "PASS",
+  "run": "run-539b42eb73ab4a56a7ada56abd251fa8",
+  "vivado_version": "vivado v2026.1 (64-bit)",
+  "finished_utc": "2026-09-09T19:34:37.081338+00:00"
+}

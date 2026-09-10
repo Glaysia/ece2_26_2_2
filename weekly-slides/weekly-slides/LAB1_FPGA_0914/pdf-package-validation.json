@@ -29,8 +29,8 @@
   "remote_links": 121,
   "local_links": 1235,
   "archive": "04.LAB1_0910_PDF.zip",
-  "bytes": 66774761,
-  "sha256": "180563d5d4696e982b8f3454d5296ef7a9c810247e765354771b6b51dfd467be",
+  "bytes": 66987518,
+  "sha256": "6156e83511718314bae7bcb74b97182523e43b7119a881c45f3df198907bbfd3",
   "checks": [
     "4:3 manuals",
     "all local contents to page 2",

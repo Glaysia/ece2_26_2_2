@@ -1,0 +1,30 @@
+{
+  "project": "legacy_03_adder4",
+  "part": "xc7s75fgga484-1",
+  "stages": {
+    "vscode": {
+      "project": "legacy_03_adder4",
+      "action": "simulate",
+      "started_utc": "2026-09-09T17:42:30.966859+00:00",
+      "status": "PASS",
+      "run": "run-bfdbe8aba00a4fd8ba0f554ec6d60b05",
+      "simulator": "xsim",
+      "cases": 256,
+      "finished_utc": "2026-09-09T17:42:36.257950+00:00"
+    },
+    "vivado-sim": {
+      "status": "NOT_RUN"
+    },
+    "build": {
+      "status": "NOT_RUN"
+    }
+  },
+  "sha256": {
+    "original/adder_4bit.v": "d244da1c9ba1bc6aa2f21656102333b2e8bbbf2b32bf49a985963617aaba6758",
+    "../../common/tb/tb_adder_4bit.sv": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df",
+    "../../common/constraints/adder_4bit.xdc": "db69b1122244939998fe14d2a5a42fd3174850ecf04d955a45990affbbe60b87"
+  },
+  "hardware_programmed": false,
+  "board_photos_video": false,
+  "legacy_tool_run": false
+}

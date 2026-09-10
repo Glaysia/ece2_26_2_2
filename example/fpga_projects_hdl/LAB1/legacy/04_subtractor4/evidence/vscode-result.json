@@ -1,0 +1,10 @@
+{
+  "project": "legacy_04_subtractor4",
+  "action": "simulate",
+  "started_utc": "2026-09-09T18:43:35.323277+00:00",
+  "status": "PASS",
+  "run": "run-d9faa04d103f45b4b9ba39526abe2230",
+  "simulator": "xsim",
+  "cases": 256,
+  "finished_utc": "2026-09-09T18:44:18.829961+00:00"
+}

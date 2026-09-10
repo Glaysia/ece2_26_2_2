@@ -1,0 +1,15 @@
+{
+  "project": "legacy_07_demux1to8",
+  "source": "waveform-source.vcd",
+  "source_sha256": "031e9ef72c0a830a52e8f4950dfa636e7ce80e13407ade06de6ff34eca33fba7",
+  "interval_ns": [
+    70,
+    160
+  ],
+  "signals": [
+    "i",
+    "s[2:0]",
+    "o[7:0]"
+  ],
+  "kind": "plot of measured VCD, not a VS Code screenshot"
+}

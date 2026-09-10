@@ -1,0 +1,17 @@
+{
+  "project": "vivado_2026_1_02_full_adder",
+  "source": "waveform-source.vcd",
+  "source_sha256": "0f8b91f271d3718bd59e14b6db1b8d41e913b487b8825ac465758ee0bdf17cbb",
+  "interval_ns": [
+    0,
+    80
+  ],
+  "signals": [
+    "a",
+    "b",
+    "cin",
+    "s",
+    "cout"
+  ],
+  "kind": "plot of measured VCD, not a VS Code screenshot"
+}

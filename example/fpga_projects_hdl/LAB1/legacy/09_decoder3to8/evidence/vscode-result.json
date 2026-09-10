@@ -1,0 +1,10 @@
+{
+  "project": "legacy_09_decoder3to8",
+  "action": "simulate",
+  "started_utc": "2026-09-09T17:43:04.475297+00:00",
+  "status": "PASS",
+  "run": "run-ed629de5e4a24b3788b90069b7cf3fd8",
+  "simulator": "xsim",
+  "cases": 8,
+  "finished_utc": "2026-09-09T17:43:10.427476+00:00"
+}

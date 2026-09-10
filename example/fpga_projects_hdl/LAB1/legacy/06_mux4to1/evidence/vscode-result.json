@@ -1,0 +1,10 @@
+{
+  "project": "legacy_06_mux4to1",
+  "action": "simulate",
+  "started_utc": "2026-09-09T17:42:47.491209+00:00",
+  "status": "PASS",
+  "run": "run-4dc78e78b6fd4861b8fa5dcf7403d58e",
+  "simulator": "xsim",
+  "cases": 64,
+  "finished_utc": "2026-09-09T17:42:53.193519+00:00"
+}
