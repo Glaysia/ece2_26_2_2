@@ -1,0 +1,95 @@
+{
+  "scope": "First of 18 LAB2 manuals: VS Code + Vivado 2026.1 counter",
+  "source_sha256": {
+    "simulation.json": "e3211debf9bde4bf568ebe0dfaed612d8bdb781ae3e91941475d85c4ca850b55",
+    "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+    "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+    "src/lab2_counter.v": "f4f0e5da3ce3c432fcc8fbcf7c814ea0d06040f29ae1106d3f979a316ed0fb10",
+    "sim/tb_counter4.sv": "439c4e2bf639d1e6c08c994c68aa3acc28944274b62e92226d824fd32f8f4ade",
+    "constraints/lab2_counter.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+  },
+  "vscode_run": "run-2aec9350e5e14c958aa6dba997a7401e",
+  "vscode_and_vivado_checks": 36,
+  "vscode_and_vivado_finish_ns": 356,
+  "vivado_part": "xc7s75fgga484-1",
+  "vivado_top": "lab2_counter",
+  "simulation_top": "tb_counter4",
+  "bitstream_sha256": "9d8ad579b02b03e49f3a69352765f2f9585b49448dd82d0de8553f9c1cf9d3af",
+  "drc_errors": 0,
+  "remaining_warnings": [
+    "CFGBVS-1 configuration bank voltage unspecified",
+    "TIMING-18 input/output delay omissions",
+    "upper LED outputs tied to zero"
+  ],
+  "physical_board_programmed": false,
+  "code_captures": 12,
+  "page20_language_server": {
+    "index": 6,
+    "source_sha256": "439c4e2bf639d1e6c08c994c68aa3acc28944274b62e92226d824fd32f8f4ade",
+    "lines": [
+      1,
+      16
+    ],
+    "actual_vscode_capture": true,
+    "raw_capture": "C:/Users/UOS/Documents/ece2_26_2_2/weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/vscode-0911/code-6.png",
+    "image": "assets/code/439c4e2bf639d1e6-001-016.png",
+    "crop": [
+      70,
+      90,
+      900,
+      474
+    ],
+    "window": {
+      "app": "Microsoft.VisualStudioCode",
+      "id": 2295878,
+      "title": "tb_counter4.sv - LAB1 (Workspace) - Visual Studio Code - 3 problems in this file"
+    },
+    "captured_at": "2026-09-11T05:00:07.301Z",
+    "image_sha256": "c7e2bda1d35fc34508ff965a373cf35bc8bd8984cabea557d32db9ad2bcdc5e4",
+    "language_server_observed": "Semantic highlighting, diagnostics, and inlay hints visible before capture"
+  },
+  "artifact_hashes": {
+    "vscode-simulation.log": "2a7245f14c081a3c3e2ef593802765dfa238c8ef190a81419402753e26919648",
+    "vivado-simulation.log": "1f23bd718c5bffbdedc5efe85466723626bb0083b938748d3d0422a7d2e7037c",
+    "vivado-implementation.log": "df510f38292a37eff773e5d9dbacbc5951cf8273ba4efd35f7de8eeeaf4a05a3",
+    "timing-summary.rpt": "696991871359abb087a471ee0a09c57b83920689c247cfe202aadef9d48f54f0",
+    "drc.rpt": "b688f9bcd338ea204d0f417b12427734ad9da29c6df5e1671fe017acca2644b8",
+    "lab2_counter.bit": "9d8ad579b02b03e49f3a69352765f2f9585b49448dd82d0de8553f9c1cf9d3af"
+  },
+  "gui_images": {
+    "assets/vivado-01-0911/01-start.png": "7e46bd776830a4bc997b050c2f41758f7517f2ecf9fe3546e46f90a79998b0ca",
+    "assets/vivado-01-0911/02-project-name.png": "be744b7954783ec9e9de2fc783102604b4845eb3321871956b85fdf91f1ce4e8",
+    "assets/vivado-01-0911/03-project-type.png": "6c441698bc4e2248a38728e5a73400c82464f26e182f4b8bd447f5ca684a9d78",
+    "assets/vivado-01-0911/04-part.png": "037792d055ed4b80bdf9539577e105d3a1e63a1eafd4ef58d70ab7428d54d741",
+    "assets/vivado-01-0911/05-summary.png": "54458edca29febf8ba253e3e174497a56e5e782dc2d1ae1208a9d31e97527943",
+    "assets/vivado-01-0911/06-empty-project.png": "b459d849910611128bc7f18d24f4ad1d61e28cfee1177ad16ed241a945251842",
+    "assets/vivado-01-0911/07-design-category.png": "2bfcbacbf7ec547a2e10866a0e75c5c33f5df46c4fbbdbeb615887eaea36ca8d",
+    "assets/vivado-01-0911/08-add-files.png": "46b27a7b6a6f2bcebb0d62cc6a8281a685c9b2655948ce0d8c7c03a9920c1b6a",
+    "assets/vivado-01-0911/09-rtl-files.png": "8fa39d0914347d0b73c2bb251444d266d41d5794874b9fb75189838015fd548b",
+    "assets/vivado-01-0911/10-rtl-import.png": "c2e4a3dc1a1e39a7a86360ac8dc92e8998afa51c5636834d97654819231413d2",
+    "assets/vivado-01-0911/11-sim-category.png": "86fc2b4fbe3a87f8fa47fba9382ae9da5c434a63c09c3937f84c690c00e10e39",
+    "assets/vivado-01-0911/12-tb-import.png": "7317fa290d436529bf42344fc40c6978fc16e4e03d239dadab24e6f065c76d79",
+    "assets/vivado-01-0911/13-xdc-category.png": "f48e58afce8981f72e736d01e77b235c7a3e9712e524c18ec5d98dfad0d93e91",
+    "assets/vivado-01-0911/14-xdc-import.png": "e98bc68871b7c34f0dcec95f6f5a50991d6c1fa5afc40e0cbd88f9c581a18109",
+    "assets/vivado-01-0911/15-sim-set-top.png": "e91fee25609908b65da11893763e55b7c7f37376442327ef368a48076aaaa45a",
+    "assets/vivado-01-0911/16-tops.png": "0af07b510ceb2cdd4e54d909e85355483771c45b9818ab20df962399d8c9a52e",
+    "assets/vivado-01-0911/17-run-behavioral.png": "96d1724d76ff8b0a1bfe88e323d4009ca007acebbcdfcb228b9195577268bb06",
+    "assets/vivado-01-0911/18-sim-finish.png": "b8785a90a0855c13ae8c2300f9e5c2f736bee90ad4c9fbce41d97b5e090fa9a2",
+    "assets/vivado-01-0911/19-wave-fit.png": "025ca35bce06ac95c7f9291417decd3cc406e0d708445f973572c73c5ce2f41a",
+    "assets/vivado-01-0911/23-bit-complete.png": "0af07b510ceb2cdd4e54d909e85355483771c45b9818ab20df962399d8c9a52e",
+    "assets/vivado-01-0911/24-timing.png": "1c40d6cd9d1a8f440602dcc4fa74ab1aaaa46e0ffbe9aa12f001941f5d66e681",
+    "assets/vivado-01-0911/25-drc.png": "dcac28d0d908204fff71096e4ceda62b4e7bf74eaa55be05b6946501d7d98dd6",
+    "assets/vivado-01-0911/26-io-ports.png": "941611c122b7ad3c0b132184651473b0231d614b50dda4dbc30b000f8f43091f"
+  },
+  "pdf": {
+    "path": "output\\pdf\\05.LAB2_01_COUNTER_VIVADO.pdf",
+    "sha256": "d4c20bf43152bc5524f69b06f5121ef5a92532dc11671962d90ef6a7caf68eda",
+    "pages": 75,
+    "aspect_ratio": "4:3",
+    "internal_links_checked": 81,
+    "broken_internal_links": 0,
+    "overfull_boxes": 0,
+    "missing_characters": 0,
+    "visual_review": "All 75 pages reviewed; changed crops and contents re-reviewed; page 20 enlarged and confirmed syntax colors and full 1–16 lines."
+  }
+}

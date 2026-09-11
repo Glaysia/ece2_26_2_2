@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-11",
+  "scope": "first LAB2 counter VS Code only",
+  "gui_simulation": {
+    "status": "SIMULATED",
+    "run": "run-2aec9350e5e14c958aa6dba997a7401e",
+    "functional_correctness": "NOT_ASSESSED",
+    "inputs_sha256": {
+      "simulation.json": "e3211debf9bde4bf568ebe0dfaed612d8bdb781ae3e91941475d85c4ca850b55",
+      "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_counter.v": "f4f0e5da3ce3c432fcc8fbcf7c814ea0d06040f29ae1106d3f979a316ed0fb10",
+      "sim/tb_counter4.sv": "439c4e2bf639d1e6c08c994c68aa3acc28944274b62e92226d824fd32f8f4ade",
+      "sim/tb_board.sv": "afe33225e09363384f21142a9c7c24548b390ae92eb18c21e0b5e90cd49255aa"
+    },
+    "wave_sha256": "780491742814ba3cff4384243b8b3a3e9528b67babfc314d7d3203cd321c163b"
+  },
+  "simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS counter4 checks=36\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\example\\fpga_projects_hdl\\LAB2\\vivado_2026_1\\01_counter\\sim\\tb_counter4.sv:19: $finish called at 356000 (1ps)\n",
+  "code_captures": 12,
+  "pdf_pages": 40,
+  "pdf_sha256": "d46d99b5ea5c1b2117b96e08ab37198ba38a2d0c12bc42e3e175a16c2e60e7db",
+  "visual_review": "All 40 rendered pages reviewed; no clipped code or overlapping content",
+  "local_changes": [
+    "Three workspace Python task commands use installed Python312 absolute path",
+    "VaporView enabled for this workspace",
+    "User inlay hints restored to on"
+  ],
+  "vivado_gui_run": false
+}

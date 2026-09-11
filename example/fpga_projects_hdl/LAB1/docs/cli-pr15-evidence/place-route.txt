@@ -1,0 +1,1397 @@
+Info: Packing constants..
+Info: Inserting IO buffers..
+Info:     IO port 'clk' driven by IBUF '$iopadmap$lab1_integrated.clk'
+Info:     IO port 'lcd_e' driven by OBUF '$iopadmap$lab1_integrated.lcd_e'
+Info:     IO port 'lcd_rs' driven by OBUF '$iopadmap$lab1_integrated.lcd_rs'
+Info:     IO port 'lcd_rw' driven by OBUF '$iopadmap$lab1_integrated.lcd_rw'
+Info:     IO port 'mode_button' driven by IBUF '$iopadmap$lab1_integrated.mode_button'
+Info:     IO port 'rst' driven by IBUF '$iopadmap$lab1_integrated.rst'
+Info:     IO port 'lcd_data[0]' driven by OBUF '$iopadmap$lab1_integrated.lcd_data'
+Info:     IO port 'lcd_data[1]' driven by OBUF '$iopadmap$lab1_integrated.lcd_data_1'
+Info:     IO port 'lcd_data[2]' driven by OBUF '$iopadmap$lab1_integrated.lcd_data_2'
+Info:     IO port 'lcd_data[3]' driven by OBUF '$iopadmap$lab1_integrated.lcd_data_3'
+Info:     IO port 'lcd_data[4]' driven by OBUF '$iopadmap$lab1_integrated.lcd_data_4'
+Info:     IO port 'lcd_data[5]' driven by OBUF '$iopadmap$lab1_integrated.lcd_data_5'
+Info:     IO port 'lcd_data[6]' driven by OBUF '$iopadmap$lab1_integrated.lcd_data_6'
+Info:     IO port 'lcd_data[7]' driven by OBUF '$iopadmap$lab1_integrated.lcd_data_7'
+Info:     IO port 'led[0]' driven by OBUF '$iopadmap$lab1_integrated.led'
+Info:     IO port 'led[1]' driven by OBUF '$iopadmap$lab1_integrated.led_1'
+Info:     IO port 'led[2]' driven by OBUF '$iopadmap$lab1_integrated.led_2'
+Info:     IO port 'led[3]' driven by OBUF '$iopadmap$lab1_integrated.led_3'
+Info:     IO port 'led[4]' driven by OBUF '$iopadmap$lab1_integrated.led_4'
+Info:     IO port 'led[5]' driven by OBUF '$iopadmap$lab1_integrated.led_5'
+Info:     IO port 'led[6]' driven by OBUF '$iopadmap$lab1_integrated.led_6'
+Info:     IO port 'led[7]' driven by OBUF '$iopadmap$lab1_integrated.led_7'
+Info:     IO port 'seg_data[0]' driven by OBUF '$iopadmap$lab1_integrated.seg_data'
+Info:     IO port 'seg_data[1]' driven by OBUF '$iopadmap$lab1_integrated.seg_data_1'
+Info:     IO port 'seg_data[2]' driven by OBUF '$iopadmap$lab1_integrated.seg_data_2'
+Info:     IO port 'seg_data[3]' driven by OBUF '$iopadmap$lab1_integrated.seg_data_3'
+Info:     IO port 'seg_data[4]' driven by OBUF '$iopadmap$lab1_integrated.seg_data_4'
+Info:     IO port 'seg_data[5]' driven by OBUF '$iopadmap$lab1_integrated.seg_data_5'
+Info:     IO port 'seg_data[6]' driven by OBUF '$iopadmap$lab1_integrated.seg_data_6'
+Info:     IO port 'seg_data[7]' driven by OBUF '$iopadmap$lab1_integrated.seg_data_7'
+Info:     IO port 'sw[0]' driven by IBUF '$iopadmap$lab1_integrated.sw'
+Info:     IO port 'sw[1]' driven by IBUF '$iopadmap$lab1_integrated.sw_1'
+Info:     IO port 'sw[2]' driven by IBUF '$iopadmap$lab1_integrated.sw_2'
+Info:     IO port 'sw[3]' driven by IBUF '$iopadmap$lab1_integrated.sw_3'
+Info:     IO port 'sw[4]' driven by IBUF '$iopadmap$lab1_integrated.sw_4'
+Info:     IO port 'sw[5]' driven by IBUF '$iopadmap$lab1_integrated.sw_5'
+Info:     IO port 'sw[6]' driven by IBUF '$iopadmap$lab1_integrated.sw_6'
+Info:     IO port 'sw[7]' driven by IBUF '$iopadmap$lab1_integrated.sw_7'
+Info:     Constraining 'clk' to site 'IOB_X1Y174'
+Info:     Tile 'RIOB33_X53Y173'
+Info:     Constraining 'lcd_e' to site 'IOB_X1Y191'
+Info:     Tile 'RIOB33_X53Y191'
+Info:     Constraining 'lcd_rs' to site 'IOB_X1Y177'
+Info:     Tile 'RIOB33_X53Y177'
+Info:     Constraining 'lcd_rw' to site 'IOB_X1Y184'
+Info:     Tile 'RIOB33_X53Y183'
+Info:     Constraining 'mode_button' to site 'IOB_X1Y111'
+Info:     Tile 'RIOB33_X53Y111'
+Info:     Constraining 'rst' to site 'IOB_X1Y129'
+Info:     Tile 'RIOB33_X53Y129'
+Info:     Constraining 'lcd_data[0]' to site 'IOB_X1Y172'
+Info:     Tile 'RIOB33_X53Y171'
+Info:     Constraining 'lcd_data[1]' to site 'IOB_X1Y166'
+Info:     Tile 'RIOB33_X53Y165'
+Info:     Constraining 'lcd_data[2]' to site 'IOB_X1Y167'
+Info:     Tile 'RIOB33_X53Y167'
+Info:     Constraining 'lcd_data[3]' to site 'IOB_X1Y159'
+Info:     Tile 'RIOB33_X53Y159'
+Info:     Constraining 'lcd_data[4]' to site 'IOB_X1Y169'
+Info:     Tile 'RIOB33_X53Y169'
+Info:     Constraining 'lcd_data[5]' to site 'IOB_X1Y185'
+Info:     Tile 'RIOB33_X53Y185'
+Info:     Constraining 'lcd_data[6]' to site 'IOB_X1Y163'
+Info:     Tile 'RIOB33_X53Y163'
+Info:     Constraining 'lcd_data[7]' to site 'IOB_X1Y151'
+Info:     Tile 'RIOB33_X53Y151'
+Info:     Constraining 'led[0]' to site 'IOB_X1Y110'
+Info:     Tile 'RIOB33_X53Y109'
+Info:     Constraining 'led[1]' to site 'IOB_X1Y119'
+Info:     Tile 'RIOB33_X53Y119'
+Info:     Constraining 'led[2]' to site 'IOB_X1Y123'
+Info:     Tile 'RIOB33_X53Y123'
+Info:     Constraining 'led[3]' to site 'IOB_X1Y125'
+Info:     Tile 'RIOB33_X53Y125'
+Info:     Constraining 'led[4]' to site 'IOB_X1Y105'
+Info:     Tile 'RIOB33_X53Y105'
+Info:     Constraining 'led[5]' to site 'IOB_X1Y120'
+Info:     Tile 'RIOB33_X53Y119'
+Info:     Constraining 'led[6]' to site 'IOB_X1Y124'
+Info:     Tile 'RIOB33_X53Y123'
+Info:     Constraining 'led[7]' to site 'IOB_X1Y130'
+Info:     Tile 'RIOB33_X53Y129'
+Info:     Constraining 'seg_data[0]' to site 'IOB_X1Y103'
+Info:     Tile 'RIOB33_X53Y103'
+Info:     Constraining 'seg_data[1]' to site 'IOB_X1Y101'
+Info:     Tile 'RIOB33_X53Y101'
+Info:     Constraining 'seg_data[2]' to site 'IOB_X1Y99'
+Info:     Tile 'RIOB33_SING_X53Y99'
+Info:     Constraining 'seg_data[3]' to site 'IOB_X1Y92'
+Info:     Tile 'RIOB33_X53Y91'
+Info:     Constraining 'seg_data[4]' to site 'IOB_X1Y117'
+Info:     Tile 'RIOB33_X53Y117'
+Info:     Constraining 'seg_data[5]' to site 'IOB_X1Y106'
+Info:     Tile 'RIOB33_X53Y105'
+Info:     Constraining 'seg_data[6]' to site 'IOB_X1Y114'
+Info:     Tile 'RIOB33_X53Y113'
+Info:     Constraining 'seg_data[7]' to site 'IOB_X1Y116'
+Info:     Tile 'RIOB33_X53Y115'
+Info:     Constraining 'sw[0]' to site 'IOB_X1Y78'
+Info:     Tile 'RIOB33_X53Y77'
+Info:     Constraining 'sw[1]' to site 'IOB_X1Y93'
+Info:     Tile 'RIOB33_X53Y93'
+Info:     Constraining 'sw[2]' to site 'IOB_X1Y85'
+Info:     Tile 'RIOB33_X53Y85'
+Info:     Constraining 'sw[3]' to site 'IOB_X1Y97'
+Info:     Tile 'RIOB33_X53Y97'
+Info:     Constraining 'sw[4]' to site 'IOB_X1Y50'
+Info:     Tile 'RIOB33_SING_X53Y50'
+Info:     Constraining 'sw[5]' to site 'IOB_X1Y82'
+Info:     Tile 'RIOB33_X53Y81'
+Info:     Constraining 'sw[6]' to site 'IOB_X1Y80'
+Info:     Tile 'RIOB33_X53Y79'
+Info:     Constraining 'sw[7]' to site 'IOB_X1Y83'
+Info:     Tile 'RIOB33_X53Y83'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.clk'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_e'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_rs'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_rw'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.mode_button'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.rst'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_data'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_data_1'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_data_2'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_data_3'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_data_4'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_data_5'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_data_6'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.lcd_data_7'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.led'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.led_1'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.led_2'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.led_3'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.led_4'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.led_5'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.led_6'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.led_7'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.seg_data'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.seg_data_1'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.seg_data_2'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.seg_data_3'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.seg_data_4'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.seg_data_5'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.seg_data_6'
+Info: Generating output buffer for '$iopadmap$lab1_integrated.seg_data_7'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.sw'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.sw_1'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.sw_2'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.sw_3'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.sw_4'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.sw_5'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.sw_6'
+Info: Generating input buffer for '$iopadmap$lab1_integrated.sw_7'
+Info:     Created 38 PAD cells from:
+Info:             38x PAD
+Info: Preparing clocking...
+Info: Packing constants..
+Info: Packing cfg...
+Info: Packing PLLs...
+Info: Packing Gigabit Transceivers..
+Info: Packing global buffers...
+Info:     Constrained BUFGCTRL '$auto$clkbufmap.cc:261:execute$13833' to bel 'BUFGCTRL_X0Y16/BUFGCTRL' based on dedicated routing
+Info: Packing MUX[789]s..
+Info: Packing carries (atomic CARRY4)..
+Info:    Packed 34 CARRY4 cells into 12 chains (atomic).
+Info: router2 PRECYINIT fix: 34 CARRY4 cells, 46 constant carry pins disconnected
+Info: Packing LUTs..
+Info:     Created 887 SLICE_LUTX cells from:
+Info:            361x LUT1
+Info:             53x LUT2
+Info:             63x LUT3
+Info:             39x LUT4
+Info:             66x LUT5
+Info:            305x LUT6
+Info: Packing DRAM..
+Info:    Transformed 0 tied-low DRAM address inputs to be tied-high
+Info: Packing BRAM..
+Info: Packing DSPs..
+Info: Packing flipflops..
+Info:     Created 96 SLICE_FFX cells from:
+Info:             95x FDCE
+Info:              1x FDPE
+Info:     local-const FF control: disconnected 0 SR(=GND) + 39 CE(=VCC) pins from global nets
+Info:     Created 254 SELMUX2_1 cells from:
+Info:            190x MUXF7
+Info:             64x MUXF8
+Info: Constrained 49 LUTFF pairs.
+
+Info: Annotating ports with timing budgets for target frequency 0.00 MHz
+Info: Checksum: 0x2e542a86
+
+Info: Device utilisation:
+Info: 	          SLICE_LUTX:   887/128000     0%
+Info: 	           SLICE_FFX:    96/128000     0%
+Info: 	              CARRY4:    34/16000     0%
+Info: 	          PSEUDO_GND:     1/28633     0%
+Info: 	          PSEUDO_VCC:     1/28633     0%
+Info: 	               HARD0:     0/ 3168     0%
+Info: 	            RAMB18E1:     0/  240     0%
+Info: 	            FIFO18E1:     0/  120     0%
+Info: 	        RAMBFIFO36E1:     0/  120     0%
+Info: 	            RAMB36E1:     0/  120     0%
+Info: 	             DSP48E1:     0/  160     0%
+Info: 	                 PAD:    38/  784     4%
+Info: 	       IOB33M_OUTBUF:     0/  192     0%
+Info: 	       IOB33S_OUTBUF:     0/  192     0%
+Info: 	        IOB33_OUTBUF:    27/  400     6%
+Info: 	     IOB33M_INBUF_EN:     0/  192     0%
+Info: 	     IOB33S_INBUF_EN:     0/  192     0%
+Info: 	      IOB33_INBUF_EN:    11/  400     2%
+Info: 	IOB33M_TERM_OVERRIDE:     0/  192     0%
+Info: 	IOB33S_TERM_OVERRIDE:     0/  192     0%
+Info: 	 IOB33_TERM_OVERRIDE:     0/  400     0%
+Info: 	       PULL_OR_KEEP1:     0/  784     0%
+Info: 	            IDELAYE2:     0/  400     0%
+Info: 	        OLOGICE3_TFF:     0/  400     0%
+Info: 	      OLOGICE3_OUTFF:     0/  400     0%
+Info: 	       OLOGICE3_MISR:     0/  400     0%
+Info: 	           OSERDESE2:     0/  400     0%
+Info: 	        ILOGICE3_IFF:     0/  400     0%
+Info: 	ILOGICE3_ZHOLD_DELAY:     0/  400     0%
+Info: 	           ISERDESE2:     0/  400     0%
+Info: 	               BUFIO:     0/   32     0%
+Info: 	          IDELAYCTRL:     0/    8     0%
+Info: 	            BUFGCTRL:     1/   29     3%
+Info: 	               BSCAN:     0/    4     0%
+Info: 	                BUFG:     0/   29     0%
+Info: 	              BUFHCE:     0/   96     0%
+Info: 	            DCIRESET:     0/    1     0%
+Info: 	            DNA_PORT:     0/    1     0%
+Info: 	           EFUSE_USR:     0/    1     0%
+Info: 	           FRAME_ECC:     0/    1     0%
+Info: 	                ICAP:     0/    2     0%
+Info: 	            INVERTER:     0/  192     0%
+Info: 	          MMCME2_ADV:     0/    8     0%
+Info: 	        OLOGICE2_TFF:     0/  400     0%
+Info: 	      OLOGICE2_OUTFF:     0/  400     0%
+Info: 	           PLLE2_ADV:     0/    8     0%
+Info: 	           SELMUX2_1:   254/49600     0%
+Info: 	             STARTUP:     0/    1     0%
+Info: 	          USR_ACCESS:     0/    1     0%
+Info: 	        ILOGICE2_IFF:     0/  400     0%
+Info: 	       OLOGICE2_MISR:     0/  400     0%
+
+Info: HeAP congestion knobs: beta=0.400 spread_scale=2,1 alpha=0.080
+Info: Placed 77 cells based on constraints.
+Info: Creating initial analytic placement for 388 cells, random placement wirelen = 114521.
+Info:     at initial placer iter 0, wirelen = 4076
+Info:     at initial placer iter 1, wirelen = 3021
+Info:     at initial placer iter 2, wirelen = 2835
+Info:     at initial placer iter 3, wirelen = 2769
+Info: Running main analytical placer.
+Info:     at iteration #1, type ALL: wirelen solved = 2754, spread = 9393, legal = 8178; time = 0.04s
+Info:     at iteration #2, type ALL: wirelen solved = 3365, spread = 8312, legal = 8411; time = 0.05s
+Info:     at iteration #3, type ALL: wirelen solved = 3757, spread = 7843, legal = 7673; time = 0.06s
+Info:     at iteration #4, type ALL: wirelen solved = 3957, spread = 7374, legal = 7363; time = 0.06s
+Info:     at iteration #5, type ALL: wirelen solved = 4116, spread = 7167, legal = 7748; time = 0.05s
+Info:     at iteration #6, type ALL: wirelen solved = 4468, spread = 7338, legal = 7469; time = 0.06s
+Info:     at iteration #7, type ALL: wirelen solved = 4722, spread = 9002, legal = 9010; time = 0.06s
+Info:     at iteration #8, type ALL: wirelen solved = 5146, spread = 7582, legal = 7648; time = 0.05s
+Info:     at iteration #9, type ALL: wirelen solved = 5235, spread = 7146, legal = 7278; time = 0.06s
+Info:     at iteration #10, type ALL: wirelen solved = 5340, spread = 7233, legal = 7375; time = 0.06s
+Info:     at iteration #11, type ALL: wirelen solved = 5419, spread = 7413, legal = 7476; time = 0.06s
+Info:     at iteration #12, type ALL: wirelen solved = 5677, spread = 7524, legal = 7621; time = 0.05s
+Info:     at iteration #13, type ALL: wirelen solved = 5838, spread = 7809, legal = 7973; time = 0.09s
+Info:     at iteration #14, type ALL: wirelen solved = 6156, spread = 7820, legal = 7925; time = 0.06s
+Info: HeAP Placer Time: 1.14s
+Info:   of which solving equations: 0.56s
+Info:   of which spreading cells: 0.18s
+Info:   of which strict legalisation: 0.05s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 90, wirelen = 7278
+Info:   at iteration #5: temp = 0.000000, timing cost = 71, wirelen = 6624
+Info:   at iteration #8: temp = 0.000000, timing cost = 66, wirelen = 6531 
+Info: SA placement time 0.38s
+
+Info: Max frequency for clock '$iopadmap$clk': 104.49 MHz (PASS at 0.00 MHz)
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [999990464, 999990913) |* 
+Info: [999990913, 999991362) |** 
+Info: [999991362, 999991811) |*** 
+Info: [999991811, 999992260) |******* 
+Info: [999992260, 999992709) |*** 
+Info: [999992709, 999993158) |*** 
+Info: [999993158, 999993607) |***** 
+Info: [999993607, 999994056) |************ 
+Info: [999994056, 999994505) |************* 
+Info: [999994505, 999994954) |********** 
+Info: [999994954, 999995403) |********************************* 
+Info: [999995403, 999995852) |********** 
+Info: [999995852, 999996301) |********* 
+Info: [999996301, 999996750) |******* 
+Info: [999996750, 999997199) |** 
+Info: [999997199, 999997648) |******** 
+Info: [999997648, 999998097) |******** 
+Info: [999998097, 999998546) |**** 
+Info: [999998546, 999998995) |******* 
+Info: [999998995, 999999444) |***** 
+Info: Checksum: 0xa1e6e650
+Info: Running post-placement legalisation...
+Info: post-place repair: relocated 105 stranded cluster(s)/cell(s) to valid bels
+Info: Routing global clocks...
+Info:     routing clock '$auto$clkbufmap.cc:262:execute$13834'
+Info:     routing clock '$iopadmap$clk'
+Info: Running router2...
+Info: Setting up routing resources...
+Info: Running main router loop...
+Info:     iter=1 wires=15625 overused=270 overuse=279 archfail=NA
+Info:     iter=2 wires=15805 overused=0 overuse=0 archfail=0
+Info: 1000 slowest nets by runtime:
+                                                                   display.shown_mode[1]    212 525.0ms
+                                                                   display.shown_mode[2]    224 366.0ms
+                                                                   display.shown_mode[3]    211 348.1ms
+                                                                           $iopadmap$rst     96 328.3ms
+                                                                   display.shown_mode[0]    226 321.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12791.A[4]    139 316.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12791.A[6]    170 289.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12791.A[3]    173 233.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12791.A[2]    211 219.3ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12801.A[6]     60 186.8ms
+                                                              $abc$13044$iopadmap$led[6]      1 162.1ms
+                                                                         $iopadmap$sw[2]     44 140.1ms
+                                                                         $iopadmap$sw[1]     45 135.7ms
+                     $techmap13236$abc$13044$auto$blifparse.cc:557:parse_blif$13065.A[4]      2 117.5ms
+                                                                         $iopadmap$sw[7]     41 112.2ms
+                                                         $abc$13044$iopadmap$seg_data[3]      1 102.1ms
+                     $techmap13228$abc$13044$auto$blifparse.cc:557:parse_blif$13058.A[5]      2 96.6ms
+                                                              $abc$13044$iopadmap$led[4]      1 91.5ms
+                     $techmap13226$abc$13044$auto$blifparse.cc:557:parse_blif$13056.A[5]      2 86.1ms
+              button.$techmap13751$abc$12704$auto$blifparse.cc:557:parse_blif$12769.A[2]     34 81.1ms
+                                                                   $iopadmap$lcd_data[7]      1 80.6ms
+              button.$techmap13751$abc$12704$auto$blifparse.cc:557:parse_blif$12769.A[3]     34 78.8ms
+                                                         $abc$13044$iopadmap$seg_data[6]      1 78.0ms
+                     $techmap13238$abc$13044$auto$blifparse.cc:557:parse_blif$13069.A[2]      2 77.5ms
+                                                                            button.sync2     35 75.7ms
+                                                                   $iopadmap$lcd_data[1]      1 75.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12784.A[6]     34 75.2ms
+                     $techmap13224$abc$13044$auto$blifparse.cc:557:parse_blif$13052.A[5]      2 74.4ms
+                                                                   $iopadmap$lcd_data[5]      1 73.1ms
+                                                                         $iopadmap$lcd_e      1 67.5ms
+              button.$techmap13751$abc$12704$auto$blifparse.cc:557:parse_blif$12769.A[4]     34 65.7ms
+                                                              $abc$13044$iopadmap$led[0]      1 64.8ms
+              button.$techmap13751$abc$12704$auto$blifparse.cc:557:parse_blif$12769.A[5]     34 63.7ms
+                                                                   $iopadmap$lcd_data[4]      1 62.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12801.A[7]     21 57.3ms
+                                                                         $iopadmap$sw[0]     37 55.3ms
+                                                                         button.accepted     34 51.2ms
+                                                                                 mode[2]     27 51.1ms
+                                                         $abc$13044$iopadmap$seg_data[7]      1 50.7ms
+                                                                   $iopadmap$lcd_data[3]      1 50.4ms
+                                                                                 mode[0]     26 49.4ms
+                                                                   $iopadmap$lcd_data[2]      1 46.3ms
+                                                                         $iopadmap$sw[6]     33 41.8ms
+                                                                                 mode[3]     24 41.0ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1899.Y[1]      9 40.7ms
+                                                              $abc$13044$iopadmap$led[5]      1 39.5ms
+             display.$techmap13402$abc$12776$auto$blifparse.cc:557:parse_blif$12987.A[4]     10 39.0ms
+                                                              $abc$13044$iopadmap$led[2]      1 37.0ms
+                                                                                 mode[1]     25 36.7ms
+                                      display.$abc$12776$auto$wreduce.cc:514:run$1465[5]      1 36.6ms
+                                                                        $iopadmap$lcd_rs      1 36.3ms
+                                                                        display.index[5]     10 32.4ms
+                                                              $abc$13044$iopadmap$led[7]      1 31.0ms
+                                                              $abc$13044$iopadmap$led[3]      1 30.0ms
+                                                                         $iopadmap$sw[5]     30 29.4ms
+                         display.$abc$12776$auto$opt_dff.cc:251:make_patterns_logic$1461     32 29.1ms
+                                                                         $iopadmap$sw[4]     20 28.3ms
+                                                                        display.index[4]     11 27.6ms
+                                                                         $iopadmap$sw[3]     31 27.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12851.A[7]      5 26.9ms
+                                                              $abc$13044$iopadmap$led[1]      1 26.5ms
+                                                                   $iopadmap$lcd_data[0]      1 26.4ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12784.A[4]     13 24.8ms
+                                                                        display.index[2]     11 21.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12875.A[3]     10 21.7ms
+                                                                         button.count[8]      3 20.7ms
+                                                                   $iopadmap$lcd_data[6]      1 18.8ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1899.Y[3]     13 16.5ms
+                                                                        display.phase[2]      3 15.6ms
+                         display.$abc$12776$auto$opt_dff.cc:251:make_patterns_logic$1442      1 15.0ms
+                                                                        display.index[3]     10 14.6ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1896.Y[1]      1 14.1ms
+             display.$techmap13397$abc$12776$auto$blifparse.cc:557:parse_blif$12980.A[2]      7 13.7ms
+                                                                        display.index[1]     11 13.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12896.A[3]      1 12.3ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1896.Y[2]      1 12.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.A[7]     10 11.7ms
+             display.$techmap13383$abc$12776$auto$blifparse.cc:557:parse_blif$12968.A[0]      6 11.6ms
+                                                               $PACKER_GND_NET$legal$333      1 11.4ms
+                                                               $PACKER_GND_NET$legal$483      1 11.3ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12896.A[4]      1 11.2ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[20]      1 11.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.A[0]      2 10.7ms
+                                                                        display.index[0]     11 10.5ms
+                                                               $PACKER_GND_NET$legal$227      1 10.5ms
+                                                                        display.phase[1]      3 10.5ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.Y[5]      1 10.3ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1902.Y[2]      1 10.2ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.CO[5]      8 10.1ms
+                                                                                   press      4 10.1ms
+             display.$techmap13355$abc$12776$auto$blifparse.cc:557:parse_blif$12891.A[1]      1 9.8ms
+                                                                         button.count[5]      2 9.6ms
+             display.$techmap13315$abc$12776$auto$blifparse.cc:557:parse_blif$12790.A[2]      1 9.5ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1899.Y[2]      9 9.2ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1899.Y[0]     13 8.8ms
+                                                               $PACKER_GND_NET$legal$385      1 8.7ms
+                                                                        button.count[17]      2 8.7ms
+             display.$techmap13314$abc$12776$auto$blifparse.cc:557:parse_blif$12785.A[1]      2 8.4ms
+                         display.$abc$12776$auto$opt_dff.cc:251:make_patterns_logic$1430      4 8.2ms
+                                                                         button.count[1]      3 8.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12875.A[7]      4 8.1ms
+                                                                        button.count[30]      2 7.9ms
+                                                                         button.count[3]      2 7.3ms
+                                                                        button.count[16]      3 7.2ms
+                                                              display.$procmux$1276.Y[6]      1 7.1ms
+             display.$techmap13396$abc$12776$auto$blifparse.cc:557:parse_blif$12981.A[2]      3 7.1ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1899.Y[4]      6 7.0ms
+                     $techmap13224$abc$13044$auto$blifparse.cc:557:parse_blif$13052.A[0]      3 6.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12875.A[6]      4 6.8ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.P[3]      2 6.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12840.A[0]      2 6.7ms
+                                                                         button.count[0]      2 6.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12901.A[5]      4 6.6ms
+                                                                            button.sync1      1 6.4ms
+                                                              display.$procmux$1276.Y[5]      1 6.4ms
+                                                                        button.count[14]      2 6.4ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.genblk1.S[5]      2 6.4ms
+                                                                        button.count[24]      3 6.2ms
+                                                               $PACKER_GND_NET$legal$413      1 6.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.A[4]      4 5.9ms
+                                                                        button.count[13]      2 5.8ms
+              button.$techmap13777$abc$12704$auto$blifparse.cc:557:parse_blif$12727.A[4]      1 5.8ms
+                                                                        button.count[15]      2 5.7ms
+             display.$techmap13314$abc$12776$auto$blifparse.cc:557:parse_blif$12785.A[0]      1 5.7ms
+             display.$techmap13396$abc$12776$auto$blifparse.cc:557:parse_blif$12981.A[1]      3 5.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12830.A[7]      1 5.6ms
+                                  $abc$13044$auto$blifparse.cc:557:parse_blif$13049.A[6]      4 5.6ms
+                                                              display.$procmux$1276.Y[7]      1 5.5ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:55$1172.CO[5]      3 5.5ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[18]      1 5.4ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1905.Y[1]      1 5.3ms
+             display.$techmap13306$abc$12776$auto$blifparse.cc:557:parse_blif$12779.A[1]      2 5.3ms
+                                              $auto$alumacc.cc:512:replace_alu$1911.Y[1]      1 5.2ms
+              button.$techmap13759$abc$12704$auto$blifparse.cc:557:parse_blif$12705.A[4]      1 5.2ms
+                                                                         button.count[4]      2 5.2ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[20]      1 5.1ms
+                                                                  display.power_count[1]      4 5.1ms
+              button.$techmap13793$abc$12704$auto$blifparse.cc:557:parse_blif$12743.A[4]      1 4.8ms
+                                                                        button.count[31]      2 4.8ms
+                                                                         button.count[7]      2 4.8ms
+                                                                                  sum[0]      1 4.7ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1899.Y[5]      3 4.6ms
+                                                                         button.count[9]      2 4.6ms
+                                                                        button.count[28]      2 4.6ms
+                                                              display.$procmux$1276.Y[4]      1 4.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12801.A[0]      1 4.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12947.A[4]      2 4.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12830.A[4]      1 4.4ms
+                                                                              demuxed[7]      1 4.4ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.A[2]      2 4.4ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.P[2]      2 4.3ms
+                                                                        button.count[20]      2 4.3ms
+                                                                        button.count[19]      2 4.3ms
+                                                                 display.power_count[31]      4 4.3ms
+                                                                        button.count[25]      2 4.3ms
+                                                                 display.power_count[13]      2 4.2ms
+                                                                        button.count[10]      2 4.1ms
+                                                                           difference[3]      1 4.1ms
+                                                                 display.power_count[19]      2 4.0ms
+                                       button.$auto$alumacc.cc:512:replace_alu$1889.Y[6]      1 4.0ms
+                                       button.$auto$alumacc.cc:512:replace_alu$1889.Y[1]      1 4.0ms
+                                                                        display.phase[0]      4 4.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12923.A[0]      1 3.9ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[19]      1 3.9ms
+                                                         display.shown_mode[0]$legal$513      1 3.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12840.A[3]      3 3.8ms
+                                       button.$auto$alumacc.cc:512:replace_alu$1889.Y[3]      1 3.8ms
+                     $techmap13236$abc$13044$auto$blifparse.cc:557:parse_blif$13065.A[5]      1 3.8ms
+                     $techmap13224$abc$13044$auto$blifparse.cc:557:parse_blif$13052.A[3]      5 3.7ms
+             display.$techmap13337$abc$12776$auto$blifparse.cc:557:parse_blif$12852.A[2]      1 3.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12952.A[6]      1 3.7ms
+                                                                              demuxed[6]      1 3.7ms
+              button.$techmap13769$abc$12704$auto$blifparse.cc:557:parse_blif$12719.A[4]      1 3.7ms
+                                              $abc$13044$auto$wreduce.cc:514:run$1463[1]      1 3.7ms
+             display.$techmap13323$abc$12776$auto$blifparse.cc:557:parse_blif$12816.A[0]      1 3.7ms
+                                                                        button.count[29]      2 3.6ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.P[4]      2 3.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12880.A[0]      1 3.6ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[22]      1 3.5ms
+                                                              display.index[0]$legal$545      1 3.5ms
+              button.$techmap13783$abc$12704$auto$blifparse.cc:557:parse_blif$12733.A[4]      1 3.4ms
+                                                                        button.count[11]      2 3.4ms
+                                                               $PACKER_GND_NET$legal$645      1 3.4ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[31]      1 3.4ms
+                                                                         button.count[6]      2 3.4ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1899.X[3]      2 3.4ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12856.A[0]      1 3.4ms
+                                                               $PACKER_GND_NET$legal$471      1 3.3ms
+                                                               $PACKER_GND_NET$legal$279      1 3.3ms
+                                                               $PACKER_VCC_NET$legal$455      1 3.3ms
+             display.$techmap13323$abc$12776$auto$blifparse.cc:557:parse_blif$12816.A[1]      1 3.3ms
+                                                                        button.count[27]      2 3.2ms
+                                                                        display.phase[3]      3 3.2ms
+             display.$techmap13353$abc$12776$auto$blifparse.cc:557:parse_blif$12881.A[3]      1 3.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12941.A[2]      1 3.2ms
+             display.$techmap13329$abc$12776$auto$blifparse.cc:557:parse_blif$12831.A[2]      1 3.2ms
+                                                                        button.count[26]      2 3.2ms
+                                                                           difference[2]      1 3.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12885.A[3]      3 3.1ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.A[1]      3 3.1ms
+                                      display.$abc$12776$auto$wreduce.cc:514:run$1465[2]      1 3.1ms
+                                                                 display.power_count[18]      2 3.1ms
+             display.$techmap13307$abc$12776$auto$blifparse.cc:557:parse_blif$12778.A[0]      3 3.1ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[21]      1 3.1ms
+                                                               $PACKER_GND_NET$legal$369      1 3.0ms
+             display.$techmap13314$abc$12776$auto$blifparse.cc:557:parse_blif$12785.A[3]      4 3.0ms
+             display.$techmap13402$abc$12776$auto$blifparse.cc:557:parse_blif$12987.A[5]      1 3.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12784.A[7]      1 3.0ms
+                                                               button.$0\count[31:0][31]      1 3.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12830.A[0]      1 3.0ms
+                                                                        button.count[18]      2 3.0ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[15]      1 2.9ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[26]      1 2.9ms
+              button.$techmap13763$abc$12704$auto$blifparse.cc:557:parse_blif$12713.A[4]      1 2.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12885.A[0]      2 2.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12941.A[1]      1 2.9ms
+                                                                        button.count[22]      2 2.8ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[11]      1 2.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12875.A[2]      2 2.8ms
+             display.$techmap13371$abc$12776$auto$blifparse.cc:557:parse_blif$12931.A[1]      1 2.8ms
+                                                                        button.count[23]      2 2.8ms
+              button.$techmap13805$abc$12704$auto$blifparse.cc:557:parse_blif$12755.A[4]      1 2.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12923.A[2]      1 2.8ms
+                                                               button.$0\count[31:0][11]      1 2.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12923.A[3]      1 2.7ms
+                                                                 display.power_count[28]      2 2.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12875.A[5]      1 2.7ms
+                                                               $PACKER_GND_NET$legal$345      1 2.7ms
+                                                                  display.power_count[2]      4 2.7ms
+                                       button.$auto$alumacc.cc:512:replace_alu$1889.Y[0]      1 2.7ms
+                                                               $PACKER_GND_NET$legal$315      1 2.7ms
+                          button.$abc$12704$auto$opt_dff.cc:251:make_patterns_logic$1425      1 2.6ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1899.X[5]      2 2.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12870.A[0]      1 2.6ms
+                                                               $PACKER_GND_NET$legal$223      1 2.6ms
+                                                                              decoded[3]      1 2.6ms
+                                                                        button.count[21]      2 2.6ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1896.Y[0]      1 2.6ms
+                                                                 display.power_count[12]      2 2.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12896.A[0]      1 2.5ms
+                                                                 display.power_count[14]      2 2.5ms
+             display.$techmap13355$abc$12776$auto$blifparse.cc:557:parse_blif$12891.A[2]      1 2.4ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1902.Y[5]      1 2.4ms
+                                                               $iopadmap$sw[5]$legal$181      1 2.4ms
+                                                               $PACKER_GND_NET$legal$357      1 2.4ms
+              button.$techmap13771$abc$12704$auto$blifparse.cc:557:parse_blif$12721.A[4]      1 2.4ms
+                                                               $PACKER_GND_NET$legal$449      1 2.4ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[16]      1 2.4ms
+                                                                        button.count[12]      2 2.4ms
+                                                                button.$0\count[31:0][7]      1 2.3ms
+                                                                   $iopadmap$mode_button      1 2.3ms
+             display.$techmap13306$abc$12776$auto$blifparse.cc:557:parse_blif$12779.A[2]      2 2.3ms
+                                                               button.$0\count[31:0][12]      1 2.3ms
+                                                                                      fs      1 2.3ms
+                                                                 display.power_count[17]      2 2.3ms
+                                                               $PACKER_GND_NET$legal$219      1 2.3ms
+                                  display.$abc$12776$auto$fsm_map.cc:170:map_fsm$1377[3]      1 2.3ms
+                                                               $PACKER_GND_NET$legal$429      1 2.2ms
+              button.$techmap13795$abc$12704$auto$blifparse.cc:557:parse_blif$12745.A[4]      1 2.2ms
+                                                               $PACKER_GND_NET$legal$341      1 2.2ms
+             display.$techmap13355$abc$12776$auto$blifparse.cc:557:parse_blif$12891.A[0]      1 2.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12935.A[2]      1 2.2ms
+                                                                                      gz      1 2.2ms
+                                                               $PACKER_GND_NET$legal$311      1 2.1ms
+                                                                         button.count[2]      2 2.1ms
+                                                              display.index[2]$legal$493      1 2.1ms
+              button.$techmap13755$abc$12704$auto$blifparse.cc:557:parse_blif$12772.A[4]      1 2.1ms
+                                                               $PACKER_GND_NET$legal$509      1 2.1ms
+                                                                  display.power_count[0]      3 2.1ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12875.A[0]      2 2.1ms
+                                              $auto$alumacc.cc:512:replace_alu$1911.Y[2]      1 2.1ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[23]      1 2.1ms
+             display.$techmap13371$abc$12776$auto$blifparse.cc:557:parse_blif$12931.A[0]      1 2.0ms
+                                                               $PACKER_GND_NET$legal$169      1 2.0ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1902.Y[0]      1 2.0ms
+                                                              display.$procmux$1276.Y[3]      1 2.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12856.A[3]      1 2.0ms
+              button.$techmap13779$abc$12704$auto$blifparse.cc:557:parse_blif$12729.A[4]      1 2.0ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.Y[3]      1 2.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.G[1]      2 2.0ms
+                                                                 display.power_count[25]      2 2.0ms
+                                                               button.$0\count[31:0][24]      1 2.0ms
+                                              $auto$alumacc.cc:512:replace_alu$1911.Y[3]      1 2.0ms
+                                                               $PACKER_GND_NET$legal$475      1 2.0ms
+                                                               $PACKER_GND_NET$legal$641      1 2.0ms
+                                                                           comparison[1]      1 2.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12941.A[4]      2 1.9ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[30]      1 1.9ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1896.Y[5]      1 1.9ms
+                                       button.$auto$alumacc.cc:512:replace_alu$1889.Y[7]      1 1.9ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[29]      1 1.9ms
+                                                               $PACKER_VCC_NET$legal$577      1 1.9ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[28]      1 1.9ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[14]      1 1.9ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[18]      1 1.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12861.A[2]      2 1.9ms
+              button.$techmap13765$abc$12704$auto$blifparse.cc:557:parse_blif$12715.A[4]      1 1.9ms
+                                                              display.$procmux$1276.Y[0]      1 1.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12935.A[4]      2 1.9ms
+                                  display.$abc$12776$auto$fsm_map.cc:170:map_fsm$1377[0]      1 1.9ms
+                     $techmap13232$abc$13044$auto$blifparse.cc:557:parse_blif$13060.A[1]      2 1.9ms
+                                                               $PACKER_GND_NET$legal$291      1 1.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12784.A[0]      1 1.8ms
+             display.$techmap13354$abc$12776$auto$blifparse.cc:557:parse_blif$12887.A[2]      1 1.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12835.A[1]      1 1.8ms
+                                                                 display.power_count[15]      2 1.8ms
+              button.$techmap13803$abc$12704$auto$blifparse.cc:557:parse_blif$12753.A[4]      1 1.8ms
+                                                               button.$0\count[31:0][19]      1 1.8ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1902.Y[1]      1 1.8ms
+              button.$techmap13787$abc$12704$auto$blifparse.cc:557:parse_blif$12737.A[4]      1 1.8ms
+                                                                 display.power_count[23]      2 1.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12801.A[3]      1 1.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12835.A[0]      1 1.8ms
+                                                                         hex_segments[6]      2 1.8ms
+             display.$techmap13364$abc$12776$auto$blifparse.cc:557:parse_blif$12915.A[1]      1 1.7ms
+             display.$techmap13325$abc$12776$auto$blifparse.cc:557:parse_blif$12825.A[1]      2 1.7ms
+                                                              display.index[5]$legal$503      1 1.7ms
+                                                                 display.power_count[24]      2 1.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12875.A[4]      1 1.7ms
+                                              $abc$13044$auto$wreduce.cc:514:run$1463[3]      1 1.7ms
+                                                              display.index[3]$legal$557      1 1.7ms
+             display.$techmap13337$abc$12776$auto$blifparse.cc:557:parse_blif$12852.A[1]      1 1.7ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[17]      1 1.7ms
+                                                              display.index[4]$legal$561      1 1.7ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1902.Y[3]      1 1.7ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[12]      1 1.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12830.A[6]      2 1.7ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[24]      1 1.7ms
+                                                                 display.power_count[16]      2 1.7ms
+              button.$techmap13789$abc$12704$auto$blifparse.cc:557:parse_blif$12739.A[4]      1 1.7ms
+                                       button.$auto$alumacc.cc:512:replace_alu$1889.Y[2]      1 1.7ms
+                                                               button.$0\count[31:0][22]      1 1.7ms
+                                                                 display.power_count[20]      2 1.7ms
+             display.$techmap13346$abc$12776$auto$blifparse.cc:557:parse_blif$12866.A[3]      1 1.7ms
+                                                              display.index[0]$legal$487      1 1.7ms
+                                                               $PACKER_GND_NET$legal$389      1 1.7ms
+                                                               $PACKER_VCC_NET$legal$165      1 1.7ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1905.Y[2]      1 1.7ms
+             display.$techmap13353$abc$12776$auto$blifparse.cc:557:parse_blif$12881.A[0]      1 1.6ms
+              button.$techmap13785$abc$12704$auto$blifparse.cc:557:parse_blif$12735.A[4]      1 1.6ms
+                                                                 display.power_count[26]      2 1.6ms
+                                                                    button.$0\pulse[0:0]      1 1.6ms
+             display.$techmap13337$abc$12776$auto$blifparse.cc:557:parse_blif$12852.A[0]      1 1.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12935.A[3]      1 1.6ms
+                     $techmap13232$abc$13044$auto$blifparse.cc:557:parse_blif$13060.A[3]      1 1.6ms
+                                                       display.power_count[31]$legal$649      1 1.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12941.A[0]      1 1.6ms
+                                                               $PACKER_GND_NET$legal$377      1 1.6ms
+                                                                button.$0\count[31:0][9]      1 1.6ms
+             display.$techmap13368$abc$12776$auto$blifparse.cc:557:parse_blif$12921.A[4]      1 1.6ms
+                     $techmap13249$abc$13044$auto$blifparse.cc:557:parse_blif$13045.A[0]      1 1.6ms
+                                                               $PACKER_GND_NET$legal$207      1 1.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12901.A[3]      1 1.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12901.A[4]      4 1.6ms
+                                       button.$auto$alumacc.cc:512:replace_alu$1889.Y[4]      1 1.6ms
+             display.$techmap13346$abc$12776$auto$blifparse.cc:557:parse_blif$12866.A[0]      1 1.5ms
+                                                                 display.power_count[30]      2 1.5ms
+                                                                  display.power_count[3]      2 1.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12924.A[0]      1 1.5ms
+             display.$techmap13316$abc$12776$auto$blifparse.cc:557:parse_blif$12794.A[2]      1 1.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12820.A[0]      1 1.5ms
+              button.$techmap13791$abc$12704$auto$blifparse.cc:557:parse_blif$12741.A[4]      1 1.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12947.A[2]      1 1.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12844.A[1]      1 1.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12820.A[4]      3 1.5ms
+                                                         display.shown_mode[1]$legal$517      1 1.5ms
+                                                                              encoded[1]      1 1.5ms
+                                  display.$auto$maccmap.cc:240:synth$3825.A[6]$legal$601      1 1.5ms
+                                                               button.$0\count[31:0][14]      1 1.5ms
+                     $techmap13236$abc$13044$auto$blifparse.cc:557:parse_blif$13065.A[0]      1 1.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12956.A[3]      1 1.5ms
+                                  display.$auto$maccmap.cc:240:synth$3825.A[3]$legal$589      1 1.5ms
+              button.$techmap13799$abc$12704$auto$blifparse.cc:557:parse_blif$12749.A[4]      1 1.5ms
+                                                                         hex_segments[7]      2 1.4ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.A[2]      1 1.4ms
+              button.$techmap13775$abc$12704$auto$blifparse.cc:557:parse_blif$12725.A[4]      1 1.4ms
+                                              $auto$alumacc.cc:512:replace_alu$1911.Y[0]      1 1.4ms
+             display.$techmap13315$abc$12776$auto$blifparse.cc:557:parse_blif$12790.A[1]      1 1.4ms
+              button.$techmap13781$abc$12704$auto$blifparse.cc:557:parse_blif$12731.A[4]      1 1.4ms
+                                      display.$abc$12776$auto$wreduce.cc:514:run$1465[3]      1 1.4ms
+                                                                                      gy      1 1.4ms
+                                                               $PACKER_GND_NET$legal$511      1 1.4ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.A[0]      1 1.4ms
+                                                               $PACKER_GND_NET$legal$631      1 1.4ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.A[1]      1 1.4ms
+                                                               $PACKER_GND_NET$legal$657      1 1.4ms
+                                                       display.$abc$12776$procmux$1298_Y      1 1.4ms
+                                                               $PACKER_GND_NET$legal$459      1 1.4ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12861.A[3]      1 1.4ms
+                                                              display.index[1]$legal$549      1 1.4ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12911.A[1]      1 1.4ms
+                                                               $PACKER_GND_NET$legal$243      1 1.4ms
+             display.$techmap13323$abc$12776$auto$blifparse.cc:557:parse_blif$12816.A[2]      1 1.4ms
+                                      display.$abc$12776$auto$wreduce.cc:514:run$1465[0]      1 1.4ms
+                                                                              decoded[5]      1 1.4ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12901.A[2]      1 1.4ms
+                                                                button.$0\count[31:0][3]      1 1.4ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1905.Y[3]      1 1.4ms
+                                                                              demuxed[0]      1 1.4ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1896.Y[3]      1 1.4ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:55$1172.G[1]      1 1.4ms
+              button.$techmap13815$abc$12704$auto$blifparse.cc:557:parse_blif$12765.A[4]      1 1.3ms
+                                                               $PACKER_GND_NET$legal$573      1 1.3ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1896.Y[4]      1 1.3ms
+                                                               $PACKER_GND_NET$legal$421      1 1.3ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[15]      1 1.3ms
+             display.$techmap13315$abc$12776$auto$blifparse.cc:557:parse_blif$12790.A[0]      1 1.3ms
+                                                              display.$procmux$1276.Y[1]      1 1.3ms
+              button.$techmap13767$abc$12704$auto$blifparse.cc:557:parse_blif$12717.A[4]      1 1.3ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[16]      1 1.3ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12851.A[2]      1 1.3ms
+                                                               $PACKER_GND_NET$legal$397      1 1.3ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12851.A[3]      1 1.3ms
+                                                                                  sum[2]      1 1.3ms
+                                                                  display.power_count[6]      2 1.3ms
+                                                                              demuxed[5]      1 1.3ms
+                                                                         hex_segments[3]      2 1.3ms
+                                                                button.$0\count[31:0][1]      1 1.3ms
+             display.$techmap13404$abc$12776$auto$blifparse.cc:557:parse_blif$12989.A[1]      2 1.3ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12961.A[1]      1 1.3ms
+                                                               $PACKER_GND_NET$legal$463      1 1.3ms
+              button.$techmap13807$abc$12704$auto$blifparse.cc:557:parse_blif$12757.A[4]      1 1.3ms
+                                                               $PACKER_GND_NET$legal$271      1 1.3ms
+                                                               $PACKER_GND_NET$legal$235      1 1.3ms
+                                                               $PACKER_GND_NET$legal$393      1 1.3ms
+                                  display.$abc$12776$auto$fsm_map.cc:170:map_fsm$1377[2]      1 1.3ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[10]      1 1.3ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12956.A[1]      1 1.2ms
+                                                                  display.power_count[9]      2 1.2ms
+                                                                 display.power_count[21]      2 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12935.A[1]      1 1.2ms
+                                                                 display.power_count[22]      2 1.2ms
+             display.$techmap13354$abc$12776$auto$blifparse.cc:557:parse_blif$12887.A[0]      1 1.2ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[27]      1 1.2ms
+                                                               $PACKER_GND_NET$legal$303      1 1.2ms
+                                                                button.$0\count[31:0][4]      1 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12830.A[3]      1 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.A[4]      2 1.2ms
+                                                               $PACKER_GND_NET$legal$327      1 1.2ms
+             display.$techmap13361$abc$12776$auto$blifparse.cc:557:parse_blif$12906.A[4]      1 1.2ms
+                                                                           comparison[2]      1 1.2ms
+                                                               $PACKER_GND_NET$legal$569      1 1.2ms
+             display.$techmap13371$abc$12776$auto$blifparse.cc:557:parse_blif$12931.A[2]      1 1.2ms
+             display.$techmap13329$abc$12776$auto$blifparse.cc:557:parse_blif$12831.A[0]      1 1.2ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[23]      1 1.2ms
+                                                               $PACKER_GND_NET$legal$507      1 1.2ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[17]      1 1.2ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[22]      1 1.2ms
+                                      display.$abc$12776$auto$wreduce.cc:514:run$1465[4]      1 1.2ms
+                                       button.$auto$alumacc.cc:512:replace_alu$1889.Y[5]      1 1.2ms
+                     $techmap13232$abc$13044$auto$blifparse.cc:557:parse_blif$13060.A[0]      1 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12844.A[2]      1 1.2ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.Y[2]      1 1.2ms
+                                                                button.$0\count[31:0][8]      1 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12935.A[0]      1 1.2ms
+             display.$techmap13329$abc$12776$auto$blifparse.cc:557:parse_blif$12831.A[1]      1 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12784.A[5]      4 1.2ms
+                                                       display.power_count[31]$legal$623      1 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12924.A[4]      1 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12924.A[1]      1 1.2ms
+                                  $abc$13044$auto$blifparse.cc:557:parse_blif$13049.A[3]      2 1.2ms
+                                                                 display.power_count[27]      2 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12901.A[1]      1 1.2ms
+                                                                                      fc      1 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12961.A[4]      1 1.2ms
+                                                                button.$0\count[31:0][2]      1 1.2ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12851.A[1]      1 1.2ms
+                                                               $PACKER_GND_NET$legal$467      1 1.1ms
+                                                                            fa.carry_cin      1 1.1ms
+                                                              display.index[3]$legal$497      1 1.1ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12835.A[2]      1 1.1ms
+                                                               $PACKER_GND_NET$legal$533      1 1.1ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[25]      1 1.1ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.A[3]      2 1.1ms
+                                                              display.index[4]$legal$499      1 1.1ms
+                                                                              decoded[2]      1 1.1ms
+                                                               $PACKER_GND_NET$legal$247      1 1.1ms
+                                                               $PACKER_VCC_NET$legal$605      1 1.1ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12911.A[3]      1 1.1ms
+                                                               button.$0\count[31:0][20]      1 1.1ms
+                                                               $PACKER_GND_NET$legal$611      1 1.1ms
+                                                               button.$0\count[31:0][13]      1 1.1ms
+                                                               $PACKER_GND_NET$legal$433      1 1.1ms
+                                      display.$abc$12776$auto$wreduce.cc:514:run$1465[1]      1 1.1ms
+                                                              display.index[2]$legal$553      1 1.1ms
+                                                               $PACKER_GND_NET$legal$627      1 1.1ms
+             display.$techmap13353$abc$12776$auto$blifparse.cc:557:parse_blif$12881.A[1]      1 1.1ms
+                                                               button.$0\count[31:0][29]      1 1.1ms
+                                                               button.$0\count[31:0][28]      1 1.1ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12801.A[1]      1 1.1ms
+                                                               $PACKER_GND_NET$legal$409      1 1.1ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[19]      1 1.1ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12844.A[0]      1 1.1ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[12]      1 1.1ms
+                                                                button.$0\count[31:0][6]      1 1.1ms
+                                                               $PACKER_GND_NET$legal$287      1 1.1ms
+                                                               button.$0\count[31:0][10]      1 1.1ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12952.A[0]      1 1.1ms
+              button.$techmap13816$abc$12704$auto$blifparse.cc:557:parse_blif$12767.A[4]      1 1.1ms
+                                                                           difference[1]      1 1.1ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12784.A[3]      1 1.1ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12901.A[0]      1 1.1ms
+                     $techmap13249$abc$13044$auto$blifparse.cc:557:parse_blif$13045.A[1]      1 1.1ms
+                                                                         hex_segments[5]      1 1.1ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.Y[4]      1 1.1ms
+                                       button.$auto$alumacc.cc:512:replace_alu$1889.Y[9]      1 1.1ms
+                                                               $PACKER_GND_NET$legal$441      1 1.0ms
+             display.$techmap13364$abc$12776$auto$blifparse.cc:557:parse_blif$12915.A[0]      1 1.0ms
+                                                               $PACKER_GND_NET$legal$437      1 1.0ms
+                                              $abc$13044$auto$wreduce.cc:514:run$1463[0]      1 1.0ms
+                                                         display.shown_mode[3]$legal$525      1 1.0ms
+              button.$techmap13811$abc$12704$auto$blifparse.cc:557:parse_blif$12761.A[4]      1 1.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12820.A[1]      1 1.0ms
+                                                                                      gx      1 1.0ms
+                                                                           difference[0]      1 1.0ms
+                                                               $PACKER_GND_NET$legal$353      1 1.0ms
+                                                              display.index[1]$legal$491      1 1.0ms
+                                                                 display.power_count[11]      2 1.0ms
+                                                                button.$0\count[31:0][0]      1 1.0ms
+                                                               $PACKER_GND_NET$legal$405      1 1.0ms
+                                                               $PACKER_VCC_NET$legal$585      1 1.0ms
+              button.$techmap13813$abc$12704$auto$blifparse.cc:557:parse_blif$12763.A[4]      1 1.0ms
+                                                               $PACKER_GND_NET$legal$425      1 1.0ms
+                                                               $PACKER_GND_NET$legal$373      1 1.0ms
+                                                               button.$0\count[31:0][16]      1 1.0ms
+             display.$techmap13361$abc$12776$auto$blifparse.cc:557:parse_blif$12906.A[1]      1 1.0ms
+                                                                              encoded[2]      1 1.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12870.A[4]      1 1.0ms
+              button.$techmap13801$abc$12704$auto$blifparse.cc:557:parse_blif$12751.A[4]      1 1.0ms
+                                                               $PACKER_GND_NET$legal$479      1 1.0ms
+                                  display.$abc$12776$auto$fsm_map.cc:170:map_fsm$1377[1]      1 1.0ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[14]      1 1.0ms
+                                                                           comparison[0]      1 1.0ms
+                                                                              decoded[6]      1 1.0ms
+             display.$techmap13370$abc$12776$auto$blifparse.cc:557:parse_blif$12929.A[0]      1 1.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.G[0]      1 1.0ms
+                     $techmap13232$abc$13044$auto$blifparse.cc:557:parse_blif$13060.A[2]      1 1.0ms
+                                                               $PACKER_GND_NET$legal$417      1 1.0ms
+                                                               $PACKER_GND_NET$legal$637      1 1.0ms
+             display.$techmap13355$abc$12776$auto$blifparse.cc:557:parse_blif$12891.A[3]      1 1.0ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12896.A[2]      1 1.0ms
+                     $techmap13249$abc$13044$auto$blifparse.cc:557:parse_blif$13045.A[2]      1 1.0ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[11]      1 1.0ms
+                                                               $PACKER_VCC_NET$legal$329      1 0.9ms
+                                                                          fa.partial_sum      2 0.9ms
+                                                               $PACKER_GND_NET$legal$453      1 0.9ms
+                                                               $PACKER_GND_NET$legal$537      1 0.9ms
+                                                               button.$0\count[31:0][18]      1 0.9ms
+                                                               $PACKER_GND_NET$legal$401      1 0.9ms
+                                                              display.index[5]$legal$565      1 0.9ms
+                                                               $PACKER_GND_NET$legal$361      1 0.9ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.Y[7]      1 0.9ms
+                                                               $PACKER_GND_NET$legal$263      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12870.A[3]      2 0.9ms
+                                                                         hex_segments[4]      1 0.9ms
+                                              $abc$13044$auto$wreduce.cc:514:run$1463[2]      1 0.9ms
+                                                                 display.power_count[10]      2 0.9ms
+                                                                 display.power_count[29]      2 0.9ms
+             display.$techmap13366$abc$12776$auto$blifparse.cc:557:parse_blif$12919.A[1]      1 0.9ms
+                                                               $PACKER_GND_NET$legal$653      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12820.A[2]      1 0.9ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.Y[6]      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12880.A[1]      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12861.A[1]      1 0.9ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1902.Y[6]      1 0.9ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[30]      1 0.9ms
+              button.$techmap13797$abc$12704$auto$blifparse.cc:557:parse_blif$12747.A[4]      1 0.9ms
+                                                                             fa.carry_ab      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12861.A[0]      1 0.9ms
+                                                                                      ac      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12923.A[4]      2 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12835.A[3]      2 0.9ms
+             display.$techmap13316$abc$12776$auto$blifparse.cc:557:parse_blif$12794.A[1]      1 0.9ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[21]      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12830.A[1]      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12956.A[0]      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12923.A[1]      1 0.9ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[10]      1 0.9ms
+             display.$techmap13361$abc$12776$auto$blifparse.cc:557:parse_blif$12906.A[2]      2 0.9ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[25]      1 0.9ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[24]      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12851.A[4]      4 0.9ms
+                                                                                  borrow      1 0.9ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.Y[8]      1 0.9ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12947.A[3]      1 0.8ms
+                                                                button.$0\count[31:0][5]      1 0.8ms
+                                                               $PACKER_GND_NET$legal$189      1 0.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.A[3]      1 0.8ms
+                                                               $PACKER_GND_NET$legal$337      1 0.8ms
+                                       button.$auto$alumacc.cc:512:replace_alu$1889.Y[8]      1 0.8ms
+                                                               button.$0\count[31:0][25]      1 0.8ms
+                                                                  display.power_count[8]      2 0.8ms
+                                                               $PACKER_GND_NET$legal$307      1 0.8ms
+                                                               button.$0\count[31:0][30]      1 0.8ms
+                                                               $PACKER_GND_NET$legal$299      1 0.8ms
+                                                               button.$0\count[31:0][15]      1 0.8ms
+             display.$techmap13376$abc$12776$auto$blifparse.cc:557:parse_blif$12948.A[0]      1 0.8ms
+             display.$techmap13376$abc$12776$auto$blifparse.cc:557:parse_blif$12948.A[1]      1 0.8ms
+                                                                  display.power_count[7]      2 0.8ms
+                                                               button.$0\count[31:0][27]      1 0.8ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.G[1]$legal$607      1 0.8ms
+                                                                                      mz      1 0.8ms
+                                                               $PACKER_GND_NET$legal$349      1 0.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12956.A[2]      1 0.8ms
+                                                                                  sum[3]      1 0.8ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.Y[13]      1 0.8ms
+                                                               $PACKER_GND_NET$legal$211      1 0.8ms
+                                            display.$auto$maccmap.cc:240:synth$3825.A[4]      2 0.8ms
+                                                                              decoded[7]      1 0.8ms
+                                                               $PACKER_GND_NET$legal$239      1 0.8ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.Y[1]      1 0.8ms
+                                                               $PACKER_GND_NET$legal$633      1 0.8ms
+                                                               $PACKER_GND_NET$legal$619      1 0.8ms
+                                                               $PACKER_VCC_NET$legal$581      1 0.8ms
+             display.$techmap13346$abc$12776$auto$blifparse.cc:557:parse_blif$12866.A[1]      1 0.8ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1905.Y[0]      1 0.8ms
+                                                               $iopadmap$sw[6]$legal$663      1 0.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12947.A[1]      1 0.8ms
+             display.$techmap13335$abc$12776$auto$blifparse.cc:557:parse_blif$12848.A[1]      1 0.8ms
+                                                                  display.power_count[4]      2 0.8ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[31]      1 0.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12961.A[3]      1 0.8ms
+              button.$techmap13809$abc$12704$auto$blifparse.cc:557:parse_blif$12759.A[4]      1 0.8ms
+             display.$techmap13376$abc$12776$auto$blifparse.cc:557:parse_blif$12948.A[2]      1 0.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12911.A[0]      1 0.8ms
+                                                                         hex_segments[2]      1 0.8ms
+                                                                           $iopadmap$clk     96 0.8ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12902.A[0]      1 0.8ms
+                                                               $iopadmap$sw[5]$legal$661      1 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12784.A[1]      1 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12947.A[0]      1 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12961.A[2]      1 0.7ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.Y[0]      1 0.7ms
+                                                               $PACKER_GND_NET$legal$259      1 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12924.A[2]      1 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12880.A[4]      2 0.7ms
+             display.$techmap13354$abc$12776$auto$blifparse.cc:557:parse_blif$12887.A[1]      1 0.7ms
+                                                               $PACKER_GND_NET$legal$541      1 0.7ms
+              button.$techmap13753$abc$12704$auto$blifparse.cc:557:parse_blif$12770.A[4]      1 0.7ms
+                                                               button.$0\count[31:0][17]      1 0.7ms
+                                                                              demuxed[2]      1 0.7ms
+             display.$techmap13361$abc$12776$auto$blifparse.cc:557:parse_blif$12906.A[0]      1 0.7ms
+                                                                              decoded[1]      1 0.7ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1902.Y[4]      1 0.7ms
+                                                               $PACKER_GND_NET$legal$615      1 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12952.A[3]      1 0.7ms
+              button.$techmap13761$abc$12704$auto$blifparse.cc:557:parse_blif$12711.A[4]      1 0.7ms
+                                                               button.$0\count[31:0][26]      1 0.7ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[29]      1 0.7ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[27]      1 0.7ms
+                                                                  display.power_count[5]      2 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12784.A[2]      1 0.7ms
+                                                               $PACKER_GND_NET$legal$173      1 0.7ms
+                                                                              encoded[0]      1 0.7ms
+                                                                              demuxed[1]      1 0.7ms
+                                                               $PACKER_GND_NET$legal$267      1 0.7ms
+                                                                         hex_segments[1]      1 0.7ms
+                                                                              demuxed[4]      1 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12902.A[1]      1 0.7ms
+                                                                                  sum[1]      1 0.7ms
+                                                               $PACKER_VCC_NET$legal$203      1 0.7ms
+                                                               $PACKER_GND_NET$legal$251      1 0.7ms
+                                                                              demuxed[3]      1 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12840.A[1]      1 0.7ms
+                                                               $PACKER_GND_NET$legal$275      1 0.7ms
+                                            display.$auto$maccmap.cc:240:synth$3825.A[3]      2 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12851.A[5]      1 0.7ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[28]      1 0.7ms
+                                                                              decoded[4]      1 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12880.A[2]      1 0.7ms
+                                                               $iopadmap$sw[7]$legal$185      1 0.7ms
+             display.$techmap13316$abc$12776$auto$blifparse.cc:557:parse_blif$12794.A[0]      1 0.7ms
+                                  display.$auto$maccmap.cc:240:synth$3825.A[4]$legal$593      1 0.7ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12902.A[4]      1 0.7ms
+                                                               button.$0\count[31:0][21]      1 0.6ms
+                                                               $PACKER_GND_NET$legal$319      1 0.6ms
+                                            display.$auto$maccmap.cc:240:synth$3825.A[6]      2 0.6ms
+                                                               button.$0\count[31:0][23]      1 0.6ms
+                                                               $PACKER_GND_NET$legal$445      1 0.6ms
+                                                               $PACKER_GND_NET$legal$177      1 0.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12851.A[0]      1 0.6ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[26]      1 0.6ms
+                                                               $iopadmap$sw[4]$legal$179      1 0.6ms
+             display.$techmap13318$abc$12776$auto$blifparse.cc:557:parse_blif$12798.A[1]      1 0.6ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1905.Y[4]      1 0.6ms
+                                                               $iopadmap$sw[6]$legal$183      1 0.6ms
+                                                               $PACKER_GND_NET$legal$295      1 0.6ms
+                                                               $PACKER_GND_NET$legal$529      1 0.6ms
+                                                               $PACKER_GND_NET$legal$283      1 0.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12801.A[2]      1 0.6ms
+                                                               $PACKER_GND_NET$legal$215      1 0.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12856.A[2]      1 0.6ms
+                                                               $PACKER_GND_NET$legal$255      1 0.6ms
+             display.$techmap13321$abc$12776$auto$blifparse.cc:557:parse_blif$12806.A[1]      1 0.6ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12880.A[3]      1 0.6ms
+                                                         display.shown_mode[2]$legal$521      1 0.6ms
+                                                               $PACKER_GND_NET$legal$231      1 0.6ms
+              button.$techmap13773$abc$12704$auto$blifparse.cc:557:parse_blif$12723.A[4]      1 0.6ms
+                     $techmap13238$abc$13044$auto$blifparse.cc:557:parse_blif$13069.A[3]      1 0.6ms
+                                                               $PACKER_GND_NET$legal$323      1 0.6ms
+                                            display.$auto$maccmap.cc:240:synth$3825.A[5]      2 0.6ms
+                                                               $PACKER_GND_NET$legal$193      1 0.5ms
+                                                               $iopadmap$sw[7]$legal$665      1 0.5ms
+             display.$techmap13364$abc$12776$auto$blifparse.cc:557:parse_blif$12915.A[2]      1 0.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12961.A[0]      1 0.5ms
+                                  display.$auto$maccmap.cc:240:synth$3825.A[5]$legal$597      1 0.5ms
+                                                                              decoded[0]      1 0.5ms
+                          display.$abc$12776$auto$blifparse.cc:557:parse_blif$12856.A[1]      1 0.4ms
+                                                               $iopadmap$sw[4]$legal$659      1 0.4ms
+                                                               $PACKER_GND_NET$legal$197      1 0.4ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1896.CO[3]      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:55$1172.CO[3]      1 0.0ms
+                                           display.$auto$maccmap.cc:240:synth$3825.CO[3]      1 0.0ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.Y[13]      1 0.0ms
+                                        add4.$auto$alumacc.cc:512:replace_alu$1908.CO[3]      1 0.0ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1899.CO[3]      1 0.0ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.CO[7]      1 0.0ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1905.CO[3]      1 0.0ms
+                                                    $auto$clkbufmap.cc:262:execute$13834      1 0.0ms
+                                    display.$auto$alumacc.cc:512:replace_alu$1893.CO[15]      1 0.0ms
+                                     button.$auto$alumacc.cc:512:replace_alu$1889.CO[23]      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.CO[3]      1 0.0ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.Y[9]      1 0.0ms
+                                                               $PACKER_GND_NET$legal$201      1 0.0ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.CO[7]      1 0.0ms
+                                     button.$auto$alumacc.cc:512:replace_alu$1889.CO[27]      1 0.0ms
+                                                               $PACKER_GND_NET$legal$365      1 0.0ms
+                                                               $PACKER_GND_NET$legal$381      1 0.0ms
+                                    display.$auto$alumacc.cc:512:replace_alu$1893.CO[19]      1 0.0ms
+                                     button.$auto$alumacc.cc:512:replace_alu$1889.CO[11]      1 0.0ms
+                                    display.$auto$alumacc.cc:512:replace_alu$1893.CO[23]      1 0.0ms
+                                     button.$auto$alumacc.cc:512:replace_alu$1889.CO[19]      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12936.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+                                                        display.power_count[2]$legal$335      1 0.0ms
+        encoder.$abc$13035$auto$blifparse.cc:557:parse_blif$13037.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+                                    display.$auto$alumacc.cc:512:replace_alu$1893.CO[11]      1 0.0ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1893.CO[3]      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12892.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+                                                              display.$procmux$1276.Y[2]      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.P[4]$legal$643      1 0.0ms
+                                     display.$auto$alumacc.cc:512:replace_alu$1902.CO[3]      1 0.0ms
+                                    display.$auto$alumacc.cc:512:replace_alu$1893.CO[27]      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12938.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12872.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:55$1172.genblk1.S[1]      1 0.0ms
+                                     button.$auto$alumacc.cc:512:replace_alu$1889.CO[15]      1 0.0ms
+                                      button.$auto$alumacc.cc:512:replace_alu$1889.CO[3]      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.P[3]$legal$639      1 0.0ms
+                            display.$auto$alumacc.cc:512:replace_alu$1899.X[3]$legal$495      1 0.0ms
+                                                               $PACKER_GND_NET$legal$191      1 0.0ms
+                                                               $PACKER_GND_NET$legal$155      1 0.0ms
+                                                                 $PACKER_GND_NET$legal$9      1 0.0ms
+        encoder.$abc$13035$auto$blifparse.cc:557:parse_blif$13038.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:55$1172.P[0]      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12932.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12899.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12872.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13016.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.P[2]$legal$609      1 0.0ms
+                                                              display.index[2]$legal$551      1 0.0ms
+                                                        display.power_count[3]$legal$339      1 0.0ms
+                                                                       mode[2]$legal$171      1 0.0ms
+                                                               $PACKER_GND_NET$legal$159      1 0.0ms
+                                                               $PACKER_GND_NET$legal$151      1 0.0ms
+                                                                $PACKER_GND_NET$legal$91      1 0.0ms
+        encoder.$abc$13035$auto$blifparse.cc:557:parse_blif$13038.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12947.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12936.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12936.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12935.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12933.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12892.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12872.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12867.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12846.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12819.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13016.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13014.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        button.$abc$12704$auto$blifparse.cc:557:parse_blif$12709.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+                                                                             seg_data[4]      1 0.0ms
+                                                                                  led[5]      1 0.0ms
+                                                                                  led[0]      1 0.0ms
+                                                                                   lcd_e      1 0.0ms
+                                                               $PACKER_GND_NET$legal$629      1 0.0ms
+                                                               $PACKER_GND_NET$legal$625      1 0.0ms
+                                                              display.index[4]$legal$559      1 0.0ms
+                                                              display.index[1]$legal$547      1 0.0ms
+                                                              display.index[0]$legal$543      1 0.0ms
+                                                       display.power_count[24]$legal$423      1 0.0ms
+                                                       display.power_count[13]$legal$379      1 0.0ms
+                                                        display.power_count[5]$legal$347      1 0.0ms
+                                                              button.count[17]$legal$269      1 0.0ms
+                                                               $PACKER_GND_NET$legal$195      1 0.0ms
+                                                               $PACKER_GND_NET$legal$131      1 0.0ms
+                                                               $PACKER_GND_NET$legal$115      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$93      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$85      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$39      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$37      1 0.0ms
+        sub4.$abc$13094$auto$blifparse.cc:557:parse_blif$13095.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1899.X[4]      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12956.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12945.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12941.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12941.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12932.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12932.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12926.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12901.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12896.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12894.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12886.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12867.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12867.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12846.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12845.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12832.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12818.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12817.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12804.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12801.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13015.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13014.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+                                                                             lcd_data[5]      1 0.0ms
+                                                                             lcd_data[1]      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.genblk1.S[5]$legal$647      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.P[3]$legal$613      1 0.0ms
+                                                               $PACKER_GND_NET$legal$575      1 0.0ms
+                                                               $PACKER_VCC_NET$legal$567      1 0.0ms
+                            display.$auto$alumacc.cc:512:replace_alu$1899.X[5]$legal$563      1 0.0ms
+                            display.$auto$alumacc.cc:512:replace_alu$1899.X[3]$legal$555      1 0.0ms
+                                                               $PACKER_GND_NET$legal$535      1 0.0ms
+                                                               $PACKER_VCC_NET$legal$527      1 0.0ms
+                                                              display.index[1]$legal$489      1 0.0ms
+                                                              display.index[0]$legal$485      1 0.0ms
+                                                               $PACKER_GND_NET$legal$477      1 0.0ms
+                                                       display.power_count[29]$legal$443      1 0.0ms
+                                                       display.power_count[28]$legal$439      1 0.0ms
+                                                       display.power_count[21]$legal$411      1 0.0ms
+                                                       display.power_count[20]$legal$407      1 0.0ms
+                                                       display.power_count[18]$legal$399      1 0.0ms
+                                                       display.power_count[17]$legal$395      1 0.0ms
+                                                       display.power_count[14]$legal$383      1 0.0ms
+                                                       display.power_count[11]$legal$371      1 0.0ms
+                                                        display.power_count[9]$legal$363      1 0.0ms
+                                                        display.power_count[4]$legal$343      1 0.0ms
+                                                        display.power_count[1]$legal$331      1 0.0ms
+                                                              button.count[29]$legal$317      1 0.0ms
+                                                              button.count[27]$legal$309      1 0.0ms
+                                                              button.count[21]$legal$285      1 0.0ms
+                                                              button.count[16]$legal$265      1 0.0ms
+                                                               button.count[6]$legal$225      1 0.0ms
+                                                               button.count[5]$legal$221      1 0.0ms
+                                                               button.count[3]$legal$213      1 0.0ms
+                                                               button.count[2]$legal$209      1 0.0ms
+                                                                       mode[1]$legal$167      1 0.0ms
+                                                               $PACKER_GND_NET$legal$157      1 0.0ms
+                                                               $PACKER_GND_NET$legal$153      1 0.0ms
+                                                               $PACKER_GND_NET$legal$145      1 0.0ms
+                                                               $PACKER_GND_NET$legal$143      1 0.0ms
+                                                               $PACKER_GND_NET$legal$141      1 0.0ms
+                                                               $PACKER_VCC_NET$legal$133      1 0.0ms
+                                                               $PACKER_VCC_NET$legal$123      1 0.0ms
+                                                               $PACKER_GND_NET$legal$117      1 0.0ms
+                                                               $PACKER_GND_NET$legal$113      1 0.0ms
+                                                               $PACKER_GND_NET$legal$111      1 0.0ms
+                                                               $PACKER_GND_NET$legal$107      1 0.0ms
+                                                               $PACKER_GND_NET$legal$103      1 0.0ms
+                                                               $PACKER_GND_NET$legal$101      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$83      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$81      1 0.0ms
+                                                                $PACKER_GND_NET$legal$57      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$51      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$47      1 0.0ms
+                                                                $PACKER_GND_NET$legal$27      1 0.0ms
+                                                                $PACKER_GND_NET$legal$23      1 0.0ms
+                                                                $PACKER_GND_NET$legal$17      1 0.0ms
+                                                                $PACKER_GND_NET$legal$15      1 0.0ms
+                                                                $PACKER_GND_NET$legal$13      1 0.0ms
+                                                                $PACKER_GND_NET$legal$11      1 0.0ms
+                                                                 $PACKER_GND_NET$legal$7      1 0.0ms
+                                                                 $PACKER_GND_NET$legal$1      1 0.0ms
+                                         sub4.$auto$alumacc.cc:512:replace_alu$1917.X[2]      1 0.0ms
+        sub4.$abc$13094$auto$blifparse.cc:557:parse_blif$13095.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        sub4.$abc$13094$auto$blifparse.cc:557:parse_blif$13095.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        encoder.$abc$13035$auto$blifparse.cc:557:parse_blif$13037.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        encoder.$abc$13035$auto$blifparse.cc:557:parse_blif$13037.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        encoder.$abc$13035$auto$blifparse.cc:557:parse_blif$13036.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        encoder.$abc$13035$auto$blifparse.cc:557:parse_blif$13036.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1902.X[0]      1 0.0ms
+                                      display.$auto$alumacc.cc:512:replace_alu$1893.X[0]      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12965.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12950.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12947.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12945.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12941.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12940.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12939.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12935.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12932.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12928.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12927.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12927.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12923.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12917.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12916.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12900.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12898.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12892.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12890.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12883.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12878.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12872.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12872.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12870.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12869.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12869.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12869.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12868.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12867.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12867.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12851.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12840.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12821.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12818.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12812.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        display.$abc$12776$auto$blifparse.cc:557:parse_blif$12802.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13016.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13015.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13015.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13015.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13014.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+        comp.$abc$13013$auto$blifparse.cc:557:parse_blif$13014.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1      1 0.0ms
+                                                                             seg_data[7]      1 0.0ms
+                                                                             seg_data[5]      1 0.0ms
+                                                                                  led[3]      1 0.0ms
+                                                                             lcd_data[6]      1 0.0ms
+                                                                             lcd_data[3]      1 0.0ms
+                                                                             lcd_data[2]      1 0.0ms
+        $abc$13044$auto$blifparse.cc:557:parse_blif$13049.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0      1 0.0ms
+                                                                                  lcd_rw      1 0.0ms
+                                                               $PACKER_GND_NET$legal$655      1 0.0ms
+                                                               $PACKER_GND_NET$legal$651      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.P[2]$legal$635      1 0.0ms
+        display.$lt$/mnt/c/Users/UOS/Documents/ece2_26_2_2/example/fpga_projects_hdl/LAB1/opensource_cli/integrated/src/lcd_modes.v:26$1155.P[4]$legal$617      1 0.0ms
+                                                               $PACKER_GND_NET$legal$571      1 0.0ms
+                                                               $PACKER_GND_NET$legal$539      1 0.0ms
+                                                         display.shown_mode[3]$legal$523      1 0.0ms
+                                                               $PACKER_GND_NET$legal$505      1 0.0ms
+                            display.$auto$alumacc.cc:512:replace_alu$1899.X[5]$legal$501      1 0.0ms
+                                                               $PACKER_GND_NET$legal$481      1 0.0ms
+                                                              display.index[4]$legal$469      1 0.0ms
+                                                              display.index[3]$legal$465      1 0.0ms
+                                                              display.index[1]$legal$457      1 0.0ms
+                                                       display.power_count[31]$legal$451      1 0.0ms
+                                                       display.power_count[30]$legal$447      1 0.0ms
+                                                       display.power_count[25]$legal$427      1 0.0ms
+                                                       display.power_count[22]$legal$415      1 0.0ms
+                                                       display.power_count[16]$legal$391      1 0.0ms
+                                                       display.power_count[15]$legal$387      1 0.0ms
+                                                       display.power_count[12]$legal$375      1 0.0ms
+                                                       display.power_count[10]$legal$367      1 0.0ms
+                                                        display.power_count[8]$legal$359      1 0.0ms
+                                                              button.count[25]$legal$301      1 0.0ms
+                                                              button.count[24]$legal$297      1 0.0ms
+                                                              button.count[23]$legal$293      1 0.0ms
+                                                              button.count[22]$legal$289      1 0.0ms
+                                                              button.count[18]$legal$273      1 0.0ms
+                                                              button.count[13]$legal$253      1 0.0ms
+                                                              button.count[11]$legal$245      1 0.0ms
+                                                              button.count[10]$legal$241      1 0.0ms
+                                                               button.count[8]$legal$233      1 0.0ms
+                                                               button.count[7]$legal$229      1 0.0ms
+                                                               button.count[4]$legal$217      1 0.0ms
+                                                               button.count[1]$legal$205      1 0.0ms
+                                                               $PACKER_GND_NET$legal$199      1 0.0ms
+                                                                       mode[3]$legal$175      1 0.0ms
+                                                               $PACKER_GND_NET$legal$163      1 0.0ms
+                                                               $PACKER_GND_NET$legal$161      1 0.0ms
+                                                               $PACKER_VCC_NET$legal$149      1 0.0ms
+                                                               $PACKER_VCC_NET$legal$147      1 0.0ms
+                                                               $PACKER_VCC_NET$legal$139      1 0.0ms
+                                                               $PACKER_VCC_NET$legal$137      1 0.0ms
+                                                               $PACKER_VCC_NET$legal$135      1 0.0ms
+                                                               $PACKER_GND_NET$legal$129      1 0.0ms
+                                                               $PACKER_GND_NET$legal$127      1 0.0ms
+                                                               $PACKER_GND_NET$legal$121      1 0.0ms
+                                                               $PACKER_GND_NET$legal$119      1 0.0ms
+                                                               $PACKER_GND_NET$legal$109      1 0.0ms
+                                                               $PACKER_GND_NET$legal$105      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$99      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$97      1 0.0ms
+                                                                $PACKER_GND_NET$legal$89      1 0.0ms
+                                                                $PACKER_GND_NET$legal$87      1 0.0ms
+                                                                $PACKER_VCC_NET$legal$79      1 0.0ms
+                                                                $PACKER_GND_NET$legal$75      1 0.0ms
+                                                                $PACKER_GND_NET$legal$71      1 0.0ms
+Info: Router2 time 10.32s
+Info: Routing $PACKER_VCC_NET connections...
+Info:     $PACKER_VCC_NET: 185/185 sinks bridged (0 left to main router; max BFS 31)
+Info: Routing $PACKER_GND_NET connections...
+Info:     $PACKER_GND_NET: 165/165 sinks bridged (0 left to main router; max BFS 169)
+Info: Running post-routing legalisation...
+
+Info: Critical path report for clock '$iopadmap$clk' (posedge -> posedge):
+Info: curr total
+Info:  0.1  0.1  Source display.$auto$ff.cc:337:slice$3976.Q
+Info:  0.5  0.6    Net display.index[0] budget 0.000000 ns (113,10) -> (112,13)
+Info:                Sink display.index[0]$LUT$544.A1
+Info:  0.1  0.8  Source display.index[0]$LUT$544.O6
+Info:  0.0  0.8    Net display.index[0]$legal$543 budget 66666.031250 ns (112,13) -> (112,13)
+Info:                Sink display.$auto$alumacc.cc:512:replace_alu$1905.genblk1.slice[0].genblk1.carry4.S0
+Info:  0.2  1.0  Source display.$auto$alumacc.cc:512:replace_alu$1905.genblk1.slice[0].genblk1.carry4.O0
+Info:  0.2  1.1    Net display.$auto$alumacc.cc:512:replace_alu$1905.Y[0] budget 0.000000 ns (112,13) -> (112,13)
+Info:                Sink display.$abc$12776$auto$blifparse.cc:557:parse_blif$13001.A2
+Info:  0.1  1.3  Source display.$abc$12776$auto$blifparse.cc:557:parse_blif$13001.O6
+Info:  1.0  2.3    Net display.$auto$maccmap.cc:240:synth$3825.A[3] budget 0.000000 ns (112,13) -> (112,20)
+Info:                Sink display.$auto$maccmap.cc:240:synth$3825.A[3]$LUT$588.A4
+Info:  0.1  2.4  Source display.$auto$maccmap.cc:240:synth$3825.A[3]$LUT$588.O6
+Info:  0.0  2.4    Net display.$auto$maccmap.cc:240:synth$3825.A[3]$legal$587 budget 66666.179688 ns (112,20) -> (112,20)
+Info:                Sink display.$auto$maccmap.cc:240:synth$3825.genblk1.slice[0].genblk1.carry4.S3
+Info:  0.4  2.8  Source display.$auto$maccmap.cc:240:synth$3825.genblk1.slice[0].genblk1.carry4.CO3
+Info:  0.1  2.9    Net display.$auto$maccmap.cc:240:synth$3825.CO[3] budget 66666.492188 ns (112,20) -> (112,19)
+Info:                Sink display.$auto$maccmap.cc:240:synth$3825.genblk1.slice[1].genblk1.carry4.CIN
+Info:  0.2  3.1  Source display.$auto$maccmap.cc:240:synth$3825.genblk1.slice[1].genblk1.carry4.O0
+Info:  1.2  4.3    Net display.$abc$12776$auto$blifparse.cc:557:parse_blif$12801.A[6] budget 66666.492188 ns (112,19) -> (103,21)
+Info:                Sink display.$abc$12776$auto$blifparse.cc:557:parse_blif$12813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux7.S0
+Info:  0.3  4.6  Source display.$abc$12776$auto$blifparse.cc:557:parse_blif$12813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux7.OUT
+Info:  0.0  4.6    Net display.$abc$12776$auto$blifparse.cc:557:parse_blif$12813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0 budget 66666.179688 ns (103,21) -> (103,21)
+Info:                Sink display.$abc$12776$auto$blifparse.cc:557:parse_blif$12813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux8.0
+Info:  0.1  4.7  Source display.$abc$12776$auto$blifparse.cc:557:parse_blif$12813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux8.OUT
+Info:  1.4  6.1    Net display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.A[1] budget 0.000000 ns (103,21) -> (112,15)
+Info:                Sink display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.A4
+Info:  0.1  6.3  Source display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.O6
+Info:  0.0  6.3    Net display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1 budget 66666.031250 ns (112,15) -> (112,15)
+Info:                Sink display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux7.1
+Info:  0.2  6.5  Source display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux7.OUT
+Info:  0.0  6.5    Net display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f1 budget 66666.031250 ns (112,15) -> (112,15)
+Info:                Sink display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux8.1
+Info:  0.1  6.5  Source display.$abc$12776$auto$blifparse.cc:557:parse_blif$12810.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux8.OUT
+Info:  0.5  7.1    Net display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.A[2] budget 0.000000 ns (112,15) -> (112,14)
+Info:                Sink display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.A3
+Info:  0.1  7.2  Source display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.O6
+Info:  0.0  7.2    Net display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0 budget 66666.179688 ns (112,14) -> (112,14)
+Info:                Sink display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux7.0
+Info:  0.2  7.4  Source display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux7.OUT
+Info:  0.0  7.4    Net display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.f0 budget 66666.179688 ns (112,14) -> (112,14)
+Info:                Sink display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux8.0
+Info:  0.1  7.5  Source display.$abc$12776$auto$blifparse.cc:557:parse_blif$12809.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mux8.OUT
+Info:  0.8  8.3    Net display.$procmux$1276.Y[5] budget 66666.492188 ns (112,14) -> (106,14)
+Info:                Sink display.$auto$ff.cc:337:slice$3995.D
+Info:  0.1  8.4  Setup display.$auto$ff.cc:337:slice$3995.D
+Info: 2.6 ns logic, 5.8 ns routing
+
+Info: Max frequency for clock '$iopadmap$clk': 118.74 MHz (PASS at 0.00 MHz)
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [999991552, 999991946) |* 
+Info: [999991946, 999992340) |**** 
+Info: [999992340, 999992734) |* 
+Info: [999992734, 999993128) |** 
+Info: [999993128, 999993522) | 
+Info: [999993522, 999993916) | 
+Info: [999993916, 999994310) | 
+Info: [999994310, 999994704) |********* 
+Info: [999994704, 999995098) |********** 
+Info: [999995098, 999995492) |**************** 
+Info: [999995492, 999995886) |************************************** 
+Info: [999995886, 999996280) |********** 
+Info: [999996280, 999996674) |****** 
+Info: [999996674, 999997068) |* 
+Info: [999997068, 999997462) |**** 
+Info: [999997462, 999997856) |************* 
+Info: [999997856, 999998250) |************ 
+Info: [999998250, 999998644) |******** 
+Info: [999998644, 999999038) |********** 
+Info: [999999038, 999999432) |******* 

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "commit": "b7c6c1d8c16270797abe140cc0c44c9b1a78c0d2",
+  "source_hashes_match": true,
+  "simulation": "LAB1_PASS lab1_integrated cases=2560",
+  "simulation_exit_code": 0,
+  "tool_tag": "v2.0.1",
+  "anonymous_download_sha256": {
+    "prepare_s75.py": "18e4b953d168753d0d3b8838d4503e9b2cfb8e9edb6050f7054b12c2b04b0025",
+    "xc7s75fgga484-1-package-pins.csv": "34f526ca240f522b9b971e470dd72f5884f7e311e18bc460a6f49431bf80675e"
+  }
+}

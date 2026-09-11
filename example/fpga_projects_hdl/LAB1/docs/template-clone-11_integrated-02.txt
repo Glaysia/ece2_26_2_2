@@ -1,0 +1,80 @@
+RUN C:\AMDDesignTools\2026.1\Vivado\bin\xvlog.bat --sv "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\logic_gate.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\half_adder.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\full_adder.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\adder_4bit.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\sub_4bit.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\compare_4.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\mux_4x1.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\demux_1x8.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\encoder8x3.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\decoder3x8.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\seg_decoder.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\button_onepulse.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\lcd_modes.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\lab1_integrated.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\tb\tb_lab1_integrated.sv"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/logic_gate.v" into library work
+INFO: [VRFC 10-311] analyzing module logic_gate
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/half_adder.v" into library work
+INFO: [VRFC 10-311] analyzing module half_adder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/full_adder.v" into library work
+INFO: [VRFC 10-311] analyzing module full_adder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/adder_4bit.v" into library work
+INFO: [VRFC 10-311] analyzing module adder_4bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/sub_4bit.v" into library work
+INFO: [VRFC 10-311] analyzing module sub_4bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/compare_4.v" into library work
+INFO: [VRFC 10-311] analyzing module compare_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/mux_4x1.v" into library work
+INFO: [VRFC 10-311] analyzing module mux_4x1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/demux_1x8.v" into library work
+INFO: [VRFC 10-311] analyzing module demux_1x8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/encoder8x3.v" into library work
+INFO: [VRFC 10-311] analyzing module encoder8x3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/decoder3x8.v" into library work
+INFO: [VRFC 10-311] analyzing module decoder3x8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/seg_decoder.v" into library work
+INFO: [VRFC 10-311] analyzing module seg_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/button_onepulse.v" into library work
+INFO: [VRFC 10-311] analyzing module button_onepulse
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/lcd_modes.v" into library work
+INFO: [VRFC 10-311] analyzing module lcd_modes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/lab1_integrated.v" into library work
+INFO: [VRFC 10-311] analyzing module lab1_integrated
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/tb/tb_lab1_integrated.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_lab1_integrated
+
+RUN C:\AMDDesignTools\2026.1\Vivado\bin\xelab.bat tb_lab1_integrated --debug typical --snapshot lab1_sim
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_lab1_integrated --debug typical --snapshot lab1_sim 
+Multi-threading is on. Using 6 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.button_onepulse(STABLE_CYCLES=4)
+Compiling module work.logic_gate
+Compiling module work.half_adder
+Compiling module work.full_adder
+Compiling module work.adder_4bit
+Compiling module work.sub_4bit
+Compiling module work.compare_4
+Compiling module work.mux_4x1
+Compiling module work.demux_1x8
+Compiling module work.encoder8x3
+Compiling module work.decoder3x8
+Compiling module work.seg_decoder
+Compiling module work.lcd_modes(POWER_WAIT=5)
+Compiling module work.lab1_integrated(DEBOUNCE_CYCLES=...
+Compiling module work.tb_lab1_integrated
+Built simulation snapshot lab1_sim
+
+RUN C:\AMDDesignTools\2026.1\Vivado\bin\xsim.bat lab1_sim --runall
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Thu Sep 10 11:15:14 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/lab1_sim/xsim_script.tcl
+# xsim {lab1_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+LAB1_PASS lab1_integrated cases=2560
+$finish called at time : 72430 ns : File "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/tb/tb_lab1_integrated.sv" Line 96
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Sep 10 11:15:19 2026...
+

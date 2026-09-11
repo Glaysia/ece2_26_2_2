@@ -1,0 +1,90 @@
+[
+  {
+    "education_number": 11,
+    "title": "업/다운 카운터",
+    "original_experiment": 16,
+    "path": "vivado_2026_1/01_counter",
+    "top": "counter4",
+    "status": "board-connection-draft",
+    "board_top": "lab2_counter",
+    "constraints": "constraints/lab2_counter.xdc",
+    "controls": "SW8(sw[0]): 0 증가/1 감소. 버튼 한 번당 한 단계. LED[3:0]에 값."
+  },
+  {
+    "education_number": 12,
+    "title": "클록 분주",
+    "original_experiment": 17,
+    "path": "vivado_2026_1/02_clock_divider",
+    "top": "clock_divider",
+    "status": "board-connection-draft",
+    "board_top": "lab2_clock_divider",
+    "constraints": "constraints/lab2_clock_divider.xdc",
+    "controls": "1 kHz 주 클록에서 LED[0:2]는 각각 /2=500 Hz, /10=100 Hz, /50=20 Hz. LED[3]은 /1000=1 Hz 관찰 기준. LED[4]의 tick은 1 ms 펄스이므로 파형에서 확인."
+  },
+  {
+    "education_number": 13,
+    "title": "레지스터: 데이터 저장과 이동",
+    "original_experiment": 26,
+    "path": "vivado_2026_1/03_register",
+    "top": "register_pair",
+    "status": "board-connection-draft",
+    "board_top": "lab2_register",
+    "constraints": "constraints/lab2_register.xdc",
+    "controls": "SW1..4(sw[7:4]): 데이터. SW8(sw[0]): load, SW7(sw[1]): transfer 허용. 버튼으로 실행. LED[7:4]=stored, LED[3:0]=value."
+  },
+  {
+    "education_number": 14,
+    "title": "시프트 레지스터",
+    "original_experiment": 27,
+    "path": "vivado_2026_1/04_shift_register",
+    "top": "shift_register4",
+    "status": "board-connection-draft",
+    "board_top": "lab2_shift_register",
+    "constraints": "constraints/lab2_shift_register.xdc",
+    "controls": "SW1(sw[7]): 직렬 입력. 버튼 한 번당 bit 3에서 bit 0 방향으로 한 단계 이동. LED[3:0]에 값."
+  },
+  {
+    "education_number": 15,
+    "title": "PISO",
+    "original_experiment": 28,
+    "path": "vivado_2026_1/05_piso",
+    "top": "piso4",
+    "status": "board-connection-draft",
+    "board_top": "lab2_piso",
+    "constraints": "constraints/lab2_piso.xdc",
+    "controls": "SW1..4(sw[7:4]): 병렬 데이터. SW8(sw[0])=1에서 버튼: load, 0에서 버튼: shift. LED[7:4]=저장값, LED[0]=직렬 출력."
+  },
+  {
+    "education_number": 16,
+    "title": "Moore 상태 머신",
+    "original_experiment": 29,
+    "path": "vivado_2026_1/06_moore",
+    "top": "moore_cycle",
+    "status": "board-connection-draft",
+    "board_top": "lab2_moore",
+    "constraints": "constraints/lab2_moore.xdc",
+    "controls": "SW1(sw[7]): advance. 1에서 버튼을 누르면 00→01→10→00. SW1만 바꾸면 상태 출력은 유지. LED[1:0]=상태."
+  },
+  {
+    "education_number": 17,
+    "title": "Mealy 상태 머신",
+    "original_experiment": 30,
+    "path": "vivado_2026_1/07_mealy",
+    "top": "mealy_toggle",
+    "status": "board-connection-draft",
+    "board_top": "lab2_mealy",
+    "constraints": "constraints/lab2_mealy.xdc",
+    "controls": "SW1(sw[7]): 입력. 1에서 버튼을 누르면 상태 전환. 버튼 없이 SW1을 바꿔도 동기화 지연 후 출력 변화. LED[2]=상태, LED[1:0]=출력."
+  },
+  {
+    "education_number": 18,
+    "title": "7세그먼트 자리 스캔",
+    "original_experiment": 12,
+    "path": "vivado_2026_1/08_segment_scan",
+    "top": "segment_scan8",
+    "status": "board-connection-draft",
+    "board_top": "lab2_segment_scan",
+    "constraints": "constraints/lab2_segment_scan.xdc",
+    "controls": "SW1..4(sw[7:4]): 첫 자리 숫자. COM[7]부터 입력값,1,2,3,4,5,6,7 순서. 1 kHz에서 자리당 62.5 Hz, blanking 포함."
+  }
+]

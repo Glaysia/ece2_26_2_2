@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "part": "xc7s75fgga484-1",
+  "idcode": "0x037c8093",
+  "platform": "WSL Ubuntu-26.04 Linux x86-64",
+  "flow": "Icarus -> Yosys -> nextpnr-xilinx -> fasm2frames -> xc7frames2bit -> bitread",
+  "yosys": "0.63+173 (66306a8ca)",
+  "nextpnr": "68aeeb3",
+  "configuration_frames": 9104,
+  "bitread_frame_checksum_check": true,
+  "database": {
+    "part": "xc7s75fgga484-1",
+    "database_commit": "a3cc0736a90c697b7d4c40319f847a5b6988df62",
+    "package_pins": 338,
+    "package_pins_sha256": "34f526ca240f522b9b971e470dd72f5884f7e311e18bc460a6f49431bf80675e",
+    "chipdb_sha256": "d2fa710e4130fc6de89115efaf028eb1a29519f848503f1a2da86bb655b18605",
+    "tilegrid_sha256": "57424f62beae07818b5024d0e1c60df77927a1e101b6de511abcbbacd6539d7a",
+    "part_yaml_sha256": "ded7a32b276d89e5d0d15f1376d839cee4727a845e0476de71c037bf0cee0aac",
+    "exporter_sha256": "acc19ef0e44f0640c2efad5aa43bb575518110cd261ad5e302fc2fb2df1502dd",
+    "db_root": "/home/uos/fpga-cli/lab1-s75/prjxray-db/spartan7",
+    "chipdb": "/home/uos/fpga-cli/lab1-s75/xc7s75fgga484-1.bin"
+  },
+  "bitstream": {
+    "file": "lab2_integrated.bit",
+    "bytes": 3686926,
+    "sha256": "820224a8b513782d64607b53ae2ced58ae25c51f563fd12d3bd560a979e3835e"
+  },
+  "input_sha256": {
+    "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+    "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+    "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+    "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+    "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+    "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+    "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+    "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+    "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+    "src/button_onepulse.v": "1c255068f06c91c722144411ef362503cad8de5184a0494b858e72410c4f155b",
+    "src/lcd_lab2_modes.v": "041115a6ecb765a8d3cd96115209b538485d073235fba64dbc4e6f464ad1bd59",
+    "src/lab2_integrated.v": "194bebed29cd3aa13e2f6c30dcff46dedebef571c15436a0501edfedd56b838a",
+    "sim/tb_lab2_integrated.sv": "42671df2a8fac680939236a87025b42cd96ce9da96cd73d38f77d4df280db946",
+    "constraints/lab2_integrated.xdc": "282389e1d0c33cd9a2f9ca2fedf969647ef419203cb04838e89b2cef3188d835",
+    "synth.ys": "bcf4cf23f15619204739fad728e90e094d90c34466061fe814933646d086fae1",
+    "tools/build_cli.sh": "4ba8cbc0a78966b8a418b51bf6b80b84311faf1c4dcec869d1b75903caf3e997"
+  },
+  "package_pin_coverage": {
+    "mapped": 47,
+    "all_in_338_pin_table": true
+  },
+  "constraint_note": "nextpnr ignores set_false_path; that asynchronous-input timing exception applies only to Vivado. This build does not certify CDC or board timing.",
+  "physical_board_tested": false,
+  "macos_execution_tested": false,
+  "vivado_used_for_this_bitstream": false
+}

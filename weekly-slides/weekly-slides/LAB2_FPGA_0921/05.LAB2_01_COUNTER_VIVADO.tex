@@ -1,0 +1,456 @@
+% !TEX program = xelatex
+\input{shared/lab2_preamble.tex}
+\renewcommand{\legacySource}[1]{}
+\newcommand{\terminalbox}[1]{\par\vspace{0.15cm}{\setlength{\fboxsep}{7pt}\colorbox{black}{\parbox{\dimexpr\textwidth-14pt\relax}{\color{white}\ttfamily\fontsize{7}{9}\selectfont #1}}}\par\vspace{0.15cm}}
+\hypersetup{pdftitle={LAB2 카운터 · VS Code → Vivado}}
+\begin{document}
+\renewcommand{\small}{\fontsize{9}{11}\selectfont}
+\begin{frame}{LAB 2 · 카운터: VS Code → Vivado}
+\small
+작성일 2026. 09. 11.\par\vspace{0.26cm}소스 작성 → 시뮬레이션 → 비트스트림 생성\par\vspace{0.26cm}첫 카운터 · Vivado 2026.1 실습\par
+\end{frame}
+
+\begin{frame}[label=lab2-contents]{목차}
+\small
+\navlink{setup}{프로젝트 시작}\par\vspace{0.4cm}\navlink{code}{RTL·테스트벤치·XDC 작성}\par\vspace{0.4cm}\navlink{simulation}{실행과 파형 확인}\par\vspace{0.4cm}\navlink{implementation}{Vivado 구현과 bit 생성}\par\vspace{0.4cm}\navlink{reports}{실험 전 레포트}
+\par\vspace{0.4cm}\navlink{after-report}{실험 후 레포트}\end{frame}
+
+\begin{frame}[label=setup]{v2.0.0 템플릿을 새 이름으로 clone}
+\small
+Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.0 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab2\_01\_counter\\cd lab2\_01\_counter\\git switch -c main\\code LAB1.code-workspace}
+\end{frame}
+
+\begin{frame}{File → New Window}
+\small
+\par{\centering\includegraphics[width=\textwidth,height=1.4cm,keepaspectratio,trim=27.75bp 522bp 652.5bp 21bp,clip]{../LAB1_FPGA_0914/assets/modern-01/01-file-menu.png}\par}\vspace{0.18cm}Ctrl+Shift+N 또는 File → New Window. 새 창을 연다.\par\par{\centering\includegraphics[width=\textwidth,height=1.4cm,keepaspectratio,trim=27.75bp 439.5bp 652.5bp 105bp,clip]{../LAB1_FPGA_0914/assets/modern-01/01-file-menu.png}\par}\vspace{0.18cm}File → Open Workspace from File...을 누른다.\par
+\end{frame}
+
+\begin{frame}{workspace와 추천 확장}
+\small
+\begin{enumerate}
+\item lab2\_01\_counter 폴더에서 LAB1.code-workspace 선택 → Open.
+\item Explorer에 PROJECT 하나와 src·sim·constraints·tools가 보이는지 확인.
+\item Extensions → @recommended를 검색.
+\item slang·VaporView·vscode-pdf의 Install을 누른다.
+\item Python과 Icarus 실행 파일은 별도로 설치되어 있어야 한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{시뮬레이션 도구 확인}
+\small
+\begin{enumerate}
+\item Terminal → Run Task... → 01 Check tools.
+\item Git·Python·iverilog·vvp의 버전이 출력되는지 확인한다.
+\item 도구를 찾지 못하면 설치 경로를 PATH에 추가하고 VS Code를 다시 연다.
+\end{enumerate}\terminalbox{git --version\\python --version\\iverilog -V\\vvp -V}
+\end{frame}
+
+\begin{frame}{빈 파일에서 시작}
+\small
+\begin{enumerate}
+\item src/design.v를 우클릭 → Rename. 첫 RTL 파일명으로 바꾼다.
+\item 추가 RTL은 src를 우클릭 → New File로 만든다.
+\item sim/tb\_design.v를 이번 TB 파일명으로 바꾼다.
+\item constraints/pins.xdc를 이번 XDC 파일명으로 바꾼다.
+\item 뒤의 코드 화면을 보며 작성하고 File → Save All.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{이번 프로젝트에 작성할 파일}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{ll}
+역할 & 경로\\\hline
+src & src/counter4.v\\
+src & src/input\_frontend.v\\
+src & src/lab2\_counter.v\\
+sim & sim/tb\_counter4.sv\\
+constraints & constraints/lab2\_counter.xdc\\
+\end{tabular}\end{center}
+\end{frame}
+
+\begin{frame}{simulation.json의 세 항목}
+\small
+sources: 앞 표의 src/ 파일 경로를 배열로 넣는다.\par\vspace{0.26cm}testbench: sim/tb\_counter4.sv\par\vspace{0.26cm}simulation\_top: tb\_counter4\par\vspace{0.26cm}큰따옴표·대괄호·쉼표를 확인한다. module 이름에는 파일 확장자를 붙이지 않는다.\par
+\end{frame}
+
+\begin{frame}{simulation.json · 1–9행}
+\small
+simulation.json를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/e3211debf9bde4bf-001-009.png}\par
+\end{frame}
+
+\begin{frame}{새 VS Code 창}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/01-new-window.png}\par\vspace{0.15cm}File → New Window 또는 Ctrl+Shift+N으로 새 창을 연다.\par
+\end{frame}
+
+\begin{frame}{워크스페이스 열기}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/02-file-menu.png}\par\vspace{0.15cm}File → Open Workspace from File...에서 프로젝트의 LAB1.code-workspace를 고른다.\par
+\end{frame}
+
+\begin{frame}{프로젝트 폴더 확인}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/03-workspace.png}\par\vspace{0.15cm}Explorer에서 src·sim·constraints 폴더를 확인한다. 아래 캡처는 완성 예시 폴더에서 촬영했다.\par
+\end{frame}
+
+\begin{frame}[label=code]{카운터의 동작}
+\small
+rst=1이면 0으로 초기화한다. enable=0이면 현재 값을 유지한다.\par\vspace{0.26cm}enable=1에서 down=0이면 증가, down=1이면 감소한다.\par\vspace{0.26cm}4비트 값이므로 15 다음은 0, 0에서 감소하면 15가 된다.\par
+\end{frame}
+
+\begin{frame}{counter4.v · 1–13행}
+\small
+src/counter4.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/e37b9015f9732666-001-013.png}\par
+\end{frame}
+
+\begin{frame}{input\_frontend.v · 1–16행}
+\small
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-001-016.png}\par
+\end{frame}
+
+\begin{frame}{input\_frontend.v · 17–32행}
+\small
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-017-032.png}\par
+\end{frame}
+
+\begin{frame}{input\_frontend.v · 33–46행}
+\small
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-033-046.png}\par
+\end{frame}
+
+\begin{frame}{lab2\_counter.v · 1–16행}
+\small
+src/lab2\_counter.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/f4f0e5da3ce3c432-001-016.png}\par
+\end{frame}
+
+\begin{frame}{tb\_counter4.sv · 1–16행}
+\small
+sim/tb\_counter4.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/439c4e2bf639d1e6-001-016.png}\par
+\end{frame}
+
+\begin{frame}{tb\_counter4.sv · 17–32행}
+\small
+sim/tb\_counter4.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/439c4e2bf639d1e6-017-032.png}\par
+\end{frame}
+
+\begin{frame}{tb\_counter4.sv · 33–43행}
+\small
+sim/tb\_counter4.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/439c4e2bf639d1e6-033-043.png}\par
+\end{frame}
+
+\begin{frame}{XDC 작성과 검증 범위}
+\small
+다음 세 화면의 XDC를 constraints/lab2\_counter.xdc에 작성한다.\par\vspace{0.26cm}포트 이름을 lab2\_counter.v와 대조한다.\par\vspace{0.26cm}Icarus는 XDC를 읽지 않는다. 이번 PASS는 counter4 코어의 기능 검사이며 보드 배선·핀·타이밍 검증은 별도 단계다.\par
+\end{frame}
+
+\begin{frame}{lab2\_counter.xdc · 1–16행}
+\small
+constraints/lab2\_counter.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c409037fe63f5324-001-016.png}\par
+\end{frame}
+
+\begin{frame}{lab2\_counter.xdc · 17–32행}
+\small
+constraints/lab2\_counter.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c409037fe63f5324-017-032.png}\par
+\end{frame}
+
+\begin{frame}{lab2\_counter.xdc · 33–42행}
+\small
+constraints/lab2\_counter.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c409037fe63f5324-033-042.png}\par
+\end{frame}
+
+\begin{frame}[label=simulation]{VS Code에서 실행}
+\small
+\begin{enumerate}
+\item File → Save All.
+\item 상단 Terminal → Run Task...를 누른다. 메뉴가 접혀 있으면 ...를 누른다.
+\item 01 Check tools로 도구 경로를 확인한 뒤 02 Simulate를 선택한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Run Task 메뉴}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/04-run-task-menu.png}\par\vspace{0.15cm}Terminal → Run Task...를 누른다.\par
+\end{frame}
+
+\begin{frame}{시뮬레이션 작업 선택}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/05-task-list.png}\par\vspace{0.15cm}01 Check tools: 설치 확인. 02 Simulate: 컴파일과 테스트벤치 실행.\par
+\end{frame}
+
+\begin{frame}{Python 실행 오류를 만났다면}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/06-python-alias-error.png}\par\vspace{0.15cm}9009와 WindowsApps 경로가 나오면 Python 실행 별칭이 선택된 것이다.\par
+\end{frame}
+
+\begin{frame}{설치된 Python 경로 지정}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/07-python-path-fix.png}\par\vspace{0.15cm}LAB1.code-workspace의 Windows command를 자신의 실제 python.exe 경로로 바꾸고 저장한다. 캡처의 UOS 경로는 이 PC의 예시다.\par
+\end{frame}
+
+\begin{frame}{실행 경로를 수정할 때}
+\small
+\begin{enumerate}
+\item Ctrl+P → LAB1.code-workspace를 연다.
+\item tasks 안의 windows → command 항목을 찾는다.
+\item 세 작업에 있는 Python 실행 경로를 자신의 설치 경로로 수정한다.
+\item JSON 경로 구분자는 /를 사용한다. Ctrl+S로 저장한다.
+\item Terminal → Run Task... → 02 Simulate를 다시 실행한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{실제 실행 결과}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/08-counter-pass.png}\par\vspace{0.15cm}LAB2\_PASS counter4 checks=36. 종료 시각 356000 ps = 356 ns. 2026-09-11 GUI 실행에서 확인했다.\par
+\end{frame}
+
+\begin{frame}{PASS가 확인한 내용}
+\small
+리셋, 증가와 15→0 순환, 감소와 0→15 순환, enable=0 유지, 리셋 우선순위를 총 36회 검사한다.\par\vspace{0.26cm}이번 테스트벤치의 DUT는 counter4이다. 입력 동기화·디바운스와 실제 핀 동작까지 통과했다는 의미는 아니다.\par\vspace{0.26cm}편집기의 경고 4개는 남아 있다. 경고 0개로 기록하지 않는다.\par
+\end{frame}
+
+\begin{frame}{VaporView가 비활성화되어 있다면}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/10-enable-waveform.png}\par\vspace{0.15cm}Extensions에서 VaporView를 찾고 Enable 옆 화살표 → Enable (Workspace)를 선택한다.\par
+\end{frame}
+
+\begin{frame}{VCD를 파형으로 열기}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/11-vaporview-select.png}\par\vspace{0.15cm}build/sim/wave.vcd를 연다. 텍스트로 보이면 탭 우클릭 → Reopen Editor With... → VaporView.\par
+\end{frame}
+
+\begin{frame}{관찰할 신호 추가}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/12-netlist-signals.png}\par\vspace{0.15cm}Netlist View에서 tb\_counter4를 펼친다. clk·rst·enable·down·value[3:0]를 더블클릭해 추가한다.\par
+\end{frame}
+
+\begin{frame}{전체 파형 확인}
+\small
+\includegraphics[width=\textwidth,height=5.0cm,keepaspectratio]{assets/vscode-0911/14-counter-wave-ns.png}\par\vspace{0.15cm}Zoom Fit으로 전체 시간을 맞춘다. 신호 이름 열을 넓히고 하단 시간 단위를 ns로 바꾼다.\par
+\end{frame}
+
+\begin{frame}{파형을 읽는 순서}
+\small
+\begin{enumerate}
+\item clk 상승 에지 직후 value가 바뀌는지 본다.
+\item down=0의 증가 구간과 down=1의 감소 구간을 비교한다.
+\item enable=0 구간에서 value가 유지되는지 확대한다.
+\item 마지막 rst=1 구간과 356 ns 종료를 확대해 확인한다.
+\item 신호 이름·시간축·입력·출력이 함께 보이게 캡처한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[label=reports]{실험 전 레포트}
+\small
+\begin{enumerate}
+\item RTL과 테스트벤치가 맡은 역할을 설명한다.
+\item 초기화·증가·감소·순환·유지의 예상 결과를 표로 적는다.
+\item 자신이 실행한 PASS 로그와 파형을 넣고 각 구간을 설명한다.
+\item Python 경로 등 자신이 고친 설정과 발생한 오류를 적는다.
+\item XDC는 작성했지만 이번 기능 시뮬레이션에 사용되지 않았음을 구분한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[label=implementation]{Vivado에서 이어서 구현}
+\small
+\begin{enumerate}
+\item VS Code에서 작성한 RTL·TB·XDC를 모두 저장한다.
+\item Vivado 2026.1을 실행한다.
+\item 새 RTL 프로젝트에 작성한 파일을 등록한다.
+\item 같은 테스트벤치로 시뮬레이션한 뒤 bit를 만든다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{New Project}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=30bp 69bp 379.5bp 78.75bp,clip]{assets/vivado-01-0911/01-start.png}\par\vspace{0.18cm}Quick Start → New Project를 누른다.\par
+\end{frame}
+
+\begin{frame}{프로젝트 이름과 위치}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=172.5bp 352.5bp 173.25bp 243.75bp,clip]{assets/vivado-01-0911/02-project-name.png}\par\vspace{0.18cm}이름은 lab2\_counter. 자신의 실습 폴더 아래 vivado 폴더를 지정한다. Create project subdirectory 해제 → Next.\par
+\end{frame}
+
+\begin{frame}{RTL Project 선택}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=174.75bp 382.5bp 173.25bp 244.5bp,clip]{assets/vivado-01-0911/03-project-type.png}\par\vspace{0.18cm}RTL Project와 Do not specify sources at this time을 선택한 채 Next. 파일은 프로젝트 생성 후 직접 등록한다.\par
+\end{frame}
+
+\begin{frame}{정확한 FPGA 부품 선택}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=177bp 312bp 177bp 247.5bp,clip]{assets/vivado-01-0911/04-part.png}\par\vspace{0.18cm}Parts 검색란에 xc7s75fgga484-1 입력 → 정확히 -1로 끝나는 행 선택 → Next. -1IL·-1Q와 구분한다.\par
+\end{frame}
+
+\begin{frame}{생성 전 마지막 확인}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=175.5bp 390.75bp 364.5bp 178.5bp,clip]{assets/vivado-01-0911/05-summary.png}\par\vspace{0.18cm}Spartan-7, fgga484, Speed Grade -1을 확인하고 Finish.\par
+\end{frame}
+
+\begin{frame}{Add Sources}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=0bp 391.5bp 529.5bp 75bp,clip]{assets/vivado-01-0911/06-empty-project.png}\par\vspace{0.18cm}왼쪽 Project Manager → Add Sources를 누른다. 아래 화면은 파일 등록을 마친 예시다.\par
+\end{frame}
+
+\begin{frame}{RTL은 Design Sources}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=261.75bp 357.75bp 439.5bp 273.75bp,clip]{assets/vivado-01-0911/07-design-category.png}\par\vspace{0.18cm}Add or create design sources 선택 → Next.\par
+\end{frame}
+
+\begin{frame}{Add Files 선택}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=261.75bp 274.5bp 263.25bp 270bp,clip]{assets/vivado-01-0911/08-add-files.png}\par\vspace{0.18cm}Add Files를 누르고 VS Code 프로젝트의 src 폴더로 이동한다.\par
+\end{frame}
+
+\begin{frame}{RTL 세 파일 선택}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=51bp 84bp 49.5bp 148.5bp,clip]{assets/vivado-01-0911/09-rtl-files.png}\par\vspace{0.18cm}counter4.v·input\_frontend.v·lab2\_counter.v를 함께 선택하고 OK.\par
+\end{frame}
+
+\begin{frame}{원본 RTL을 참조하도록 등록}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=261.75bp 207.75bp 263.25bp 271.5bp,clip]{assets/vivado-01-0911/10-rtl-import.png}\par\vspace{0.18cm}세 파일 이름 확인 → Copy sources into project는 해제 → Finish. 이후 VS Code 수정 내용은 저장 후 Vivado에 반영한다.\par
+\end{frame}
+
+\begin{frame}{TB는 Simulation Sources}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=261.75bp 357.75bp 439.5bp 273.75bp,clip]{assets/vivado-01-0911/11-sim-category.png}\par\vspace{0.18cm}Add Sources → Add or create simulation sources → Next → Add Files.\par
+\end{frame}
+
+\begin{frame}{테스트벤치 등록}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=261.75bp 200.25bp 263.25bp 273.75bp,clip]{assets/vivado-01-0911/12-tb-import.png}\par\vspace{0.18cm}sim/tb\_counter4.sv 등록 → Include all design sources for simulation 유지 → Finish.\par
+\end{frame}
+
+\begin{frame}{XDC는 Constraints}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=261.75bp 357.75bp 439.5bp 273.75bp,clip]{assets/vivado-01-0911/13-xdc-category.png}\par\vspace{0.18cm}Add Sources → Add or create constraints → Next → Add Files.\par
+\end{frame}
+
+\begin{frame}{핀 제약 파일 등록}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=261.75bp 207bp 263.25bp 273bp,clip]{assets/vivado-01-0911/14-xdc-import.png}\par\vspace{0.18cm}constraints/lab2\_counter.xdc를 등록한다. Copy constraints files into project 해제 → Finish.\par
+\end{frame}
+
+\begin{frame}{시뮬레이션 최상위 지정}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=198.75bp 162.75bp 522bp 210bp,clip]{assets/vivado-01-0911/15-sim-set-top.png}\par\vspace{0.18cm}Simulation Sources → sim\_1 → tb\_counter4 우클릭 → Set as Top. 이미 굵은 이름이면 지정된 상태이며 메뉴가 비활성화된다.\par
+\end{frame}
+
+\begin{frame}{두 최상위 모듈 구분}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=198.75bp 207.75bp 0bp 111bp,clip]{assets/vivado-01-0911/16-tops.png}\par\vspace{0.18cm}Simulation Sources의 굵은 이름은 tb\_counter4. 오른쪽 Project Summary의 Top module name은 lab2\_counter.\par
+\end{frame}
+
+\begin{frame}{Behavioral Simulation 실행}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=0bp 207.75bp 529.5bp 210bp,clip]{assets/vivado-01-0911/17-run-behavioral.png}\par\vspace{0.18cm}왼쪽 Run Simulation → Run Behavioral Simulation을 누른다.\par
+\end{frame}
+
+\begin{frame}{36개 검사 완료}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=198.75bp 0bp 0bp 108.75bp,clip]{assets/vivado-01-0911/18-sim-finish.png}\par\vspace{0.18cm}checks=36, Sim Time=356 ns. VS Code 실행 결과와 비교한다. \$finish 위치에서 멈추는 것은 정상이다.\par
+\end{frame}
+
+\begin{frame}{전체 파형 보기}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=232.5bp 350.25bp 0bp 111bp,clip]{assets/vivado-01-0911/19-wave-fit.png}\par\vspace{0.18cm}파형 탭을 선택하고 우상단 사각형으로 확대한다. Zoom Fit을 눌러 0\textasciitilde{}356 ns 전체 구간을 확인한다.\par
+\end{frame}
+
+\begin{frame}{파형과 시뮬레이션 로그}
+\small
+GUI 실행 로그에도 LAB2\_PASS counter4 checks=36과 356 ns 종료가 남는다.\par\vspace{0.26cm}value는 16진수로 표시된다. a\textasciitilde{}f는 10\textasciitilde{}15다. 증가·감소·유지·초기화 구간을 VS Code 파형과 대조한다.\par\vspace{0.26cm}코어 테스트벤치의 통과와 실제 보드 버튼·LED 동작 확인은 별개다.\par
+\end{frame}
+
+\begin{frame}{Generate Bitstream}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=0bp 18.75bp 914.25bp 457.5bp,clip]{assets/vivado-01-0911/06-empty-project.png}\par\vspace{0.18cm}왼쪽 Generate Bitstream을 누른다. 합성·구현 실행 여부를 물으면 Yes. Launch runs on local host 선택 → OK.\par
+\end{frame}
+
+\begin{frame}{합성 → 구현 → bit 생성}
+\small
+\begin{enumerate}
+\item 합성은 RTL을 FPGA 논리 소자로 변환한다.
+\item 구현은 소자를 배치하고 신호를 배선한다.
+\item 마지막으로 FPGA에 기록할 .bit 파일을 생성한다.
+\item 우상단 진행 상태와 하단 Design Runs를 확인하며 기다린다.
+\item 실패하면 Messages의 첫 Error를 확인한다. 완료 전 같은 작업을 다시 실행하지 않는다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{비트스트림 생성 완료}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=200.25bp 74.25bp 0bp 501bp,clip]{assets/vivado-01-0911/23-bit-complete.png}\par\vspace{0.18cm}Design Runs의 impl\_1 상태가 write\_bitstream Complete!인지 확인한다. 이번 GUI 실행은 2026-09-11에 완료했다.\par
+\end{frame}
+
+\begin{frame}{생성된 파일 찾기}
+\small
+프로젝트 폴더 → lab2\_counter.runs → impl\_1 → lab2\_counter.bit\par\vspace{0.26cm}이 파일이 FPGA에 기록할 비트스트림이다. .xpr는 Vivado 프로젝트 설정 파일이다.\par\vspace{0.26cm}파일 탐색기에서 수정 시각을 확인한다. 소스를 수정했다면 합성·구현·bit 생성까지 다시 실행해야 한다.\par
+\end{frame}
+
+\begin{frame}{이번 구현의 경고 해석}
+\small
+상위 LED 4개는 코드에서 0으로 고정하므로 상수 출력 경고가 발생한다.\par\vspace{0.26cm}TIMING-18 경고는 외부 입출력 지연 제약이 없는 항목이다. 버튼은 비동기 입력이고 LED는 외부 클록으로 샘플링되는 인터페이스가 아니다.\par\vspace{0.26cm}1 kHz 클록의 내부 경로 타이밍과 DRC를 확인한다. 이 결과를 모든 외부 인터페이스의 타이밍 검증 완료로 해석하지 않는다.\par
+\end{frame}
+
+\begin{frame}{구현 후 타이밍 확인}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=202.5bp 23.25bp 0bp 472.5bp,clip]{assets/vivado-01-0911/24-timing.png}\par\vspace{0.18cm}Open Implemented Design → Timing. Setup·Hold의 Failing Endpoints가 0인지 확인한다. 현재 WHS는 0.122 ns다.\par
+\end{frame}
+
+\begin{frame}{DRC 결과 읽기}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=202.5bp 23.25bp 0bp 472.5bp,clip]{assets/vivado-01-0911/25-drc.png}\par\vspace{0.18cm}DRC 탭을 연다. 이번 결과는 오류 0개, CFGBVS-1 경고 1개다. 구성 뱅크 전압 속성 미지정 경고이며 bit 생성은 완료됐다.\par
+\end{frame}
+
+\begin{frame}{CFGBVS 경고를 수정하려면}
+\small
+CFGBVS와 CONFIG\_VOLTAGE는 구성 뱅크의 실제 보드 배선·전압에 맞춰 지정하는 속성이다.\par\vspace{0.26cm}일반 I/O의 LVCMOS33 설정만 보고 구성 뱅크 전압도 같다고 추정하지 않는다. 보드 회로도에서 확인한 뒤 XDC에 반영한다.\par\vspace{0.26cm}이번 제작 검증에서는 이 속성을 임의로 추가하지 않았다. 레포트에는 남은 경고와 확인 범위를 함께 적는다.\par
+\end{frame}
+
+\begin{frame}{LED 핀 확인}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=201bp 305.25bp 303bp 111bp,clip]{assets/vivado-01-0911/26-io-ports.png}\par\vspace{0.18cm}Window → I/O Ports → 패널 확대 → Expand All. led[0..7]의 Package Pin과 LVCMOS33을 XDC와 대조한다.\par
+\end{frame}
+
+\begin{frame}{스위치·버튼·클록 핀 확인}
+\small
+\includegraphics[width=\textwidth,height=4.9cm,keepaspectratio,trim=201bp 32.25bp 303bp 397.5bp,clip]{assets/vivado-01-0911/26-io-ports.png}\par\vspace{0.18cm}sw[0]=U4, button=N8, clk=B6, rst=K4. sw[0]은 보드 DIPSW8에 대응한다. 클록은 1 kHz로 설정한다.\par
+\end{frame}
+
+\begin{frame}{보드에서 실행하는 순서}
+\small
+\begin{enumerate}
+\item Combo II-DLD S75의 전원·JTAG 연결을 확인하고 메인 클록을 1 kHz로 맞춘다.
+\item Vivado 왼쪽 Open Hardware Manager를 누른다.
+\item Open Target → Auto Connect를 선택한다.
+\item 검색된 xc7s75 장치를 우클릭 → Program Device.
+\item Bitstream file에서 lab2\_counter.bit 선택 → Program.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{기록 후 동작 확인}
+\small
+\begin{enumerate}
+\item 리셋 입력(K4)을 활성화해 하위 LED 4개가 0인지 확인한다.
+\item 방향 입력 sw[0](DIPSW8)을 0으로 두고 N8 버튼을 눌렀다 놓는다. 한 번에 1씩 증가해야 한다.
+\item 15에서 한 번 더 누르면 0으로 순환하는지 본다.
+\item sw[0]=1로 바꾸고 버튼을 눌러 감소와 0→15 순환을 확인한다.
+\item 버튼을 길게 누르면 연속 증가하지 않고, 놓았다 다시 눌러야 다음 값으로 바뀌는지 확인한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[label=after-report]{실험 후 레포트}
+\small
+\begin{enumerate}
+\item Vivado의 소스 계층·시뮬레이션 PASS·파형을 넣고 VS Code 결과와 비교한다.
+\item 사용한 부품·핀·1 kHz 클록 제약과 합성·구현 결과를 기록한다.
+\item write\_bitstream Complete 화면, 생성 파일, 남은 경고와 해석을 첨부한다.
+\item 실제 보드의 초기화·증가·감소·순환 동작을 사진과 영상으로 남긴다.
+\item 자신의 GitHub 저장소에 소스·레포트·사진·영상 링크를 올리고 README에서 연결한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{제작 검증 범위}
+\small
+완료: VS Code와 Vivado에서 동일 코어 테스트벤치 36개 검사 통과, 356 ns 종료.\par\vspace{0.26cm}완료: xc7s75fgga484-1 합성·배치·배선·비트스트림 생성, 내부 타이밍 및 핀 배치 확인.\par\vspace{0.26cm}이 자료의 보드 기록·사진·영상 단계는 학생 실험 절차다. 실제 장치 기록과 물리 동작은 이번 제작 검증에 포함되지 않았다.\par
+\end{frame}
+\end{document}

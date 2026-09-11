@@ -1,0 +1,192 @@
+{
+  "date": "2026-09-10",
+  "pdf_count": 25,
+  "page_count": 1522,
+  "files": [
+    {
+      "file": "04.LAB1_00_CONTENTS.pdf",
+      "pages": 10,
+      "sha256": "dc22aa8021af90eccfde4ef0bb109fff769d3a8056b9b7163b1e65258d4bce8f",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_01_LOGIC_GATES_VIVADO.pdf",
+      "pages": 68,
+      "sha256": "ff7b4113f02b2c7d6e6fd51cee9b0091c51fecff016289a70630e58ecc2665d9",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_02_FULL_ADDER_VIVADO.pdf",
+      "pages": 48,
+      "sha256": "1cf92d79fca854d3a3e83bb501db2032c86688d13c9f118c50ed0e1d26bbab8b",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_03_ADDER4_VIVADO.pdf",
+      "pages": 50,
+      "sha256": "c6016b69faac98b3c38dc3a889e8d129c1fbeb4d1d9e00ad0c92a820ecdbb0f5",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_04_SUBTRACTOR4_VIVADO.pdf",
+      "pages": 50,
+      "sha256": "f5da55fd4a30fb482242908e7974a140c9f537d954dccdfaf433a86a066bcb8c",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_05_COMPARATOR4_VIVADO.pdf",
+      "pages": 49,
+      "sha256": "9cbc843ce371e6b8069bf1d65db2347ea70ce75f1fbdf8c4024ea78277786edf",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_06_MUX4TO1_VIVADO.pdf",
+      "pages": 48,
+      "sha256": "d98e9bb0fa418f44d62a1eaae4414bb309de38dcb76948f4ec70c24163ca1c51",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_07_DEMUX1TO8_VIVADO.pdf",
+      "pages": 49,
+      "sha256": "e785062fe43f7d58f1c52e4c4429671397fd9ff50883f6a9980b3ea9407b8692",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_08_ENCODER8TO3_VIVADO.pdf",
+      "pages": 49,
+      "sha256": "ae704d6adb55597f9bc7173f80ddbdcaf94812b7960b649308faac6f9184d5ff",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_09_DECODER3TO8_VIVADO.pdf",
+      "pages": 49,
+      "sha256": "977e2977b0252a89f1ada9a78d79cec989c23395906a5d36e60750e8ecc2e749",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO.pdf",
+      "pages": 52,
+      "sha256": "61e9794c6b070cf7193a79bfb931dcf7401129a11e8e107770d30d24b7d73409",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO.pdf",
+      "pages": 98,
+      "sha256": "41daedecce11bd3cf30b3db13b07a5da18634b143ab3ab35c330f70e256bc8a5",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_10B_INTEGRATED_CLI.pdf",
+      "pages": 92,
+      "sha256": "17653413baa981b20bc029402deffc0f3aa3ccbfb53ef36c0cea3a3f852a1437",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_11_LOGIC_GATES_LEGACY.pdf",
+      "pages": 102,
+      "sha256": "97a3ecf58f8dee812717d3915f30658b4d6a17eb77303e680371eb7e9ec96572",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_12_FULL_ADDER_LEGACY.pdf",
+      "pages": 73,
+      "sha256": "5ac92afd08296734463331182bb1405e63c6b09f13d2a918d33a1b5772006939",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_13_ADDER4_LEGACY.pdf",
+      "pages": 70,
+      "sha256": "8ef11f317937090bdb3552117b20436069b80d28f6415f437d0a6c17fc6e7c01",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_14_SUBTRACTOR4_LEGACY.pdf",
+      "pages": 71,
+      "sha256": "2c78fdbdf9ac17a140dc4b87e52c073ea584d9351e967887fb4d1517d8fafa56",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_15_COMPARATOR4_LEGACY.pdf",
+      "pages": 71,
+      "sha256": "dfb4a3b1cfaedcec8c973651b6ea01b0c777e62e9896739a4c2b851ac7a8adda",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_16_MUX4TO1_LEGACY.pdf",
+      "pages": 70,
+      "sha256": "2e894d1d2bd9f0d96da4aca334c0d293df001a0a139e9a7a418fc7bdead4e9f2",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_17_DEMUX1TO8_LEGACY.pdf",
+      "pages": 71,
+      "sha256": "653de4e0888b8fc132ffe825692e0412f1f90256f9bbed4433b829f8043fdfd6",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_18_ENCODER8TO3_LEGACY.pdf",
+      "pages": 71,
+      "sha256": "7a7ff6744ecb4344eda4e7ba38d9eeb4ae52924dd61277f5282091006bb77192",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_19_DECODER3TO8_LEGACY.pdf",
+      "pages": 71,
+      "sha256": "16117b9954f37f99ec9af271f64939860de2807827bed78dce9b6548e60d1e93",
+      "build": "PASS"
+    },
+    {
+      "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY.pdf",
+      "pages": 75,
+      "sha256": "57aca43c72c4cc5a9140df337a01c7b3c5413e2b8afb4ab5a278978dab80ea7c",
+      "build": "PASS"
+    },
+    {
+      "file": "01.vivado_2026_1_설치_매뉴얼.pdf",
+      "pages": 44,
+      "sha256": "4bcb8064b6910adfc3b803ccc52d82aab958d6306cc6b3840b3146e39ac23ba7",
+      "build": "PASS"
+    },
+    {
+      "file": "02.vscode_verilog_환경설정_매뉴얼.pdf",
+      "pages": 21,
+      "sha256": "d97342164efc7417c88466b8bd620f6b7e570b0395e7311cecc02055fec2fca8",
+      "build": "PASS"
+    }
+  ],
+  "visual_review": {
+    "all_pages_rendered": true,
+    "method": "Compared rendered page bodies with previously reviewed canonical PDFs; inspected all 290 distinct changed images on sheets 00-24. Rebuilt Vivado installation after resolving blank macro-generated instruction frames and visually inspected all 44 final pages plus the final page 39 correction. Prior 52 RTL/TB image panels and 11 XDC source coverages were separately reviewed.",
+    "baseline_equal_body_pages": 1077,
+    "changed_page_occurrences": 416,
+    "defects_fixed": [
+      "Stale source-folder TeX auxiliary files displaced legacy images and footers.",
+      "Vivado installation shotframe macro lost the second frame body; expanded to explicit frames.",
+      "Vivado installation dense troubleshooting page overlapped footer.",
+      "Obsolete Vivado task configuration reference replaced with user PATH."
+    ],
+    "cli_success_update": "First 65 pages pixel-identical to reviewed version at scale 1.2; all final pages 66-91 rendered and visually inspected. Command pages have no clipping or overlap. CLI build has zero overfull and missing-glyph diagnostics.",
+    "student_edit_update": {
+      "evidence": "student-edit-page-review.json",
+      "new_pages": 24,
+      "unique_bodies": 13,
+      "unchanged_bodies": 1423,
+      "render_scale_for_comparison": 0.8,
+      "render_scale_for_visual_review": 2,
+      "defects_fixed": [
+        "Two-line exercise headings pushed lower text onto the footer; use one-line headings.",
+        "Syntax screenshots cropped to the actual diagnostic and restored code."
+      ]
+    }
+  },
+  "link_checks": {
+    "internal": 1632,
+    "relative_pdf": 98,
+    "all_pages_4_3": true,
+    "contents_buttons": true
+  },
+  "remaining": [
+    "Physical board programming and 10-mode/button/LCD photos/video have not been performed; hardware is absent. Instructions are complete."
+  ],
+  "cli_software": "Exact S75 logic gates and integrated bitstreams generated. Integrated student commands reproduced with fresh DB; bitread 9104 frames and checksum PASS."
+}

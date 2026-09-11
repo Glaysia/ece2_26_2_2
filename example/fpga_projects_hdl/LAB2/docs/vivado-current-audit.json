@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "scope": "9 current Vivado batch implementations and matching XSim tests; no GUI or physical device execution",
+  "projects": 9,
+  "idcode": "0x037c8093",
+  "source_hashes_current": true,
+  "drc_errors": 0,
+  "drc_warning": "CFGBVS-1: configuration-bank voltage properties are not specified. Check the physical board setting before final hardware validation.",
+  "invalidated_divider_run_replaced": true
+}

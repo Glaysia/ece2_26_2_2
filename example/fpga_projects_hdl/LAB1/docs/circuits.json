@@ -1,0 +1,385 @@
+[
+  {
+    "n": 1,
+    "slug": "01_logic_gates",
+    "pdf": "LOGIC_GATES",
+    "title": "AND·OR·XOR 논리 게이트",
+    "top": "logic_gate",
+    "cases": 4,
+    "rule": "같은 입력 a, b에 대해 x는 AND, y는 OR, z는 XOR이다.",
+    "ports": "입력 a, b / 출력 x, y, z",
+    "signals": [
+      "a",
+      "b",
+      "x",
+      "y",
+      "z"
+    ],
+    "examples": [
+      [
+        "00",
+        "000"
+      ],
+      [
+        "01",
+        "011"
+      ],
+      [
+        "10",
+        "011"
+      ],
+      [
+        "11",
+        "110"
+      ]
+    ],
+    "focus": "마지막 30–40ns 구간에서 AND와 OR는 1, XOR는 0이다.",
+    "board": "KEY1=a, KEY2=b. LED1=x, LED2=y, LED3=z.",
+    "original": "2.2_",
+    "range": [
+      3,
+      52
+    ],
+    "exercise": 1
+  },
+  {
+    "n": 2,
+    "slug": "02_full_adder",
+    "pdf": "FULL_ADDER",
+    "title": "전가산기",
+    "top": "full_adder",
+    "cases": 8,
+    "rule": "반가산기 두 개로 세 입력을 더한다. 첫 합과 cin을 다시 더하고 두 carry를 OR로 합친다.",
+    "ports": "입력 a, b, cin / 출력 s, cout",
+    "signals": [
+      "a",
+      "b",
+      "cin",
+      "s",
+      "cout"
+    ],
+    "examples": [
+      [
+        "000",
+        "cout=0, s=0"
+      ],
+      [
+        "011",
+        "cout=1, s=0"
+      ],
+      [
+        "111",
+        "cout=1, s=1"
+      ]
+    ],
+    "focus": "30–40ns의 0+1+1=2와 70–80ns의 1+1+1=3을 비교한다.",
+    "board": "KEY1=a, KEY2=b, KEY3=cin. LED1=cout, LED2=s.",
+    "original": "2.2_",
+    "range": [
+      93,
+      131
+    ],
+    "exercise": 3
+  },
+  {
+    "n": 3,
+    "slug": "03_adder4",
+    "pdf": "ADDER4",
+    "title": "4비트 가산기",
+    "top": "adder_4bit",
+    "cases": 256,
+    "rule": "0–15 범위의 두 수를 더한다. 결과는 carry 1비트와 합 4비트로 총 5비트다.",
+    "ports": "입력 a[3:0], b[3:0] / 출력 s[3:0], cout",
+    "signals": [
+      "a[3:0]",
+      "b[3:0]",
+      "s[3:0]",
+      "cout"
+    ],
+    "examples": [
+      [
+        "0+0",
+        "cout=0, s=0"
+      ],
+      [
+        "1+15",
+        "cout=1, s=0"
+      ],
+      [
+        "15+15",
+        "cout=1, s=14"
+      ]
+    ],
+    "focus": "310–320ns의 1+15에서 하위 합이 0이어도 전체 결과는 16이다.",
+    "board": "DIP1–4=a[3:0], DIP5–8=b[3:0]. LED1=cout, LED2–5=s[3:0].",
+    "original": "4.2_",
+    "range": [
+      3,
+      38
+    ],
+    "exercise": 13
+  },
+  {
+    "n": 4,
+    "slug": "04_subtractor4",
+    "pdf": "SUBTRACTOR4",
+    "title": "4비트 감산기",
+    "top": "sub_4bit",
+    "cases": 256,
+    "rule": "d는 a-b의 하위 4비트이고 bor는 a<b일 때만 1이다. 같은 수끼리 빼면 borrow는 0이다.",
+    "ports": "입력 a[3:0], b[3:0] / 출력 d[3:0], bor",
+    "signals": [
+      "a[3:0]",
+      "b[3:0]",
+      "d[3:0]",
+      "bor"
+    ],
+    "examples": [
+      [
+        "0-0",
+        "bor=0, d=0"
+      ],
+      [
+        "0-1",
+        "bor=1, d=15"
+      ],
+      [
+        "15-0",
+        "bor=0, d=15"
+      ]
+    ],
+    "focus": "10–20ns의 0-1과 170–180ns의 1-1에서 borrow가 다름을 확인한다.",
+    "board": "DIP1–4=a[3:0], DIP5–8=b[3:0]. LED1=bor, LED2–5=d[3:0].",
+    "original": "4.2_",
+    "range": [
+      39,
+      74
+    ],
+    "exercise": 14
+  },
+  {
+    "n": 5,
+    "slug": "05_comparator4",
+    "pdf": "COMPARATOR4",
+    "title": "4비트 크기 비교기",
+    "top": "compare_4",
+    "cases": 256,
+    "rule": "o[2]는 a>b, o[1]은 a=b, o[0]은 a<b를 나타낸다. 세 결과 중 하나만 1이다.",
+    "ports": "입력 a[3:0], b[3:0] / 출력 o[2:0]",
+    "signals": [
+      "a[3:0]",
+      "b[3:0]",
+      "o[2:0]"
+    ],
+    "examples": [
+      [
+        "0 대 0",
+        "010"
+      ],
+      [
+        "0 대 1",
+        "001"
+      ],
+      [
+        "1 대 0",
+        "100"
+      ]
+    ],
+    "focus": "0–10ns, 10–20ns, 160–170ns에서 같음·작음·큼을 각각 읽는다.",
+    "board": "DIP1–4=a[3:0], DIP5–8=b[3:0]. LED1=큼, LED2=같음, LED3=작음.",
+    "original": "4.1_",
+    "range": [
+      3,
+      39
+    ],
+    "exercise": 9
+  },
+  {
+    "n": 6,
+    "slug": "06_mux4to1",
+    "pdf": "MUX4TO1",
+    "title": "4:1 멀티플렉서",
+    "top": "mux_4x1",
+    "cases": 64,
+    "rule": "선택 s=00,01,10,11은 각각 i[3],i[2],i[1],i[0]을 z로 보낸다. 원본의 비트 순서를 따른다.",
+    "ports": "입력 i[3:0], s[1:0] / 출력 z",
+    "signals": [
+      "i[3:0]",
+      "s[1:0]",
+      "z"
+    ],
+    "examples": [
+      [
+        "i=1000, s=00",
+        "z=1"
+      ],
+      [
+        "i=1000, s=01",
+        "z=0"
+      ],
+      [
+        "i=0001, s=11",
+        "z=1"
+      ]
+    ],
+    "focus": "i=1000인 320–360ns에서 s를 바꿨을 때 선택된 입력을 추적한다.",
+    "board": "KEY1–4=i[3:0], DIP1–2=s[1:0]. LED1=z.",
+    "original": "3.1_",
+    "range": [
+      77,
+      113
+    ],
+    "exercise": 7
+  },
+  {
+    "n": 7,
+    "slug": "07_demux1to8",
+    "pdf": "DEMUX1TO8",
+    "title": "1:8 디멀티플렉서",
+    "top": "demux_1x8",
+    "cases": 16,
+    "rule": "입력 i를 선택된 한 출력에 보낸다. s=000이면 o[7], s=111이면 o[0]이다. i=0이면 모든 출력이 0이다.",
+    "ports": "입력 i, s[2:0] / 출력 o[7:0]",
+    "signals": [
+      "i",
+      "s[2:0]",
+      "o[7:0]"
+    ],
+    "examples": [
+      [
+        "i=0, 모든 s",
+        "00000000"
+      ],
+      [
+        "i=1, s=000",
+        "10000000"
+      ],
+      [
+        "i=1, s=111",
+        "00000001"
+      ]
+    ],
+    "focus": "80–90ns에서 가장 왼쪽 비트, 150–160ns에서 가장 오른쪽 비트가 켜진다.",
+    "board": "KEY1=i, DIP1–3=s[2:0]. LED1–8=o[7:0].",
+    "original": "3.1_",
+    "range": [
+      114,
+      150
+    ],
+    "exercise": 8
+  },
+  {
+    "n": 8,
+    "slug": "08_encoder8to3",
+    "pdf": "ENCODER8TO3",
+    "title": "8:3 인코더",
+    "top": "encoder8x3",
+    "cases": 256,
+    "rule": "한 비트만 켜진 입력을 번호로 바꾼다. i[7]만 1이면 0, i[0]만 1이면 7이다. 0 또는 다중 입력은 000을 출력한다.",
+    "ports": "입력 i[7:0] / 출력 a[2:0]",
+    "signals": [
+      "i[7:0]",
+      "a[2:0]"
+    ],
+    "examples": [
+      [
+        "10000000",
+        "000"
+      ],
+      [
+        "00000001",
+        "111"
+      ],
+      [
+        "00000011",
+        "000 (잘못된 입력)"
+      ]
+    ],
+    "focus": "10–20ns의 01과 30–40ns의 03을 비교한다. 이 회로는 우선순위 인코더가 아니다.",
+    "board": "KEY1–8=i[7:0]. LED1–3=a[2:0]. 출력 000만으로 유효 입력 여부를 판단할 수 없다.",
+    "original": "3.1_",
+    "range": [
+      3,
+      39
+    ],
+    "exercise": 5
+  },
+  {
+    "n": 9,
+    "slug": "09_decoder3to8",
+    "pdf": "DECODER3TO8",
+    "title": "3:8 디코더",
+    "top": "decoder3x8",
+    "cases": 8,
+    "rule": "입력 abc의 이진 번호와 같은 o 비트를 1로 만든다. 000은 o[0], 111은 o[7]이다.",
+    "ports": "입력 a, b, c / 출력 o[7:0]",
+    "signals": [
+      "a",
+      "b",
+      "c",
+      "o[7:0]"
+    ],
+    "examples": [
+      [
+        "000",
+        "00000001"
+      ],
+      [
+        "011",
+        "00001000"
+      ],
+      [
+        "111",
+        "10000000"
+      ]
+    ],
+    "focus": "0–10ns의 출력 01과 70–80ns의 출력 80을 읽고 비트 번호를 확인한다.",
+    "board": "KEY1=a, KEY2=b, KEY3=c. LED1–8=o[7:0]이므로 000에서 LED8, 111에서 LED1이 켜진다.",
+    "original": "3.1_",
+    "range": [
+      40,
+      76
+    ],
+    "exercise": 6
+  },
+  {
+    "n": 10,
+    "slug": "10_seven_segment",
+    "pdf": "SEVEN_SEGMENT",
+    "title": "7세그먼트 디코더",
+    "top": "seg_decoder",
+    "cases": 16,
+    "rule": "4비트 입력의 0–F를 표시한다. seg_data[7:0] 순서는 a,b,c,d,e,f,g,dp이며 1에서 점등하고 dp는 항상 0이다.",
+    "ports": "입력 bcd[3:0] / 출력 seg_data[7:0]",
+    "signals": [
+      "bcd[3:0]",
+      "seg_data[7:0]"
+    ],
+    "examples": [
+      [
+        "0",
+        "FC: a,b,c,d,e,f"
+      ],
+      [
+        "1",
+        "60: b,c"
+      ],
+      [
+        "8",
+        "FE: a–g"
+      ],
+      [
+        "F",
+        "8E: a,e,f,g"
+      ]
+    ],
+    "focus": "80–90ns에서 8의 일곱 획이 모두 켜지고 dp 비트는 0인지 확인한다.",
+    "board": "DIP1–4=bcd[3:0]. 단일 7세그먼트 a–dp. 이름은 bcd지만 입력 10–15도 A,b,C,d,E,F로 정의한다.",
+    "original": "4.1_",
+    "range": [
+      77,
+      114
+    ],
+    "exercise": 11
+  }
+]

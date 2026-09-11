@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "date": "2026-09-10",
+  "previous_reviewed_commit": "e315730e86c944a2e3130ff6b00d1f85fd814460",
+  "revised_pdfs": 10,
+  "rendered_pages": 452,
+  "identical_body_pages": 429,
+  "changed_page_occurrences": 23,
+  "distinct_changed_pages_inspected": 23,
+  "render_scale": 2,
+  "method": "All 10 revised PDFs fully rendered. Body hashes matched against the previously reviewed commit, excluding the bottom 50 footer pixels. All 23 distinct changed pages visually inspected: 18 individual GUI wave/log pages, four integrated GUI pages and the seven-segment source layout. No clipping or overlapping text observed. Footer and PDF destinations verified separately by package_lab1_pdfs.py.",
+  "individual_actual_gui_panels": 27,
+  "gui_capture_provenance": [
+    "assets/latest-gui/provenance.json",
+    "assets/integrated-gui/provenance.json"
+  ],
+  "previous_code_review": "code-page-validation.json",
+  "pdfs": [
+    {
+      "file": "04.LAB1_02_FULL_ADDER_VIVADO",
+      "pages": 42,
+      "identical_body_to_previous_review": 40,
+      "changed_pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "file": "04.LAB1_03_ADDER4_VIVADO",
+      "pages": 43,
+      "identical_body_to_previous_review": 41,
+      "changed_pages": [
+        37,
+        38
+      ]
+    },
+    {
+      "file": "04.LAB1_04_SUBTRACTOR4_VIVADO",
+      "pages": 43,
+      "identical_body_to_previous_review": 41,
+      "changed_pages": [
+        37,
+        38
+      ]
+    },
+    {
+      "file": "04.LAB1_05_COMPARATOR4_VIVADO",
+      "pages": 42,
+      "identical_body_to_previous_review": 40,
+      "changed_pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "file": "04.LAB1_06_MUX4TO1_VIVADO",
+      "pages": 42,
+      "identical_body_to_previous_review": 40,
+      "changed_pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "file": "04.LAB1_07_DEMUX1TO8_VIVADO",
+      "pages": 42,
+      "identical_body_to_previous_review": 40,
+      "changed_pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
+      "pages": 42,
+      "identical_body_to_previous_review": 40,
+      "changed_pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "file": "04.LAB1_09_DECODER3TO8_VIVADO",
+      "pages": 42,
+      "identical_body_to_previous_review": 40,
+      "changed_pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+      "pages": 45,
+      "identical_body_to_previous_review": 42,
+      "changed_pages": [
+        11,
+        39,
+        40
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "pages": 69,
+      "identical_body_to_previous_review": 65,
+      "changed_pages": [
+        61,
+        62,
+        63,
+        64
+      ]
+    }
+  ]
+}

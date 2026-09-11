@@ -1,0 +1,35 @@
+{
+  "repository": "https://github.com/Glaysia/fpga-lab-template",
+  "commit": "66a8b4393298b3a789caf1d240d76b9ffd62e2d2",
+  "anonymous_clone": true,
+  "clone_path_contains_spaces": true,
+  "layout": {
+    "original_files_verified": 41,
+    "projects": 22,
+    "workspaces": 22,
+    "xprs": 21,
+    "broken_links": []
+  },
+  "actual_task_command_runs": [
+    {
+      "project": "vivado_2026_1/01_logic_gates",
+      "task": "01 Check tools",
+      "exit": 0,
+      "log": "template-clone-01_logic_gates-01.txt"
+    },
+    {
+      "project": "vivado_2026_1/01_logic_gates",
+      "task": "02 Simulate",
+      "exit": 0,
+      "log": "template-clone-01_logic_gates-02.txt"
+    },
+    {
+      "project": "vivado_2026_1/11_integrated",
+      "task": "02 Simulate",
+      "exit": 0,
+      "log": "template-clone-11_integrated-02.txt"
+    }
+  ],
+  "gui_clicks": false,
+  "validated_utc": "2026-09-10T02:15:19.731330+00:00"
+}

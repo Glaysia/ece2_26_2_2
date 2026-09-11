@@ -1,0 +1,128 @@
+[
+  {
+    "file": "05.LAB2_01_COUNTER_VIVADO",
+    "title": "업/다운 카운터",
+    "pages": 44,
+    "missing_code_captures": 12,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_09_COUNTER_LEGACY",
+    "title": "업/다운 카운터",
+    "pages": 81,
+    "missing_code_captures": 12,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_02_CLOCK_DIVIDER_VIVADO",
+    "title": "클록 분주",
+    "pages": 46,
+    "missing_code_captures": 14,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_10_CLOCK_DIVIDER_LEGACY",
+    "title": "클록 분주",
+    "pages": 82,
+    "missing_code_captures": 14,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_03_REGISTER_VIVADO",
+    "title": "레지스터: 데이터 저장과 이동",
+    "pages": 45,
+    "missing_code_captures": 13,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_11_REGISTER_LEGACY",
+    "title": "레지스터: 데이터 저장과 이동",
+    "pages": 74,
+    "missing_code_captures": 13,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_04_SHIFT_REGISTER_VIVADO",
+    "title": "시프트 레지스터",
+    "pages": 44,
+    "missing_code_captures": 12,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_12_SHIFT_REGISTER_LEGACY",
+    "title": "시프트 레지스터",
+    "pages": 79,
+    "missing_code_captures": 12,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_05_PISO_VIVADO",
+    "title": "PISO",
+    "pages": 45,
+    "missing_code_captures": 13,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_13_PISO_LEGACY",
+    "title": "PISO",
+    "pages": 75,
+    "missing_code_captures": 13,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_06_MOORE_VIVADO",
+    "title": "Moore 상태 머신",
+    "pages": 44,
+    "missing_code_captures": 12,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_14_MOORE_LEGACY",
+    "title": "Moore 상태 머신",
+    "pages": 59,
+    "missing_code_captures": 12,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_07_MEALY_VIVADO",
+    "title": "Mealy 상태 머신",
+    "pages": 45,
+    "missing_code_captures": 13,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_15_MEALY_LEGACY",
+    "title": "Mealy 상태 머신",
+    "pages": 61,
+    "missing_code_captures": 13,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_08_SEGMENT_SCAN_VIVADO",
+    "title": "7세그먼트 자리 스캔",
+    "pages": 50,
+    "missing_code_captures": 18,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_16_SEGMENT_SCAN_LEGACY",
+    "title": "7세그먼트 자리 스캔",
+    "pages": 89,
+    "missing_code_captures": 18,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_08A_INTEGRATED_VIVADO",
+    "title": "8모드 버튼·LCD 통합",
+    "pages": 77,
+    "missing_code_captures": 43,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  },
+  {
+    "file": "05.LAB2_08B_INTEGRATED_CLI",
+    "title": "8모드 버튼·LCD 통합",
+    "pages": 73,
+    "missing_code_captures": 43,
+    "status": "DRAFT_MISSING_REAL_CAPTURES"
+  }
+]

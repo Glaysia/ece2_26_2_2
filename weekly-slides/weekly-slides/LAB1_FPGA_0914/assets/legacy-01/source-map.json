@@ -1,0 +1,890 @@
+{
+  "source": "legacy/교안 22년도/전자전기컴퓨터설계실습II-2.2_논리 게이트 구현.pdf",
+  "source_sha256": "ee24af99d23b02e838b6b5028f54d5965e8b1f1c19431a769a1928d233212806",
+  "source_pages": [
+    3,
+    52
+  ],
+  "section_frames": 69,
+  "pages": [
+    {
+      "source_page": 4,
+      "title": "설계 기획",
+      "stage": "블록도 및 진리표 입력 출력 a b AND x OR y XOR z 0 0 0 0 0 0 1 0 1 1 1 0 0 1 1 1 1 1 1 0 a b x y z",
+      "items": [],
+      "assets": [
+        "p004-diagram-truth-table.png"
+      ],
+      "asset_sha256": [
+        "6c41eb17dbd36d02ecd47049ae1cf9b3692f35efc6e01e350617825673d0dea5"
+      ],
+      "section_frames": [
+        3
+      ]
+    },
+    {
+      "source_page": 5,
+      "title": "로직 설계 및 합성",
+      "stage": "(1) 프로젝트 선언",
+      "items": [
+        "Vivado 실행",
+        "File > Project > New"
+      ],
+      "assets": [
+        "p005-01.png"
+      ],
+      "asset_sha256": [
+        "9cd715bda60db7e6b7e8100b23e6ec8408f748ca7c5f475168157d039a087889"
+      ],
+      "section_frames": [
+        4
+      ]
+    },
+    {
+      "source_page": 6,
+      "title": "로직 설계 및 합성",
+      "stage": "(1) 프로젝트 선언",
+      "items": [
+        "Next"
+      ],
+      "assets": [
+        "p006-01.png"
+      ],
+      "asset_sha256": [
+        "0c5e1d1e558bcbeee33b46d94e293875d78219669b99df2be197fd13a72a97e6"
+      ],
+      "section_frames": [
+        5
+      ]
+    },
+    {
+      "source_page": 7,
+      "title": "로직 설계 및 합성",
+      "stage": "(1) 프로젝트 선언",
+      "items": [
+        "Project Name과 Project Location 설정",
+        "Project Name : logic_gate",
+        "Project location : d:/work",
+        "Create project subdirectory : 체크",
+        "d:/work 폴더에 logic_gate 폴더를 생성"
+      ],
+      "assets": [
+        "p007-01.png"
+      ],
+      "asset_sha256": [
+        "8ed354de825aa057ab01d08bf4571800c4780374659f6cc5708ebe86598169e7"
+      ],
+      "section_frames": [
+        6,
+        7
+      ]
+    },
+    {
+      "source_page": 8,
+      "title": "로직 설계 및 합성",
+      "stage": "(1) 프로젝트 선언",
+      "items": [
+        "Project Type 설정",
+        "RTL Project"
+      ],
+      "assets": [
+        "p008-01.png"
+      ],
+      "asset_sha256": [
+        "fc3964947ed52061105a0d9b071a7254c93b75c0f686533be7d7a40aabd41eef"
+      ],
+      "section_frames": [
+        8
+      ]
+    },
+    {
+      "source_page": 9,
+      "title": "로직 설계 및 합성",
+      "stage": "(1) 프로젝트 선언",
+      "items": [
+        "Add source와 Add Constraints 설정",
+        "설계된 로직 파일과 설정된 핀 정보 파일이 없기 때문에 Next 버튼 누름."
+      ],
+      "assets": [
+        "p009-01.png",
+        "p009-02.png"
+      ],
+      "asset_sha256": [
+        "329de841cef7c941a69aad914e35ff98887734373bf6fabcaf096716fb9105b6",
+        "8654961fa31dd048a214b3e65fe94ed1453a3c584ba5b03c2eb3ccdcf97cee51"
+      ],
+      "section_frames": [
+        9,
+        10
+      ]
+    },
+    {
+      "source_page": 10,
+      "title": "로직 설계 및 합성",
+      "stage": "(1) 프로젝트 선언",
+      "items": [
+        "Device 설정",
+        "Family : Spartan-7",
+        "Part : xc7s75fgga484-1"
+      ],
+      "assets": [
+        "p010-01.png"
+      ],
+      "asset_sha256": [
+        "b7be515427bc84017fb6741d492196a895a23e74d27fb75f08691fcbde917e5a"
+      ],
+      "section_frames": [
+        11,
+        12
+      ]
+    },
+    {
+      "source_page": 11,
+      "title": "로직 설계 및 합성",
+      "stage": "(1) 프로젝트 선언",
+      "items": [
+        "설정된 Summary 확인.",
+        "Finish를 눌러 프로젝트 선언 완료"
+      ],
+      "assets": [
+        "p011-01.png"
+      ],
+      "asset_sha256": [
+        "f183a83a229c69e9b1d45f340e7c2972a91ec3f7507728f56cb500434a37747d"
+      ],
+      "section_frames": [
+        13
+      ]
+    },
+    {
+      "source_page": 12,
+      "title": "로직 설계 및 합성",
+      "stage": "(2) 로직 설계",
+      "items": [
+        "VIVADO 프로그램",
+        "Text Editor > New File.. 선택"
+      ],
+      "assets": [
+        "p012-01.png"
+      ],
+      "asset_sha256": [
+        "c924f1eb700ddfe113c16e8b6a734b3efaa51c5f4b3710068c4f777b0d10692a"
+      ],
+      "section_frames": [
+        14
+      ]
+    },
+    {
+      "source_page": 13,
+      "title": "로직 설계 및 합성",
+      "stage": "(2) 로직 설계",
+      "items": [
+        "logic_gate.v 파일로 저장"
+      ],
+      "assets": [
+        "p013-01.png"
+      ],
+      "asset_sha256": [
+        "8dca172ce9020f5c90e530adcadc1ea871cb01844319e892b0fd340e982d670e"
+      ],
+      "section_frames": [
+        15
+      ]
+    },
+    {
+      "source_page": 14,
+      "title": "로직 설계 및 합성",
+      "stage": "(2) 로직 설계",
+      "items": [
+        "로직 설계"
+      ],
+      "assets": [
+        "p014-01.jpg",
+        "p014-02.png"
+      ],
+      "asset_sha256": [
+        "78bc4d4128703a1b1784c13cb5785f7e4e5eb32c110444dcef747c89700a3ce1",
+        "d8e3ec4734c36ee4861961284b27f70e70fc7aeb7222db5f5496ffa5979b5705"
+      ],
+      "section_frames": [
+        16,
+        17
+      ]
+    },
+    {
+      "source_page": 15,
+      "title": "로직 설계 및 합성",
+      "stage": "(2) 로직 설계",
+      "items": [
+        "PROJECT MANAGER > Add Sources 선택"
+      ],
+      "assets": [
+        "p015-01.png"
+      ],
+      "asset_sha256": [
+        "d9451050c148c1c6c81c3dfdc8be63fd983f8d9dc998f4a32db89ebf8deeba39"
+      ],
+      "section_frames": [
+        18
+      ]
+    },
+    {
+      "source_page": 16,
+      "title": "로직 설계 및 합성",
+      "stage": "(2) 로직 설계",
+      "items": [
+        "Add Sources 창에서 Add or Create design sources 선택"
+      ],
+      "assets": [
+        "p016-01.png"
+      ],
+      "asset_sha256": [
+        "635184e3eab4cfe32da8eff557021fa3111d934a344fdfc20b59a00f3e637f4f"
+      ],
+      "section_frames": [
+        19
+      ]
+    },
+    {
+      "source_page": 17,
+      "title": "로직 설계 및 합성",
+      "stage": "(2) 로직 설계",
+      "items": [
+        "Add Files 버튼을 눌러, 앞의 logic_gate.v 파일 추가"
+      ],
+      "assets": [
+        "p017-01.png",
+        "p017-02.png"
+      ],
+      "asset_sha256": [
+        "f7f936f833b9bed0f11292767f1ff032f5e58fc2cf853d76d9bed688145af3a6",
+        "d3aadfe26e3fc309b40247141c1bb1840ed1f73cb64de8e2b208e055cf936c0c"
+      ],
+      "section_frames": [
+        20,
+        21
+      ]
+    },
+    {
+      "source_page": 18,
+      "title": "로직 설계 및 합성",
+      "stage": "(2) 로직 설계",
+      "items": [
+        "Sources 창에서 파일 추가된 것을 확인"
+      ],
+      "assets": [
+        "p018-01.png"
+      ],
+      "asset_sha256": [
+        "0af48874b832a4a47b04fbfb9a3355ed7306cc1f35b2ce90b260ec4221b9db09"
+      ],
+      "section_frames": [
+        22
+      ]
+    },
+    {
+      "source_page": 19,
+      "title": "로직 설계 및 합성",
+      "stage": "(3) Assignment",
+      "items": [
+        "프로젝트의 타겟이 되는 FPGA 디바이스와 설계된 로직에서 사용하는 입출력 단자를 하드웨어와 연결하기 위하여 핀을 설정하는 것"
+      ],
+      "assets": [],
+      "asset_sha256": [],
+      "section_frames": [
+        23
+      ]
+    },
+    {
+      "source_page": 20,
+      "title": "로직 설계 및 합성",
+      "stage": "(3) Assignment",
+      "items": [
+        "PROJECT MANAGER의 RTL ANALYSIS 탭의 Open Elaborated Design 부분을 마우스로 클릭"
+      ],
+      "assets": [
+        "p020-01.png"
+      ],
+      "asset_sha256": [
+        "a48da10dc0d7e04af9628103bf0ce301f58721f7044125b7c96e00457a7ddd53"
+      ],
+      "section_frames": [
+        24
+      ]
+    },
+    {
+      "source_page": 21,
+      "title": "로직 설계 및 합성",
+      "stage": "(3) Assignment",
+      "items": [
+        "메시지 창이 나타난다.",
+        "OK 버튼을 누르면 Elaboration 과정이 진행됨.",
+        "문법에 오류부분도 같이 체크하여 오류가 있다면 에러 메시지가 출력됨."
+      ],
+      "assets": [
+        "p021-01.png"
+      ],
+      "asset_sha256": [
+        "f5178157202bac9830c0b92740b63e7722e5db65297862a87e8347b0529ca9c6"
+      ],
+      "section_frames": [
+        25,
+        26
+      ]
+    },
+    {
+      "source_page": 22,
+      "title": "로직 설계 및 합성",
+      "stage": "(3) Assignment",
+      "items": [
+        "설계된 Verilog HDL 구문이 Schematic으로 표현되는 것을 확인"
+      ],
+      "assets": [
+        "p022-01.png"
+      ],
+      "asset_sha256": [
+        "399ff3631857fc4312cbfbd3e0d0371f8151b45ce335f9fac1b74f0de0ac72f4"
+      ],
+      "section_frames": [
+        27
+      ]
+    },
+    {
+      "source_page": 23,
+      "title": "로직 설계 및 합성",
+      "stage": "(3) Assignment",
+      "items": [
+        "Schematic 화면 오른 쪽 윗 부분의 5 I/O Ports 선택"
+      ],
+      "assets": [
+        "p023-01.png"
+      ],
+      "asset_sha256": [
+        "236151f9d502195403879e18e963cd73d29ca36add763e0d2258601593e8ae7a"
+      ],
+      "section_frames": [
+        28
+      ]
+    },
+    {
+      "source_page": 24,
+      "title": "로직 설계 및 합성",
+      "stage": "(3) Assignment",
+      "items": [
+        "I/O Std를 “LVCMOSS33” 으로 변경",
+        "입/출력 포트의 Voltage Level을 3.3V로 설정하는 것."
+      ],
+      "assets": [],
+      "asset_sha256": [],
+      "section_frames": [
+        29
+      ]
+    },
+    {
+      "source_page": 25,
+      "title": "로직 설계 및 합성",
+      "stage": "(3) Assignment",
+      "items": [
+        "Package Pin 부분에 핀 설정",
+        "I/O Std를 “LVCMOSS33” 으로 변경",
+        "입/출력 포트의 Voltage Level을 3.3V로 설정하는 것."
+      ],
+      "assets": [
+        "p025-01.png"
+      ],
+      "asset_sha256": [
+        "a8fa6d32b7bd16d5dcc7fa1a4468960ce2825bb7ac04152d88f048b70999e068"
+      ],
+      "section_frames": [
+        30,
+        31
+      ]
+    },
+    {
+      "source_page": 26,
+      "title": "로직 설계 및 합성",
+      "stage": "(3) Assignment",
+      "items": [
+        "핀 설정 저장",
+        "파일 명은 logic_gate로 설정"
+      ],
+      "assets": [
+        "p026-01.png",
+        "p026-02.png"
+      ],
+      "asset_sha256": [
+        "c63cf39f8b4c39854867e25a5e77d85d37aabe9a83e6ffd3f807947c6c724eb9",
+        "08c3c7d7207003e984f193d54ad200b2efaccf10ed48768d501d05985f4b0b87"
+      ],
+      "section_frames": [
+        32,
+        33
+      ]
+    },
+    {
+      "source_page": 27,
+      "title": "로직 설계 및 합성",
+      "stage": "(3) Assignment",
+      "items": [
+        "Sources 창에 추가된 것 확인"
+      ],
+      "assets": [
+        "p027-01.png"
+      ],
+      "asset_sha256": [
+        "8dcbf4dedcb0342a3c7b5db009577a8fe7b8aa77d889bff60d9c3297a8d1c95e"
+      ],
+      "section_frames": [
+        34
+      ]
+    },
+    {
+      "source_page": 28,
+      "title": "로직 설계 및 합성",
+      "stage": "(4) Compile",
+      "items": [
+        "SYNTHESIS > Run Synthesis",
+        "설계된 Verilog HDL 코드를 합성하여 최적화 시키는 과정"
+      ],
+      "assets": [
+        "p028-01.png",
+        "p028-02.png"
+      ],
+      "asset_sha256": [
+        "0affe34c52a070f5387ff3e0d149d5d0f254e0cfe94ff890ee18323ea0fb3c9a",
+        "f71d29f1dd4b83f362e33ca7af849d18ae989e37d08f28be8095e53b50f8a358"
+      ],
+      "section_frames": [
+        35,
+        36
+      ]
+    },
+    {
+      "source_page": 29,
+      "title": "로직 설계 및 합성",
+      "stage": "(4) Compile",
+      "items": [
+        "Synthesis 동작 확인 위치",
+        "프로그램 상단 오른쪽 회전"
+      ],
+      "assets": [
+        "p029-01.png"
+      ],
+      "asset_sha256": [
+        "3313c2dc3bf152e14f827abaa32b26dcd76242ffa453826a92effaf0ef7aa498"
+      ],
+      "section_frames": [
+        37
+      ]
+    },
+    {
+      "source_page": 30,
+      "title": "로직 설계 및 합성",
+      "stage": "(4) Compile",
+      "items": [
+        "Synthesis 후 IMPLEMENTATION 진행",
+        "Implementation",
+        "합성한 결과를 이용하여 실제 FPGA의 Logic Cell 단위로 바꾸어 FPGA내에 위치시키고 연결하는 Place & Route를 하는 과정"
+      ],
+      "assets": [
+        "p030-01.png",
+        "p030-02.png"
+      ],
+      "asset_sha256": [
+        "4eae371bcfcc5387ba783ec16999a6a5e04fd41f89f54eabe2a1a4302e9272ba",
+        "1ca7a0ad21b4daef0714b9fa4e769bd83e57d8ea36b49328928a1d3f4269478d"
+      ],
+      "section_frames": [
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "source_page": 31,
+      "title": "로직 설계 및 합성",
+      "stage": "(4) Compile",
+      "items": [
+        "Synthesis 후 IMPLEMENTATION 진행"
+      ],
+      "assets": [
+        "p031-01.png",
+        "p031-02.png"
+      ],
+      "asset_sha256": [
+        "772a63bf850838c1d97379ef74c95cd76a76f3ac2b366481b29b57abcc490c4c",
+        "fc3f9283a42a2f435075242dec50ce4f9f5333329d156791c356d32690ea68b9"
+      ],
+      "section_frames": [
+        41,
+        42
+      ]
+    },
+    {
+      "source_page": 32,
+      "title": "로직 설계 및 합성",
+      "stage": "(4) Compile",
+      "items": [
+        "Implementation 이 끝난 화면",
+        "Open Implemented Design 선택 후 OK"
+      ],
+      "assets": [
+        "p032-01.png"
+      ],
+      "asset_sha256": [
+        "e7990cdea558a6e14c5cadffbffb6a8995902a6d7e5327d0d2d1baaa1ee5f5e6"
+      ],
+      "section_frames": [
+        43
+      ]
+    },
+    {
+      "source_page": 33,
+      "title": "로직 설계 및 합성",
+      "stage": "(4) Compile",
+      "items": [
+        "Implementation결과 확인"
+      ],
+      "assets": [
+        "p033-01.png"
+      ],
+      "asset_sha256": [
+        "acd81188607ba213d26953d00fdf14c47a13671c64d88cb6cca83bfaadd6bd47"
+      ],
+      "section_frames": [
+        44
+      ]
+    },
+    {
+      "source_page": 34,
+      "title": "로직 설계 및 합성",
+      "stage": "(5) Simulation",
+      "items": [
+        "소프트웨어적으로 검증하는 과정",
+        "테스트 벤치 파일이 필요함.",
+        "시뮬레이션에 대한 입력 조건을 설정한 파일"
+      ],
+      "assets": [],
+      "asset_sha256": [],
+      "section_frames": [
+        45
+      ]
+    },
+    {
+      "source_page": 35,
+      "title": "로직 설계 및 합성",
+      "stage": "(5) Simulation",
+      "items": [
+        "File > Text Editor > New File 선택"
+      ],
+      "assets": [
+        "p035-01.png"
+      ],
+      "asset_sha256": [
+        "a4bc7bb9714f26063fa00f585f68cef1dee16b093ab51e23f7e1e0e5f283c601"
+      ],
+      "section_frames": [
+        46
+      ]
+    },
+    {
+      "source_page": 36,
+      "title": "로직 설계 및 합성",
+      "stage": "(5) Simulation",
+      "items": [
+        "testbench.v 파일로 저장"
+      ],
+      "assets": [
+        "p036-01.png"
+      ],
+      "asset_sha256": [
+        "3cc41dbcbcffad35cc9ba6414b5186f539986e67cc653a5c77605962d2270a74"
+      ],
+      "section_frames": [
+        47
+      ]
+    },
+    {
+      "source_page": 37,
+      "title": "로직 설계 및 합성",
+      "stage": "(5) Simulation",
+      "items": [
+        "PROJECT MANAGER Add Source 선택"
+      ],
+      "assets": [
+        "p037-01.png"
+      ],
+      "asset_sha256": [
+        "d9451050c148c1c6c81c3dfdc8be63fd983f8d9dc998f4a32db89ebf8deeba39"
+      ],
+      "section_frames": [
+        48
+      ]
+    },
+    {
+      "source_page": 38,
+      "title": "로직 설계 및 합성",
+      "stage": "(5) Simulation",
+      "items": [
+        "[Add or create simulation source] 선택",
+        "Next"
+      ],
+      "assets": [
+        "p038-01.png"
+      ],
+      "asset_sha256": [
+        "7e2a7eb69565fa25e5b3b309c4ba6c0cd5600290f72d78591f95787f54af442a"
+      ],
+      "section_frames": [
+        49
+      ]
+    },
+    {
+      "source_page": 39,
+      "title": "로직 설계 및 합성",
+      "stage": "(5) Simulation",
+      "items": [
+        "[Add Files]을 선택",
+        "testbench.v 파일 선택"
+      ],
+      "assets": [
+        "p039-01.png",
+        "p039-02.png"
+      ],
+      "asset_sha256": [
+        "e51edbda3c8cc1b8ab6a54c36bec3130f8ac8d4f66c9c3072994f4b4808cb703",
+        "f52f1d5c5ebb28a23a022e803d9f57c38ea3a91bff518c83f63385121a983f68"
+      ],
+      "section_frames": [
+        50,
+        51
+      ]
+    },
+    {
+      "source_page": 40,
+      "title": "로직 설계 및 합성",
+      "stage": "(5) Simulation",
+      "items": [
+        "Simulation Sources 파일 추가 확인"
+      ],
+      "assets": [
+        "p040-01.png"
+      ],
+      "asset_sha256": [
+        "b7502b377a34b2eef2546ed232f7b1bc3029df7d2442d0bb55a0ad5ecf657898"
+      ],
+      "section_frames": [
+        52
+      ]
+    },
+    {
+      "source_page": 41,
+      "title": "로직 설계 및 합성",
+      "stage": "(5) Simulation",
+      "items": [
+        "SIMULATION > Run Simulation",
+        "Run Behavioral Simulation 실행"
+      ],
+      "assets": [
+        "p041-01.png"
+      ],
+      "asset_sha256": [
+        "94811164c3d33738c53ff42b7f09ae68e30a326519d9a2cc0eb0d4c26f554b52"
+      ],
+      "section_frames": [
+        53
+      ]
+    },
+    {
+      "source_page": 42,
+      "title": "로직 설계 및 합성",
+      "stage": "(5) Simulation",
+      "items": [
+        "결과 확인",
+        "상단 우측의 Maximize 버튼 클릭"
+      ],
+      "assets": [
+        "p042-01.png"
+      ],
+      "asset_sha256": [
+        "31ff0bb6e4bd2db5e90f1cc26b607c89e210bb646a66db7f66c16d05d535d457"
+      ],
+      "section_frames": [
+        54
+      ]
+    },
+    {
+      "source_page": 43,
+      "title": "로직 설계 및 합성",
+      "stage": "(5) Simulation",
+      "items": [
+        "Zoom Fit 를 눌러 결과 확인"
+      ],
+      "assets": [
+        "p043-01.png"
+      ],
+      "asset_sha256": [
+        "a05da46b7d40e02fac9ab7c71b66957b22f25f7b17409cdfd3d95cfc6eb3cb43"
+      ],
+      "section_frames": [
+        55
+      ]
+    },
+    {
+      "source_page": 44,
+      "title": "로직 설계 및 합성",
+      "stage": "(6) Programming",
+      "items": [
+        "Project Manager 창 PROGRAM AND DEBUG > Generate Bitstream"
+      ],
+      "assets": [
+        "p044-01.png",
+        "p044-02.png"
+      ],
+      "asset_sha256": [
+        "6f52e6555d711ddbef8182fcdc24524e975c4cf324e7da5ed8d4c31b697cdbc7",
+        "4bc6c7b0544a660cdbf35589e260375e5049badea4f2e5fc4d63b6bacda3f01f"
+      ],
+      "section_frames": [
+        56,
+        57
+      ]
+    },
+    {
+      "source_page": 45,
+      "title": "로직 설계 및 합성",
+      "stage": "(6) Programming",
+      "items": [
+        "프로그래밍 파일 생성 완료 후",
+        "Open Hardware Manager"
+      ],
+      "assets": [
+        "p045-01.png"
+      ],
+      "asset_sha256": [
+        "beeb11426ab4f6f9f4018af30986aeb77e19facb25d78077b33a314896c185ef"
+      ],
+      "section_frames": [
+        58
+      ]
+    },
+    {
+      "source_page": 46,
+      "title": "로직 설계 및 합성",
+      "stage": "(6) Programming",
+      "items": [
+        "하드웨어 준비"
+      ],
+      "assets": [
+        "p046-01.jpg"
+      ],
+      "asset_sha256": [
+        "6495648f8a94505593c2c850360ed626e26f62b0ea8cf26ad0c4ba7a0fcafc2c"
+      ],
+      "section_frames": [
+        59
+      ]
+    },
+    {
+      "source_page": 47,
+      "title": "로직 설계 및 합성",
+      "stage": "(6) Programming",
+      "items": [
+        "장비의 전원이 꺼져 있는지 확인",
+        "Xilinx Platform Cable에 USB Cable의 한 쪽 끝을 연결",
+        "반대쪽 끝은 PC의 USB 포트에 연결",
+        "Xilinx Platform Cable에 연결된 2x14핀의 플랫 케이블은 장비의 Xilinx 모듈의 JTAG 포트에 연결",
+        "장비의 전원을 켠다."
+      ],
+      "assets": [],
+      "asset_sha256": [],
+      "section_frames": [
+        60
+      ]
+    },
+    {
+      "source_page": 48,
+      "title": "로직 설계 및 합성",
+      "stage": "(6) Programming",
+      "items": [
+        "Xilinx Platform II Cable을 PC에 연결한 후, PC의 장치관리자에서 장치 인식 확인"
+      ],
+      "assets": [
+        "p048-01.png"
+      ],
+      "asset_sha256": [
+        "5b2df217b65cfd60ff03df15b6bb1c4cf0f6a2cb5e4bbf42d46ae658a9d21f45"
+      ],
+      "section_frames": [
+        61
+      ]
+    },
+    {
+      "source_page": 49,
+      "title": "로직 설계 및 합성",
+      "stage": "(6) Programming",
+      "items": [
+        "Open Target > Auto Connect"
+      ],
+      "assets": [
+        "p049-01.png"
+      ],
+      "asset_sha256": [
+        "067afad9f1548cf7d97166a1e09895bcb72310c8fb66cb3d48463662587408b2"
+      ],
+      "section_frames": [
+        62
+      ]
+    },
+    {
+      "source_page": 50,
+      "title": "로직 설계 및 합성",
+      "stage": "(6) Programming",
+      "items": [
+        "Program Device 선택"
+      ],
+      "assets": [
+        "p050-01.png"
+      ],
+      "asset_sha256": [
+        "b39be4d901aaba13568f8cceb433b1d63ac31672ee6ea79fbc33211e728cfd28"
+      ],
+      "section_frames": [
+        63
+      ]
+    },
+    {
+      "source_page": 51,
+      "title": "로직 설계 및 합성",
+      "stage": "(6) Programming",
+      "items": [
+        "Bitstream File 선택",
+        "<Project Folder> \\ logic_gate.runs \\ impl_1 \\ logic_gate.bit 파일 선택",
+        "Program 버튼 클릭"
+      ],
+      "assets": [
+        "p051-01.png"
+      ],
+      "asset_sha256": [
+        "51b72ec5c800a50eac8faf04304fcf1fb897e9c8bbbccc555379d119abef923e"
+      ],
+      "section_frames": [
+        64,
+        65
+      ]
+    },
+    {
+      "source_page": 52,
+      "title": "로직 설계 및 합성",
+      "stage": "(7) 동작 확인",
+      "items": [
+        "SW 1와 SW 2를 눌러 장비에서 어떻게 동작하는지 확인."
+      ],
+      "assets": [],
+      "asset_sha256": [],
+      "section_frames": [
+        66
+      ]
+    }
+  ]
+}

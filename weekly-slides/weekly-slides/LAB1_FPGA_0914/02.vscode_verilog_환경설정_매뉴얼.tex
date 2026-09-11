@@ -1,523 +1,213 @@
 % !TEX program = xelatex
-% 주차별 발표 자료 템플릿
-% 이 파일이 있는 폴더에서 xelatex로 두 번 빌드한다.
-% 디자인 원본: ../../templates/weekly_presentation_template.tex
-\documentclass[aspectratio=169,11pt,t]{beamer}
-
-\usepackage{fontspec}
-\usepackage{kotex}
-\usepackage{graphicx}
-\usepackage{tikz}
-\usetikzlibrary{positioning}
-
-% D2Coding을 저장소에 함께 넣어, 별도 설치 없이 같은 글꼴로 빌드한다.
-\setmainfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
-\setmainhangulfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
-\setsansfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
-\setsanshangulfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
-\setmonofont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
-
-% University of Seoul identity color
-\definecolor{UOSBlue}{HTML}{005EB8}
-\definecolor{TextGray}{HTML}{303030}
-
-\setbeamertemplate{navigation symbols}{}
-\setbeamercolor{normal text}{fg=TextGray,bg=white}
-\setbeamercolor{frametitle}{fg=UOSBlue,bg=white}
-\setbeamercolor{title}{fg=white}
-\setbeamercolor{structure}{fg=UOSBlue}
-\setbeamertemplate{itemize item}{\color{UOSBlue}\small$\bullet$}
-\setbeamertemplate{itemize subitem}{\color{UOSBlue}\scriptsize$\bullet$}
-\setbeamertemplate{frametitle}{%
-  \vspace{0.55cm}\hspace{0.48cm}\insertframetitle\par\vspace{0.12cm}}
-\setbeamerfont{frametitle}{series=\bfseries,size=\LARGE}
-
-% 기준 자료처럼 하단에 소속과 페이지 번호를 표시한다.
-\setbeamertemplate{footline}{%
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=south,inner sep=0pt] at ([yshift=0.52cm]current page.south)
-      {\includegraphics[width=2.64cm,trim=58bp 385bp 58bp 385bp,clip]{../../assets/uos-logo-horizontal.png}};
-    \node[anchor=east,text=gray,font=\scriptsize]
-      at ([xshift=-0.57cm,yshift=0.52cm]current page.south east) {\insertframenumber};
-  \end{tikzpicture}%
-  \vspace{0.38cm}}
-
-\newcommand{\week}{LAB 1}
-\newcommand{\course}{전자전기컴퓨터설계실험Ⅱ}
-\newcommand{\topic}{VS Code Verilog\\환경설정 매뉴얼}
-\newcommand{\presenter}{이해리}
-\newcommand{\presentationdate}{2026. 09. 07.}
-
-\title{\course\\\week. \topic}
-\author{\presenter}
-\date{\presentationdate}
-
-
-
-\usepackage{listings}
-\lstset{basicstyle=\ttfamily\small,columns=fullflexible,keepspaces=true,
-showstringspaces=false,breaklines=true,breakatwhitespace=false,
-backgroundcolor=\color{UOSBlue!4},frame=single,rulecolor=\color{UOSBlue!20},
-xleftmargin=0.12cm,xrightmargin=0.12cm,aboveskip=0.2cm,belowskip=0.2cm}
-\newcommand{\source}[2]{\par\vspace{0.18cm}{\scriptsize\color{gray}\href{#1}{#2}}}
-\newcommand{\checkline}[1]{\par\vspace{0.25cm}{\color{UOSBlue}\bfseries 확인: }#1}
-% 녹화 캡처: 2026-09-07 03-15-00.mp4 및 07-10-20.mp4.
-% 캡처는 v1.0.0에서 촬영. v1.0.2은 다음 배포 예정 태그이며 아직 생성하지 않았다.
-\newcommand{\videoshot}[3]{%
-\begin{frame}{#1}\centering
-\includegraphics[width=0.98\textwidth,height=5.45cm,keepaspectratio]{assets/vscode-v1.0.0/#2}
-\par\vspace{0.12cm}{\small #3}
-\end{frame}}
+\input{shared/lab1_preamble.tex}
+\renewcommand{\labonehome}{\hyperlink{vscode-install-contents}{\contentsbutton}}
+\renewcommand{\legacySource}[1]{}
+\hypersetup{pdftitle={LAB1 VS Code 환경설정}}
+\providecommand{\terminalbox}[1]{\par\vspace{0.15cm}{\setlength{\fboxsep}{7pt}\colorbox{black}{\parbox{\dimexpr\textwidth-14pt\relax}{\color{white}\ttfamily\fontsize{7}{9}\selectfont #1}}}\par\vspace{0.15cm}}
 \begin{document}
-
-% 표지
-{\setbeamertemplate{footline}{}
-\setbeamercolor{background canvas}{bg=UOSBlue}
-\begin{frame}[plain]
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=north west,inner sep=0pt,text=white,font=\bfseries\fontsize{27}{33}\selectfont,align=left]
-      at ([xshift=1.53cm,yshift=-1.5cm]current page.north west) {\course\\\week. \topic};
-    \node[anchor=south west,inner sep=0pt] at ([xshift=1.38cm,yshift=0.98cm]current page.south west)
-      {\includegraphics[width=1.45cm]{../../assets/uos-logo-white.png}};
-    \node[anchor=south east,text=white,font=\small\bfseries,align=right]
-      at ([xshift=-1.38cm,yshift=0.98cm]current page.south east)
-      {\presentationdate\\\presenter};
-  \end{tikzpicture}
-\end{frame}}
-
-
-
-% 실제 촬영 자료는 확보 후 연결한다.
-\begin{frame}[fragile]{이번 매뉴얼의 목표}
-\begin{itemize}
-\item 전가산기 하나로 코드 편집부터 파형 해석까지 확인한다.
-\item Windows와 Vivado 2026.1을 준비한다.
-\item VS Code·Git 설치 → 도구 경로 확인 → 예제 열기
-\item 언어 서버 확인 → 8개 입력 시뮬레이션 → 파형 해석
-\end{itemize}\checkline{파일을 여는 데서 끝내지 않고, 회로의 결과를 설명한다.}
-\end{frame}
-
-\begin{frame}[fragile]{도구별 역할}
+\begingroup
+\renewcommand{\small}{\fontsize{9}{11}\selectfont}
+\begin{frame}{LAB1 · VS Code 환경설정}\relax
 \small
-\begin{tabular}{p{3.6cm}p{9.4cm}}
-\textbf{도구} & \textbf{역할}\\\hline
-VS Code & 소스 편집, 터미널과 작업 실행\\[0.2cm]
-Git / GitHub CLI & 소스 이력 관리 / GitHub 작업(사용 시)\\[0.2cm]
-vscode-slang & 언어 서버와 연결하여 코드 분석 기능 제공\\[0.2cm]
-slang-server & 정의 이동, 심벌 정보, 문법 오류·경고 진단\\[0.2cm]
-Vivado XSim & HDL 컴파일과 회로 시뮬레이션\\[0.2cm]
-VaporView & 생성된 VCD 파일을 파형으로 표시
-\end{tabular}
-\checkline{VS Code에서 XSim을 실행하고 VaporView로 결과를 본다.}
+빈 템플릿에서 직접 작성하고 Icarus로 시뮬레이션한다.\par\vspace{0.22cm}Git · Python · Icarus Verilog · VS Code · VaporView\par\vspace{0.22cm}작성일 2026. 09. 10. · 이해리\par\href{04.LAB1_00_CONTENTS.pdf}{22개 실습 전체 목차}
 \end{frame}
 
-\begin{frame}[fragile]{1. VS Code와 Git 설치}
-\begin{itemize}
-\item \href{https://code.visualstudio.com/docs/setup/windows}{VS Code Windows 설치 안내}에서 설치 프로그램을 받는다.
-\item 개인 PC에서는 User Setup을 사용하고 PATH 추가 옵션을 확인한다.
-\item \href{https://git-scm.com/install/windows}{Git for Windows}를 설치한다. 명령줄에서 Git을 사용하는 옵션을 선택한다.
-\item 설치 후 VS Code와 기존 터미널을 닫고 다시 연다.
-\item Terminal → New Terminal에서 PowerShell을 연다.
-\end{itemize}\source{https://code.visualstudio.com/docs/setup/windows}{공식 안내: VS Code Windows 설치}
-\end{frame}
-
-\begin{frame}[fragile]{1. 버전과 실행 경로 확인}
-\begin{lstlisting}
-git --version
-code --version
-Get-Command git, code | Select-Object Name, Source
-\end{lstlisting}\begin{itemize}
-\item 버전과 실행 파일 위치가 출력되어야 한다.
-\item PATH는 명령 이름으로 실행 파일을 찾는 경로 목록이다.
-\item 명령을 찾지 못하면 설치·PATH를 확인하고 VS Code를 다시 실행한다.
-\end{itemize}\checkline{VS Code는 버전 외에 커밋·아키텍처도 출력할 수 있다.}
-\end{frame}
-
-\begin{frame}[fragile]{1. GitHub CLI를 사용하는 경우}
-\href{https://cli.github.com/}{GitHub CLI}는 Git과 별도로 설치한다.\begin{lstlisting}
-gh --version
-Get-Command gh | Select-Object Name, Source
-gh auth login
-gh auth status
-\end{lstlisting}\begin{itemize}
-\item 로그인 안내에서 GitHub.com과 브라우저 인증을 선택한다.
-\item 이 예제의 \texttt{git clone}과 시뮬레이션에는 필수가 아니다.
-\end{itemize}\source{https://cli.github.com/manual/gh_auth_login}{공식 안내: gh auth login}
-\end{frame}
-
-\begin{frame}[fragile]{2. Vivado의 bin 폴더를 PATH에 추가}
-\begin{itemize}
-\item Vivado 설치 폴더에서 아래 세 파일이 있는 bin 폴더를 찾는다.
-\item \texttt{xvlog.bat} / \texttt{xelab.bat} / \texttt{xsim.bat}
-\item 계정의 환경 변수 편집 → 사용자 변수 Path → 편집 → 새로 만들기
-\item 기존 항목을 유지하고, 본인의 실제 bin 폴더를 추가한다.
-\end{itemize}\begin{lstlisting}
-C:\AMDDesignTools\2026.1\Vivado\bin
-\end{lstlisting}\checkline{위 경로는 예시다. 등록 후 VS Code까지 종료하고 다시 연다.}
-\end{frame}
-
-\begin{frame}[fragile]{2. Vivado 시뮬레이션 도구 확인}
-\begin{lstlisting}
-Get-Command xvlog.bat, xelab.bat, xsim.bat
-xvlog -version
-xelab -version
-xsim -version
-\end{lstlisting}\begin{itemize}
-\item 세 도구가 모두 2026.1로 실행되는지 확인한다.
-\item Git·VS Code는 \texttt{--version}, Vivado는 \texttt{-version}이다.
-\item GUI 실행 성공과 터미널 명령의 경로 설정은 각각 확인한다.
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{2. PATH를 등록했는데도 실행되지 않는다면}
-\begin{itemize}
-\item 이미 열려 있던 PowerShell은 변경 전 PATH를 사용한다.
-\item 기존 PowerShell과 VS Code의 모든 창을 종료한다.
-\item 시작 메뉴에서 PowerShell을 새로 열어 아래 명령을 확인한다.
-\item 이전 PowerShell에서 \texttt{code}를 실행하면 VS Code도 이전 환경을 물려받을 수 있다.
-\end{itemize}
-\begin{lstlisting}
-Get-Command xvlog.bat, xelab.bat, xsim.bat
-\end{lstlisting}
-\checkline{녹화에서는 오래 열어둔 PowerShell 대신 새로 실행하니 정상 동작했다.}
-\end{frame}
-
-\begin{frame}[fragile]{3. GitHub에서 예제 받기}
-예제를 저장할 상위 폴더에서 다음 명령을 실행한다.
-\begin{lstlisting}
-git clone --branch v1.0.2 --depth 1 https://github.com/Glaysia/ece2_26_2_2.git
-cd ece2_26_2_2
-\end{lstlisting}
-\begin{itemize}
-\item \texttt{v1.0.2} 태그로 고정된 수업 자료와 예제를 내려받는다.
-\item 마지막 줄은 내려받은 저장소 폴더로 이동한다.
-\item 태그로 받으면 나오는 \texttt{detached HEAD} 안내는 오류가 아니다.
-\end{itemize}
-\source{https://github.com/Glaysia/ece2_26_2_2}{수업 예제: GitHub 저장소 열기}
-\end{frame}
-
-\begin{frame}[fragile]{3. 수업 워크스페이스 열기}
-저장소 루트에서 실행한다.\begin{lstlisting}
-code ece2_26_2_2.code-workspace
-\end{lstlisting}\begin{itemize}
-\item GUI: File → Open Workspace from File…에서 저장소 루트의
-\texttt{ece2\_26\_2\_2.code-workspace}를 선택한다.
-\item HDL 프로젝트별 워크스페이스 파일은 필요하지 않다.
-\item 수업 예제임을 확인하고 작업 영역 신뢰를 선택한다.
-\end{itemize}\checkline{탐색기의 fpga\_projects\_hdl 아래에서 example\_full\_adder\_hdl을 펼친다.}
-\end{frame}
-
-\begin{frame}[fragile]{3. 워크스페이스 신뢰하기}
-\begin{itemize}
-\item 처음 열 때 작성자를 신뢰하는지 묻는 창이 나타날 수 있다.
-\item 수업 GitHub 저장소에서 받은 자료인지 확인한다.
-\item 확인한 수업 자료라면 \textbf{Yes, I trust the authors}를 선택한다.
-\item 상위 폴더 전체를 신뢰하는 옵션은 선택할 필요가 없다.
-\item 이미 제한 모드라면 상단 \textbf{Manage} 또는 명령 팔레트의
-\textbf{Workspaces: Manage Workspace Trust}에서 상태를 확인한다.
-\end{itemize}
-\checkline{Restricted Mode에서는 작업 실행과 일부 확장 기능이 제한된다.}
-\end{frame}
-
-\begin{frame}{3. 실제 화면: 제한 모드 확인}
-\centering
-\includegraphics[width=0.94\textwidth,height=5.5cm,keepaspectratio]{assets/vscode-v1.0.0/01-restricted-mode.png}
-\par\small 상단 안내와 왼쪽 아래 Restricted Mode를 확인한다.
-\end{frame}
-
-% 03-15-00 영상 03:50:16: Workspace Trust 관리 화면.
-\videoshot{3. 실제 화면: Trust 선택}{03-trust-video.png}
-{수업 저장소임을 확인한 뒤 왼쪽 Trust를 선택한다.}
-
-\begin{frame}[fragile]{3. 예제 파일의 역할}
+\begin{frame}[label=vscode-install-contents]{설치와 실습 목차}\relax
 \small
-\begin{tabular}{p{6cm}p{7cm}}
-\textbf{경로} & \textbf{역할}\\\hline
-\texttt{src/half\_adder.v} & 반가산기\\[0.16cm]
-\texttt{src/full\_adder.v} & 반가산기 두 개로 구성한 전가산기\\[0.16cm]
-\texttt{sim/tb\_full\_adder.sv} & 8개 입력을 자동 검사하는 테스트벤치\\[0.16cm]
-\texttt{.slang/server.json}, \texttt{sources.f} & 언어 서버 설정과 HDL 소스 목록\\[0.16cm]
-\texttt{../.vscode/tasks.json} & 상위 HDL 폴더의 공용 작업 설정\\[0.16cm]
-\texttt{scripts/} & 실행 스크립트\\[0.16cm]
-\texttt{build/} & 실행 후 생성되는 파형과 로그
-\end{tabular}
+1. 편집기·Git·Python·Icarus 설치\par\navlink{vscode-install-tools}{도구 설치와 경로 확인}\par\vspace{0.4cm}2. 빈 프로젝트 시작\par\navlink{vscode-install-clone}{태그 clone·새 창·추천 확장}\par\vspace{0.4cm}3. 직접 작성·실행·파형\par\navlink{vscode-install-sim}{세 작업과 문제 해결}\par\vspace{0.4cm}\href{04.LAB1_01_LOGIC_GATES_VIVADO.pdf}{첫 논리 게이트의 전체 코드와 클릭 실습}
 \end{frame}
 
-\begin{frame}[fragile]{4. 확장 두 개 설치}
-\textbf{Ctrl+Shift+X} → Extensions에서 확장 ID로 검색한다.\begin{lstlisting}
-Hudson-River-Trading.vscode-slang
-lramseyer.vaporview
-\end{lstlisting}\begin{itemize}
-\item vscode-slang: Verilog/SystemVerilog 언어 지원
-\item VaporView: 시뮬레이션 파형 보기
-\end{itemize}\checkline{이름이 비슷한 확장과 구분하여 두 확장을 설치한다.}
-\end{frame}
-
-\begin{frame}[fragile]{4. 명령으로 확장 설치·확인}
-\begin{lstlisting}
-code --install-extension Hudson-River-Trading.vscode-slang
-code --install-extension lramseyer.vaporview
-code --list-extensions --show-versions |
-  Select-String 'slang|vaporview'
-\end{lstlisting}\checkline{확장 ID와 설치 버전이 출력된다.}\par\vspace{0.2cm}설치 화면에서 설치 여부를 확인해도 된다.
-\end{frame}
-
-\begin{frame}[fragile]{4. Install slang-server 알림}
-\begin{itemize}
-\item \texttt{src/full\_adder.v}를 연다.
-\item 설치 알림에서 \textbf{Install slang-server}를 선택한다.
-\item 서버 다운로드와 초기 분석이 끝날 때까지 기다린다.
-\item 필요하면 Ctrl+Shift+P → Developer: Reload Window를 실행한다.
-\item 이미 서버가 설치된 PC에서는 알림이 다시 나오지 않을 수 있다.
-\end{itemize}\checkline{자동 설치에서는 서버를 PATH에 추가하거나 slang.path를 지정하지 않는다.}\source{https://hudson-trading.github.io/slang-server/start/installing/}{공식 안내: 서버 자동 설치 · 알림 문구는 버전에 따라 다를 수 있음}
-\end{frame}
-
-\begin{frame}[fragile]{4. 설치된 확장도 활성화 여부 확인}
-\begin{itemize}
-\item Ctrl+Shift+X에서 slang과 VaporView를 각각 찾는다.
-\item 비활성화돼 있다면 톱니바퀴 메뉴의 \textbf{Enable (Workspace)}를 선택한다.
-\item 이미 활성화돼 있다면 다시 설정할 필요가 없다.
-\item 재시작 안내가 나오면 따르고, 필요하면 Developer: Reload Window를 실행한다.
-\item \texttt{.v} 파일의 오른쪽 아래가 Plain Text가 아닌 Verilog인지 확인한다.
-\end{itemize}
-\checkline{워크스페이스 신뢰와 개별 확장의 활성화는 따로 확인한다.}
-\end{frame}
-
-% 03-15-00 영상 03:54:06.5: 확장 메뉴.
-\videoshot{4. 실제 화면: Enable (Workspace)}{04-enable-workspace-video.png}
-{확장을 설치했어도 현재 워크스페이스에서 꺼져 있으면 활성화한다.}
-
-% 07-10-20 영상 00:02:20: 활성화 후 전가산기 소스.
-\videoshot{5. 실제 화면: 전가산기 코드}{05-source-video.png}
-{반가산기 두 개의 연결을 확인한다. 색상 표시만으로 분석 성공을 판단하지 않는다.}
-
-\begin{frame}[fragile]{5. 언어 서버가 필요한 이유}
-\begin{itemize}
-\item 모듈·신호·연결 관계를 분석하여 여러 파일의 회로를 읽도록 돕는다.
-\item 색상과 심벌 정보로 코드의 구조를 구분한다.
-\item Ctrl+클릭으로 사용한 모듈의 정의에 바로 이동한다.
-\item 문법 오류와 경고를 편집 중 확인한다.
-\end{itemize}\checkline{색상만 확인하지 말고 정의 이동과 오류 진단까지 시험한다.}\par\vspace{0.2cm}\small 실제 색상은 선택한 VS Code 테마에 따라 달라진다.
-\end{frame}
-
-\begin{frame}[fragile]{5. Ctrl+클릭으로 반가산기 열기}
-\texttt{full\_adder.v}에서 \textbf{half\_adder} 위에 Ctrl+클릭 또는 F12.\begin{lstlisting}
-half_adder u_first (
-    .a(a),
-    .b(b),
-    .sum(first_sum),
-    .carry(first_carry)
-);
-\end{lstlisting}\checkline{half\_adder.v의 모듈 정의로 이동한다.}\par\small Alt+왼쪽 화살표로 돌아온다. 마우스를 올려 심벌 정보도 확인한다.
-\end{frame}
-
-\begin{frame}[fragile]{5. 문법 오류를 확인하고 복원하기}
-\begin{lstlisting}
-assign carry_out = first_carry | second_carry;
-\end{lstlisting}\begin{itemize}
-\item 마지막 세미콜론을 잠시 지우고 저장한다.
-\item 오류 밑줄과 Problems(Ctrl+Shift+M)의 진단을 읽는다.
-\item Ctrl+Z로 복원하고 다시 저장한다.
-\item 오류가 사라진 것을 확인한 뒤 시뮬레이션한다.
-\end{itemize}\small 오류 위치가 다음 줄에 표시될 수도 있다. 경고도 내용을 읽고 원인을 확인한다.
-\end{frame}
-
-\begin{frame}[fragile]{5. 분석할 소스 목록}
-\texttt{sources.f}에 세 소스가 등록되어 있다.\begin{lstlisting}
-src/half_adder.v
-src/full_adder.v
-sim/tb_full_adder.sv
-\end{lstlisting}\begin{itemize}
-\item \texttt{.slang/server.json}은 이 목록을 사용한다.
-\item 새 파일을 추가할 때 언어 서버의 분석 대상도 확인한다.
-\item 다른 실험의 같은 이름 모듈이 섞이지 않도록 프로젝트 범위를 확인한다.
-\end{itemize}\source{https://hudson-trading.github.io/slang-server/start/config/}{공식 안내: 언어 서버 프로젝트 설정}
-\end{frame}
-
-\begin{frame}[fragile]{6. 전가산기의 예상 결과}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.45\textwidth}
-\small\centering
-\begin{tabular}{ccccc}
-a & b & carry\_in & carry\_out & sum\\\hline
-0&0&0&0&0\\0&0&1&0&1\\0&1&0&0&1\\0&1&1&1&0\\
-1&0&0&0&1\\1&0&1&1&0\\1&1&0&1&0\\1&1&1&1&1
-\end{tabular}
-\end{column}
-\begin{column}{0.51\textwidth}
-입력 3개의 합을 두 출력으로 표현한다.\par\vspace{0.3cm}
-\texttt{\{carry\_out, sum\}}\par
-\texttt{= a + b + carry\_in}\par\vspace{0.3cm}
-반가산기 두 개와 OR 연산을 연결한다.\par\vspace{0.3cm}
-조합회로이므로 클록 입력이 없다.
-\end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]{6. 테스트벤치는 무엇을 검사하는가?}
-\begin{itemize}
-\item \texttt{sim/tb\_full\_adder.sv}가 입력 000부터 111까지 인가한다.
-\item 각 입력을 10 ns 동안 유지한다.
-\item 입력 변경 1 ns 뒤 출력과 예상값을 비교한다.
-\item 8개 입력을 모두 검사하고 총 80 ns에 종료한다.
-\end{itemize}\checkline{1 ns는 시뮬레이션의 검사 대기 시간이다.}\par 실제 FPGA의 전파 지연을 측정한 값은 아니다.
-\end{frame}
-
-\begin{frame}[fragile]{7. VS Code 작업으로 실행하기}
-\begin{itemize}
-\item 소스 파일을 모두 저장한다.
-\item Ctrl+Shift+P → Tasks: Run Task → HDL: Check tools
-\item Vivado 도구 세 개의 경로와 버전을 확인한다.
-\item Ctrl+Shift+B → HDL: Simulate full adder
-\item 또는 Tasks: Run Task에서 같은 시뮬레이션 작업을 선택한다.
-\end{itemize}\checkline{작업이 없으면 수업 워크스페이스와 작업 설정의 등록 위치를 확인한다.}
-\end{frame}
-
-\begin{frame}[fragile]{7. 성공 결과 확인}
-\begin{lstlisting}
-PASS: all 8 full-adder input combinations
-\end{lstlisting}\begin{itemize}
-\item \texttt{build/full\_adder.vcd}가 생성된다.
-\item 터미널의 \texttt{Waveform:}은 파형 위치를 알려 준다.
-\item \texttt{Logs:}는 이번 실행의 로그 폴더를 알려 준다.
-\item PASS가 없으면 실패한 단계의 로그부터 확인한다.
-\end{itemize}\checkline{단순히 실행이 끝난 것과 8개 검사를 통과한 것을 구분한다.}
-\end{frame}
-
-\begin{frame}[fragile]{7. 터미널에서 직접 실행할 때}
-저장소 루트의 PowerShell에서 예제 폴더로 이동한 뒤 실행한다.\begin{lstlisting}
-cd example/fpga_projects_hdl/example_full_adder_hdl
-powershell.exe -NoProfile -ExecutionPolicy Bypass `
-  -File scripts/check-tools.ps1
-powershell.exe -NoProfile -ExecutionPolicy Bypass `
-  -File scripts/simulate.ps1
-\end{lstlisting}\small 줄 끝의 백틱은 PowerShell의 줄 연결 기호다. 뒤에 공백을 넣지 않는다.\par\vspace{0.25cm}실행 정책 옵션은 해당 프로세스에 적용된다. 영구 실행 정책 변경은 필요 없다.
-\end{frame}
-
-\begin{frame}[fragile]{8. VaporView에서 VCD 열기}
-\begin{itemize}
-\item \texttt{build/full\_adder.vcd}를 연다.
-\item 텍스트로 열리면 우클릭 → Open With… → VaporView
-\item VaporView Netlist에서 tb\_full\_adder를 펼친다.
-\item a, b, carry\_in, sum, carry\_out을 더블클릭하거나 +로 추가한다.
-\item 파형 창에서 Zoom to Fit(Ctrl+0)으로 전체 구간을 본다.
-\end{itemize}\source{https://marketplace.visualstudio.com/items?itemName=lramseyer.vaporview}{공식 안내: VaporView 신호 추가와 파형 조작}
-\end{frame}
-
-\begin{frame}[fragile]{8. 시간축과 진리표 비교}
+\begin{frame}{도구의 역할}\relax
 \small
-\begin{tabular}{lll}
-\textbf{시간} & \textbf{a, b, carry\_in} & \textbf{carry\_out, sum}\\\hline
-0--10 ns & 000 & 00\\[0.25cm]
-30--40 ns & 011 & 10\\[0.25cm]
-70--80 ns & 111 & 11
-\end{tabular}
-\vspace{0.3cm}
-\begin{itemize}
-\item 세 구간을 먼저 찾고 나머지 다섯 구간도 확인한다.
-\item 커서를 각 구간에 놓고 입력과 출력을 함께 읽는다.
-\item 시간축이 ps이면 10,000 ps = 10 ns이다.
-\end{itemize}
-\checkline{그림을 저장하기 전에 8개 입력이 진리표와 일치하는지 확인한다.}
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item VS Code: 파일 편집과 작업 실행.
+\item Git: 템플릿을 받고 자신의 변경을 기록.
+\item Python 3.10 이상: tools/lab1.py 실행.
+\item Icarus Verilog: iverilog로 컴파일, vvp로 시뮬레이션.
+\item slang: 편집 중 진단. VaporView: 생성된 VCD 파형 표시.
+\item Vivado: 이후 같은 소스로 시뮬레이션·합성·구현. CLI 과정은 해당 도구를 사용한다.
+\end{enumerate}
+
 \end{frame}
 
-% 07-10-20 영상 00:03:10: 파형과 실행 결과를 각각 확대.
-\videoshot{8. 실제 화면: 8개 입력의 파형}{06-wave-video.png}
-{시간 단위는 ps이다. 10,000 ps마다 입력이 바뀌며 80 ns까지 비교한다.}
-
-\begin{frame}{8. 실제 화면: 실행 완료와 별도 오류 구분}
-\centering
-\includegraphics[width=0.98\textwidth]{assets/vscode-v1.0.0/07-result-video.png}
-\par\vspace{0.3cm}
-\begin{itemize}
-\item 터미널에 80 ns 종료와 생성된 VCD 경로가 표시된다.
-\item 오른쪽 소스 경로 오류 알림은 파형 생성 결과와 구분한다.
-\item 소스 분석·이동 문제가 남으면 언어 서버 설정의 상대경로 기준을 확인한다.
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{8. 수정한 코드의 결과 다시 확인}
-\begin{itemize}
-\item 저장 → 시뮬레이션 재실행 → 파형 다시 열기 또는 새로고침
-\item 이번 실행의 PASS와 새 VCD를 확인한다.
-\item 실패 후 이미 열려 있던 파형을 새 결과로 해석하지 않는다.
-\end{itemize}\vspace{0.3cm}\small 예제 스크립트는 실행 시작 시 이전 대표 VCD를 제거한다.\par 모든 검사가 성공한 경우 새 결과를 대표 VCD로 복사한다.
-\end{frame}
-
-\begin{frame}[fragile]{9. 실험 전 보고서에 담을 것}
-\begin{itemize}
-\item 설계 내용과 핵심 코드
-\item 시험 입력과 예상 결과
-\item VS Code에서 확인한 파형과 결과 해석
-\item 파일명·신호명·시간축·입출력 변화가 읽히는 스크린샷
-\end{itemize}\checkline{전가산기로 환경을 확인한 뒤 LAB1 전체 10개 실험에 적용한다.}\par\vspace{0.2cm}\small 이 배포 프로젝트에는 전가산기 예제만 들어 있다.
-\end{frame}
-
-\begin{frame}[fragile]{9. 파형을 설명하는 문장}
-\large
-30--40 ns 구간에서 a=0, b=1, carry\_in=1이다.\par\vspace{0.3cm}
-세 입력의 합은 2이므로 carry\_out=1, sum=0을 예상한다.\par\vspace{0.3cm}
-파형에서도 같은 값이 확인되어 이 입력 조건의 결과가 진리표와 일치한다.
-\checkline{시험 조건 → 예상 결과 → 관찰 결과 순서로 설명한다.}
-\end{frame}
-
-\begin{frame}[fragile]{9. LAB1\textasciitilde{}LAB3 제출·시연 방식}
-\begin{itemize}
-\item \textbf{실험 전}: 해당 LAB 전체의 VS Code 시뮬레이션과 해석
-\item \textbf{당일}: 조교가 무작위로 2개 선정 → 보드 시연 → 출석부 기록
-\item \textbf{실험 후}: 전체 Vivado 시뮬레이션과 선정된 2개의 시연 사진
-\item 사진에는 실험 번호·입력 조건·확인한 동작을 설명한다.
-\end{itemize}\vspace{0.3cm}\small 수업 운영의 기준은 OT TeX를 따른다. LAB1 10개 · LAB2 8개 · LAB3 7개.
-\end{frame}
-
-\begin{frame}[fragile]{10. 도구 경로가 잘못되었을 때}
-\begin{lstlisting}
-Get-Command xvlog.bat, xelab.bat, xsim.bat -All
-$env:VIVADO_BIN
-\end{lstlisting}\begin{itemize}
-\item 실제로 호출되는 버전과 경로 순서를 확인한다.
-\item PATH 수정 전부터 켜 둔 PowerShell과 VS Code를 모두 종료하고 새로 실행한다.
-\item VIVADO\_BIN이 설정되어 있으면 스크립트가 그 경로를 사용할 수 있다.
-\end{itemize}\small 개별 실행에서 실제 설치 경로를 지정하는 방법:\begin{lstlisting}
-powershell.exe -NoProfile -ExecutionPolicy Bypass `
-  -File scripts/simulate.ps1 `
-  -VivadoBin 'C:\AMDDesignTools\2026.1\Vivado\bin'
-\end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]{10. 언어 서버가 동작하지 않을 때}
-\begin{itemize}
-\item 설치 알림이 없으면 먼저 F12로 기존 설치 여부를 확인한다.
-\item 확장 활성화, 작업 영역 신뢰와 열린 프로젝트 폴더를 확인한다.
-\item 오른쪽 아래 언어 모드: .v는 Verilog, .sv는 SystemVerilog
-\item sources.f에 필요한 파일이 등록되었는지 확인한다.
-\item 다운로드 실패는 Output의 slang 관련 로그와 네트워크를 확인한다.
-\end{itemize}\checkline{오류 메시지를 그대로 확인하고 조교에게 전달한다.}
-\end{frame}
-
-\begin{frame}[fragile]{10. 시뮬레이션·파형 문제 확인}
+\begin{frame}[label=vscode-install-tools]{Windows · VS Code와 Git}\relax
 \small
-\begin{tabular}{p{3.5cm}p{9.5cm}}
-\textbf{증상} & \textbf{확인할 것}\\\hline
-작업 메뉴가 없음 & 수업 워크스페이스와 작업 설정의 등록 위치를 확인했는가?\\[0.25cm]
-컴파일 실패 & compile.txt의 첫 오류, 세미콜론 복원 여부\\[0.25cm]
-모듈 연결 실패 & elaborate.txt의 최상위·모듈 연결 오류\\[0.25cm]
-PASS가 없음 & simulation.txt의 실패 입력·예상값·실제값\\[0.25cm]
-VCD가 없음 & 이번 실행이 성공했는가?\\[0.25cm]
-파형이 비어 있음 & 신호 추가, 올바른 VCD, Zoom to Fit
-\end{tabular}
-\vspace{0.3cm}\par 로그 위치: \texttt{build/run-…/}
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 아래 공식 VS Code 설치 안내에서 Windows User Setup을 받는다.
+\item 설치 화면의 PATH 추가 항목을 확인하고 설치를 마친다.
+\item Git for Windows도 설치하고 명령줄에서 Git을 사용할 수 있게 한다.
+\item 설치 후 기존 VS Code와 터미널을 닫고 새로 연다.
+\end{enumerate}
+\href{https://code.visualstudio.com/docs/setup/windows}{VS Code 공식 설치}\quad\href{https://git-scm.com/install/windows}{Git 공식 설치}
 \end{frame}
 
-\begin{frame}[fragile]{설치 완료 확인}
-\begin{itemize}
-\item Git·VS Code의 버전과 경로를 확인했다. GitHub CLI는 사용 시 확인했다.
-\item Vivado 도구 세 개가 2026.1로 실행된다.
-\item 올바른 예제 폴더를 열고 두 확장을 설치했다.
-\item 정의 이동과 오류 진단을 확인하고 문법 오류를 복원했다.
-\item 8개 입력 검사 PASS와 80 ns 파형을 확인했다.
-\item 다섯 신호의 값을 진리표와 비교하여 설명할 수 있다.
-\end{itemize}
+\begin{frame}{Windows · Python 설치}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item Python 공식 Windows 설치 프로그램을 실행한다.
+\item Add python.exe to PATH를 선택하고 Install Now를 누른다.
+\item 설치 후 VS Code와 PowerShell을 다시 연다.
+\item 아래 명령이 실제 Python 버전을 출력하는지 확인한다.
+\end{enumerate}
+\terminalbox{python --version}
+제작 PC에서는 Python 3.12.10으로 실습했다. 3.10 이상이 필요하다.\par\href{https://docs.python.org/3.12/using/windows.html}{Python 공식 Windows 설치 안내}
 \end{frame}
 
+\begin{frame}{Windows · Icarus 설치}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item MSYS2 공식 설치 안내에 따라 설치·초기 업데이트를 마친다.
+\item 시작 메뉴의 MSYS2 MINGW64 터미널을 연다.
+\item 아래 명령을 입력하고 패키지 설치를 완료한다.
+\end{enumerate}
+\terminalbox{pacman -S mingw-w64-x86\_64-iverilog}
+기본 설치 경로는 C:/msys64/mingw64/bin이다. iverilog.exe와 vvp.exe를 함께 제공한다.\par\href{https://www.msys2.org/}{MSYS2 설치}\quad\href{https://packages.msys2.org/packages/mingw-w64-x86_64-iverilog}{Icarus 패키지·설치 명령}
+\end{frame}
+
+\begin{frame}{Windows · Icarus를 PATH에 추가}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 시작 메뉴에서 계정의 환경 변수 편집을 검색해 연다.
+\item 사용자 변수의 Path 선택 → 편집 → 새로 만들기.
+\item C:/msys64/mingw64/bin을 추가하고 열린 창의 확인을 누른다.
+\item 설치 위치를 바꿨다면 자신의 mingw64/bin 경로를 넣는다.
+\item VS Code를 모든 창까지 종료하고 다시 연다.
+\item Terminal → New Terminal에서 다음 장의 버전을 확인한다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Windows PowerShell · 버전 확인}\relax
+\small
+\terminalbox{git --version\\python --version\\iverilog -V\\vvp -V\\Get-Command python, iverilog, vvp}
+이름을 찾을 수 없으면 설치 위치와 PATH를 확인한다.\par\vspace{0.22cm}Python 대신 Store가 열리거나 버전이 없으면 실제 Python 설치와 호출 경로를 확인한다.\par
+\end{frame}
+
+\begin{frame}{macOS·Linux·WSL에서 시작할 때}\relax
+\small
+Git·Python 3·Icarus를 해당 운영체제에 설치한다. Python 명령은 python3를 사용한다.\par\vspace{0.22cm}WSL은 VS Code의 WSL 확장으로 Linux 폴더를 열고 확장도 Install in WSL로 설치한다.\par\vspace{0.22cm}Windows와 WSL의 도구·경로를 섞지 않는다. 통합 CLI의 ARM64 배포와 WSL 실행 범위는 별도 교안을 따른다.\par\terminalbox{git --version\\python3 --version\\iverilog -V\\vvp -V}
+\href{04.LAB1_10B_INTEGRATED_CLI.pdf}{통합 CLI 환경 안내}
+\end{frame}
+
+\begin{frame}[label=vscode-install-clone]{v2.0.0 템플릿을 새 이름으로 받기}\relax
+\small
+Windows PowerShell에서 실습 폴더를 둘 위치로 이동한 뒤 실행한다. 줄 끝의 백틱은 다음 줄로 이어 준다.\par\terminalbox{git clone --branch v2.0.0 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab1\_01\_logic\_gates\\cd lab1\_01\_logic\_gates\\git switch -c main}
+다음 회로에서는 마지막 폴더 이름을 바꾼다. 모든 회로가 같은 단일 프로젝트 템플릿에서 출발한다.\par
+\end{frame}
+
+\begin{frame}{macOS·Linux · 같은 태그 clone}\relax
+\small
+이 장은 Bash·Zsh용이다. 마지막 목적지 이름을 회로마다 바꾼다.\par\terminalbox{git clone --branch v2.0.0 \textbackslash{}\\  https://github.com/Glaysia/fpga-lab-template.git \textbackslash{}\\  lab1\_01\_logic\_gates\\cd lab1\_01\_logic\_gates\\git switch -c main}
+코드 작성은 해당 회로 PDF의 RTL·TB·XDC 전체 이미지를 따른다.\par
+\end{frame}
+
+\begin{frame}{File → New Window}\relax
+\small
+VS Code 상단 File → New Window를 누른다. Ctrl+Shift+N도 같다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=27.75bp 522bp 652.5bp 21bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+새 창에서 File → Open Workspace from File...을 누른다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=27.75bp 439.5bp 652.5bp 105bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+
+\end{frame}
+
+\begin{frame}{LAB1.code-workspace 열기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 방금 clone한 폴더로 이동한다.
+\item LAB1.code-workspace를 선택하고 Open을 누른다.
+\item Explorer의 PROJECT 아래에 src·sim·constraints·tools가 보이는지 확인한다.
+\item RTL·TB·XDC는 주석뿐인 시작 파일이다. 회로 PDF를 보며 작성한다.
+\item Restricted Mode라면 출처와 실행할 작업을 읽고 해당 프로젝트의 신뢰 여부를 직접 결정한다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{추천 확장 세 개 설치}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 왼쪽 Extensions 아이콘 클릭 → 검색창에 @recommended 입력.
+\item slang → Install: Verilog/SystemVerilog 편집 진단.
+\item VaporView → Install: VCD 파형 보기.
+\item vscode-pdf → Install: PDF 교안을 편집기 옆에서 보기.
+\item 이미 설치되어도 Disabled 상태이면 해당 확장의 Enable (Workspace)을 선택한다.
+\end{enumerate}
+확장 설치와 Python·Icarus 설치는 각각 필요하다.\par
+\end{frame}
+
+\begin{frame}{빈 파일을 내 회로 파일로 바꾸기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item Explorer에서 src/design.v 우클릭 → Rename. 회로 PDF의 RTL 파일명으로 변경한다.
+\item sim/tb\_design.v와 constraints/pins.xdc도 같은 방법으로 변경한다.
+\item 각 파일을 두 번 눌러 열고 전체 코드 이미지를 보며 직접 입력한다.
+\item RTL이 여러 개라면 src 우클릭 → New File로 각각 만든다.
+\item File → Save All. 파일명과 module 이름을 구분한다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{simulation.json 수정}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item Explorer에서 simulation.json을 두 번 누른다.
+\item sources 배열에 자신이 만든 src/... 파일들을 모두 등록한다.
+\item testbench에는 sim/... 파일 경로를 적는다.
+\item simulation\_top에는 테스트벤치 module 이름을 적는다.
+\item 경로의 큰따옴표·쉼표·대괄호를 확인하고 Save All.
+\end{enumerate}
+\href{04.LAB1_01_LOGIC_GATES_VIVADO.pdf}{첫 회로의 전체 JSON·RTL·TB·XDC 화면}
+\end{frame}
+
+\begin{frame}[label=vscode-install-sim]{세 작업을 순서대로 실행}\relax
+\small
+Terminal → Run Task...을 누른다. 메뉴가 숨겨졌으면 상단 …을 확인한다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.1cm,keepaspectratio,trim=219.75bp 507.75bp 219.75bp 0bp,clip]{assets/modern-01/06-tasks.png}\par}\vspace{0.16cm}
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 01 Check tools: Python·Icarus 실행을 확인한다.
+\item 02 Simulate: 작성한 RTL·TB를 컴파일하고 실행한다.
+\item 03 Open waveform: 생성된 wave.vcd를 연다.
+\end{enumerate}
+Vivado 실행은 이 세 작업에 포함되지 않는다. 해당 실습의 Vivado GUI 절차를 뒤에서 진행한다.\par
+\end{frame}
+
+\begin{frame}{PASS·검사 수·시간 읽기}\relax
+\small
+SIMULATED는 실행기의 완료 상태다. TB의 LAB1\_PASS와 검사 수까지 확인한다.\par\vspace{0.22cm}첫 논리 게이트는 4개 검사, 40ns 종료다. 회로마다 검사 수·종료 시각은 다르므로 자신의 PDF와 대조한다.\par\vspace{0.22cm}build/sim/result.json과 실행별 simulation.log, wave.vcd를 보관한다.\par\vspace{0.22cm}실패 시 FAIL 문구의 입력·예상값·실제값을 읽고 코드 수정 → Save All → 02 Simulate로 다시 실행한다.\par
+\end{frame}
+
+\begin{frame}{VaporView 파형 열기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 03 Open waveform을 실행한다.
+\item 텍스트로 열리면 VCD 탭 우클릭 → Reopen Editor With... → VaporView.
+\item Netlist에서 테스트벤치를 펼치고 입력·출력 신호를 추가한다.
+\item Zoom to Fit으로 전체 시간을 본다.
+\item 구간 중간에 커서를 두고 입력과 출력 값을 진리표와 비교한다.
+\item 파형이 비어 있으면 신호 추가 여부와 이번 실행의 VCD인지 확인한다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{실행이 안 될 때 확인할 순서}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 작업 메뉴가 없다: 올바른 LAB1.code-workspace를 열었는지 확인.
+\item Python·iverilog를 못 찾는다: Get-Command 결과, PATH, VS Code 재시작 확인.
+\item 컴파일 실패: 로그의 첫 오류, 파일명·세미콜론·괄호 확인.
+\item top을 찾지 못한다: simulation\_top과 TB module 선언 비교.
+\item FAIL 또는 timeout: 입력·기대값·종료 조건과 watchdog 확인.
+\item 파형 편집기가 없다: VaporView 설치·Enable (Workspace) 확인.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{설치 완료 후 첫 실습으로}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 세 도구의 버전과 호출 경로를 확인했다.
+\item 빈 템플릿을 v2.0.0으로 받고 workspace 하나를 열었다.
+\item 추천 확장 세 개를 설치했다.
+\item 회로 PDF를 보며 RTL·TB·JSON·XDC를 직접 작성한다.
+\item 실험 전에는 VS Code 결과, 실험 후에는 구현·실측·사진·영상·GitHub 링크를 정리한다.
+\end{enumerate}
+\href{04.LAB1_01_LOGIC_GATES_VIVADO.pdf}{01 논리 게이트 시작}\quad\href{04.LAB1_00_CONTENTS.pdf}{22개 전체 목차}
+\end{frame}
+\endgroup
 \end{document}

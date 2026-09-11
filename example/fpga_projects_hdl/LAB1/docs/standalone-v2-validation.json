@@ -1,0 +1,1142 @@
+{
+  "scope": "22 standalone local instructor examples cloned from v2.0.0; publication and submodule migration pending",
+  "platform": "Windows x86-64; MSYS2 mingw64 Icarus 13.0",
+  "results": [
+    {
+      "project": "vivado_2026_1/01_logic_gates",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS logic_gate cases=4",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/logic_gate.v"
+      ],
+      "testbench": "sim/tb_logic_gate_modern.sv",
+      "constraints": "constraints/logic_gate.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-ec106a19c8ff4ba79aff31f95c665647",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "3248b9b6eb85a1ef325c57cc4b28d887308ddfc00c9508f48746f5b52f0da8a7",
+          "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+          "sim/tb_logic_gate_modern.sv": "8815d26ae87ee452a7cec9e99d54cab62ab72d35ec1e090e3af6afc154ffb232"
+        },
+        "wave_sha256": "c606bfd3522ef941a7239f8fd52588fbfc8ecca20ecb99fcdfd11f0ee1e90abb"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/01_logic_gates",
+        "top": "logic_gate",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/logic_gate.xdc",
+        "files": {
+          "src/logic_gate.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/logic_gate.v",
+            "sha256": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b"
+          },
+          "sim/tb_logic_gate_modern.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_logic_gate_modern.sv",
+            "sha256": "8815d26ae87ee452a7cec9e99d54cab62ab72d35ec1e090e3af6afc154ffb232"
+          },
+          "constraints/logic_gate.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/logic_gate.xdc",
+            "sha256": "2e5671a832643a1755be7dcd935ab3ad615f4a09a20f1703db6af009d2c7e263"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_01_logic_gates\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_01_logic_gates\\sim -s tb_logic_gate_modern -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_01_logic_gates\\build\\sim\\run-ec106a19c8ff4ba79aff31f95c665647\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_01_logic_gates\\src\\logic_gate.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_01_logic_gates\\sim\\tb_logic_gate_modern.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module logic_gate declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_01_logic_gates\\src\\logic_gate.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_01_logic_gates\\build\\sim\\run-ec106a19c8ff4ba79aff31f95c665647\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS logic_gate cases=4\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_01_logic_gates\\sim\\tb_logic_gate_modern.sv:19: $finish called at 40000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_01_logic_gates\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "legacy/01_logic_gates",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS logic_gate cases=4",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/logic_gate.v"
+      ],
+      "testbench": "sim/tb_logic_gate.sv",
+      "constraints": "constraints/logic_gate.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-9187e59d95994c8a962ae4f5bd24e223",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "03f7fa981ef8ce1425be0e7053f25cd6cf836a3d963cda124c2399e354c515db",
+          "src/logic_gate.v": "323f477f44b2ac72c0ab0d77364a6d85140001f84e6aa19d1c3094aa58df2372",
+          "sim/tb_logic_gate.sv": "f5cd77fd26bda75ce41621b01a4e80a1d485cae5a95cd8f9c1903dfc4dcf1e71"
+        },
+        "wave_sha256": "70ca218753c18509c79d6e09170bb9a0a213bad49d544e319a9058d14754b18e"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "legacy/01_logic_gates",
+        "top": "logic_gate",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/logic_gate.xdc",
+        "files": {
+          "src/logic_gate.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/01_logic_gates/original/logic_gate.v",
+            "sha256": "323f477f44b2ac72c0ab0d77364a6d85140001f84e6aa19d1c3094aa58df2372"
+          },
+          "sim/tb_logic_gate.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_logic_gate.sv",
+            "sha256": "f5cd77fd26bda75ce41621b01a4e80a1d485cae5a95cd8f9c1903dfc4dcf1e71"
+          },
+          "constraints/logic_gate.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/logic_gate.xdc",
+            "sha256": "2e5671a832643a1755be7dcd935ab3ad615f4a09a20f1703db6af009d2c7e263"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_01_logic_gates\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_01_logic_gates\\sim -s tb_logic_gate -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_01_logic_gates\\build\\sim\\run-9187e59d95994c8a962ae4f5bd24e223\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_01_logic_gates\\src\\logic_gate.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_01_logic_gates\\sim\\tb_logic_gate.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module logic_gate declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_01_logic_gates\\src\\logic_gate.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_01_logic_gates\\build\\sim\\run-9187e59d95994c8a962ae4f5bd24e223\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS logic_gate cases=4\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_01_logic_gates\\sim\\tb_logic_gate.sv:19: $finish called at 40000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_01_logic_gates\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "vivado_2026_1/02_full_adder",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS full_adder cases=8",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/full_adder.v",
+        "src/half_adder.v"
+      ],
+      "testbench": "sim/tb_full_adder.sv",
+      "constraints": "constraints/full_adder.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-9dbd432e811844c0ad4313e67f002a62",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "935957436e53bb4e99987c862e79fb5f946f072b8f3fd170bd99ad917031cfe5",
+          "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+          "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+          "sim/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f"
+        },
+        "wave_sha256": "08c15658a21f1dccd4490de9a2e9e2f1b6805c135938c173724ded8ab3017179"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/02_full_adder",
+        "top": "full_adder",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/full_adder.xdc",
+        "files": {
+          "src/full_adder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/full_adder.v",
+            "sha256": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51"
+          },
+          "src/half_adder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/half_adder.v",
+            "sha256": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25"
+          },
+          "sim/tb_full_adder.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_full_adder.sv",
+            "sha256": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f"
+          },
+          "constraints/full_adder.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/full_adder.xdc",
+            "sha256": "a19c228316ac26a0c0310a539cd5fe7e6f06ee0fbfdd4b479da1e92441da9146"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\sim -s tb_full_adder -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\build\\sim\\run-9dbd432e811844c0ad4313e67f002a62\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\src\\full_adder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\src\\half_adder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\sim\\tb_full_adder.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module full_adder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\src\\full_adder.v:1\n       :   -- module half_adder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\src\\half_adder.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\build\\sim\\run-9dbd432e811844c0ad4313e67f002a62\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS full_adder cases=8\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\sim\\tb_full_adder.sv:19: $finish called at 80000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_02_full_adder\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "legacy/02_full_adder",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS full_adder cases=8",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/full_adder.v",
+        "src/half_adder.v"
+      ],
+      "testbench": "sim/tb_full_adder.sv",
+      "constraints": "constraints/full_adder.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-4bda035d9691461b8b27b25ddce69bab",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "935957436e53bb4e99987c862e79fb5f946f072b8f3fd170bd99ad917031cfe5",
+          "src/full_adder.v": "0acb0572610de489b94b902a3fe2b254315f41ca711e790cff185acc5ee5c898",
+          "src/half_adder.v": "959405ba290ffdfbc82521fc5458a706c131082deef0ebb3f539c6bd3d6a4700",
+          "sim/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f"
+        },
+        "wave_sha256": "198204948825e7a3ed79ef285a17cbb9d87acfd4ba80eed73f3a0cd47dc639e5"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "legacy/02_full_adder",
+        "top": "full_adder",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/full_adder.xdc",
+        "files": {
+          "src/full_adder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/02_full_adder/original/full_adder.v",
+            "sha256": "0acb0572610de489b94b902a3fe2b254315f41ca711e790cff185acc5ee5c898"
+          },
+          "src/half_adder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/02_full_adder/original/half_adder.v",
+            "sha256": "959405ba290ffdfbc82521fc5458a706c131082deef0ebb3f539c6bd3d6a4700"
+          },
+          "sim/tb_full_adder.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_full_adder.sv",
+            "sha256": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f"
+          },
+          "constraints/full_adder.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/full_adder.xdc",
+            "sha256": "a19c228316ac26a0c0310a539cd5fe7e6f06ee0fbfdd4b479da1e92441da9146"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\sim -s tb_full_adder -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\build\\sim\\run-4bda035d9691461b8b27b25ddce69bab\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\src\\full_adder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\src\\half_adder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\sim\\tb_full_adder.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module full_adder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\src\\full_adder.v:2\n       :   -- module half_adder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\src\\half_adder.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\build\\sim\\run-4bda035d9691461b8b27b25ddce69bab\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS full_adder cases=8\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\sim\\tb_full_adder.sv:19: $finish called at 80000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_02_full_adder\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "vivado_2026_1/03_adder4",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS adder_4bit cases=256",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/adder_4bit.v"
+      ],
+      "testbench": "sim/tb_adder_4bit.sv",
+      "constraints": "constraints/adder_4bit.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-242d3211dc8b4eb78630f102dc2ca722",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "79fa93d8016e9882d752d7ba025ea1e42592f51df25fa460082f26ddcd220c79",
+          "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+          "sim/tb_adder_4bit.sv": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df"
+        },
+        "wave_sha256": "8c2187006c4af3b01f720d40e37326164beef6cb6522ba05df724b6b7fe0d62e"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/03_adder4",
+        "top": "adder_4bit",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/adder_4bit.xdc",
+        "files": {
+          "src/adder_4bit.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/adder_4bit.v",
+            "sha256": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2"
+          },
+          "sim/tb_adder_4bit.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_adder_4bit.sv",
+            "sha256": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df"
+          },
+          "constraints/adder_4bit.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/adder_4bit.xdc",
+            "sha256": "db69b1122244939998fe14d2a5a42fd3174850ecf04d955a45990affbbe60b87"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_03_adder4\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_03_adder4\\sim -s tb_adder_4bit -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_03_adder4\\build\\sim\\run-242d3211dc8b4eb78630f102dc2ca722\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_03_adder4\\src\\adder_4bit.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_03_adder4\\sim\\tb_adder_4bit.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module adder_4bit declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_03_adder4\\src\\adder_4bit.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_03_adder4\\build\\sim\\run-242d3211dc8b4eb78630f102dc2ca722\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS adder_4bit cases=256\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_03_adder4\\sim\\tb_adder_4bit.sv:19: $finish called at 2560000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_03_adder4\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "legacy/03_adder4",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS adder_4bit cases=256",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/adder_4bit.v"
+      ],
+      "testbench": "sim/tb_adder_4bit.sv",
+      "constraints": "constraints/adder_4bit.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-f9376a7a02634b98963b795e9650702d",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "79fa93d8016e9882d752d7ba025ea1e42592f51df25fa460082f26ddcd220c79",
+          "src/adder_4bit.v": "d244da1c9ba1bc6aa2f21656102333b2e8bbbf2b32bf49a985963617aaba6758",
+          "sim/tb_adder_4bit.sv": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df"
+        },
+        "wave_sha256": "4be440569ce0596e488bb2944aaaa248066564cff961f1845ca1d368244a4d40"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "legacy/03_adder4",
+        "top": "adder_4bit",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/adder_4bit.xdc",
+        "files": {
+          "src/adder_4bit.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/03_adder4/original/adder_4bit.v",
+            "sha256": "d244da1c9ba1bc6aa2f21656102333b2e8bbbf2b32bf49a985963617aaba6758"
+          },
+          "sim/tb_adder_4bit.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_adder_4bit.sv",
+            "sha256": "96412e99f71942a2d0615257dd5f45e4bf1f4cf84c6ef06bb49b24dcf91ba6df"
+          },
+          "constraints/adder_4bit.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/adder_4bit.xdc",
+            "sha256": "db69b1122244939998fe14d2a5a42fd3174850ecf04d955a45990affbbe60b87"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_03_adder4\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_03_adder4\\sim -s tb_adder_4bit -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_03_adder4\\build\\sim\\run-f9376a7a02634b98963b795e9650702d\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_03_adder4\\src\\adder_4bit.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_03_adder4\\sim\\tb_adder_4bit.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module adder_4bit declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_03_adder4\\src\\adder_4bit.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_03_adder4\\build\\sim\\run-f9376a7a02634b98963b795e9650702d\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS adder_4bit cases=256\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_03_adder4\\sim\\tb_adder_4bit.sv:19: $finish called at 2560000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_03_adder4\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "vivado_2026_1/04_subtractor4",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS sub_4bit cases=256",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/sub_4bit.v"
+      ],
+      "testbench": "sim/tb_sub_4bit.sv",
+      "constraints": "constraints/sub_4bit.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-f27a9cd67bce4aa9b862e78c1de9f803",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "bd82983a2da220e37e029dc4627654018c4167df13e21c097c97923eb136e5c1",
+          "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+          "sim/tb_sub_4bit.sv": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35"
+        },
+        "wave_sha256": "124a4ff14279ca73bd8284b6e8dce7e825f19273a6fca4962de1ac760771feb6"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/04_subtractor4",
+        "top": "sub_4bit",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/sub_4bit.xdc",
+        "files": {
+          "src/sub_4bit.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/sub_4bit.v",
+            "sha256": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe"
+          },
+          "sim/tb_sub_4bit.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_sub_4bit.sv",
+            "sha256": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35"
+          },
+          "constraints/sub_4bit.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/sub_4bit.xdc",
+            "sha256": "9d725482e37d890fe23dc4f160d72ed44943740b3a8efeb2ed25c691501ffedf"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_04_subtractor4\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_04_subtractor4\\sim -s tb_sub_4bit -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_04_subtractor4\\build\\sim\\run-f27a9cd67bce4aa9b862e78c1de9f803\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_04_subtractor4\\src\\sub_4bit.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_04_subtractor4\\sim\\tb_sub_4bit.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module sub_4bit declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_04_subtractor4\\src\\sub_4bit.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_04_subtractor4\\build\\sim\\run-f27a9cd67bce4aa9b862e78c1de9f803\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS sub_4bit cases=256\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_04_subtractor4\\sim\\tb_sub_4bit.sv:19: $finish called at 2560000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_04_subtractor4\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "legacy/04_subtractor4",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS sub_4bit cases=256",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/sub_4bit.v"
+      ],
+      "testbench": "sim/tb_sub_4bit.sv",
+      "constraints": "constraints/sub_4bit.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-436f7d291fed43099aebc4d18acba01c",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "bd82983a2da220e37e029dc4627654018c4167df13e21c097c97923eb136e5c1",
+          "src/sub_4bit.v": "0dda5e18283aef717ad0f967e46f9ecd0d5caa980ef34076e027e7bbfd803d4d",
+          "sim/tb_sub_4bit.sv": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35"
+        },
+        "wave_sha256": "29475f77d624de55b93dde99b086b5209192ba0bc28f0ba0a01c741197e3c381"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "legacy/04_subtractor4",
+        "top": "sub_4bit",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/sub_4bit.xdc",
+        "files": {
+          "src/sub_4bit.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/04_subtractor4/corrected/sub_4bit.v",
+            "sha256": "0dda5e18283aef717ad0f967e46f9ecd0d5caa980ef34076e027e7bbfd803d4d"
+          },
+          "sim/tb_sub_4bit.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_sub_4bit.sv",
+            "sha256": "9f57b343dc90d1ac46ea0d884c1222ee90dca9b662a99f1efd3cbf5cd7a17a35"
+          },
+          "constraints/sub_4bit.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/sub_4bit.xdc",
+            "sha256": "9d725482e37d890fe23dc4f160d72ed44943740b3a8efeb2ed25c691501ffedf"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_04_subtractor4\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_04_subtractor4\\sim -s tb_sub_4bit -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_04_subtractor4\\build\\sim\\run-436f7d291fed43099aebc4d18acba01c\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_04_subtractor4\\src\\sub_4bit.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_04_subtractor4\\sim\\tb_sub_4bit.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module sub_4bit declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_04_subtractor4\\src\\sub_4bit.v:4\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_04_subtractor4\\build\\sim\\run-436f7d291fed43099aebc4d18acba01c\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS sub_4bit cases=256\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_04_subtractor4\\sim\\tb_sub_4bit.sv:19: $finish called at 2560000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_04_subtractor4\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "vivado_2026_1/05_comparator4",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS compare_4 cases=256",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/compare_4.v"
+      ],
+      "testbench": "sim/tb_compare_4.sv",
+      "constraints": "constraints/compare_4.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-d5f0f23393614131a16a9c3dcb7eb821",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "a75b67d40acc83d63c5d15c7faf1015c4f71f1df70199a7b3a34e6a686a0d784",
+          "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+          "sim/tb_compare_4.sv": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602"
+        },
+        "wave_sha256": "a9ceb7062330025c6598476da951d74cf8fe4a521147235f5ee4bff1f93774ed"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/05_comparator4",
+        "top": "compare_4",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/compare_4.xdc",
+        "files": {
+          "src/compare_4.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/compare_4.v",
+            "sha256": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23"
+          },
+          "sim/tb_compare_4.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_compare_4.sv",
+            "sha256": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602"
+          },
+          "constraints/compare_4.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/compare_4.xdc",
+            "sha256": "7a117d4f7e776215a2fd06ec4b689c72fe1f9116841fa1e6788b6a17df7f24a4"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_05_comparator4\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_05_comparator4\\sim -s tb_compare_4 -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_05_comparator4\\build\\sim\\run-d5f0f23393614131a16a9c3dcb7eb821\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_05_comparator4\\src\\compare_4.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_05_comparator4\\sim\\tb_compare_4.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module compare_4 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_05_comparator4\\src\\compare_4.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_05_comparator4\\build\\sim\\run-d5f0f23393614131a16a9c3dcb7eb821\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS compare_4 cases=256\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_05_comparator4\\sim\\tb_compare_4.sv:19: $finish called at 2560000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_05_comparator4\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "legacy/05_comparator4",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS compare_4 cases=256",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/compare_4.v"
+      ],
+      "testbench": "sim/tb_compare_4.sv",
+      "constraints": "constraints/compare_4.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-508f192051294c49b6cbe0198ffb3bd7",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "a75b67d40acc83d63c5d15c7faf1015c4f71f1df70199a7b3a34e6a686a0d784",
+          "src/compare_4.v": "615443f9cdd0ec1a3a2d389605abb631323bed978a66f740b0e4b743856cd9b3",
+          "sim/tb_compare_4.sv": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602"
+        },
+        "wave_sha256": "e2ea7484553aed9fdbdea0911c5b3331314bd0abb4c85ef99dcfeb27e1e63217"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "legacy/05_comparator4",
+        "top": "compare_4",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/compare_4.xdc",
+        "files": {
+          "src/compare_4.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/05_comparator4/original/compare_4.v",
+            "sha256": "615443f9cdd0ec1a3a2d389605abb631323bed978a66f740b0e4b743856cd9b3"
+          },
+          "sim/tb_compare_4.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_compare_4.sv",
+            "sha256": "8bb3b5da55af469989276cdd9b1735b8a032ff4f1b6a178c6bc0329377a50602"
+          },
+          "constraints/compare_4.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/compare_4.xdc",
+            "sha256": "7a117d4f7e776215a2fd06ec4b689c72fe1f9116841fa1e6788b6a17df7f24a4"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_05_comparator4\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_05_comparator4\\sim -s tb_compare_4 -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_05_comparator4\\build\\sim\\run-508f192051294c49b6cbe0198ffb3bd7\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_05_comparator4\\src\\compare_4.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_05_comparator4\\sim\\tb_compare_4.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module compare_4 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_05_comparator4\\src\\compare_4.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_05_comparator4\\build\\sim\\run-508f192051294c49b6cbe0198ffb3bd7\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS compare_4 cases=256\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_05_comparator4\\sim\\tb_compare_4.sv:19: $finish called at 2560000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_05_comparator4\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "vivado_2026_1/06_mux4to1",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS mux_4x1 cases=64",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/mux_4x1.v"
+      ],
+      "testbench": "sim/tb_mux_4x1.sv",
+      "constraints": "constraints/mux_4x1.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-c63e352f775a4126b65d5c45627232a9",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "3313985cc6a61838868de981e73c148c0172e49ec5a2b91ff453560b193804d6",
+          "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+          "sim/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9"
+        },
+        "wave_sha256": "4aace87e86683f51d6b22e77a0110fbd12afed2d7758cbe0d7e7b03fbab37de4"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/06_mux4to1",
+        "top": "mux_4x1",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/mux_4x1.xdc",
+        "files": {
+          "src/mux_4x1.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/mux_4x1.v",
+            "sha256": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129"
+          },
+          "sim/tb_mux_4x1.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_mux_4x1.sv",
+            "sha256": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9"
+          },
+          "constraints/mux_4x1.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/mux_4x1.xdc",
+            "sha256": "2450722766506fa60b420c2351ae3aea415e29b9923a7879fd498802a4f51a76"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_06_mux4to1\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_06_mux4to1\\sim -s tb_mux_4x1 -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_06_mux4to1\\build\\sim\\run-c63e352f775a4126b65d5c45627232a9\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_06_mux4to1\\src\\mux_4x1.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_06_mux4to1\\sim\\tb_mux_4x1.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module mux_4x1 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_06_mux4to1\\src\\mux_4x1.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_06_mux4to1\\build\\sim\\run-c63e352f775a4126b65d5c45627232a9\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS mux_4x1 cases=64\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_06_mux4to1\\sim\\tb_mux_4x1.sv:19: $finish called at 640000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_06_mux4to1\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "legacy/06_mux4to1",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS mux_4x1 cases=64",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/mux_4x1.v"
+      ],
+      "testbench": "sim/tb_mux_4x1.sv",
+      "constraints": "constraints/mux_4x1.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-0b18be14fc9b4d099aeff7708813e49a",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "3313985cc6a61838868de981e73c148c0172e49ec5a2b91ff453560b193804d6",
+          "src/mux_4x1.v": "3f8e5ef35951c76c21f2ef7b721cdd9464650a7d6e699fdcdf1b0b98f5205d0f",
+          "sim/tb_mux_4x1.sv": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9"
+        },
+        "wave_sha256": "00838718a4bad9728190c2cf8a9f3c0e591203b74c9de3e715e870cce446302f"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "legacy/06_mux4to1",
+        "top": "mux_4x1",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/mux_4x1.xdc",
+        "files": {
+          "src/mux_4x1.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/06_mux4to1/original/mux_4x1.v",
+            "sha256": "3f8e5ef35951c76c21f2ef7b721cdd9464650a7d6e699fdcdf1b0b98f5205d0f"
+          },
+          "sim/tb_mux_4x1.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_mux_4x1.sv",
+            "sha256": "eda645f9f1ffb464b3c30da5bd148947651c599f9f1c4bc4abdec1de22961bb9"
+          },
+          "constraints/mux_4x1.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/mux_4x1.xdc",
+            "sha256": "2450722766506fa60b420c2351ae3aea415e29b9923a7879fd498802a4f51a76"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_06_mux4to1\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_06_mux4to1\\sim -s tb_mux_4x1 -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_06_mux4to1\\build\\sim\\run-0b18be14fc9b4d099aeff7708813e49a\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_06_mux4to1\\src\\mux_4x1.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_06_mux4to1\\sim\\tb_mux_4x1.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module mux_4x1 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_06_mux4to1\\src\\mux_4x1.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_06_mux4to1\\build\\sim\\run-0b18be14fc9b4d099aeff7708813e49a\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS mux_4x1 cases=64\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_06_mux4to1\\sim\\tb_mux_4x1.sv:19: $finish called at 640000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_06_mux4to1\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "vivado_2026_1/07_demux1to8",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS demux_1x8 cases=16",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/demux_1x8.v"
+      ],
+      "testbench": "sim/tb_demux_1x8.sv",
+      "constraints": "constraints/demux_1x8.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-836232a369874b07a631781dd4b40168",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "e4b116db4830d144b29222fec9a5719a4e534af765380db87fb6b2442d04f2b7",
+          "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+          "sim/tb_demux_1x8.sv": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702"
+        },
+        "wave_sha256": "99adb550fa7c9f7b11ca084fc514a8b793f2248ffddc58f6a8d7bd18df2f7d6d"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/07_demux1to8",
+        "top": "demux_1x8",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/demux_1x8.xdc",
+        "files": {
+          "src/demux_1x8.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/demux_1x8.v",
+            "sha256": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03"
+          },
+          "sim/tb_demux_1x8.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_demux_1x8.sv",
+            "sha256": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702"
+          },
+          "constraints/demux_1x8.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/demux_1x8.xdc",
+            "sha256": "25c329c1ff2c58d33fb7b74158d732a890214d1ba4d7abc770d14a3bfc0d09f4"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_07_demux1to8\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_07_demux1to8\\sim -s tb_demux_1x8 -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_07_demux1to8\\build\\sim\\run-836232a369874b07a631781dd4b40168\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_07_demux1to8\\src\\demux_1x8.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_07_demux1to8\\sim\\tb_demux_1x8.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module demux_1x8 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_07_demux1to8\\src\\demux_1x8.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_07_demux1to8\\build\\sim\\run-836232a369874b07a631781dd4b40168\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS demux_1x8 cases=16\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_07_demux1to8\\sim\\tb_demux_1x8.sv:19: $finish called at 160000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_07_demux1to8\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "legacy/07_demux1to8",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS demux_1x8 cases=16",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/demux_1x8.v"
+      ],
+      "testbench": "sim/tb_demux_1x8.sv",
+      "constraints": "constraints/demux_1x8.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-8dd6adc82a89404fa3dc2585df07e0ab",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "e4b116db4830d144b29222fec9a5719a4e534af765380db87fb6b2442d04f2b7",
+          "src/demux_1x8.v": "e40749e472c542f59332a22d0d344bbc9c129d5b34d3593e8d48ba500eb2129b",
+          "sim/tb_demux_1x8.sv": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702"
+        },
+        "wave_sha256": "9fc17dbcc7f460581b5fbb4f06602d46c8b5bd807f16f6e68fd522346f35634f"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "legacy/07_demux1to8",
+        "top": "demux_1x8",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/demux_1x8.xdc",
+        "files": {
+          "src/demux_1x8.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/07_demux1to8/original/demux_1x8.v",
+            "sha256": "e40749e472c542f59332a22d0d344bbc9c129d5b34d3593e8d48ba500eb2129b"
+          },
+          "sim/tb_demux_1x8.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_demux_1x8.sv",
+            "sha256": "e0b7a990492e9d917ce940b39754f94f58c4f67cc8404fc68755165af7d5d702"
+          },
+          "constraints/demux_1x8.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/demux_1x8.xdc",
+            "sha256": "25c329c1ff2c58d33fb7b74158d732a890214d1ba4d7abc770d14a3bfc0d09f4"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_07_demux1to8\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_07_demux1to8\\sim -s tb_demux_1x8 -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_07_demux1to8\\build\\sim\\run-8dd6adc82a89404fa3dc2585df07e0ab\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_07_demux1to8\\src\\demux_1x8.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_07_demux1to8\\sim\\tb_demux_1x8.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module demux_1x8 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_07_demux1to8\\src\\demux_1x8.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_07_demux1to8\\build\\sim\\run-8dd6adc82a89404fa3dc2585df07e0ab\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS demux_1x8 cases=16\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_07_demux1to8\\sim\\tb_demux_1x8.sv:19: $finish called at 160000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_07_demux1to8\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "vivado_2026_1/08_encoder8to3",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS encoder8x3 cases=256",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/encoder8x3.v"
+      ],
+      "testbench": "sim/tb_encoder8x3.sv",
+      "constraints": "constraints/encoder8x3.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-c965ef3d7c264b93ae92dd82bba035c5",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "91bb055db625a2b927c120f3739708a97e719e2bae2c22cec024e89e2a78ae82",
+          "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+          "sim/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82"
+        },
+        "wave_sha256": "3775bd7bd0a7a58ec161dd2d9d9eadf39e42139345d87b07c0662fd463c35f9f"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/08_encoder8to3",
+        "top": "encoder8x3",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/encoder8x3.xdc",
+        "files": {
+          "src/encoder8x3.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/encoder8x3.v",
+            "sha256": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0"
+          },
+          "sim/tb_encoder8x3.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_encoder8x3.sv",
+            "sha256": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82"
+          },
+          "constraints/encoder8x3.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/encoder8x3.xdc",
+            "sha256": "b074acbc6a6f046fd87335f5494843935f83babc53243c5ddc567b83b17ddf9e"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_08_encoder8to3\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_08_encoder8to3\\sim -s tb_encoder8x3 -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_08_encoder8to3\\build\\sim\\run-c965ef3d7c264b93ae92dd82bba035c5\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_08_encoder8to3\\src\\encoder8x3.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_08_encoder8to3\\sim\\tb_encoder8x3.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module encoder8x3 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_08_encoder8to3\\src\\encoder8x3.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_08_encoder8to3\\build\\sim\\run-c965ef3d7c264b93ae92dd82bba035c5\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS encoder8x3 cases=256\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_08_encoder8to3\\sim\\tb_encoder8x3.sv:20: $finish called at 2560000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_08_encoder8to3\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "legacy/08_encoder8to3",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS encoder8x3 cases=256",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/encoder8x3.v"
+      ],
+      "testbench": "sim/tb_encoder8x3.sv",
+      "constraints": "constraints/encoder8x3.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-d99635f76cda403bb2b7d280c3e881b7",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "91bb055db625a2b927c120f3739708a97e719e2bae2c22cec024e89e2a78ae82",
+          "src/encoder8x3.v": "f068253ad43bba6845ede49a0563eb375024f4b09392c164d8fddd67d1a6586d",
+          "sim/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82"
+        },
+        "wave_sha256": "ad8404ee95aa4cf38c265de624c7122576110352d40ba368e6efab087f293224"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "legacy/08_encoder8to3",
+        "top": "encoder8x3",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/encoder8x3.xdc",
+        "files": {
+          "src/encoder8x3.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/08_encoder8to3/original/encoder8x3.v",
+            "sha256": "f068253ad43bba6845ede49a0563eb375024f4b09392c164d8fddd67d1a6586d"
+          },
+          "sim/tb_encoder8x3.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_encoder8x3.sv",
+            "sha256": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82"
+          },
+          "constraints/encoder8x3.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/encoder8x3.xdc",
+            "sha256": "b074acbc6a6f046fd87335f5494843935f83babc53243c5ddc567b83b17ddf9e"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_08_encoder8to3\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_08_encoder8to3\\sim -s tb_encoder8x3 -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_08_encoder8to3\\build\\sim\\run-d99635f76cda403bb2b7d280c3e881b7\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_08_encoder8to3\\src\\encoder8x3.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_08_encoder8to3\\sim\\tb_encoder8x3.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module encoder8x3 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_08_encoder8to3\\src\\encoder8x3.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_08_encoder8to3\\build\\sim\\run-d99635f76cda403bb2b7d280c3e881b7\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS encoder8x3 cases=256\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_08_encoder8to3\\sim\\tb_encoder8x3.sv:20: $finish called at 2560000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_08_encoder8to3\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "vivado_2026_1/09_decoder3to8",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS decoder3x8 cases=8",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/decoder3x8.v"
+      ],
+      "testbench": "sim/tb_decoder3x8.sv",
+      "constraints": "constraints/decoder3x8.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-f5466a47e315409296630dfc5a43cf44",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "a0b9b353ba8320e2cdf86ca1ffef17d2e443acf9fbc2ac8830ed2c0c59ab3fab",
+          "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+          "sim/tb_decoder3x8.sv": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa"
+        },
+        "wave_sha256": "347c49fd8b38728901cf6c371918d3c9047e85e72f51ee0198533b88d0334e44"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/09_decoder3to8",
+        "top": "decoder3x8",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/decoder3x8.xdc",
+        "files": {
+          "src/decoder3x8.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/decoder3x8.v",
+            "sha256": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5"
+          },
+          "sim/tb_decoder3x8.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_decoder3x8.sv",
+            "sha256": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa"
+          },
+          "constraints/decoder3x8.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/decoder3x8.xdc",
+            "sha256": "262eacb753110029989462d70a6433125f55657a86c602f8102697abdc28c38b"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_09_decoder3to8\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_09_decoder3to8\\sim -s tb_decoder3x8 -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_09_decoder3to8\\build\\sim\\run-f5466a47e315409296630dfc5a43cf44\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_09_decoder3to8\\src\\decoder3x8.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_09_decoder3to8\\sim\\tb_decoder3x8.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module decoder3x8 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_09_decoder3to8\\src\\decoder3x8.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_09_decoder3to8\\build\\sim\\run-f5466a47e315409296630dfc5a43cf44\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS decoder3x8 cases=8\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_09_decoder3to8\\sim\\tb_decoder3x8.sv:19: $finish called at 80000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_09_decoder3to8\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "legacy/09_decoder3to8",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS decoder3x8 cases=8",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/decoder3x8.v"
+      ],
+      "testbench": "sim/tb_decoder3x8.sv",
+      "constraints": "constraints/decoder3x8.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-71106d171ca94ad5995188f4a830e93d",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "a0b9b353ba8320e2cdf86ca1ffef17d2e443acf9fbc2ac8830ed2c0c59ab3fab",
+          "src/decoder3x8.v": "cd0a3e34bc61b4ee09b5afc27020677f0b5503f569c30e1f24979cc965ad27ac",
+          "sim/tb_decoder3x8.sv": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa"
+        },
+        "wave_sha256": "fddf472cacb6c17241d2d9f3eda6e44ccfa9c7104bb8bd33044f547d09a4e811"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "legacy/09_decoder3to8",
+        "top": "decoder3x8",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/decoder3x8.xdc",
+        "files": {
+          "src/decoder3x8.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/09_decoder3to8/original/decoder3x8.v",
+            "sha256": "cd0a3e34bc61b4ee09b5afc27020677f0b5503f569c30e1f24979cc965ad27ac"
+          },
+          "sim/tb_decoder3x8.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_decoder3x8.sv",
+            "sha256": "8c972051be839b1455908ff652ae055bbe6dc5846f5ddd1b762c57b0cbcb1daa"
+          },
+          "constraints/decoder3x8.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/decoder3x8.xdc",
+            "sha256": "262eacb753110029989462d70a6433125f55657a86c602f8102697abdc28c38b"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_09_decoder3to8\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_09_decoder3to8\\sim -s tb_decoder3x8 -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_09_decoder3to8\\build\\sim\\run-71106d171ca94ad5995188f4a830e93d\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_09_decoder3to8\\src\\decoder3x8.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_09_decoder3to8\\sim\\tb_decoder3x8.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module decoder3x8 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_09_decoder3to8\\src\\decoder3x8.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_09_decoder3to8\\build\\sim\\run-71106d171ca94ad5995188f4a830e93d\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS decoder3x8 cases=8\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_09_decoder3to8\\sim\\tb_decoder3x8.sv:19: $finish called at 80000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_09_decoder3to8\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "vivado_2026_1/10_seven_segment",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS seg_decoder cases=16",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/seg_decoder.v"
+      ],
+      "testbench": "sim/tb_seg_decoder.sv",
+      "constraints": "constraints/seg_decoder.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-b04d8c5484fc4855ba9edbcc9305422d",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "dcfd1bf935cc526d9f4d90c802553743a8f860f500914639b7f5821e5b5041ac",
+          "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+          "sim/tb_seg_decoder.sv": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1"
+        },
+        "wave_sha256": "8cf1d07bb5ee7f9b70e5534559299d525b30dd15528ac64c4c756beabf0c816e"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/10_seven_segment",
+        "top": "seg_decoder",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/seg_decoder.xdc",
+        "files": {
+          "src/seg_decoder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/seg_decoder.v",
+            "sha256": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7"
+          },
+          "sim/tb_seg_decoder.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_seg_decoder.sv",
+            "sha256": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1"
+          },
+          "constraints/seg_decoder.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/seg_decoder.xdc",
+            "sha256": "b09ded76ba185f43cb3ce8c4968345ebda85f61620f00529c439ea62922e1aa8"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_10_seven_segment\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_10_seven_segment\\sim -s tb_seg_decoder -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_10_seven_segment\\build\\sim\\run-b04d8c5484fc4855ba9edbcc9305422d\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_10_seven_segment\\src\\seg_decoder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_10_seven_segment\\sim\\tb_seg_decoder.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module seg_decoder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_10_seven_segment\\src\\seg_decoder.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_10_seven_segment\\build\\sim\\run-b04d8c5484fc4855ba9edbcc9305422d\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS seg_decoder cases=16\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_10_seven_segment\\sim\\tb_seg_decoder.sv:34: $finish called at 160000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_10_seven_segment\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "legacy/10_seven_segment",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS seg_decoder cases=16",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/seg_decoder.v"
+      ],
+      "testbench": "sim/tb_seg_decoder.sv",
+      "constraints": "constraints/seg_decoder.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-3b4ddd79b2c54a06b0f6465f7cabbd1a",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "dcfd1bf935cc526d9f4d90c802553743a8f860f500914639b7f5821e5b5041ac",
+          "src/seg_decoder.v": "2d660c034085991a21d1aee27823682ac0fd1092673e640445caf70c227ca330",
+          "sim/tb_seg_decoder.sv": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1"
+        },
+        "wave_sha256": "c7db8f48dcefbd8f9501aeabf5d11f50e88a8c718d76f56e18f96c35ad847bd4"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "legacy/10_seven_segment",
+        "top": "seg_decoder",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/seg_decoder.xdc",
+        "files": {
+          "src/seg_decoder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/legacy/10_seven_segment/original/seg_decoder.v",
+            "sha256": "2d660c034085991a21d1aee27823682ac0fd1092673e640445caf70c227ca330"
+          },
+          "sim/tb_seg_decoder.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_seg_decoder.sv",
+            "sha256": "01ced36ffd0b621eb1a6c88dd3e9d0424539983d13940f22b74da9487528bfd1"
+          },
+          "constraints/seg_decoder.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/seg_decoder.xdc",
+            "sha256": "b09ded76ba185f43cb3ce8c4968345ebda85f61620f00529c439ea62922e1aa8"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_10_seven_segment\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_10_seven_segment\\sim -s tb_seg_decoder -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_10_seven_segment\\build\\sim\\run-3b4ddd79b2c54a06b0f6465f7cabbd1a\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_10_seven_segment\\src\\seg_decoder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_10_seven_segment\\sim\\tb_seg_decoder.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module seg_decoder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_10_seven_segment\\src\\seg_decoder.v:2\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_10_seven_segment\\build\\sim\\run-3b4ddd79b2c54a06b0f6465f7cabbd1a\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS seg_decoder cases=16\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_10_seven_segment\\sim\\tb_seg_decoder.sv:34: $finish called at 160000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\legacy_10_seven_segment\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "vivado_2026_1/11_integrated",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS lab1_integrated cases=2560",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/logic_gate.v",
+        "src/half_adder.v",
+        "src/full_adder.v",
+        "src/adder_4bit.v",
+        "src/sub_4bit.v",
+        "src/compare_4.v",
+        "src/mux_4x1.v",
+        "src/demux_1x8.v",
+        "src/encoder8x3.v",
+        "src/decoder3x8.v",
+        "src/seg_decoder.v",
+        "src/button_onepulse.v",
+        "src/lcd_modes.v",
+        "src/lab1_integrated.v"
+      ],
+      "testbench": "sim/tb_lab1_integrated.sv",
+      "constraints": "constraints/lab1_integrated.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-0401106eaa9b447a93046791d0582c73",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "0e2560972b40cdf3bb340cf6c03f2a9caedd67ea955f065c7b90f9a36ff811f1",
+          "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+          "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+          "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+          "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+          "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+          "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+          "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+          "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+          "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+          "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+          "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+          "src/button_onepulse.v": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3",
+          "src/lcd_modes.v": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f",
+          "src/lab1_integrated.v": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69",
+          "sim/tb_lab1_integrated.sv": "ab1353be5e972cd9c571f7cddb588cd4e33c3e46ea26c8ec93f34a5ddd1dee04"
+        },
+        "wave_sha256": "9f99cd2e36cc2c93a87f786d08306fae56ddcaa692699b35cf569eb919ee56ed"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "vivado_2026_1/11_integrated",
+        "top": "lab1_integrated",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/lab1_integrated.xdc",
+        "files": {
+          "src/logic_gate.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/logic_gate.v",
+            "sha256": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b"
+          },
+          "src/half_adder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/half_adder.v",
+            "sha256": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25"
+          },
+          "src/full_adder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/full_adder.v",
+            "sha256": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51"
+          },
+          "src/adder_4bit.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/adder_4bit.v",
+            "sha256": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2"
+          },
+          "src/sub_4bit.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/sub_4bit.v",
+            "sha256": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe"
+          },
+          "src/compare_4.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/compare_4.v",
+            "sha256": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23"
+          },
+          "src/mux_4x1.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/mux_4x1.v",
+            "sha256": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129"
+          },
+          "src/demux_1x8.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/demux_1x8.v",
+            "sha256": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03"
+          },
+          "src/encoder8x3.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/encoder8x3.v",
+            "sha256": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0"
+          },
+          "src/decoder3x8.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/decoder3x8.v",
+            "sha256": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5"
+          },
+          "src/seg_decoder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/seg_decoder.v",
+            "sha256": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7"
+          },
+          "src/button_onepulse.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/button_onepulse.v",
+            "sha256": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3"
+          },
+          "src/lcd_modes.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/lcd_modes.v",
+            "sha256": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f"
+          },
+          "src/lab1_integrated.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/lab1_integrated.v",
+            "sha256": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69"
+          },
+          "sim/tb_lab1_integrated.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_lab1_integrated.sv",
+            "sha256": "ab1353be5e972cd9c571f7cddb588cd4e33c3e46ea26c8ec93f34a5ddd1dee04"
+          },
+          "constraints/lab1_integrated.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/lab1_integrated.xdc",
+            "sha256": "77fdfa05fe64bbe260f6cbecf988314a5f068873a731622252a10c37eb9a8069"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\sim -s tb_lab1_integrated -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\build\\sim\\run-0401106eaa9b447a93046791d0582c73\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\logic_gate.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\half_adder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\full_adder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\adder_4bit.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\sub_4bit.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\compare_4.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\mux_4x1.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\demux_1x8.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\encoder8x3.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\decoder3x8.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\seg_decoder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\button_onepulse.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\lcd_modes.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\lab1_integrated.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\sim\\tb_lab1_integrated.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module adder_4bit declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\adder_4bit.v:1\n       :   -- module button_onepulse declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\button_onepulse.v:1\n       :   -- module compare_4 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\compare_4.v:1\n       :   -- module decoder3x8 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\decoder3x8.v:1\n       :   -- module demux_1x8 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\demux_1x8.v:1\n       :   -- module encoder8x3 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\encoder8x3.v:1\n       :   -- module full_adder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\full_adder.v:1\n       :   -- module half_adder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\half_adder.v:1\n       :   -- module lab1_integrated declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\lab1_integrated.v:3\n       :   -- module lcd_modes declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\lcd_modes.v:3\n       :   -- module logic_gate declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\logic_gate.v:1\n       :   -- module mux_4x1 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\mux_4x1.v:1\n       :   -- module seg_decoder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\seg_decoder.v:1\n       :   -- module sub_4bit declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\src\\sub_4bit.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\build\\sim\\run-0401106eaa9b447a93046791d0582c73\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS lab1_integrated cases=2560\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\sim\\tb_lab1_integrated.sv:96: $finish called at 72430000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\vivado_2026_1_integrated\\build\\sim\\wave.vcd\n"
+    },
+    {
+      "project": "opensource_cli/integrated",
+      "status": "PASS",
+      "testbench_verdict": "LAB1_PASS lab1_integrated cases=2560",
+      "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+      "sources": [
+        "src/logic_gate.v",
+        "src/half_adder.v",
+        "src/full_adder.v",
+        "src/adder_4bit.v",
+        "src/sub_4bit.v",
+        "src/compare_4.v",
+        "src/mux_4x1.v",
+        "src/demux_1x8.v",
+        "src/encoder8x3.v",
+        "src/decoder3x8.v",
+        "src/seg_decoder.v",
+        "src/button_onepulse.v",
+        "src/lcd_modes.v",
+        "src/lab1_integrated.v"
+      ],
+      "testbench": "sim/tb_lab1_integrated.sv",
+      "constraints": "constraints/lab1_integrated.xdc",
+      "execution": {
+        "status": "SIMULATED",
+        "run": "run-42410b0eec9546f38963efcc3606d1b0",
+        "functional_correctness": "NOT_ASSESSED",
+        "inputs_sha256": {
+          "simulation.json": "0e2560972b40cdf3bb340cf6c03f2a9caedd67ea955f065c7b90f9a36ff811f1",
+          "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+          "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+          "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+          "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+          "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+          "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+          "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+          "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+          "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+          "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+          "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+          "src/button_onepulse.v": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3",
+          "src/lcd_modes.v": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f",
+          "src/lab1_integrated.v": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69",
+          "sim/tb_lab1_integrated.sv": "ab1353be5e972cd9c571f7cddb588cd4e33c3e46ea26c8ec93f34a5ddd1dee04"
+        },
+        "wave_sha256": "4cfe948ed1e45c7886a87cdd5095bf41757cd6bce6efd911b189dde3017e8c46"
+      },
+      "provenance": {
+        "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+        "course_project": "opensource_cli/integrated",
+        "top": "lab1_integrated",
+        "part": "xc7s75fgga484-1",
+        "constraints": "constraints/lab1_integrated.xdc",
+        "files": {
+          "src/logic_gate.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/logic_gate.v",
+            "sha256": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b"
+          },
+          "src/half_adder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/half_adder.v",
+            "sha256": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25"
+          },
+          "src/full_adder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/full_adder.v",
+            "sha256": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51"
+          },
+          "src/adder_4bit.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/adder_4bit.v",
+            "sha256": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2"
+          },
+          "src/sub_4bit.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/sub_4bit.v",
+            "sha256": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe"
+          },
+          "src/compare_4.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/compare_4.v",
+            "sha256": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23"
+          },
+          "src/mux_4x1.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/mux_4x1.v",
+            "sha256": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129"
+          },
+          "src/demux_1x8.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/demux_1x8.v",
+            "sha256": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03"
+          },
+          "src/encoder8x3.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/encoder8x3.v",
+            "sha256": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0"
+          },
+          "src/decoder3x8.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/decoder3x8.v",
+            "sha256": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5"
+          },
+          "src/seg_decoder.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/seg_decoder.v",
+            "sha256": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7"
+          },
+          "src/button_onepulse.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/button_onepulse.v",
+            "sha256": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3"
+          },
+          "src/lcd_modes.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/lcd_modes.v",
+            "sha256": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f"
+          },
+          "src/lab1_integrated.v": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/rtl/lab1_integrated.v",
+            "sha256": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69"
+          },
+          "sim/tb_lab1_integrated.sv": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/tb/tb_lab1_integrated.sv",
+            "sha256": "ab1353be5e972cd9c571f7cddb588cd4e33c3e46ea26c8ec93f34a5ddd1dee04"
+          },
+          "constraints/lab1_integrated.xdc": {
+            "course_source": "example/fpga_projects_hdl/LAB1/common/constraints/lab1_integrated.xdc",
+            "sha256": "77fdfa05fe64bbe260f6cbecf988314a5f068873a731622252a10c37eb9a8069"
+          }
+        }
+      },
+      "log": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src -I C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\sim -s tb_lab1_integrated -o C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\build\\sim\\run-42410b0eec9546f38963efcc3606d1b0\\sim.vvp C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\logic_gate.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\half_adder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\full_adder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\adder_4bit.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\sub_4bit.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\compare_4.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\mux_4x1.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\demux_1x8.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\encoder8x3.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\decoder3x8.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\seg_decoder.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\button_onepulse.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\lcd_modes.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\lab1_integrated.v C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\sim\\tb_lab1_integrated.sv\nwarning: Some design elements have no explicit time unit and/or\n       : time precision. This may cause confusing timing results.\n       : Affected design elements are:\n       :   -- module adder_4bit declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\adder_4bit.v:1\n       :   -- module button_onepulse declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\button_onepulse.v:1\n       :   -- module compare_4 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\compare_4.v:1\n       :   -- module decoder3x8 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\decoder3x8.v:1\n       :   -- module demux_1x8 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\demux_1x8.v:1\n       :   -- module encoder8x3 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\encoder8x3.v:1\n       :   -- module full_adder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\full_adder.v:1\n       :   -- module half_adder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\half_adder.v:1\n       :   -- module lab1_integrated declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\lab1_integrated.v:3\n       :   -- module lcd_modes declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\lcd_modes.v:3\n       :   -- module logic_gate declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\logic_gate.v:1\n       :   -- module mux_4x1 declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\mux_4x1.v:1\n       :   -- module seg_decoder declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\seg_decoder.v:1\n       :   -- module sub_4bit declared here: C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\src\\sub_4bit.v:1\n\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\build\\sim\\run-42410b0eec9546f38963efcc3606d1b0\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS lab1_integrated cases=2560\nC:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\sim\\tb_lab1_integrated.sv:96: $finish called at 72430000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\fpga-lab-examples-v2\\opensource_cli_integrated\\build\\sim\\wave.vcd\n"
+    }
+  ]
+}

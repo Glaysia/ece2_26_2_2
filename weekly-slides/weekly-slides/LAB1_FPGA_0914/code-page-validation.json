@@ -1,0 +1,1101 @@
+{
+  "status": "PASS",
+  "date": "2026-09-10",
+  "previous_reviewed_commit": "7ddb5eb9f9d39e27b9946574a5ec5f9f42591a9f",
+  "revised_pdfs": 21,
+  "rendered_pages": 1154,
+  "identical_body_pages": 1009,
+  "changed_page_occurrences": 145,
+  "distinct_changed_pages_inspected": 82,
+  "render_scale": 2,
+  "method": "Full pages rendered; body identity excludes bottom 50 pixels occupied by existing footer. All 82 distinct changed pages were visually inspected; seven-segment RTL page rechecked after a layout correction. Footer links checked separately by package_lab1_pdfs.py. Previously reviewed first manual, contents and setup PDFs were unchanged.",
+  "new_actual_code_panels": 52,
+  "covered_source_files": 19,
+  "code_capture_provenance": "assets/lab1-circuits/provenance.json",
+  "pdfs": [
+    {
+      "file": "04.LAB1_11_LOGIC_GATES_LEGACY",
+      "pages": 95,
+      "identical_body_to_previous_review": 91,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_02_FULL_ADDER_VIVADO",
+      "pages": 40,
+      "identical_body_to_previous_review": 36,
+      "changed_pages": [
+        5,
+        6,
+        14,
+        15
+      ]
+    },
+    {
+      "file": "04.LAB1_12_FULL_ADDER_LEGACY",
+      "pages": 65,
+      "identical_body_to_previous_review": 61,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_03_ADDER4_VIVADO",
+      "pages": 41,
+      "identical_body_to_previous_review": 37,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_13_ADDER4_LEGACY",
+      "pages": 62,
+      "identical_body_to_previous_review": 58,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_04_SUBTRACTOR4_VIVADO",
+      "pages": 41,
+      "identical_body_to_previous_review": 37,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_14_SUBTRACTOR4_LEGACY",
+      "pages": 63,
+      "identical_body_to_previous_review": 59,
+      "changed_pages": [
+        5,
+        6,
+        14,
+        15
+      ]
+    },
+    {
+      "file": "04.LAB1_05_COMPARATOR4_VIVADO",
+      "pages": 40,
+      "identical_body_to_previous_review": 36,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_15_COMPARATOR4_LEGACY",
+      "pages": 63,
+      "identical_body_to_previous_review": 59,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_06_MUX4TO1_VIVADO",
+      "pages": 40,
+      "identical_body_to_previous_review": 35,
+      "changed_pages": [
+        5,
+        6,
+        11,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_16_MUX4TO1_LEGACY",
+      "pages": 63,
+      "identical_body_to_previous_review": 59,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_07_DEMUX1TO8_VIVADO",
+      "pages": 40,
+      "identical_body_to_previous_review": 35,
+      "changed_pages": [
+        5,
+        6,
+        11,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_17_DEMUX1TO8_LEGACY",
+      "pages": 63,
+      "identical_body_to_previous_review": 59,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
+      "pages": 40,
+      "identical_body_to_previous_review": 34,
+      "changed_pages": [
+        5,
+        6,
+        11,
+        13,
+        14,
+        29
+      ]
+    },
+    {
+      "file": "04.LAB1_18_ENCODER8TO3_LEGACY",
+      "pages": 63,
+      "identical_body_to_previous_review": 59,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_09_DECODER3TO8_VIVADO",
+      "pages": 40,
+      "identical_body_to_previous_review": 34,
+      "changed_pages": [
+        5,
+        6,
+        11,
+        13,
+        14,
+        29
+      ]
+    },
+    {
+      "file": "04.LAB1_19_DECODER3TO8_LEGACY",
+      "pages": 63,
+      "identical_body_to_previous_review": 59,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+      "pages": 43,
+      "identical_body_to_previous_review": 34,
+      "changed_pages": [
+        5,
+        6,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        32
+      ]
+    },
+    {
+      "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY",
+      "pages": 67,
+      "identical_body_to_previous_review": 60,
+      "changed_pages": [
+        5,
+        6,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "pages": 66,
+      "identical_body_to_previous_review": 36,
+      "changed_pages": [
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        46,
+        58,
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "file": "04.LAB1_10B_INTEGRATED_CLI",
+      "pages": 56,
+      "identical_body_to_previous_review": 31,
+      "changed_pages": [
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    }
+  ],
+  "reviewed_pages": [
+    {
+      "file": "04.LAB1_11_LOGIC_GATES_LEGACY",
+      "page": 5,
+      "body_sha256": "18f2a11ef6a49d95f82dbbbb83d55eef70497dddd8ec70bb551a75a617f6b273",
+      "also_in": [
+        {
+          "file": "04.LAB1_02_FULL_ADDER_VIVADO",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_12_FULL_ADDER_LEGACY",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_03_ADDER4_VIVADO",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_13_ADDER4_LEGACY",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_04_SUBTRACTOR4_VIVADO",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_14_SUBTRACTOR4_LEGACY",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_05_COMPARATOR4_VIVADO",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_15_COMPARATOR4_LEGACY",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_06_MUX4TO1_VIVADO",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_16_MUX4TO1_LEGACY",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_07_DEMUX1TO8_VIVADO",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_17_DEMUX1TO8_LEGACY",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_18_ENCODER8TO3_LEGACY",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_09_DECODER3TO8_VIVADO",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_19_DECODER3TO8_LEGACY",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+          "page": 5
+        },
+        {
+          "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_11_LOGIC_GATES_LEGACY",
+      "page": 6,
+      "body_sha256": "28857a9bc19a2d746465a3f6c343cb92b9cf4efd8c4bf60f364f404a984c7f0a",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_11_LOGIC_GATES_LEGACY",
+      "page": 13,
+      "body_sha256": "ee9eda30fcd799000676c2a14ae5df5f6ffc9efc4576051435aa3f940bf38c00",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_11_LOGIC_GATES_LEGACY",
+      "page": 14,
+      "body_sha256": "4e641ed3d5145683aec59e14b8faf5d7ad1ca8c949b6ee529372dff9f79a8d31",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_02_FULL_ADDER_VIVADO",
+      "page": 6,
+      "body_sha256": "3ccc2aee5f8328c00b6ff14f6a96f77c38662fbcc5fcb185179b39d3309f42e9",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_02_FULL_ADDER_VIVADO",
+      "page": 14,
+      "body_sha256": "8ade5f9f039f358cb34d68dfa6d89f7c32a08238028be9a46fcf8f20dbc17fb7",
+      "also_in": [
+        {
+          "file": "04.LAB1_12_FULL_ADDER_LEGACY",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_02_FULL_ADDER_VIVADO",
+      "page": 15,
+      "body_sha256": "f33418ff32bf51aaad3abb2e0765465f62110703ce2ec1053d881decea180f2b",
+      "also_in": [
+        {
+          "file": "04.LAB1_12_FULL_ADDER_LEGACY",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_12_FULL_ADDER_LEGACY",
+      "page": 6,
+      "body_sha256": "c3e53f9392f689fd283552cd464430e3685bded3a3f508a8c89c1b7e344ebd61",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_03_ADDER4_VIVADO",
+      "page": 6,
+      "body_sha256": "02663613bc90d7edd27dcf78bf7d9c0140a27eb307f6af273ae489b5803fa8b1",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_03_ADDER4_VIVADO",
+      "page": 13,
+      "body_sha256": "c434be475a518d85c883381ec333175aa9b3bde5ffb750b7c44847f9c7d7d340",
+      "also_in": [
+        {
+          "file": "04.LAB1_13_ADDER4_LEGACY",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_03_ADDER4_VIVADO",
+      "page": 14,
+      "body_sha256": "99c98efd6e6198f6651b9f2ef9e6507a80d9809453c13ce174ff2af876b00d8b",
+      "also_in": [
+        {
+          "file": "04.LAB1_13_ADDER4_LEGACY",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_13_ADDER4_LEGACY",
+      "page": 6,
+      "body_sha256": "580463863a078afb5ed1d92082673b7267e5ee9d84683b3140aa7fc3cd007576",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_04_SUBTRACTOR4_VIVADO",
+      "page": 6,
+      "body_sha256": "b75a551b2427708021f218bce67dc387efabaf9e7fa2539c7ff49aa7cc149d87",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_04_SUBTRACTOR4_VIVADO",
+      "page": 13,
+      "body_sha256": "37d82515f242de690a9bb47cac04cd619f61d2f772303a0ff7148a0b827ee998",
+      "also_in": [
+        {
+          "file": "04.LAB1_14_SUBTRACTOR4_LEGACY",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_04_SUBTRACTOR4_VIVADO",
+      "page": 14,
+      "body_sha256": "4b1a01022aeb030b0684b2eb0dd1a3036c5fb5cf944afff0aa71a2b6f6ca9897",
+      "also_in": [
+        {
+          "file": "04.LAB1_14_SUBTRACTOR4_LEGACY",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_14_SUBTRACTOR4_LEGACY",
+      "page": 6,
+      "body_sha256": "d204ad117d8b00f6a5960e7c0eb71c7c3933618d49c25cb370f42ffcc227dd91",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_05_COMPARATOR4_VIVADO",
+      "page": 6,
+      "body_sha256": "0a583effdac848ee667c0d6d81c964718346df4ba17b6db39c1e54eac4031924",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_05_COMPARATOR4_VIVADO",
+      "page": 13,
+      "body_sha256": "a7c5e3d70f21218b57f900e820f1320aa628fd21ab42a067fb9fdf805046f3dc",
+      "also_in": [
+        {
+          "file": "04.LAB1_15_COMPARATOR4_LEGACY",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_05_COMPARATOR4_VIVADO",
+      "page": 14,
+      "body_sha256": "20f5f692c6faadd192b5dc3ebe12bf35a0768a315d4fc8a29560835c48f1bf57",
+      "also_in": [
+        {
+          "file": "04.LAB1_15_COMPARATOR4_LEGACY",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_15_COMPARATOR4_LEGACY",
+      "page": 6,
+      "body_sha256": "145d0e7905cc28ac5884251afa55a7095ae4cb5f1862c1aa5552fe30e1142329",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_06_MUX4TO1_VIVADO",
+      "page": 6,
+      "body_sha256": "868877ad74dc6b9bc03e337e884ea96c766d38db830927be06bda23e0115cb3e",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_06_MUX4TO1_VIVADO",
+      "page": 11,
+      "body_sha256": "966392e0be1ed65f6503ce6d675fb97640a082772b0b174e8f3a5924096c5362",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_06_MUX4TO1_VIVADO",
+      "page": 13,
+      "body_sha256": "65e2a37e75cd4ab0f8850cba0cc7d835d0004c551a481f250c4763dd4bb67dce",
+      "also_in": [
+        {
+          "file": "04.LAB1_16_MUX4TO1_LEGACY",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_06_MUX4TO1_VIVADO",
+      "page": 14,
+      "body_sha256": "9913654371d497548760b2471c106d284533545a90cf066b2424a88548f91712",
+      "also_in": [
+        {
+          "file": "04.LAB1_16_MUX4TO1_LEGACY",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_16_MUX4TO1_LEGACY",
+      "page": 6,
+      "body_sha256": "834cf83f4d026a610ed824898433c743147caa77724895767818cde74f3b9c23",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_07_DEMUX1TO8_VIVADO",
+      "page": 6,
+      "body_sha256": "91c90fea89541015c11f508a978189f32339c2db89973af3e44a808434709fd0",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_07_DEMUX1TO8_VIVADO",
+      "page": 11,
+      "body_sha256": "8194fee26a1c6d9155f137866d7458a300fcd59625b49bbc20071ef99162bc8b",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_07_DEMUX1TO8_VIVADO",
+      "page": 13,
+      "body_sha256": "1a820be64d5ad386a7c7195777444d345820bca6904fb352c9d349d6792562a5",
+      "also_in": [
+        {
+          "file": "04.LAB1_17_DEMUX1TO8_LEGACY",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_07_DEMUX1TO8_VIVADO",
+      "page": 14,
+      "body_sha256": "4c2ddbfa3a67c2dd31c2148ab0e246dc8d9efd06868e3f78d85ec495410546ed",
+      "also_in": [
+        {
+          "file": "04.LAB1_17_DEMUX1TO8_LEGACY",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_17_DEMUX1TO8_LEGACY",
+      "page": 6,
+      "body_sha256": "c1308174c24590d32dbf1216e5c3a16904d1a37816d7dee4e73b1909080eb7da",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
+      "page": 6,
+      "body_sha256": "e6f3b1427944de2a176a09158991c436a3dca09aa39b071eaf15a712ad146dda",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
+      "page": 11,
+      "body_sha256": "f68c2ccc25bb07154ca98c25041f11629355a80ed571e4879b12bc318bdc0fb4",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
+      "page": 13,
+      "body_sha256": "c3f589451a2b2c1e0c82b30c0c93a6f30be29cb795fa7f0f6bc2878c97a62c45",
+      "also_in": [
+        {
+          "file": "04.LAB1_18_ENCODER8TO3_LEGACY",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
+      "page": 14,
+      "body_sha256": "298a47569d964cb40bdfa4073ea180d86b62a1a65dabc10eb6a963ef688ddb4e",
+      "also_in": [
+        {
+          "file": "04.LAB1_18_ENCODER8TO3_LEGACY",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_08_ENCODER8TO3_VIVADO",
+      "page": 29,
+      "body_sha256": "9585792cb9f3b0be9cc71a778a0add576208e588e70f21877cea9ff1ca0947cb",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_18_ENCODER8TO3_LEGACY",
+      "page": 6,
+      "body_sha256": "e3ba706ab5bcdd816dfbc513228bac75b2e1fa7f69249143941726d912443054",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_09_DECODER3TO8_VIVADO",
+      "page": 6,
+      "body_sha256": "662bbe75f6a44229c6492906512d5062174d6b6b32b49d5e7141e8c7898e02cb",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_09_DECODER3TO8_VIVADO",
+      "page": 11,
+      "body_sha256": "47a2e4f58374c89b3033c7a724b7dc4661de31988b8736e1abfc7ee982b6ed8c",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_09_DECODER3TO8_VIVADO",
+      "page": 13,
+      "body_sha256": "fdc74cecb3238b2e1abe98638a0c53787ccb89ee00044a271833698ea2787c18",
+      "also_in": [
+        {
+          "file": "04.LAB1_19_DECODER3TO8_LEGACY",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_09_DECODER3TO8_VIVADO",
+      "page": 14,
+      "body_sha256": "ed56a0445b2d78c9dc0de46f6be2987f35ae0ea657b8a8c7a5ee279cd54dd617",
+      "also_in": [
+        {
+          "file": "04.LAB1_19_DECODER3TO8_LEGACY",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_09_DECODER3TO8_VIVADO",
+      "page": 29,
+      "body_sha256": "58af0ec3b2fd5f5175e95f1e84acaa00dee34340bf2bc5f5bdfade9726e371ff",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_19_DECODER3TO8_LEGACY",
+      "page": 6,
+      "body_sha256": "58ea1d0295359147b6bd4556f3436d94c75af17a30edc39619186ff9a479925b",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+      "page": 6,
+      "body_sha256": "13af3c548aeccfe3326f7b9f9d5b107517a7ab180e564ea12b23ccf82bd78cee",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+      "page": 11,
+      "body_sha256": "d7d113774dd3cf4d04626af67c600f72bc5e1a558b14569944c572157d806359",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+      "page": 13,
+      "body_sha256": "512e663aae0dc7f5131baa3117f683735f977ac8c47e4d7045c7b5074a0e6971",
+      "also_in": [
+        {
+          "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+      "page": 14,
+      "body_sha256": "27775143acda9f49896835633f356213c0ea1164b543b0e1b3f6a04db3c4ca9c",
+      "also_in": [
+        {
+          "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+      "page": 15,
+      "body_sha256": "3d30f02d2fa232f6282f5c233af4f7beb28419f2b764f2340b00cebdfdb1f72d",
+      "also_in": [
+        {
+          "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+      "page": 16,
+      "body_sha256": "8679ff57c2de6b0f3a8790e91035ea453569acc6ce989cb24783ebce161940ce",
+      "also_in": [
+        {
+          "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+      "page": 17,
+      "body_sha256": "c6c5e9532fbfb9393380d5f10763a1bbcb4586236c0cf43afa9310e8eb5f2039",
+      "also_in": [
+        {
+          "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY",
+          "page": 17
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10_SEVEN_SEGMENT_VIVADO",
+      "page": 32,
+      "body_sha256": "77647dcc3d115115c7f128f94f3c4676831dfbfedcd77d0b4c694685cb2ec10d",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_20_SEVEN_SEGMENT_LEGACY",
+      "page": 6,
+      "body_sha256": "0d4dc0fbd234aad78818b70d296d1006caadffdffc4c37dd125b66bcdb5c8bbe",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 3,
+      "body_sha256": "eeec3dd49e437e26cd4f346500002aa283606a48953468dd95fa3588b2751855",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 5,
+      "body_sha256": "f7f0ac109b978b432c9c6dcc9f55f0c3c30dfec8c4b14e02fba582ce5c7809bf",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 6,
+      "body_sha256": "faf79cf59daa20976ca6ceb6d412a9ea2f8ae38a9e98cd2ce52388e6ea476e8f",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 7,
+      "body_sha256": "8f7bf8e3c26a061ed15688ffe043452b479611692997a9c2c5bbd431edd833cc",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 8,
+      "body_sha256": "37122acbf3a6721777beccda12c11b0966909ff6dae7c3954edc70d8e8358e0b",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 9,
+      "body_sha256": "d1a9f65b18c0fb40c40cc963fd8ca3176743f143a7e614ec761c328ad8aa404b",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 10,
+      "body_sha256": "7485698980ee814fcafaa1f22db41d7ca1becfba2d54795a767b00ea9d329578",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 11,
+      "body_sha256": "d66f37f2626966043593e2b5e0cb24e111f477bcc2d4633bda0a39824ccec558",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 12,
+      "body_sha256": "eba36aa9e8cc219d93637697a8b7ecda09f6154ea49806a41b208b27e959c8fe",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 12
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 13,
+      "body_sha256": "74358c4ca57e9d48f89787f2916fbf05e2f922c69e0e6a130729b3bf15e74a1b",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 14,
+      "body_sha256": "12ec4e1d487e5bd87728b858e74284680908389649562f3445a48c925ca54c7f",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 15,
+      "body_sha256": "b93d6a842af347f87b331ff92a57c9ec0b378cf029396bbbf7c64e60d2bf7fcb",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 16,
+      "body_sha256": "499e91d56f22ba35da3c34fbc7d1c45fb03d37f569427ff91846a204da93af7e",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 17,
+      "body_sha256": "04a6de471af352441ac5ed9a657464639d80c649c60fb431995017d1125f2367",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 17
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 18,
+      "body_sha256": "d2d63e81c0ac3b0a98fb8bed654669c27b8215fadbcbe37221bc09fc4c59784e",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 19,
+      "body_sha256": "3adfad46cf12901df95361d07a8e8ba4b9ffff18636881c47ba7f4dfe4197b58",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 20,
+      "body_sha256": "35e7eaa081d40b87f71d2752e2c65bce58327f2fcc695ca9487fc97f28b303f1",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 21,
+      "body_sha256": "d56262cbdf2d8345651ea957ab6e5081237b2a1a32c8189433fd850fd3526b8b",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 22,
+      "body_sha256": "7d4123e9d2d67b994c526b9cb6144ca3502823acf00a6a4b5ed739c131ae87b6",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 23,
+      "body_sha256": "43e75770d8e0d26a0b4671317b716df37f28d6d22dcf1b98f1c7adc721605f8e",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 23
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 24,
+      "body_sha256": "8b6be679c1d974b2b0681c4baa360a3aa1b74dedb9e1251b94797553b5445a67",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 25,
+      "body_sha256": "df4584a234df5f051118afd560144d9fc80c2abfabf8c0edecb1cf308fa74510",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 25
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 26,
+      "body_sha256": "35c77120733d965e7e30247711827cfd8a02bd32152c1d0cfacdc056a7d4a232",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 26
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 27,
+      "body_sha256": "761d9d7a6f8bbd64739076348cd8151eab0bdfe3ba301134a34a1429b5ba0e61",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 27
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 28,
+      "body_sha256": "141353789b7ba2d17874635f07a32e3a32e048dc6c48aa3a7ab1478afa9d051d",
+      "also_in": [
+        {
+          "file": "04.LAB1_10B_INTEGRATED_CLI",
+          "page": 28
+        }
+      ]
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 46,
+      "body_sha256": "f9d3f307927368f5a676cedb5be9462e5e5a706d7f6306491e08baa0ed9f6d00",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 58,
+      "body_sha256": "4ba54ad8b8eac4c8ea362419422acef040655b357e3e7ac3f4e36323111a1e34",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 59,
+      "body_sha256": "45a5b8f251688b09a3162451f1b6fe90d04c66613d33b766d4ced7ebcbed9d62",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 60,
+      "body_sha256": "0418aac326be8fccffd49d474a4e7bbe53f541da1421e607b2081446bfa86774",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_10A_INTEGRATED_VIVADO",
+      "page": 61,
+      "body_sha256": "5cc7236daea9c82fade55c18d66e3d91f96dc96819f998fd8f5f63a5aab3d4c3",
+      "also_in": []
+    },
+    {
+      "file": "04.LAB1_10B_INTEGRATED_CLI",
+      "page": 3,
+      "body_sha256": "743c08c36e9ffbafc05d2af9ecd5215f0fade1d90ad47933e4190d2446be47f2",
+      "also_in": []
+    }
+  ]
+}

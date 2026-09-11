@@ -1,0 +1,716 @@
+% !TEX program = xelatex
+\input{shared/lab1_preamble.tex}
+\renewcommand{\labonehome}{\hyperlink{integrated-cli-contents}{\contentsbutton}}
+\renewcommand{\legacySource}[1]{}
+\hypersetup{pdftitle={버튼·LCD 통합 실습}}
+\providecommand{\terminalbox}[1]{\par\vspace{0.15cm}{\setlength{\fboxsep}{7pt}\colorbox{black}{\parbox{\dimexpr\textwidth-14pt\relax}{\color{white}\ttfamily\fontsize{7}{9}\selectfont #1}}}\par\vspace{0.15cm}}
+\begin{document}
+\begingroup
+\renewcommand{\small}{\fontsize{9}{11}\selectfont}
+\begin{frame}{버튼·LCD 통합 실습}\relax
+\small
+VS Code 사전 시뮬레이션 → 오픈소스 CLI → 보드 실험\par\vspace{0.22cm}같은 RTL에 10개 회로를 넣고 버튼으로 선택한다. LCD에 모드 번호와 회로 이름을 표시한다.\par\vspace{0.22cm}작성일 2026. 09. 10. · 이해리\par\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 먼저 2,560개 입력과 버튼·LCD 동작을 검사한다.
+\item 합성·배치배선·비트스트림을 생성한다.
+\item 보드에서 모드를 순환하고 사진·영상으로 설명한다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[label=integrated-cli-contents]{통합 실습 목차}\relax
+\small
+1부 · VS Code 사전 시뮬레이션\par\navlink{integrated-cli-setup}{clone·새 창·workspace·실행·파형}\par\vspace{0.4cm}
+2부 · 통합 회로 이해\par\navlink{integrated-cli-modes}{10개 모드·버튼·LCD·보드 연결}\par\vspace{0.4cm}
+3부 · 구현과 결과\par\navlink{integrated-cli-vivado}{CLI 설치·실행·검증 범위}\par\vspace{0.2cm}
+\navlink{integrated-cli-post}{보드·사진·영상·실험 후 레포트}\par\vspace{0.3cm}
+\href{04.LAB1_00_CONTENTS.pdf}{전체 목차 PDF}
+\end{frame}
+
+\begin{frame}[label=integrated-cli-setup]{시뮬레이션 도구 확인}\relax
+\small
+Git·Python 3.10 이상·VS Code·Icarus Verilog를 설치한다. Windows PowerShell에서 한 줄씩 확인한다.\par\terminalbox{git --version\\python --version\\iverilog -V\\vvp -V}
+설치·PATH 변경 후 VS Code를 다시 연다. Linux·macOS·WSL은 python 대신 python3를 사용한다.\par\href{https://github.com/Glaysia/fpga-lab-template/tree/v2.0.0}{설치와 빈 템플릿 안내}
+\end{frame}
+
+\begin{frame}{v2.0.0 템플릿을 새 이름으로 clone}\relax
+\small
+아래는 macOS·Linux·WSL의 Bash/Zsh 명령이다. 줄 끝 문자는 다음 줄로 명령을 이어 준다.\par\terminalbox{git clone --branch v2.0.0 \textbackslash{}\\  https://github.com/Glaysia/fpga-lab-template.git \textbackslash{}\\  lab1\_integrated\_cli\\cd lab1\_integrated\_cli\\git switch -c main\\code LAB1.code-workspace}
+회로마다 마지막 폴더 이름을 바꾼다. 시작 파일은 주석뿐이며 코드 이미지를 보며 직접 작성한다.\par\href{https://github.com/Glaysia/fpga-lab-template/tree/v2.0.0}{고정된 수업 버전 v2.0.0}
+\end{frame}
+
+\begin{frame}{File → New Window}\relax
+\small
+VS Code 상단 File → New Window. Ctrl+Shift+N도 같은 동작이다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=27.75bp 522bp 652.5bp 21bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+새 창의 File → Open Workspace from File...을 누른다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=1.6cm,keepaspectratio,trim=27.75bp 439.5bp 652.5bp 105bp,clip]{assets/modern-01/01-file-menu.png}\par}\vspace{0.16cm}
+
+\end{frame}
+
+\begin{frame}{프로젝트 하나의 workspace 열기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 방금 clone한 lab1\_integrated\_cli 폴더를 연다.
+\item LAB1.code-workspace를 선택하고 Open. 모든 실습의 workspace 파일명은 같다.
+\item Explorer에 PROJECT 하나와 src·sim·constraints·tools 폴더가 보이는지 확인한다.
+\item src/design.v·sim/tb\_design.v·constraints/pins.xdc는 아직 주석뿐이다.
+\item simulation.json은 실행할 RTL·TB 파일과 TB top을 지정하는 설정이다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{추천 확장 설치}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 왼쪽 Extensions 아이콘을 누른다.
+\item 검색창에 @recommended를 입력한다.
+\item slang의 Install: Verilog/SystemVerilog 편집·진단.
+\item VaporView의 Install: VCD 파형 확인.
+\item vscode-pdf의 Install: 코드 옆에서 PDF 교안 열기.
+\end{enumerate}
+WSL 사용자는 WSL 창에서 필요할 경우 Install in WSL을 누른다. 확장 설치와 Python·Icarus 설치는 별개다.\par
+\end{frame}
+
+\begin{frame}{src에 RTL 파일 만들기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item Explorer에서 src 왼쪽 화살표를 눌러 펼친다.
+\item design.v 우클릭 → Rename → logic\_gate.v 입력.
+\item 파일을 두 번 눌러 열고 뒤의 코드 이미지를 보며 전체 코드를 입력한다.
+\item 추가 RTL이 있으면 src 우클릭 → New File로 만든다.
+\item 전체 RTL 파일 목록은 다음 장의 src 표를 따른다.
+\item File → Save All로 모든 파일을 저장한다.
+\end{enumerate}
+설계 모듈명: lab1\_integrated. 파일명과 module 이름을 구분한다.\par
+\end{frame}
+
+\begin{frame}{sim에 테스트벤치 만들기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item sim을 펼치고 tb\_design.v 우클릭 → Rename.
+\item 새 파일명: tb\_lab1\_integrated.sv
+\item 뒤의 TB 코드 이미지에 있는 선언·DUT 연결·입력 자극·예상값 검사를 직접 작성한다.
+\item wave.vcd를 만드는 dumpfile·dumpvars와 종료 조건까지 작성한다.
+\item TB 모듈명: tb\_lab1\_integrated
+\item File → Save All. TB를 합성용 RTL 폴더에 넣지 않는다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{작성할 RTL 파일 목록 (1)}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+폴더 & 파일명\\\hline
+src & logic\_gate.v\\
+src & half\_adder.v\\
+src & full\_adder.v\\
+src & adder\_4bit.v\\
+src & sub\_4bit.v\\
+src & compare\_4.v\\
+\end{tabular}\end{center}
+각 파일을 New File로 만들고 코드 이미지의 전체 내용을 작성한다. 파일마다 module 선언과 endmodule을 확인한다.\par
+\end{frame}
+
+\begin{frame}{작성할 RTL 파일 목록 (2)}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+폴더 & 파일명\\\hline
+src & mux\_4x1.v\\
+src & demux\_1x8.v\\
+src & encoder8x3.v\\
+src & decoder3x8.v\\
+src & seg\_decoder.v\\
+src & button\_onepulse.v\\
+\end{tabular}\end{center}
+각 파일을 New File로 만들고 코드 이미지의 전체 내용을 작성한다. 파일마다 module 선언과 endmodule을 확인한다.\par
+\end{frame}
+
+\begin{frame}{작성할 RTL 파일 목록 (3)}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+폴더 & 파일명\\\hline
+src & lcd\_modes.v\\
+src & lab1\_integrated.v\\
+\end{tabular}\end{center}
+각 파일을 New File로 만들고 코드 이미지의 전체 내용을 작성한다. 파일마다 module 선언과 endmodule을 확인한다.\par
+\end{frame}
+
+\begin{frame}{simulation.json을 내 파일에 맞추기}\relax
+\small
+Explorer에서 simulation.json을 두 번 눌러 연다.\par\vspace{0.22cm}sources 배열: 앞의 모든 RTL 파일명 앞에 src/를 붙여 등록한다.\par\vspace{0.22cm}한 파일 예: "sources": ["src/logic\_gate.v"]\par\vspace{0.22cm}testbench: sim/tb\_lab1\_integrated.sv\par\vspace{0.22cm}simulation\_top: tb\_lab1\_integrated\par\vspace{0.22cm}sources의 각 경로와 testbench·simulation\_top 값은 큰따옴표로 감싼다. 여러 경로는 쉼표로 구분한다.\par\vspace{0.22cm}파일명·확장자·괄호·쉼표를 확인하고 Save All.\par
+\end{frame}
+
+\begin{frame}{통합에 포함할 개별 회로}\relax
+\small
+01–10번에서 작성한 회로를 src에 모아 통합 top에 연결한다. 아래의 코드 화면도 그대로 재사용한다.\par\vspace{0.22cm}full\_adder.v와 half\_adder.v는 함께 필요하다. 통합 RTL·버튼·LCD까지 합성 파일은 총 14개다.\par\vspace{0.22cm}이미 작성한 파일은 복사해도 되며 simulation.json의 sources에 14개를 모두 등록한다.\par\href{04.LAB1_00_CONTENTS.pdf}{개별 회로별 상세 설명으로 이동}
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · logic\_gate}\relax
+\small
+src/logic\_gate.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=281.25bp 444bp 150bp 67.5bp,clip]{assets/modern-01/04-rtl.png}\par}\vspace{0.16cm}
+\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · half\_adder}\relax
+\small
+src/half\_adder.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,trim=265bp 410bp 0bp 28bp,clip]{assets/lab1-circuits/half_adder-rtl.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · full\_adder}\relax
+\small
+src/full\_adder.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,trim=265bp 410bp 0bp 28bp,clip]{assets/lab1-circuits/full_adder-rtl.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · adder\_4bit}\relax
+\small
+src/adder\_4bit.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/adder_4bit-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · sub\_4bit}\relax
+\small
+src/sub\_4bit.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/sub_4bit-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · compare\_4}\relax
+\small
+src/compare\_4.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/compare_4-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · mux\_4x1}\relax
+\small
+src/mux\_4x1.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/mux_4x1-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · demux\_1x8}\relax
+\small
+src/demux\_1x8.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/demux_1x8-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · encoder8x3}\relax
+\small
+src/encoder8x3.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/encoder8x3-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · decoder3x8}\relax
+\small
+src/decoder3x8.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/decoder3x8-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{개별 RTL 재사용 · seg\_decoder}\relax
+\small
+src/seg\_decoder.v · 전체 코드를 입력하거나 앞서 작성한 같은 파일을 복사한다.\par\includegraphics[width=\textwidth,height=3.8cm,keepaspectratio]{assets/lab1-circuits/seg_decoder-rtl-crop.png}\par\vspace{0.18cm}모듈 이름과 입출력 폭을 유지하고 File → Save All.\par
+\end{frame}
+
+\begin{frame}{통합 RTL · 모드 번호}\relax
+\small
+lab1\_integrated.v · 1–11행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lab1_integrated-mode.png}\par}\vspace{0.18cm}
+기본값은 디바운스 20클록·LCD 대기 50클록이다. 입력 클록은 보드의 1kHz다.\par\vspace{0.22cm}reset은 mode=0, 버튼 펄스는 다음 모드로 이동한다. 내부 번호 0–9는 LCD의 01–10에 대응한다.\par
+\end{frame}
+
+\begin{frame}{통합 RTL · 논리·가산 연결}\relax
+\small
+lab1\_integrated.v · 12–18행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lab1_integrated-circuits-a.png}\par}\vspace{0.18cm}
+공유 RTL의 논리 게이트·전가산기·4비트 가산기를 인스턴스화한다. DIP 입력에서 필요한 비트를 연결한다.\par
+\end{frame}
+
+\begin{frame}{통합 RTL · 나머지 회로 연결}\relax
+\small
+lab1\_integrated.v · 19–25행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lab1_integrated-circuits-b.png}\par}\vspace{0.18cm}
+감산·비교·MUX·DEMUX·인코더·디코더·7세그먼트도 같은 입력 스위치를 사용한다.\par\vspace{0.22cm}모든 회로는 함께 동작하며, 다음 코드에서 현재 모드의 출력을 선택한다.\par
+\end{frame}
+
+\begin{frame}{통합 RTL · 출력 선택 01–05}\relax
+\small
+lab1\_integrated.v · 26–34행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lab1_integrated-outputs-a.png}\par}\vspace{0.18cm}
+7세그먼트는 mode=9에서만 켠다. LED 기본값을 0으로 두고 모드별 결과를 지정한다.\par\vspace{0.22cm}비트 묶음의 왼쪽이 led[7]이며 보드 LED1에 연결된다. 남는 비트는 0으로 채운다.\par
+\end{frame}
+
+\begin{frame}{통합 RTL · 출력 선택 06–10}\relax
+\small
+lab1\_integrated.v · 35–44행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lab1_integrated-outputs-b.png}\par}\vspace{0.18cm}
+MUX부터 7세그먼트까지 출력 선택을 마친다. LCD에는 같은 mode를 전달해 회로 이름을 표시한다.\par
+\end{frame}
+
+\begin{frame}{버튼 RTL · 두 단계 동기화}\relax
+\small
+button\_onepulse.v · 1–9행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/button_onepulse-sync.png}\par}\vspace{0.18cm}
+외부 버튼을 sync1, sync2 두 플립플롭을 거쳐 받는다. ASYNC\_REG 속성으로 동기화 레지스터임을 표시한다.\par
+\end{frame}
+
+\begin{frame}{버튼 RTL · 한 번만 전환}\relax
+\small
+button\_onepulse.v · 10–20행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/button_onepulse-debounce.png}\par}\vspace{0.18cm}
+입력이 accepted와 다르게 20클록 유지되면 새 상태를 받아들인다. 그 전에는 연속 안정 시간을 센다.\par\vspace{0.22cm}pulse의 기본값은 0이고 누름을 받아들일 때만 1이다. 뗄 때는 상태만 바뀌어 모드를 넘기지 않는다.\par
+\end{frame}
+
+\begin{frame}{LCD RTL · 포트와 상태}\relax
+\small
+lcd\_modes.v · 1–11행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lcd_modes-ports.png}\par}\vspace{0.18cm}
+phase는 한 바이트의 전송 단계, index는 화면 내 위치다. shown\_mode는 현재 화면의 모드다.\par\vspace{0.22cm}한 화면을 전송하는 동안 shown\_mode를 유지하여 두 줄의 모드가 섞이지 않게 한다.\par
+\end{frame}
+
+\begin{frame}{LCD RTL · 회로명 선택}\relax
+\small
+lcd\_modes.v · 12–21행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lcd_modes-names.png}\par}\vspace{0.18cm}
+shown\_mode에 따라 16문자 회로명을 고른다. 남는 자리는 공백으로 채운다.\par\vspace{0.22cm}한 화면을 전송하는 동안 shown\_mode를 유지하여 두 줄의 모드가 섞이지 않게 한다.\par
+\end{frame}
+
+\begin{frame}{LCD RTL · 리셋과 전원 대기}\relax
+\small
+lcd\_modes.v · 22–26행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lcd_modes-reset.png}\par}\vspace{0.18cm}
+리셋 때 모든 상태와 출력 신호를 초기화한다. 1kHz에서 POWER\_WAIT=50은 50ms 대기다.\par\vspace{0.22cm}한 화면을 전송하는 동안 shown\_mode를 유지하여 두 줄의 모드가 섞이지 않게 한다.\par
+\end{frame}
+
+\begin{frame}{LCD RTL · 초기 명령}\relax
+\small
+lcd\_modes.v · 27–34행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lcd_modes-init.png}\par}\vspace{0.18cm}
+38을 세 번 보낸 뒤 0C, 06으로 초기화한다. 첫 줄 주소 80을 보낼 때 mode를 shown\_mode에 저장한다.\par\vspace{0.22cm}한 화면을 전송하는 동안 shown\_mode를 유지하여 두 줄의 모드가 섞이지 않게 한다.\par
+\end{frame}
+
+\begin{frame}{LCD RTL · MODE 01–10}\relax
+\small
+lcd\_modes.v · 35–42행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lcd_modes-heading.png}\par}\vspace{0.18cm}
+문자 MODE와 두 자리 번호를 보낸다. 내부 mode=9만 10으로 표시하고, 그다음 C0으로 둘째 줄을 선택한다.\par\vspace{0.22cm}한 화면을 전송하는 동안 shown\_mode를 유지하여 두 줄의 모드가 섞이지 않게 한다.\par
+\end{frame}
+
+\begin{frame}{LCD RTL · 이름의 한 글자}\relax
+\small
+lcd\_modes.v · 43–49행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lcd_modes-characters.png}\par}\vspace{0.18cm}
+index=23–38에서 128비트 이름을 8비트씩 꺼낸다. 나머지 첫 줄 위치는 공백으로 채운다.\par\vspace{0.22cm}한 화면을 전송하는 동안 shown\_mode를 유지하여 두 줄의 모드가 섞이지 않게 한다.\par
+\end{frame}
+
+\begin{frame}{LCD RTL · E 펄스와 반복}\relax
+\small
+lcd\_modes.v · 50–60행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/lcd_modes-enable.png}\par}\vspace{0.18cm}
+phase 1에서 E를 올리고 phase 2에서 내린다. 1kHz이므로 E high는 1ms다.\par\vspace{0.22cm}첫 초기 명령 뒤에는 추가 대기한다. 한 화면이 끝나면 index=5로 돌아가 모드를 새로 저장한다.\par
+\end{frame}
+
+\begin{frame}{통합 TB · 검사 환경}\relax
+\small
+tb\_lab1\_integrated.sv · 1–13행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_lab1_integrated-setup.png}\par}\vspace{0.18cm}
+10ns 클록과 짧은 디바운스·전원 대기로 기능 검사를 빠르게 한다. 실제 합성의 1kHz 설정과 구분한다.\par\vspace{0.22cm}실험 전 레포트에는 이 코드의 역할과 자신의 실행 로그·파형을 함께 설명한다.\par
+\end{frame}
+
+\begin{frame}{통합 TB · 반복 동작}\relax
+\small
+tb\_lab1\_integrated.sv · 14–22행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_lab1_integrated-tasks.png}\par}\vspace{0.18cm}
+cycles는 클록 하강까지 기다리고 assert\_mode는 모드 번호를 검사한다. press\_once는 눌렀다 떼는 한 번의 동작이다.\par\vspace{0.22cm}실험 전 레포트에는 이 코드의 역할과 자신의 실행 로그·파형을 함께 설명한다.\par
+\end{frame}
+
+\begin{frame}{통합 TB · LCD 명령 검사}\relax
+\small
+tb\_lab1\_integrated.sv · 23–32행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_lab1_integrated-lcd-command.png}\par}\vspace{0.18cm}
+실제 출력 lcd\_e의 하강에서 lcd\_rw와 초기 명령을 검사한다. 주소 80·C0을 만나면 해당 줄 조립을 시작한다.\par\vspace{0.22cm}실험 전 레포트에는 이 코드의 역할과 자신의 실행 로그·파형을 함께 설명한다.\par
+\end{frame}
+
+\begin{frame}{통합 TB · 완성된 화면}\relax
+\small
+tb\_lab1\_integrated.sv · 33–41행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_lab1_integrated-lcd-frame.png}\par}\vspace{0.18cm}
+주소에 따라 받은 문자를 16문자 버퍼에 넣는다. 둘째 줄 마지막 문자까지 받은 순간 완성된 두 줄을 보관한다.\par\vspace{0.22cm}실험 전 레포트에는 이 코드의 역할과 자신의 실행 로그·파형을 함께 설명한다.\par
+\end{frame}
+
+\begin{frame}{통합 TB · 리셋과 바운스}\relax
+\small
+tb\_lab1\_integrated.sv · 42–52행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_lab1_integrated-reset-bounce.png}\par}\vspace{0.18cm}
+기대 LCD 명령·숫자 패턴을 준비한다. 1클록 누름과 2클록 뗌을 반복해도 mode=0인지 확인한다.\par\vspace{0.22cm}실험 전 레포트에는 이 코드의 역할과 자신의 실행 로그·파형을 함께 설명한다.\par
+\end{frame}
+
+\begin{frame}{통합 TB · 모드별 입력}\relax
+\small
+tb\_lab1\_integrated.sv · 53–60행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_lab1_integrated-expect-a.png}\par}\vspace{0.18cm}
+10개 모드 각각에서 DIP 256개를 모두 넣는다. 출력의 비트 배치까지 포함하여 별도 기대값을 계산한다.\par\vspace{0.22cm}실험 전 레포트에는 이 코드의 역할과 자신의 실행 로그·파형을 함께 설명한다.\par
+\end{frame}
+
+\begin{frame}{통합 TB · 경계와 선택 순서}\relax
+\small
+tb\_lab1\_integrated.sv · 61–68행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_lab1_integrated-expect-b.png}\par}\vspace{0.18cm}
+감산 borrow, 비교 결과, 선택선 순서, 인코더의 비정상 입력까지 기대값에 반영한다.\par\vspace{0.22cm}실험 전 레포트에는 이 코드의 역할과 자신의 실행 로그·파형을 함께 설명한다.\par
+\end{frame}
+
+\begin{frame}{통합 TB · 출력과 모드 번호}\relax
+\small
+tb\_lab1\_integrated.sv · 69–79행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_lab1_integrated-compare.png}\par}\vspace{0.18cm}
+LED·7세그먼트를 매 입력마다 비교한다. 화면 갱신을 기다린 뒤 LCD 첫 줄의 MODE 번호와 초기화 횟수를 검사한다.\par\vspace{0.22cm}실험 전 레포트에는 이 코드의 역할과 자신의 실행 로그·파형을 함께 설명한다.\par
+\end{frame}
+
+\begin{frame}{통합 TB · 회로명 대조}\relax
+\small
+tb\_lab1\_integrated.sv · 80–87행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_lab1_integrated-name.png}\par}\vspace{0.18cm}
+두 번째 줄은 16문자 전체를 해당 모드의 기대 회로명과 비교한다. 번호만 맞고 이름이 틀린 오류도 잡는다.\par\vspace{0.22cm}실험 전 레포트에는 이 코드의 역할과 자신의 실행 로그·파형을 함께 설명한다.\par
+\end{frame}
+
+\begin{frame}{통합 TB · 길게 누름·순환·복귀}\relax
+\small
+tb\_lab1\_integrated.sv · 88–99행 · 실제 VS Code 화면\par\par\vspace{0.15cm}{\centering\includegraphics[width=\textwidth,height=3.9cm,keepaspectratio]{assets/lab1-circuits/tb_lab1_integrated-finish.png}\par}\vspace{0.18cm}
+80클록 동안 눌러도 한 번만 넘어가는지, 10→01 순환과 재리셋 후 LCD 복구를 검사한다.\par\vspace{0.22cm}2,560개 출력과 10개 이상 화면을 확인한 뒤 PASS를 출력한다. 외부 보드의 실제 동작은 별도 실험이다.\par
+\end{frame}
+
+\begin{frame}{세 작업을 순서대로 실행}\relax
+\small
+\par\vspace{0.18cm}{\centering\includegraphics[width=\textwidth,height=2.1cm,keepaspectratio,trim=219.75bp 507.75bp 219.75bp 0bp,clip]{assets/modern-01/06-tasks.png}\par}\vspace{0.16cm}
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item Terminal → Run Task... → 01 Check tools.
+\item 02 Simulate → 종료까지 기다린다.
+\item 터미널과 build/sim/run-.../simulation.log를 확인한다.
+\item LAB1\_PASS lab1\_integrated cases=2560을 확인한다.
+\item 03 Open waveform으로 wave.vcd를 연다.
+\end{enumerate}
+모든 workspace의 사전 시뮬레이션은 Icarus Verilog다. SIMULATED와 TB의 실제 검사 결과를 구분한다.\par
+\end{frame}
+
+\begin{frame}{통합 테스트의 검사 범위}\relax
+\small
+10개 모드 × DIP 256개 = 2,560개 출력 비교.\par\vspace{0.22cm}reset → MODE 01, 짧은 바운스 무시, 길게 눌러도 한 번만 전환, 10→01 순환을 검사한다.\par\vspace{0.22cm}LCD 초기 명령과 외부 버스에서 완성된 두 줄의 번호·이름을 비교한다.\par\vspace{0.22cm}TB는 10ns 클록, 디바운스 4클록, 전원 대기 5클록으로 시간을 줄인다. 실제 합성은 1kHz 보드 설정이다.\par\vspace{0.22cm}Icarus 검사 종료: 72430ns. 실제 보드의 전압·LCD 연결은 별도로 확인한다.\par
+\end{frame}
+
+\begin{frame}{VaporView에서 통합 파형 읽기}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item wave.vcd가 텍스트면 탭 우클릭 → Reopen Editor With... → VaporView.
+\item Netlist에서 tb\_lab1\_integrated를 펼친다.
+\item clk, rst, mode\_button, sw, led, seg\_data를 추가한다.
+\item dut 안의 mode와 lcd\_e, lcd\_rs, lcd\_rw, lcd\_data를 추가한다.
+\item Zoom to Fit 뒤 모드가 바뀌는 구간을 확대한다.
+\item 버튼 입력부터 모드 변경까지의 지연과 LCD 한 화면 갱신을 구분한다.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{constraints에 XDC 직접 작성}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item constraints를 펼치고 pins.xdc 우클릭 → Rename.
+\item 파일명: lab1\_integrated.xdc
+\item 핀 표와 코드 이미지를 보며 PACKAGE\_PIN·IOSTANDARD·get\_ports를 입력한다.
+\item get\_ports의 이름과 비트 번호를 자신이 작성한 RTL의 포트와 대조한다.
+\item File → Save All. Vivado 또는 CLI 구현에는 이 파일을 직접 가져간다.
+\end{enumerate}
+XDC는 Icarus 기능 시뮬레이션에서 사용하지 않는다. 파형 통과만으로 핀 배치까지 검증됐다고 판단하지 않는다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 1–13행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-1.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 14–26행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-14.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 27–38행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-27.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 39–52행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-39.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 53–65행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-53.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{XDC 전체 코드 · 66–78행}\relax
+\small
+constraints/lab1\_integrated.xdc · 실제 VS Code 화면을 보며 직접 작성한다.\par\includegraphics[width=\textwidth,height=4.2cm,keepaspectratio]{assets/student-v2/lab1_integrated-xdc-66.png}\par\vspace{0.18cm}핀 이름·포트 이름·대괄호·중괄호를 확인하고 저장한다.\par
+\end{frame}
+
+\begin{frame}{코드 수정 실험 · 실패와 복구}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 정상 PASS 로그를 보관한다. Explorer → src → lab1\_integrated.v을 연다.
+\item 버튼 처리의 모드 순환 비교값을 9에서 8로 바꾼다. 테스트벤치의 기대값은 그대로 둔다.
+\item File → Save All → Terminal → Run Task... → 02 Simulate.
+\item 내부 mode는 0부터 센다. 화면 MODE 09 다음에 MODE 10 대신 MODE 01로 돌아가면 실패다.
+\item 이번 실행의 실패 로그에서 입력·기대값·실제값을 읽는다. 실행 폴더를 기록한다.
+\item 바꾼 부분을 원래대로 복구하고 Save All → 02 Simulate. 전체 PASS와 새 파형을 확인한다.
+\end{enumerate}
+사전 레포트에 변경 이유·실패 원인·복구 결과를 비교한다. 복구 PASS 뒤에 구현으로 진행한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/student-modification-validation.json}{제작 검증: 정상 → 실패 검출 → 복구}
+\end{frame}
+
+\begin{frame}{실험 전 레포트에 넣을 것}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 모드별 예상 입력·출력과 비트 순서를 표로 작성한다.
+\item 10개 회로·버튼·LCD 파일의 역할을 설명한다.
+\item PASS 로그, VCD, 모드 전환 및 LCD 파형 캡처를 연결한다.
+\item TB에서 줄인 시간과 실제 1kHz 설정을 구분한다.
+\item 실험에서 확인할 버튼·LCD·DIP·LED 장면을 계획한다.
+\end{enumerate}
+\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/reports.md}{레포트 양식과 예시}
+\end{frame}
+
+\begin{frame}[label=integrated-cli-modes]{통합 구조와 입력 배치}\relax
+\small
+lab1\_integrated → 10개 조합회로 + button\_onepulse + lcd\_modes.\par\vspace{0.22cm}clk=B6(1kHz), KEY1=reset, KEY2=mode\_button.\par\vspace{0.22cm}DIP1–8은 sw[7:0], LED1–8은 led[7:0]에 대응한다.\par\vspace{0.22cm}개별 실습의 KEY 입력은 통합본에서 DIP로 옮겨 모드 버튼과 충돌하지 않게 한다.\par\vspace{0.22cm}단일 7세그먼트는 모드 10에서만 동작한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/integrated.md}{통합 동작 명세와 핀표}
+\end{frame}
+
+\begin{frame}{모드별 조작 1–5}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l|l}
+모드 & 입력 & 출력\\\hline
+01 & a=DIP1, b=DIP2 & LED1=AND, 2=OR, 3=XOR\\
+02 & a,b,cin=DIP1,2,3 & LED1=carry, 2=sum\\
+03 & a=DIP1–4, b=DIP5–8 & LED1=carry, 2–5=sum\\
+04 & a=DIP1–4, b=DIP5–8 & LED1=borrow, 2–5=diff\\
+05 & a=DIP1–4, b=DIP5–8 & LED1=큼, 2=같음, 3=작음\\
+\end{tabular}\end{center}
+사용하지 않는 LED 비트는 0이다. reset하면 모드 01.\par
+\end{frame}
+
+\begin{frame}{모드별 조작 6–10}\relax
+\small
+\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l|l}
+모드 & 입력 & 출력\\\hline
+06 & i=DIP1–4, s=DIP7–8 & LED1=i[3-s]\\
+07 & i=DIP1, s=DIP6–8 & s=0→LED1, s=7→LED8\\
+08 & DIP1–8 중 하나만 1 & LED1–3: DIP1→0, DIP8→7\\
+09 & abc=DIP6,7,8 & 0→LED8, 7→LED1\\
+10 & hex=DIP5–8 & a–dp 패턴, 1이면 점등\\
+\end{tabular}\end{center}
+사용하지 않는 LED 비트는 0이다. reset하면 모드 01.\par
+\end{frame}
+
+\begin{frame}{버튼을 길게 누르면}\relax
+\small
+2단 동기화 → 안정된 입력 20클록 확인 → 상승 시 1클록 펄스.\par\vspace{0.22cm}1kHz에서 약 20ms 안정 시간에 동기화 지연이 추가된다.\par\vspace{0.22cm}누른 채 유지하면 한 번만 바뀐다. 뗀 뒤 다시 눌러야 다음 모드가 된다.\par\vspace{0.22cm}모드 10 다음은 01. reset은 즉시 01로 돌아간다.\par\vspace{0.22cm}실험 영상에서 짧게 누르기·길게 누르기·순환을 각각 보여준다.\par
+\end{frame}
+
+\begin{frame}{LCD가 표시되는 과정}\relax
+\small
+전원 대기 50ms → 38,38,38,0C,06 초기 명령 → 두 줄 반복 갱신.\par\vspace{0.22cm}첫 줄 MODE 01…MODE 10, 두 번째 줄 회로 이름.\par\vspace{0.22cm}E high는 1ms, 바이트 간격은 최소 4ms. 첫 초기 명령 간격은 더 길다.\par\vspace{0.22cm}한 화면 시작 때 모드를 저장하여 두 줄이 다른 모드로 섞이지 않게 한다.\par\vspace{0.22cm}새 모드는 현재 전송을 마친 뒤 갱신되므로 잠깐 기다리고 읽는다.\par
+\end{frame}
+
+\begin{frame}[label=integrated-cli-vivado]{CLI 실행 환경}\relax
+\small
+macOS ARM64 공식 바이너리 배포를 확인하고 WSL Ubuntu-26.04에서 Linux x86-64 바이너리로 실행했다.\par\vspace{0.22cm}APIO 1.5.1, OSS CAD Suite 2026.08.19, openXC7 2026.08.20.\par\vspace{0.22cm}Yosys → nextpnr → frames → bit까지 정확한 S75로 성공했다.\par\vspace{0.22cm}Mac 직접 실행과 실제 보드 프로그래밍은 이 제작 검증에 포함하지 않는다.\par\href{https://github.com/FPGAwars/tools-openxc7/releases/tag/2026-08-20}{공식 ARM64·Linux 배포}
+\end{frame}
+
+\begin{frame}{도구 설치}\relax
+\small
+macOS·WSL의 Bash/Zsh 터미널에서 실행한다.\par\terminalbox{python3 -m venv \textasciitilde{}/.local/share/fpga-apio\\source \textasciitilde{}/.local/share/fpga-apio/bin/activate\\pip install apio==1.5.1\\apio packages install}
+WSL에 venv가 없으면 먼저 python3-venv를 설치한다.\par\vspace{0.22cm}macOS는 darwin-arm64, WSL은 linux-x86-64 배포를 사용한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{설치·실행 명령 전체}
+\end{frame}
+
+\begin{frame}{도구 경로 확인}\relax
+\small
+\terminalbox{export PATH="\$HOME/.apio/packages/oss-cad-suite/bin:\$PATH"\\export PATH="\$HOME/.apio/packages/openxc7/bin:\$PATH"\\yosys --version\\nextpnr-xilinx --version}
+새 터미널에는 PATH 설정을 다시 적용한다.\par\vspace{0.22cm}LD\_LIBRARY\_PATH로 두 묶음의 lib를 섞지 않는다. 배포 래퍼가 자신의 라이브러리를 선택한다.\par
+\end{frame}
+
+\begin{frame}{정확한 S75 데이터 준비}\relax
+\small
+대상 부품은 xc7s75fgga484-1이다.\par\vspace{0.22cm}upstream PR 15가 S75를 올바른 S100 fabric에 연결한다. S75와 같은 실리콘 구조를 공유하는 매핑이며 부품명·IDCODE는 S75다.\par\vspace{0.22cm}해당 fgga484 패키지의 실제 338개 I/O 핀을 적용한다. 학생은 Vivado를 설치·실행할 필요가 없다.\par\vspace{0.22cm}준비 도구는 공개 DB 커밋과 핀 표 해시를 고정하고 모두 검사한다.\par\href{https://github.com/openXC7/prjxray-db/pull/15}{데이터 수정의 근거}
+\end{frame}
+
+\begin{frame}{도구 보조 파일 받기}\relax
+\small
+아래는 회로 프로젝트와 별개인 도구 데이터 폴더다.\par\terminalbox{mkdir -p \textasciitilde{}/fpga-cli/lab1-tools\\cd \textasciitilde{}/fpga-cli/lab1-tools\\repo=fpga-lab-example-opensource-cli-integrated\\base=https://raw.githubusercontent.com/Glaysia/\$repo/v2.0.1/tools\\curl --fail --location "\$base/prepare\_s75.py" -o prepare\_s75.py\\pins=xc7s75fgga484-1-package-pins.csv\\curl --fail --location "\$base/\$pins" -o "\$pins"}
+고정된 보조 도구 태그는 v2.0.1, 학생 빈 템플릿 태그는 v2.0.0이다.\par
+\end{frame}
+
+\begin{frame}{S75 chipdb 생성}\relax
+\small
+\terminalbox{python3 prepare\_s75.py}
+다운로드·bbaexport·bbasm 종료를 기다린다.\par\vspace{0.22cm}\textasciitilde{}/fpga-cli/lab1-s75/prepared.json에서 part와 338개 핀, DB 커밋·chipdb 해시를 확인한다.\par\vspace{0.22cm}실패하면 같은 폴더의 export.log·bbasm.log를 읽는다. 메모리 부족일 때 다른 무거운 앱을 닫고 다시 실행한다.\par\vspace{0.22cm}이후 VS Code의 학생 프로젝트 터미널로 돌아간다.\par
+\end{frame}
+
+\begin{frame}{내 프로젝트에서 사전 검사}\relax
+\small
+clone한 workspace에서 RTL 14개·TB·XDC·simulation.json을 직접 작성한다.\par\vspace{0.22cm}프로젝트 루트는 src·sim·constraints가 있는 폴더다.\par\terminalbox{python3 tools/lab1.py simulate\\mkdir -p build/cli}
+2,560개 입력 검사와 버튼·LCD 검사를 확인한다.\par\vspace{0.22cm}실험 전 레포트의 예상값·로그·파형을 저장한 뒤 합성으로 이동한다.\par
+\end{frame}
+
+\begin{frame}{합성 명령 파일을 직접 작성}\relax
+\small
+Explorer의 PROJECT 우클릭 → New File → synth.ys. 다음 네 줄을 작성하고 저장한다.\par\terminalbox{read\_verilog src/*.v\\synth\_xilinx -family xc7 -top lab1\_integrated\\write\_json build/cli/design.json\\stat}
+src에는 합성할 RTL만 두고 TB는 sim에 둔다.\par
+\end{frame}
+
+\begin{frame}{Yosys 실행과 결과 읽기}\relax
+\small
+\terminalbox{yosys -l build/cli/synthesis.log -s synth.ys}
+오류 없이 끝나는지와 build/cli/design.json의 갱신을 확인한다.\par\vspace{0.22cm}stat의 셀 종류·개수를 읽고 top이 lab1\_integrated인지 확인한다.\par\vspace{0.22cm}합성 로그를 evidence/cli에 보관한다. 실패했으면 원인을 수정하고 이 명령부터 다시 실행한다.\par
+\end{frame}
+
+\begin{frame}{nextpnr 배치배선}\relax
+\small
+\terminalbox{chip="\$HOME/fpga-cli/lab1-s75/xc7s75fgga484-1.bin"\\db="\$HOME/fpga-cli/lab1-s75/prjxray-db/spartan7"\\part=xc7s75fgga484-1\\nextpnr-xilinx --chipdb "\$chip" \textbackslash{}\\  --xdc constraints/lab1\_integrated.xdc \textbackslash{}\\  --json build/cli/design.json --fasm build/cli/design.fasm \textbackslash{}\\  --freq 0.001 --log build/cli/place-route.log}
+B6의 1kHz를 MHz로 표현하면 0.001이다. XDC와 같은 클록이다.\par\vspace{0.22cm}K4/B6 핀 오류가 나면 이전 S50 기반 chipdb를 사용했는지 확인한다.\par
+\end{frame}
+
+\begin{frame}{프레임 변환}\relax
+\small
+\terminalbox{fasm2frames --db-root "\$db" --part "\$part" \textbackslash{}\\  build/cli/design.fasm build/cli/design.frames}
+앞 장과 같은 터미널을 사용한다. db와 part 변수를 유지한다.\par\vspace{0.22cm}배치배선이 성공한 새 design.fasm을 사용한다.\par\vspace{0.22cm}종료 코드 0과 design.frames의 갱신을 확인한다.\par\vspace{0.22cm}해당 S75 DB와 다른 부품의 part.yaml을 섞지 않는다.\par
+\end{frame}
+
+\begin{frame}{bit 파일 생성}\relax
+\small
+\terminalbox{xc7frames2bit --part\_file "\$db/\$part/part.yaml" \textbackslash{}\\  --part\_name "\$part" --frm\_file build/cli/design.frames \textbackslash{}\\  --output\_file build/cli/lab1\_integrated.bit}
+build/cli/lab1\_integrated.bit가 이번 실행으로 생성됐는지 확인한다.\par\vspace{0.22cm}실행 명령·종료 코드·파일 크기·생성 시각을 실험 후 레포트에 보관한다.\par\vspace{0.22cm}제작 검증에서는 3,686,926바이트가 생성됐다.\par
+\end{frame}
+
+\begin{frame}{생성한 bit 다시 읽기}\relax
+\small
+\terminalbox{bitread --part\_file "\$db/\$part/part.yaml" -C -z -y \textbackslash{}\\  -o build/cli/bits.txt build/cli/lab1\_integrated.bit}
+체크섬 검사와 Number of configuration frames: 9104, DONE을 확인한다.\par\vspace{0.22cm}이 검사는 파일 구조를 확인한다. 실제 장치 기록·LCD·버튼 동작은 다음 실험 단계에서 확인한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli-pr15-evidence/bitread.txt}{제작 실행의 9,104프레임 읽기 로그}
+\end{frame}
+
+\begin{frame}{검증 결과와 다음 실험}\relax
+\small
+Icarus 통합 자기검사 2,560개 통과.\par\vspace{0.22cm}Yosys·nextpnr·fasm2frames·xc7frames2bit 종료 코드 모두 0.\par\vspace{0.22cm}정확한 S75 bit 생성 및 9,104프레임 체크섬 검사 통과.\par\vspace{0.22cm}소스·XDC·DB·chipdb 해시와 실행 로그를 공개했다.\par\vspace{0.22cm}다음은 openFPGALoader로 실제 장치에 기록하고 모드·LCD·입출력을 사진과 영상으로 검증한다.\par\href{https://github.com/Glaysia/ece2_26_2_2/blob/daily/0910/example/fpga_projects_hdl/LAB1/docs/cli.md}{전체 명령·근거·기록 절차}
+\end{frame}
+
+\begin{frame}{대상 부품·핀 제약 (1)}\relax
+\small
+xc7s75fgga484-1 · IOSTANDARD=LVCMOS33\par\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+포트 & PACKAGE\_PIN\\\hline
+clk & B6\\
+rst & K4\\
+mode\_button & N8\\
+sw[0] & U4\\
+sw[1] & V4\\
+sw[2] & W1\\
+\end{tabular}\end{center}
+XDC에서 포트·핀 번호를 대조한다. 다른 보드에는 그대로 쓰지 않는다.\par
+\end{frame}
+
+\begin{frame}{대상 부품·핀 제약 (2)}\relax
+\small
+xc7s75fgga484-1 · IOSTANDARD=LVCMOS33\par\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+포트 & PACKAGE\_PIN\\\hline
+sw[3] & W4\\
+sw[4] & T1\\
+sw[5] & U2\\
+sw[6] & W3\\
+sw[7] & Y1\\
+led[0] & N5\\
+\end{tabular}\end{center}
+XDC에서 포트·핀 번호를 대조한다. 다른 보드에는 그대로 쓰지 않는다.\par
+\end{frame}
+
+\begin{frame}{대상 부품·핀 제약 (3)}\relax
+\small
+xc7s75fgga484-1 · IOSTANDARD=LVCMOS33\par\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+포트 & PACKAGE\_PIN\\\hline
+led[1] & M1\\
+led[2] & M3\\
+led[3] & M7\\
+led[4] & N7\\
+led[5] & M2\\
+led[6] & M4\\
+\end{tabular}\end{center}
+XDC에서 포트·핀 번호를 대조한다. 다른 보드에는 그대로 쓰지 않는다.\par
+\end{frame}
+
+\begin{frame}{대상 부품·핀 제약 (4)}\relax
+\small
+xc7s75fgga484-1 · IOSTANDARD=LVCMOS33\par\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+포트 & PACKAGE\_PIN\\\hline
+led[7] & L4\\
+seg\_data[0] & R6\\
+seg\_data[1] & R4\\
+seg\_data[2] & R2\\
+seg\_data[3] & T5\\
+seg\_data[4] & N3\\
+\end{tabular}\end{center}
+XDC에서 포트·핀 번호를 대조한다. 다른 보드에는 그대로 쓰지 않는다.\par
+\end{frame}
+
+\begin{frame}{대상 부품·핀 제약 (5)}\relax
+\small
+xc7s75fgga484-1 · IOSTANDARD=LVCMOS33\par\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+포트 & PACKAGE\_PIN\\\hline
+seg\_data[5] & P7\\
+seg\_data[6] & P3\\
+seg\_data[7] & P1\\
+lcd\_data[0] & A4\\
+lcd\_data[1] & B2\\
+lcd\_data[2] & C3\\
+\end{tabular}\end{center}
+XDC에서 포트·핀 번호를 대조한다. 다른 보드에는 그대로 쓰지 않는다.\par
+\end{frame}
+
+\begin{frame}{대상 부품·핀 제약 (6)}\relax
+\small
+xc7s75fgga484-1 · IOSTANDARD=LVCMOS33\par\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+포트 & PACKAGE\_PIN\\\hline
+lcd\_data[3] & D4\\
+lcd\_data[4] & A2\\
+lcd\_data[5] & C5\\
+lcd\_data[6] & C1\\
+lcd\_data[7] & D1\\
+lcd\_e & A6\\
+\end{tabular}\end{center}
+XDC에서 포트·핀 번호를 대조한다. 다른 보드에는 그대로 쓰지 않는다.\par
+\end{frame}
+
+\begin{frame}{대상 부품·핀 제약 (7)}\relax
+\small
+xc7s75fgga484-1 · IOSTANDARD=LVCMOS33\par\begin{center}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{l|l}
+포트 & PACKAGE\_PIN\\\hline
+lcd\_rs & G6\\
+lcd\_rw & D6\\
+\end{tabular}\end{center}
+XDC에서 포트·핀 번호를 대조한다. 다른 보드에는 그대로 쓰지 않는다.\par
+\end{frame}
+
+\begin{frame}[label=integrated-cli-post]{openFPGALoader 설치}\relax
+\small
+bit 생성과 FPGA 기록은 별도 단계다. macOS는 아래 명령을 사용한다.\par\terminalbox{brew install openfpgaloader}
+Windows MSYS2 UCRT64 환경에서는 다음 명령을 사용한다.\par\terminalbox{pacman -S mingw-w64-ucrt-x86\_64-openFPGALoader}
+Linux는 배포판 패키지 또는 공식 빌드 안내를 따른다. 설치한 환경에서 확인한다.\par\terminalbox{openFPGALoader --help}
+\href{https://trabucayre.github.io/openFPGALoader/guide/first-steps.html}{공식 설치·기록 안내}
+\end{frame}
+
+\begin{frame}{보드와 JTAG 케이블 확인}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item 보드 전원과 USB JTAG 케이블을 연결한다.
+\item openFPGALoader --list-cables로 지원 케이블 식별자를 확인한다.
+\item openFPGALoader --list-boards로 지원 보드 식별자를 확인한다.
+\item 보드가 목록에 없으면 실제 연결된 JTAG 케이블의 식별자를 -c에 지정한다.
+\item VM 또는 WSL에서는 해당 실행 환경에 USB 장치가 연결되어 있는지 확인한다.
+\end{enumerate}
+다른 FPGA 보드 이름을 임의로 선택하지 않는다. 보드 모델과 케이블 모델은 별개의 정보다.\par
+\end{frame}
+
+\begin{frame}{CLI로 생성한 bit를 SRAM에 기록}\relax
+\small
+아래 MY\_CABLE은 직전 단계에서 확인한 실제 케이블 식별자로 바꾼다.\par\terminalbox{openFPGALoader -c MY\_CABLE build/cli/lab1\_integrated.bit}
+자신의 소스로 만든 최신 bit인지 경로·생성 로그·해시를 확인한 뒤 실행한다.\par\vspace{0.22cm}터미널의 장치 정보·진행률·종료 코드와 최종 상태를 보관한다.\par\vspace{0.22cm}기본 기록은 SRAM이며 전원을 끄면 사라진다. -f는 Flash 기록 옵션이므로 이 SRAM 실습 명령에는 넣지 않는다.\par\href{https://trabucayre.github.io/openFPGALoader/guide/first-steps.html}{SRAM·Flash와 케이블 옵션}
+\end{frame}
+
+\begin{frame}{기록 뒤 모드·LCD 동작 확인}\relax
+\small
+KEY1=reset, KEY2=다음 모드. DIP1–8=sw[7:0]. LED1–8=led[7:0].\par\vspace{0.22cm}reset으로 01을 확인하고 버튼을 짧게·길게 눌러 한 번씩 전환되는지 본다.\par\vspace{0.22cm}10 다음 01로 돌아오는지, LCD 번호·이름이 실제 선택 회로와 일치하는지 확인한다.\par\vspace{0.22cm}모드마다 DIP를 조작하여 예상표의 정상·경계 조건과 LED·7세그먼트 출력을 비교한다.\par\vspace{0.22cm}기록 성공 로그와 실제 회로 동작을 각각 증빙한다.\par
+\end{frame}
+
+\begin{frame}{CLI 실험 후 레포트와 GitHub}\relax
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item Icarus·Yosys·nextpnr·프레임 변환·openFPGALoader 버전과 실행 명령을 기록한다.
+\item RTL·TB·XDC 커밋, 정확한 part, DB 커밋과 bit 해시를 연결한다.
+\item evidence/cli에 합성·배치배선·bit 생성 로그를 보관한다.
+\item evidence/programming에 케이블·장치·기록 로그와 캡처를 보관한다.
+\item 보드 사진과 10개 모드 시연 영상에 조건·타임스탬프를 붙인다.
+\item 사전 파형·예상값·실측 차이를 해석하고 reports/post에서 증빙을 링크한다.
+\end{enumerate}
+\href{04.LAB1_00_CONTENTS.pdf}{전체 목차 PDF}
+\end{frame}
+\endgroup
+\end{document}

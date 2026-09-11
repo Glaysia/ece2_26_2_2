@@ -1,0 +1,112 @@
+[
+  {
+    "id": "vivado_2026_1_01_logic_gates",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/01_logic_gates/evidence/vscode-result.json"
+  },
+  {
+    "id": "vivado_2026_1_02_full_adder",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/02_full_adder/evidence/vscode-result.json"
+  },
+  {
+    "id": "vivado_2026_1_03_adder4",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/03_adder4/evidence/vscode-result.json"
+  },
+  {
+    "id": "vivado_2026_1_04_subtractor4",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/04_subtractor4/evidence/vscode-result.json"
+  },
+  {
+    "id": "vivado_2026_1_05_comparator4",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/05_comparator4/evidence/vscode-result.json"
+  },
+  {
+    "id": "vivado_2026_1_06_mux4to1",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/06_mux4to1/evidence/vscode-result.json"
+  },
+  {
+    "id": "vivado_2026_1_07_demux1to8",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/07_demux1to8/evidence/vscode-result.json"
+  },
+  {
+    "id": "vivado_2026_1_08_encoder8to3",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/08_encoder8to3/evidence/vscode-result.json"
+  },
+  {
+    "id": "vivado_2026_1_09_decoder3to8",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/09_decoder3to8/evidence/vscode-result.json"
+  },
+  {
+    "id": "vivado_2026_1_10_seven_segment",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/10_seven_segment/evidence/vscode-result.json"
+  },
+  {
+    "id": "vivado_2026_1_integrated",
+    "status": "PASS",
+    "evidence": "vivado_2026_1/11_integrated/evidence/vscode-result.json"
+  },
+  {
+    "id": "opensource_cli_integrated",
+    "status": "PASS",
+    "evidence": "opensource_cli/integrated/evidence/vscode-result.json"
+  },
+  {
+    "id": "legacy_01_logic_gates",
+    "status": "PASS",
+    "evidence": "legacy/01_logic_gates/evidence/vscode-result.json"
+  },
+  {
+    "id": "legacy_02_full_adder",
+    "status": "PASS",
+    "evidence": "legacy/02_full_adder/evidence/vscode-result.json"
+  },
+  {
+    "id": "legacy_03_adder4",
+    "status": "PASS",
+    "evidence": "legacy/03_adder4/evidence/vscode-result.json"
+  },
+  {
+    "id": "legacy_04_subtractor4",
+    "status": "PASS",
+    "evidence": "legacy/04_subtractor4/evidence/vscode-result.json"
+  },
+  {
+    "id": "legacy_05_comparator4",
+    "status": "PASS",
+    "evidence": "legacy/05_comparator4/evidence/vscode-result.json"
+  },
+  {
+    "id": "legacy_06_mux4to1",
+    "status": "PASS",
+    "evidence": "legacy/06_mux4to1/evidence/vscode-result.json"
+  },
+  {
+    "id": "legacy_07_demux1to8",
+    "status": "PASS",
+    "evidence": "legacy/07_demux1to8/evidence/vscode-result.json"
+  },
+  {
+    "id": "legacy_08_encoder8to3",
+    "status": "PASS",
+    "evidence": "legacy/08_encoder8to3/evidence/vscode-result.json"
+  },
+  {
+    "id": "legacy_09_decoder3to8",
+    "status": "PASS",
+    "evidence": "legacy/09_decoder3to8/evidence/vscode-result.json"
+  },
+  {
+    "id": "legacy_10_seven_segment",
+    "status": "PASS",
+    "evidence": "legacy/10_seven_segment/evidence/vscode-result.json"
+  }
+]

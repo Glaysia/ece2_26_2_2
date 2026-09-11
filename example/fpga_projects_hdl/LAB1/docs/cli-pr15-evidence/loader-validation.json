@@ -1,0 +1,35 @@
+{
+  "steps": [
+    {
+      "command": [
+        "openFPGALoader",
+        "--Version"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "openFPGALoader",
+        "--list-cables"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "openFPGALoader",
+        "--list-boards"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "openFPGALoader",
+        "--detect"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "programmed": false,
+  "physical_board_detected": false,
+  "note": "Read-only device discovery; no bitstream write attempted."
+}

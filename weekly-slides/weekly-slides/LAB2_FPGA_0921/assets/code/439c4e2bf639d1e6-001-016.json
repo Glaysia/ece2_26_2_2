@@ -1,0 +1,25 @@
+{
+  "index": 6,
+  "source_sha256": "439c4e2bf639d1e6c08c994c68aa3acc28944274b62e92226d824fd32f8f4ade",
+  "lines": [
+    1,
+    16
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:/Users/UOS/Documents/ece2_26_2_2/weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/vscode-0911/code-6.png",
+  "image": "assets/code/439c4e2bf639d1e6-001-016.png",
+  "crop": [
+    70,
+    90,
+    900,
+    474
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 2295878,
+    "title": "tb_counter4.sv - LAB1 (Workspace) - Visual Studio Code - 3 problems in this file"
+  },
+  "captured_at": "2026-09-11T05:00:07.301Z",
+  "image_sha256": "c7e2bda1d35fc34508ff965a373cf35bc8bd8984cabea557d32db9ad2bcdc5e4",
+  "language_server_observed": "Semantic highlighting, diagnostics, and inlay hints visible before capture"
+}

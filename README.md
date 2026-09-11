@@ -7,8 +7,10 @@
 ## 자료 찾기
 
 - [강의자료 목록](weekly-slides/README.md): OT, 레거시 HDL 교재, 설치·환경설정 매뉴얼의 TeX와 PDF.
-- [LAB1 자료](weekly-slides/weekly-slides/LAB1_FPGA_0914/README.md): 현재 제공 파일과 제작 상태.
+- [LAB1 자료](weekly-slides/weekly-slides/LAB1_FPGA_0914/README.md): 22개 매뉴얼·PDF 묶음. [프로젝트·workspace](example/fpga_projects_hdl/LAB1/README.md) · [학생용 템플릿](https://github.com/Glaysia/fpga-lab-template) · [검증 현황](example/fpga_projects_hdl/LAB1/docs/validation.md).
 - [문서 관리 및 남은 작업](docs/README.md): 미반영 초안과 과거 기록.
+
+- [LAB2 자료](weekly-slides/weekly-slides/LAB2_FPGA_0921/README.md): 순차논리 실습. [첫 카운터 완성 PDF](weekly-slides/weekly-slides/LAB2_FPGA_0921/05.LAB2_01_COUNTER_VIVADO.pdf) · [40개 예시 소스 바로가기](example/fpga_projects_hdl/README.md).
 
 ## 원본 관리 원칙
 
@@ -32,7 +34,7 @@ docs/
   drafts/          # TeX 반영 검토용 초안
   archive/         # 과거 구상·작업 기록·이전 원고
 legacy/            # 기존 교육자료 (원자료 보존)
-example/           # 예제 영역 (기존 HDL 프로젝트 2개 삭제됨)
+example/           # LAB1 22개·LAB2 18개 예시 서브모듈·검증 증빙
 ```
 
 현재의 중첩된 `weekly-slides/weekly-slides/` 경로는 TeX의 상대경로 참조를 유지하기 위해 그대로 둔다. 로컬 참고자료 `reference/`와 임시 작업 `tmp/`는 Git 제외 대상이다.

@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "actions": [
+    "Remove line 4 semicolon in VS Code; save; run default 02 Simulate task",
+    "Open Problems; double-click expected semicolon to navigate to line 4",
+    "Restore semicolon; save; run task; inspect 4-case PASS and 40000ps finish"
+  ],
+  "failed_compile_log": "C:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\src\\logic_gate.v:5: syntax error\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\src\\logic_gate.v:4: error: Syntax error in continuous assignment\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\sim\\tb_logic_gate_modern.sv:3: error: 'a' has already been declared in this scope.\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\src\\logic_gate.v:1:      : It was declared here as a net.\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\sim\\tb_logic_gate_modern.sv:3: error: 'b' has already been declared in this scope.\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\src\\logic_gate.v:1:      : It was declared here as a net.\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\sim\\tb_logic_gate_modern.sv:3: error: 'x' has already been declared in this scope.\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\src\\logic_gate.v:1:      : It was declared here as a net.\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\sim\\tb_logic_gate_modern.sv:3: error: 'y' has already been declared in this scope.\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\src\\logic_gate.v:1:      : It was declared here as a net.\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\sim\\tb_logic_gate_modern.sv:3: error: 'z' has already been declared in this scope.\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\src\\logic_gate.v:1:      : It was declared here as a net.\n",
+  "restored_result": {
+    "status": "SIMULATED",
+    "run": "run-d90579a60b9848b28e32826a814d335a",
+    "functional_correctness": "NOT_ASSESSED",
+    "inputs_sha256": {
+      "simulation.json": "701e521940e34e7fc2c3c5c5d670b4da48d16dd3ac12306ad7e6cd0fcfee751c",
+      "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+      "sim/tb_logic_gate_modern.sv": "8815d26ae87ee452a7cec9e99d54cab62ab72d35ec1e090e3af6afc154ffb232"
+    },
+    "wave_sha256": "28d2810e8174b1d1ac8ac50a0b755d205c53eba1b90926ab3922e6aa24aa5759"
+  },
+  "restored_simulation_log": "VCD info: dumpfile wave.vcd opened for output.\nLAB1_PASS logic_gate cases=4\nC:\\Users\\UOS\\Documents\\lab1_01_logic_gates\\sim\\tb_logic_gate_modern.sv:19: $finish called at 40000 (1ps)\n",
+  "screenshots": [
+    "student-syntax-error.png",
+    "student-syntax-location.png",
+    "student-syntax-restored.png"
+  ],
+  "screenshot_sha256": {
+    "student-syntax-error.png": "b0200c738d3418667f1e51a06e8111d02120e26fd4ab8e64cd1f5f97d3486d99",
+    "student-syntax-location.png": "c78efb7234c35492fae0165bb7e93ced260e787050f3f9bbb265ed71b2794061",
+    "student-syntax-restored.png": "3260cb14f0576b6d19685b6c6d2d42fecbd4b8c7ac1a292b23e11549e6403367"
+  }
+}

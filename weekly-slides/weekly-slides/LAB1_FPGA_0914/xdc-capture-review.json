@@ -1,0 +1,83 @@
+{
+  "date": "2026-09-10",
+  "scope": "11 unique XDC files reused by 22 manuals; metadata and source line coverage. Pixel review remains part of PDF QA.",
+  "files": [
+    {
+      "source": "constraints/adder_4bit.xdc",
+      "panels": 2,
+      "nonblank_lines": 27,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    },
+    {
+      "source": "constraints/compare_4.xdc",
+      "panels": 2,
+      "nonblank_lines": 23,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    },
+    {
+      "source": "constraints/decoder3x8.xdc",
+      "panels": 2,
+      "nonblank_lines": 23,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    },
+    {
+      "source": "constraints/demux_1x8.xdc",
+      "panels": 2,
+      "nonblank_lines": 25,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    },
+    {
+      "source": "constraints/encoder8x3.xdc",
+      "panels": 2,
+      "nonblank_lines": 24,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    },
+    {
+      "source": "constraints/full_adder.xdc",
+      "panels": 1,
+      "nonblank_lines": 11,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    },
+    {
+      "source": "constraints/lab1_integrated.xdc",
+      "panels": 6,
+      "nonblank_lines": 78,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    },
+    {
+      "source": "constraints/logic_gate.xdc",
+      "panels": 1,
+      "nonblank_lines": 11,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    },
+    {
+      "source": "constraints/mux_4x1.xdc",
+      "panels": 1,
+      "nonblank_lines": 15,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    },
+    {
+      "source": "constraints/seg_decoder.xdc",
+      "panels": 2,
+      "nonblank_lines": 25,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    },
+    {
+      "source": "constraints/sub_4bit.xdc",
+      "panels": 2,
+      "nonblank_lines": 27,
+      "line_coverage": "PASS",
+      "source_hash_match": "PASS"
+    }
+  ]
+}

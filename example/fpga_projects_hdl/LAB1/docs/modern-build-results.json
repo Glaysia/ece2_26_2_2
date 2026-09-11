@@ -1,0 +1,202 @@
+[
+  {
+    "id": "vivado_2026_1_03_adder4",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/03_adder4/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/03_adder4/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/03_adder4/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_02_full_adder",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/02_full_adder/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/02_full_adder/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/02_full_adder/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_04_subtractor4",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/04_subtractor4/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/04_subtractor4/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/04_subtractor4/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_05_comparator4",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/05_comparator4/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/05_comparator4/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/05_comparator4/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_07_demux1to8",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/07_demux1to8/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/07_demux1to8/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/07_demux1to8/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_06_mux4to1",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/06_mux4to1/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/06_mux4to1/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/06_mux4to1/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_08_encoder8to3",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/08_encoder8to3/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/08_encoder8to3/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/08_encoder8to3/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_09_decoder3to8",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/09_decoder3to8/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/09_decoder3to8/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/09_decoder3to8/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_10_seven_segment",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/10_seven_segment/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/10_seven_segment/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/10_seven_segment/build/batch-build.log"
+      }
+    ]
+  },
+  {
+    "id": "vivado_2026_1_integrated",
+    "results": [
+      {
+        "action": "simulate",
+        "exit": 0,
+        "log": "vivado_2026_1/11_integrated/build/batch-simulate.log"
+      },
+      {
+        "action": "vivado-sim",
+        "exit": 0,
+        "log": "vivado_2026_1/11_integrated/build/batch-vivado-sim.log"
+      },
+      {
+        "action": "build",
+        "exit": 0,
+        "log": "vivado_2026_1/11_integrated/build/batch-build.log"
+      }
+    ]
+  }
+]

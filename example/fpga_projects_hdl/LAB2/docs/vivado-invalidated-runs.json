@@ -1,0 +1,11 @@
+[
+  {
+    "project": "vivado_2026_1/02_clock_divider",
+    "run_directory": "tmp/lab2-vivado/02_clock_divider-1789044854221074800",
+    "reason": "Initial divider synthesis read the earlier single-output wrapper before /2, /10, /50 outputs were added. Its utilization has 13 registers. Do not use that run as proof of the final source.",
+    "required_action": "Rerun 02_clock_divider after the current sequential Vivado queue ends; compare build-start source hashes against the final source.",
+    "status": "RESOLVED_BY_RERUN",
+    "replacement_run": "tmp/lab2-vivado/02_clock_divider-1789046394030511000",
+    "replacement_bit_sha256": "55e6a83ba3d684b0639da13f00778f423085560464ea5010d176f131bc27919f"
+  }
+]

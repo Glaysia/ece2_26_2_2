@@ -1,0 +1,41 @@
+RUN C:\AMDDesignTools\2026.1\Vivado\bin\xvlog.bat --sv "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\rtl\logic_gate.v" "C:\Users\UOS\Documents\ece2_26_2_2\tmp\fpga template final clone\common\tb\tb_logic_gate_modern.sv"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/rtl/logic_gate.v" into library work
+INFO: [VRFC 10-311] analyzing module logic_gate
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/tb/tb_logic_gate_modern.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_logic_gate_modern
+
+RUN C:\AMDDesignTools\2026.1\Vivado\bin\xelab.bat tb_logic_gate_modern --debug typical --snapshot lab1_sim
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_logic_gate_modern --debug typical --snapshot lab1_sim 
+Multi-threading is on. Using 6 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.logic_gate
+Compiling module work.tb_logic_gate_modern
+Built simulation snapshot lab1_sim
+
+RUN C:\AMDDesignTools\2026.1\Vivado\bin\xsim.bat lab1_sim --runall
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Thu Sep 10 11:10:37 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/lab1_sim/xsim_script.tcl
+# xsim {lab1_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+LAB1_PASS logic_gate cases=4
+$finish called at time : 40 ns : File "C:/Users/UOS/Documents/ece2_26_2_2/tmp/fpga template final clone/common/tb/tb_logic_gate_modern.sv" Line 19
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Sep 10 11:10:49 2026...
+
