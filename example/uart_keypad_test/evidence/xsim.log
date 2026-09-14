@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# xsim v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Mon Sep 14 16:56:46 2026
+# Process ID         : 13708
+# Current directory  : C:/Users/UOS/Documents/ece2_26_2_2/example/uart_keypad_test/build/vivado/uart_keypad_test.sim/sim_1/behav/xsim
+# Command line       : xsim.exe -log standalone.log -mode tcl -source {xsim.dir/tb_uart_keypad_behav/xsim_script.tcl}
+# Log file           : C:/Users/UOS/Documents/ece2_26_2_2/example/uart_keypad_test/build/vivado/uart_keypad_test.sim/sim_1/behav/xsim/standalone.log
+# Journal file       : C:/Users/UOS/Documents/ece2_26_2_2/example/uart_keypad_test/build/vivado/uart_keypad_test.sim/sim_1/behav/xsim\xsim.jou
+# Running On         : harrylt
+# Platform           : Windows 11
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+# CPU Frequency      : 2112 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 8390 MB
+# Swap memory        : 20971 MB
+# Total Virtual      : 29361 MB
+# Available Virtual  : 14535 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_uart_keypad_behav/xsim_script.tcl
+# xsim {tb_uart_keypad_behav} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UART_KEYPAD_PASS bytes=240 LF CRLF empty burst 12keys hold bounce length overflow recovery GPIO16
+$finish called at time : 838290 ns : File "C:/Users/UOS/Documents/ece2_26_2_2/example/uart_keypad_test/sim/tb_uart_keypad.sv" Line 58
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Sep 14 16:56:49 2026...

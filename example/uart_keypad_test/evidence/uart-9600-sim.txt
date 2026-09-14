@@ -1,0 +1,2 @@
+UART_9600_PASS 50MHz default parameters, independent 9600 wire stimulus/decoder, LB|U LF
+sim/tb_uart_9600.sv:22: $finish called at 9187356000 (1ps)

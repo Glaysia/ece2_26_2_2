@@ -1,0 +1,2 @@
+UART_KEYPAD_PASS bytes=240 LF CRLF empty burst 12keys hold bounce length overflow recovery GPIO16
+sim/tb_uart_keypad.sv:58: $finish called at 838290000 (1ps)

@@ -1,0 +1,7 @@
+firmware_file : C:/AMDDesignTools/2026.1/Vivado/data/xicom/xusb_xp2.hex
+
+Waiting reload: [==================================================] 100.00%
+
+Done
+Unable to read control request: LIBUSB_ERROR_TIMEOUT
+JTAG init failed with: Unable to read constant.

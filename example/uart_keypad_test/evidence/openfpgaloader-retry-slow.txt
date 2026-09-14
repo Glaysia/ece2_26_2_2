@@ -1,0 +1,13 @@
+firmware_file : C:/AMDDesignTools/2026.1/Vivado/data/xicom/xusb_xp2.hex
+
+Waiting reload: [==================================================] 100.00%
+
+Done
+FX2 version:    6109
+CPLD version:   feff
+Const0 version: b503
+Const1 version: 0400
+Const2 version: 0d20
+status 43 connected: yes
+Jtag frequency : requested 750000 Hz -> real 750000 Hz
+found 0 devices
