@@ -1,0 +1,18 @@
+{
+  "actual_vscode_capture": true,
+  "source_sha256": "5212d5d01d655d09c5e341f766bd8681f96e5a9b77cef4c93146d36d20f8133c",
+  "lines": [
+    1,
+    16
+  ],
+  "image_sha256": "1b7c8907b9370275cdbcf69a8a1067b05c793e894dac800f29a790ab915ad1a4",
+  "captured_on": "2026-09-13",
+  "source": "src/lab2_shift_register.v",
+  "full_capture": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/02-shift-board.png",
+  "crop": [
+    353,
+    36,
+    1160,
+    478
+  ]
+}

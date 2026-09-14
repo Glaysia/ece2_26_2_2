@@ -15,9 +15,9 @@
 \navlink{setup}{프로젝트 시작}\par\vspace{0.4cm}\navlink{code}{RTL·테스트벤치·XDC 작성}\par\vspace{0.4cm}\navlink{simulation}{실행과 파형 확인}\par\vspace{0.4cm}\navlink{implementation}{Vivado 구현과 bit 생성}\par\vspace{0.4cm}\navlink{reports}{실험 전 레포트}
 \par\vspace{0.4cm}\navlink{after-report}{실험 후 레포트}\end{frame}
 
-\begin{frame}[label=setup]{v2.0.0 템플릿을 새 이름으로 clone}
+\begin{frame}[label=setup]{v2.0.1 템플릿을 새 이름으로 clone}
 \small
-Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.0 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab2\_01\_counter\\cd lab2\_01\_counter\\git switch -c main\\code LAB1.code-workspace}
+Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.1 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab2\_01\_counter\\cd lab2\_01\_counter\\git switch -c main\\code LAB1.code-workspace}
 \end{frame}
 
 \begin{frame}{File → New Window}
@@ -452,5 +452,15 @@ CFGBVS와 CONFIG\_VOLTAGE는 구성 뱅크의 실제 보드 배선·전압에 �
 \begin{frame}{제작 검증 범위}
 \small
 완료: VS Code와 Vivado에서 동일 코어 테스트벤치 36개 검사 통과, 356 ns 종료.\par\vspace{0.26cm}완료: xc7s75fgga484-1 합성·배치·배선·비트스트림 생성, 내부 타이밍 및 핀 배치 확인.\par\vspace{0.26cm}이 자료의 보드 기록·사진·영상 단계는 학생 실험 절차다. 실제 장치 기록과 물리 동작은 이번 제작 검증에 포함되지 않았다.\par
+\end{frame}
+\begin{frame}{v2.0.1 편집기와 시뮬레이터}
+\small
+\begin{enumerate}
+\item slang 확장·서버는 0.3.0을 기준으로 확인한다. 추천 목록은 버전을 고정하지 않는다.
+\item 템플릿의 .slang/server.json은 src·sim 탐색용이다. 새 RTL은 simulation.json에도 직접 등록한다.
+\item Ctrl+Shift+P → slang: Show Output. 서버 오류가 있으면 README의 버전 확인·재시작 절차를 따른다.
+\item slang.path에 다른 사람의 설치 경로를 복사하지 않는다. 직접 지정할 때는 User 설정에 자신의 경로를 쓴다.
+\item VS Code 02 Simulate는 Icarus, Vivado Run Behavioral Simulation은 XSim이다.
+\end{enumerate}\href{https://github.com/Glaysia/fpga-lab-template/tree/v2.0.1\#3-실행-준비}{템플릿 도구 설치·오류 해결 안내}
 \end{frame}
 \end{document}

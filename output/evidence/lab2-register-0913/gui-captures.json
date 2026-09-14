@@ -1,0 +1,197 @@
+[
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\01-register-core.png",
+    "actual_gui_capture": true,
+    "sha256": "8fc1391e0a60c39e898d1bd25ebc62fb7e67fa2b21188ccde646ac2f9acd70dc"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\02-register-board.png",
+    "actual_gui_capture": true,
+    "sha256": "5337be0073bbd6d2c194c60d824abebbf19c2fcceaa78b3cd39bcd42450dcd5f"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\03-tb-first.png",
+    "actual_gui_capture": true,
+    "sha256": "4d15c54d3e06b5dd00d18385ca1ab25c1d6ab5c32cd4f1d4b3b776e2e3d2c21d"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\04-tb-last.png",
+    "actual_gui_capture": true,
+    "sha256": "8fb37306585d9b1b781c9fa7528d0c7276a91435b4ff8b703036d5de31b4d17f"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\05-simulation-json.png",
+    "actual_gui_capture": true,
+    "sha256": "919e9030d104bb95aaaa72521f4683d4f9d8273d610e0104c27c73868994266d"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\06-vscode-pass.png",
+    "actual_gui_capture": true,
+    "sha256": "8a34255ca00a60f305a223f30afa4ea45845d76facf98bdfd972a859495370ae"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\07-enable-vaporview.png",
+    "actual_gui_capture": true,
+    "sha256": "1ad3fc7d392e0052f7fa55f91723dbbce088d1051c0b9a79be8a64ec0c4b224d"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\08-reopen-wave.png",
+    "actual_gui_capture": true,
+    "sha256": "53a4453c2dc3c78489767318b32051a2d590781c1e481609da8d436e7fce6b69"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\09-netlist.png",
+    "actual_gui_capture": true,
+    "sha256": "781a242994fde8cc9ebee801273df458d3f84a63c0f1146c406523fcedd56d47"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\10-wave-ns.png",
+    "actual_gui_capture": true,
+    "sha256": "2e4371203fa06f10ee50d77b5dcb30672472de3cf0eb398ac7b7917c3f332cc5"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\01-new-menu.png",
+    "actual_gui_capture": true,
+    "sha256": "d73fcc4ec855e1bdb3b2255ee0c886399d5885a800d917f74907b6c8f50cc8fe"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\02-project-name.png",
+    "actual_gui_capture": true,
+    "sha256": "4a0390646ef91283922d9f9bb8e1519d4c321fa62baa742362c283c1f073a01a"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\03-rtl-project.png",
+    "actual_gui_capture": true,
+    "sha256": "50230f3da32d15642e173d04448c3d59e78983e14d81375203604debc2a9528c"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\04-part.png",
+    "actual_gui_capture": true,
+    "sha256": "9569b9d8e68a18f3df911620ecf0e9ee63323a4d01f7fc15390737849d38d91d"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\05-summary.png",
+    "actual_gui_capture": true,
+    "sha256": "b4decc8248ab607c94741b871aa332215b19cdc5d742e8e6ee372ab140fbf471"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\06-design-sources.png",
+    "actual_gui_capture": true,
+    "sha256": "8e5f5179d9ae2b3c5a7ebfd4fe0c5a761727b4b09011507b053382b1dcdaae1f"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\07-select-rtl.png",
+    "actual_gui_capture": true,
+    "sha256": "b0fc562efe73fa32f0fb68967582e6e653a1969afbc265ec5f6da95ccadf3d60"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\08-rtl-list.png",
+    "actual_gui_capture": true,
+    "sha256": "4e0ad43c8dc5a915ed368a887b94c66723ed8158a194017eeb84725474575772"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\09-sim-sources.png",
+    "actual_gui_capture": true,
+    "sha256": "5be289475f26fbea2d99742aca602ee22d55ccc354cf6f71da8473daec054131"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\10-tb-list.png",
+    "actual_gui_capture": true,
+    "sha256": "d599305d382aed1b7ff5dd40b230264b2a18b37a0a199088db49f17ac9836015"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\11-constraints.png",
+    "actual_gui_capture": true,
+    "sha256": "62df9f021ab8dfa4c9add7de2156e02f1af2fc83dba7208661303193b0d2bb35"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\12-xdc-list.png",
+    "actual_gui_capture": true,
+    "sha256": "79addf39c1c0547433aa7219d55e76244c6f9133cb553034826388403a22ef47"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\13-tb-top-menu.png",
+    "actual_gui_capture": true,
+    "sha256": "7c4c9110bee86688a7d134267b8d10d6bfc195eb19c9d0f79e132f6fa403972b"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\14-top-check.png",
+    "actual_gui_capture": true,
+    "sha256": "573338288e8b47aea668f18c8ff566b8f00f3391fb89fae99dec4b44d968b02e"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\15-run-behavioral.png",
+    "actual_gui_capture": true,
+    "sha256": "7b0ea38b1c4d907573466e931f8c83a8da7a20ef3b1edac5422545667334b582"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\16-xsim-pass.png",
+    "actual_gui_capture": true,
+    "sha256": "957a26276965e2f2633a7b697ff741896c23741666df3616942d8cfa0ec2286c"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\17-xsim-wave.png",
+    "actual_gui_capture": true,
+    "sha256": "3373c421f2add3e745983335a43525ed0b8fe48abaf612a6cdd21fc4c7ebacb2"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\18-close-simulation.png",
+    "actual_gui_capture": true,
+    "sha256": "3d8009f0eb4ce31ccd722fa7c99e0f797f76725c3dbcb39ae59c86784b901aba"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\19-elaborated.png",
+    "actual_gui_capture": true,
+    "sha256": "759531f6edb4b0224f561125e6f4e200d069a26015401f3ab417ea21835d862a"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\20-io-menu.png",
+    "actual_gui_capture": true,
+    "sha256": "93b9292484c3d6e2ed08987fcfe149c1ecb9490279500d18d938fe55f24e2b6a"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\21-bus-pins.png",
+    "actual_gui_capture": true,
+    "sha256": "49cd91f238b3fb607d63306c876ae7f7fbe0f41b43fa89e7bf4e384bcb69b58f"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\22-scalar-pins.png",
+    "actual_gui_capture": true,
+    "sha256": "f93b17153e55db18504e5f96047f6b1052753aa2b8d62d117a893730d7efbc67"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\23-synth-launch.png",
+    "actual_gui_capture": true,
+    "sha256": "e495add808eecde28c5e32aa898fd89cb2f65650fd3b984c5c26592f9db55e77"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\24-synth-complete.png",
+    "actual_gui_capture": true,
+    "sha256": "93f150cc50107463d375fee4bda89fa061e89ce385b4ef7863f08baaae3c87fd"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\25-impl-launch.png",
+    "actual_gui_capture": true,
+    "sha256": "e96859cef8609fb7c0e25bb07fc7e9badf71d4bbc0b7547ac6eda87fcb4d8553"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\26-impl-complete.png",
+    "actual_gui_capture": true,
+    "sha256": "9718d1ca6aaa0e50b7f061bc447f3c4f625fede95aa8bc0129cdf975cf0d1bbd"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\27-bit-launch.png",
+    "actual_gui_capture": true,
+    "sha256": "a65d591515e8a741368cf1b20c263b7c4f168a53cf635b13d2cb747eafc43de6"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\28-bit-complete.png",
+    "actual_gui_capture": true,
+    "sha256": "3a8af3d5f2f7e119a252e1903860a162f668b23c54651b750ccc86b85f1212a5"
+  },
+  {
+    "path": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\vivado\\29-timing.png",
+    "actual_gui_capture": true,
+    "sha256": "ca862700430211a5bee75b1efaa57b1ef1f64809e3f1e52c11af58a4337cf999"
+  }
+]

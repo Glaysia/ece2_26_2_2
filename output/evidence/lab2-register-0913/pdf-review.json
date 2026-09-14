@@ -1,0 +1,39 @@
+{
+  "status": "PDF_VISUAL_AND_STRUCTURE_REVIEWED",
+  "reviewed_on": "2026-09-13",
+  "pages": 79,
+  "all_pages_visually_reviewed": true,
+  "pdf_sha256": "4c4588007adbc9bcfa042660008fcc1b05af61bdc102a03a0c8f8643485113eb",
+  "tex_sha256": "4f04bb971a96b1267de579fef72cea80f1eeba0adb6be204ee27dc1625331699",
+  "visual_method": "All 79 pages rendered. Body pixels compared with previously visually reviewed 78-page final render, accounting for inserted page 7. Changed pages 3,4,5,7,39 reviewed directly. All 79 footer strips reviewed directly. No other body differences.",
+  "changed_pages": [
+    3,
+    4,
+    5,
+    7,
+    39
+  ],
+  "internal_links": 85,
+  "home_destination_page": 2,
+  "aspect_ratio": "4:3",
+  "actual_code_captures": [
+    "3bbd3e5da74260f1-001-009",
+    "546bd1f1a2b519d0-001-016",
+    "a866edb1f9b34779-001-016",
+    "a866edb1f9b34779-017-032",
+    "a866edb1f9b34779-033-046",
+    "4638c821526b3259-001-016",
+    "4638c821526b3259-017-017",
+    "623b0d84bab55735-001-016",
+    "623b0d84bab55735-017-032",
+    "623b0d84bab55735-033-043",
+    "c409037fe63f5324-001-016",
+    "c409037fe63f5324-017-032",
+    "c409037fe63f5324-033-042"
+  ],
+  "source_and_bit_hashes_revalidated": true,
+  "template_tag": "v2.0.1",
+  "new_tag_simulation": "../template-v2.0.1/remote.json",
+  "gui_click_link_test": "PENDING final viewer review",
+  "physical_board": "NOT_RUN; student instructions included"
+}

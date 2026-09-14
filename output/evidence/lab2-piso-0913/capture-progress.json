@@ -1,0 +1,23 @@
+{
+  "status": "VSCODE_CODE_CAPTURE_AND_GUI_SIMULATION_PASS",
+  "actual_code_captures": [
+    "assets/code/8f851ff69cb73cf9-001-009.png",
+    "assets/code/f92dadd42b3ec327-001-014.png",
+    "assets/code/aa7c90e77f50b103-001-016.png",
+    "assets/code/aa7c90e77f50b103-017-018.png",
+    "assets/code/c07306c7c8c7f17c-001-016.png",
+    "assets/code/c07306c7c8c7f17c-017-032.png",
+    "assets/code/c07306c7c8c7f17c-033-046.png"
+  ],
+  "testbench_checks": 114,
+  "simulation_end_ns": 976,
+  "template_tag": "v2.0.1",
+  "student_workspace": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_05_piso",
+  "local_workspace_overrides": "slang.path 0.3.0, Python312 executable, inlayHints off, stickyScroll off",
+  "remaining": "manual integration, Vivado GUI, PDF review",
+  "physical_board": "NOT_RUN",
+  "waveform_captures": [
+    "assets/piso-0913/12-wave-full.png",
+    "assets/piso-0913/13-wave-a.png"
+  ]
+}

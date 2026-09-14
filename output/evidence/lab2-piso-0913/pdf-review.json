@@ -1,0 +1,16 @@
+{
+  "status": "PDF_VISUAL_AND_STRUCTURE_REVIEWED",
+  "reviewed_on": "2026-09-14",
+  "pages": 74,
+  "all_pages_visually_reviewed": true,
+  "pdf_sha256": "ff3d013712614fcbb5287cbbe29ee61eecb6b6dd49d386db709ead507cdfd55d",
+  "tex_sha256": "3b59a8ca0064f6d5d53e1c544712f1c208db56ecdf82b5f5392be6f7a5033304",
+  "visual_method": "All 74 final rendered pages directly inspected in 19 contact sheets. Page 20 additionally inspected at full resolution to confirm the complete RTL line at the right edge.",
+  "internal_links": 79,
+  "home_destination_page": 2,
+  "aspect_ratio": "4:3",
+  "template_tag": "v2.0.1",
+  "gui_validation": "vivado-gui-validation.json",
+  "gui_click_link_test": "PENDING final viewer review",
+  "physical_board": "NOT_RUN; student instructions included"
+}

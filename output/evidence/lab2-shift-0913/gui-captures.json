@@ -1,0 +1,52 @@
+[
+  {
+    "path": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/01-shift-core.png",
+    "sha256": "e504bae0fa03a5d04f48ea3b7857e0a3870e4f428a0cc1579f75dfb3f3220985",
+    "actual_gui_capture": true
+  },
+  {
+    "path": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/02-shift-board.png",
+    "sha256": "3b3b0bba4d1c4a88c5a014a56eef2ccf6c680dd7bece02268733ab0a5d9d3803",
+    "actual_gui_capture": true
+  },
+  {
+    "path": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/03-tb-first.png",
+    "sha256": "104079376e6e594ea9bad777961b964b2b27c1fe001f03a6c7c2258e1d88db61",
+    "actual_gui_capture": true
+  },
+  {
+    "path": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/04-tb-last.png",
+    "sha256": "3df9c3abd82e990120f893293b402410810fdc07cc3fd8671fee5166437e956e",
+    "actual_gui_capture": true
+  },
+  {
+    "path": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/05-simulation-json.png",
+    "sha256": "e286ab3eda0d1dfc127e0ee7fe8a8a42619d142c84224e42f779f9891aa9ea64",
+    "actual_gui_capture": true
+  },
+  {
+    "path": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/06-vscode-pass.png",
+    "sha256": "49ca4d946fab75fd894df4666b8ebf61c89b3d8eb572d5b6c02a8962177e8138",
+    "actual_gui_capture": true
+  },
+  {
+    "path": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/07-enable-vaporview.png",
+    "sha256": "d4835a94220dce36e54b5b0074294769fa5cee172e78654054b86179c0261a48",
+    "actual_gui_capture": true
+  },
+  {
+    "path": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/08-open-wave.png",
+    "sha256": "1023a3fbd9d9e49afab9147dce973f3ec409c5f923f33c96940d7979ef77427b",
+    "actual_gui_capture": true
+  },
+  {
+    "path": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/09-netlist.png",
+    "sha256": "e05ff4e7d5ba0385aa9d70227693a7e5e153cd079f185a8546946daf826b60ca",
+    "actual_gui_capture": true
+  },
+  {
+    "path": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/10-wave-ns.png",
+    "sha256": "f736bd125fa030bd351dec6322a03b0667f0811f4564896df939652f75c48616",
+    "actual_gui_capture": true
+  }
+]

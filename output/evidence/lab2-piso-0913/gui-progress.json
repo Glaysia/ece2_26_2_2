@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-09-14T00:28:26.90668+09:00",
+  "status": "XSIM_GUI_PASS_SYNTHESIS_STARTED",
+  "project": "tmp/lab2-students-0913/lab2_05_piso/vivado/lab2_piso.xpr",
+  "part": "xc7s75fgga484-1",
+  "design_top": "lab2_piso",
+  "simulation_top": "tb_piso4",
+  "source_copy": false,
+  "checks": 114,
+  "end_time_ns": 976,
+  "simulation_log_sha256": "c1e79741db40802cc40638fa0ee53c76bde84899881246171dc31ea358d86414",
+  "captures": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/piso-0913/vivado/01..20",
+  "remaining": [
+    "GUI synthesis completion implementation bitstream",
+    "Vivado manual integration",
+    "full PDF visual review"
+  ],
+  "physical_board": "NOT_RUN",
+  "io_ports_reviewed": 19,
+  "io_standard": "LVCMOS33"
+}

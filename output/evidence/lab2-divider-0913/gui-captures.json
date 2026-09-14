@@ -1,0 +1,255 @@
+{
+  "captured_on": "2026-09-13",
+  "images": [
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/01-new-window.png",
+      "sha256": "88fa05ba0ccb712d6b40b22cc88186b07b92223dd2c494370adaed061b00d0d5",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/02-file-menu.png",
+      "sha256": "f265cff04f340da8eef8adcd0190f1465bcc84a047a5bd2cd23203a49cabc769",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/03-blank-workspace.png",
+      "sha256": "812021fd53e1caa32d2a5d5ebfbd895d15bb99d7e4a9c73ad229c12affc4f86b",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/04-clock-divider-full.png",
+      "sha256": "4e865650d4e9b48d32f97c1c434771812b844665abbfb8e2fd8fb3f832513bb4",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/05-clock-divider-last.png",
+      "sha256": "a0a5325c71b4fd4b280eb26253f026584f87c42baedb2e6ff640984e0502f397",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/06-board-top.png",
+      "sha256": "c68c25e55e78a52423c64a0a3b6d9e13d83913eafc4181e8558c7d012b44fa5e",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/07-board-top-last.png",
+      "sha256": "97cd65e7a28c9cbf5c8c798beb2bae985a03c383daef23a5f2fee2ce91ecaa7f",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/08-tb-first.png",
+      "sha256": "46292a6350d236e4c96fc438c4fd358b602f2a5a040576b74c260d6890c8ddca",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/09-tb-middle.png",
+      "sha256": "b892461b58917c29b26f6bc5226ca995225d5b2fa5d537565d07f63b58d10e8f",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/10-tb-last.png",
+      "sha256": "58ae480695bc782bfccf4594d0bc53a390c0423870918b0c9906999d2b25403f",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/11-task-list.png",
+      "sha256": "92ffd4557a1efe7aa04f35fbe6df4bce7a30b60508bfc0d332085225f8d382eb",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/12-check-complete.png",
+      "sha256": "26d686f2efc459644c56b7b1b594b76506241ad5d1b4d74455b72effd0a758d2",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/13-divider-pass.png",
+      "sha256": "ffa9c74b54c5960a6e90fb566d490e41c708b57f78fedf4fb1a4592f851aeea3",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/14-enable-vaporview.png",
+      "sha256": "f7d1dc254e5200ce925a36d773301717f2a391fe9b1dc974a605b4439875ff1b",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/15-reopen-vaporview.png",
+      "sha256": "34a0b37fcce3e567105cf4cfbcbbfd04da84a2a523f5e666b75bf6a92ef9b83f",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/16-netlist.png",
+      "sha256": "71826b07e4758c9bfc88f1f6fc868764f0936c560e581947003a231c426ba5e4",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/17-wave-ns.png",
+      "sha256": "6bffa9688bdb7525e6748a7b44e79fdb97f62e1f70cc548067c7d023eb47743a",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/18-simulation-json.png",
+      "sha256": "117e7cc795ca9124947e264e2092ae48ab014d671324367d61e01b4bdc1b2e06",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/19-slang-config.png",
+      "sha256": "21d26c9aa9835b341be1e19bb13579ef59ce2fc8b8e87cbdec427b6c60b6767e",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/01-start.png",
+      "sha256": "fdd1ddd1c3b4eca1a8ec1714fb74e8e60079e5d3017b43f40837082192504fd9",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/02-project-name.png",
+      "sha256": "69db43f106b98063a6714543b2d3096205f0af21af250c818320ad3522b90ec6",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/03-rtl-project.png",
+      "sha256": "d5a3a5c2332c1f9c87f8beb06e182dce8b3da442f6f3cbaeb5a0aea158b4151f",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/04-part.png",
+      "sha256": "63e3187d69003c650a2332181eebc4d3a2381a165ac5ba2871386f2dcfe74616",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/05-summary.png",
+      "sha256": "6ad6b07600b339583285c5f6a2da5a56c6dcbfe4f1c7f059c0282d24fffa8b7b",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/06-empty-project.png",
+      "sha256": "67e62b4ee4e7693f5c3bf55f12a5eab6d710097d87f4923b3f1bbb46a2fd74a1",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/07-design-sources.png",
+      "sha256": "608c497eec2e6422b945f9d2246af271422b28f7f778054cab50c9c012766309",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/08-add-files.png",
+      "sha256": "e61eba04d9f1dca9cee7e98d151ce459ba3ad1782ca61c00c33e8c9569bfd134",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/09-select-rtl.png",
+      "sha256": "bacb72caf832ed6c138a37dac02c473d1afc6ff5aaa62332406f0c4913fedff9",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/10-rtl-list.png",
+      "sha256": "8775533658fdb5414e0ccab44ef686dd3fd8dc987f7acebe12934bb94b695137",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/11-sim-sources.png",
+      "sha256": "64d527fcd2f46b6de2789095a14835820ca6f0e1c6cb15aca21c2594b2017e8d",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/12-tb-list.png",
+      "sha256": "17d77adc3269f4d9e27f8286bf4a49ccd38ceac0bcaff92e623d9326479a3f5c",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/13-constraints.png",
+      "sha256": "5d79fac86900a8c8e4c6c5972df6ab6813f5a77cbd51df7296259726a890d2b4",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/14-xdc-list.png",
+      "sha256": "f3f096ce8648ed9b7366f5d67286c5ace5c436ee9ec965036c3c48e3e96de417",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/15-tb-set-top.png",
+      "sha256": "33e29941dfc30f733858281a6adb5f4aa48212113a6f6e4860e63f850e093a4a",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/16-top-check.png",
+      "sha256": "6b14d8cab44b3540b956c6e127adaeb2bd38e606180d388442ad9745c88b8120",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/17-run-behavioral.png",
+      "sha256": "787f2db4cae8737b4e32c42ab0d3e620d06f7bd4421f0743e22ad63dbcea6b1f",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/18-xsim-pass.png",
+      "sha256": "41e0d8f1a50972573e01b235870172df09a7392b8b6d4c2661754be17dae4020",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/19-xsim-wave.png",
+      "sha256": "03773295c64ca5a15d62352f8a98c5f04279e8a515cf8ea96c19e3f960d53bcf",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/20-close-sim.png",
+      "sha256": "53aae4f08a1af526145e0c168fbf738b9a37db97ae4af64021bcce6b12623dbf",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/21-elaborated.png",
+      "sha256": "efd3cefebf149cb1dc02b4405c7c9780ef428be9027a71e760b4224097ad688a",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/22-io-menu.png",
+      "sha256": "630ae6a2a8424252e8762a5affbdf51105da6f366b03dffedbe96b139ada1cce",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/23-bus-pins.png",
+      "sha256": "8c3eb18cce770a6e9d2694dbfb042c2e740c9c9ac2a4800443c5aa1222985758",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/24-all-pins.png",
+      "sha256": "c3f55cac45e612fc3448be67b6e1a5869eac092aceb6b9275bc6e3483a0ee64d",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/25-synth-launch.png",
+      "sha256": "a0e6876c93481324e390a08e21911ed584ac059a21e430c05d7e03f7175496e6",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/26-synth-complete.png",
+      "sha256": "255c039deefed3311dcc0562d3e855c1a53e366558a759c6a2961b434af82305",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/27-impl-launch.png",
+      "sha256": "2ef42d888389cb2b7fb82fd31f4500c279dbb4fad41ef99e6a066b4cfebab1fe",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/28-impl-complete.png",
+      "sha256": "e154b228684f2f8c1252081ce893d5fb71c96aa17c7459634336b8f4f5795dc1",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/29-bit-launch.png",
+      "sha256": "014776e3bf5f2ce49aa82e1adb4f79ed82e26cb79916a6453436558914a367fd",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/30-bit-complete.png",
+      "sha256": "a71afa21a2d91a8dc486255319bedc83c63c7a2c3f6a84c8289b1c3a76f3ec81",
+      "capture": "actual_application_window"
+    },
+    {
+      "image": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/divider-0913/vivado/31-timing.png",
+      "sha256": "1fe077975d44442c650d4beeafc72656132c99bde6d4095abeb2547b10d9c704",
+      "capture": "actual_application_window"
+    }
+  ]
+}

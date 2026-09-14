@@ -1,0 +1,18 @@
+{
+  "actual_vscode_capture": true,
+  "source_sha256": "623b0d84bab55735ed5dded6061b3cd60ccee27c4bd66c049969e1245f963b7b",
+  "lines": [
+    33,
+    43
+  ],
+  "image_sha256": "5d7cbe05e984b7c012ee4acfa3f9b6bed4b5718bc727e754b02619af767a0370",
+  "captured_on": "2026-09-13",
+  "source": "sim/tb_register_pair.sv",
+  "full_capture": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\04-tb-last.png",
+  "crop": [
+    353,
+    539,
+    1210,
+    806
+  ]
+}

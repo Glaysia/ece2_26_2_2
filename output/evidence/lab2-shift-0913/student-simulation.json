@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-13",
+  "template_tag": "v2.0.0",
+  "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+  "preparation": "Fresh remote tagged clone, renamed blank files; producer copied canonical source bytes. Student manual requires direct typing from actual editor captures. Workspace Python/server paths customized only in temporary student clone.",
+  "input_sha256": {
+    "simulation.json": "67c70f8adf2cd802d949e10b1420ceaa211930456b46c54f1d724c62743be30f",
+    "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+    "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+    "src/lab2_shift_register.v": "5212d5d01d655d09c5e341f766bd8681f96e5a9b77cef4c93146d36d20f8133c",
+    "sim/tb_shift_register4.sv": "1683da25534c5ea9284a14877303d5e5cd2ee6fca439036a5eee79515cad13a3",
+    "constraints/lab2_shift_register.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+  },
+  "normal": {
+    "returncode": 0,
+    "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\sim -s tb_shift_register4 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\build\\sim\\run-2eeb835801bc44a08efe88a3e66bdaf3\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src\\shift_register4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src\\lab2_shift_register.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\sim\\tb_shift_register4.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\build\\sim\\run-2eeb835801bc44a08efe88a3e66bdaf3\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS shift_register4 checks=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\sim\\tb_shift_register4.sv:19: $finish called at 106000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\build\\sim\\wave.vcd\n"
+  },
+  "mutation": {
+    "returncode": 1,
+    "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\sim -s tb_shift_register4 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\build\\sim\\run-7072a82dc74541d48313c163a4462c4f\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src\\shift_register4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src\\lab2_shift_register.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\sim\\tb_shift_register4.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\build\\sim\\run-7072a82dc74541d48313c163a4462c4f\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_FAIL input enters MSB time=16000\nFATAL: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\sim\\tb_shift_register4.sv:12: check failed\n       Time: 16000  Scope: tb_shift_register4.check\n\nERROR: ���� �ڵ� 1: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\build\\sim\\run-7072a82dc74541d48313c163a4462c4f\\simulation.log\n"
+  },
+  "restored": {
+    "returncode": 0,
+    "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\sim -s tb_shift_register4 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\build\\sim\\run-b05f2d19107b4ff4aa03785bd3eab34d\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src\\shift_register4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\src\\lab2_shift_register.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\sim\\tb_shift_register4.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\build\\sim\\run-b05f2d19107b4ff4aa03785bd3eab34d\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS shift_register4 checks=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\sim\\tb_shift_register4.sv:19: $finish called at 106000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_04_shift_register\\build\\sim\\wave.vcd\n"
+  },
+  "gui": "PENDING",
+  "physical_board": "NOT_RUN"
+}

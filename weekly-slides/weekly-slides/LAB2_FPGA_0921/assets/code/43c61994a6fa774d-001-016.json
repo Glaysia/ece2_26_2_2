@@ -1,0 +1,23 @@
+{
+  "source_sha256": "43c61994a6fa774d6da65ce30c0f52fd0227d0aa695528da9d6fd728875bd44d",
+  "lines": [
+    1,
+    16
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\segment-0914\\12-xdc-first.jpg",
+  "image": "assets/code/43c61994a6fa774d-001-016.png",
+  "crop": [
+    382,
+    90,
+    1150,
+    474
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 62785850
+  },
+  "captured_at": "2026-09-13T17:40:09.563822+00:00",
+  "image_sha256": "2dc6fae45c049f5387f41c0095d8cf4069e4fdb78f4de0d09b6ada5dbbca299d",
+  "template_tag": "v2.0.1"
+}

@@ -7,12 +7,11 @@
       9
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/simulation.json",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/simulation.json"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/simulation.json"
     ],
     "max_columns": 36,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/e37b9015f9732666-001-013.png",
@@ -23,13 +22,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/src/counter4.v",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/src/counter4.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/counter4.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/counter4.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/counter4.v"
     ],
     "max_columns": 44,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/a866edb1f9b34779-001-016.png",
@@ -40,27 +37,18 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/input_frontend.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/input_frontend.v"
     ],
     "max_columns": 79,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/a866edb1f9b34779-017-032.png",
@@ -71,27 +59,18 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/input_frontend.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/input_frontend.v"
     ],
     "max_columns": 68,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/a866edb1f9b34779-033-046.png",
@@ -102,27 +81,18 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/src/input_frontend.v",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/input_frontend.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/input_frontend.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/input_frontend.v"
     ],
     "max_columns": 54,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/f4f0e5da3ce3c432-001-016.png",
@@ -132,12 +102,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/src/lab2_counter.v",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/src/lab2_counter.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/src/lab2_counter.v"
     ],
     "max_columns": 61,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/439c4e2bf639d1e6-001-016.png",
@@ -147,12 +116,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/sim/tb_counter4.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/sim/tb_counter4.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/sim/tb_counter4.sv"
     ],
     "max_columns": 61,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/439c4e2bf639d1e6-017-032.png",
@@ -162,12 +130,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/sim/tb_counter4.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/sim/tb_counter4.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/sim/tb_counter4.sv"
     ],
     "max_columns": 66,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/439c4e2bf639d1e6-033-043.png",
@@ -177,12 +144,11 @@
       43
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/sim/tb_counter4.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/sim/tb_counter4.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/sim/tb_counter4.sv"
     ],
     "max_columns": 56,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c409037fe63f5324-001-016.png",
@@ -193,23 +159,16 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/constraints/lab2_counter.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/constraints/lab2_counter.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/constraints/lab2_clock_divider.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/constraints/lab2_clock_divider.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/constraints/lab2_register.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/constraints/lab2_register.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/constraints/lab2_shift_register.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/constraints/lab2_shift_register.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/constraints/lab2_piso.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/constraints/lab2_piso.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/constraints/lab2_moore.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/constraints/lab2_moore.xdc",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/constraints/lab2_mealy.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/constraints/lab2_mealy.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/constraints/lab2_mealy.xdc"
     ],
     "max_columns": 68,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c409037fe63f5324-017-032.png",
@@ -220,23 +179,16 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/constraints/lab2_counter.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/constraints/lab2_counter.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/constraints/lab2_clock_divider.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/constraints/lab2_clock_divider.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/constraints/lab2_register.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/constraints/lab2_register.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/constraints/lab2_shift_register.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/constraints/lab2_shift_register.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/constraints/lab2_piso.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/constraints/lab2_piso.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/constraints/lab2_moore.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/constraints/lab2_moore.xdc",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/constraints/lab2_mealy.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/constraints/lab2_mealy.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/constraints/lab2_mealy.xdc"
     ],
     "max_columns": 53,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c409037fe63f5324-033-042.png",
@@ -247,23 +199,16 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/01_counter/constraints/lab2_counter.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/01_counter/constraints/lab2_counter.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/constraints/lab2_clock_divider.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/constraints/lab2_clock_divider.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/constraints/lab2_register.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/constraints/lab2_register.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/constraints/lab2_shift_register.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/constraints/lab2_shift_register.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/constraints/lab2_piso.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/constraints/lab2_piso.xdc",
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/constraints/lab2_moore.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/constraints/lab2_moore.xdc",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/constraints/lab2_mealy.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/constraints/lab2_mealy.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/constraints/lab2_mealy.xdc"
     ],
     "max_columns": 67,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c88bf7bf8dacb2a5-001-009.png",
@@ -273,12 +218,11 @@
       9
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/simulation.json",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/simulation.json"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/simulation.json"
     ],
     "max_columns": 41,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/7c8863c2d840cfe2-001-016.png",
@@ -289,13 +233,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/src/clock_divider.v",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/src/clock_divider.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/clock_divider.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/clock_divider.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/clock_divider.v"
     ],
     "max_columns": 66,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/7c8863c2d840cfe2-017-023.png",
@@ -306,13 +248,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/src/clock_divider.v",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/src/clock_divider.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/clock_divider.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/clock_divider.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/clock_divider.v"
     ],
     "max_columns": 59,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/8b518a4017aabcf1-001-016.png",
@@ -322,12 +262,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/src/lab2_clock_divider.v",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/src/lab2_clock_divider.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/src/lab2_clock_divider.v"
     ],
     "max_columns": 92,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/8b518a4017aabcf1-017-019.png",
@@ -337,12 +276,11 @@
       19
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/src/lab2_clock_divider.v",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/src/lab2_clock_divider.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/src/lab2_clock_divider.v"
     ],
     "max_columns": 71,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/1a18d85d87013971-001-016.png",
@@ -352,12 +290,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/sim/tb_clock_divider.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/sim/tb_clock_divider.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/sim/tb_clock_divider.sv"
     ],
     "max_columns": 61,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/1a18d85d87013971-017-032.png",
@@ -367,12 +304,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/sim/tb_clock_divider.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/sim/tb_clock_divider.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/sim/tb_clock_divider.sv"
     ],
     "max_columns": 71,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/1a18d85d87013971-033-048.png",
@@ -382,12 +318,11 @@
       48
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/sim/tb_clock_divider.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/02_clock_divider/sim/tb_clock_divider.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/02_clock_divider/sim/tb_clock_divider.sv"
     ],
     "max_columns": 68,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/3bbd3e5da74260f1-001-009.png",
@@ -397,12 +332,11 @@
       9
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/simulation.json",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/simulation.json"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/simulation.json"
     ],
     "max_columns": 41,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/546bd1f1a2b519d0-001-016.png",
@@ -413,13 +347,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/src/register_pair.v",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/src/register_pair.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/register_pair.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/register_pair.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/register_pair.v"
     ],
     "max_columns": 42,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/4638c821526b3259-001-016.png",
@@ -429,12 +361,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/src/lab2_register.v",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/src/lab2_register.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/src/lab2_register.v"
     ],
     "max_columns": 75,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/4638c821526b3259-017-017.png",
@@ -444,12 +375,11 @@
       17
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/src/lab2_register.v",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/src/lab2_register.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/src/lab2_register.v"
     ],
     "max_columns": 9,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/623b0d84bab55735-001-016.png",
@@ -459,12 +389,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/sim/tb_register_pair.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/sim/tb_register_pair.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/sim/tb_register_pair.sv"
     ],
     "max_columns": 61,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/623b0d84bab55735-017-032.png",
@@ -474,12 +403,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/sim/tb_register_pair.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/sim/tb_register_pair.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/sim/tb_register_pair.sv"
     ],
     "max_columns": 71,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/623b0d84bab55735-033-043.png",
@@ -489,12 +417,11 @@
       43
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/sim/tb_register_pair.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/03_register/sim/tb_register_pair.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/03_register/sim/tb_register_pair.sv"
     ],
     "max_columns": 73,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/67c70f8adf2cd802-001-009.png",
@@ -504,12 +431,11 @@
       9
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/simulation.json",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/simulation.json"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/simulation.json"
     ],
     "max_columns": 43,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/6c221a38ef5b96f2-001-011.png",
@@ -520,13 +446,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/src/shift_register4.v",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/src/shift_register4.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/shift_register4.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/shift_register4.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/shift_register4.v"
     ],
     "max_columns": 58,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/5212d5d01d655d09-001-016.png",
@@ -536,12 +460,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/src/lab2_shift_register.v",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/src/lab2_shift_register.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/src/lab2_shift_register.v"
     ],
     "max_columns": 68,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/1683da25534c5ea9-001-016.png",
@@ -551,12 +474,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/sim/tb_shift_register4.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/sim/tb_shift_register4.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/sim/tb_shift_register4.sv"
     ],
     "max_columns": 61,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/1683da25534c5ea9-017-032.png",
@@ -566,12 +488,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/sim/tb_shift_register4.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/sim/tb_shift_register4.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/sim/tb_shift_register4.sv"
     ],
     "max_columns": 73,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/1683da25534c5ea9-033-038.png",
@@ -581,12 +502,11 @@
       38
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/sim/tb_shift_register4.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/04_shift_register/sim/tb_shift_register4.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/04_shift_register/sim/tb_shift_register4.sv"
     ],
     "max_columns": 65,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/8f851ff69cb73cf9-001-009.png",
@@ -596,12 +516,11 @@
       9
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/simulation.json",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/simulation.json"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/simulation.json"
     ],
     "max_columns": 33,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/f92dadd42b3ec327-001-014.png",
@@ -612,13 +531,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/src/piso4.v",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/src/piso4.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/piso4.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/piso4.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/piso4.v"
     ],
     "max_columns": 53,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/aa7c90e77f50b103-001-016.png",
@@ -628,12 +545,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/src/lab2_piso.v",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/src/lab2_piso.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/src/lab2_piso.v"
     ],
     "max_columns": 71,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/aa7c90e77f50b103-017-018.png",
@@ -643,12 +559,11 @@
       18
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/src/lab2_piso.v",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/src/lab2_piso.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/src/lab2_piso.v"
     ],
     "max_columns": 45,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c07306c7c8c7f17c-001-016.png",
@@ -658,12 +573,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/sim/tb_piso4.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/sim/tb_piso4.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/sim/tb_piso4.sv"
     ],
     "max_columns": 61,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c07306c7c8c7f17c-017-032.png",
@@ -673,12 +587,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/sim/tb_piso4.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/sim/tb_piso4.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/sim/tb_piso4.sv"
     ],
     "max_columns": 63,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c07306c7c8c7f17c-033-046.png",
@@ -688,12 +601,11 @@
       46
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/sim/tb_piso4.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/05_piso/sim/tb_piso4.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/05_piso/sim/tb_piso4.sv"
     ],
     "max_columns": 79,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/d5528a8718e53afc-001-009.png",
@@ -703,12 +615,11 @@
       9
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/simulation.json",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/simulation.json"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/simulation.json"
     ],
     "max_columns": 39,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/e2b1e71ae4a15ea1-001-016.png",
@@ -719,13 +630,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/src/moore_cycle.v",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/src/moore_cycle.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/moore_cycle.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/moore_cycle.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/moore_cycle.v"
     ],
     "max_columns": 41,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/2f76e66014901d98-001-016.png",
@@ -735,12 +644,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/src/lab2_moore.v",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/src/lab2_moore.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/src/lab2_moore.v"
     ],
     "max_columns": 60,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c3c9b42204daea82-001-016.png",
@@ -750,12 +658,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/sim/tb_moore_cycle.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/sim/tb_moore_cycle.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/sim/tb_moore_cycle.sv"
     ],
     "max_columns": 61,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c3c9b42204daea82-017-032.png",
@@ -765,12 +672,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/sim/tb_moore_cycle.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/sim/tb_moore_cycle.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/sim/tb_moore_cycle.sv"
     ],
     "max_columns": 71,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c3c9b42204daea82-033-040.png",
@@ -780,12 +686,11 @@
       40
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/sim/tb_moore_cycle.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/06_moore/sim/tb_moore_cycle.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/06_moore/sim/tb_moore_cycle.sv"
     ],
     "max_columns": 69,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/5b756f01d48b06fc-001-009.png",
@@ -795,12 +700,11 @@
       9
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/simulation.json",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/simulation.json"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/simulation.json"
     ],
     "max_columns": 40,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/cbbaea84f211403b-001-013.png",
@@ -811,13 +715,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/src/mealy_toggle.v",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/src/mealy_toggle.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/mealy_toggle.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/mealy_toggle.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/mealy_toggle.v"
     ],
     "max_columns": 70,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/7828bd85034cac0e-001-016.png",
@@ -827,12 +729,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/src/lab2_mealy.v",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/src/lab2_mealy.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/src/lab2_mealy.v"
     ],
     "max_columns": 68,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/7828bd85034cac0e-017-017.png",
@@ -842,12 +743,11 @@
       17
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/src/lab2_mealy.v",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/src/lab2_mealy.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/src/lab2_mealy.v"
     ],
     "max_columns": 9,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/37b462465bfda7d9-001-016.png",
@@ -857,12 +757,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/sim/tb_mealy_toggle.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/sim/tb_mealy_toggle.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/sim/tb_mealy_toggle.sv"
     ],
     "max_columns": 61,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/37b462465bfda7d9-017-032.png",
@@ -872,12 +771,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/sim/tb_mealy_toggle.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/sim/tb_mealy_toggle.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/sim/tb_mealy_toggle.sv"
     ],
     "max_columns": 82,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/37b462465bfda7d9-033-041.png",
@@ -887,12 +785,11 @@
       41
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/sim/tb_mealy_toggle.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/07_mealy/sim/tb_mealy_toggle.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/07_mealy/sim/tb_mealy_toggle.sv"
     ],
     "max_columns": 76,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/fd88996314d4f001-001-009.png",
@@ -902,12 +799,11 @@
       9
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/simulation.json",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/simulation.json"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/simulation.json"
     ],
     "max_columns": 41,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c6a978723d5f703f-001-016.png",
@@ -918,13 +814,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/src/segment_scan8.v",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/src/segment_scan8.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/segment_scan8.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/segment_scan8.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/segment_scan8.v"
     ],
     "max_columns": 73,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c6a978723d5f703f-017-032.png",
@@ -935,13 +829,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/src/segment_scan8.v",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/src/segment_scan8.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/segment_scan8.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/segment_scan8.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/segment_scan8.v"
     ],
     "max_columns": 50,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/c6a978723d5f703f-033-046.png",
@@ -952,13 +844,11 @@
     ],
     "sources": [
       "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/src/segment_scan8.v",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/src/segment_scan8.v",
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/segment_scan8.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/segment_scan8.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/segment_scan8.v"
     ],
     "max_columns": 41,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/43517a0d6fc44bf0-001-016.png",
@@ -968,12 +858,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/src/lab2_segment_scan.v",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/src/lab2_segment_scan.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/src/lab2_segment_scan.v"
     ],
     "max_columns": 66,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/43517a0d6fc44bf0-017-023.png",
@@ -983,12 +872,11 @@
       23
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/src/lab2_segment_scan.v",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/src/lab2_segment_scan.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/src/lab2_segment_scan.v"
     ],
     "max_columns": 76,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/4b684e66d3206a37-001-016.png",
@@ -998,12 +886,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/sim/tb_segment_scan8.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/sim/tb_segment_scan8.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/sim/tb_segment_scan8.sv"
     ],
     "max_columns": 61,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/4b684e66d3206a37-017-032.png",
@@ -1013,12 +900,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/sim/tb_segment_scan8.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/sim/tb_segment_scan8.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/sim/tb_segment_scan8.sv"
     ],
     "max_columns": 71,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/4b684e66d3206a37-033-048.png",
@@ -1028,12 +914,11 @@
       48
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/sim/tb_segment_scan8.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/sim/tb_segment_scan8.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/sim/tb_segment_scan8.sv"
     ],
     "max_columns": 83,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/4b684e66d3206a37-049-057.png",
@@ -1043,12 +928,11 @@
       57
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/sim/tb_segment_scan8.sv",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/sim/tb_segment_scan8.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/sim/tb_segment_scan8.sv"
     ],
     "max_columns": 72,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/43c61994a6fa774d-001-016.png",
@@ -1058,12 +942,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/constraints/lab2_segment_scan.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/constraints/lab2_segment_scan.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/constraints/lab2_segment_scan.xdc"
     ],
     "max_columns": 68,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/43c61994a6fa774d-017-032.png",
@@ -1073,12 +956,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/constraints/lab2_segment_scan.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/constraints/lab2_segment_scan.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/constraints/lab2_segment_scan.xdc"
     ],
     "max_columns": 53,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/43c61994a6fa774d-033-048.png",
@@ -1088,12 +970,11 @@
       48
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/constraints/lab2_segment_scan.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/constraints/lab2_segment_scan.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/constraints/lab2_segment_scan.xdc"
     ],
     "max_columns": 58,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/43c61994a6fa774d-049-064.png",
@@ -1103,12 +984,11 @@
       64
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/constraints/lab2_segment_scan.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/constraints/lab2_segment_scan.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/constraints/lab2_segment_scan.xdc"
     ],
     "max_columns": 58,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/43c61994a6fa774d-065-074.png",
@@ -1118,12 +998,11 @@
       74
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/constraints/lab2_segment_scan.xdc",
-      "example/fpga_projects_hdl/LAB2/legacy/08_segment_scan/constraints/lab2_segment_scan.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/08_segment_scan/constraints/lab2_segment_scan.xdc"
     ],
     "max_columns": 67,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/5bab5e83844a8858-001-016.png",
@@ -1133,12 +1012,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/simulation.json",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/simulation.json"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/simulation.json"
     ],
     "max_columns": 43,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/5bab5e83844a8858-017-018.png",
@@ -1148,12 +1026,11 @@
       18
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/simulation.json",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/simulation.json"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/simulation.json"
     ],
     "max_columns": 40,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/1c255068f06c91c7-001-016.png",
@@ -1163,12 +1040,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/button_onepulse.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/button_onepulse.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/button_onepulse.v"
     ],
     "max_columns": 61,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/1c255068f06c91c7-017-021.png",
@@ -1178,12 +1054,11 @@
       21
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/button_onepulse.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/button_onepulse.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/button_onepulse.v"
     ],
     "max_columns": 48,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/041115a6ecb765a8-001-016.png",
@@ -1193,12 +1068,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lcd_lab2_modes.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/lcd_lab2_modes.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lcd_lab2_modes.v"
     ],
     "max_columns": 80,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/041115a6ecb765a8-017-032.png",
@@ -1208,12 +1082,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lcd_lab2_modes.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/lcd_lab2_modes.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lcd_lab2_modes.v"
     ],
     "max_columns": 65,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/041115a6ecb765a8-033-048.png",
@@ -1223,12 +1096,11 @@
       48
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lcd_lab2_modes.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/lcd_lab2_modes.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lcd_lab2_modes.v"
     ],
     "max_columns": 56,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/041115a6ecb765a8-049-064.png",
@@ -1238,12 +1110,11 @@
       64
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lcd_lab2_modes.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/lcd_lab2_modes.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lcd_lab2_modes.v"
     ],
     "max_columns": 76,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/194bebed29cd3aa1-001-016.png",
@@ -1253,12 +1124,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lab2_integrated.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/lab2_integrated.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lab2_integrated.v"
     ],
     "max_columns": 55,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/194bebed29cd3aa1-017-032.png",
@@ -1268,12 +1138,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lab2_integrated.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/lab2_integrated.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lab2_integrated.v"
     ],
     "max_columns": 80,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/194bebed29cd3aa1-033-048.png",
@@ -1283,12 +1152,11 @@
       48
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lab2_integrated.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/lab2_integrated.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lab2_integrated.v"
     ],
     "max_columns": 105,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/194bebed29cd3aa1-049-064.png",
@@ -1298,12 +1166,11 @@
       64
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lab2_integrated.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/lab2_integrated.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lab2_integrated.v"
     ],
     "max_columns": 67,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/194bebed29cd3aa1-065-067.png",
@@ -1313,12 +1180,11 @@
       67
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lab2_integrated.v",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/src/lab2_integrated.v"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/src/lab2_integrated.v"
     ],
     "max_columns": 66,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/42671df2a8fac680-001-016.png",
@@ -1328,12 +1194,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/sim/tb_lab2_integrated.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv"
     ],
     "max_columns": 84,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/42671df2a8fac680-017-032.png",
@@ -1343,12 +1208,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/sim/tb_lab2_integrated.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv"
     ],
     "max_columns": 79,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/42671df2a8fac680-033-048.png",
@@ -1358,12 +1222,11 @@
       48
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/sim/tb_lab2_integrated.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv"
     ],
     "max_columns": 84,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/42671df2a8fac680-049-064.png",
@@ -1373,12 +1236,11 @@
       64
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/sim/tb_lab2_integrated.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv"
     ],
     "max_columns": 93,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/42671df2a8fac680-065-080.png",
@@ -1388,12 +1250,11 @@
       80
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/sim/tb_lab2_integrated.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv"
     ],
     "max_columns": 106,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/42671df2a8fac680-081-096.png",
@@ -1403,12 +1264,11 @@
       96
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/sim/tb_lab2_integrated.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv"
     ],
     "max_columns": 85,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/42671df2a8fac680-097-112.png",
@@ -1418,12 +1278,11 @@
       112
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/sim/tb_lab2_integrated.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv"
     ],
     "max_columns": 89,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/42671df2a8fac680-113-128.png",
@@ -1433,12 +1292,11 @@
       128
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/sim/tb_lab2_integrated.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv"
     ],
     "max_columns": 96,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/42671df2a8fac680-129-131.png",
@@ -1448,12 +1306,11 @@
       131
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/sim/tb_lab2_integrated.sv"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/sim/tb_lab2_integrated.sv"
     ],
     "max_columns": 16,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/282389e1d0c33cd9-001-016.png",
@@ -1463,12 +1320,11 @@
       16
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/constraints/lab2_integrated.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc"
     ],
     "max_columns": 77,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/282389e1d0c33cd9-017-032.png",
@@ -1478,12 +1334,11 @@
       32
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/constraints/lab2_integrated.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc"
     ],
     "max_columns": 53,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/282389e1d0c33cd9-033-048.png",
@@ -1493,12 +1348,11 @@
       48
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/constraints/lab2_integrated.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc"
     ],
     "max_columns": 58,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/282389e1d0c33cd9-049-064.png",
@@ -1508,12 +1362,11 @@
       64
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/constraints/lab2_integrated.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc"
     ],
     "max_columns": 58,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/282389e1d0c33cd9-065-080.png",
@@ -1523,12 +1376,11 @@
       80
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/constraints/lab2_integrated.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc"
     ],
     "max_columns": 58,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/282389e1d0c33cd9-081-096.png",
@@ -1538,12 +1390,11 @@
       96
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/constraints/lab2_integrated.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc"
     ],
     "max_columns": 67,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   },
   {
     "image": "assets/code/282389e1d0c33cd9-097-097.png",
@@ -1553,11 +1404,10 @@
       97
     ],
     "sources": [
-      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc",
-      "example/fpga_projects_hdl/LAB2/opensource_cli/09_integrated/constraints/lab2_integrated.xdc"
+      "example/fpga_projects_hdl/LAB2/vivado_2026_1/09_integrated/constraints/lab2_integrated.xdc"
     ],
     "max_columns": 68,
     "requirement": "Actual VS Code editor capture matching these source bytes; no rendered/fabricated editor",
-    "status": "MISSING"
+    "status": "CAPTURE_PRESENT_REVIEW_REQUIRED"
   }
 ]

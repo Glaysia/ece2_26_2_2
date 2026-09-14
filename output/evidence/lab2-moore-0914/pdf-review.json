@@ -1,0 +1,16 @@
+{
+  "status": "PDF_VISUAL_AND_STRUCTURE_REVIEWED",
+  "reviewed_on": "2026-09-14",
+  "pages": 71,
+  "all_pages_visually_reviewed": true,
+  "pdf_sha256": "05a03ed52cd029ded6ef18d89e9623ce72475d08f072b9e808d4be36f7571d70",
+  "tex_sha256": "b144505325dae12868aaa39d75309ae20d8598cba7f34de8ab15623661fade08",
+  "visual_method": "All 71 pages directly inspected in 18 contact sheets. After crop cleanup, final pages 52 and 55 directly inspected individually; other 69 final rendered pages verified pixel-identical to the reviewed renders.",
+  "internal_links": 76,
+  "home_destination_page": 2,
+  "aspect_ratio": "4:3",
+  "template_tag": "v2.0.1",
+  "gui_validation": "vivado-gui-validation.json",
+  "gui_click_link_test": "PENDING final viewer review",
+  "physical_board": "NOT_RUN; student instructions included"
+}

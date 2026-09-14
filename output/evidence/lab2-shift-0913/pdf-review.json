@@ -1,0 +1,16 @@
+{
+  "status": "PDF_VISUAL_AND_STRUCTURE_REVIEWED",
+  "reviewed_on": "2026-09-13",
+  "pages": 75,
+  "all_pages_visually_reviewed": true,
+  "pdf_sha256": "42667acd73f6616cb59cf9c269d6a2d659cc78aec20cc179a0c47a6ee10d38ab",
+  "tex_sha256": "a8f25d86c87b669976ed05c9fb230152c60445ac49dbccb9a12075c1d4179407",
+  "visual_method": "All 75 pages rendered. Pages 1-42 are pixel-identical to the previously reviewed 60-page draft. Pages 43-60 reviewed from the new GUI walkthrough; unchanged pages compared pixel-for-pixel after the final crop adjustment. Final pages 45,56,61-75 directly viewed after enlarging the menu and splitting the pin table.",
+  "internal_links": 81,
+  "home_destination_page": 2,
+  "aspect_ratio": "4:3",
+  "template_tag": "v2.0.1",
+  "gui_validation": "vivado-gui-validation.json",
+  "gui_click_link_test": "PENDING final viewer review",
+  "physical_board": "NOT_RUN; student instructions included"
+}

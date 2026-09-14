@@ -1,0 +1,18 @@
+{
+  "actual_vscode_capture": true,
+  "source_sha256": "3bbd3e5da74260f1ba1b5da6da5bc80097515c5f11eb23d86e1210d69de35279",
+  "lines": [
+    1,
+    9
+  ],
+  "image_sha256": "aec898e712d5cd8cffae1ea0ba139f338ff35611dac3a4c458baba77f7674cc0",
+  "captured_on": "2026-09-13",
+  "source": "simulation.json",
+  "full_capture": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\05-simulation-json.png",
+  "crop": [
+    353,
+    36,
+    890,
+    309
+  ]
+}

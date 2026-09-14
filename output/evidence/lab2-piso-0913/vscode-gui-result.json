@@ -1,0 +1,16 @@
+{
+  "status": "SIMULATED",
+  "run": "run-3f87842045ed434a8a71495c29743385",
+  "functional_correctness": "NOT_ASSESSED",
+  "inputs_sha256": {
+    "simulation.json": "8f851ff69cb73cf9e41c0ab2ad922edb3111cf1730e652c9fa7c20b6161d55c1",
+    "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+    "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+    "src/lab2_piso.v": "aa7c90e77f50b10380fbda8a872ecc3d30e4d7fb4f905615b8c56c87a9a040dd",
+    "sim/tb_piso4.sv": "c07306c7c8c7f17cda4a6ac6ca1cd849a0d6b10fa0bab5beaeca8a6243450dc5",
+    "src/design.v": "19b7602a1281ca2b71b3cb495906dff388c996500d87ad15d19f229233d5f33d",
+    "sim/tb_board.sv": "3d4f1713338e1dd2b2bef36db047215ee704674ba4c98431932a7a91096c29a9",
+    "sim/tb_design.v": "c260a9655c45ede072e6d9bb0b8a47a7fbd01b015de92ff90d5344ac9a3212fb"
+  },
+  "wave_sha256": "bd7620e3362048955aa44219c0201dab4938db82ecc3e4c3f2e6df172ffff6fd"
+}

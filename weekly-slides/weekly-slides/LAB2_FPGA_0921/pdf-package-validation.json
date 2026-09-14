@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "zip": "05.LAB2_0921_VIVADO_8plus1.zip",
+  "zip_sha256": "f09485202c5d19afd50928b46a2a160f3ffb640360a44947aedc4c7a2e1d142a",
+  "pdfs": [
+    {
+      "file": "05.LAB2_01_COUNTER_VIVADO.pdf",
+      "pages": 76,
+      "internal_links": 82,
+      "relative_pdf_links": 0,
+      "sha256": "7a6cbf3032625c82f59f9367eff609ee7cb3e6d9e0216e7fc664e59a1786155f"
+    },
+    {
+      "file": "05.LAB2_02_CLOCK_DIVIDER_VIVADO.pdf",
+      "pages": 80,
+      "internal_links": 86,
+      "relative_pdf_links": 0,
+      "sha256": "89c4e97c6a0638a30ab0ac05974bcc230b31ad6f487e86071c38991cbc20730b"
+    },
+    {
+      "file": "05.LAB2_03_REGISTER_VIVADO.pdf",
+      "pages": 79,
+      "internal_links": 85,
+      "relative_pdf_links": 0,
+      "sha256": "4c4588007adbc9bcfa042660008fcc1b05af61bdc102a03a0c8f8643485113eb"
+    },
+    {
+      "file": "05.LAB2_04_SHIFT_REGISTER_VIVADO.pdf",
+      "pages": 75,
+      "internal_links": 81,
+      "relative_pdf_links": 0,
+      "sha256": "42667acd73f6616cb59cf9c269d6a2d659cc78aec20cc179a0c47a6ee10d38ab"
+    },
+    {
+      "file": "05.LAB2_05_PISO_VIVADO.pdf",
+      "pages": 74,
+      "internal_links": 79,
+      "relative_pdf_links": 2,
+      "sha256": "96cbb1fde190c15f467eb9494877a9fa1b98145b73d3a1eb418ed27ccd7b5f95"
+    },
+    {
+      "file": "05.LAB2_06_MOORE_VIVADO.pdf",
+      "pages": 71,
+      "internal_links": 76,
+      "relative_pdf_links": 2,
+      "sha256": "c3bd69fb1c58018556c0a70b76bcfde3d8667d10e81974c2a2ab123cb76d7801"
+    },
+    {
+      "file": "05.LAB2_07_MEALY_VIVADO.pdf",
+      "pages": 71,
+      "internal_links": 76,
+      "relative_pdf_links": 2,
+      "sha256": "848aeb7ce48005b92d982558ae5c4000252def8949be36879f995174ac684cc4"
+    },
+    {
+      "file": "05.LAB2_08_SEGMENT_SCAN_VIVADO.pdf",
+      "pages": 82,
+      "internal_links": 87,
+      "relative_pdf_links": 2,
+      "sha256": "4d912dc65335c1cada90342811322e8c6ae78a00934cc10d39db5f361e0f4b0d"
+    },
+    {
+      "file": "05.LAB2_08A_INTEGRATED_VIVADO.pdf",
+      "pages": 120,
+      "internal_links": 125,
+      "relative_pdf_links": 10,
+      "sha256": "36e79ea106c29a49f229bbf9444b78f3c680f3cca959c6daeb1beaea6dfe4a8c"
+    },
+    {
+      "file": "05.LAB2_00_START.pdf",
+      "pages": 26,
+      "internal_links": 30,
+      "relative_pdf_links": 0,
+      "sha256": "998963071590304eb1fb5953ea604884b32595e07515e46c05a12090396f12e4"
+    },
+    {
+      "file": "05.LAB2_00_CONTENTS.pdf",
+      "pages": 4,
+      "internal_links": 4,
+      "relative_pdf_links": 10,
+      "sha256": "78de0230a892c07bdd24888bab03d7b3e0d59c0d717cc6240eca10e87703714b"
+    }
+  ],
+  "fresh_extraction_checked": true
+}

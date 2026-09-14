@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-13",
+  "student_folder": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_03_register",
+  "execution": "Actual VS Code GUI Ctrl+Shift+B, template 02 Simulate",
+  "template_tag": "v2.0.0",
+  "result": {
+    "status": "SIMULATED",
+    "run": "run-be2aa90debc74941b3d320c7e1c430ea",
+    "functional_correctness": "NOT_ASSESSED",
+    "inputs_sha256": {
+      "simulation.json": "3bbd3e5da74260f1ba1b5da6da5bc80097515c5f11eb23d86e1210d69de35279",
+      "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+      "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+      "src/lab2_register.v": "4638c821526b32593230b9f42bfb55f1152730301ee4327a039bc8e1326a8f7b",
+      "sim/tb_register_pair.sv": "623b0d84bab55735ed5dded6061b3cd60ccee27c4bd66c049969e1245f963b7b"
+    },
+    "wave_sha256": "135da04a58ccad276cdd0afd76ab147d70db695bd0da4e694b0cdb6d5adbdde5"
+  },
+  "observed_pass": "LAB2_PASS register_pair checks=7",
+  "finish_ns": 66,
+  "waveform": "Actual VaporView GUI, clk/rst/load/transfer/data_in/stored/value, ns, Zoom Fit",
+  "screenshots": {
+    "01-register-core.png": "8fc1391e0a60c39e898d1bd25ebc62fb7e67fa2b21188ccde646ac2f9acd70dc",
+    "02-register-board.png": "5337be0073bbd6d2c194c60d824abebbf19c2fcceaa78b3cd39bcd42450dcd5f",
+    "03-tb-first.png": "4d15c54d3e06b5dd00d18385ca1ab25c1d6ab5c32cd4f1d4b3b776e2e3d2c21d",
+    "04-tb-last.png": "8fb37306585d9b1b781c9fa7528d0c7276a91435b4ff8b703036d5de31b4d17f",
+    "05-simulation-json.png": "919e9030d104bb95aaaa72521f4683d4f9d8273d610e0104c27c73868994266d",
+    "06-vscode-pass.png": "8a34255ca00a60f305a223f30afa4ea45845d76facf98bdfd972a859495370ae",
+    "07-enable-vaporview.png": "1ad3fc7d392e0052f7fa55f91723dbbce088d1051c0b9a79be8a64ec0c4b224d",
+    "08-reopen-wave.png": "53a4453c2dc3c78489767318b32051a2d590781c1e481609da8d436e7fce6b69",
+    "09-netlist.png": "781a242994fde8cc9ebee801273df458d3f84a63c0f1146c406523fcedd56d47",
+    "10-wave-ns.png": "2e4371203fa06f10ee50d77b5dcb30672472de3cf0eb398ac7b7917c3f332cc5"
+  },
+  "vivado": "GUI_XSIM_PASS_7_SYNTHESIS_IMPLEMENTATION_BITSTREAM_COMPLETE",
+  "physical_board": "NOT_RUN"
+}

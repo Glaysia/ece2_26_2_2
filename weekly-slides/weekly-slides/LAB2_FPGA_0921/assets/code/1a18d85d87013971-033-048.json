@@ -1,0 +1,11 @@
+{
+  "actual_vscode_capture": true,
+  "source_sha256": "1a18d85d870139717f6190caf6c016def9c67d7be42ec51e20f2732cef19abb0",
+  "lines": [
+    33,
+    48
+  ],
+  "image_sha256": "ea73f74321d5e9bf5ff6be007fd90e8ab7692493cf575f1f600a27be22b069b4",
+  "captured_on": "2026-09-13",
+  "source": "sim/tb_clock_divider.sv"
+}

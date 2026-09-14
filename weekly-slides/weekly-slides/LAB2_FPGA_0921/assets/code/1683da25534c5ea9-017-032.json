@@ -1,0 +1,18 @@
+{
+  "actual_vscode_capture": true,
+  "source_sha256": "1683da25534c5ea9284a14877303d5e5cd2ee6fca439036a5eee79515cad13a3",
+  "lines": [
+    17,
+    32
+  ],
+  "image_sha256": "e676412879a9243e914b8b79f238e63e06f3f571dc28689c28b1bbb6e734a179",
+  "captured_on": "2026-09-13",
+  "source": "sim/tb_shift_register4.sv",
+  "full_capture": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/04-tb-last.png",
+  "crop": [
+    353,
+    289,
+    1175,
+    679
+  ]
+}

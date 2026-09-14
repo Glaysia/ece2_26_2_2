@@ -12,12 +12,12 @@ VS Code에서 직접 작성·검증한 다음 장비로 확인한다.\par\vspace
 
 \begin{frame}[label=lab2-contents]{목차}
 \small
-\navlink{setup}{프로젝트 시작}\par\vspace{0.3cm}\navlink{code}{RTL·TB·XDC 직접 작성}\par\vspace{0.3cm}\navlink{simulation}{VS Code 시뮬레이션과 수정}\par\vspace{0.3cm}\navlink{implementation}{구현과 장치 기록}\par\vspace{0.3cm}\navlink{reports}{레포트}\quad\href{05.LAB2_00_START.pdf}{공통 예습}\quad\href{05.LAB2_00_CONTENTS.pdf}{전체 목차}\par\vspace{0.3cm}\href{05.LAB2_16_SEGMENT_SCAN_LEGACY.pdf}{대응 레거시판}\quad
+\navlink{setup}{프로젝트 시작}\par\vspace{0.3cm}\navlink{code}{RTL·TB·XDC 직접 작성}\par\vspace{0.3cm}\navlink{simulation}{VS Code 시뮬레이션과 수정}\par\vspace{0.3cm}\navlink{implementation}{구현과 장치 기록}\par\vspace{0.3cm}\navlink{reports}{레포트}\quad\href{05.LAB2_00_START.pdf}{공통 예습}\quad\href{05.LAB2_00_CONTENTS.pdf}{전체 목차}\par\vspace{0.3cm}
 \end{frame}
 
-\begin{frame}[label=setup]{v2.0.0 템플릿을 새 이름으로 clone}
+\begin{frame}[label=setup]{v2.0.1 템플릿을 새 이름으로 clone}
 \small
-Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.0 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab2\_08\_segment\_scan\\cd lab2\_08\_segment\_scan\\git switch -c main\\code LAB1.code-workspace}
+Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.1 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab2\_08\_segment\_scan\\cd lab2\_08\_segment\_scan\\git switch -c main\\code LAB1.code-workspace}
 \end{frame}
 
 \begin{frame}{File → New Window}
@@ -34,6 +34,17 @@ Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --br
 \item slang·VaporView·vscode-pdf의 Install을 누른다.
 \item Python과 Icarus 실행 파일은 별도로 설치되어 있어야 한다.
 \end{enumerate}
+\end{frame}
+
+\begin{frame}{v2.0.1 편집기와 시뮬레이터}
+\small
+\begin{enumerate}
+\item slang 확장·서버는 0.3.0을 기준으로 확인한다. 추천 목록은 버전을 고정하지 않는다.
+\item 템플릿의 .slang/server.json은 src·sim 탐색용이다. 새 RTL은 simulation.json에도 직접 등록한다.
+\item Ctrl+Shift+P → slang: Show Output. 서버 오류가 있으면 README의 버전 확인·재시작 절차를 따른다.
+\item slang.path에 다른 사람의 설치 경로를 복사하지 않는다. 직접 지정할 때는 User 설정에 자신의 경로를 쓴다.
+\item VS Code 02 Simulate는 Icarus, Vivado Run Behavioral Simulation은 XSim이다.
+\end{enumerate}\href{https://github.com/Glaysia/fpga-lab-template/tree/v2.0.1\#3-실행-준비}{템플릿 도구 설치·오류 해결 안내}
 \end{frame}
 
 \begin{frame}{시뮬레이션 도구 확인}
@@ -75,72 +86,115 @@ sources: 앞 표의 src/ 파일 경로를 배열로 넣는다.\par\vspace{0.26cm
 
 \begin{frame}{simulation.json · 1–9행}
 \small
-simulation.json를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–9행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+simulation.json를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/fd88996314d4f001-001-009.png}\par
 \end{frame}
 
 \begin{frame}[label=code]{이번 회로의 관찰 방법}
 \small
-SW1..4(sw[7:4]): 첫 자리 숫자. COM[7]부터 입력값,1,2,3,4,5,6,7 순서. 1 kHz에서 자리당 62.5 Hz, blanking 포함.\par\vspace{0.26cm}입력 스위치를 먼저 정한 다음 버튼을 누른다.\par
+SW1..4(sw[7:4]): 첫 자리 숫자. COM[7]부터 입력값,1,2,3,4,5,6,7 순서. 1 kHz에서 자리당 62.5 Hz, blanking 포함.\par\vspace{0.26cm}K4로 초기화한 뒤 SW1\textasciitilde{}4로 첫 자리 숫자를 바꾼다. 스캔은 자동으로 진행되며 N8 버튼 입력은 사용하지 않는다.\par
+\end{frame}
+
+\begin{frame}{여덟 자리를 시간으로 나누어 켠다}
+\small
+digits는 8개의 4비트 숫자를 묶은 32비트 입력이다. index=0은 가장 낮은 4비트, index=7은 가장 높은 4비트를 선택한다.\par\vspace{0.26cm}index는 3비트라 7 다음 증가에서 0으로 순환한다. nibble = digits >> (index * 4)의 결과를 4비트에 대입하여 해당 숫자를 얻는다.\par\vspace{0.26cm}select는 논리적인 active-high 자리 선택이다. 실제 COM 핀의 순서와 극성은 보드 모듈에서 변환한다.\par
+\end{frame}
+
+\begin{frame}{켜기와 blank 구간}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{lll}
+이전 blank & enable & 에지 뒤 동작\\\hline
+1 & 1 & 같은 index 활성화, blank=0\\
+0 & 1 & 다음 index 준비, blank=1\\
+무관 & 0 & index와 blank 유지\\
+\end{tabular}\end{center}리셋은 index=0, blank=1로 시작한다. blank 동안 select=00이라 모든 자리가 꺼지고 다음 숫자의 세그먼트 값이 준비된다.\par
+\end{frame}
+
+\begin{frame}{1 kHz에서 자리당 62.5 Hz}
+\small
+보드 모듈은 enable을 항상 1로 연결한다. 한 자리의 활성 1 ms와 blank 1 ms를 합쳐 2 ms다.\par\vspace{0.26cm}8자리 순회는 16 ms이므로 각 자리의 반복 주파수는 1 / 0.016 = 62.5 Hz다. 각 자리는 16 ms 중 1 ms 켜진다.\par\vspace{0.26cm}TB는 유지 조건도 검사하기 위해 enable을 중간에 0으로 내린다. TB의 파형 길이를 실제 보드 스캔 주기로 그대로 해석하지 않는다.\par
+\end{frame}
+
+\begin{frame}{숫자와 물리 핀의 순서}
+\small
+segments[7:0]은 a,b,c,d,e,f,g,dp 순서다. 예를 들어 0은 FC, 1은 60이며 dp는 0으로 꺼져 있다.\par\vspace{0.26cm}보드의 seg\_data는 segments를 그대로 전달한다. seg\_com은 자리 순서를 뒤집고 반전한다.\par\vspace{0.26cm}index=0이면 COM[7]만 0이라 seg\_com=7F다. 다음 자리는 BF, 그다음 DF다. blank에서는 FF로 모두 꺼진다.\par
 \end{frame}
 
 \begin{frame}{segment\_scan8.v · 1–16행}
 \small
-src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c6a978723d5f703f-001-016.png}\par
 \end{frame}
 
 \begin{frame}{segment\_scan8.v · 17–32행}
 \small
-src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c6a978723d5f703f-017-032.png}\par
 \end{frame}
 
 \begin{frame}{segment\_scan8.v · 33–46행}
 \small
-src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–46행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c6a978723d5f703f-033-046.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 1–16행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-001-016.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 17–32행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-017-032.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 33–46행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–46행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-033-046.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_segment\_scan.v · 1–16행}
 \small
-src/lab2\_segment\_scan.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_segment\_scan.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/43517a0d6fc44bf0-001-016.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_segment\_scan.v · 17–23행}
 \small
-src/lab2\_segment\_scan.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–23행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_segment\_scan.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/43517a0d6fc44bf0-017-023.png}\par
+\end{frame}
+
+\begin{frame}{TB는 0–F와 자리 순서를 검사한다}
+\small
+digits=76543210에서 0–7, digits=FEDCBA98에서 8–F를 읽는다. 각 묶음마다 여덟 자리를 두 바퀴 돈다.\par\vspace{0.26cm}한 자리에서 index, one-hot 선택, 숫자 패턴, 활성 유지, blank, blank 유지의 여섯 항목을 검사한다.\par\vspace{0.26cm}2묶음 × 2바퀴 × 8자리 × 6개 + 처음/마지막 리셋 2개 = 194개다. 전체 종료는 1306 ns다.\par
+\end{frame}
+
+\begin{frame}{첫 두 자리의 파형을 읽는다}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{llll}
+검사 시각 & index & select & 동작\\\hline
+6 ns & 0 & 00 & 리셋 blank\\
+16 ns & 0 & 01 & 숫자 0 활성, segments=FC\\
+26 ns & 0 & 01 & enable=0 활성 유지\\
+36 ns & 1 & 00 & 다음 자리 준비\\
+46 ns & 1 & 00 & enable=0 blank 유지\\
+56 ns & 1 & 02 & 숫자 1 활성, segments=60\\
+\end{tabular}\end{center}blank에서도 segments는 다음 숫자를 나타낼 수 있다. 꺼짐 여부는 segments=0이 아니라 자리 선택 select=0으로 판단한다.\par
 \end{frame}
 
 \begin{frame}{tb\_segment\_scan8.sv · 1–16행}
 \small
-sim/tb\_segment\_scan8.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_segment\_scan8.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/4b684e66d3206a37-001-016.png}\par
 \end{frame}
 
 \begin{frame}{tb\_segment\_scan8.sv · 17–32행}
 \small
-sim/tb\_segment\_scan8.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_segment\_scan8.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/4b684e66d3206a37-017-032.png}\par
 \end{frame}
 
 \begin{frame}{tb\_segment\_scan8.sv · 33–48행}
 \small
-sim/tb\_segment\_scan8.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–48행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_segment\_scan8.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/4b684e66d3206a37-033-048.png}\par
 \end{frame}
 
 \begin{frame}{tb\_segment\_scan8.sv · 49–57행}
 \small
-sim/tb\_segment\_scan8.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 49–57행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_segment\_scan8.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/4b684e66d3206a37-049-057.png}\par
 \end{frame}
 
 \begin{frame}{XDC를 직접 작성한다}
@@ -155,27 +209,27 @@ sim/tb\_segment\_scan8.sv를 열고 해당 구간을 직접 입력한다.\par\vs
 
 \begin{frame}{lab2\_segment\_scan.xdc · 1–16행}
 \small
-constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/43c61994a6fa774d-001-016.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_segment\_scan.xdc · 17–32행}
 \small
-constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/43c61994a6fa774d-017-032.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_segment\_scan.xdc · 33–48행}
 \small
-constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–48행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/43c61994a6fa774d-033-048.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_segment\_scan.xdc · 49–64행}
 \small
-constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 49–64행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/43c61994a6fa774d-049-064.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_segment\_scan.xdc · 65–74행}
 \small
-constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 65–74행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/43c61994a6fa774d-065-074.png}\par
 \end{frame}
 
 \begin{frame}[label=simulation]{VS Code에서 먼저 시뮬레이션}
@@ -205,6 +259,46 @@ constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한�
 \terminalbox{LAB2\_PASS segment\_scan8 checks=194}Icarus 종료 시각: 1306ns. 로그가 ps로 표시되면 1,000으로 나눠 ns와 비교한다.\par\vspace{0.26cm}이 수치는 교안의 입력 순서·TB·파라미터에 대한 기준이다.\par\vspace{0.26cm}검사 수만 보지 말고 예상 상태와 실제 파형이 일치하는 이유를 설명한다.\par
 \end{frame}
 
+\begin{frame}{7세그먼트 자기검사 통과}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=277.5bp 75bp 537.75bp 538.5bp,clip]{assets/segment-0914/01-simulation-pass.png}\par\vspace{0.15cm}Ctrl+Shift+B 또는 Terminal → Run Task... → 02 Simulate. LAB2\_PASS segment\_scan8 checks=194를 확인한다. 종료 시각 1306000 ps는 1306 ns다.\par
+\end{frame}
+
+\begin{frame}{파형 확장 활성화}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=415.5bp 429bp 440.25bp 137.25bp,clip]{assets/segment-0914/17-enable-wave.png}\par\vspace{0.15cm}Extensions에서 @installed vaporview 검색. 꺼져 있으면 Enable 옆 화살표 → Enable (Workspace). 설치되어 있지 않으면 앞의 추천 확장 절차를 따른다.\par
+\end{frame}
+
+\begin{frame}{파형 파일 열기}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=264.75bp 487.5bp 260.25bp 54bp,clip]{assets/segment-0914/18-open-wave.png}\par\vspace{0.15cm}build/sim/wave.vcd를 연다. 텍스트로 열리면 탭 우클릭 → Reopen Editor With... → VaporView. 빈 파형 화면에서 Netlist View를 누른다.\par
+\end{frame}
+
+\begin{frame}{테스트벤치 신호 추가}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=40.5bp 370.5bp 744bp 35.25bp,clip]{assets/segment-0914/19-add-signals.png}\par\vspace{0.15cm}tb\_segment\_scan8 이름을 우클릭 → Add All Variables in Scope (Shallow). clk·rst·enable·digits·index·segments·select와 검사 변수가 추가된다.\par
+\end{frame}
+
+\begin{frame}{검사 번호를 십진수로}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=450bp 297bp 280.5bp 138.75bp,clip]{assets/segment-0914/20-format-checks.png}\par\vspace{0.15cm}파형의 checks 이름을 우클릭 → Format Values → Decimal (Unsigned). 이름 열 경계를 오른쪽으로 끌어 신호 이름이 모두 보이게 한다.\par
+\end{frame}
+
+\begin{frame}{자리 선택 사이의 소등 구간}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=264.75bp 276bp 11.25bp 69.75bp,clip]{assets/segment-0914/21-wave-detail.png}\par\vspace{0.15cm}단위는 ps다. 15000 ps = 15 ns. select는 15 ns에 01, 35 ns에 00, 55 ns에 02가 된다. 00인 구간은 모든 자리를 끄는 구간이다. enable=0인 25 ns와 45 ns 에지에서는 각각 점등·소등 상태가 유지된다.\par
+\end{frame}
+
+\begin{frame}{두 입력 묶음과 네 번의 순회}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=264.75bp 276bp 11.25bp 69.75bp,clip]{assets/segment-0914/22-wave-full.png}\par\vspace{0.15cm}Zoom Fit으로 전체 1306 ns를 본다. digits는 76543210에서 fedcba98로 바뀐다. 각 입력 묶음마다 index=0\textasciitilde{}7을 두 번 순회해 0\textasciitilde{}F의 세그먼트 패턴을 검사한다. 마지막에는 rst로 index=0·select=00을 확인한다.\par
+\end{frame}
+
+\begin{frame}{파형과 실제 보드의 극성 연결}
+\small
+코어 select는 active-high다. 01은 index=0 자리 하나를 선택하고 00은 모든 자리를 끈다. segments는 abcdefg와 dp 순서이며 dp는 항상 0이다.\par\vspace{0.26cm}보드 연결 모듈은 select의 비트 순서를 뒤집고 반전하여 seg\_com에 연결한다. 따라서 코어 index=0은 보드 COM[7]에 해당하며, 코어 select=00은 보드 seg\_com=FF가 된다.\par\vspace{0.26cm}테스트벤치는 enable을 멈춰 유지 동작도 검사한다. 보드 모듈은 enable=1로 연결해 1 kHz 클록에서 자동 순환한다. N8 버튼을 누르는 동작과 자동 스캔을 혼동하지 않는다.\par
+\end{frame}
+
 \begin{frame}{수정 실험 · 실패와 복구}
 \small
 \begin{enumerate}
@@ -223,132 +317,179 @@ constraints/lab2\_segment\_scan.xdc를 열고 해당 구간을 직접 입력한�
 \item RTL·TB·XDC·설정의 역할을 설명한다.
 \item 정상/변경/복구 3행 비교표와 실행 로그를 넣는다.
 \item VS Code 파형을 확대해 입력·이전 상태·다음 상태를 설명한다.
-\item 장비 클록·핀·예상 LED 동작을 정리한 뒤 Vivado/CLI로 진행한다.
+\item 장비 클록·핀·예상 LED 동작을 정리한 뒤 Vivado로 진행한다.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}[label=implementation]{Vivado GUI에서 이어서 진행}
+\begin{frame}{스캔 파형·수정 실험 해설}
 \small
-사전 시뮬레이션과 실험 전 레포트를 마친 뒤 Vivado를 연다.\par\vspace{0.26cm}다음 클릭 화면은 기존 LAB1의 실제 캡처를 재사용한다. 화면 속 과거 폴더·파일명 대신 이 교안에 적힌 값을 사용한다.\par\vspace{0.26cm}설계 top: lab2\_segment\_scan\par\vspace{0.26cm}TB top: tb\_segment\_scan8\par
+clk·rst·enable·digits·index·select·segments를 추가한다. index는 정수, select와 segments는 16진수로 보면 표와 비교하기 쉽다.\par\vspace{0.26cm}select 식의 blank ? 8'h00 : 부분을 제거하면 6 ns의 reset blanks digit zero 검사가 먼저 실패한다. 기대 select=00 대신 01이 나온다.\par\vspace{0.26cm}이 변형은 자리 사이 blank뿐 아니라 리셋 blank도 없앤다. 첫 실패가 왜 리셋 검사인지 설명하고 원복 뒤 194개 PASS·1306 ns 종료를 확인한다.\par
 \end{frame}
 
-\begin{frame}{새 프로젝트 시작}
+\begin{frame}[label=implementation]{Vivado에 같은 원본 연결}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=6bp 593.25bp 783bp 24bp,clip]{../LAB1_FPGA_0914/assets/modern-01/40-new-project-menu.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item File → Project → New... → Next.
-\item Project name: lab2\_segment\_scan
-\item Project location: 자신의 lab2\_08\_segment\_scan/vivado.
-\item Create project subdirectory를 해제하고 Next.
-\end{enumerate}
+VS Code 정상·변경·원복 검사와 실험 전 레포트를 마친 뒤 시작한다.\par\vspace{0.26cm}설계 Top은 lab2\_segment\_scan, 시뮬레이션 Top은 tb\_segment\_scan8이다. 시뮬레이션은 코어를 검사하며 보드 연결 모듈은 실제 핀 극성을 연결한다.\par
 \end{frame}
 
-\begin{frame}{RTL Project}
+\begin{frame}{프로젝트 이름과 위치}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=172.5bp 386.25bp 515.25bp 246bp,clip]{../LAB1_FPGA_0914/assets/modern-01/42-rtl-project.png}\par}\vspace{0.18cm}RTL Project와 Do not specify sources at this time을 선택한다.\par\vspace{0.26cm}Next를 눌러 부품 선택으로 간다.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=21bp 257.25bp 24.75bp 142.5bp,clip]{assets/segment-0914/vivado/02-project-name.png}\par\vspace{0.15cm}File → Project → New → Next. 이름은 lab2\_segment\_scan, 위치는 자신의 lab2\_08\_segment\_scan/vivado. Create project subdirectory 해제 → Next.\par
 \end{frame}
 
-\begin{frame}{정확한 S75 부품 선택}
+\begin{frame}{RTL 프로젝트 선택}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.8cm,keepaspectratio,trim=174.75bp 317.25bp 534.75bp 249bp,clip]{../LAB1_FPGA_0914/assets/modern-01/43-select-part.png}\par}\vspace{0.18cm}Parts 검색란에 xc7s75fgga484-1을 입력한다.\par\vspace{0.26cm}같은 part 행 선택 → Next. Spartan-7·fgga484·-1 확인 → Finish.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=21bp 294.75bp 364.5bp 146.25bp,clip]{assets/segment-0914/vivado/03-rtl-project.png}\par\vspace{0.15cm}RTL Project와 Do not specify sources at this time을 선택한다. Next.\par
 \end{frame}
 
-\begin{frame}{Design Sources 추가}
+\begin{frame}{정확한 부품 선택}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/46-design-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Add Sources → Add or create design sources → Next.
-\item Add Files에서 앞 목록의 src/ RTL 파일을 모두 선택한다.
-\item Copy sources into project 해제 → Finish. 같은 원본 파일을 참조한다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=22.5bp 217.5bp 289.5bp 151.5bp,clip]{assets/segment-0914/vivado/04-part.png}\par\vspace{0.15cm}Parts 검색란에 xc7s75fgga484-1을 입력한다. 같은 행 선택 → Next. -1IL·-1Q와 구분한다.\par
 \end{frame}
 
-\begin{frame}{Simulation Sources 추가}
+\begin{frame}{생성 요약 확인}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/50-simulation-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Add Sources → Add or create simulation sources → Next.
-\item Add Files → sim/tb\_segment\_scan8.sv 선택.
-\item sim\_1 유지. Include all design sources for simulation 선택.
-\item Copy sources into project 해제 → Finish.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=20.25bp 294.75bp 312bp 79.5bp,clip]{assets/segment-0914/vivado/05-project-summary.png}\par\vspace{0.15cm}lab2\_segment\_scan·Spartan-7·fgga484·-1을 확인하고 Finish. 이전 프로젝트가 열려 있으면 저장 상태를 확인한 뒤 닫는다.\par
 \end{frame}
 
-\begin{frame}{Constraints 추가}
+\begin{frame}{원본 RTL 참조}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/53-constraints-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Add Sources → Add or create constraints → Next.
-\item Add Files → constraints/lab2\_segment\_scan.xdc 선택.
-\item Copy constraints files into project 해제 → Finish.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=24.75bp 109.5bp 30bp 155.25bp,clip]{assets/segment-0914/vivado/06-design-sources.png}\par\vspace{0.15cm}Add Sources → Add or create design sources → Next → Add Files. src의 input\_frontend.v·lab2\_segment\_scan.v·segment\_scan8.v 선택 → OK. 빈 design.v는 선택하지 않는다. Copy sources into project 해제 → Finish.\par
 \end{frame}
 
-\begin{frame}{설계 top과 TB top 지정}
+\begin{frame}{테스트벤치 등록}
 \small
-\begin{enumerate}
-\item Sources에서 Design Sources의 계층을 펼친다.
-\item lab2\_segment\_scan 우클릭 → Set as Top.
-\item Simulation Sources → sim\_1의 계층을 펼친다.
-\item tb\_segment\_scan8 우클릭 → Set as Top.
-\item 이름이 이미 굵게 표시되면 해당 top이 선택된 상태다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=24bp 86.25bp 31.5bp 157.5bp,clip]{assets/segment-0914/vivado/07-simulation-source.png}\par\vspace{0.15cm}Add Sources → Add or create simulation sources → Next → Add Files → sim/tb\_segment\_scan8.sv. sim\_1과 Include all design sources 유지, Copy sources 해제 → Finish.\par
 \end{frame}
 
-\begin{frame}{Run Behavioral Simulation}
+\begin{frame}{XDC 원본 참조}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.7cm,keepaspectratio,trim=9bp 231bp 764.25bp 316.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/58-run-behavioral.png}\par}\vspace{0.18cm}Flow Navigator → Run Simulation → Run Behavioral Simulation.\par\vspace{0.26cm}컴파일과 elaboration을 기다린다. Tcl Console의 자기검사 PASS와 종료 시각을 확인한다.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=24bp 90bp 29.25bp 158.25bp,clip]{assets/segment-0914/vivado/08-constraints.png}\par\vspace{0.15cm}Add Sources → Add or create constraints → Next → Add Files → constraints/lab2\_segment\_scan.xdc. Copy constraints files into project 해제 → Finish. VS Code에서 편집한 원본을 계속 참조한다.\par
 \end{frame}
 
-\begin{frame}{VS Code 결과와 비교}
+\begin{frame}{테스트벤치를 Top으로}
 \small
-\begin{enumerate}
-\item 같은 RTL·TB로 실행했는지 Sources를 확인한다.
-\item clk·rst·입력·상태·출력의 파형을 추가하고 Zoom Fit.
-\item 상승 에지 전후를 확대해 VS Code 결과와 대조한다.
-\item 검사 이름·검사 수·종료 시각·파형의 차이를 기록한다.
-\item File → Close Simulation → OK로 돌아간다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=337.5bp 160.5bp 499.5bp 519.75bp,clip]{assets/segment-0914/vivado/09-set-top.png}\par\vspace{0.15cm}Simulation Sources → sim\_1을 펼친다. tb\_segment\_scan8 우클릭 → Set as Top. 보드용 lab2\_segment\_scan과 혼동하지 않는다.\par
 \end{frame}
 
-\begin{frame}{핀과 클록 확인}
+\begin{frame}{서로 다른 Top 확인}
 \small
-RTL Analysis → Open Elaborated Design → I/O Ports.\par\vspace{0.26cm}이번 XDC의 PACKAGE\_PIN과 LVCMOS33을 포트마다 대조한다.\par\vspace{0.26cm}B6 주 클록은 1 kHz, XDC 주기는 1,000,000ns다.\par\vspace{0.26cm}실제 장비의 클록 선택도 1 kHz로 맞춘다. 버튼을 클록으로 연결하지 않는다.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=201.75bp 396.75bp 282bp 161.25bp,clip]{assets/segment-0914/vivado/10-tops.png}\par\vspace{0.15cm}Design Sources의 lab2\_segment\_scan과 Simulation Sources → sim\_1의 tb\_segment\_scan8이 각각 굵게 표시되는지 확인한다.\par
 \end{frame}
 
-\begin{frame}{Run Synthesis}
+\begin{frame}{XSim 실행}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.3cm,keepaspectratio,trim=7.5bp 180bp 919.5bp 453bp,clip]{../LAB1_FPGA_0914/assets/modern-01/62-run-synthesis.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Flow Navigator → Run Synthesis.
-\item Launch runs on local host, PC 자원에 맞는 jobs → OK.
-\item 합성 오류가 없으면 완료 창에서 Run Implementation → OK.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=21bp 229.5bp 765bp 317.25bp,clip]{assets/segment-0914/vivado/11-run-simulation.png}\par\vspace{0.15cm}왼쪽 Run Simulation → Run Behavioral Simulation. 컴파일과 elaboration이 끝날 때까지 기다린다.\par
 \end{frame}
 
-\begin{frame}{Run Implementation}
+\begin{frame}{1000 ns에서 끝내지 않기}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.3cm,keepaspectratio,trim=418.5bp 339.75bp 426bp 226.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/64-synthesis-complete.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item 구현 Launch Runs의 위치·jobs 확인 → OK.
-\item 완료 창에서 Generate Bitstream → OK.
-\item 실패하면 Messages의 첫 오류부터 수정한다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=347.25bp 491.25bp 546.75bp 50.25bp,clip]{assets/segment-0914/vivado/12-run-all.png}\par\vspace{0.15cm}기본 실행은 1000 ns에서 멈춘다. 이때 checks=150으로 아직 검사가 끝나지 않았다. Run → Run All 또는 F3를 눌러 테스트벤치의 \$finish까지 실행한다.\par
 \end{frame}
 
-\begin{frame}{Generate Bitstream}
+\begin{frame}{XSim 194개 검사 통과}
 \small
-\begin{enumerate}
-\item Generate Bitstream의 Launch Runs에서 OK.
-\item 완료 창에서 Open Implemented Design으로 결과를 확인한다.
-\item vivado/lab2\_segment\_scan.runs/impl\_1/lab2\_segment\_scan.bit 확인.
-\item 타이밍·DRC 경고를 읽고 원인과 장비 설정을 기록한다.
-\item bit 생성과 실제 보드 기록은 별도 단계다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=217.5bp 83.25bp 690bp 593.25bp,clip]{assets/segment-0914/vivado/13-simulation-pass.png}\par\vspace{0.15cm}Tcl Console에서 LAB2\_PASS segment\_scan8 checks=194와 \$finish 1306 ns를 확인한다. 오류로 중단되거나 검사 수가 다르면 통과한 것으로 기록하지 않는다.\par
+\end{frame}
+
+\begin{frame}{전체 파형 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=234.75bp 249bp 4.5bp 161.25bp,clip]{assets/segment-0914/vivado/14-wave-full.png}\par\vspace{0.15cm}파형 탭 더블클릭 → Zoom Fit. digits는 76543210에서 fedcba98로 바뀐다. 각 입력 묶음에서 index=0\textasciitilde{}7을 두 번 순회한다. enable=0에서 유지되고 마지막 rst에서 index=0·select=00이 되는지 VS Code 파형과 대조한다.\par
+\end{frame}
+
+\begin{frame}{핀 확인 화면 열기}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=201.75bp 32.25bp 284.25bp 472.5bp,clip]{assets/segment-0914/vivado/15-elaborated.png}\par\vspace{0.15cm}Open Elaborated Design → OK. 오른쪽 위 레이아웃에서 I/O Planning 선택 → I/O Ports 탭 더블클릭. All ports는 35개다.\par
+\end{frame}
+
+\begin{frame}{LED 핀 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=200.25bp 310.5bp 323.25bp 159bp,clip]{assets/segment-0914/vivado/16-io-led.png}\par\vspace{0.15cm}led 왼쪽 화살표를 펼쳐 8개 Package Pin을 XDC와 대조한다. led[0]부터 N5·M1·M3·M7·N7·M2·M4·L4다. 모든 I/O Std는 LVCMOS33이다.\par
+\end{frame}
+
+\begin{frame}{자리 선택 핀 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=200.25bp 289.5bp 323.25bp 159bp,clip]{assets/segment-0914/vivado/17-io-seg-com.png}\par\vspace{0.15cm}led를 접고 seg\_com을 펼친다. seg\_com[0]부터 K5·K3·K1·L6·G3·G1·H6·H4다. 코어 index=0은 비트 반전과 순서 변경을 거쳐 COM[7]을 선택한다.\par
+\end{frame}
+
+\begin{frame}{세그먼트 데이터 핀 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=200.25bp 268.5bp 323.25bp 159bp,clip]{assets/segment-0914/vivado/18-io-seg-data.png}\par\vspace{0.15cm}seg\_com을 접고 seg\_data를 펼친다. seg\_data[0]부터 H2·J7·J3·J1·E4·E2·F5·F1이다. 이름·비트 번호·Package Pin을 모두 확인한다.\par
+\end{frame}
+
+\begin{frame}{스위치 핀 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=200.25bp 247.5bp 323.25bp 159bp,clip]{assets/segment-0914/vivado/19-io-sw.png}\par\vspace{0.15cm}seg\_data를 접고 sw를 펼친다. sw[0]부터 U4·V4·W1·W4·T1·U2·W3·Y1이다. SW1\textasciitilde{}4는 sw[7:4]로 첫 자리 숫자를 정한다.\par
+\end{frame}
+
+\begin{frame}{버튼·클록·리셋 핀 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=200.25bp 159.75bp 323.25bp 460.5bp,clip]{assets/segment-0914/vivado/20-io-scalar.png}\par\vspace{0.15cm}Scalar ports를 펼친다. button=N8, clk=B6, rst=K4다. B6 주 클록은 1 kHz다. 이 회로는 자동 스캔하므로 N8 버튼을 누를 필요가 없다.\par
+\end{frame}
+
+\begin{frame}{합성 실행}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 155.25bp 15.75bp 84bp,clip]{assets/segment-0914/vivado/21-synthesis-launch.png}\par\vspace{0.15cm}왼쪽 Run Synthesis. Launch runs on local host와 jobs를 확인하고 OK. 이 실행은 jobs=4다.\par
+\end{frame}
+
+\begin{frame}{합성 완료}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 136.5bp 13.5bp 36bp,clip]{assets/segment-0914/vivado/22-synthesis-complete.png}\par\vspace{0.15cm}Synthesis successfully completed 확인 → Run Implementation 선택 → OK.\par
+\end{frame}
+
+\begin{frame}{구현 실행}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 155.25bp 15.75bp 84bp,clip]{assets/segment-0914/vivado/23-implementation-launch.png}\par\vspace{0.15cm}Launch runs on local host와 jobs를 확인하고 OK. 구현 도중에는 RTL·XDC를 수정하지 않는다.\par
+\end{frame}
+
+\begin{frame}{구현 완료}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 136.5bp 13.5bp 36bp,clip]{assets/segment-0914/vivado/24-implementation-complete.png}\par\vspace{0.15cm}Implementation successfully completed 확인 → Generate Bitstream 선택 → OK.\par
+\end{frame}
+
+\begin{frame}{비트스트림 생성 실행}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 155.25bp 15.75bp 97.5bp,clip]{assets/segment-0914/vivado/25-bitstream-launch.png}\par\vspace{0.15cm}Launch runs on local host와 jobs를 확인하고 OK. write\_bitstream 완료까지 기다린다.\par
+\end{frame}
+
+\begin{frame}{비트스트림 생성 완료}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 134.25bp 13.5bp 36.75bp,clip]{assets/segment-0914/vivado/26-bitstream-complete.png}\par\vspace{0.15cm}Bitstream Generation successfully completed 확인. Open Implemented Design → OK. 이전 Elaborated Design을 닫을지 물으면 Yes.\par
+\end{frame}
+
+\begin{frame}{타이밍 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=386.25bp 55.5bp 274.5bp 506.25bp,clip]{assets/segment-0914/vivado/27-timing.png}\par\vspace{0.15cm}Timing → Design Timing Summary. Setup·Hold의 slack과 Number of Failing Endpoints를 확인한다.\par
+\end{frame}
+
+\begin{frame}{검사 결과와 생성 파일}
+\small
+XSim: LAB2\_PASS segment\_scan8 checks=194, 1306 ns 종료. Icarus와 같은 TB와 원복한 RTL을 사용했다.\par\vspace{0.26cm}생성 파일: vivado/lab2\_segment\_scan.runs/impl\_1/lab2\_segment\_scan.bit.\par\vspace{0.26cm}GUI 합성·구현·bit 생성까지 확인했다. 장치 기록과 보드 사진·영상은 학생이 실습 장비에서 수행한다.\par
+\end{frame}
+
+\begin{frame}{타이밍과 경고 해석}
+\small
+WNS=999998.062 ns, WHS=0.119 ns. Setup·Hold 실패 endpoint는 각각 0이다. 주 클록 제약은 1,000,000 ns다.\par\vspace{0.26cm}TIMING-18: LED·자리 선택·세그먼트 데이터의 출력 24개에 외부 출력 지연이 지정되지 않았다. 비동기 입력에는 false path를 적용했다. 내부 타이밍 통과가 외부 입출력 타이밍까지 보장하지는 않는다.\par\vspace{0.26cm}CFGBVS-1: 설정 뱅크 전압 속성이 없다. 보드 회로도와 설정 전압을 확인하여 값을 정한다. 경고만 없애려고 임의의 전압을 입력하지 않는다.\par
 \end{frame}
 
 \begin{frame}{장치에서 동작 확인}
 \small
 \begin{enumerate}
 \item 보드 전원·JTAG·주 클록 1 kHz 설정을 확인한다.
-\item Vivado: Open Hardware Manager → Open target → Auto Connect.
-\item Program Device에서 방금 생성한 bit 파일을 선택한다.
-\item 초기화 뒤 입력·버튼·출력을 관찰하고 예상과 비교한다.
-\item CLI판은 앞 장의 openFPGALoader 명령으로 기록한다.
+\item Open Hardware Manager → Open target → Auto Connect.
+\item FPGA를 우클릭 → Program Device. 방금 생성한 lab2\_segment\_scan.bit를 선택하고 Program.
+\item 완료 상태를 확인하고 K4로 초기화한다.
+\item SW1\textasciitilde{}4로 숫자를 바꿔 표시 결과를 예상과 비교한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{장비에서 확인할 순서}
+\small
+\begin{enumerate}
+\item 주 클록을 1 kHz로 맞추고 K4로 초기화한다.
+\item SW1..4를 1001로 정한다. COM[7]부터 9,1,2,3,4,5,6,7을 확인한다.
+\item SW1..4를 바꿔 첫 자리만 변하는지 확인한다. N8은 스캔 진행에 필요하지 않다.
+\item LED[2:0]은 현재 index다. 빠른 변화를 눈으로 모두 구분할 수 있다고 가정하지 않는다.
+\item 카메라 줄무늬나 일부 자리 누락은 촬영 주기와 스캔 주기의 차이도 확인한다. 정상 숫자 사진과 입력 변경 영상을 함께 남긴다.
 \end{enumerate}
 \end{frame}
 
@@ -356,9 +497,8 @@ RTL Analysis → Open Elaborated Design → I/O Ports.\par\vspace{0.26cm}이번 
 \small
 \begin{enumerate}
 \item 도구 버전·source commit·XDC·bit 해시·타이밍과 경고를 적는다.
-\item 실제 기록 화면과 보드 전체 사진을 포함한다.
-\item 버튼 누름과 출력 변화가 함께 보이는 영상을 찍는다.
-\item 통합판은 8개 모드 번호·LCD 이름·회로 출력을 보여 준다.
+\item Vivado 시뮬레이션 파형·검사 결과와 장치 기록 화면을 넣는다.
+\item 보드 전체 사진과 스위치 변경에 따른 숫자 변화 영상을 찍는다.
 \item 소스·실험 전후 레포트·사진·영상 링크를 GitHub에서 연결한다.
 \end{enumerate}
 \end{frame}

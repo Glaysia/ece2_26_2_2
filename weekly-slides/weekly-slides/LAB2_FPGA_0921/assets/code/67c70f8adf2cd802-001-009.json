@@ -1,0 +1,18 @@
+{
+  "actual_vscode_capture": true,
+  "source_sha256": "67c70f8adf2cd802d949e10b1420ceaa211930456b46c54f1d724c62743be30f",
+  "lines": [
+    1,
+    9
+  ],
+  "image_sha256": "0c7b0f56f90e96ab1699b9ee45a08cf11c6ec8cff16176d315fa788f3217d823",
+  "captured_on": "2026-09-13",
+  "source": "simulation.json",
+  "full_capture": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/05-simulation-json.png",
+  "crop": [
+    353,
+    36,
+    910,
+    310
+  ]
+}

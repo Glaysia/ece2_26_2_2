@@ -15,9 +15,9 @@ VS Code에서 직접 작성·검증한 다음 장비로 확인한다.\par\vspace
 \navlink{setup}{프로젝트 시작}\par\vspace{0.3cm}\navlink{code}{RTL·TB·XDC 직접 작성}\par\vspace{0.3cm}\navlink{simulation}{VS Code 시뮬레이션과 수정}\par\vspace{0.3cm}\navlink{implementation}{구현과 장치 기록}\par\vspace{0.3cm}\navlink{reports}{레포트}\quad\href{05.LAB2_00_START.pdf}{공통 예습}\quad\href{05.LAB2_00_CONTENTS.pdf}{전체 목차}\par\vspace{0.3cm}\href{05.LAB2_08A_INTEGRATED_VIVADO.pdf}{대응 Vivado판}\quad
 \end{frame}
 
-\begin{frame}[label=setup]{v2.0.0 템플릿을 새 이름으로 clone}
+\begin{frame}[label=setup]{v2.0.1 템플릿을 새 이름으로 clone}
 \small
-Bash/Zsh/WSL에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.0 \textbackslash{}\\  https://github.com/Glaysia/fpga-lab-template.git \textbackslash{}\\  lab2\_integrated\_cli\\cd lab2\_integrated\_cli\\git switch -c main\\code LAB1.code-workspace}
+Bash/Zsh/WSL에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.1 \textbackslash{}\\  https://github.com/Glaysia/fpga-lab-template.git \textbackslash{}\\  lab2\_integrated\_cli\\cd lab2\_integrated\_cli\\git switch -c main\\code LAB1.code-workspace}
 \end{frame}
 
 \begin{frame}{File → New Window}
@@ -34,6 +34,17 @@ Bash/Zsh/WSL에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v
 \item slang·VaporView·vscode-pdf의 Install을 누른다.
 \item Python과 Icarus 실행 파일은 별도로 설치되어 있어야 한다.
 \end{enumerate}
+\end{frame}
+
+\begin{frame}{v2.0.1 편집기와 시뮬레이터}
+\small
+\begin{enumerate}
+\item slang 확장·서버는 0.3.0을 기준으로 확인한다. 추천 목록은 버전을 고정하지 않는다.
+\item 템플릿의 .slang/server.json은 src·sim 탐색용이다. 새 RTL은 simulation.json에도 직접 등록한다.
+\item Ctrl+Shift+P → slang: Show Output. 서버 오류가 있으면 README의 버전 확인·재시작 절차를 따른다.
+\item slang.path에 다른 사람의 설치 경로를 복사하지 않는다. 직접 지정할 때는 User 설정에 자신의 경로를 쓴다.
+\item VS Code 02 Simulate는 Icarus, Vivado Run Behavioral Simulation은 XSim이다.
+\end{enumerate}\href{https://github.com/Glaysia/fpga-lab-template/tree/v2.0.1\#3-실행-준비}{템플릿 도구 설치·오류 해결 안내}
 \end{frame}
 
 \begin{frame}{시뮬레이션 도구 확인}
@@ -98,12 +109,12 @@ sources: 앞 표의 src/ 파일 경로를 배열로 넣는다.\par\vspace{0.26cm
 
 \begin{frame}{simulation.json · 1–16행}
 \small
-simulation.json를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+simulation.json를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/5bab5e83844a8858-001-016.png}\par
 \end{frame}
 
 \begin{frame}{simulation.json · 17–18행}
 \small
-simulation.json를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–18행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+simulation.json를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/5bab5e83844a8858-017-018.png}\par
 \end{frame}
 
 \begin{frame}[label=code]{이번 회로의 관찰 방법}
@@ -111,174 +122,284 @@ simulation.json를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm
 K4 초기화, N8 모드 변경, N4 회로 한 단계 실행. 새 모드로 넘어갈 때 회로 상태를 초기화한다.\par\vspace{0.26cm}입력 스위치를 먼저 정한 다음 버튼을 누른다.\par
 \end{frame}
 
+\begin{frame}{두 버튼의 역할을 나눈다}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{ll}
+입력 & 역할\\\hline
+B6 / clk & 1 kHz 주 클록\\
+K4 / rst & 전체 초기화, 첫 모드로 복귀\\
+N8 / mode\_button & 다음 모드 선택\\
+N4 / step\_button & 선택한 회로 한 단계 실행\\
+SW1–SW8 & sw[7]–sw[0], 모드별 입력\\
+\end{tabular}\end{center}개별 교안의 한 단계 버튼 N8은 통합판에서 N4로 바뀐다. N8은 모드 선택에 사용한다. 스위치를 먼저 정하고 버튼을 누른 뒤 놓는다.\par
+\end{frame}
+
+\begin{frame}{내부 번호와 LCD 번호 · 1–4}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{lll}
+mode & LCD 첫 줄 & 둘째 줄\\\hline
+0 & MODE 01 & UP DOWN COUNTER\\
+1 & MODE 02 & CLOCK DIVIDER\\
+2 & MODE 03 & REGISTER PAIR\\
+3 & MODE 04 & SHIFT REGISTER\\
+\end{tabular}\end{center}mode는 3비트로 0부터 시작한다. 학생에게 표시하는 LCD 번호는 1부터 시작한다. 두 번호를 레포트에서 구분한다.\par
+\end{frame}
+
+\begin{frame}{내부 번호와 LCD 번호 · 5–8}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{lll}
+mode & LCD 첫 줄 & 둘째 줄\\\hline
+4 & MODE 05 & PISO\\
+5 & MODE 06 & MOORE FSM\\
+6 & MODE 07 & MEALY FSM\\
+7 & MODE 08 & 8 DIGIT SCAN\\
+\end{tabular}\end{center}각 줄은 16칸이며 남는 칸은 공백으로 덮어쓴다. MODE 08에서 N8을 한 번 누르면 MODE 01로 돌아온다.\par
+\end{frame}
+
+\begin{frame}{여덟 회로는 하나의 bit에 함께 들어간다}
+\small
+여덟 코어를 인스턴스화하고 mode에 따라 enable과 LED 출력 선택을 바꾼다. 모드를 바꿀 때마다 bit를 다시 기록하는 구조가 아니다.\par\vspace{0.26cm}counter·register·shift·PISO·Moore·Mealy는 해당 모드의 step\_press로 진행한다. 스캔은 mode=7에서 자동으로 진행한다.\par\vspace{0.26cm}분주기는 주 클록으로 계속 동작하며 mode=1에서 출력을 관찰한다. 모든 저장소의 클록은 공통 clk다.\par
+\end{frame}
+
+\begin{frame}{모드를 바꾸면 상태를 초기화한다}
+\small
+circuit\_reset = reset || mode\_press다. 모드 변경 펄스가 들어온 상승 에지에는 여덟 코어가 초기화되고 mode가 다음 값으로 바뀐다.\par\vspace{0.26cm}같은 에지에서 step\_press도 1이어도 코어의 reset이 우선한다. 이전 모드의 마지막 상태를 다음 모드로 넘기지 않는다.\par\vspace{0.26cm}카운터를 15로 만든 뒤 다른 모드를 돌아 다시 MODE 01에 오면 0이다. LCD 회로는 mode\_press로 리셋하지 않고 새 표시값을 다음 갱신 주기에 반영한다.\par
+\end{frame}
+
+\begin{frame}{LED 선택과 사용하지 않는 표시 장치}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.3}\begin{tabular}{ll}
+MODE & LED[7:0]\\\hline
+01 & 0000, count\\
+02 & 000, tick, /1000, /50, /10, /2\\
+03 & stored, registered\\
+04 & 0000, shifted\\
+05 & parallel, 000, serial\_out\\
+06 & 000000, moore\_value\\
+07 & 00000, mealy\_state, mealy\_value\\
+08 & 00000, scan\_index\\
+\end{tabular}\end{center}스캔 모드 외에는 seg\_data=00, seg\_com=FF로 7세그먼트를 끈다. LCD는 모든 모드에서 현재 이름을 표시한다.\par
+\end{frame}
+
+\begin{frame}{LCD 한 바이트의 네 단계}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{ll}
+phase & 동작\\\hline
+0 & E=0에서 RS·DATA 준비\\
+1 & E=1, 데이터 유지\\
+2 & E=0으로 내려 전송\\
+3 & 회복 시간을 둔 뒤 다음 바이트\\
+\end{tabular}\end{center}1 kHz에서 각 단계는 1 ms다. lcd\_rw=0으로 쓰기만 한다. 초기 POWER\_WAIT=50은 50클록 대기이며 TB에서도 이 클록 수는 유지한다.\par
+\end{frame}
+
+\begin{frame}{LCD 갱신 중 모드가 바뀌면}
+\small
+첫 줄 주소 80을 전송할 때 mode를 shown\_mode에 저장한다. 번호와 둘째 줄 이름은 shown\_mode로 계산한다.\par\vspace{0.26cm}따라서 한 화면을 쓰는 동안 버튼을 눌러도 번호와 이름을 서로 다른 모드에서 가져오지 않는다. 다음 화면 갱신에서 최신 mode를 반영한다.\par\vspace{0.26cm}초기화 명령 뒤에는 두 줄의 주소·문자를 반복 전송한다. LED 모드 변화와 LCD 글자 갱신이 완전히 같은 순간일 필요는 없다.\par
+\end{frame}
+
+\begin{frame}{개별 회로 설명으로 이동}
+\small
+\href{05.LAB2_01_COUNTER_VIVADO.pdf}{카운터}\quad\href{05.LAB2_02_CLOCK_DIVIDER_VIVADO.pdf}{분주}\quad\href{05.LAB2_03_REGISTER_VIVADO.pdf}{레지스터}\quad\href{05.LAB2_04_SHIFT_REGISTER_VIVADO.pdf}{시프트}\par\vspace{0.35cm}\href{05.LAB2_05_PISO_VIVADO.pdf}{PISO}\quad\href{05.LAB2_06_MOORE_VIVADO.pdf}{Moore}\quad\href{05.LAB2_07_MEALY_VIVADO.pdf}{Mealy}\quad\href{05.LAB2_08_SEGMENT_SCAN_VIVADO.pdf}{7세그먼트}\par\vspace{0.35cm}각 코어의 상태 표·TB·수정 실험을 먼저 읽는다. 통합판은 같은 코어를 연결하며 이후 전체 코드 화면을 직접 작성한다.\par
+\end{frame}
+
 \begin{frame}{counter4.v · 1–13행}
 \small
-src/counter4.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–13행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/counter4.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/e37b9015f9732666-001-013.png}\par
 \end{frame}
 
 \begin{frame}{clock\_divider.v · 1–16행}
 \small
-src/clock\_divider.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/clock\_divider.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/7c8863c2d840cfe2-001-016.png}\par
 \end{frame}
 
 \begin{frame}{clock\_divider.v · 17–23행}
 \small
-src/clock\_divider.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–23행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/clock\_divider.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/7c8863c2d840cfe2-017-023.png}\par
 \end{frame}
 
 \begin{frame}{register\_pair.v · 1–16행}
 \small
-src/register\_pair.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/register\_pair.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/546bd1f1a2b519d0-001-016.png}\par
 \end{frame}
 
 \begin{frame}{shift\_register4.v · 1–11행}
 \small
-src/shift\_register4.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–11행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/shift\_register4.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/6c221a38ef5b96f2-001-011.png}\par
 \end{frame}
 
 \begin{frame}{piso4.v · 1–14행}
 \small
-src/piso4.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–14행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/piso4.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/f92dadd42b3ec327-001-014.png}\par
 \end{frame}
 
 \begin{frame}{moore\_cycle.v · 1–16행}
 \small
-src/moore\_cycle.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/moore\_cycle.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/e2b1e71ae4a15ea1-001-016.png}\par
 \end{frame}
 
 \begin{frame}{mealy\_toggle.v · 1–13행}
 \small
-src/mealy\_toggle.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–13행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/mealy\_toggle.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/cbbaea84f211403b-001-013.png}\par
 \end{frame}
 
 \begin{frame}{segment\_scan8.v · 1–16행}
 \small
-src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c6a978723d5f703f-001-016.png}\par
 \end{frame}
 
 \begin{frame}{segment\_scan8.v · 17–32행}
 \small
-src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c6a978723d5f703f-017-032.png}\par
 \end{frame}
 
 \begin{frame}{segment\_scan8.v · 33–46행}
 \small
-src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–46행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/segment\_scan8.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c6a978723d5f703f-033-046.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 1–16행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-001-016.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 17–32행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-017-032.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 33–46행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–46행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-033-046.png}\par
 \end{frame}
 
 \begin{frame}{button\_onepulse.v · 1–16행}
 \small
-src/button\_onepulse.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/button\_onepulse.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/1c255068f06c91c7-001-016.png}\par
 \end{frame}
 
 \begin{frame}{button\_onepulse.v · 17–21행}
 \small
-src/button\_onepulse.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–21행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/button\_onepulse.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/1c255068f06c91c7-017-021.png}\par
 \end{frame}
 
 \begin{frame}{lcd\_lab2\_modes.v · 1–16행}
 \small
-src/lcd\_lab2\_modes.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lcd\_lab2\_modes.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/041115a6ecb765a8-001-016.png}\par
 \end{frame}
 
 \begin{frame}{lcd\_lab2\_modes.v · 17–32행}
 \small
-src/lcd\_lab2\_modes.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lcd\_lab2\_modes.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/041115a6ecb765a8-017-032.png}\par
 \end{frame}
 
 \begin{frame}{lcd\_lab2\_modes.v · 33–48행}
 \small
-src/lcd\_lab2\_modes.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–48행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lcd\_lab2\_modes.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/041115a6ecb765a8-033-048.png}\par
 \end{frame}
 
 \begin{frame}{lcd\_lab2\_modes.v · 49–64행}
 \small
-src/lcd\_lab2\_modes.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 49–64행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lcd\_lab2\_modes.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/041115a6ecb765a8-049-064.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.v · 1–16행}
 \small
-src/lab2\_integrated.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_integrated.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/194bebed29cd3aa1-001-016.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.v · 17–32행}
 \small
-src/lab2\_integrated.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_integrated.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/194bebed29cd3aa1-017-032.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.v · 33–48행}
 \small
-src/lab2\_integrated.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–48행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_integrated.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/194bebed29cd3aa1-033-048.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.v · 49–64행}
 \small
-src/lab2\_integrated.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 49–64행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_integrated.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/194bebed29cd3aa1-049-064.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.v · 65–67행}
 \small
-src/lab2\_integrated.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 65–67행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_integrated.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/194bebed29cd3aa1-065-067.png}\par
+\end{frame}
+
+\begin{frame}{통합 TB에서 빠르게 만든 부분}
+\small
+STABLE\_CYCLES=3, DIVISOR=10으로 버튼과 분주 대기를 줄인다. TB 클록 주기는 10 ns다.\par\vspace{0.26cm}실제 보드 기본값은 STABLE\_CYCLES=20, DIVISOR=1000이며 클록은 1 kHz다. TB 수치를 XDC 주기나 실제 분주 속도로 옮기지 않는다.\par\vspace{0.26cm}같은 코어 검사 외에 두 버튼·입력 동기화·모드 선택·LCD 버스·COM 극성까지 전체 연결을 검사한다.\par
+\end{frame}
+
+\begin{frame}{LCD 이름 ROM을 읽어 정답으로 쓰지 않는다}
+\small
+TB는 실제 lcd\_data·lcd\_rs·lcd\_e 버스를 감시해 32칸 screen을 만든다. 명령 80과 C0으로 줄 주소를 바꾸고 데이터 바이트를 저장한다.\par\vspace{0.26cm}E 상승 때 write-only와 setup 시간을, E 하강 때 E 유지 시간을 검사한다. E가 높은 동안 DATA 또는 RS가 바뀌면 즉시 실패한다.\par\vspace{0.26cm}check\_lcd는 300클록을 기다린 뒤 첫 줄 번호·공백과 둘째 줄 16문자를 별도 기대 문자열에 대조한다.\par
+\end{frame}
+
+\begin{frame}{여덟 모드에서 검사하는 것}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{ll}
+모드 & 통합 검사\\\hline
+01 & 증가·감소·0에서 15로 순환\\
+02 & 30클록에 tick 3개, TB /10\\
+03 & 동시 저장·전달 시 이전 값\\
+04 & 입력 1,0에 LED 08,04\\
+05 & 병렬 load와 MSB 직렬 출력\\
+06 & 입력만 바꿔서는 상태 유지\\
+07 & 버튼 없이 입력으로 출력 변경\\
+08 & COM 극성·입력 9·blank 비율\\
+\end{tabular}\end{center}
+\end{frame}
+
+\begin{frame}{동시 버튼과 실행 중 리셋}
+\small
+버튼 입력에는 짧은 바운스와 길게 누름을 포함한다. next\_mode는 한 동작에 모드가 정확히 한 번만 바뀌는지 검사한다.\par\vspace{0.26cm}MODE 08 → MODE 01 복귀 때 이전 카운터 값이 0으로 초기화되는지 확인한다. 이어 두 버튼을 동시에 눌러 코어 갱신보다 초기화가 우선하는지 확인한다.\par\vspace{0.26cm}마지막 전체 리셋은 mode=0, LED=0, lcd\_e=0, seg\_com=FF를 검사한다. 기준 로그는 modes=8, checks=2848, 종료 34326 ns다.\par
 \end{frame}
 
 \begin{frame}{tb\_lab2\_integrated.sv · 1–16행}
 \small
-sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/42671df2a8fac680-001-016.png}\par
 \end{frame}
 
 \begin{frame}{tb\_lab2\_integrated.sv · 17–32행}
 \small
-sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/42671df2a8fac680-017-032.png}\par
 \end{frame}
 
 \begin{frame}{tb\_lab2\_integrated.sv · 33–48행}
 \small
-sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–48행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/42671df2a8fac680-033-048.png}\par
 \end{frame}
 
 \begin{frame}{tb\_lab2\_integrated.sv · 49–64행}
 \small
-sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 49–64행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/42671df2a8fac680-049-064.png}\par
 \end{frame}
 
 \begin{frame}{tb\_lab2\_integrated.sv · 65–80행}
 \small
-sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 65–80행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/42671df2a8fac680-065-080.png}\par
 \end{frame}
 
 \begin{frame}{tb\_lab2\_integrated.sv · 81–96행}
 \small
-sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 81–96행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/42671df2a8fac680-081-096.png}\par
 \end{frame}
 
 \begin{frame}{tb\_lab2\_integrated.sv · 97–112행}
 \small
-sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 97–112행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/42671df2a8fac680-097-112.png}\par
 \end{frame}
 
 \begin{frame}{tb\_lab2\_integrated.sv · 113–128행}
 \small
-sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 113–128행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/42671df2a8fac680-113-128.png}\par
 \end{frame}
 
 \begin{frame}{tb\_lab2\_integrated.sv · 129–131행}
 \small
-sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 129–131행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/42671df2a8fac680-129-131.png}\par
 \end{frame}
 
 \begin{frame}{XDC를 직접 작성한다}
@@ -293,37 +414,37 @@ sim/tb\_lab2\_integrated.sv를 열고 해당 구간을 직접 입력한다.\par\
 
 \begin{frame}{lab2\_integrated.xdc · 1–16행}
 \small
-constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/282389e1d0c33cd9-001-016.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.xdc · 17–32행}
 \small
-constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/282389e1d0c33cd9-017-032.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.xdc · 33–48행}
 \small
-constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–48행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/282389e1d0c33cd9-033-048.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.xdc · 49–64행}
 \small
-constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 49–64행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/282389e1d0c33cd9-049-064.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.xdc · 65–80행}
 \small
-constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 65–80행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/282389e1d0c33cd9-065-080.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.xdc · 81–96행}
 \small
-constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 81–96행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/282389e1d0c33cd9-081-096.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_integrated.xdc · 97–97행}
 \small
-constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 97–97행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/282389e1d0c33cd9-097-097.png}\par
 \end{frame}
 
 \begin{frame}[label=simulation]{VS Code에서 먼저 시뮬레이션}
@@ -353,6 +474,61 @@ constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.
 \terminalbox{LAB2\_INTEGRATED\_PASS modes=8 checks=2848}Icarus 종료 시각: 34326ns. 로그가 ps로 표시되면 1,000으로 나눠 ns와 비교한다.\par\vspace{0.26cm}이 수치는 교안의 입력 순서·TB·파라미터에 대한 기준이다.\par\vspace{0.26cm}검사 수만 보지 말고 예상 상태와 실제 파형이 일치하는 이유를 설명한다.\par
 \end{frame}
 
+\begin{frame}{통합 자기검사 통과}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=276.75bp 135bp 555.75bp 527.25bp,clip]{assets/integrated-0914/01-simulation-pass.png}\par\vspace{0.15cm}Ctrl+Shift+B 또는 Terminal → Run Task... → 02 Simulate. LAB2\_INTEGRATED\_PASS modes=8 checks=2848을 확인한다. 종료 시각은 34326 ns다.\par
+\end{frame}
+
+\begin{frame}{파형 확장 활성화}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=415.5bp 475.5bp 440.25bp 137.25bp,clip]{assets/integrated-0914/18-enable-wave.png}\par\vspace{0.15cm}Extensions에서 @installed vaporview 검색. 꺼져 있으면 Enable 옆 화살표 → Enable (Workspace). 설치 전이면 앞의 추천 확장 절차를 따른다.\par
+\end{frame}
+
+\begin{frame}{텍스트 대신 파형으로 열기}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=881.25bp 537bp 1.5bp 51bp,clip]{assets/integrated-0914/19-reopen-wave.png}\par\vspace{0.15cm}build/sim/wave.vcd를 연다. 텍스트로 열렸다면 편집기 오른쪽 위 Text Editor 옆 화살표 → VaporView를 선택한다.\par
+\end{frame}
+
+\begin{frame}{Netlist View 열기}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=264.75bp 529.5bp 256.5bp 54bp,clip]{assets/integrated-0914/20-wave-empty.png}\par\vspace{0.15cm}빈 파형 화면의 Netlist View를 누른다. 왼쪽에서 tb\_lab2\_integrated를 찾는다.\par
+\end{frame}
+
+\begin{frame}{테스트벤치 신호와 내부 mode 추가}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=40.5bp 419.25bp 744bp 36bp,clip]{assets/integrated-0914/21-add-signals.png}\par\vspace{0.15cm}tb\_lab2\_integrated를 우클릭 → Add All Variables in Scope (Shallow). 이어서 tb\_lab2\_integrated → dut를 펼쳐 mode를 더블클릭한다. mode는 맨 아래에 추가된다.\par
+\end{frame}
+
+\begin{frame}{검사 수는 십진수로 표시}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=486bp 311.25bp 254.25bp 187.5bp,clip]{assets/integrated-0914/22-checks-decimal.png}\par\vspace{0.15cm}checks를 우클릭 → Format Values → Decimal (Unsigned). LCD 데이터와 LED·세그먼트 버스는 16진수로 둔다.\par
+\end{frame}
+
+\begin{frame}{파형 이름을 읽기 쉽게}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=243.75bp 320.25bp 498.75bp 187.5bp,clip]{assets/integrated-0914/25-name-only.png}\par\vspace{0.15cm}파형 영역에서 Ctrl+A → 신호 이름 우클릭 → Name → Name Only. 빈 영역을 클릭해 선택을 해제한다. Ctrl+B로 사이드바를 접으면 가로 공간이 넓어진다.\par
+\end{frame}
+
+\begin{frame}{시간 단위와 전체 구간}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=595.5bp 389.25bp 172.5bp 102bp,clip]{assets/integrated-0914/24-time-unit.png}\par\vspace{0.15cm}시간 눈금을 우클릭 → Time Unit → μs. 왼쪽 위 첫 돋보기인 Zoom Fit을 누르면 전체 34.326 μs를 볼 수 있다.\par
+\end{frame}
+
+\begin{frame}{8개 모드의 전환 확인}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=240bp 95.25bp 11.25bp 371.25bp,clip]{assets/integrated-0914/26-wave-full-names.png}\par\vspace{0.15cm}맨 아래 mode는 0\textasciitilde{}7을 순회한 뒤 0으로 돌아온다. mode\_button과 step\_button의 역할을 구분하고 led·sw·seg\_com·seg\_data를 함께 비교한다. mode=7에서만 7세그먼트 스캔이 활성화된다.\par
+\end{frame}
+
+\begin{frame}{LCD에 MODE 05를 보내는 구간}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=247.5bp 308.25bp 11.25bp 285bp,clip]{assets/integrated-0914/27-lcd-mode05.png}\par\vspace{0.15cm}Zoom In으로 약 17.1 μs 부근을 확대한다. lcd\_data의 80은 첫 줄 주소 명령(RS=0), 뒤의 4D 4F 44 45 20 30 35는 MODE 05 문자(RS=1)다. 내부 mode=4와 LCD 표시 번호 05를 연결해 설명한다.\par
+\end{frame}
+
+\begin{frame}{LCD 데이터와 Enable의 관계}
+\small
+데이터가 바뀐 뒤 다음 클록에서 lcd\_e가 올라가고, 그 다음 클록에서 내려간다. E가 높은 동안 데이터와 RS가 유지되는지 확대 파형에서 확인한다. lcd\_rw는 항상 0이다.\par\vspace{0.26cm}테스트벤치는 10 ns 주기로 시간을 줄여 검사한다. 실제 보드의 1 kHz 클록에서는 한 클록이 1 ms이므로 파형의 ns 값을 장비의 동작 시간으로 그대로 쓰지 않는다.\par\vspace{0.26cm}LCD는 한 화면을 쓰기 시작할 때 모드를 저장한다. 버튼 입력 직후 화면 전체가 즉시 바뀌는 것으로 해석하지 말고 다음 화면 갱신을 확인한다.\par
+\end{frame}
+
 \begin{frame}{수정 실험 · 실패와 복구}
 \small
 \begin{enumerate}
@@ -375,14 +551,45 @@ constraints/lab2\_integrated.xdc를 열고 해당 구간을 직접 입력한다.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}[label=implementation]{Vivado 없이 S75 구현}
+\begin{frame}{통합 파형은 목적별로 나누어 본다}
 \small
-macOS에서는 해당 ARM64 배포, Windows에서는 WSL Linux 배포를 사용한다.\par\vspace{0.26cm}제작 검증은 WSL Linux x86-64에서 수행했다. Mac에서 실행했다는 뜻이 아니다.\par\vspace{0.26cm}실행한 도구는 APIO 1.5.1, OSS CAD Suite 2026.08.19, openXC7 2026.08.20이다.\par
+\begin{enumerate}
+\item 제어 파형: clk·rst·mode\_button·step\_button·dut.mode·dut.mode\_press·dut.step\_press·dut.circuit\_reset.
+\item 회로 파형: sw·led와 현재 모드의 코어 저장값. 입력 변경, 버튼 펄스, 상태 갱신 순서를 확대한다.
+\item LCD 파형: lcd\_e·lcd\_rs·lcd\_rw·lcd\_data. 번호와 이름을 전송하는 구간을 확인한다.
+\item 스캔 파형: seg\_com·seg\_data·dut.scan\_index. 선택 신호 FF가 blank 구간인지 확인한다.
+\item 마지막 동시 버튼과 리셋 구간을 별도 화면으로 남기고 정상 로그와 함께 설명한다.
+\end{enumerate}
 \end{frame}
 
-\begin{frame}{APIO 도구 설치}
+\begin{frame}[label=implementation]{Vivado 없이 S75 구현}
 \small
-\terminalbox{python3 -m venv \textasciitilde{}/.local/share/fpga-apio\\\textasciitilde{}/.local/share/fpga-apio/bin/pip install apio==1.5.1\\\textasciitilde{}/.local/share/fpga-apio/bin/apio packages install\\export PATH="\$HOME/.apio/packages/oss-cad-suite/bin:\$PATH"\\export PATH="\$HOME/.apio/packages/openxc7/bin:\$PATH"\\yosys -V\\nextpnr-xilinx --version}패키지 기본 버전은 바뀔 수 있다. 재현할 때는 앞 표의 고정 릴리스를 사용하고 버전을 기록한다.\par
+macOS에서는 해당 ARM64 배포, Windows에서는 WSL Linux 배포를 사용한다.\par\vspace{0.26cm}제작 검증은 WSL Linux x86-64에서 수행했다. Mac에서 실행했다는 뜻이 아니다.\par\vspace{0.26cm}합성·배치배선 도구는 OSS CAD Suite 2026.08.19와 openXC7 2026.08.20이다. 뒤의 절차로 고정 패키지를 직접 설치한다.\par
+\end{frame}
+
+\begin{frame}{CLI 실행 환경 선택}
+\small
+Windows는 WSL Linux x86-64 터미널에서 실행한다. Apple Silicon Mac은 macOS 터미널과 darwin-arm64 패키지를 사용한다.\par\vspace{0.26cm}아래 명령은 같은 터미널에서 순서대로 실행한다. Python 3·Git·curl·tar를 먼저 확인한다.\par\terminalbox{python3 --version\\git --version\\curl --version\\tar --version\\uname -s -m}
+\end{frame}
+
+\begin{frame}{고정 릴리스와 설치 폴더}
+\small
+\terminalbox{platform=linux-x86-64\\tools="\$HOME/fpga-cli/tools-lab2-202608"\\mkdir -p "\$tools/oss-cad-suite" "\$tools/openxc7"}WSL x86-64는 위 platform을 쓴다. Apple Silicon Mac에서는 첫 줄을 platform=darwin-arm64로 바꾼다.\par\vspace{0.26cm}OSS CAD Suite 2026-08-19와 openXC7 2026-08-20을 직접 받는다. apio packages install은 원격의 최신 요구 버전을 따르므로 이 교안의 고정 버전 설치에 사용하지 않는다.\par
+\end{frame}
+
+\begin{frame}{OSS CAD Suite 고정 패키지}
+\small
+\terminalbox{base=https://github.com/fpgawars/tools-oss-cad-suite\\base="\$base/releases/download/2026-08-19"\\file="apio-oss-cad-suite-\$platform-20260819.tgz"\\curl --fail --location "\$base/\$file" -o "\$tools/oss.tgz"\\tar -xzf "\$tools/oss.tgz" -C "\$tools/oss-cad-suite"}\href{https://github.com/fpgawars/tools-oss-cad-suite/releases/tag/2026-08-19}{공식 OSS CAD Suite 고정 릴리스}\par\vspace{0.2cm}다운로드가 실패하면 다음 줄을 실행하지 않는다. 압축 내부의 bin·lib 등은 지정한 설치 폴더 바로 아래에 풀린다.\par
+\end{frame}
+
+\begin{frame}{openXC7 고정 패키지}
+\small
+\terminalbox{base=https://github.com/fpgawars/tools-openxc7\\base="\$base/releases/download/2026-08-20"\\file="apio-openxc7-\$platform-20260820.tgz"\\curl --fail --location "\$base/\$file" -o "\$tools/openxc7.tgz"\\tar -xzf "\$tools/openxc7.tgz" -C "\$tools/openxc7"}\href{https://github.com/fpgawars/tools-openxc7/releases/tag/2026-08-20}{공식 openXC7 고정 릴리스}\par\vspace{0.2cm}이 패키지는 nextpnr-xilinx·프레임 변환·bitread를 제공한다. 다른 FPGA의 part 데이터로 대체하지 않는다.\par
+\end{frame}
+
+\begin{frame}{같은 터미널에서 도구 경로 설정}
+\small
+\terminalbox{export PATH="\$tools/oss-cad-suite/bin:\$tools/openxc7/bin:\$PATH"\\yosys -V\\nextpnr-xilinx --version\\iverilog -V\\vvp -V}검증 기록의 Yosys는 0.63+173 (66306a8ca), nextpnr는 68aeeb3이다. 다르면 PATH에서 어떤 실행 파일이 먼저 선택됐는지 확인한다.\par\vspace{0.26cm}새 터미널을 열면 tools 변수와 export PATH를 다시 실행한다. 다운로드·압축 해제까지 매번 반복하지 않는다.\par
 \end{frame}
 
 \begin{frame}{S75 준비 도구 받기}
@@ -392,7 +599,7 @@ macOS에서는 해당 ARM64 배포, Windows에서는 WSL Linux 배포를 사용�
 
 \begin{frame}{정확한 S75 DB와 chipdb 준비}
 \small
-\terminalbox{python3 prepare\_s75.py}준비 도구는 \textasciitilde{}/fpga-cli/lab1-s75에 공통 장비 데이터를 만든다. LAB1과 같은 S75 DB이므로 디렉터리 이름을 유지한다.\par\vspace{0.26cm}prepared.json의 xc7s75fgga484-1·338핀·DB 고정 커밋·chipdb 해시를 확인한다.\par\vspace{0.26cm}실패하면 export.log·bbasm.log를 읽는다. 완료 후 자신의 lab2\_integrated\_cli 프로젝트 루트로 돌아간다.\par
+\terminalbox{python3 prepare\_s75.py --tools \textbackslash{}\\  \textasciitilde{}/fpga-cli/tools-lab2-202608/openxc7}준비 도구는 \textasciitilde{}/fpga-cli/lab1-s75에 공통 장비 데이터를 만든다. LAB1과 같은 S75 DB이므로 디렉터리 이름을 유지한다.\par\vspace{0.26cm}prepared.json의 xc7s75fgga484-1·338핀·DB 고정 커밋·chipdb 해시를 확인한다.\par\vspace{0.26cm}실패하면 export.log·bbasm.log를 읽는다. 완료 후 자신의 lab2\_integrated\_cli 프로젝트 루트로 돌아간다.\par
 \end{frame}
 
 \begin{frame}{synth.ys 직접 작성}
@@ -410,9 +617,29 @@ macOS에서는 해당 ARM64 배포, Windows에서는 WSL Linux 배포를 사용�
 \terminalbox{fasm2frames --db-root "\$db" --part "\$part" \textbackslash{}\\  build/cli/design.fasm build/cli/design.frames\\xc7frames2bit --part\_file "\$db/\$part/part.yaml" \textbackslash{}\\  --part\_name "\$part" --frm\_file build/cli/design.frames \textbackslash{}\\  --output\_file build/cli/lab2\_integrated.bit}각 단계 종료 코드와 로그를 확인한다. 이전 bit 파일을 새 실행 결과로 쓰지 않는다.\par
 \end{frame}
 
-\begin{frame}{openFPGALoader 설치}
+\begin{frame}{openFPGALoader 설치 · Ubuntu}
 \small
-macOS에서는 Homebrew로 설치한다. Linux에서는 배포 패키지 또는 공식 설치 안내를 따른다.\par\terminalbox{brew install openfpgaloader}WSL은 USB JTAG 장치가 Linux 쪽에 전달되어 있어야 한다. 보드 전원·케이블·운영체제의 장치 인식을 먼저 확인한다.\par\href{https://trabucayre.github.io/openFPGALoader/guide/install.html}{공식 운영체제별 설치 안내}
+WSL Ubuntu 터미널에서 실행한다. 아래 설치는 Windows PowerShell 명령이 아니다.\par\terminalbox{sudo apt update\\sudo apt install openfpgaloader usbutils\\openFPGALoader --help\\openFPGALoader --list-cables}\href{https://trabucayre.github.io/openFPGALoader/guide/install.html}{공식 운영체제별 설치 안내}
+\end{frame}
+
+\begin{frame}{openFPGALoader 설치 · macOS}
+\small
+Apple Silicon Mac은 macOS 터미널에서 아래 명령을 사용한다. Ubuntu 사용자는 이 장을 건너뛴다.\par\terminalbox{brew install openfpgaloader\\openFPGALoader --help\\openFPGALoader --list-cables}Homebrew가 먼저 설치되어 있어야 한다. 이 교안의 실행 검증은 WSL Linux이며 macOS 실측 기록은 아니다.\par\href{https://trabucayre.github.io/openFPGALoader/guide/install.html}{공식 macOS 설치 안내}
+\end{frame}
+
+\begin{frame}{WSL에 JTAG 전달 · Windows 준비}
+\small
+Windows PowerShell에서 실행한다. WSL 2 Ubuntu 터미널도 열어 둔다. 이미 usbipd-win 5 이상이 설치되어 있으면 설치 명령은 건너뛴다.\par\terminalbox{winget install --interactive --exact dorssel.usbipd-win\\usbipd --version\\usbipd list}목록에서 실습 보드의 USB JTAG 장치를 찾는다. 다음 장의 MY\_BUSID를 그 행의 BUSID로 바꾼다.\par\href{https://learn.microsoft.com/en-us/windows/wsl/connect-usb}{Microsoft WSL USB 연결 안내}
+\end{frame}
+
+\begin{frame}{WSL에 JTAG 전달 · 연결}
+\small
+관리자 PowerShell에서 한 번 공유한 뒤, 일반 PowerShell에서 연결한다. MY\_BUSID에는 앞에서 확인한 BUSID를 넣는다.\par\terminalbox{usbipd bind --busid MY\_BUSID\\usbipd attach --wsl --busid MY\_BUSID\\usbipd list}bind만 관리자 권한이 필요하다. 연결 상태가 Attached인지 확인한다. WSL에 연결한 동안 Windows 프로그램은 해당 USB 장치를 사용할 수 없다.\par
+\end{frame}
+
+\begin{frame}{WSL에서 장치 확인과 반환}
+\small
+WSL Ubuntu 터미널에서 장치가 보이는지 먼저 확인한다.\par\terminalbox{lsusb\\openFPGALoader --list-cables\\openFPGALoader --detect}권한 오류는 공식 udev 설정 안내를 확인한다. FPGA 탐지가 실패하면 bit 기록으로 진행하지 않는다. 실습이 끝나면 Windows PowerShell에서 반환한다.\par\terminalbox{usbipd detach --busid MY\_BUSID}\href{https://trabucayre.github.io/openFPGALoader/guide/install.html\#udev-rules}{공식 USB 접근 권한 안내}
 \end{frame}
 
 \begin{frame}{bit 읽기와 실제 기록}
@@ -433,6 +660,17 @@ macOS에서는 Homebrew로 설치한다. Linux에서는 배포 패키지 또는 
 \item 실제 케이블 이름으로 MY\_CABLE을 바꾸고 방금 생성한 bit를 SRAM에 기록한다.
 \item 종료 코드와 기록 로그를 확인한 뒤 리셋 버튼을 누른다.
 \item 모드 버튼으로 8개 모드를 순회하며 LCD 이름과 회로 출력을 예상과 비교한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{통합판 영상의 촬영 순서}
+\small
+\begin{enumerate}
+\item K4 초기화 후 LCD MODE 01과 카운터 동작을 촬영한다.
+\item N8을 누르고 놓아 다음 이름으로 바뀌는 장면을 찍는다. 회로 한 단계는 N4로 실행한다.
+\item 8개 모드마다 LCD 이름·스위치 입력·출력을 함께 보여 준다.
+\item MODE 08의 여덟 자리와 MODE 01로 돌아갈 때 카운터 초기화를 보여 준다.
+\item 실제로 기록한 bit의 경로·해시와 사진·영상 링크를 README 및 실험 후 레포트에 연결한다.
 \end{enumerate}
 \end{frame}
 

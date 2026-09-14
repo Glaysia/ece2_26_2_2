@@ -1,0 +1,21 @@
+{
+  "status": "PDF_VISUAL_AND_STRUCTURE_REVIEWED",
+  "reviewed_on": "2026-09-14",
+  "pages": 5,
+  "all_pages_visually_reviewed": true,
+  "pdf_sha256": "35129cc88989b81a65298a541f7642526a5f537e1cd11a626a16bdaf9add4da0",
+  "tex_sha256": "ac74e6b8c4e31b7ae3fab8f2b88083c1076d4938e359d04099fe15c5d493b348",
+  "visual_method": "All 5 pages rendered at 140 dpi and individually inspected.",
+  "final_render_sha256": {
+    "page-1.png": "e9d945ad39e3fb2895679b0b83708730cb8af9c2a7e829c34209dc3eab18a60a",
+    "page-2.png": "1be314206456a7470b037442d25ba8997f75f1c13295cd8a2c0dcdab6debab11",
+    "page-3.png": "3c560f3f4e80b5f24583f3ffd706cb9f409b109ab5a1fef78411fa2af0947284",
+    "page-4.png": "cf7f91fba3e89a729529a2b68c52201b41835ad19a977ae76f436add4f77b44e",
+    "page-5.png": "3ee8034ed25fb6afe392ed736ef669534bcd0c4b671ec3e2682e247031d36d75"
+  },
+  "internal_links": 5,
+  "home_destination_page": 2,
+  "aspect_ratio": "4:3",
+  "template_tag": "v2.0.1",
+  "gui_click_link_test": "PENDING final viewer review"
+}

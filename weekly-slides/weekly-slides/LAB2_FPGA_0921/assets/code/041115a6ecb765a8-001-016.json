@@ -1,0 +1,23 @@
+{
+  "source_sha256": "041115a6ecb765a8d3cd96115209b538485d073235fba64dbc4e6f464ad1bd59",
+  "lines": [
+    1,
+    16
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\integrated-0914\\07-lcd-lines-01-32.jpg",
+  "image": "assets/code/041115a6ecb765a8-001-016.png",
+  "crop": [
+    82,
+    90,
+    955,
+    474
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 220989328
+  },
+  "captured_at": "2026-09-14T03:41:01.315755+00:00",
+  "image_sha256": "31976db33e7b20459355e31513afc9b4bbd31e1192629008f7db15740bd11150",
+  "template_tag": "v2.0.1"
+}

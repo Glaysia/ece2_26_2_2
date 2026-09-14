@@ -1,0 +1,19 @@
+{
+  "status": "SIMULATED",
+  "run": "run-a25c0d50be124c3993e766bf61dba66c",
+  "functional_correctness": "NOT_ASSESSED",
+  "inputs_sha256": {
+    "simulation.json": "67c70f8adf2cd802d949e10b1420ceaa211930456b46c54f1d724c62743be30f",
+    "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+    "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+    "src/lab2_shift_register.v": "5212d5d01d655d09c5e341f766bd8681f96e5a9b77cef4c93146d36d20f8133c",
+    "sim/tb_shift_register4.sv": "1683da25534c5ea9284a14877303d5e5cd2ee6fca439036a5eee79515cad13a3"
+  },
+  "wave_sha256": "eb1a3b8ce7a60562845e26589835f48d0cb340ae36224d05e498a540cbec39f3",
+  "gui_action": "VS Code Ctrl+Shift+B, template 02 Simulate",
+  "capture": "assets/shift-0913/06-vscode-pass.png",
+  "wave_gui": "Actual VaporView: clk/rst/enable/serial_in/value, ns, Zoom Fit, 0\u2013106 ns",
+  "vivado_gui": "PENDING",
+  "board": "NOT_RUN",
+  "wave_capture": "assets/shift-0913/10-wave-ns.png"
+}

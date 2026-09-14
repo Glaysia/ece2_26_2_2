@@ -1,0 +1,42 @@
+{
+  "status": "GUI_XSIM_VERIFIED",
+  "checks": 11,
+  "end_ns": 67,
+  "inputs": {
+    "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+    "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+    "src/lab2_mealy.v": "7828bd85034cac0e9c61bd23bd470df1d420310845ebe7263dc33344e09db5bf",
+    "sim/tb_mealy_toggle.sv": "37b462465bfda7d9cf32a44b0f63cc1a02274b41db1f10a1c932674ae6f2eff0",
+    "constraints/lab2_mealy.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+  },
+  "physical_board": false,
+  "synthesis": "GUI_PASS",
+  "implementation": "GUI_PASS",
+  "bitstream": "GUI_PASS; see vivado-gui-validation.json",
+  "screenshots": {
+    "01-new-menu.png": "8f6e31e8508d1cdf2307484d72ffe38112c185297a063fe85a1550778cce931d",
+    "02-project-name.png": "78ae3f8b9b5e8fdce36501ba13d4b847f740272e0f7a3f9f2bbea3c582fa4990",
+    "03-rtl-project.png": "7c8dc2f2b4093e0a31fb0967709615f9748c1579df5fb4ed2bef1fed89f81a16",
+    "04-part.png": "d76a76d69333e1dc027c7346379716afaf3eef6991a53ef6dc2cf260cb3e9565",
+    "05-project-summary.png": "580609c853ac121aa92a43d437d3d861d060e54fb2a6a2df878e43d6e67863a6",
+    "06-design-sources.png": "6e49a6c20e8c3b8f572b06dfc684fc24759f47c1b1601ebada89f431ba6dcb9d",
+    "07-simulation-source.png": "b750858dbaf630fb406857f27f040e28ed5b4e039ad76022a2179522328ba07a",
+    "08-constraints.png": "0438be7a708648cd63772cc89a83dacf304c0a9dc5d13a5ad4e1f52de39db2f9",
+    "09-set-simulation-top.png": "131edf83a728ff2bd593c5b396ba278e7defd21250f0afd903794f3b48711162",
+    "10-simulation-top.png": "9c10302bf82c193115d973417643550a9da1613be48be96e5534c252a020b43c",
+    "11-run-behavioral.png": "577ede162c02f0cf5588d2f3c39472dbc318c4707941ed90435fe6818ad1d0c9",
+    "12-xsim-pass.png": "231a25491309614269b278f4adc0dc995414d4a9af63e16b4d4a3738b9df7d34",
+    "13-xsim-wave-full.png": "73c323a4ca3bcf2ee577b3ec9d89f7be20d98078793955e38fd63792b5371d1a",
+    "14-elaborate-dialog.png": "8e3468424383f9e9a3db4f601229dc911d5f2f5a8de64fb995f1e89dab7515cf",
+    "15-io-led.png": "81411c24dc2ca06707014a7afb919102f0aaa18c12c13576b832ee397e3e087d",
+    "16-io-switches.png": "afd96b091f91a6beac12078027e91c3102d7072f18ced2741ff76fc6e2531b80",
+    "17-io-all.png": "40915dd9be4dd0f86241397ab15aa5ef07d43619cf38aed426419367118260fa",
+    "18-synthesis-launch.png": "94084c3d4908bd2ad87e06cc4af7012fbea576f3e5eb582e000eb90a29a6a20f",
+    "19-synthesis-complete.png": "f6aad9a9f8081bf63d2ecbdcfb60d37462199bb680ae2afc23972800d25b7a24",
+    "20-implementation-launch.png": "d295791ddb26507cc2324388f37bcad65be45cfa21db5c4cb19cafcccf881817",
+    "21-implementation-complete.png": "c46b7f24f24133f4250720056ad1373df63f7fcc1195ccdf92944768f67e5290",
+    "22-bitstream-launch.png": "10af765b7981b78301d9f3ea861eb4c3244c24e737a2ae4b2263babd6ae478bc",
+    "23-bitstream-complete.png": "2b9fcf80f0f33af580e065f6f533c5c60578b9b5d68d251f07ed3d068a2a14b8",
+    "24-timing.png": "6f9c839e0c6381006236b2d4aa66efc7a9123e07fafebf2885b0437a92af6620"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "actual_vscode_capture": true,
+  "source_sha256": "4638c821526b32593230b9f42bfb55f1152730301ee4327a039bc8e1326a8f7b",
+  "lines": [
+    1,
+    16
+  ],
+  "image_sha256": "b732424acbea9ca93b8b911da7a6267967956750186e716d85b5cfb55eede941",
+  "captured_on": "2026-09-13",
+  "source": "src/lab2_register.v",
+  "full_capture": "weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\register-0913\\02-register-board.png",
+  "crop": [
+    353,
+    36,
+    1210,
+    478
+  ]
+}

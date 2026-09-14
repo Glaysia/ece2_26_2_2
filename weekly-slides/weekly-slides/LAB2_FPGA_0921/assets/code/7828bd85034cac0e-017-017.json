@@ -1,0 +1,23 @@
+{
+  "source_sha256": "7828bd85034cac0e9c61bd23bd470df1d420310845ebe7263dc33344e09db5bf",
+  "lines": [
+    17,
+    17
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\mealy-0914\\15-board-clean.jpg",
+  "image": "assets/code/7828bd85034cac0e-017-017.png",
+  "crop": [
+    382,
+    474,
+    1140,
+    498
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 71566408
+  },
+  "captured_at": "2026-09-13T17:25:13.396303+00:00",
+  "image_sha256": "d8402cfd518543a41981ca0f3bad86a64535454d7825b0d9ecadd6bc89030bf8",
+  "template_tag": "v2.0.1"
+}

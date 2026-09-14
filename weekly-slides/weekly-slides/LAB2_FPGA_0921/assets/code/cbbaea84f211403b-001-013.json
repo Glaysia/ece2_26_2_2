@@ -1,0 +1,23 @@
+{
+  "source_sha256": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+  "lines": [
+    1,
+    13
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\mealy-0914\\03-core.png",
+  "image": "assets/code/cbbaea84f211403b-001-013.png",
+  "crop": [
+    382,
+    90,
+    1190,
+    402
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 71566408
+  },
+  "captured_at": "2026-09-13T16:48:26.632213+00:00",
+  "image_sha256": "1c6d16f3655513eeec60c74666511c577bda97209156b6d69e0b656728863330",
+  "template_tag": "v2.0.1"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://github.com/fpgawars/tools-oss-cad-suite/releases/download/2026-08-19/apio-oss-cad-suite-darwin-arm64-20260819.tgz",
+    "initial_archive_entries": [
+      "./BUILD-INFO.json",
+      "./Frameworks",
+      "./Frameworks/QtCharts.framework",
+      "./Frameworks/QtCharts.framework/QtCharts",
+      "./Frameworks/QtCharts.framework/Resources"
+    ]
+  },
+  {
+    "url": "https://github.com/fpgawars/tools-openxc7/releases/download/2026-08-20/apio-openxc7-darwin-arm64-20260820.tgz",
+    "initial_archive_entries": [
+      ".",
+      "./BUILD-INFO.json",
+      "./chipdb",
+      "./chipdb/xc7z020clg484.bin",
+      "./chipdb/xc7a100tftg256.bin"
+    ]
+  }
+]

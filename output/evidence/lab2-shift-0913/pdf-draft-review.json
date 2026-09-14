@@ -1,0 +1,15 @@
+{
+  "pages": 60,
+  "internal_links": 66,
+  "pdf_sha256": "fe15789d8d135d283958095865b0bc250f90fa23b5d56f09c9616c3fbb577b86",
+  "tex_sha256": "f0e675a26175c5f6c56352f2826e28bd1f96cd1c5232ad61af4887812ee5cd6f",
+  "status": "DRAFT_VIVADO_CAPTURE_AND_VALIDATION_PENDING",
+  "all_pages_layout_reviewed": true,
+  "review_method": "All 60 rendered pages viewed; code, TB continuation and waveform pages inspected separately. Editor menu enlarged and re-rendered.",
+  "source_hashes_verified": true,
+  "home_destination_page": 2,
+  "gui_link_click": "PENDING",
+  "vivado": "PENDING",
+  "physical_board": "NOT_RUN",
+  "release_complete": false
+}

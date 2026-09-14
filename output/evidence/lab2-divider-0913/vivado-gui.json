@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-13",
+  "vivado_version": "2026.1",
+  "part": "xc7s75fgga484-1",
+  "workflow": "Actual GUI: project creation, sources, XSim, elaboration, pin table, synthesis, implementation, bitstream",
+  "xsim_pass": "LAB2_PASS clock_divider checks=129",
+  "finish_ns": 436,
+  "bitstream": {
+    "path": "tmp\\lab2-students-0913\\lab2_02_clock_divider\\vivado\\lab2_clock_divider.runs\\impl_1\\lab2_clock_divider.bit",
+    "bytes": 3687021,
+    "sha256": "e1c18851f97e0fa833b720a226c91cf2da7548d39489aacc07bcce016f1e0bb1"
+  },
+  "wns_ns": 999996.312,
+  "whs_ns": 0.122,
+  "warnings": [
+    "TIMING-18: Missing input or output delay",
+    "CFGBVS-1: Missing configuration voltage properties"
+  ],
+  "physical_board": "NOT_RUN",
+  "logs": [
+    {
+      "file": "output\\evidence\\lab2-divider-0913\\vivado\\impl_1-runme.log",
+      "sha256": "a527cc5ac7c6b10027d2b350a3787f9b1a6c37e650a7a3f4091b1339011e5073"
+    },
+    {
+      "file": "output\\evidence\\lab2-divider-0913\\vivado\\impl_1-lab2_clock_divider_timing_summary_routed.rpt",
+      "sha256": "b210bde9c2e21ecc6eb82b677885af74a4104020c9a13f89b17c56f755d3fc09"
+    },
+    {
+      "file": "output\\evidence\\lab2-divider-0913\\vivado\\impl_1-lab2_clock_divider_drc_routed.rpt",
+      "sha256": "f18abdf23404ead30c1bac7ab9063c1b3314b80023acb5c73f4734ed30c4e007"
+    },
+    {
+      "file": "output\\evidence\\lab2-divider-0913\\vivado\\synth_1-runme.log",
+      "sha256": "486a49f0a81cdd452ee3ae7fb352f82ab880e6d3fa33c69ca766bc1c92909b8e"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PDF_VISUAL_AND_STRUCTURE_REVIEWED",
+  "reviewed_on": "2026-09-13",
+  "pages": 76,
+  "all_pages_visually_reviewed": true,
+  "pdf_sha256": "7a6cbf3032625c82f59f9367eff609ee7cb3e6d9e0216e7fc664e59a1786155f",
+  "tex_sha256": "4ecb7d6b79ab083894101a3c7665466f5e4445c768aaf9a12d1e37847089a9e0",
+  "visual_method": "All 76 pages rendered against previously reviewed 75-page PDF. Pages 3 and 76 viewed directly; other 74 pages identical in all pixels including footers.",
+  "changed_pages": [
+    3,
+    76
+  ],
+  "internal_links": 82,
+  "home_destination_page": 2,
+  "aspect_ratio": "4:3",
+  "template_tag": "v2.0.1",
+  "gui_click_link_test": "PENDING final viewer review",
+  "physical_board": "NOT_RUN; student instructions included",
+  "source_artifact_and_gui_hashes_revalidated": true,
+  "drc_line_endings": {
+    "note": "Git index LF, working tree CRLF; LF normalization exactly matches original evidence hash.",
+    "working_tree_sha256": "910c8e771aa59d444cfcab0b99eabd50289da742bcf335e2c4b12e2b5c33a190",
+    "normalized_lf_sha256": "b688f9bcd338ea204d0f417b12427734ad9da29c6df5e1671fe017acca2644b8"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "status": "PARTIAL_REVIEW",
+  "pdf_sha256": "d9b7a23d5ea674432f7a3bcfa817ac5afa01b5cabc4a5cc607eee3837a971dbc",
+  "tex_sha256": "1298acc0b7b8c10b4b7c1348fe3d067e4e7771f91ddc7cb8527f5abdccc7c49f",
+  "pages": 60,
+  "reviewed_pages": [
+    11,
+    16,
+    20,
+    21,
+    24,
+    25,
+    26,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "all_pages_visually_reviewed": false,
+  "notes": [
+    "Actual VS Code code and waveform captures reviewed in prior goal turn",
+    "Page 34 PASS log enlarged and rebuilt; fixed-34.png reviewed",
+    "Vivado replacement and complete final review remain"
+  ]
+}

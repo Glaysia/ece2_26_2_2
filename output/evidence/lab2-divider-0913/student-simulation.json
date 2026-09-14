@@ -1,0 +1,59 @@
+[
+  {
+    "case": "normal",
+    "exit_code": 0,
+    "result": {
+      "status": "SIMULATED",
+      "run": "run-67daf39fec2444528be7f3bdd06f45cf",
+      "functional_correctness": "NOT_ASSESSED",
+      "inputs_sha256": {
+        "simulation.json": "c88bf7bf8dacb2a5badcc637049b7be4c5faf6d4e1b6868c4618ae38f82f352b",
+        "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_clock_divider.v": "8b518a4017aabcf13e9ffd5fce2d1c8032fe9ef6569176083897fdad9f000a14",
+        "sim/tb_clock_divider.sv": "1a18d85d870139717f6190caf6c016def9c67d7be42ec51e20f2732cef19abb0"
+      },
+      "wave_sha256": "f6d80fad88474134ee1222603b63f32a305722d80c4e86b79444f1ce375d4759"
+    },
+    "stdout": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\sim -s tb_clock_divider -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\build\\sim\\run-67daf39fec2444528be7f3bdd06f45cf\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src\\clock_divider.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src\\lab2_clock_divider.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\sim\\tb_clock_divider.sv\r\n\r\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\build\\sim\\run-67daf39fec2444528be7f3bdd06f45cf\\sim.vvp\r\nVCD info: dumpfile wave.vcd opened for output.\r\nLAB2_PASS clock_divider checks=129\r\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\sim\\tb_clock_divider.sv:19: $finish called at 436000 (1ps)\r\n\r\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\r\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\build\\sim\\wave.vcd\r\n",
+    "stderr": ""
+  },
+  {
+    "case": "changed",
+    "exit_code": 1,
+    "result": {
+      "status": "FAILED",
+      "run": "run-a725f70a2591498a831970b73d85eeec",
+      "functional_correctness": "NOT_ASSESSED",
+      "inputs_sha256": {
+        "simulation.json": "c88bf7bf8dacb2a5badcc637049b7be4c5faf6d4e1b6868c4618ae38f82f352b",
+        "src/clock_divider.v": "82f6a39b282354b0bbd199757859e7ff0ec94dd941ee63cd86faa9db86ba3e01",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_clock_divider.v": "8b518a4017aabcf13e9ffd5fce2d1c8032fe9ef6569176083897fdad9f000a14",
+        "sim/tb_clock_divider.sv": "1a18d85d870139717f6190caf6c016def9c67d7be42ec51e20f2732cef19abb0"
+      },
+      "error": "종료 코드 1: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\build\\sim\\run-a725f70a2591498a831970b73d85eeec\\simulation.log"
+    },
+    "stdout": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\sim -s tb_clock_divider -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\build\\sim\\run-a725f70a2591498a831970b73d85eeec\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src\\clock_divider.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src\\lab2_clock_divider.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\sim\\tb_clock_divider.sv\r\n\r\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\build\\sim\\run-a725f70a2591498a831970b73d85eeec\\sim.vvp\r\nVCD info: dumpfile wave.vcd opened for output.\r\nLAB2_FAIL minimum divisor duty time=16000\r\nFATAL: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\sim\\tb_clock_divider.sv:12: check failed\r\n       Time: 16000  Scope: tb_clock_divider.check\r\n\r\n",
+    "stderr": "ERROR: 종료 코드 1: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\build\\sim\\run-a725f70a2591498a831970b73d85eeec\\simulation.log\r\n"
+  },
+  {
+    "case": "restored",
+    "exit_code": 0,
+    "result": {
+      "status": "SIMULATED",
+      "run": "run-9b742e3ed84d4256a4aae9750218c9c2",
+      "functional_correctness": "NOT_ASSESSED",
+      "inputs_sha256": {
+        "simulation.json": "c88bf7bf8dacb2a5badcc637049b7be4c5faf6d4e1b6868c4618ae38f82f352b",
+        "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_clock_divider.v": "8b518a4017aabcf13e9ffd5fce2d1c8032fe9ef6569176083897fdad9f000a14",
+        "sim/tb_clock_divider.sv": "1a18d85d870139717f6190caf6c016def9c67d7be42ec51e20f2732cef19abb0"
+      },
+      "wave_sha256": "ab20c3b96a65d32a829baf03385699cad041030a67ca3007a2145c26efae8a75"
+    },
+    "stdout": "RUN C:\\msys64\\mingw64\\bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\sim -s tb_clock_divider -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\build\\sim\\run-9b742e3ed84d4256a4aae9750218c9c2\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src\\clock_divider.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\src\\lab2_clock_divider.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\sim\\tb_clock_divider.sv\r\n\r\nRUN C:\\msys64\\mingw64\\bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\build\\sim\\run-9b742e3ed84d4256a4aae9750218c9c2\\sim.vvp\r\nVCD info: dumpfile wave.vcd opened for output.\r\nLAB2_PASS clock_divider checks=129\r\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\sim\\tb_clock_divider.sv:19: $finish called at 436000 (1ps)\r\n\r\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\r\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_02_clock_divider\\build\\sim\\wave.vcd\r\n",
+    "stderr": ""
+  }
+]

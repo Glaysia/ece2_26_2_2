@@ -1,0 +1,23 @@
+{
+  "source_sha256": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+  "lines": [
+    1,
+    16
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\segment-0914\\03-core-first.jpg",
+  "image": "assets/code/c6a978723d5f703f-001-016.png",
+  "crop": [
+    382,
+    90,
+    1190,
+    474
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 62785850
+  },
+  "captured_at": "2026-09-13T17:40:09.121710+00:00",
+  "image_sha256": "a1a3c3ac34a78dc1fa5d55b0d67aa0d9d5599e823cd7fbcd42ae1193e59a6587",
+  "template_tag": "v2.0.1"
+}

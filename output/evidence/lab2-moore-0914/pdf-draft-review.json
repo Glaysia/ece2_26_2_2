@@ -1,0 +1,28 @@
+{
+  "status": "DRAFT_PARTIAL_VISUAL_REVIEW",
+  "pages": 58,
+  "reviewed_pages": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "all_pages_visually_reviewed": false,
+  "pdf_sha256": "f9855a54f908e0aed80eef9b8d4b10f7a336e68d2cf96acc11bf023c06aa48cd",
+  "tex_sha256": "9afea25fd2ca61db546b398426d92bb9e39673d92f1bc2e22953bc161328e97e",
+  "last_change": "Page 33 PASS log enlarged, rebuilt and directly visually reviewed",
+  "remaining": "Moore Vivado GUI execution/captures and full final PDF review",
+  "physical_board": "NOT_RUN"
+}

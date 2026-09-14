@@ -1,0 +1,31 @@
+{
+  "template_tag": "v2.0.0",
+  "template_commit": "a248b802aa2dec8def8caaf5175f12fc005f8f5c",
+  "preparation": "Producer copied canonical source bytes into fresh clone; student manual directs typing from screenshots",
+  "execution": "CLI",
+  "runs": [
+    {
+      "stage": "normal",
+      "exit_code": 0,
+      "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS register_pair checks=7\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_03_register\\sim\\tb_register_pair.sv:19: $finish called at 66000 (1ps)\n"
+    },
+    {
+      "stage": "changed",
+      "exit_code": 1,
+      "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_FAIL transfer stored not live input time=26000\nFATAL: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_03_register\\sim\\tb_register_pair.sv:12: check failed\n       Time: 26000  Scope: tb_register_pair.check\n"
+    },
+    {
+      "stage": "restored",
+      "exit_code": 0,
+      "log": "VCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS register_pair checks=7\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_03_register\\sim\\tb_register_pair.sv:19: $finish called at 66000 (1ps)\n"
+    }
+  ],
+  "source_sha256": {
+    "simulation.json": "3bbd3e5da74260f1ba1b5da6da5bc80097515c5f11eb23d86e1210d69de35279",
+    "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+    "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+    "src/lab2_register.v": "4638c821526b32593230b9f42bfb55f1152730301ee4327a039bc8e1326a8f7b",
+    "sim/tb_register_pair.sv": "623b0d84bab55735ed5dded6061b3cd60ccee27c4bd66c049969e1245f963b7b",
+    "constraints/lab2_register.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+  }
+}

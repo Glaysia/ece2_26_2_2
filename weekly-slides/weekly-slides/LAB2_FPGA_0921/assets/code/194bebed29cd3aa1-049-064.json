@@ -1,0 +1,23 @@
+{
+  "source_sha256": "194bebed29cd3aa13e2f6c30dcff46dedebef571c15436a0501edfedd56b838a",
+  "lines": [
+    49,
+    64
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\integrated-0914\\04-top-lines-49-67.jpg",
+  "image": "assets/code/194bebed29cd3aa1-049-064.png",
+  "crop": [
+    82,
+    90,
+    830,
+    474
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 220989328
+  },
+  "captured_at": "2026-09-14T03:37:02.005269+00:00",
+  "image_sha256": "c395f3c402b009b9bb32764e07cc1649ba765768bd0fa47ba1c3ed53b5a980c7",
+  "template_tag": "v2.0.1"
+}

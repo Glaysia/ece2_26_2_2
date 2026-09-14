@@ -1,0 +1,19 @@
+{
+  "status": "PDF_VISUAL_AND_STRUCTURE_REVIEWED",
+  "reviewed_on": "2026-09-13",
+  "pages": 27,
+  "all_pages_visually_reviewed": true,
+  "pdf_sha256": "e30dcdba8acb8d6cb770ccf4b780875d019cbf30fcd4bf399f5414293b4aed38",
+  "tex_sha256": "c1c782cfb1d64008e48d05d7f26736172382d5b9d78f862168e6d072d8cab811",
+  "visual_method": "All 27 pages rendered and viewed; pages 6 and 27 separately inspected at full size.",
+  "changed_pages": [
+    6,
+    27
+  ],
+  "internal_links": 31,
+  "home_destination_page": 2,
+  "aspect_ratio": "4:3",
+  "template_tag": "v2.0.1",
+  "gui_click_link_test": "PENDING final viewer review",
+  "physical_board": "NOT_RUN; student instructions included"
+}

@@ -1,0 +1,13 @@
+{
+  "actual_vscode_capture": true,
+  "source_sha256": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+  "lines": [
+    1,
+    16
+  ],
+  "image_sha256": "97b81634a40ab2b8e35012b43a5d4a2b294ae69c1eeeb78205e40f3cf59bdaf3",
+  "captured_on": "2026-09-13",
+  "source": "src/clock_divider.v",
+  "student_project": "tmp/lab2-students-0913/lab2_02_clock_divider",
+  "notes": "Actual editor screenshot. Four static-analysis warnings remain."
+}

@@ -1,0 +1,23 @@
+{
+  "source_sha256": "1c255068f06c91c722144411ef362503cad8de5184a0494b858e72410c4f155b",
+  "lines": [
+    17,
+    21
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\integrated-0914\\06-button.jpg",
+  "image": "assets/code/1c255068f06c91c7-017-021.png",
+  "crop": [
+    82,
+    474,
+    660,
+    594
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 220989328
+  },
+  "captured_at": "2026-09-14T03:41:01.246235+00:00",
+  "image_sha256": "4ef7e9c6b2c6ff206d103644731579a72ec0c5314335ea249b48b70eb19c63ad",
+  "template_tag": "v2.0.1"
+}

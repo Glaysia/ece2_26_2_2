@@ -3,6 +3,7 @@ from pathlib import Path
 import argparse
 import json
 import subprocess
+from lab2_scope import stems
 
 ROOT=Path(__file__).resolve().parents[2]
 BASE=ROOT/'weekly-slides/weekly-slides/LAB2_FPGA_0921'
@@ -13,7 +14,7 @@ def main():
     parser.add_argument('--output',type=Path,default=ROOT/'tmp/lab2-build')
     args=parser.parse_args()
     out=args.output.resolve(); out.mkdir(parents=True,exist_ok=True)
-    names=args.names or [p.stem for p in sorted(BASE.glob('*.tex'))]
+    names=args.names or stems()
     results=[]
     for name in names:
         if Path(name).name!=name or not (BASE/(name+'.tex')).is_file():

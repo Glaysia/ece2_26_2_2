@@ -1,0 +1,24 @@
+{
+  "source_sha256": "c3c9b42204daea82209604a197c975bd3aee71b2e3fb4f9b458ba21da1ff3c6f",
+  "lines": [
+    1,
+    16
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\moore-0914\\05-tb-first.png",
+  "image": "assets/code/c3c9b42204daea82-001-016.png",
+  "crop": [
+    382,
+    90,
+    1070,
+    474
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 8915172,
+    "title": "LAB1 (Workspace) - Visual Studio Code"
+  },
+  "captured_at": "2026-09-13T15:55:42.810582+00:00",
+  "image_sha256": "c1d11862da08ccc70c7796465105a0ba2900b678f50c68fee11f7b336f4e9ae8",
+  "template_tag": "v2.0.1"
+}

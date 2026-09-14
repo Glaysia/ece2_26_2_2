@@ -1,0 +1,19 @@
+{
+  "status": "PDF_VISUAL_AND_STRUCTURE_REVIEWED",
+  "reviewed_on": "2026-09-13",
+  "pages": 80,
+  "all_pages_visually_reviewed": true,
+  "pdf_sha256": "89c4e97c6a0638a30ab0ac05974bcc230b31ad6f487e86071c38991cbc20730b",
+  "tex_sha256": "b01db775b41bfe735c3b84957a76bebcd9615f958c4be449d9c4911968950fcd",
+  "internal_links": 86,
+  "template_tag": "v2.0.1",
+  "visual_method": "All 80 pages rendered and compared with reviewed 79-page PDF. Changed body pages 3,7,37 viewed directly. Other body pixels identical. Footer graphics identical, page numbers and home annotations verified on every page.",
+  "changed_pages": [
+    3,
+    7,
+    37
+  ],
+  "physical_board": "NOT_RUN",
+  "gui_click_link_test": "PENDING final viewer review",
+  "baseline_review": "pdf-review-v2.0.0.json"
+}

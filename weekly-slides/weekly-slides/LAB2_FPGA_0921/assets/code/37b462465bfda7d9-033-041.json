@@ -1,0 +1,23 @@
+{
+  "source_sha256": "37b462465bfda7d9cf32a44b0f63cc1a02274b41db1f10a1c932674ae6f2eff0",
+  "lines": [
+    33,
+    41
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\mealy-0914\\17-tb-last-clean.jpg",
+  "image": "assets/code/37b462465bfda7d9-033-041.png",
+  "crop": [
+    382,
+    467,
+    1210,
+    683
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 71566408
+  },
+  "captured_at": "2026-09-13T17:25:13.514601+00:00",
+  "image_sha256": "2078dfd07c81d2d8545e4b05cca3c219196bea1cc80f02c976129cb2eae13f27",
+  "template_tag": "v2.0.1"
+}

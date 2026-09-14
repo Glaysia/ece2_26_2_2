@@ -21,7 +21,7 @@ def main():
     inventory = json.loads((BASE / 'series-inventory.json').read_text(encoding='utf-8'))
     builds = json.loads((OUT / 'build-results.json').read_text(encoding='utf-8'))
     stems = {row['file'] for row in inventory} | {'05.LAB2_00_START', '05.LAB2_00_CONTENTS'}
-    assert len(stems) == 20 and {row['file'] for row in builds} == stems
+    assert len(stems) == 11 and {row['file'] for row in builds} == stems
     assert all(row['overfull'] == row['missing_characters'] == 0 for row in builds)
     readers = {stem + '.pdf': PdfReader(OUT / (stem + '.pdf')) for stem in stems}
     expected_pages = {row['file'] + '.pdf': row['pages'] for row in inventory}

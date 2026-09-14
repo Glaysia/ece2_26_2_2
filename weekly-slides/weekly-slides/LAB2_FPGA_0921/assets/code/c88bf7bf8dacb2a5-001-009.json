@@ -1,0 +1,11 @@
+{
+  "actual_vscode_capture": true,
+  "source_sha256": "c88bf7bf8dacb2a5badcc637049b7be4c5faf6d4e1b6868c4618ae38f82f352b",
+  "lines": [
+    1,
+    9
+  ],
+  "image_sha256": "614204b23b501e65495b998f8ee69715bb18248fb4cbb096b5481321fbcc5a0a",
+  "captured_on": "2026-09-13",
+  "source": "simulation.json"
+}

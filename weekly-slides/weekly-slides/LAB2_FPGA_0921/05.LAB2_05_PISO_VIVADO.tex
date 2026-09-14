@@ -12,12 +12,12 @@ VS Code에서 직접 작성·검증한 다음 장비로 확인한다.\par\vspace
 
 \begin{frame}[label=lab2-contents]{목차}
 \small
-\navlink{setup}{프로젝트 시작}\par\vspace{0.3cm}\navlink{code}{RTL·TB·XDC 직접 작성}\par\vspace{0.3cm}\navlink{simulation}{VS Code 시뮬레이션과 수정}\par\vspace{0.3cm}\navlink{implementation}{구현과 장치 기록}\par\vspace{0.3cm}\navlink{reports}{레포트}\quad\href{05.LAB2_00_START.pdf}{공통 예습}\quad\href{05.LAB2_00_CONTENTS.pdf}{전체 목차}\par\vspace{0.3cm}\href{05.LAB2_13_PISO_LEGACY.pdf}{대응 레거시판}\quad
+\navlink{setup}{프로젝트 시작}\par\vspace{0.3cm}\navlink{code}{RTL·TB·XDC 직접 작성}\par\vspace{0.3cm}\navlink{simulation}{VS Code 시뮬레이션과 수정}\par\vspace{0.3cm}\navlink{implementation}{구현과 장치 기록}\par\vspace{0.3cm}\navlink{reports}{레포트}\quad\href{05.LAB2_00_START.pdf}{공통 예습}\quad\href{05.LAB2_00_CONTENTS.pdf}{전체 목차}\par\vspace{0.3cm}
 \end{frame}
 
-\begin{frame}[label=setup]{v2.0.0 템플릿을 새 이름으로 clone}
+\begin{frame}[label=setup]{v2.0.1 템플릿을 새 이름으로 clone}
 \small
-Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.0 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab2\_05\_piso\\cd lab2\_05\_piso\\git switch -c main\\code LAB1.code-workspace}
+Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.1 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab2\_05\_piso\\cd lab2\_05\_piso\\git switch -c main\\code LAB1.code-workspace}
 \end{frame}
 
 \begin{frame}{File → New Window}
@@ -34,6 +34,17 @@ Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --br
 \item slang·VaporView·vscode-pdf의 Install을 누른다.
 \item Python과 Icarus 실행 파일은 별도로 설치되어 있어야 한다.
 \end{enumerate}
+\end{frame}
+
+\begin{frame}{v2.0.1 편집기와 시뮬레이터}
+\small
+\begin{enumerate}
+\item slang 확장·서버는 0.3.0을 기준으로 확인한다. 추천 목록은 버전을 고정하지 않는다.
+\item 템플릿의 .slang/server.json은 src·sim 탐색용이다. 새 RTL은 simulation.json에도 직접 등록한다.
+\item Ctrl+Shift+P → slang: Show Output. 서버 오류가 있으면 README의 버전 확인·재시작 절차를 따른다.
+\item slang.path에 다른 사람의 설치 경로를 복사하지 않는다. 직접 지정할 때는 User 설정에 자신의 경로를 쓴다.
+\item VS Code 02 Simulate는 Icarus, Vivado Run Behavioral Simulation은 XSim이다.
+\end{enumerate}\href{https://github.com/Glaysia/fpga-lab-template/tree/v2.0.1\#3-실행-준비}{템플릿 도구 설치·오류 해결 안내}
 \end{frame}
 
 \begin{frame}{시뮬레이션 도구 확인}
@@ -75,7 +86,7 @@ sources: 앞 표의 src/ 파일 경로를 배열로 넣는다.\par\vspace{0.26cm
 
 \begin{frame}{simulation.json · 1–9행}
 \small
-simulation.json를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–9행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+simulation.json를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/8f851ff69cb73cf9-001-009.png}\par
 \end{frame}
 
 \begin{frame}[label=code]{이번 회로의 관찰 방법}
@@ -83,49 +94,95 @@ simulation.json를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm
 SW1..4(sw[7:4]): 병렬 데이터. SW8(sw[0])=1에서 버튼: load, 0에서 버튼: shift. LED[7:4]=저장값, LED[0]=직렬 출력.\par\vspace{0.26cm}입력 스위치를 먼저 정한 다음 버튼을 누른다.\par
 \end{frame}
 
+\begin{frame}{네 비트를 저장하고 한 비트씩 읽는다}
+\small
+PISO는 Parallel In, Serial Out이다. load=1인 상승 에지에서 data\_in의 네 비트를 value에 한 번에 저장한다.\par\vspace{0.26cm}serial\_out은 항상 value[3]이다. 먼저 현재 MSB를 읽고, enable=1인 다음 상승 에지에서 \{value[2:0], 0\}으로 이동한다.\par\vspace{0.26cm}입력을 bit 3에 넣었던 앞 실험과 달리, 이번에는 저장값을 bit 3 방향으로 옮기고 bit 0을 0으로 채운다.\par
+\end{frame}
+
+\begin{frame}{PISO의 제어 우선순위}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{llll}
+rst & load & enable & 다음 value\\\hline
+1 & 무관 & 무관 & 0\\
+0 & 1 & 무관 & data\_in\\
+0 & 0 & 1 & \{이전 value[2:0], 0\}\\
+0 & 0 & 0 & 유지\\
+\end{tabular}\end{center}load와 enable이 모두 1이면 load가 우선이다. serial\_out은 별도의 출력 레지스터가 아니라 저장값의 MSB를 연결한 선이다.\par
+\end{frame}
+
+\begin{frame}{1010을 읽는 정확한 시점}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{lll}
+관찰 시점 & value & serial\_out\\\hline
+load 직후, 첫 shift 전 & 1010 & 1\\
+첫 shift 후 & 0100 & 0\\
+둘째 shift 후 & 1000 & 1\\
+셋째 shift 후 & 0000 & 0\\
+넷째 shift 후 & 0000 & 0\\
+\end{tabular}\end{center}네 비트 1,0,1,0을 읽으려면 각 shift 에지 전에 출력값을 기록한다. shift 뒤에만 네 번 읽으면 첫 비트를 놓친다.\par
+\end{frame}
+
 \begin{frame}{piso4.v · 1–14행}
 \small
-src/piso4.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–14행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/piso4.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/f92dadd42b3ec327-001-014.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 1–16행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-001-016.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 17–32행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-017-032.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 33–46행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–46행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-033-046.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_piso.v · 1–16행}
 \small
-src/lab2\_piso.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_piso.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/aa7c90e77f50b103-001-016.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_piso.v · 17–18행}
 \small
-src/lab2\_piso.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–18행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_piso.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/aa7c90e77f50b103-017-018.png}\par
+\end{frame}
+
+\begin{frame}{TB는 모든 4비트 입력을 검사한다}
+\small
+word=0부터 15까지 반복한다. 각 word에서 load 우선, hold, 직렬 출력 4개, 네 번 shift 후 0 채움을 검사한다.\par\vspace{0.26cm}한 word당 7개 검사 × 16개 입력 + 처음 리셋 + 마지막 리셋 우선 = 114개다.\par\vspace{0.26cm}TB는 MSB를 먼저 비교한 뒤 step으로 이동한다. 같은 시각에 hold 검사와 첫 직렬 출력 검사가 함께 실행될 수 있다.\par
+\end{frame}
+
+\begin{frame}{입력 A가 나오는 파형 구간}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{ll}
+시각 & 관찰\\\hline
+616 ns & A 병렬 load 검사\\
+626 ns & hold와 첫 serial bit=1 검사\\
+636 ns & 둘째 bit=0 검사\\
+646 ns & 셋째 bit=1 검사\\
+656 ns & 넷째 bit=0 검사\\
+666 ns & 네 번 shift 후 value=0\\
+\end{tabular}\end{center}TB 전체 종료는 976 ns다. 위 시각은 반복문의 word=10 구간이며 첫 word=0 구간과 혼동하지 않는다.\par
 \end{frame}
 
 \begin{frame}{tb\_piso4.sv · 1–16행}
 \small
-sim/tb\_piso4.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_piso4.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c07306c7c8c7f17c-001-016.png}\par
 \end{frame}
 
 \begin{frame}{tb\_piso4.sv · 17–32행}
 \small
-sim/tb\_piso4.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_piso4.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c07306c7c8c7f17c-017-032.png}\par
 \end{frame}
 
 \begin{frame}{tb\_piso4.sv · 33–46행}
 \small
-sim/tb\_piso4.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–46행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_piso4.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c07306c7c8c7f17c-033-046.png}\par
 \end{frame}
 
 \begin{frame}{XDC를 직접 작성한다}
@@ -140,17 +197,17 @@ sim/tb\_piso4.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4c
 
 \begin{frame}{lab2\_piso.xdc · 1–16행}
 \small
-constraints/lab2\_piso.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_piso.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c409037fe63f5324-001-016.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_piso.xdc · 17–32행}
 \small
-constraints/lab2\_piso.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_piso.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c409037fe63f5324-017-032.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_piso.xdc · 33–42행}
 \small
-constraints/lab2\_piso.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–42행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_piso.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c409037fe63f5324-033-042.png}\par
 \end{frame}
 
 \begin{frame}[label=simulation]{VS Code에서 먼저 시뮬레이션}
@@ -180,6 +237,41 @@ constraints/lab2\_piso.xdc를 열고 해당 구간을 직접 입력한다.\par\v
 \terminalbox{LAB2\_PASS piso4 checks=114}Icarus 종료 시각: 976ns. 로그가 ps로 표시되면 1,000으로 나눠 ns와 비교한다.\par\vspace{0.26cm}이 수치는 교안의 입력 순서·TB·파라미터에 대한 기준이다.\par\vspace{0.26cm}검사 수만 보지 말고 예상 상태와 실제 파형이 일치하는 이유를 설명한다.\par
 \end{frame}
 
+\begin{frame}{PISO 자기검사 통과}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=276.75bp 112.5bp 414bp 540bp,clip]{assets/piso-0913/08-simulation-pass.png}\par\vspace{0.15cm}Ctrl+Shift+B 또는 Terminal → Run Task... → 02 Simulate. LAB2\_PASS piso4 checks=114를 확인한다. 바로 다음 종료 로그는 976000 ps = 976 ns다.\par
+\end{frame}
+
+\begin{frame}{설치된 파형 확장 활성화}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=40.5bp 498.75bp 609bp 78bp,clip]{assets/piso-0913/09-enable-wave.png}\par\vspace{0.15cm}Extensions → @installed vaporview. 확장이 꺼져 있으면 톱니바퀴 → Enable (Workspace). 설치되지 않았다면 앞의 추천 확장 절차로 설치한다.\par
+\end{frame}
+
+\begin{frame}{VCD를 VaporView로 열기}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=318.75bp 554.25bp 318.75bp 8.25bp,clip]{assets/piso-0913/10-open-with.png}\par\vspace{0.15cm}Explorer → build/sim/wave.vcd. 텍스트로 열리면 파일 탭 우클릭 → Reopen Editor With... → VaporView.\par
+\end{frame}
+
+\begin{frame}{일곱 신호를 차례로 추가}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=39bp 376.5bp 822bp 34.5bp,clip]{assets/piso-0913/11-netlist.png}\par\vspace{0.15cm}Netlist View → tb\_piso4 펼치기. clk, rst, load, enable, data\_in, value, serial\_out을 차례로 더블클릭한다.\par
+\end{frame}
+
+\begin{frame}{0–976 ns 전체 실행 확인}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=264.75bp 409.5bp 9bp 69bp,clip]{assets/piso-0913/12-wave-full.png}\par\vspace{0.15cm}Zoom Fit으로 전체 구간을 맞춘다. 오른쪽 아래 Time Units → ns. 신호 이름이 잘리면 이름 열 경계를 오른쪽으로 끈다. data\_in의 0부터 F까지 16개 입력을 확인한다.\par
+\end{frame}
+
+\begin{frame}{A 입력의 로드·유지·시프트}
+\small
+\includegraphics[width=\textwidth,height=4.7cm,keepaspectratio,trim=333bp 409.5bp 9.75bp 92.25bp,clip]{assets/piso-0913/13-wave-a.png}\par\vspace{0.15cm}600–670 ns 부근을 확대한다. 615 ns 에지에 A가 저장되고 625 ns 에지에는 유지된다. 635·645·655·665 ns 에지 뒤 value는 4·8·0·0이다. 화면의 버스 값은 16진수다.\par
+\end{frame}
+
+\begin{frame}{파형과 TB 검사 시각 연결}
+\small
+TB의 step은 상승 에지 뒤 1 ns를 기다린다. 저장은 615 ns, load 검사는 616 ns다. 626 ns에는 hold와 첫 직렬 비트 1을 검사한다.\par\vspace{0.26cm}이후 636·646·656 ns에 읽는 serial\_out은 0·1·0이다. 각 비트를 읽고 다음 step을 실행하므로 shift 뒤에만 읽는 방식과 구분한다.\par\vspace{0.26cm}VaporView 화면의 커서는 626.599 ns다. 이때 value=A, serial\_out=1이다. TB 비교 시각 자체가 커서 시각인 것은 아니다.\par
+\end{frame}
+
 \begin{frame}{수정 실험 · 실패와 복구}
 \small
 \begin{enumerate}
@@ -198,133 +290,176 @@ constraints/lab2\_piso.xdc를 열고 해당 구간을 직접 입력한다.\par\v
 \item RTL·TB·XDC·설정의 역할을 설명한다.
 \item 정상/변경/복구 3행 비교표와 실행 로그를 넣는다.
 \item VS Code 파형을 확대해 입력·이전 상태·다음 상태를 설명한다.
-\item 장비 클록·핀·예상 LED 동작을 정리한 뒤 Vivado/CLI로 진행한다.
+\item 장비 클록·핀·예상 LED 동작을 정리한 뒤 Vivado로 진행한다.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}[label=implementation]{Vivado GUI에서 이어서 진행}
+\begin{frame}{PISO 파형·수정 실험 해설}
 \small
-사전 시뮬레이션과 실험 전 레포트를 마친 뒤 Vivado를 연다.\par\vspace{0.26cm}다음 클릭 화면은 기존 LAB1의 실제 캡처를 재사용한다. 화면 속 과거 폴더·파일명 대신 이 교안에 적힌 값을 사용한다.\par\vspace{0.26cm}설계 top: lab2\_piso\par\vspace{0.26cm}TB top: tb\_piso4\par
+파형에 clk·rst·load·enable·data\_in·value·serial\_out을 추가한다. value는 2진수로 표시하면 비트 이동을 읽기 쉽다.\par\vspace{0.26cm}assign serial\_out = value[3]을 value[0]으로 바꾸면 word=1의 첫 출력 검사인 86 ns에서 실패한다. 기대값은 MSB=0, 변경 회로의 출력은 LSB=1이다.\par\vspace{0.26cm}TB를 바꾸지 않고 RTL을 원복한다. 114개 PASS와 976 ns 종료를 확인하고 정상·변경·원복의 출력 순서를 비교한다.\par
 \end{frame}
 
-\begin{frame}{새 프로젝트 시작}
+\begin{frame}[label=implementation]{Vivado에서 같은 PISO 원본 연결}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=6bp 593.25bp 783bp 24bp,clip]{../LAB1_FPGA_0914/assets/modern-01/40-new-project-menu.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item File → Project → New... → Next.
-\item Project name: lab2\_piso
-\item Project location: 자신의 lab2\_05\_piso/vivado.
-\item Create project subdirectory를 해제하고 Next.
-\end{enumerate}
+VS Code 정상·변경·원복 검사와 실험 전 레포트를 마친 뒤 시작한다.\par\vspace{0.26cm}설계 Top은 lab2\_piso, 시뮬레이션 Top은 tb\_piso4다. 두 모듈의 용도를 구분한다.\par
 \end{frame}
 
-\begin{frame}{RTL Project}
+\begin{frame}{프로젝트 이름과 위치}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=172.5bp 386.25bp 515.25bp 246bp,clip]{../LAB1_FPGA_0914/assets/modern-01/42-rtl-project.png}\par}\vspace{0.18cm}RTL Project와 Do not specify sources at this time을 선택한다.\par\vspace{0.26cm}Next를 눌러 부품 선택으로 간다.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=21bp 257.25bp 24.75bp 142.5bp,clip]{assets/piso-0913/vivado/02-project-name.png}\par\vspace{0.15cm}File → Project → New → Next. 이름은 lab2\_piso, 위치는 자신의 lab2\_05\_piso/vivado. Create project subdirectory 해제 → Next.\par
 \end{frame}
 
-\begin{frame}{정확한 S75 부품 선택}
+\begin{frame}{RTL 프로젝트 선택}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.8cm,keepaspectratio,trim=174.75bp 317.25bp 534.75bp 249bp,clip]{../LAB1_FPGA_0914/assets/modern-01/43-select-part.png}\par}\vspace{0.18cm}Parts 검색란에 xc7s75fgga484-1을 입력한다.\par\vspace{0.26cm}같은 part 행 선택 → Next. Spartan-7·fgga484·-1 확인 → Finish.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=21bp 294.75bp 364.5bp 146.25bp,clip]{assets/piso-0913/vivado/03-rtl-project.png}\par\vspace{0.15cm}RTL Project와 Do not specify sources at this time을 선택한다. Next.\par
 \end{frame}
 
-\begin{frame}{Design Sources 추가}
+\begin{frame}{정확한 부품 선택}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/46-design-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Add Sources → Add or create design sources → Next.
-\item Add Files에서 앞 목록의 src/ RTL 파일을 모두 선택한다.
-\item Copy sources into project 해제 → Finish. 같은 원본 파일을 참조한다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=22.5bp 217.5bp 289.5bp 151.5bp,clip]{assets/piso-0913/vivado/04-part.png}\par\vspace{0.15cm}Parts 검색란에 xc7s75fgga484-1을 입력한다. 같은 행 선택 → Next. -1IL·-1Q와 구분한다.\par
 \end{frame}
 
-\begin{frame}{Simulation Sources 추가}
+\begin{frame}{생성 요약 확인}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/50-simulation-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Add Sources → Add or create simulation sources → Next.
-\item Add Files → sim/tb\_piso4.sv 선택.
-\item sim\_1 유지. Include all design sources for simulation 선택.
-\item Copy sources into project 해제 → Finish.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=20.25bp 294.75bp 312bp 79.5bp,clip]{assets/piso-0913/vivado/05-project-summary.png}\par\vspace{0.15cm}lab2\_piso·Spartan-7·fgga484·-1을 확인하고 Finish. 이전 프로젝트가 열려 있으면 저장 상태 확인 후 닫는다.\par
 \end{frame}
 
-\begin{frame}{Constraints 추가}
+\begin{frame}{빈 프로젝트 확인}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/53-constraints-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Add Sources → Add or create constraints → Next.
-\item Add Files → constraints/lab2\_piso.xdc 선택.
-\item Copy constraints files into project 해제 → Finish.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=590.25bp 327bp 15.75bp 174.75bp,clip]{assets/piso-0913/vivado/06-empty-project.png}\par\vspace{0.15cm}Project Summary에서 이름·위치·부품을 확인한다. 아직 소스를 넣지 않았으므로 Top module은 Not defined다.\par
 \end{frame}
 
-\begin{frame}{설계 top과 TB top 지정}
+\begin{frame}{설계 RTL 세 파일 선택}
 \small
-\begin{enumerate}
-\item Sources에서 Design Sources의 계층을 펼친다.
-\item lab2\_piso 우클릭 → Set as Top.
-\item Simulation Sources → sim\_1의 계층을 펼친다.
-\item tb\_piso4 우클릭 → Set as Top.
-\item 이름이 이미 굵게 표시되면 해당 top이 선택된 상태다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=19.5bp 322.5bp 489bp 40.5bp,clip]{assets/piso-0913/vivado/07-select-design-files.png}\par\vspace{0.15cm}Add Sources → Add or create design sources → Next → Add Files. src에서 input\_frontend.v·lab2\_piso.v·piso4.v를 선택하고 OK.\par
 \end{frame}
 
-\begin{frame}{Run Behavioral Simulation}
+\begin{frame}{원본 RTL 참조}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.7cm,keepaspectratio,trim=9bp 231bp 764.25bp 316.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/58-run-behavioral.png}\par}\vspace{0.18cm}Flow Navigator → Run Simulation → Run Behavioral Simulation.\par\vspace{0.26cm}컴파일과 elaboration을 기다린다. Tcl Console의 자기검사 PASS와 종료 시각을 확인한다.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=24.75bp 109.5bp 30bp 155.25bp,clip]{assets/piso-0913/vivado/08-design-no-copy.png}\par\vspace{0.15cm}세 파일을 확인한다. Copy sources into project 해제 → Finish. VS Code에서 편집한 원본을 계속 참조한다.\par
 \end{frame}
 
-\begin{frame}{VS Code 결과와 비교}
+\begin{frame}{테스트벤치 등록}
 \small
-\begin{enumerate}
-\item 같은 RTL·TB로 실행했는지 Sources를 확인한다.
-\item clk·rst·입력·상태·출력의 파형을 추가하고 Zoom Fit.
-\item 상승 에지 전후를 확대해 VS Code 결과와 대조한다.
-\item 검사 이름·검사 수·종료 시각·파형의 차이를 기록한다.
-\item File → Close Simulation → OK로 돌아간다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=24bp 86.25bp 31.5bp 157.5bp,clip]{assets/piso-0913/vivado/09-simulation-no-copy.png}\par\vspace{0.15cm}Add Sources → Add or create simulation sources → Next → Add Files → sim/tb\_piso4.sv. sim\_1과 Include all design sources 유지, Copy sources 해제 → Finish.\par
 \end{frame}
 
-\begin{frame}{핀과 클록 확인}
+\begin{frame}{XDC 원본 참조}
 \small
-RTL Analysis → Open Elaborated Design → I/O Ports.\par\vspace{0.26cm}이번 XDC의 PACKAGE\_PIN과 LVCMOS33을 포트마다 대조한다.\par\vspace{0.26cm}B6 주 클록은 1 kHz, XDC 주기는 1,000,000ns다.\par\vspace{0.26cm}실제 장비의 클록 선택도 1 kHz로 맞춘다. 버튼을 클록으로 연결하지 않는다.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=24bp 90bp 29.25bp 158.25bp,clip]{assets/piso-0913/vivado/10-xdc-no-copy.png}\par\vspace{0.15cm}Add Sources → Add or create constraints → Next → Add Files → constraints/lab2\_piso.xdc. Copy constraints files into project 해제 → Finish.\par
 \end{frame}
 
-\begin{frame}{Run Synthesis}
+\begin{frame}{테스트벤치를 Top으로}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.3cm,keepaspectratio,trim=7.5bp 180bp 919.5bp 453bp,clip]{../LAB1_FPGA_0914/assets/modern-01/62-run-synthesis.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Flow Navigator → Run Synthesis.
-\item Launch runs on local host, PC 자원에 맞는 jobs → OK.
-\item 합성 오류가 없으면 완료 창에서 Run Implementation → OK.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=301.5bp 162bp 535.5bp 462bp,clip]{assets/piso-0913/vivado/11-set-sim-top-menu.png}\par\vspace{0.15cm}Simulation Sources → sim\_1을 펼친다. tb\_piso4 우클릭 → Set as Top. 보드용 lab2\_piso와 혼동하지 않는다.\par
 \end{frame}
 
-\begin{frame}{Run Implementation}
+\begin{frame}{서로 다른 Top 확인}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.3cm,keepaspectratio,trim=418.5bp 339.75bp 426bp 226.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/64-synthesis-complete.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item 구현 Launch Runs의 위치·jobs 확인 → OK.
-\item 완료 창에서 Generate Bitstream → OK.
-\item 실패하면 Messages의 첫 오류부터 수정한다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=201bp 396bp 289.5bp 204.75bp,clip]{assets/piso-0913/vivado/12-simulation-top.png}\par\vspace{0.15cm}tb\_piso4가 굵게 표시된다. Project Summary의 설계 Top은 lab2\_piso다. 이 상태로 시뮬레이션한다.\par
 \end{frame}
 
-\begin{frame}{Generate Bitstream}
+\begin{frame}{XSim 실행}
 \small
-\begin{enumerate}
-\item Generate Bitstream의 Launch Runs에서 OK.
-\item 완료 창에서 Open Implemented Design으로 결과를 확인한다.
-\item vivado/lab2\_piso.runs/impl\_1/lab2\_piso.bit 확인.
-\item 타이밍·DRC 경고를 읽고 원인과 장비 설정을 기록한다.
-\item bit 생성과 실제 보드 기록은 별도 단계다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=19.5bp 231bp 762bp 317.25bp,clip]{assets/piso-0913/vivado/13-run-behavioral-menu.png}\par\vspace{0.15cm}왼쪽 Run Simulation → Run Behavioral Simulation. 컴파일과 elaboration이 끝날 때까지 기다린다.\par
+\end{frame}
+
+\begin{frame}{XSim 114개 검사 통과}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=210.75bp 123.75bp 668.25bp 550.5bp,clip]{assets/piso-0913/vivado/14-xsim-pass.png}\par\vspace{0.15cm}Tcl Console에서 LAB2\_PASS piso4 checks=114와 \$finish 976 ns를 확인한다. 1000 ns 실행 요청보다 먼저 TB가 종료되는 것은 정상이다.\par
+\end{frame}
+
+\begin{frame}{전체 파형 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=234.75bp 292.5bp 4.5bp 162.75bp,clip]{assets/piso-0913/vivado/15-xsim-wave-full.png}\par\vspace{0.15cm}파형 탭 더블클릭 → Zoom Fit. data\_in이 0부터 F까지 바뀌며 모든 4비트 입력을 검사한다. Icarus와 같은 RTL·TB로 얻은 결과다.\par
+\end{frame}
+
+\begin{frame}{A 입력을 직렬로 내보내기}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=234.75bp 292.5bp 4.5bp 162.75bp,clip]{assets/piso-0913/vivado/16-xsim-wave-a.png}\par\vspace{0.15cm}A 구간을 클릭한 뒤 Zoom In으로 확대한다. 615 ns에 A를 로드하고 625 ns에는 유지한다. 635·645·655 ns에 value가 4·8·0이 되며 MSB가 1·0·1·0 순서로 관찰된다.\par
+\end{frame}
+
+\begin{frame}{LED 핀 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=200.25bp 310.5bp 337.5bp 159bp,clip]{assets/piso-0913/vivado/17-io-led.png}\par\vspace{0.15cm}Open Elaborated Design → OK. 오른쪽 위 I/O Planning → I/O Ports 탭 더블클릭. led를 펼쳐 Package Pin·LVCMOS33을 XDC와 대조한다.\par
+\end{frame}
+
+\begin{frame}{스위치 핀 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=200.25bp 120.75bp 337.5bp 397.5bp,clip]{assets/piso-0913/vivado/18-io-switches.png}\par\vspace{0.15cm}sw를 펼쳐 여덟 핀을 확인한다. DIP SW1–SW4는 sw[7:4] 병렬 입력, SW8은 sw[0] load다. 스위치 번호와 비트 번호를 구분한다.\par
+\end{frame}
+
+\begin{frame}{버튼·클록·리셋 핀 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=200.25bp 35.25bp 337.5bp 586.5bp,clip]{assets/piso-0913/vivado/19-io-all.png}\par\vspace{0.15cm}Scalar ports를 펼친다. button=N8, clk=B6, rst=K4다. 19개 포트 모두 LVCMOS33이다. B6 주 클록은 1 kHz로 설정한다.\par
+\end{frame}
+
+\begin{frame}{합성 실행}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 155.25bp 15.75bp 84bp,clip]{assets/piso-0913/vivado/20-synthesis-launch.png}\par\vspace{0.15cm}왼쪽 Run Synthesis. Launch runs on local host와 jobs를 확인하고 OK. 이 실행은 jobs=4다.\par
+\end{frame}
+
+\begin{frame}{합성 완료}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 136.5bp 13.5bp 36bp,clip]{assets/piso-0913/vivado/21-synthesis-complete.png}\par\vspace{0.15cm}Synthesis successfully completed를 확인한다. Run Implementation 선택 → OK.\par
+\end{frame}
+
+\begin{frame}{구현 실행}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 155.25bp 15.75bp 84bp,clip]{assets/piso-0913/vivado/22-implementation-launch.png}\par\vspace{0.15cm}Launch runs on local host와 jobs를 확인하고 OK. 구현 도중에는 RTL·XDC를 수정하지 않는다.\par
+\end{frame}
+
+\begin{frame}{구현 완료}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 136.5bp 13.5bp 36bp,clip]{assets/piso-0913/vivado/23-implementation-complete.png}\par\vspace{0.15cm}Implementation successfully completed를 확인한다. Generate Bitstream 선택 → OK.\par
+\end{frame}
+
+\begin{frame}{비트스트림 생성 실행}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 155.25bp 15.75bp 97.5bp,clip]{assets/piso-0913/vivado/24-bitstream-launch.png}\par\vspace{0.15cm}Launch runs on local host와 jobs를 확인하고 OK. write\_bitstream 완료까지 기다린다.\par
+\end{frame}
+
+\begin{frame}{비트스트림 생성 완료}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=15bp 134.25bp 13.5bp 36.75bp,clip]{assets/piso-0913/vivado/25-bitstream-complete.png}\par\vspace{0.15cm}Bitstream Generation successfully completed 확인. Open Implemented Design → OK. 이전 Elaborated Design을 닫을지 물으면 Yes.\par
+\end{frame}
+
+\begin{frame}{타이밍 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=386.25bp 55.5bp 274.5bp 506.25bp,clip]{assets/piso-0913/vivado/26-timing.png}\par\vspace{0.15cm}Timing → Design Timing Summary. Setup·Hold의 slack과 Number of Failing Endpoints를 확인한다.\par
+\end{frame}
+
+\begin{frame}{검사 결과와 생성 파일}
+\small
+XSim: LAB2\_PASS piso4 checks=114, 976 ns 종료. Icarus와 같은 TB와 원복한 RTL을 사용했다.\par\vspace{0.26cm}생성 파일: vivado/lab2\_piso.runs/impl\_1/lab2\_piso.bit.\par\vspace{0.26cm}GUI 합성·구현·bit 생성까지 확인했다. 장치 기록과 보드 사진·영상은 학생이 실습 장비에서 수행한다.\par
+\end{frame}
+
+\begin{frame}{타이밍과 경고 해석}
+\small
+WNS=999997.500 ns, WHS=0.121 ns. Setup·Hold 실패 endpoint는 각각 0이다. 주 클록 제약은 1,000,000 ns다.\par\vspace{0.26cm}TIMING-18: 외부 입출력 지연 관련 경고다. 비동기 입력에는 false path를 적용했고 LED 출력 지연은 지정하지 않았다. 내부 타이밍 통과가 모든 외부 입출력 타이밍을 보장하지는 않는다.\par\vspace{0.26cm}CFGBVS-1: 설정 뱅크 전압 속성이 없다. 보드 회로도와 설정 전압을 확인하여 값을 정한다. 경고만 없애려고 임의의 전압을 입력하지 않는다.\par
 \end{frame}
 
 \begin{frame}{장치에서 동작 확인}
 \small
 \begin{enumerate}
 \item 보드 전원·JTAG·주 클록 1 kHz 설정을 확인한다.
-\item Vivado: Open Hardware Manager → Open target → Auto Connect.
+\item Open Hardware Manager → Open target → Auto Connect.
 \item Program Device에서 방금 생성한 bit 파일을 선택한다.
 \item 초기화 뒤 입력·버튼·출력을 관찰하고 예상과 비교한다.
-\item CLI판은 앞 장의 openFPGALoader 명령으로 기록한다.
+\item 사진·영상과 관찰 결과를 실험 후 레포트에 기록한다.
 \end{enumerate}
+\end{frame}
+
+\begin{frame}{PISO 보드 조작 순서}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{ll}
+스위치 / 버튼 & LED[7:0]\\\hline
+SW1..4=1010, SW8=1, N8 & A1\\
+SW8=0, N8 한 번 & 40\\
+N8 한 번 더 & 81\\
+N8 한 번 더 & 00\\
+N8 한 번 더 & 00\\
+\end{tabular}\end{center}상위 네 LED는 value, LED0은 직렬 출력이다. load 후 shift 전에 LED0=1을 먼저 읽고 이후 0,1,0을 관찰한다.\par
 \end{frame}
 
 \begin{frame}{실험 후 레포트와 GitHub}

@@ -5,6 +5,11 @@ reference/*
 
 # Lecture PNG captures are local build assets; published PDFs are versioned.
 weekly-slides/weekly-slides/**/assets/**/*.png
+weekly-slides/weekly-slides/**/assets/**/*.jpg
+weekly-slides/weekly-slides/**/assets/**/*.jpeg
+
+# Delivery copies; canonical lecture PDFs and ZIPs live beside the TeX sources.
+/output/pdf/
 
 # XeLaTeX/Beamer build products
 weekly-slides/build/

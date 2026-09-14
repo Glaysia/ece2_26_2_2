@@ -1,0 +1,172 @@
+{
+  "source": "C:/Users/UOS/Documents/fpga-lab-template",
+  "commit": "86c15c556e2edf1564a203180690f7ec4ad056af",
+  "check": {
+    "returncode": 0,
+    "log": "Python 3.12.10\nRUN \"C:\\Program Files\\Git\\cmd\\git.EXE\" --version\ngit version 2.55.0.windows.3\n\nRUN C:/msys64/mingw64/bin\\iverilog.EXE -V\nIcarus Verilog version 13.0 (stable) (v13_0)\n\nCopyright (c) 2000-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Preprocessor version 13.0 (stable) (v13_0)\n\nCopyright (c) 1999-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Parser/Elaborator version 13.0 (stable) (v13_0)\n\nCopyright (c) 1998-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n FLAGS DLL vvp.tgt\nvvp.tgt: Icarus Verilog VVP Code Generator 13.0 (stable) (v13_0)\n\nCopyright (c) 2001-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -V\nIcarus Verilog runtime version 13.0 (stable) (v13_0)\n\nCopyright (c) 2001-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n\n도구 확인 완료. 다음은 src/·sim/·constraints/의 파일을 직접 작성하세요.\n"
+  },
+  "blank": {
+    "returncode": 1,
+    "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_design -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-df00b97a7dc642faba86c65602f0dd18\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\design.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_design.v\nerror: Unable to find the root module \"tb_design\" in the Verilog source.\n     : Perhaps ``-s tb_design'' is incorrect?\n1 error(s) during elaboration.\n\nERROR: ���� �ڵ� 1: C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-df00b97a7dc642faba86c65602f0dd18\\compile.log\n"
+  },
+  "projects": [
+    {
+      "id": "vivado_2026_1_01_counter",
+      "result": {
+        "returncode": 0,
+        "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_counter4 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-22b0b4a00f3d4b42b2a78bae9785ac05\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\counter4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lab2_counter.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_counter4.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-22b0b4a00f3d4b42b2a78bae9785ac05\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS counter4 checks=36\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_counter4.sv:19: $finish called at 356000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\wave.vcd\n"
+      },
+      "inputs": {
+        "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_counter.v": "f4f0e5da3ce3c432fcc8fbcf7c814ea0d06040f29ae1106d3f979a316ed0fb10",
+        "sim/tb_counter4.sv": "439c4e2bf639d1e6c08c994c68aa3acc28944274b62e92226d824fd32f8f4ade",
+        "simulation.json": "e3211debf9bde4bf568ebe0dfaed612d8bdb781ae3e91941475d85c4ca850b55"
+      }
+    },
+    {
+      "id": "vivado_2026_1_02_clock_divider",
+      "result": {
+        "returncode": 0,
+        "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_clock_divider -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-597eaf1c9bfb4eed8029c7394e60d28a\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\clock_divider.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lab2_clock_divider.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_clock_divider.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-597eaf1c9bfb4eed8029c7394e60d28a\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS clock_divider checks=129\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_clock_divider.sv:19: $finish called at 436000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\wave.vcd\n"
+      },
+      "inputs": {
+        "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_clock_divider.v": "8b518a4017aabcf13e9ffd5fce2d1c8032fe9ef6569176083897fdad9f000a14",
+        "sim/tb_clock_divider.sv": "1a18d85d870139717f6190caf6c016def9c67d7be42ec51e20f2732cef19abb0",
+        "simulation.json": "c88bf7bf8dacb2a5badcc637049b7be4c5faf6d4e1b6868c4618ae38f82f352b"
+      }
+    },
+    {
+      "id": "vivado_2026_1_03_register",
+      "result": {
+        "returncode": 0,
+        "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_register_pair -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-d71d646ead834c84992ac27342394beb\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\register_pair.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lab2_register.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_register_pair.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-d71d646ead834c84992ac27342394beb\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS register_pair checks=7\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_register_pair.sv:19: $finish called at 66000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\wave.vcd\n"
+      },
+      "inputs": {
+        "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_register.v": "4638c821526b32593230b9f42bfb55f1152730301ee4327a039bc8e1326a8f7b",
+        "sim/tb_register_pair.sv": "623b0d84bab55735ed5dded6061b3cd60ccee27c4bd66c049969e1245f963b7b",
+        "simulation.json": "3bbd3e5da74260f1ba1b5da6da5bc80097515c5f11eb23d86e1210d69de35279"
+      }
+    },
+    {
+      "id": "vivado_2026_1_04_shift_register",
+      "result": {
+        "returncode": 0,
+        "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_shift_register4 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-61d140ad84be46e1801ebf251dd3ed34\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\shift_register4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lab2_shift_register.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_shift_register4.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-61d140ad84be46e1801ebf251dd3ed34\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS shift_register4 checks=8\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_shift_register4.sv:19: $finish called at 106000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\wave.vcd\n"
+      },
+      "inputs": {
+        "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_shift_register.v": "5212d5d01d655d09c5e341f766bd8681f96e5a9b77cef4c93146d36d20f8133c",
+        "sim/tb_shift_register4.sv": "1683da25534c5ea9284a14877303d5e5cd2ee6fca439036a5eee79515cad13a3",
+        "simulation.json": "67c70f8adf2cd802d949e10b1420ceaa211930456b46c54f1d724c62743be30f"
+      }
+    },
+    {
+      "id": "vivado_2026_1_05_piso",
+      "result": {
+        "returncode": 0,
+        "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_piso4 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-2410e568a4124968b36b01873578d9e7\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\piso4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lab2_piso.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_piso4.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-2410e568a4124968b36b01873578d9e7\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS piso4 checks=114\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_piso4.sv:19: $finish called at 976000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\wave.vcd\n"
+      },
+      "inputs": {
+        "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_piso.v": "aa7c90e77f50b10380fbda8a872ecc3d30e4d7fb4f905615b8c56c87a9a040dd",
+        "sim/tb_piso4.sv": "c07306c7c8c7f17cda4a6ac6ca1cd849a0d6b10fa0bab5beaeca8a6243450dc5",
+        "simulation.json": "8f851ff69cb73cf9e41c0ab2ad922edb3111cf1730e652c9fa7c20b6161d55c1"
+      }
+    },
+    {
+      "id": "vivado_2026_1_06_moore",
+      "result": {
+        "returncode": 0,
+        "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_moore_cycle -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-0a637fa0366944b49fb2e173d229854a\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\moore_cycle.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lab2_moore.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_moore_cycle.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-0a637fa0366944b49fb2e173d229854a\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS moore_cycle checks=23\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_moore_cycle.sv:19: $finish called at 226000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\wave.vcd\n"
+      },
+      "inputs": {
+        "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_moore.v": "2f76e66014901d98ca17349842c173f666b215e786847ace458df17ccced9287",
+        "sim/tb_moore_cycle.sv": "c3c9b42204daea82209604a197c975bd3aee71b2e3fb4f9b458ba21da1ff3c6f",
+        "simulation.json": "d5528a8718e53afc2f42f8608080c5f006f88fe94a142f00ea737f104f1922a2"
+      }
+    },
+    {
+      "id": "vivado_2026_1_07_mealy",
+      "result": {
+        "returncode": 0,
+        "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_mealy_toggle -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-a4584874d7e8481ea82020eb56c956b7\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\mealy_toggle.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lab2_mealy.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_mealy_toggle.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-a4584874d7e8481ea82020eb56c956b7\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS mealy_toggle checks=11\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_mealy_toggle.sv:19: $finish called at 67000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\wave.vcd\n"
+      },
+      "inputs": {
+        "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_mealy.v": "7828bd85034cac0e9c61bd23bd470df1d420310845ebe7263dc33344e09db5bf",
+        "sim/tb_mealy_toggle.sv": "37b462465bfda7d9cf32a44b0f63cc1a02274b41db1f10a1c932674ae6f2eff0",
+        "simulation.json": "5b756f01d48b06fc4661826fef6e4959e6c042e4059277e104bb19e548f2c0c1"
+      }
+    },
+    {
+      "id": "vivado_2026_1_08_segment_scan",
+      "result": {
+        "returncode": 0,
+        "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_segment_scan8 -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-9271d8ac2b924aad8610cae23eff6a80\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\segment_scan8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lab2_segment_scan.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_segment_scan8.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-9271d8ac2b924aad8610cae23eff6a80\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_PASS segment_scan8 checks=194\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_segment_scan8.sv:19: $finish called at 1306000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\wave.vcd\n"
+      },
+      "inputs": {
+        "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/lab2_segment_scan.v": "43517a0d6fc44bf06e2607888704f023e1c5279d145404ec76e23b2e6a496919",
+        "sim/tb_segment_scan8.sv": "4b684e66d3206a377fceecbddd1d7c9fb250eaa95518b6ffa00d2ed661c71102",
+        "simulation.json": "fd88996314d4f0012fd9ba4ad41845317cd47870bb1ad818de130321b9791277"
+      }
+    },
+    {
+      "id": "vivado_2026_1_09_integrated",
+      "result": {
+        "returncode": 0,
+        "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_lab2_integrated -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-dd481e42661c4b5384929f664408bc27\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\counter4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\clock_divider.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\register_pair.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\shift_register4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\piso4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\moore_cycle.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\mealy_toggle.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\segment_scan8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\button_onepulse.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lcd_lab2_modes.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lab2_integrated.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_lab2_integrated.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-dd481e42661c4b5384929f664408bc27\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_INTEGRATED_PASS modes=8 checks=2848\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_lab2_integrated.sv:129: $finish called at 34326000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\wave.vcd\n"
+      },
+      "inputs": {
+        "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+        "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+        "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+        "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+        "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+        "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+        "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+        "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/button_onepulse.v": "1c255068f06c91c722144411ef362503cad8de5184a0494b858e72410c4f155b",
+        "src/lcd_lab2_modes.v": "041115a6ecb765a8d3cd96115209b538485d073235fba64dbc4e6f464ad1bd59",
+        "src/lab2_integrated.v": "194bebed29cd3aa13e2f6c30dcff46dedebef571c15436a0501edfedd56b838a",
+        "sim/tb_lab2_integrated.sv": "42671df2a8fac680939236a87025b42cd96ce9da96cd73d38f77d4df280db946",
+        "simulation.json": "5bab5e83844a8858fe54aae9a22eca82257689efaf836693fa5e754510794cd5"
+      }
+    },
+    {
+      "id": "opensource_cli_09_integrated",
+      "result": {
+        "returncode": 0,
+        "log": "RUN C:/msys64/mingw64/bin\\iverilog.EXE -g2012 -Wall -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src -I C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim -s tb_lab2_integrated -o C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-471b52b1edc641728f6863097318ad0f\\sim.vvp C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\counter4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\clock_divider.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\register_pair.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\shift_register4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\piso4.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\moore_cycle.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\mealy_toggle.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\segment_scan8.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\input_frontend.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\button_onepulse.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lcd_lab2_modes.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\src\\lab2_integrated.v C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_lab2_integrated.sv\n\nRUN C:/msys64/mingw64/bin\\vvp.EXE -N C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\run-471b52b1edc641728f6863097318ad0f\\sim.vvp\nVCD info: dumpfile wave.vcd opened for output.\nLAB2_INTEGRATED_PASS modes=8 checks=2848\nC:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\sim\\tb_lab2_integrated.sv:129: $finish called at 34326000 (1ps)\n\n시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.\nWAVE C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\template-201-local-checked\\build\\sim\\wave.vcd\n"
+      },
+      "inputs": {
+        "src/counter4.v": "e37b9015f9732666002c7ec871d701eba1a9d6c0d1453e182893f5b12ae94880",
+        "src/clock_divider.v": "7c8863c2d840cfe2cdf73353c0333f32359a813aef9af3d8e4a7ad1941589556",
+        "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+        "src/shift_register4.v": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+        "src/piso4.v": "f92dadd42b3ec3271c8ec797e5e05a7edbf17a91ad3bfa12a326f0fa41b898eb",
+        "src/moore_cycle.v": "e2b1e71ae4a15ea12b2d3bd478927cc64416ba37ed1f2a86febc990607323569",
+        "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+        "src/segment_scan8.v": "c6a978723d5f703f4c7e1568c2db8c5f22a381a54357f7e8425000d611bc1954",
+        "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+        "src/button_onepulse.v": "1c255068f06c91c722144411ef362503cad8de5184a0494b858e72410c4f155b",
+        "src/lcd_lab2_modes.v": "041115a6ecb765a8d3cd96115209b538485d073235fba64dbc4e6f464ad1bd59",
+        "src/lab2_integrated.v": "194bebed29cd3aa13e2f6c30dcff46dedebef571c15436a0501edfedd56b838a",
+        "sim/tb_lab2_integrated.sv": "42671df2a8fac680939236a87025b42cd96ce9da96cd73d38f77d4df280db946",
+        "simulation.json": "5bab5e83844a8858fe54aae9a22eca82257689efaf836693fa5e754510794cd5"
+      }
+    }
+  ]
+}

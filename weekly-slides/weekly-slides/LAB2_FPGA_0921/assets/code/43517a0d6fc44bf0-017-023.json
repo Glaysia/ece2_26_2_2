@@ -1,0 +1,23 @@
+{
+  "source_sha256": "43517a0d6fc44bf06e2607888704f023e1c5279d145404ec76e23b2e6a496919",
+  "lines": [
+    17,
+    23
+  ],
+  "actual_vscode_capture": true,
+  "raw_capture": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\weekly-slides\\weekly-slides\\LAB2_FPGA_0921\\assets\\segment-0914\\07-board-last.jpg",
+  "image": "assets/code/43517a0d6fc44bf0-017-023.png",
+  "crop": [
+    382,
+    175,
+    1220,
+    343
+  ],
+  "window": {
+    "app": "Microsoft.VisualStudioCode",
+    "id": 62785850
+  },
+  "captured_at": "2026-09-13T17:40:09.308792+00:00",
+  "image_sha256": "b3c348ced1d941679c745aa848bf0e4af74bd552c83ebbd2490917f4348c5326",
+  "template_tag": "v2.0.1"
+}

@@ -1,0 +1,18 @@
+{
+  "actual_vscode_capture": true,
+  "source_sha256": "6c221a38ef5b96f2b8061e2b614497d43f32ff09916c4d349e05e88290851e89",
+  "lines": [
+    1,
+    11
+  ],
+  "image_sha256": "8dafc5ed0bc4792c8c6005942cb490297047c2a70a57c6f4e87bded1d5947d8f",
+  "captured_on": "2026-09-13",
+  "source": "src/shift_register4.v",
+  "full_capture": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/shift-0913/01-shift-core.png",
+  "crop": [
+    353,
+    36,
+    1060,
+    359
+  ]
+}

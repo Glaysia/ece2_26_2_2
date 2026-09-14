@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-13",
+  "tool": "Vivado 2026.1",
+  "execution": "Actual GUI: create project, reference original RTL/TB/XDC without copying, select simulation top, Run Behavioral Simulation, elaborate, inspect I/O Ports, synthesize, implement, generate bitstream",
+  "student_folder": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_03_register",
+  "part": "xc7s75fgga484-1",
+  "design_top": "lab2_register",
+  "simulation_top": "tb_register_pair",
+  "xsim": {
+    "status": "PASS",
+    "checks": 7,
+    "finish_ns": 66
+  },
+  "synthesis": "COMPLETE",
+  "implementation": "COMPLETE",
+  "bitstream": {
+    "path": "tmp\\lab2-students-0913\\lab2_03_register\\vivado\\lab2_register.runs\\impl_1\\lab2_register.bit",
+    "bytes": 3687016,
+    "sha256": "7791737c17af539ad1bf80cac2db3bb5cfe4cba3cdc8646037f08c262d863564"
+  },
+  "timing": {
+    "wns_ns": 999997.812,
+    "whs_ns": 0.119,
+    "tns_ns": 0,
+    "ths_ns": 0,
+    "failing_setup_endpoints": 0,
+    "failing_hold_endpoints": 0
+  },
+  "remaining_warnings": [
+    "TIMING-18: output delay constraints unspecified, 8 occurrences",
+    "CFGBVS-1: configuration voltage properties unspecified"
+  ],
+  "input_sha256": {
+    "simulation.json": "3bbd3e5da74260f1ba1b5da6da5bc80097515c5f11eb23d86e1210d69de35279",
+    "src/register_pair.v": "546bd1f1a2b519d0d0077bd56bbc364a97ce31782e761a250affd14964aecec7",
+    "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+    "src/lab2_register.v": "4638c821526b32593230b9f42bfb55f1152730301ee4327a039bc8e1326a8f7b",
+    "sim/tb_register_pair.sv": "623b0d84bab55735ed5dded6061b3cd60ccee27c4bd66c049969e1245f963b7b",
+    "constraints/lab2_register.xdc": "c409037fe63f53243e0cf24aac389f3a2d3669f676ce7c1babe52059585af5a5"
+  },
+  "logs_sha256": {
+    "simulate.log": "da5091f3b2736ad22c61208a2b6421964f8f727e09fa8f8346767329d40a2e39",
+    "xvlog.log": "379e690946b9d74525a6905220fe06edf7298fe1b911faaf1aa64364f0614e1f",
+    "elaborate.log": "5c4f9469dd1a94ce4df8103c5c730a8458e645c206bd4b985eba6e9e74825fb8",
+    "runme.log": "c1151b996ab53f9aae749c7da6d32fbf8895f8ec20656edc557c7aa20544348e",
+    "lab2_register_timing_summary_routed.rpt": "9f51f5944d7a3e43e5ef67c598ccfb54c8a7ef116471065e99af0d387ed3a3c3",
+    "lab2_register_drc_routed.rpt": "261a728c90bb0d81978ab7e42454e4349ce2ad401c7711c390e35091553a80a8",
+    "lab2_register_methodology_drc_routed.rpt": "628f72e6560f859f11e7fb8559057023b335a81875ca8cd8a6b06ce383cf964f",
+    "lab2_register_utilization_placed.rpt": "934e95c9398687eaf0dcfcd9b7cc35317ffa2086122c4c5842aa8a15ef02bbac"
+  },
+  "physical_board": "NOT_RUN: bit generation is not physical programming or observed hardware behavior"
+}

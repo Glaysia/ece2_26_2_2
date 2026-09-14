@@ -1,0 +1,8 @@
+{
+  "extension": "hudson-river-trading.vscode-slang@0.3.0",
+  "server_url": "https://github.com/hudson-trading/slang-server/releases/download/v0.3.0/slang-server-windows-x64.zip",
+  "archive_sha256": "23bb65882a364bc1adf92a9b9ce7d1dac3d7546e29ac2acf53dbc0010a4eda2d",
+  "server_version": "slang-server version 0.3.0+34c5373\n",
+  "setting": "slang.path",
+  "scope": "producer student workspace only"
+}

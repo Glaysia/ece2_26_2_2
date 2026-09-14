@@ -1,0 +1,29 @@
+{
+  "status": "VSCODE_GUI_ICARUS_PASS",
+  "checks": 11,
+  "end_ns": 67,
+  "student_path": "C:\\Users\\UOS\\Documents\\ece2_26_2_2\\tmp\\lab2-students-0913\\lab2_07_mealy",
+  "inputs": {
+    "simulation.json": "5b756f01d48b06fc4661826fef6e4959e6c042e4059277e104bb19e548f2c0c1",
+    "src/mealy_toggle.v": "cbbaea84f211403b4c118bc98a86bdd00777648df13472b768ff5f381bb9ef0f",
+    "src/input_frontend.v": "a866edb1f9b3477914c19a8c6bf237d885348348dd18582dca14e410d622a337",
+    "src/lab2_mealy.v": "7828bd85034cac0e9c61bd23bd470df1d420310845ebe7263dc33344e09db5bf",
+    "sim/tb_mealy_toggle.sv": "37b462465bfda7d9cf32a44b0f63cc1a02274b41db1f10a1c932674ae6f2eff0",
+    "src/design.v": "19b7602a1281ca2b71b3cb495906dff388c996500d87ad15d19f229233d5f33d",
+    "sim/tb_design.v": "c260a9655c45ede072e6d9bb0b8a47a7fbd01b015de92ff90d5344ac9a3212fb"
+  },
+  "wave_sha256": "c8847313d5ff6636543f5e0dbdc5839f3d6f8ed62c86766a54819bfdd93dbd61",
+  "capture": "weekly-slides/weekly-slides/LAB2_FPGA_0921/assets/mealy-0914/01-simulation-pass.png",
+  "waveform_gui": "CAPTURED 14-wave-full.png",
+  "code_capture_registration": "COMPLETE",
+  "vivado_gui": "COMPLETE; vivado-gui-validation.json",
+  "actual_code_captures": [
+    "assets/code/5b756f01d48b06fc-001-009.png",
+    "assets/code/cbbaea84f211403b-001-013.png",
+    "assets/code/7828bd85034cac0e-001-016.png",
+    "assets/code/7828bd85034cac0e-017-017.png",
+    "assets/code/37b462465bfda7d9-001-016.png",
+    "assets/code/37b462465bfda7d9-017-032.png",
+    "assets/code/37b462465bfda7d9-033-041.png"
+  ]
+}

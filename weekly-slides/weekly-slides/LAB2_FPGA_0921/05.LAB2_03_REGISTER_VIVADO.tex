@@ -5,24 +5,29 @@
 \hypersetup{pdftitle={레지스터: 데이터 저장과 이동}}
 \begin{document}
 \renewcommand{\small}{\fontsize{9}{11}\selectfont}
-\begin{frame}{LAB 2 · 레지스터: 데이터 저장과 이동}
+\begin{frame}{LAB 2 · 레지스터}
 \small
-VS Code에서 직접 작성·검증한 다음 장비로 확인한다.\par\vspace{0.26cm}작성일 2026. 09. 10. · 이해리\par\vspace{0.26cm}Vivado 실습\par
+작성일 2026. 09. 13. · 이해리\par\vspace{0.26cm}빈 템플릿 → 직접 작성 → Icarus 시뮬레이션 → Vivado 구현\par
 \end{frame}
 
 \begin{frame}[label=lab2-contents]{목차}
 \small
-\navlink{setup}{프로젝트 시작}\par\vspace{0.3cm}\navlink{code}{RTL·TB·XDC 직접 작성}\par\vspace{0.3cm}\navlink{simulation}{VS Code 시뮬레이션과 수정}\par\vspace{0.3cm}\navlink{implementation}{구현과 장치 기록}\par\vspace{0.3cm}\navlink{reports}{레포트}\quad\href{05.LAB2_00_START.pdf}{공통 예습}\quad\href{05.LAB2_00_CONTENTS.pdf}{전체 목차}\par\vspace{0.3cm}\href{05.LAB2_11_REGISTER_LEGACY.pdf}{대응 레거시판}\quad
+\navlink{setup}{프로젝트 시작}\par\vspace{0.35cm}\navlink{code}{RTL·TB·XDC 작성}\par\vspace{0.35cm}\navlink{simulation}{VS Code 실행과 파형}\par\vspace{0.35cm}\navlink{reports}{실험 전 레포트}\par\vspace{0.35cm}\navlink{implementation}{Vivado 구현}\par\vspace{0.35cm}\navlink{after-report}{실험 후 레포트}
 \end{frame}
 
-\begin{frame}[label=setup]{v2.0.0 템플릿을 새 이름으로 clone}
+\begin{frame}[label=setup]{v2.0.1 템플릿을 새 이름으로 clone}
 \small
-Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.0 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab2\_03\_register\\cd lab2\_03\_register\\git switch -c main\\code LAB1.code-workspace}
+Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --branch v2.0.1 `\\  https://github.com/Glaysia/fpga-lab-template.git `\\  lab2\_03\_register\\cd lab2\_03\_register\\git switch -c main\\code LAB1.code-workspace}
 \end{frame}
 
-\begin{frame}{File → New Window}
+\begin{frame}{새 창과 워크스페이스}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=1.4cm,keepaspectratio,trim=27.75bp 522bp 652.5bp 21bp,clip]{../LAB1_FPGA_0914/assets/modern-01/01-file-menu.png}\par}\vspace{0.18cm}Ctrl+Shift+N 또는 File → New Window. 새 창을 연다.\par\par{\centering\includegraphics[width=\textwidth,height=1.4cm,keepaspectratio,trim=27.75bp 439.5bp 652.5bp 105bp,clip]{../LAB1_FPGA_0914/assets/modern-01/01-file-menu.png}\par}\vspace{0.18cm}File → Open Workspace from File...을 누른다.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=27bp 430.5bp 650.25bp 21bp,clip]{assets/divider-0913/02-file-menu.png}\par\vspace{0.15cm}Ctrl+Shift+N으로 새 창을 연다. File → Open Workspace from File... → 자신의 실습 폴더 → LAB1.code-workspace. 화면은 v2.0.0 빈 템플릿의 공통 예시다. v2.0.1에서도 여는 방법은 같고 .slang 설정이 추가되어 있다.\par
+\end{frame}
+
+\begin{frame}{빈 템플릿 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=0bp 207.75bp 637.5bp 25.5bp,clip]{assets/divider-0913/03-blank-workspace.png}\par\vspace{0.15cm}clone 직후에는 정답 코드가 없다. Explorer의 src·sim·constraints를 펼쳐 빈 파일을 확인하고 뒤의 내용을 작성한다. 화면은 v2.0.0 빈 템플릿의 공통 예시다. v2.0.1에서도 여는 방법은 같고 .slang 설정이 추가되어 있다.\par
 \end{frame}
 
 \begin{frame}{workspace와 추천 확장}
@@ -34,6 +39,17 @@ Windows PowerShell에서 한 줄씩 실행한다.\par\terminalbox{git clone --br
 \item slang·VaporView·vscode-pdf의 Install을 누른다.
 \item Python과 Icarus 실행 파일은 별도로 설치되어 있어야 한다.
 \end{enumerate}
+\end{frame}
+
+\begin{frame}{v2.0.1 편집기와 시뮬레이터}
+\small
+\begin{enumerate}
+\item slang 확장·서버는 0.3.0을 기준으로 확인한다. 추천 목록은 버전을 고정하지 않는다.
+\item 템플릿의 .slang/server.json은 src·sim 탐색용이다. 새 RTL은 simulation.json에도 직접 등록한다.
+\item Ctrl+Shift+P → slang: Show Output. 서버 오류가 있으면 README의 버전 확인·재시작 절차를 따른다.
+\item slang.path에 다른 사람의 설치 경로를 복사하지 않는다. 직접 지정할 때는 User 설정에 자신의 경로를 쓴다.
+\item VS Code 02 Simulate는 Icarus, Vivado Run Behavioral Simulation은 XSim이다.
+\end{enumerate}\href{https://github.com/Glaysia/fpga-lab-template/tree/v2.0.1\#3-실행-준비}{템플릿 도구 설치·오류 해결 안내}
 \end{frame}
 
 \begin{frame}{시뮬레이션 도구 확인}
@@ -75,266 +91,401 @@ sources: 앞 표의 src/ 파일 경로를 배열로 넣는다.\par\vspace{0.26cm
 
 \begin{frame}{simulation.json · 1–9행}
 \small
-simulation.json를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–9행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+simulation.json를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/3bbd3e5da74260f1-001-009.png}\par
 \end{frame}
 
-\begin{frame}[label=code]{이번 회로의 관찰 방법}
+\begin{frame}[label=code]{저장과 전달은 별개다}
 \small
-SW1..4(sw[7:4]): 데이터. SW8(sw[0]): load, SW7(sw[1]): transfer 허용. 버튼으로 실행. LED[7:4]=stored, LED[3:0]=value.\par\vspace{0.26cm}입력 스위치를 먼저 정한 다음 버튼을 누른다.\par
+stored는 입력을 저장하는 4비트 레지스터, value는 저장값을 전달받는 4비트 레지스터다.\par\vspace{0.26cm}모두 clk 상승 에지에서 갱신된다. rst=1이면 두 레지스터를 먼저 0으로 만든다.\par\vspace{0.26cm}load=1이면 data\_in을 stored에 저장한다. transfer=1이면 에지 직전 stored를 value에 전달한다.\par
+\end{frame}
+
+\begin{frame}{한 에지의 다음 상태}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{lllll}
+rst & load & transfer & 다음 stored & 다음 value\\\hline
+1 & 무관 & 무관 & 0 & 0\\
+0 & 0 & 0 & 유지 & 유지\\
+0 & 1 & 0 & data\_in & 유지\\
+0 & 0 & 1 & 유지 & 이전 stored\\
+0 & 1 & 1 & data\_in & 이전 stored\\
+\end{tabular}\end{center}
+\end{frame}
+
+\begin{frame}{두 if와 nonblocking 대입}
+\small
+두 if는 독립적으로 검사한다. else if로 바꾸면 load=1일 때 transfer를 검사하지 않게 된다.\par\vspace{0.26cm}stored <= data\_in과 value <= stored의 오른쪽 항은 같은 에지의 이전 상태에서 읽는다.\par\vspace{0.26cm}예: stored=A, data\_in=3에서 두 제어가 1이면 에지 뒤 stored=3, value=A다. 다음 에지에도 둘 다 1이면 value=3이 된다.\par
 \end{frame}
 
 \begin{frame}{register\_pair.v · 1–16행}
 \small
-src/register\_pair.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/register\_pair.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/546bd1f1a2b519d0-001-016.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 1–16행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-001-016.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 17–32행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-017-032.png}\par
 \end{frame}
 
 \begin{frame}{input\_frontend.v · 33–46행}
 \small
-src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–46행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/input\_frontend.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/a866edb1f9b34779-033-046.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_register.v · 1–16행}
 \small
-src/lab2\_register.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_register.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/4638c821526b3259-001-016.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_register.v · 17–17행}
 \small
-src/lab2\_register.v를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–17행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+src/lab2\_register.v를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/4638c821526b3259-017-017.png}\par
+\end{frame}
+
+\begin{frame}{버튼을 클록으로 쓰지 않는다}
+\small
+input\_frontend는 외부 버튼과 스위치를 주 클록에 동기화한다. 버튼은 20회 연속 안정된 샘플을 확인한 뒤 한 클록의 press를 만든다.\par\vspace{0.26cm}보드 주 클록은 1 kHz이므로 20샘플은 20 ms다. 버튼을 누르고 놓는 한 동작으로 한 번 실행한다.\par\vspace{0.26cm}ASYNC\_REG 속성은 동기화 레지스터임을 도구에 알린다. 속성 자체가 버튼 디바운스 기능을 만드는 것은 아니다.\par
+\end{frame}
+
+\begin{frame}{보드 입출력 연결}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{ll}
+항목 & 역할\\\hline
+K4 / rst & 두 레지스터 초기화\\
+N8 / button & 선택한 동작 한 번 실행\\
+sw[0] & load 선택\\
+sw[1] & transfer 선택\\
+sw[7:4] & 4비트 data\_in\\
+LED[7:4] / LED[3:0] & stored / value\\
+\end{tabular}\end{center}DIP SW1–SW8은 sw[7]–sw[0] 순서다. sw[3:2]는 사용하지 않는다.\par
+\end{frame}
+
+\begin{frame}{테스트벤치의 일곱 검사}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{lll}
+검사 시각 & 입력 / 동작 & stored,value\\\hline
+6 ns & reset & 0,0\\
+16 ns & A 저장 & A,0\\
+26 ns & 입력은 3, 저장값 전달 & A,A\\
+36 ns & 3 저장과 전달 동시 & 3,A\\
+46 ns & 다음 에지에도 동시 & 3,3\\
+56 ns & 입력 F, 두 제어 0 & 3,3\\
+66 ns & 리셋과 두 제어 동시 & 0,0\\
+\end{tabular}\end{center}
+\end{frame}
+
+\begin{frame}{왜 에지 뒤 1 ns에 검사할까}
+\small
+step은 @(posedge clk) 뒤 \#1을 기다린다. nonblocking 갱신이 반영된 다음 상태를 비교하기 위해서다.\par\vspace{0.26cm}TB 클록 주기는 10 ns다. 첫 리셋 에지는 5 ns이고 비교는 6 ns에 실행한다.\par\vspace{0.26cm}불일치가 있으면 LAB2\_FAIL과 \$fatal로 중단한다. 마지막 비교까지 통과해야 LAB2\_PASS를 출력한다.\par
 \end{frame}
 
 \begin{frame}{tb\_register\_pair.sv · 1–16행}
 \small
-sim/tb\_register\_pair.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_register\_pair.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/623b0d84bab55735-001-016.png}\par
 \end{frame}
 
 \begin{frame}{tb\_register\_pair.sv · 17–32행}
 \small
-sim/tb\_register\_pair.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_register\_pair.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/623b0d84bab55735-017-032.png}\par
 \end{frame}
 
 \begin{frame}{tb\_register\_pair.sv · 33–43행}
 \small
-sim/tb\_register\_pair.sv를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–43행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+sim/tb\_register\_pair.sv를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/623b0d84bab55735-033-043.png}\par
 \end{frame}
 
-\begin{frame}{XDC를 직접 작성한다}
+\begin{frame}{XDC 전체를 직접 작성}
 \small
-\begin{enumerate}
-\item constraints 폴더의 XDC를 열고 전체 내용을 입력한다.
-\item get\_ports의 이름과 비트 번호를 board top 선언과 대조한다.
-\item 같은 핀을 서로 다른 포트에 중복 지정하지 않는다.
-\item File → Save All. Icarus 기능 시뮬레이션은 XDC를 사용하지 않는다.
-\end{enumerate}
+constraints/lab2\_register.xdc를 만들고 다음 세 화면을 모두 입력한다.\par\vspace{0.26cm}lab2\_register.v의 포트 이름·비트 번호와 get\_ports를 대조한다.\par\vspace{0.26cm}Icarus는 XDC를 사용하지 않는다. 코어 TB 통과만으로 핀 연결과 실제 보드 동작이 검증되는 것은 아니다.\par
 \end{frame}
 
 \begin{frame}{lab2\_register.xdc · 1–16행}
 \small
-constraints/lab2\_register.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 1–16행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_register.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c409037fe63f5324-001-016.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_register.xdc · 17–32행}
 \small
-constraints/lab2\_register.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 17–32행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_register.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c409037fe63f5324-017-032.png}\par
 \end{frame}
 
 \begin{frame}{lab2\_register.xdc · 33–42행}
 \small
-constraints/lab2\_register.xdc를 열고 해당 구간을 직접 입력한다.\par\vspace{0.4cm}\fbox{\parbox{0.91\textwidth}{제작 중: 이 구간의 실제 VS Code 코드 화면을 아직 넣지 않았다.\par\vspace{0.26cm}파일의 33–42행 전체와 행 번호가 보여야 한다.\par\vspace{0.26cm}GUI 조작 중단 지시를 유지하고 있어 임의로 만든 화면으로 대체하지 않았다.\par}}\par\vspace{0.4cm}
+constraints/lab2\_register.xdc를 열고 해당 구간을 직접 입력한다.\par\includegraphics[width=\textwidth,height=4.45cm,keepaspectratio]{assets/code/c409037fe63f5324-033-042.png}\par
 \end{frame}
 
-\begin{frame}[label=simulation]{VS Code에서 먼저 시뮬레이션}
+\begin{frame}[label=simulation]{VS Code에서 실행}
 \small
 \begin{enumerate}
-\item File → Save All.
-\item Terminal → Run Task... → 02 Simulate.
-\item 첫 오류가 있으면 파일 경로·행 번호와 이전 행의 세미콜론부터 확인.
-\item LAB2\_PASS 또는 LAB2\_INTEGRATED\_PASS와 검사 수·종료 시각 확인.
-\item Terminal → Run Task... → 03 Open waveform.
+\item File → Save All로 모든 파일을 저장한다.
+\item Terminal → Run Task... → 01 Check tools로 도구를 확인한다.
+\item 같은 메뉴에서 02 Simulate를 선택한다. Ctrl+Shift+B도 기본 시뮬레이션 작업을 실행한다.
+\item 컴파일 오류는 첫 오류의 파일·행 번호부터 확인한다.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{파형에서 확인할 신호}
+\begin{frame}{작업 메뉴의 세 번호}
 \small
-\begin{enumerate}
-\item clk·rst·제어 입력·저장값·출력을 파형에 추가한다.
-\item 상승 에지 직전 입력과 에지 뒤 상태를 비교한다.
-\item 리셋 우선·enable=0 유지·마지막 검사 시각을 확인한다.
-\item 출력만 본 화면과 전체 파형을 각각 저장한다.
-\item 새 실행 로그와 파형인지 확인한다. 이전 PASS를 재사용하지 않는다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=478.5bp 534bp 477bp 6bp,clip]{assets/divider-0913/11-task-list.png}\par\vspace{0.15cm}같은 템플릿의 공통 작업 메뉴다. 01 도구 확인 → 02 시뮬레이션 → 03 파형 열기 순서로 진행한다.\par
 \end{frame}
 
-\begin{frame}{정상 실행의 기준}
+\begin{frame}{레지스터 검사 통과}
 \small
-\terminalbox{LAB2\_PASS register\_pair checks=7}Icarus 종료 시각: 66ns. 로그가 ps로 표시되면 1,000으로 나눠 ns와 비교한다.\par\vspace{0.26cm}이 수치는 교안의 입력 순서·TB·파라미터에 대한 기준이다.\par\vspace{0.26cm}검사 수만 보지 말고 예상 상태와 실제 파형이 일치하는 이유를 설명한다.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=264.75bp 26.25bp 31.5bp 450bp,clip]{assets/register-0913/06-vscode-pass.png}\par\vspace{0.15cm}LAB2\_PASS register\_pair checks=7과 66000 ps(66 ns) 종료를 확인한다. 이전 실행의 PASS가 아닌 방금 생성된 로그를 읽는다.\par
 \end{frame}
 
-\begin{frame}{수정 실험 · 실패와 복구}
+\begin{frame}{편집기와 실행 도구 문제 구분}
+\small
+WindowsApps·9009 오류가 나면 실제 Python 설치 경로를 확인한다. LAB1.code-workspace의 windows → command에는 자신의 python.exe 경로를 쓴다.\par\vspace{0.26cm}정적 분석 확장과 Icarus 실행은 별개다. slang 확장과 서버 버전이 맞지 않으면 공식 릴리스의 호환 서버를 설치하고 slang.path를 자신의 경로로 지정한다.\par\vspace{0.26cm}다른 사람의 C:/Users/... 경로를 복사하지 않는다. 환경 수정 내용과 실제 실행 버전을 레포트에 기록한다.\par
+\end{frame}
+
+\begin{frame}{VaporView 활성화}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=264.75bp 375.75bp 54bp 45bp,clip]{assets/register-0913/07-enable-vaporview.png}\par\vspace{0.15cm}Extensions → @installed vaporview. 꺼져 있다면 Enable 옆 화살표 → Enable (Workspace)를 선택한다.\par
+\end{frame}
+
+\begin{frame}{VCD를 파형 편집기로 열기}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=262.5bp 263.25bp 256.5bp 22.5bp,clip]{assets/register-0913/08-reopen-wave.png}\par\vspace{0.15cm}build/sim/wave.vcd를 연다. 텍스트로 열리면 탭 우클릭 → Reopen Editor With... → VaporView를 선택한다.\par
+\end{frame}
+
+\begin{frame}{일곱 신호 추가}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=33.75bp 390.75bp 817.5bp 26.25bp,clip]{assets/register-0913/09-netlist.png}\par\vspace{0.15cm}Netlist View에서 tb\_register\_pair를 펼친다. clk·rst·load·transfer·data\_in·stored·value를 차례로 더블클릭한다.\par
+\end{frame}
+
+\begin{frame}{전체 파형과 시간 단위}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=264bp 377.25bp 3bp 63bp,clip]{assets/register-0913/10-wave-ns.png}\par\vspace{0.15cm}Zoom Fit으로 0–66 ns 전체를 맞추고 Time Units → ns를 선택한다. 신호 이름이 잘리면 이름 열 경계를 오른쪽으로 넓힌다.\par
+\end{frame}
+
+\begin{frame}{파형 읽기: 저장 후 전달}
+\small
+15 ns 에지에서 stored가 A가 되지만 value는 0이다. load는 저장만 수행하기 때문이다.\par\vspace{0.26cm}25 ns에는 data\_in이 이미 3이다. 그래도 value는 저장해 둔 A가 된다.\par\vspace{0.26cm}이 구간이 입력을 직접 전달하는 회로와 레지스터 사이 전달 회로를 구분한다.\par
+\end{frame}
+
+\begin{frame}{파형 읽기: 동시에 실행}
+\small
+35 ns 에지에서 stored는 3으로 바뀌고 value는 이전 stored인 A를 유지한다.\par\vspace{0.26cm}45 ns 에지에서 value가 3이 된다. 소스 코드의 위아래 순서로 즉시 전달되는 것으로 해석하지 않는다.\par\vspace{0.26cm}55 ns에는 두 제어가 0이므로 입력 F를 무시하고 유지한다. 65 ns에는 rst가 두 제어보다 우선해 둘 다 0이 된다.\par
+\end{frame}
+
+\begin{frame}{수정 실험: 저장값 대신 입력 전달}
 \small
 \begin{enumerate}
-\item 정상 로그와 파형을 먼저 보관한다.
-\item 이전 저장값 대신 현재 입력 전달하기 TB 기대값은 유지한다.
-\item Save All → 02 Simulate. LAB2\_FAIL의 검사 이름·시각을 읽는다.
-\item 어떤 입력과 이전 상태에서 불일치가 발생했는지 계산한다.
-\item RTL을 복구·저장·재실행하고 전체 PASS를 확인한다.
+\item 정상 로그와 wave.vcd를 보관한다.
+\item register\_pair.v의 value <= stored를 value <= data\_in으로 바꾼다. TB는 바꾸지 않는다.
+\item 저장 → 02 Simulate. 26 ns의 transfer stored not live input 검사가 실패하는지 확인한다.
+\item 그 순간 기대값 A와 잘못 전달된 입력 3을 비교한다.
+\item RTL을 원복·저장·재실행해 checks=7 통과를 확인한다.
 \end{enumerate}
 \end{frame}
 
 \begin{frame}[label=reports]{실험 전 레포트}
 \small
 \begin{enumerate}
-\item 동작 표·상태 전이·타이밍을 예상한다.
-\item RTL·TB·XDC·설정의 역할을 설명한다.
-\item 정상/변경/복구 3행 비교표와 실행 로그를 넣는다.
-\item VS Code 파형을 확대해 입력·이전 상태·다음 상태를 설명한다.
-\item 장비 클록·핀·예상 LED 동작을 정리한 뒤 Vivado/CLI로 진행한다.
+\item 제어 입력별 다음 상태 표와 동시 동작의 계산 과정을 작성한다.
+\item 직접 작성한 RTL·TB·simulation.json·XDC의 역할을 설명한다.
+\item 정상·변경·원복 실행 로그와 검사 시각을 비교한다.
+\item VS Code 전체 파형과 25/35/45 ns 확대 파형을 넣어 해석한다.
+\item 보드의 입력 순서와 예상 LED를 계산한 뒤 Vivado를 시작한다.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}[label=implementation]{Vivado GUI에서 이어서 진행}
+\begin{frame}[label=implementation]{Vivado에서 같은 원본 연결}
 \small
-사전 시뮬레이션과 실험 전 레포트를 마친 뒤 Vivado를 연다.\par\vspace{0.26cm}다음 클릭 화면은 기존 LAB1의 실제 캡처를 재사용한다. 화면 속 과거 폴더·파일명 대신 이 교안에 적힌 값을 사용한다.\par\vspace{0.26cm}설계 top: lab2\_register\par\vspace{0.26cm}TB top: tb\_register\_pair\par
+VS Code에서 정상·변경·원복 검사와 실험 전 레포트를 마친 뒤 Vivado를 연다.\par\vspace{0.26cm}Design top은 lab2\_register, Simulation top은 tb\_register\_pair다.\par
 \end{frame}
 
-\begin{frame}{새 프로젝트 시작}
+\begin{frame}{새 프로젝트 메뉴}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=6bp 593.25bp 783bp 24bp,clip]{../LAB1_FPGA_0914/assets/modern-01/40-new-project-menu.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item File → Project → New... → Next.
-\item Project name: lab2\_register
-\item Project location: 자신의 lab2\_03\_register/vivado.
-\item Create project subdirectory를 해제하고 Next.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=6.75bp 541.5bp 772.5bp 22.5bp,clip]{assets/register-0913/vivado/01-new-menu.png}\par\vspace{0.15cm}File → Project → New... → Next. 기존 프로젝트를 열어 둔 경우에도 같은 메뉴로 시작한다.\par
 \end{frame}
 
-\begin{frame}{RTL Project}
+\begin{frame}{이름과 위치}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.2cm,keepaspectratio,trim=172.5bp 386.25bp 515.25bp 246bp,clip]{../LAB1_FPGA_0914/assets/modern-01/42-rtl-project.png}\par}\vspace{0.18cm}RTL Project와 Do not specify sources at this time을 선택한다.\par\vspace{0.26cm}Next를 눌러 부품 선택으로 간다.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=171.75bp 354bp 169.5bp 243.75bp,clip]{assets/register-0913/vivado/02-project-name.png}\par\vspace{0.15cm}Project name: lab2\_register. Project location: 자신의 lab2\_03\_register/vivado. Create project subdirectory 해제 → Next.\par
 \end{frame}
 
-\begin{frame}{정확한 S75 부품 선택}
+\begin{frame}{RTL 프로젝트}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.8cm,keepaspectratio,trim=174.75bp 317.25bp 534.75bp 249bp,clip]{../LAB1_FPGA_0914/assets/modern-01/43-select-part.png}\par}\vspace{0.18cm}Parts 검색란에 xc7s75fgga484-1을 입력한다.\par\vspace{0.26cm}같은 part 행 선택 → Next. Spartan-7·fgga484·-1 확인 → Finish.\par
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=171.75bp 387bp 514.5bp 245.25bp,clip]{assets/register-0913/vivado/03-rtl-project.png}\par\vspace{0.15cm}RTL Project와 Do not specify sources at this time 선택 → Next.\par
 \end{frame}
 
-\begin{frame}{Design Sources 추가}
+\begin{frame}{정확한 부품}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/46-design-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Add Sources → Add or create design sources → Next.
-\item Add Files에서 앞 목록의 src/ RTL 파일을 모두 선택한다.
-\item Copy sources into project 해제 → Finish. 같은 원본 파일을 참조한다.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=179.25bp 306.75bp 514.5bp 253.5bp,clip]{assets/register-0913/vivado/04-part.png}\par\vspace{0.15cm}Parts에서 xc7s75fgga484-1 검색 → 같은 행 선택 → Next. fgga484 패키지와 -1 등급도 확인한다.\par
 \end{frame}
 
-\begin{frame}{Simulation Sources 추가}
+\begin{frame}{생성 요약}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/50-simulation-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Add Sources → Add or create simulation sources → Next.
-\item Add Files → sim/tb\_register\_pair.sv 선택.
-\item sim\_1 유지. Include all design sources for simulation 선택.
-\item Copy sources into project 해제 → Finish.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=174.75bp 381.75bp 604.5bp 179.25bp,clip]{assets/register-0913/vivado/05-summary.png}\par\vspace{0.15cm}이름·위치·부품이 맞으면 Finish. 기존 프로젝트를 닫을지 묻는 창은 저장 상태 확인 후 Yes.\par
 \end{frame}
 
-\begin{frame}{Constraints 추가}
+\begin{frame}{설계 소스 추가}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.0cm,keepaspectratio,trim=258bp 362.25bp 518.25bp 271.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/53-constraints-kind.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Add Sources → Add or create constraints → Next.
-\item Add Files → constraints/lab2\_register.xdc 선택.
-\item Copy constraints files into project 해제 → Finish.
-\end{enumerate}
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=260.25bp 354.75bp 525bp 270bp,clip]{assets/register-0913/vivado/06-design-sources.png}\par\vspace{0.15cm}Add Sources → Add or create design sources → Next → Add Files.\par
 \end{frame}
 
-\begin{frame}{설계 top과 TB top 지정}
+\begin{frame}{RTL 세 파일 선택}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=70.5bp 417.75bp 619.5bp 190.5bp,clip]{assets/register-0913/vivado/07-select-rtl.png}\par\vspace{0.15cm}src의 register\_pair.v·input\_frontend.v·lab2\_register.v 선택 → OK.\par
+\end{frame}
+
+\begin{frame}{원본 RTL 연결}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=264bp 206.25bp 264.75bp 271.5bp,clip]{assets/register-0913/vivado/08-rtl-list.png}\par\vspace{0.15cm}세 파일을 확인한다. Copy sources into project 해제 → Finish. VS Code에서 수정한 원본을 계속 참조한다.\par
+\end{frame}
+
+\begin{frame}{테스트벤치 추가}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=260.25bp 354.75bp 525bp 270bp,clip]{assets/register-0913/vivado/09-sim-sources.png}\par\vspace{0.15cm}Add Sources → Add or create simulation sources → Next → Add Files → sim/tb\_register\_pair.sv.\par
+\end{frame}
+
+\begin{frame}{TB 등록 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=264bp 203.25bp 264.75bp 277.5bp,clip]{assets/register-0913/vivado/10-tb-list.png}\par\vspace{0.15cm}sim\_1과 Include all design sources for simulation 유지. Copy sources into project 해제 → Finish.\par
+\end{frame}
+
+\begin{frame}{XDC 추가}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=260.25bp 354.75bp 525bp 270bp,clip]{assets/register-0913/vivado/11-constraints.png}\par\vspace{0.15cm}Add Sources → Add or create constraints → Next → Add Files → constraints/lab2\_register.xdc.\par
+\end{frame}
+
+\begin{frame}{XDC 원본 연결}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=264bp 204.75bp 264.75bp 295.5bp,clip]{assets/register-0913/vivado/12-xdc-list.png}\par\vspace{0.15cm}Copy constraints files into project 해제 → Finish.\par
+\end{frame}
+
+\begin{frame}{TB를 Top으로 설정}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=230.25bp 165bp 522bp 228.75bp,clip]{assets/register-0913/vivado/13-tb-top-menu.png}\par\vspace{0.15cm}Sources → Simulation Sources → sim\_1. tb\_register\_pair 우클릭 → Set as Top.\par
+\end{frame}
+
+\begin{frame}{서로 다른 두 Top}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=200.25bp 396bp 259.5bp 206.25bp,clip]{assets/register-0913/vivado/14-top-check.png}\par\vspace{0.15cm}TB 이름이 굵게 표시된다. Project Summary의 설계 Top은 lab2\_register로 유지되어야 한다.\par
+\end{frame}
+
+\begin{frame}{동작 시뮬레이션}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=18.75bp 234bp 764.25bp 318.75bp,clip]{assets/register-0913/vivado/15-run-behavioral.png}\par\vspace{0.15cm}Run Simulation → Run Behavioral Simulation. 컴파일과 elaboration이 끝날 때까지 기다린다.\par
+\end{frame}
+
+\begin{frame}{XSim에서도 7개 통과}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=211.5bp 85.5bp 675.75bp 593.25bp,clip]{assets/register-0913/vivado/16-xsim-pass.png}\par\vspace{0.15cm}Tcl Console에서 LAB2\_PASS register\_pair checks=7과 66 ns 종료를 확인한다. 로그가 숨으면 조금 위로 스크롤한다.\par
+\end{frame}
+
+\begin{frame}{XSim 전체 파형}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=232.5bp 324.75bp 4.5bp 137.25bp,clip]{assets/register-0913/vivado/17-xsim-wave.png}\par\vspace{0.15cm}Untitled 1 탭을 더블클릭해 넓히고 Zoom Fit을 누른다. stored와 value의 변경 시각을 VS Code 파형과 대조한다.\par
+\end{frame}
+
+\begin{frame}{시뮬레이션 종료}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=7.5bp 518.25bp 915bp 22.5bp,clip]{assets/register-0913/vivado/18-close-simulation.png}\par\vspace{0.15cm}File → Close Simulation → OK. 레포트용 로그와 파형을 먼저 보관한다.\par
+\end{frame}
+
+\begin{frame}{RTL 연결 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=520.5bp 275.25bp 1.5bp 258bp,clip]{assets/register-0913/vivado/19-elaborated.png}\par\vspace{0.15cm}RTL Analysis → Open Elaborated Design → OK. 입력 처리 회로의 press와 switches가 load·transfer를 만들고 주 클록이 레지스터로 들어가는지 확인한다.\par
+\end{frame}
+
+\begin{frame}{핀 표 열기}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=204bp 390.75bp 699.75bp 24bp,clip]{assets/register-0913/vivado/20-io-menu.png}\par\vspace{0.15cm}Window → I/O Ports. 아래 I/O Ports 탭을 더블클릭해 표를 넓힌다.\par
+\end{frame}
+
+\begin{frame}{LED와 스위치의 핀}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=201bp 120.75bp 340.5bp 161.25bp,clip]{assets/register-0913/vivado/21-bus-pins.png}\par\vspace{0.15cm}All ports 우클릭 → Expand Selection. 비트별 Package Pin·I/O Std를 직접 쓴 XDC와 대조한다.\par
+\end{frame}
+
+\begin{frame}{클록과 버튼 핀}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=201bp 36bp 340.5bp 585bp,clip]{assets/register-0913/vivado/22-scalar-pins.png}\par\vspace{0.15cm}Scalar ports를 펼친다. button=N8, clk=B6, rst=K4와 LVCMOS33을 확인한다.\par
+\end{frame}
+
+\begin{frame}{합성 실행}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=367.5bp 171.75bp 367.5bp 171.75bp,clip]{assets/register-0913/vivado/23-synth-launch.png}\par\vspace{0.15cm}Flow Navigator → Run Synthesis. Launch runs on local host와 jobs 확인 → OK. 이 실행은 jobs=4다.\par
+\end{frame}
+
+\begin{frame}{합성 완료}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=405.75bp 195.75bp 405.75bp 196.5bp,clip]{assets/register-0913/vivado/24-synth-complete.png}\par\vspace{0.15cm}Synthesis successfully completed 확인 → Run Implementation → OK.\par
+\end{frame}
+
+\begin{frame}{구현 실행}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=367.5bp 171.75bp 367.5bp 171.75bp,clip]{assets/register-0913/vivado/25-impl-launch.png}\par\vspace{0.15cm}Launch runs on local host와 jobs 확인 → OK. 배치배선 중에는 소스와 XDC를 수정하지 않는다.\par
+\end{frame}
+
+\begin{frame}{구현 완료}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=405.75bp 195.75bp 405.75bp 196.5bp,clip]{assets/register-0913/vivado/26-impl-complete.png}\par\vspace{0.15cm}Implementation successfully completed 확인 → Generate Bitstream → OK.\par
+\end{frame}
+
+\begin{frame}{bit 생성 실행}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=367.5bp 165bp 367.5bp 164.25bp,clip]{assets/register-0913/vivado/27-bit-launch.png}\par\vspace{0.15cm}Launch runs on local host와 jobs 확인 → OK. write\_bitstream이 완료될 때까지 기다린다.\par
+\end{frame}
+
+\begin{frame}{bit 생성 완료}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=405.75bp 182.25bp 405.75bp 181.5bp,clip]{assets/register-0913/vivado/28-bit-complete.png}\par\vspace{0.15cm}Bitstream Generation successfully completed 확인 → Open Implemented Design → OK. Elaborated Design을 닫을지 물으면 Yes.\par
+\end{frame}
+
+\begin{frame}{타이밍 결과 확인}
+\small
+\includegraphics[width=\textwidth,height=4.8cm,keepaspectratio,trim=386.25bp 60.75bp 274.5bp 507bp,clip]{assets/register-0913/vivado/29-timing.png}\par\vspace{0.15cm}아래 Timing → Design Timing Summary에서 Setup·Hold의 slack과 Failing Endpoints를 확인한다.\par
+\end{frame}
+
+\begin{frame}{생성 파일과 검증 범위}
+\small
+생성 파일: vivado/lab2\_register.runs/impl\_1/lab2\_register.bit.\par\vspace{0.26cm}이 교안의 실제 실행은 같은 학생 폴더의 Icarus·XSim 검사와 Vivado 합성·구현·bit 생성까지 확인했다.\par\vspace{0.26cm}다음 장치 기록과 촬영은 학생이 실습 장비에서 수행한다. bit 생성 화면은 실제 보드 동작을 촬영한 결과가 아니다.\par
+\end{frame}
+
+\begin{frame}{타이밍과 남은 경고}
+\small
+WNS=999997.812 ns, WHS=0.119 ns. Setup·Hold의 실패 endpoint는 각각 0이며 지정한 내부 타이밍 제약을 만족했다. 보드 주기는 1,000,000 ns다.\par\vspace{0.26cm}TIMING-18: LED 출력 8개의 외부 지연 제약이 없다. 외부 동기 수신기의 조건을 정하지 않았으므로 내부 타이밍 통과를 모든 입출력 타이밍 보장으로 해석하지 않는다.\par\vspace{0.26cm}CFGBVS-1: 설정 뱅크의 전압 속성이 지정되지 않았다. 보드 회로도·설정 전압을 확인한 뒤 값을 정하며 임의의 전압을 입력해 경고만 없애지 않는다.\par
+\end{frame}
+
+\begin{frame}{장치에 기록}
 \small
 \begin{enumerate}
-\item Sources에서 Design Sources의 계층을 펼친다.
-\item lab2\_register 우클릭 → Set as Top.
-\item Simulation Sources → sim\_1의 계층을 펼친다.
-\item tb\_register\_pair 우클릭 → Set as Top.
-\item 이름이 이미 굵게 표시되면 해당 top이 선택된 상태다.
+\item 보드 전원·JTAG·주 클록 1 kHz를 확인한다.
+\item Open Hardware Manager → Open Target → Auto Connect.
+\item 장치 우클릭 → Program Device → 방금 생성한 lab2\_register.bit → Program.
+\item K4로 초기화한다. 아래 표대로 DIP 입력을 정하고 N8 버튼을 누른 뒤 놓는다.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Run Behavioral Simulation}
+\begin{frame}{보드 확인 순서}
 \small
-\par{\centering\includegraphics[width=\textwidth,height=2.7cm,keepaspectratio,trim=9bp 231bp 764.25bp 316.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/58-run-behavioral.png}\par}\vspace{0.18cm}Flow Navigator → Run Simulation → Run Behavioral Simulation.\par\vspace{0.26cm}컴파일과 elaboration을 기다린다. Tcl Console의 자기검사 PASS와 종료 시각을 확인한다.\par
+\begin{center}\renewcommand{\arraystretch}{1.55}\begin{tabular}{ll}
+sw[7:0] (16진수) & N8 한 번 실행 후 LED[7:0]\\\hline
+A1 & A0\\
+32 & AA\\
+33 & 3A\\
+33, 다시 누름 & 33\\
+F0 & 33 유지\\
+K4 초기화 & 00\\
+\end{tabular}\end{center}스위치를 먼저 안정시킨 다음 버튼을 누른다. 값과 제어 비트를 구분해 이 결과를 계산한다.\par
 \end{frame}
 
-\begin{frame}{VS Code 결과와 비교}
+\begin{frame}[label=after-report]{실험 후 레포트}
 \small
 \begin{enumerate}
-\item 같은 RTL·TB로 실행했는지 Sources를 확인한다.
-\item clk·rst·입력·상태·출력의 파형을 추가하고 Zoom Fit.
-\item 상승 에지 전후를 확대해 VS Code 결과와 대조한다.
-\item 검사 이름·검사 수·종료 시각·파형의 차이를 기록한다.
-\item File → Close Simulation → OK로 돌아간다.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}{핀과 클록 확인}
-\small
-RTL Analysis → Open Elaborated Design → I/O Ports.\par\vspace{0.26cm}이번 XDC의 PACKAGE\_PIN과 LVCMOS33을 포트마다 대조한다.\par\vspace{0.26cm}B6 주 클록은 1 kHz, XDC 주기는 1,000,000ns다.\par\vspace{0.26cm}실제 장비의 클록 선택도 1 kHz로 맞춘다. 버튼을 클록으로 연결하지 않는다.\par
-\end{frame}
-
-\begin{frame}{Run Synthesis}
-\small
-\par{\centering\includegraphics[width=\textwidth,height=2.3cm,keepaspectratio,trim=7.5bp 180bp 919.5bp 453bp,clip]{../LAB1_FPGA_0914/assets/modern-01/62-run-synthesis.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item Flow Navigator → Run Synthesis.
-\item Launch runs on local host, PC 자원에 맞는 jobs → OK.
-\item 합성 오류가 없으면 완료 창에서 Run Implementation → OK.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}{Run Implementation}
-\small
-\par{\centering\includegraphics[width=\textwidth,height=2.3cm,keepaspectratio,trim=418.5bp 339.75bp 426bp 226.5bp,clip]{../LAB1_FPGA_0914/assets/modern-01/64-synthesis-complete.png}\par}\vspace{0.18cm}\begin{enumerate}
-\item 구현 Launch Runs의 위치·jobs 확인 → OK.
-\item 완료 창에서 Generate Bitstream → OK.
-\item 실패하면 Messages의 첫 오류부터 수정한다.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}{Generate Bitstream}
-\small
-\begin{enumerate}
-\item Generate Bitstream의 Launch Runs에서 OK.
-\item 완료 창에서 Open Implemented Design으로 결과를 확인한다.
-\item vivado/lab2\_register.runs/impl\_1/lab2\_register.bit 확인.
-\item 타이밍·DRC 경고를 읽고 원인과 장비 설정을 기록한다.
-\item bit 생성과 실제 보드 기록은 별도 단계다.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}{장치에서 동작 확인}
-\small
-\begin{enumerate}
-\item 보드 전원·JTAG·주 클록 1 kHz 설정을 확인한다.
-\item Vivado: Open Hardware Manager → Open target → Auto Connect.
-\item Program Device에서 방금 생성한 bit 파일을 선택한다.
-\item 초기화 뒤 입력·버튼·출력을 관찰하고 예상과 비교한다.
-\item CLI판은 앞 장의 openFPGALoader 명령으로 기록한다.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}{실험 후 레포트와 GitHub}
-\small
-\begin{enumerate}
-\item 도구 버전·source commit·XDC·bit 해시·타이밍과 경고를 적는다.
-\item 실제 기록 화면과 보드 전체 사진을 포함한다.
-\item 버튼 누름과 출력 변화가 함께 보이는 영상을 찍는다.
-\item 통합판은 8개 모드 번호·LCD 이름·회로 출력을 보여 준다.
-\item 소스·실험 전후 레포트·사진·영상 링크를 GitHub에서 연결한다.
+\item 동일 TB의 XSim PASS·66 ns 종료·파형을 Icarus와 비교한다.
+\item 부품·핀·클록·합성·구현·bit 파일과 타이밍·경고를 기록한다.
+\item 실제 Program Device 화면과 보드 전체·LED 사진을 넣는다.
+\item 동시 load/transfer를 두 번 실행하는 장면과 초기화 영상을 촬영한다.
+\item 소스·전후 레포트·사진·영상 링크를 GitHub README에서 연결한다.
 \end{enumerate}
 \end{frame}
 \end{document}

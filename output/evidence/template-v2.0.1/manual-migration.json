@@ -1,0 +1,20 @@
+{
+  "tag": "v2.0.1",
+  "template_commit": "86c15c556e2edf1564a203180690f7ec4ad056af",
+  "all_10_clone_commands_checked": true,
+  "all_10_editor_guidance_checked": true,
+  "manuals": [
+    "05.LAB2_01_COUNTER_VIVADO.pdf",
+    "05.LAB2_02_CLOCK_DIVIDER_VIVADO.pdf",
+    "05.LAB2_03_REGISTER_VIVADO.pdf",
+    "05.LAB2_04_SHIFT_REGISTER_VIVADO.pdf",
+    "05.LAB2_05_PISO_VIVADO.pdf",
+    "05.LAB2_06_MOORE_VIVADO.pdf",
+    "05.LAB2_07_MEALY_VIVADO.pdf",
+    "05.LAB2_08_SEGMENT_SCAN_VIVADO.pdf",
+    "05.LAB2_08A_INTEGRATED_VIVADO.pdf",
+    "05.LAB2_08B_INTEGRATED_CLI.pdf"
+  ],
+  "pdf_final_review": "PENDING",
+  "zip": "PENDING"
+}

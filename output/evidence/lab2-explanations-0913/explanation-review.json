@@ -1,0 +1,138 @@
+{
+  "status": "PARTIAL_MANUSCRIPT_PROGRESS_NOT_RELEASE",
+  "reviewed_on": "2026-09-13",
+  "individual": [
+    {
+      "top": "piso4",
+      "pages": [
+        13,
+        14,
+        15,
+        22,
+        23,
+        36,
+        52
+      ],
+      "pdf_pages": 53,
+      "checks": 114,
+      "finish_ns": 976,
+      "mutation_fail_ns": 86,
+      "source_hashes_verified": true,
+      "pdf_sha256": "9106b394ffaac06e97452030d68bc2ae5692e80595268d728157b36cba576d64",
+      "status": "ADDED_EXPLANATION_PAGES_VISUALLY_REVIEWED; remaining manual/code/GUI pending"
+    },
+    {
+      "top": "moore_cycle",
+      "pages": [
+        13,
+        14,
+        15,
+        21,
+        22,
+        35,
+        51
+      ],
+      "pdf_pages": 52,
+      "checks": 23,
+      "finish_ns": 226,
+      "mutation_fail_ns": 46,
+      "source_hashes_verified": true,
+      "pdf_sha256": "7256d7f1a4989677f27444c0c836ca48827aa44c67e1fba2d99b3245b68ec188",
+      "status": "ADDED_EXPLANATION_PAGES_VISUALLY_REVIEWED; remaining manual/code/GUI pending"
+    },
+    {
+      "top": "mealy_toggle",
+      "pages": [
+        13,
+        14,
+        15,
+        22,
+        23,
+        36,
+        52
+      ],
+      "pdf_pages": 53,
+      "checks": 11,
+      "finish_ns": 67,
+      "mutation_fail_ns": 7,
+      "source_hashes_verified": true,
+      "pdf_sha256": "84fe1937480fde5d66cca43cd5079c822ab5985ba12634cda477db58ab549fbc",
+      "status": "ADDED_EXPLANATION_PAGES_VISUALLY_REVIEWED; remaining manual/code/GUI pending"
+    },
+    {
+      "top": "segment_scan8",
+      "pages": [
+        13,
+        14,
+        15,
+        16,
+        25,
+        26,
+        42,
+        58
+      ],
+      "pdf_pages": 59,
+      "checks": 194,
+      "finish_ns": 1306,
+      "mutation_fail_ns": 6,
+      "source_hashes_verified": true,
+      "pdf_sha256": "c35de9d6766e106b8067fb662cc727062b9098379ee1b27fb8677bb9cea0f70a",
+      "status": "ADDED_EXPLANATION_PAGES_VISUALLY_REVIEWED; remaining manual/code/GUI pending"
+    }
+  ],
+  "integrated": [
+    {
+      "edition": "vivado_2026_1",
+      "explanation_pages": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        50,
+        51,
+        52,
+        53,
+        76,
+        92
+      ],
+      "same_explanation_frames_verified": true,
+      "input_hashes_verified": true,
+      "status": "Shared 15 explanation frames reviewed in Vivado PDF; same frame text verified in CLI. Link paragraph spacing corrected and rendered again."
+    },
+    {
+      "edition": "opensource_cli",
+      "explanation_pages": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        50,
+        51,
+        52,
+        53,
+        76,
+        88
+      ],
+      "same_explanation_frames_verified": true,
+      "input_hashes_verified": true,
+      "status": "Shared 15 explanation frames reviewed in Vivado PDF; same frame text verified in CLI. Link paragraph spacing corrected and rendered again."
+    }
+  ],
+  "generator_sha256": {
+    "lab2_circuit_explanations.py": "e1e800fd492e2e0d959c5e5b8c9e12f717820dde21004d2c7f3de91cd3522667",
+    "lab2_integrated_explanations.py": "268f0579c75bb24bc350c8b01d61a6a04dc6a701073c355ba818e2bb4b90769f"
+  },
+  "scope": "Four manuals: 29 added pages reviewed. Two integrated manuals: shared 15-page explanation set reviewed. Missing actual captures and final complete-PDF review remain.",
+  "new_pdfs_in": "tmp/lab2-build",
+  "distribution_pdfs_replaced": false
+}
