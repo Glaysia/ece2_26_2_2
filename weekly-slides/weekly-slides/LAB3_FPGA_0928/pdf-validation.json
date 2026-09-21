@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "pdf_count": 9,
+  "capture_count": 42,
+  "checks": [
+    "all expected PDFs exist",
+    "every page is 4:3",
+    "all local PDF URI targets exist",
+    "each manual contains its PASS marker and six capture slots",
+    "each manual contains v2.0.2, FPGA part, and completion checklist"
+  ],
+  "pdfs": [
+    {
+      "file": "06.LAB3_00_CONTENTS.pdf",
+      "pages": 4,
+      "media_box_points": [
+        362.83,
+        272.13
+      ],
+      "sha256": "c9e8b5ee9e00bee41d3b2a207849b3bf332846ae76481a17b89ed621e73408e9",
+      "capture_placeholders": 0,
+      "uri_links": []
+    },
+    {
+      "file": "06.LAB3_00_START.pdf",
+      "pages": 15,
+      "media_box_points": [
+        362.83,
+        272.13
+      ],
+      "sha256": "29409b18ced0ad4fcf4dfa96516118d14f5068e3dfda5be814275a2354f879f3",
+      "capture_placeholders": 0,
+      "uri_links": []
+    },
+    {
+      "file": "06.LAB3_01_LED_PWM_VIVADO.pdf",
+      "pages": 36,
+      "media_box_points": [
+        362.83,
+        272.13
+      ],
+      "sha256": "e72cde4b54b0402bfb2139c5c7fa317d9eb4250425271e277330d843e5b18d77",
+      "capture_placeholders": 6,
+      "uri_links": []
+    },
+    {
+      "file": "06.LAB3_02_RGB_PWM_VIVADO.pdf",
+      "pages": 37,
+      "media_box_points": [
+        362.83,
+        272.13
+      ],
+      "sha256": "d6d27d66b4b5c6dcf3c486c76ceded5516135894a70bb19712f170c267163661",
+      "capture_placeholders": 6,
+      "uri_links": []
+    },
+    {
+      "file": "06.LAB3_03_PIEZO_VIVADO.pdf",
+      "pages": 31,
+      "media_box_points": [
+        362.83,
+        272.13
+      ],
+      "sha256": "68dd69cbf6de925c453e1eff0caa22d975be417f5a464270c44786365475d11a",
+      "capture_placeholders": 6,
+      "uri_links": []
+    },
+    {
+      "file": "06.LAB3_04_STEPPER_VIVADO.pdf",
+      "pages": 32,
+      "media_box_points": [
+        362.83,
+        272.13
+      ],
+      "sha256": "907746a110ca86c4ffd420742dca4a977ee3e5a271f8658689634ef12fb4d873",
+      "capture_placeholders": 6,
+      "uri_links": []
+    },
+    {
+      "file": "06.LAB3_05_MMSS_CLOCK_VIVADO.pdf",
+      "pages": 37,
+      "media_box_points": [
+        362.83,
+        272.13
+      ],
+      "sha256": "e2265d6dec95de6d8ac2073372eefb657129925e0376a98af994b0999f1d2036",
+      "capture_placeholders": 6,
+      "uri_links": []
+    },
+    {
+      "file": "06.LAB3_06_CHARACTER_LCD_VIVADO.pdf",
+      "pages": 37,
+      "media_box_points": [
+        362.83,
+        272.13
+      ],
+      "sha256": "ea93915aea6eae4c07056f1c419ed497545b4b0f18ca7a50048f1731b5220c73",
+      "capture_placeholders": 6,
+      "uri_links": []
+    },
+    {
+      "file": "06.LAB3_07_UART_ECHO_VIVADO.pdf",
+      "pages": 36,
+      "media_box_points": [
+        362.83,
+        272.13
+      ],
+      "sha256": "6f77f734a40ca32d40108c304b61846df7e1ba65103cf9b0674c990823d3a8c6",
+      "capture_placeholders": 6,
+      "uri_links": []
+    }
+  ]
+}

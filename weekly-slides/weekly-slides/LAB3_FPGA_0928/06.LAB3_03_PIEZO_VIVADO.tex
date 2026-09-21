@@ -1,0 +1,227 @@
+% !TEX program = xelatex
+\input{shared/lab3_preamble.tex}
+\hypersetup{pdftitle={LAB3-21 · 피에조 단일 음},pdfauthor={이해리}}
+\begin{document}
+\renewcommand{\small}{\fontsize{8.7}{10.5}\selectfont}
+\setlength{\leftmargini}{1.35em}
+
+\begin{frame}{LAB3-21 · 피에조 단일 음}
+\small
+전자전기컴퓨터설계실험Ⅱ · FPGA 응용 실습\par\vspace{0.28cm}
+50 MHz를 분주하여 피에조에 294 Hz 사각파를 출력한다.\par\vspace{0.28cm}
+Vivado 2026.1 · FPGA Part xc7s75fgga484-1\par\vspace{0.28cm}
+작성일 2026. 09. 21. · 이해리
+\end{frame}
+
+\begin{frame}[label=lab3-contents]{목차}
+\small
+\navlink{goal}{동작과 검증 목표}\par\vspace{0.28cm}
+\navlink{start}{v2.0.2 프로젝트 시작}\par\vspace{0.28cm}
+\navlink{code}{RTL·TB·XDC 직접 작성}\par\vspace{0.28cm}
+\navlink{simulate}{VS Code·Icarus 시뮬레이션}\par\vspace{0.28cm}
+\navlink{vivado}{Vivado XSim·비트스트림}\par\vspace{0.28cm}
+\navlink{board}{보드 실험과 레포트}
+\end{frame}
+
+\begin{frame}[label=goal]{이번 회로의 목표}
+\small
+50 MHz를 분주하여 피에조에 294 Hz 사각파를 출력한다.\par\vspace{0.28cm}
+핵심 개념: 주파수 분주, 반주기 계산, 파라미터 기반 시뮬레이션\par\vspace{0.28cm}
+기능 TB: \texttt{tb\_piezo}\par\vspace{0.18cm}
+예상 PASS: \texttt{LAB3\_PIEZO\_PASS edges=5}
+\end{frame}
+
+\begin{frame}{입출력과 보드 연결}
+\small
+clk B6 · reset K4 · piezo Y21\par\vspace{0.32cm}
+모든 순차 로직은 MAIN CLOCK F의 50 MHz만 사용한다. 느린 동작은 내부 clock-enable로 만든다.\par\vspace{0.28cm}
+XDC의 포트 이름은 top module 선언과 글자·대소문자까지 같아야 한다.
+\end{frame}
+
+\begin{frame}{TB가 자동으로 확인하는 범위}
+\small
+가속 파라미터에서 출력 반전 사이가 정확히 다섯 클록인지 연속 다섯 번 검사한다.\par\vspace{0.28cm}
+시뮬레이션 파라미터는 실제 동작의 순서와 경계 조건을 유지하면서 시간을 줄인다.\par\vspace{0.28cm}
+PASS는 디지털 기능 검사 결과다. 핀 배선, 전기 규격, 실제 부품의 물리 동작은 보드 단계에서 확인한다.
+\end{frame}
+
+\begin{frame}[fragile,label=start]{v2.0.2 템플릿을 새 이름으로 clone}
+\small
+PowerShell에서 한 줄씩 실행한다.
+\begin{lstlisting}[language={}]
+git clone --branch v2.0.2 https://github.com/Glaysia/fpga-lab-template.git lab3_21_piezo
+cd lab3_21_piezo
+git switch -c main
+code FPGA.code-workspace
+\end{lstlisting}
+태그 clone 직후 detached HEAD 안내는 정상이다. \texttt{git switch -c main}으로 자신의 이력을 시작한다.
+\end{frame}
+
+\begin{frame}{빈 템플릿에서 만들 파일}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.35}\begin{tabular}{>{\raggedright\arraybackslash}p{2.25cm}p{7.2cm}}
+경로 & 파일\\\hline
+src/ & \texttt{lab3\_piezo.v}\\
+sim/ & \texttt{tb\_piezo.sv}\\
+constraints/ & \texttt{lab3\_piezo.xdc}\\
+프로젝트 루트 & \texttt{simulation.json}\\
+\end{tabular}\end{center}
+기존 빈 파일은 이름을 바꾸고, 필요한 추가 RTL은 src에 새로 만든다.
+\end{frame}
+
+\begin{frame}{simulation.json 확인}
+\small
+sources에는 모든 RTL 파일을 의존 순서에 맞춰 넣는다.\par\vspace{0.25cm}
+testbench는 \texttt{sim/tb\_piezo.sv}, simulation\_top은 \texttt{tb\_piezo}다.\par\vspace{0.25cm}
+설계 top \texttt{lab3\_piezo}은 Vivado 합성에서 선택한다. TB module을 합성 top으로 선택하지 않는다.
+\end{frame}
+
+\begin{frame}[label=code]{코드를 읽고 입력하는 기준}
+\small
+다음 코드 화면은 줄 번호와 파일명이 원본 프로젝트와 연결되어 있다.\par\vspace{0.25cm}
+RTL은 합성 가능한 회로, TB는 입력 자극과 기대값 비교, XDC는 핀과 20 ns 클록 제약을 담당한다.\par\vspace{0.25cm}
+코드를 붙여 넣는 것으로 끝내지 말고 counter 폭, 파라미터 계산, 리셋 우선순위, 출력 시점을 설명할 수 있어야 한다.
+\end{frame}
+
+\begin{frame}[fragile]{simulation.json · 1–5행}
+\lstinputlisting[language=,firstline=1,lastline=5,firstnumber=1]{../../../example/fpga_projects_hdl/LAB3/vivado_2026_1/03_piezo/simulation.json}
+\end{frame}
+
+\begin{frame}[fragile]{lab3\_piezo.v · 1–18행}
+\lstinputlisting[language=Verilog,firstline=1,lastline=18,firstnumber=1]{../../../example/fpga_projects_hdl/LAB3/vivado_2026_1/03_piezo/src/lab3_piezo.v}
+\end{frame}
+
+\begin{frame}[fragile]{lab3\_piezo.v · 19–25행}
+\lstinputlisting[language=Verilog,firstline=19,lastline=25,firstnumber=19]{../../../example/fpga_projects_hdl/LAB3/vivado_2026_1/03_piezo/src/lab3_piezo.v}
+\end{frame}
+
+\begin{frame}[fragile]{tb\_piezo.sv · 1–18행}
+\lstinputlisting[language=Verilog,firstline=1,lastline=18,firstnumber=1]{../../../example/fpga_projects_hdl/LAB3/vivado_2026_1/03_piezo/sim/tb_piezo.sv}
+\end{frame}
+
+\begin{frame}[fragile]{tb\_piezo.sv · 19–23행}
+\lstinputlisting[language=Verilog,firstline=19,lastline=23,firstnumber=19]{../../../example/fpga_projects_hdl/LAB3/vivado_2026_1/03_piezo/sim/tb_piezo.sv}
+\end{frame}
+
+\begin{frame}[fragile]{lab3\_piezo.xdc · 1–7행}
+\lstinputlisting[language=,firstline=1,lastline=7,firstnumber=1]{../../../example/fpga_projects_hdl/LAB3/vivado_2026_1/03_piezo/constraints/lab3_piezo.xdc}
+\end{frame}
+
+
+\begin{frame}[label=simulate]{VS Code에서 Icarus 실행}
+\small
+\begin{enumerate}
+\item File → Save All.
+\item Terminal → Run Task... → 01 Check tools.
+\item Git·Python·iverilog·vvp 경로와 버전을 확인한다.
+\item Terminal → Run Task... → 02 Simulate.
+\item \texttt{LAB3\_PIEZO\_PASS edges=5}와 종료 시각을 기록한다.
+\item 03 Open waveform으로 \texttt{build/sim/wave.vcd}를 연다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{VS Code · 프로젝트와 파일}
+\captureplaceholder{03\_piezo-vscode-workspace}{FPGA.code-workspace를 연 뒤 Explorer에 src·sim·constraints·tools와 작성 파일이 보이게 캡처한다.}
+\end{frame}
+
+\begin{frame}{VS Code · 시뮬레이션 PASS}
+\captureplaceholder{03\_piezo-vscode-pass}{02 Simulate 실행 뒤 LAB3\_PIEZO\_PASS edges=5와 종료 시각이 함께 보이게 캡처한다.}
+\end{frame}
+
+\begin{frame}{VS Code · 파형}
+\captureplaceholder{03\_piezo-vscode-wave}{TB top을 펼쳐 clk·rst·주요 입력·내부 상태·출력을 추가하고 경계 조건이 보이게 확대한다.}
+\end{frame}
+
+\begin{frame}{파형에서 설명할 내용}
+\small
+가속 파라미터에서 출력 반전 사이가 정확히 다섯 클록인지 연속 다섯 번 검사한다.\par\vspace{0.28cm}
+입력을 바꾼 시점, 유효 상승 에지, 상태 갱신 직후를 구분한다.\par\vspace{0.28cm}
+파라미터를 줄인 TB 시간과 실제 50 MHz 보드 시간을 혼동하지 않는다.
+\end{frame}
+
+\begin{frame}{수정 실험}
+\small
+TONE\_HZ를 다른 음의 주파수로 바꾸어 분주값과 소리 변화를 비교한 뒤 복구한다.\par\vspace{0.28cm}
+정상 PASS와 파형을 먼저 보관한 뒤 한 항목만 수정한다. 예상값, 실제 FAIL 또는 변화, 복구 PASS를 3행 표로 기록한다.\par\vspace{0.28cm}
+TB의 기대값을 RTL 오류에 맞춰 바꾸지 않는다.
+\end{frame}
+
+\begin{frame}[label=vivado]{Vivado 2026.1 프로젝트 생성}
+\small
+\begin{enumerate}
+\item Create Project → RTL Project → Do not specify sources at this time.
+\item Part에 \texttt{xc7s75fgga484-1}을 정확히 선택한다.
+\item Add Sources에 src의 RTL 전부, Add Simulation Sources에 TB를 추가한다.
+\item Add or Create Constraints에 XDC를 추가한다.
+\item Design Sources의 top을 \texttt{lab3\_piezo}으로 설정한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Vivado · 소스와 top}
+\captureplaceholder{03\_piezo-vivado-sources}{Sources 창에서 RTL, Simulation Sources의 TB, Constraints의 XDC와 top module이 함께 보이게 캡처한다.}
+\end{frame}
+
+\begin{frame}{Vivado XSim}
+\small
+Flow Navigator → Simulation → Run Behavioral Simulation.\par\vspace{0.28cm}
+Tcl Console의 \texttt{LAB3\_PIEZO\_PASS edges=5}를 확인한다. Objects/Wave에서 입력과 출력을 추가하고 Zoom Fit으로 전체 실행을 본다.\par\vspace{0.28cm}
+Icarus와 XSim은 같은 RTL·TB를 실행해야 한다. 서로 다른 사본을 등록하지 않는다.
+\end{frame}
+
+\begin{frame}{Vivado · XSim PASS와 파형}
+\captureplaceholder{03\_piezo-xsim-pass}{Tcl Console PASS, waveform 이름, 시간축, 핵심 입출력이 한 화면에 보이게 캡처한다.}
+\end{frame}
+
+\begin{frame}{핀과 클록 제약 확인}
+\small
+Open Elaborated Design 또는 I/O Planning에서 top port와 PACKAGE\_PIN을 대조한다.\par\vspace{0.25cm}
+Reports → Timing → Report Clocks에서 clk 주기 20.000 ns를 확인한다.\par\vspace{0.25cm}
+XDC를 저장한 뒤 Run Synthesis → Run Implementation → Generate Bitstream 순서로 실행한다.
+\end{frame}
+
+\begin{frame}{Vivado · 구현과 bit 생성}
+\captureplaceholder{03\_piezo-vivado-bit}{Implementation 완료, Timing Summary의 WNS, DRC 오류 0건, bitstream 생성 완료가 확인되는 화면을 캡처한다.}
+\end{frame}
+
+\begin{frame}[label=board]{보드에서 확인}
+\small
+전원을 끈 상태에서 외부 부품 결선과 공통 GND를 먼저 확인한다.\par\vspace{0.25cm}
+Hardware Manager → Open Target → Auto Connect → Program Device에서 생성한 bit를 기록한다.\par\vspace{0.25cm}
+출력 주파수를 계산하고 실제 음 높이와 음량을 관찰한다.\par\vspace{0.25cm}
+사진에는 보드 전체와 사용 핀이, 영상에는 입력 조작과 출력 변화가 함께 보이게 한다.
+\end{frame}
+
+\begin{frame}{실험 전 레포트}
+\small
+\begin{enumerate}
+\item 동작 원리와 핵심 파라미터 계산을 자기 말로 설명한다.
+\item RTL·TB·XDC 각 파일의 역할과 top module을 적는다.
+\item TB 자극과 기대 결과를 표로 정리한다.
+\item Icarus PASS·파형과 수정/복구 결과를 넣고 경계 조건을 설명한다.
+\item 보드에서 확인해야 할 항목과 예상 결과를 적는다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{실험 후 레포트와 제출}
+\small
+\begin{enumerate}
+\item XSim PASS·파형, DRC·timing·bitstream 결과를 기록한다.
+\item 실제 보드 관찰, 계산값과 실측의 차이, 원인을 설명한다.
+\item 결선이 보이는 사진과 동작 영상 링크를 첨부한다.
+\item 자신의 GitHub 저장소 URL과 최종 commit hash를 적는다.
+\item src·sim·constraints·simulation.json만 최종 원본으로 관리하고 생성물은 제외한다.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{완료 체크}
+\small
+\begin{itemize}
+\item[$\square$] v2.0.2 태그에서 새 프로젝트를 만들었다.
+\item[$\square$] RTL·TB·XDC를 직접 작성하고 설명할 수 있다.
+\item[$\square$] Icarus와 XSim에서 같은 PASS를 확인했다.
+\item[$\square$] 핀·20 ns 클록·DRC·timing을 확인하고 bit를 만들었다.
+\item[$\square$] 보드 동작 사진·영상과 GitHub 링크를 정리했다.
+\item[$\square$] 실험 전·후 레포트에 결과와 한계를 구분해 기록했다.
+\end{itemize}
+\end{frame}
+\end{document}

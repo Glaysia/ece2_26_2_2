@@ -1,0 +1,100 @@
+{
+  "date": "2026-09-21",
+  "target": {
+    "board": "Combo II-DLD S75",
+    "part": "xc7s75fgga484-1",
+    "clock_hz": 50000000
+  },
+  "tools": {
+    "iverilog": "13.0",
+    "xsim": "Vivado Simulator 2026.1",
+    "vivado": "2026.1"
+  },
+  "template": {
+    "repository": "https://github.com/Glaysia/fpga-lab-template.git",
+    "tag": "v2.0.2",
+    "commit": "0b3318e466e9d77f7d3880df09c827788f361913",
+    "clean_clone_smoke": "TEMPLATE_V202_SMOKE_PASS"
+  },
+  "projects": [
+    {
+      "folder": "01_led_pwm",
+      "simulation": "LAB3_LED_PWM_PASS checks=4",
+      "icarus": "pass",
+      "xsim": "pass",
+      "vivado": "pass",
+      "drc_errors": 0,
+      "wns_ns": 8.971,
+      "bitstream": "lab3_led_pwm.bit"
+    },
+    {
+      "folder": "02_rgb_pwm",
+      "simulation": "LAB3_RGB_PWM_PASS checks=2",
+      "icarus": "pass",
+      "xsim": "pass",
+      "vivado": "pass",
+      "drc_errors": 0,
+      "wns_ns": 8.629,
+      "bitstream": "lab3_rgb_pwm.bit"
+    },
+    {
+      "folder": "03_piezo",
+      "simulation": "LAB3_PIEZO_PASS edges=5",
+      "icarus": "pass",
+      "xsim": "pass",
+      "vivado": "pass",
+      "drc_errors": 0,
+      "wns_ns": 16.761,
+      "bitstream": "lab3_piezo.bit"
+    },
+    {
+      "folder": "04_stepper",
+      "simulation": "LAB3_STEPPER_PASS checks=8",
+      "icarus": "pass",
+      "xsim": "pass",
+      "vivado": "pass",
+      "drc_errors": 0,
+      "wns_ns": 16.252,
+      "bitstream": "lab3_stepper.bit"
+    },
+    {
+      "folder": "05_mmss_clock",
+      "simulation": "LAB3_MMSS_PASS checks=7",
+      "icarus": "pass",
+      "xsim": "pass",
+      "vivado": "pass",
+      "drc_errors": 0,
+      "wns_ns": 15.118,
+      "bitstream": "lab3_mmss_clock.bit"
+    },
+    {
+      "folder": "06_character_lcd",
+      "simulation": "LAB3_LCD_PASS bytes=40",
+      "icarus": "pass",
+      "xsim": "pass",
+      "vivado": "pass",
+      "drc_errors": 0,
+      "wns_ns": 14.220,
+      "bitstream": "lab3_character_lcd.bit"
+    },
+    {
+      "folder": "07_uart_echo",
+      "simulation": "LAB3_UART_ECHO_PASS checks=3",
+      "icarus": "pass",
+      "xsim": "pass",
+      "vivado": "pass",
+      "drc_errors": 0,
+      "wns_ns": 14.617,
+      "bitstream": "lab3_uart_echo.bit"
+    }
+  ],
+  "copy_audit": {
+    "projects": 7,
+    "canonical_files_compared": 42,
+    "result": "pass"
+  },
+  "not_performed": [
+    "Vivado GUI screenshot capture",
+    "physical board programming and observation"
+  ]
+}

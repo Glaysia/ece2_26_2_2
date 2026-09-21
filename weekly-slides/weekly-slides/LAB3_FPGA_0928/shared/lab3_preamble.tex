@@ -1,0 +1,66 @@
+% !TEX program = xelatex
+% LAB3 common 4:3 course style. Build each document from LAB3_FPGA_0928.
+\documentclass[aspectratio=43,10pt,t]{beamer}
+
+\usepackage{fontspec}
+\usepackage{kotex}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{array}
+\setmainfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmainhangulfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setsansfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setsanshangulfont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+\setmonofont{D2Coding-Regular.ttf}[Path=../../assets/fonts/,BoldFont={D2Coding-Bold.ttf}]
+
+\definecolor{UOSBlue}{HTML}{005EB8}
+\definecolor{TextGray}{HTML}{303030}
+\definecolor{CodeGray}{HTML}{F4F6F8}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{normal text}{fg=TextGray,bg=white}
+\setbeamercolor{frametitle}{fg=UOSBlue,bg=white}
+\setbeamercolor{structure}{fg=UOSBlue}
+\setbeamertemplate{itemize item}{\color{UOSBlue}\small$\bullet$}
+\setbeamertemplate{frametitle}{%
+  \vspace{0.45cm}\hspace{0.42cm}\insertframetitle\par\vspace{0.08cm}}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamertemplate{footline}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south,inner sep=0pt] at ([yshift=0.48cm]current page.south)
+      {\includegraphics[width=2.64cm,trim=58bp 385bp 58bp 385bp,clip]{../../assets/uos-logo-horizontal.png}};
+    \node[anchor=west,text=UOSBlue,font=\scriptsize]
+      at ([xshift=0.58cm,yshift=0.48cm]current page.south west) {\labthreehome};
+    \node[anchor=east,text=gray,font=\scriptsize]
+      at ([xshift=-0.52cm,yshift=0.48cm]current page.south east) {\insertframenumber};
+  \end{tikzpicture}%
+  \vspace{0.34cm}}
+
+\newcommand{\course}{전자전기컴퓨터설계실험Ⅱ}
+\newcommand{\presenter}{이해리}
+\newcommand{\materialdate}{2026. 09. 21.}
+\newcommand{\contentsbutton}{\beamerbutton{\strut\hspace{0.5em}목차\hspace{0.5em}}}
+\newcommand{\labthreehome}{\hyperlink{lab3-contents}{\contentsbutton}}
+\newcommand{\navlink}[2]{\hyperlink{#1}{\textcolor{UOSBlue}{#2}}}
+\newcommand{\terminalbox}[1]{\par\vspace{0.12cm}{\setlength{\fboxsep}{6pt}\colorbox{black}{\parbox{\dimexpr\textwidth-12pt\relax}{\color{white}\ttfamily\fontsize{6.8}{8.2}\selectfont #1}}}\par\vspace{0.12cm}}
+\newcommand{\captureplaceholder}[2]{%
+  \begin{center}\setlength{\fboxsep}{8pt}%
+  \fcolorbox{UOSBlue}{CodeGray}{\begin{minipage}[c][4.25cm][c]{0.88\textwidth}
+    \centering\color{UOSBlue}\bfseries 실제 화면 캡처 자리\\[0.25cm]
+    \normalfont\color{TextGray}\small ID: #1\\[0.18cm]#2
+  \end{minipage}}\end{center}}
+\lstset{
+  language=Verilog,
+  basicstyle=\ttfamily\fontsize{6.2}{7.2}\selectfont,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=5pt,
+  frame=single,
+  backgroundcolor=\color{CodeGray},
+  rulecolor=\color{gray!45},
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  tabsize=2
+}

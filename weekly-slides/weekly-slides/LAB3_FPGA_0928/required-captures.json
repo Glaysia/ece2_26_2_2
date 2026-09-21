@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "count": 42,
+  "captures": [
+    {
+      "id": "01_led_pwm-vscode-workspace",
+      "experiment": 19,
+      "project": "01_led_pwm",
+      "description": "VS Code workspace와 작성 파일"
+    },
+    {
+      "id": "01_led_pwm-vscode-pass",
+      "experiment": 19,
+      "project": "01_led_pwm",
+      "description": "Icarus PASS와 종료 시각"
+    },
+    {
+      "id": "01_led_pwm-vscode-wave",
+      "experiment": 19,
+      "project": "01_led_pwm",
+      "description": "핵심 신호 waveform"
+    },
+    {
+      "id": "01_led_pwm-vivado-sources",
+      "experiment": 19,
+      "project": "01_led_pwm",
+      "description": "Vivado Sources, top, XDC"
+    },
+    {
+      "id": "01_led_pwm-xsim-pass",
+      "experiment": 19,
+      "project": "01_led_pwm",
+      "description": "XSim PASS와 waveform"
+    },
+    {
+      "id": "01_led_pwm-vivado-bit",
+      "experiment": 19,
+      "project": "01_led_pwm",
+      "description": "DRC, timing, bitstream 완료"
+    },
+    {
+      "id": "02_rgb_pwm-vscode-workspace",
+      "experiment": 20,
+      "project": "02_rgb_pwm",
+      "description": "VS Code workspace와 작성 파일"
+    },
+    {
+      "id": "02_rgb_pwm-vscode-pass",
+      "experiment": 20,
+      "project": "02_rgb_pwm",
+      "description": "Icarus PASS와 종료 시각"
+    },
+    {
+      "id": "02_rgb_pwm-vscode-wave",
+      "experiment": 20,
+      "project": "02_rgb_pwm",
+      "description": "핵심 신호 waveform"
+    },
+    {
+      "id": "02_rgb_pwm-vivado-sources",
+      "experiment": 20,
+      "project": "02_rgb_pwm",
+      "description": "Vivado Sources, top, XDC"
+    },
+    {
+      "id": "02_rgb_pwm-xsim-pass",
+      "experiment": 20,
+      "project": "02_rgb_pwm",
+      "description": "XSim PASS와 waveform"
+    },
+    {
+      "id": "02_rgb_pwm-vivado-bit",
+      "experiment": 20,
+      "project": "02_rgb_pwm",
+      "description": "DRC, timing, bitstream 완료"
+    },
+    {
+      "id": "03_piezo-vscode-workspace",
+      "experiment": 21,
+      "project": "03_piezo",
+      "description": "VS Code workspace와 작성 파일"
+    },
+    {
+      "id": "03_piezo-vscode-pass",
+      "experiment": 21,
+      "project": "03_piezo",
+      "description": "Icarus PASS와 종료 시각"
+    },
+    {
+      "id": "03_piezo-vscode-wave",
+      "experiment": 21,
+      "project": "03_piezo",
+      "description": "핵심 신호 waveform"
+    },
+    {
+      "id": "03_piezo-vivado-sources",
+      "experiment": 21,
+      "project": "03_piezo",
+      "description": "Vivado Sources, top, XDC"
+    },
+    {
+      "id": "03_piezo-xsim-pass",
+      "experiment": 21,
+      "project": "03_piezo",
+      "description": "XSim PASS와 waveform"
+    },
+    {
+      "id": "03_piezo-vivado-bit",
+      "experiment": 21,
+      "project": "03_piezo",
+      "description": "DRC, timing, bitstream 완료"
+    },
+    {
+      "id": "04_stepper-vscode-workspace",
+      "experiment": 22,
+      "project": "04_stepper",
+      "description": "VS Code workspace와 작성 파일"
+    },
+    {
+      "id": "04_stepper-vscode-pass",
+      "experiment": 22,
+      "project": "04_stepper",
+      "description": "Icarus PASS와 종료 시각"
+    },
+    {
+      "id": "04_stepper-vscode-wave",
+      "experiment": 22,
+      "project": "04_stepper",
+      "description": "핵심 신호 waveform"
+    },
+    {
+      "id": "04_stepper-vivado-sources",
+      "experiment": 22,
+      "project": "04_stepper",
+      "description": "Vivado Sources, top, XDC"
+    },
+    {
+      "id": "04_stepper-xsim-pass",
+      "experiment": 22,
+      "project": "04_stepper",
+      "description": "XSim PASS와 waveform"
+    },
+    {
+      "id": "04_stepper-vivado-bit",
+      "experiment": 22,
+      "project": "04_stepper",
+      "description": "DRC, timing, bitstream 완료"
+    },
+    {
+      "id": "05_mmss_clock-vscode-workspace",
+      "experiment": 23,
+      "project": "05_mmss_clock",
+      "description": "VS Code workspace와 작성 파일"
+    },
+    {
+      "id": "05_mmss_clock-vscode-pass",
+      "experiment": 23,
+      "project": "05_mmss_clock",
+      "description": "Icarus PASS와 종료 시각"
+    },
+    {
+      "id": "05_mmss_clock-vscode-wave",
+      "experiment": 23,
+      "project": "05_mmss_clock",
+      "description": "핵심 신호 waveform"
+    },
+    {
+      "id": "05_mmss_clock-vivado-sources",
+      "experiment": 23,
+      "project": "05_mmss_clock",
+      "description": "Vivado Sources, top, XDC"
+    },
+    {
+      "id": "05_mmss_clock-xsim-pass",
+      "experiment": 23,
+      "project": "05_mmss_clock",
+      "description": "XSim PASS와 waveform"
+    },
+    {
+      "id": "05_mmss_clock-vivado-bit",
+      "experiment": 23,
+      "project": "05_mmss_clock",
+      "description": "DRC, timing, bitstream 완료"
+    },
+    {
+      "id": "06_character_lcd-vscode-workspace",
+      "experiment": 24,
+      "project": "06_character_lcd",
+      "description": "VS Code workspace와 작성 파일"
+    },
+    {
+      "id": "06_character_lcd-vscode-pass",
+      "experiment": 24,
+      "project": "06_character_lcd",
+      "description": "Icarus PASS와 종료 시각"
+    },
+    {
+      "id": "06_character_lcd-vscode-wave",
+      "experiment": 24,
+      "project": "06_character_lcd",
+      "description": "핵심 신호 waveform"
+    },
+    {
+      "id": "06_character_lcd-vivado-sources",
+      "experiment": 24,
+      "project": "06_character_lcd",
+      "description": "Vivado Sources, top, XDC"
+    },
+    {
+      "id": "06_character_lcd-xsim-pass",
+      "experiment": 24,
+      "project": "06_character_lcd",
+      "description": "XSim PASS와 waveform"
+    },
+    {
+      "id": "06_character_lcd-vivado-bit",
+      "experiment": 24,
+      "project": "06_character_lcd",
+      "description": "DRC, timing, bitstream 완료"
+    },
+    {
+      "id": "07_uart_echo-vscode-workspace",
+      "experiment": 25,
+      "project": "07_uart_echo",
+      "description": "VS Code workspace와 작성 파일"
+    },
+    {
+      "id": "07_uart_echo-vscode-pass",
+      "experiment": 25,
+      "project": "07_uart_echo",
+      "description": "Icarus PASS와 종료 시각"
+    },
+    {
+      "id": "07_uart_echo-vscode-wave",
+      "experiment": 25,
+      "project": "07_uart_echo",
+      "description": "핵심 신호 waveform"
+    },
+    {
+      "id": "07_uart_echo-vivado-sources",
+      "experiment": 25,
+      "project": "07_uart_echo",
+      "description": "Vivado Sources, top, XDC"
+    },
+    {
+      "id": "07_uart_echo-xsim-pass",
+      "experiment": 25,
+      "project": "07_uart_echo",
+      "description": "XSim PASS와 waveform"
+    },
+    {
+      "id": "07_uart_echo-vivado-bit",
+      "experiment": 25,
+      "project": "07_uart_echo",
+      "description": "DRC, timing, bitstream 완료"
+    }
+  ]
+}

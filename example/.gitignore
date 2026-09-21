@@ -1,3 +1,7 @@
 **/*.vvp
 **/*.vcd
 **/*.tcl
+
+# LAB3 keeps reproducible Vivado batch build scripts as source.
+!fpga_projects_hdl/LAB3/common/tools/*.tcl
+!fpga_projects_hdl/LAB3/vivado_2026_1/*/tools/*.tcl

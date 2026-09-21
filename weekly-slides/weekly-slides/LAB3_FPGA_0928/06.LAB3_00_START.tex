@@ -1,0 +1,127 @@
+% !TEX program = xelatex
+\input{shared/lab3_preamble.tex}
+\hypersetup{pdftitle={LAB3 응용회로 공통 예습},pdfauthor={이해리}}
+\begin{document}
+\renewcommand{\small}{\fontsize{8.7}{10.6}\selectfont}
+\setlength{\leftmargini}{1.35em}
+\begin{frame}{LAB 3 · FPGA 응용회로 공통 예습}
+\small
+전자전기컴퓨터설계실험Ⅱ\par\vspace{0.28cm}
+PWM·구동기·표시장치·직렬통신을 50 MHz 단일 클록으로 구현한다.\par\vspace{0.28cm}
+9월 28일 실습을 위한 공통 안내\par\vspace{0.28cm}작성일 2026. 09. 21. · 이해리
+\end{frame}
+\begin{frame}[label=lab3-contents]{목차}
+\small
+\navlink{scope}{01 · 7개 실험과 공통 규칙}\par\vspace{0.3cm}
+\navlink{timing}{02 · 단일 클록·clock-enable·비동기 입력}\par\vspace{0.3cm}
+\navlink{verification}{03 · Icarus와 XSim 검증}\par\vspace{0.3cm}
+\navlink{hardware}{04 · Vivado 구현과 보드 안전}\par\vspace{0.3cm}
+\navlink{reports}{05 · 실험 전후 레포트와 제출}
+\end{frame}
+\begin{frame}[label=scope]{LAB3 필수 실험}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.25}\begin{tabular}{cll}
+번호 & 실험 & 설계 top\\\hline
+19 & PWM LED 밝기 & \texttt{lab3\_led\_pwm}\\
+20 & RGB LED PWM & \texttt{lab3\_rgb\_pwm}\\
+21 & 피에조 단일 음 & \texttt{lab3\_piezo}\\
+22 & 스텝모터 위상 제어 & \texttt{lab3\_stepper}\\
+23 & MM:SS 시계 & \texttt{lab3\_mmss\_clock}\\
+24 & 문자 LCD 제어 & \texttt{lab3\_character\_lcd}\\
+25 & PC–FPGA UART 에코 & \texttt{lab3\_uart\_echo}\\
+\end{tabular}\end{center}
+7개를 개별 프로젝트로 진행한다. 통합판과 명령줄 Vivado 구현은 이번 필수 범위에 포함하지 않는다.
+\end{frame}
+\begin{frame}{한 실험을 끝내는 순서}
+\small
+\begin{enumerate}
+\item v2.0.2 빈 템플릿 clone → 자신의 main 브랜치 생성.
+\item RTL·TB·XDC·simulation.json 직접 작성.
+\item VS Code에서 01 Check tools → 02 Simulate → 03 Open waveform.
+\item 실험 전 레포트에 원리·예상값·PASS·파형·수정 실험 정리.
+\item Vivado GUI에서 같은 원본으로 XSim → 합성 → 구현 → bit 생성.
+\item 보드 기록 → 사진·영상·관찰 → GitHub·실험 후 레포트 제출.
+\end{enumerate}
+\end{frame}
+\begin{frame}[fragile]{공통 시작 명령}
+\small
+실험마다 마지막 폴더 이름만 바꾼다.
+\begin{lstlisting}[language={}]
+git clone --branch v2.0.2 https://github.com/Glaysia/fpga-lab-template.git lab3_19_led_pwm
+cd lab3_19_led_pwm
+git switch -c main
+code FPGA.code-workspace
+\end{lstlisting}
+완성 예시 저장소를 clone하는 절차가 아니다. 빈 템플릿에 교안의 원본을 직접 작성한다.
+\end{frame}
+\begin{frame}[label=timing]{50 MHz 단일 클록}
+\small
+모든 저장소의 clk는 MAIN CLOCK F, 50 MHz다. 클록 주기는 20 ns다.\par\vspace{0.28cm}
+LED PWM, 모터 step, 1초 tick, LCD tick, UART bit timing은 counter가 만드는 clock-enable로 제어한다.\par\vspace{0.28cm}
+분주한 일반 신호를 다른 always 블록의 clk로 사용하지 않는다. XDC에는 실제 외부 clk 하나만 create\_clock으로 선언한다.
+\end{frame}
+\begin{frame}{파라미터 계산}
+\small
+\begin{center}\renewcommand{\arraystretch}{1.35}\begin{tabular}{ll}
+기능 & 기준 계산\\\hline
+PWM 주기 & CLK\_HZ / PWM\_HZ\\
+피에조 반주기 & CLK\_HZ / (2·TONE\_HZ)\\
+모터 step 간격 & CLK\_HZ / STEPS\_PER\_SEC\\
+1초 tick & CLK\_HZ 클록마다 1회\\
+UART bit & 반올림한 CLK\_HZ / BAUD\\
+\end{tabular}\end{center}
+나눗셈 결과와 counter 범위를 계산한 뒤 parameter가 0이 되는 조건을 피한다.
+\end{frame}
+\begin{frame}{비동기 입력 처리}
+\small
+버튼·UART RX는 FPGA clk와 무관한 시점에 바뀐다. 첫 두 플립플롭으로 동기화한다.\par\vspace{0.28cm}
+기계식 버튼은 동기화 뒤 안정 시간을 확인하고 눌림당 한 클록 펄스를 만든다.\par\vspace{0.28cm}
+방향·enable 같은 레벨 입력도 두 단계 동기화를 거친다. 시뮬레이션은 메타안정성 자체가 아니라 동기화 이후의 디지털 순서를 검사한다.
+\end{frame}
+\begin{frame}[label=verification]{Icarus 기능 시뮬레이션}
+\small
+TB는 실제 시간 상수를 작은 parameter로 덮어써 빠르게 실행한다.\par\vspace{0.25cm}
+정상 경로만 보지 말고 0%/100%, 자리올림, 순환, 정지, stop bit 같은 경계를 검사한다.\par\vspace{0.25cm}
+PASS 문자열·검사 수·종료 시각과 파형을 함께 보관한다. XDC는 Icarus가 읽지 않으므로 핀 검증과 구분한다.
+\end{frame}
+\begin{frame}{Vivado XSim 교차 확인}
+\small
+Vivado Simulation Sources에 Icarus에서 사용한 같은 TB를 등록한다.\par\vspace{0.25cm}
+Run Behavioral Simulation 뒤 같은 PASS marker가 나오는지 확인한다.\par\vspace{0.25cm}
+파형에서 clk·rst·입력·내부 counter 또는 state·출력을 함께 보고 유효 에지 전후를 설명한다.
+\end{frame}
+\begin{frame}{기능 PASS의 한계}
+\small
+기능 시뮬레이션은 RTL의 디지털 동작을 검증한다. 실제 핀 번호·IOSTANDARD·배선·전원·부품 특성은 포함하지 않는다.\par\vspace{0.28cm}
+합성·구현·DRC·timing·bitstream 성공은 보드 관찰을 대신하지 않는다.\par\vspace{0.28cm}
+레포트에서 자동검사 결과, 구현 결과, 실제 관찰을 서로 구분한다.
+\end{frame}
+\begin{frame}[label=hardware]{Vivado 구현 체크}
+\small
+\begin{enumerate}
+\item Part: xc7s75fgga484-1.
+\item Design top과 Simulation top을 구분한다.
+\item 모든 top port에 PACKAGE\_PIN과 LVCMOS33을 적용한다.
+\item clk에 20.000 ns create\_clock이 적용되었는지 확인한다.
+\item DRC 오류 0, timing WNS 0 이상, bitstream 완료를 기록한다.
+\end{enumerate}
+\end{frame}
+\begin{frame}{외부 부품을 연결할 때}
+\small
+전원을 끄고 회로와 공통 GND를 먼저 연결한다. 모터는 FPGA 핀에서 직접 구동하지 않고 드라이버와 별도 전원을 사용한다.\par\vspace{0.28cm}
+LCD 전원·논리 전압·대비 연결을 확인한다. UART는 TX↔RX를 교차하고 전압 레벨과 GND를 확인한다.\par\vspace{0.28cm}
+피에조·LED·7세그먼트의 극성과 보드 회로도를 확인한다.
+\end{frame}
+\begin{frame}[label=reports]{실험 전 레포트}
+\small
+회로 목적, 블록 흐름, 파라미터 계산, 상태 또는 타이밍 표를 적는다.\par\vspace{0.25cm}
+RTL·TB·XDC의 역할을 설명하고 TB 자극과 기대 결과를 표로 만든다.\par\vspace{0.25cm}
+Icarus PASS와 파형, 한 항목 수정 실험과 복구 결과를 넣는다. 실제 보드에서 확인할 항목을 미리 적는다.
+\end{frame}
+\begin{frame}{실험 후 레포트와 GitHub}
+\small
+XSim PASS·파형, 핀·DRC·timing·bitstream 결과를 기록한다.\par\vspace{0.25cm}
+실제 보드 사진과 입력부터 출력까지 보이는 영상, 관찰값과 예상값의 차이를 설명한다.\par\vspace{0.25cm}
+GitHub URL과 최종 commit hash를 넣는다. 생성된 build·Vivado 파일을 소스처럼 commit하지 않는다.
+\end{frame}
+\end{document}

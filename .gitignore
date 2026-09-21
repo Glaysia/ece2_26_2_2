@@ -25,5 +25,11 @@ weekly-slides/*.xdv
 
 tmp/*
 
+# Local HDL/PDF verification products
+/build/
+weekly-slides/weekly-slides/**/build*.txt
+weekly-slides/weekly-slides/**/*-rebuild-*.txt
+**/__pycache__/
+
 **/*.log
 **/*.jou
