@@ -3,8 +3,8 @@ module lab3_mmss_clock #(
     parameter integer CLK_HZ = 50_000_000,
     parameter integer SCAN_HZ = 4_000
 ) (
-    input  wire clk,
-    input  wire rst,
+    input  wire clk_50mhz,
+    input  wire rst_p,
     output reg [7:0] seg_data,
     output reg [7:0] seg_com
 );
@@ -16,15 +16,15 @@ module lab3_mmss_clock #(
     reg [1:0] scan_select;
 
     mmss_counter #(.CLK_HZ(CLK_HZ)) u_counter (
-        .clk(clk), .rst(rst), .minute_tens(mt), .minute_ones(mo),
+        .clk(clk_50mhz), .rst_p(rst_p), .minute_tens(mt), .minute_ones(mo),
         .second_tens(st), .second_ones(so));
     sevenseg_decode u_mt(.digit(mt), .segments(seg_mt));
     sevenseg_decode u_mo(.digit(mo), .segments(seg_mo));
     sevenseg_decode u_st(.digit(st), .segments(seg_st));
     sevenseg_decode u_so(.digit(so), .segments(seg_so));
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk_50mhz or posedge rst_p) begin
+        if (rst_p) begin
             scan_count <= 0;
             scan_select <= 0;
         end else if (scan_count == SCAN_CYCLES - 1) begin

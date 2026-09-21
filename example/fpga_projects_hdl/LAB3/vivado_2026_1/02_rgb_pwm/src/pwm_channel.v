@@ -4,7 +4,7 @@ module pwm_channel #(
     parameter integer LEVELS = 10
 ) (
     input  wire clk,
-    input  wire rst,
+    input  wire rst_p,
     input  wire [3:0] level,
     output reg  pwm
 );
@@ -19,8 +19,8 @@ module pwm_channel #(
             threshold = (PERIOD_CYCLES * level) / LEVELS;
     end
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk or posedge rst_p) begin
+        if (rst_p) begin
             count <= {COUNT_WIDTH{1'b0}};
             pwm <= 1'b0;
         end else begin

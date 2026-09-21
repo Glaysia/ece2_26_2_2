@@ -3,8 +3,8 @@ module lab3_stepper #(
     parameter integer CLK_HZ = 50_000_000,
     parameter integer STEP_HZ = 100
 ) (
-    input  wire clk,
-    input  wire rst,
+    input  wire clk_50mhz,
+    input  wire rst_p,
     input  wire enable,
     input  wire direction,
     output reg [3:0] stepmotor
@@ -16,8 +16,8 @@ module lab3_stepper #(
     (* ASYNC_REG = "TRUE" *) reg enable_meta, enable_sync;
     (* ASYNC_REG = "TRUE" *) reg direction_meta, direction_sync;
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk_50mhz or posedge rst_p) begin
+        if (rst_p) begin
             enable_meta <= 0; enable_sync <= 0;
             direction_meta <= 0; direction_sync <= 0;
         end else begin
@@ -26,8 +26,8 @@ module lab3_stepper #(
         end
     end
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk_50mhz or posedge rst_p) begin
+        if (rst_p) begin
             count <= 0;
             state <= 0;
         end else if (!enable_sync) begin

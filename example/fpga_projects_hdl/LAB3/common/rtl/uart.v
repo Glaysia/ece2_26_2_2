@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 module uart_rx #(parameter integer DIV = 5208)(
-    input wire clk, rst, rx,
+    input wire clk, rst_p, rx,
     output reg [7:0] data,
     output reg valid,
     output reg framing_error
@@ -11,7 +11,7 @@ module uart_rx #(parameter integer DIV = 5208)(
     reg [2:0] bitno;
     reg [7:0] shift;
     always @(posedge clk) begin
-        if (rst) begin
+        if (rst_p) begin
             sync<=3; state<=0; timer<=0; bitno<=0; shift<=0;
             data<=0; valid<=0; framing_error<=0;
         end else begin
@@ -38,7 +38,7 @@ module uart_rx #(parameter integer DIV = 5208)(
 endmodule
 
 module uart_tx #(parameter integer DIV = 5208)(
-    input wire clk, rst, valid,
+    input wire clk, rst_p, valid,
     input wire [7:0] data,
     output wire ready,
     output wire tx
@@ -49,7 +49,7 @@ module uart_tx #(parameter integer DIV = 5208)(
     assign ready = (remaining == 0);
     assign tx = ready ? 1'b1 : shift[0];
     always @(posedge clk) begin
-        if(rst) begin shift<=10'h3ff; remaining<=0; timer<=0; end
+        if(rst_p) begin shift<=10'h3ff; remaining<=0; timer<=0; end
         else if(ready) begin
             if(valid) begin shift<={1'b1,data,1'b0}; remaining<=10; timer<=DIV-1; end
         end else if(timer!=0) timer<=timer-1;

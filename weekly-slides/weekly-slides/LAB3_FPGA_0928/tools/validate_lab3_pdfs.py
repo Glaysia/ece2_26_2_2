@@ -71,6 +71,8 @@ def main() -> None:
             assert joined.count("실제 화면 캡처 자리") == 6, name
             assert "v2.0.2" in joined, name
             assert "xc7s75fgga484-1" in joined, name
+            assert "clk_50mhz" in joined, name
+            assert "rst_p" in joined, name
             assert "완료 체크" in joined, name
 
         results.append(

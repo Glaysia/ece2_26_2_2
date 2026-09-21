@@ -3,8 +3,8 @@ module lab3_uart_echo #(
     parameter integer CLK_HZ = 50_000_000,
     parameter integer BAUD = 9_600
 ) (
-    input  wire clk,
-    input  wire rst,
+    input  wire clk_50mhz,
+    input  wire rst_p,
     input  wire uart_rxd,
     output wire uart_txd,
     output wire [7:0] led
@@ -19,14 +19,14 @@ module lab3_uart_echo #(
     reg [7:0] last_data;
 
     uart_rx #(.DIV(DIV)) u_rx(
-        .clk(clk), .rst(rst), .rx(uart_rxd), .data(rx_data),
+        .clk(clk_50mhz), .rst_p(rst_p), .rx(uart_rxd), .data(rx_data),
         .valid(rx_valid), .framing_error(rx_framing_error));
     uart_tx #(.DIV(DIV)) u_tx(
-        .clk(clk), .rst(rst), .valid(tx_valid), .data(tx_data),
+        .clk(clk_50mhz), .rst_p(rst_p), .valid(tx_valid), .data(tx_data),
         .ready(tx_ready), .tx(uart_txd));
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk_50mhz or posedge rst_p) begin
+        if (rst_p) begin
             tx_valid <= 0; tx_data <= 0; last_data <= 0;
         end else begin
             tx_valid <= 0;

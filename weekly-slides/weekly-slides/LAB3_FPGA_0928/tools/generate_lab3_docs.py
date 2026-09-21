@@ -18,7 +18,7 @@ EXPERIMENTS = [
         pass_marker="LAB3_LED_PWM_PASS checks=4",
         purpose="버튼 한 번마다 duty를 10%씩 바꾸고 8개 LED에 같은 PWM을 출력한다.",
         concepts="50 MHz 단일 클록, 2단 동기화, 20 ms 디바운스, 한 클록 펄스, PWM duty",
-        interface="clk B6 · reset K4 · 밝기 버튼 N8 · LED[7:0] N5/M1/M3/M7/N7/M2/M4/L4",
+        interface="clk_50mhz B6 · rst_p K4 · 밝기 버튼 N8 · LED[7:0] N5/M1/M3/M7/N7/M2/M4/L4",
         tests="0%, 30%, 100%, 100% 다음 0% 순환에서 한 주기의 HIGH 클록 수를 검사한다.",
         board="버튼을 한 번씩 눌러 단계가 하나씩 이동하는지, 0%와 100% 및 중간 밝기를 관찰한다.",
         modification="LEVELS를 10에서 5로 바꾸어 단계 수와 파형의 HIGH 폭을 비교한 뒤 복구한다.",
@@ -29,7 +29,7 @@ EXPERIMENTS = [
         pass_marker="LAB3_RGB_PWM_PASS checks=2",
         purpose="R·G·B 버튼으로 세 PWM duty를 독립적으로 바꾸고 네 개 RGB LED에 출력한다.",
         concepts="독립 PWM 채널, 공통 주기, 색 혼합, 입력 원펄스",
-        interface="clk B6 · reset K4 · R/G/B 버튼 N8/N4/N1 · RGB LED 12개 핀",
+        interface="clk_50mhz B6 · rst_p K4 · R/G/B 버튼 N8/N4/N1 · RGB LED 12개 핀",
         tests="R=20%, G=50%, B=80%의 HIGH 폭과 R 채널만 한 단계 증가하는 조건을 검사한다.",
         board="각 버튼이 해당 색만 바꾸는지 확인하고 세 색의 조합 및 밝기 변화를 기록한다.",
         modification="한 색의 초기 duty만 바꾸어 혼합색과 세 파형의 차이를 비교한 뒤 복구한다.",
@@ -40,7 +40,7 @@ EXPERIMENTS = [
         pass_marker="LAB3_PIEZO_PASS edges=5",
         purpose="50 MHz를 분주하여 피에조에 294 Hz 사각파를 출력한다.",
         concepts="주파수 분주, 반주기 계산, 파라미터 기반 시뮬레이션",
-        interface="clk B6 · reset K4 · piezo Y21",
+        interface="clk_50mhz B6 · rst_p K4 · piezo Y21",
         tests="가속 파라미터에서 출력 반전 사이가 정확히 다섯 클록인지 연속 다섯 번 검사한다.",
         board="출력 주파수를 계산하고 실제 음 높이와 음량을 관찰한다.",
         modification="TONE_HZ를 다른 음의 주파수로 바꾸어 분주값과 소리 변화를 비교한 뒤 복구한다.",
@@ -51,7 +51,7 @@ EXPERIMENTS = [
         pass_marker="LAB3_STEPPER_PASS checks=8",
         purpose="clock-enable마다 4상 코일 패턴을 이동하여 정·역회전과 정지를 제어한다.",
         concepts="clock-enable, 입력 동기화, 4상 시퀀스, 방향 전환",
-        interface="clk B6 · reset K4 · enable N8 · direction N4 · phase[3:0] Y20/Y22/AA20/AA21",
+        interface="clk_50mhz B6 · rst_p K4 · enable N8 · direction N4 · phase[3:0] Y20/Y22/AA20/AA21",
         tests="정방향 한 주기, 역방향 두 단계, enable=0 유지 조건을 가속된 step rate로 검사한다.",
         board="드라이버 결선 후 회전 방향·단계 속도·정지 유지와 모터 발열을 관찰한다.",
         modification="STEPS_PER_SEC를 절반으로 바꾸어 단계 간격을 계산하고 회전 속도를 비교한 뒤 복구한다.",
@@ -62,7 +62,7 @@ EXPERIMENTS = [
         pass_marker="LAB3_MMSS_PASS checks=7",
         purpose="1초 enable로 00:00부터 59:59까지 계수하고 4자리 7세그먼트를 스캔한다.",
         concepts="BCD 자리올림, 1초 enable, 4자리 동적 스캔, 세그먼트 디코딩",
-        interface="clk B6 · reset K4 · digit[3:0] · seg[7:0], decimal point로 분·초 구분",
+        interface="clk_50mhz B6 · rst_p K4 · digit[3:0] · seg[7:0], decimal point로 분·초 구분",
         tests="00:09→00:10, 00:59→01:00, 59:59→00:00과 전체 3,600초 순환 및 디코더를 검사한다.",
         board="자리 순서와 극성, 분·초 구분점, 1초 간격과 59:59 순환을 확인한다.",
         modification="시뮬레이션에서 TICKS_PER_SECOND를 바꾸어 자리올림 시점이 어떻게 달라지는지 확인한 뒤 복구한다.",
@@ -73,7 +73,7 @@ EXPERIMENTS = [
         pass_marker="LAB3_LCD_PASS bytes=40",
         purpose="HD44780 호환 LCD를 8비트 write-only 방식으로 초기화하고 두 줄 문자열을 표시한다.",
         concepts="초기화 명령, Enable setup/high/hold, DDRAM 주소, ASCII, 명령별 대기",
-        interface="clk B6 · reset K4 · lcd_e A6 · lcd_rs G6 · lcd_rw D6 · lcd_data[7:0] A4/B2/C3/D4/A2/C5/C1/D1",
+        interface="clk_50mhz B6 · rst_p K4 · lcd_e A6 · lcd_rs G6 · lcd_rw D6 · lcd_data[7:0] A4/B2/C3/D4/A2/C5/C1/D1",
         tests="Enable 하강 에지에서 초기화 명령과 두 줄 데이터, 총 40바이트의 순서와 RS를 검사한다.",
         board="5 V/3.3 V 결선과 대비를 먼저 확인하고 FPGA LAB3 / LCD CONTROLLER 문자열을 확인한다.",
         modification="둘째 줄 문자열 한 글자를 바꾸어 ASCII 바이트와 표시 결과를 비교한 뒤 복구한다.",
@@ -84,7 +84,7 @@ EXPERIMENTS = [
         pass_marker="LAB3_UART_ECHO_PASS checks=3",
         purpose="9600 8N1로 받은 한 바이트를 그대로 송신하고 LED에 마지막 수신값을 표시한다.",
         concepts="비동기 입력 동기화, start 중앙 확인, LSB-first, stop 확인, TX ready/valid",
-        interface="clk B6 · reset K4 · uart_rxd C6 · uart_txd F6 · LED[7:0]",
+        interface="clk_50mhz B6 · rst_p K4 · uart_rxd C6 · uart_txd F6 · LED[7:0]",
         tests="독립 직렬 송수신 모델로 0x41, 0x5A, 0x0A의 에코와 LED, framing error 부재를 검사한다.",
         board="터미널을 9600 8N1·local echo off로 설정하고 문자 하나당 반환 문자 하나와 LED 값을 확인한다.",
         modification="BAUD 파라미터를 송수신 양쪽에서 같은 값으로 바꾸어 bit 시간을 비교한 뒤 복구한다.",
@@ -248,7 +248,7 @@ RTL은 합성 가능한 회로, TB는 입력 자극과 기대값 비교, XDC는 
 \end{{frame}}
 
 \begin{{frame}}{{VS Code · 파형}}
-\captureplaceholder{{{esc(folder + '-vscode-wave')}}}{{TB top을 펼쳐 clk·rst·주요 입력·내부 상태·출력을 추가하고 경계 조건이 보이게 확대한다.}}
+\captureplaceholder{{{esc(folder + '-vscode-wave')}}}{{TB top을 펼쳐 clk\_50mhz·rst\_p·주요 입력·내부 상태·출력을 추가하고 경계 조건이 보이게 확대한다.}}
 \end{{frame}}
 
 \begin{{frame}}{{파형에서 설명할 내용}}
@@ -294,7 +294,7 @@ Icarus와 XSim은 같은 RTL·TB를 실행해야 한다. 서로 다른 사본을
 \begin{{frame}}{{핀과 클록 제약 확인}}
 \small
 Open Elaborated Design 또는 I/O Planning에서 top port와 PACKAGE\_PIN을 대조한다.\par\vspace{{0.25cm}}
-Reports → Timing → Report Clocks에서 clk 주기 20.000 ns를 확인한다.\par\vspace{{0.25cm}}
+Reports → Timing → Report Clocks에서 clk\_50mhz 주기 20.000 ns를 확인한다.\par\vspace{{0.25cm}}
 XDC를 저장한 뒤 Run Synthesis → Run Implementation → Generate Bitstream 순서로 실행한다.
 \end{{frame}}
 
@@ -404,9 +404,9 @@ code FPGA.code-workspace
 \end{{frame}}
 \begin{{frame}}[label=timing]{{50 MHz 단일 클록}}
 \small
-모든 저장소의 clk는 MAIN CLOCK F, 50 MHz다. 클록 주기는 20 ns다.\par\vspace{{0.28cm}}
+최상위 입력 clk\_50mhz는 MAIN CLOCK F, 50 MHz다. 클록 주기는 20 ns다.\par\vspace{{0.28cm}}
 LED PWM, 모터 step, 1초 tick, LCD tick, UART bit timing은 counter가 만드는 clock-enable로 제어한다.\par\vspace{{0.28cm}}
-분주한 일반 신호를 다른 always 블록의 clk로 사용하지 않는다. XDC에는 실제 외부 clk 하나만 create\_clock으로 선언한다.
+주파수를 parameter로 받는 하위 모듈은 일반 이름 clk를 쓸 수 있다. 분주한 일반 신호는 다른 always 블록의 clk로 사용하지 않는다.
 \end{{frame}}
 \begin{{frame}}{{파라미터 계산}}
 \small
@@ -436,7 +436,7 @@ PASS 문자열·검사 수·종료 시각과 파형을 함께 보관한다. XDC�
 \small
 Vivado Simulation Sources에 Icarus에서 사용한 같은 TB를 등록한다.\par\vspace{{0.25cm}}
 Run Behavioral Simulation 뒤 같은 PASS marker가 나오는지 확인한다.\par\vspace{{0.25cm}}
-파형에서 clk·rst·입력·내부 counter 또는 state·출력을 함께 보고 유효 에지 전후를 설명한다.
+파형에서 clk\_50mhz·rst\_p·입력·내부 counter 또는 state·출력을 함께 보고 유효 에지 전후를 설명한다.
 \end{{frame}}
 \begin{{frame}}{{기능 PASS의 한계}}
 \small
@@ -450,7 +450,7 @@ Run Behavioral Simulation 뒤 같은 PASS marker가 나오는지 확인한다.\p
 \item Part: xc7s75fgga484-1.
 \item Design top과 Simulation top을 구분한다.
 \item 모든 top port에 PACKAGE\_PIN과 LVCMOS33을 적용한다.
-\item clk에 20.000 ns create\_clock이 적용되었는지 확인한다.
+\item clk\_50mhz에 20.000 ns create\_clock이 적용되었는지 확인한다.
 \item DRC 오류 0, timing WNS 0 이상, bitstream 완료를 기록한다.
 \end{{enumerate}}
 \end{{frame}}

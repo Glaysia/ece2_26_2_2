@@ -1,15 +1,15 @@
 `timescale 1ns/1ps
 module tb_piezo;
-    reg clk=0,rst=1;
+    reg clk_50mhz=0,rst_p=1;
     wire piezo;
     integer cycles,last_cycle=-1,edges=0;
-    always #5 clk=~clk;
-    lab3_piezo #(.CLK_HZ(1000),.TONE_HZ(100)) dut(.clk(clk),.rst(rst),.piezo(piezo));
+    always #10 clk_50mhz=~clk_50mhz;
+    lab3_piezo #(.CLK_HZ(1000),.TONE_HZ(100)) dut(.clk_50mhz(clk_50mhz),.rst_p(rst_p),.piezo(piezo));
     initial begin
       $dumpfile("wave.vcd");$dumpvars(0,tb_piezo);
-      repeat(3)@(posedge clk);rst=0;
+      repeat(3)@(posedge clk_50mhz);rst_p=0;
       for(cycles=1;cycles<=25;cycles=cycles+1)begin
-        @(posedge clk);#1;
+        @(posedge clk_50mhz);#1;
         if(piezo!==dut.piezo)$fatal(1,"unknown output");
         if(dut.count==0)begin
           if(last_cycle>=0 && cycles-last_cycle!=5)$fatal(1,"half period=%0d",cycles-last_cycle);

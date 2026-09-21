@@ -56,9 +56,9 @@ code FPGA.code-workspace
 \end{frame}
 \begin{frame}[label=timing]{50 MHz 단일 클록}
 \small
-모든 저장소의 clk는 MAIN CLOCK F, 50 MHz다. 클록 주기는 20 ns다.\par\vspace{0.28cm}
+최상위 입력 clk\_50mhz는 MAIN CLOCK F, 50 MHz다. 클록 주기는 20 ns다.\par\vspace{0.28cm}
 LED PWM, 모터 step, 1초 tick, LCD tick, UART bit timing은 counter가 만드는 clock-enable로 제어한다.\par\vspace{0.28cm}
-분주한 일반 신호를 다른 always 블록의 clk로 사용하지 않는다. XDC에는 실제 외부 clk 하나만 create\_clock으로 선언한다.
+주파수를 parameter로 받는 하위 모듈은 일반 이름 clk를 쓸 수 있다. 분주한 일반 신호는 다른 always 블록의 clk로 사용하지 않는다.
 \end{frame}
 \begin{frame}{파라미터 계산}
 \small
@@ -88,7 +88,7 @@ PASS 문자열·검사 수·종료 시각과 파형을 함께 보관한다. XDC�
 \small
 Vivado Simulation Sources에 Icarus에서 사용한 같은 TB를 등록한다.\par\vspace{0.25cm}
 Run Behavioral Simulation 뒤 같은 PASS marker가 나오는지 확인한다.\par\vspace{0.25cm}
-파형에서 clk·rst·입력·내부 counter 또는 state·출력을 함께 보고 유효 에지 전후를 설명한다.
+파형에서 clk\_50mhz·rst\_p·입력·내부 counter 또는 state·출력을 함께 보고 유효 에지 전후를 설명한다.
 \end{frame}
 \begin{frame}{기능 PASS의 한계}
 \small
@@ -102,7 +102,7 @@ Run Behavioral Simulation 뒤 같은 PASS marker가 나오는지 확인한다.\p
 \item Part: xc7s75fgga484-1.
 \item Design top과 Simulation top을 구분한다.
 \item 모든 top port에 PACKAGE\_PIN과 LVCMOS33을 적용한다.
-\item clk에 20.000 ns create\_clock이 적용되었는지 확인한다.
+\item clk\_50mhz에 20.000 ns create\_clock이 적용되었는지 확인한다.
 \item DRC 오류 0, timing WNS 0 이상, bitstream 완료를 기록한다.
 \end{enumerate}
 \end{frame}

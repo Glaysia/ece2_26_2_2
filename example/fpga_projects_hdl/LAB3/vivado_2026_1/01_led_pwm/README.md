@@ -10,7 +10,7 @@ code FPGA.code-workspace
 ```
 
 - 설계 top: `lab3_led_pwm`, 기능 TB: `tb_led_pwm`.
-- MAIN CLOCK F를 50 MHz로 선택한다. K4는 reset, N8은 밝기 단계 버튼이다.
+- MAIN CLOCK F 50 MHz는 `clk_50mhz`, K4의 active-high reset은 `rst_p`, N8은 밝기 단계 버튼이다.
 - 버튼을 누를 때마다 duty가 0%부터 10% 간격으로 증가하고 100% 다음에는 0%로 돌아간다.
 - LED 8개는 같은 PWM 신호를 출력한다. TB는 0%, 30%, 100%, 순환을 검사한다.
 - 버튼은 2단 동기화와 20 ms 디바운스를 거치며 내부 클록으로 사용하지 않는다.

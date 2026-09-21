@@ -5,8 +5,8 @@ module lab3_rgb_pwm #(
     parameter integer LEVELS = 10,
     parameter integer DEBOUNCE_CYCLES = 1_000_000
 ) (
-    input  wire clk,
-    input  wire rst,
+    input  wire clk_50mhz,
+    input  wire rst_p,
     input  wire button_r,
     input  wire button_g,
     input  wire button_b,
@@ -19,14 +19,14 @@ module lab3_rgb_pwm #(
     reg [3:0] level_r, level_g, level_b;
 
     button_onepulse #(.STABLE_CYCLES(DEBOUNCE_CYCLES)) u_button_r (
-        .clk(clk), .rst(rst), .button(button_r), .pulse(press_r));
+        .clk(clk_50mhz), .rst_p(rst_p), .button(button_r), .pulse(press_r));
     button_onepulse #(.STABLE_CYCLES(DEBOUNCE_CYCLES)) u_button_g (
-        .clk(clk), .rst(rst), .button(button_g), .pulse(press_g));
+        .clk(clk_50mhz), .rst_p(rst_p), .button(button_g), .pulse(press_g));
     button_onepulse #(.STABLE_CYCLES(DEBOUNCE_CYCLES)) u_button_b (
-        .clk(clk), .rst(rst), .button(button_b), .pulse(press_b));
+        .clk(clk_50mhz), .rst_p(rst_p), .button(button_b), .pulse(press_b));
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk_50mhz or posedge rst_p) begin
+        if (rst_p) begin
             level_r <= 0; level_g <= 0; level_b <= 0;
         end else begin
             if (press_r) level_r <= (level_r == LEVELS) ? 0 : level_r + 1'b1;
@@ -36,11 +36,11 @@ module lab3_rgb_pwm #(
     end
 
     pwm_channel #(.PERIOD_CYCLES(CLK_HZ / PWM_HZ), .LEVELS(LEVELS)) u_pwm_r
-        (.clk(clk), .rst(rst), .level(level_r), .pwm(pwm_r));
+        (.clk(clk_50mhz), .rst_p(rst_p), .level(level_r), .pwm(pwm_r));
     pwm_channel #(.PERIOD_CYCLES(CLK_HZ / PWM_HZ), .LEVELS(LEVELS)) u_pwm_g
-        (.clk(clk), .rst(rst), .level(level_g), .pwm(pwm_g));
+        (.clk(clk_50mhz), .rst_p(rst_p), .level(level_g), .pwm(pwm_g));
     pwm_channel #(.PERIOD_CYCLES(CLK_HZ / PWM_HZ), .LEVELS(LEVELS)) u_pwm_b
-        (.clk(clk), .rst(rst), .level(level_b), .pwm(pwm_b));
+        (.clk(clk_50mhz), .rst_p(rst_p), .level(level_b), .pwm(pwm_b));
 
     assign led_r = {4{pwm_r}};
     assign led_g = {4{pwm_g}};

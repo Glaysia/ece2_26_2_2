@@ -3,16 +3,16 @@ module lab3_piezo #(
     parameter integer CLK_HZ = 50_000_000,
     parameter integer TONE_HZ = 294
 ) (
-    input  wire clk,
-    input  wire rst,
+    input  wire clk_50mhz,
+    input  wire rst_p,
     output reg  piezo
 );
     localparam integer HALF_PERIOD = CLK_HZ / (2 * TONE_HZ);
     localparam integer COUNT_WIDTH = (HALF_PERIOD < 2) ? 1 : $clog2(HALF_PERIOD);
     reg [COUNT_WIDTH-1:0] count;
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk_50mhz or posedge rst_p) begin
+        if (rst_p) begin
             count <= 0;
             piezo <= 0;
         end else if (count == HALF_PERIOD - 1) begin

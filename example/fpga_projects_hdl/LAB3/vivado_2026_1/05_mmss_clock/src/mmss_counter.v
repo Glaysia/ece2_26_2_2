@@ -3,7 +3,7 @@ module mmss_counter #(
     parameter integer CLK_HZ = 50_000_000
 ) (
     input  wire clk,
-    input  wire rst,
+    input  wire rst_p,
     output reg [3:0] minute_tens,
     output reg [3:0] minute_ones,
     output reg [3:0] second_tens,
@@ -12,8 +12,8 @@ module mmss_counter #(
     localparam integer COUNT_WIDTH = (CLK_HZ < 2) ? 1 : $clog2(CLK_HZ);
     reg [COUNT_WIDTH-1:0] subsecond;
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk or posedge rst_p) begin
+        if (rst_p) begin
             subsecond <= 0;
             minute_tens <= 0; minute_ones <= 0;
             second_tens <= 0; second_ones <= 0;

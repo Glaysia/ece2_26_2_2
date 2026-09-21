@@ -33,7 +33,7 @@ HD44780 호환 LCD를 8비트 write-only 방식으로 초기화하고 두 줄 �
 
 \begin{frame}{입출력과 보드 연결}
 \small
-clk B6 · reset K4 · lcd\_e A6 · lcd\_rs G6 · lcd\_rw D6 · lcd\_data[7:0] A4/B2/C3/D4/A2/C5/C1/D1\par\vspace{0.32cm}
+clk\_50mhz B6 · rst\_p K4 · lcd\_e A6 · lcd\_rs G6 · lcd\_rw D6 · lcd\_data[7:0] A4/B2/C3/D4/A2/C5/C1/D1\par\vspace{0.32cm}
 모든 순차 로직은 MAIN CLOCK F의 50 MHz만 사용한다. 느린 동작은 내부 clock-enable로 만든다.\par\vspace{0.28cm}
 XDC의 포트 이름은 top module 선언과 글자·대소문자까지 같아야 한다.
 \end{frame}
@@ -153,7 +153,7 @@ RTL은 합성 가능한 회로, TB는 입력 자극과 기대값 비교, XDC는 
 \end{frame}
 
 \begin{frame}{VS Code · 파형}
-\captureplaceholder{06\_character\_lcd-vscode-wave}{TB top을 펼쳐 clk·rst·주요 입력·내부 상태·출력을 추가하고 경계 조건이 보이게 확대한다.}
+\captureplaceholder{06\_character\_lcd-vscode-wave}{TB top을 펼쳐 clk\_50mhz·rst\_p·주요 입력·내부 상태·출력을 추가하고 경계 조건이 보이게 확대한다.}
 \end{frame}
 
 \begin{frame}{파형에서 설명할 내용}
@@ -199,7 +199,7 @@ Icarus와 XSim은 같은 RTL·TB를 실행해야 한다. 서로 다른 사본을
 \begin{frame}{핀과 클록 제약 확인}
 \small
 Open Elaborated Design 또는 I/O Planning에서 top port와 PACKAGE\_PIN을 대조한다.\par\vspace{0.25cm}
-Reports → Timing → Report Clocks에서 clk 주기 20.000 ns를 확인한다.\par\vspace{0.25cm}
+Reports → Timing → Report Clocks에서 clk\_50mhz 주기 20.000 ns를 확인한다.\par\vspace{0.25cm}
 XDC를 저장한 뒤 Run Synthesis → Run Implementation → Generate Bitstream 순서로 실행한다.
 \end{frame}
 

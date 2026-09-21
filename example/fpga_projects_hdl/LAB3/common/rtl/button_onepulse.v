@@ -3,7 +3,7 @@ module button_onepulse #(
     parameter integer STABLE_CYCLES = 1_000_000
 ) (
     input  wire clk,
-    input  wire rst,
+    input  wire rst_p,
     input  wire button,
     output reg  pulse
 );
@@ -13,8 +13,8 @@ module button_onepulse #(
     reg [COUNT_WIDTH-1:0] stable_count;
     reg accepted;
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk or posedge rst_p) begin
+        if (rst_p) begin
             button_meta <= 1'b0;
             button_sync <= 1'b0;
         end else begin
@@ -23,8 +23,8 @@ module button_onepulse #(
         end
     end
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk or posedge rst_p) begin
+        if (rst_p) begin
             stable_count <= {COUNT_WIDTH{1'b0}};
             accepted <= 1'b0;
             pulse <= 1'b0;

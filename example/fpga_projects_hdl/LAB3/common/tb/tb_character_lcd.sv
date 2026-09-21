@@ -1,14 +1,14 @@
 `timescale 1ns/1ps
 module tb_character_lcd;
-    reg clk=0,rst=1;
+    reg clk_50mhz=0,rst_p=1;
     wire lcd_e,lcd_rs,lcd_rw;
     wire [7:0] lcd_data;
     reg [7:0] expected_data[0:39];
     reg expected_rs[0:39];
     integer count=0,i;
-    always #5 clk=~clk;
+    always #10 clk_50mhz=~clk_50mhz;
     lab3_character_lcd #(.TICK_CYCLES(2),.POWER_TICKS(3),.NORMAL_WAIT_TICKS(1),.CLEAR_WAIT_TICKS(2)) dut
-      (.clk(clk),.rst(rst),.lcd_e(lcd_e),.lcd_rs(lcd_rs),.lcd_rw(lcd_rw),.lcd_data(lcd_data));
+      (.clk_50mhz(clk_50mhz),.rst_p(rst_p),.lcd_e(lcd_e),.lcd_rs(lcd_rs),.lcd_rw(lcd_rw),.lcd_data(lcd_data));
 
     initial begin
       expected_data[0]=8'h38;expected_data[1]=8'h38;expected_data[2]=8'h38;
@@ -24,7 +24,7 @@ module tb_character_lcd;
       for(i=0;i<40;i=i+1)expected_rs[i]=(i>=7 && i!=23);
       expected_rs[38]=1;expected_rs[39]=1;
     end
-    always @(negedge lcd_e) if(!rst && count<40)begin
+    always @(negedge lcd_e) if(!rst_p && count<40)begin
       if(lcd_rw!==0||lcd_rs!==expected_rs[count]||lcd_data!==expected_data[count])
         $fatal(1,"index=%0d rs=%b data=%h",count,lcd_rs,lcd_data);
       count=count+1;
@@ -32,7 +32,7 @@ module tb_character_lcd;
     end
     initial begin
       $dumpfile("wave.vcd");$dumpvars(0,tb_character_lcd);
-      repeat(3)@(posedge clk);rst=0;
+      repeat(3)@(posedge clk_50mhz);rst_p=0;
     end
     initial begin #50000;$fatal(1,"timeout count=%0d",count);end
 endmodule

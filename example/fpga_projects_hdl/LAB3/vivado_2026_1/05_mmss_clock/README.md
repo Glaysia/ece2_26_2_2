@@ -1,6 +1,6 @@
 # LAB3-23 · MM:SS 시계
 
-설계 top은 `lab3_mmss_clock`, 기능 TB는 `tb_mmss_counter`다. MAIN CLOCK F 50 MHz와 K4 reset을 사용한다.
+설계 top은 `lab3_mmss_clock`, 기능 TB는 `tb_mmss_counter`다. MAIN CLOCK F 50 MHz는 `clk_50mhz`, K4의 active-high reset은 `rst_p`다.
 
 `mmss_counter`가 50 MHz를 1초 enable로 바꾸어 BCD 네 자리를 계수하고, top은 네 자리를 4 kHz로 스캔한다. 분과 초 사이의 decimal point를 켜서 `MM:SS`를 구분한다.
 

@@ -1,6 +1,6 @@
 # LAB3-25 · PC–FPGA UART 에코
 
-설계 top은 `lab3_uart_echo`, 기능 TB는 `tb_uart_echo`다. MAIN CLOCK F 50 MHz, 9600 baud, 8 data bits, no parity, 1 stop bit를 사용한다.
+설계 top은 `lab3_uart_echo`, 기능 TB는 `tb_uart_echo`다. MAIN CLOCK F 50 MHz는 `clk_50mhz`, K4의 active-high reset은 `rst_p`다. UART는 9600 baud, 8 data bits, no parity, 1 stop bit를 사용한다.
 
 - PC TX는 보드 C6의 `uart_rxd`, FPGA TX는 F6의 `uart_txd`에 연결된다.
 - 수신한 한 바이트를 그대로 송신하고 마지막 수신값을 LED[7:0]에 표시한다.

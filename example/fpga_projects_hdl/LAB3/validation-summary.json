@@ -3,7 +3,9 @@
   "target": {
     "board": "Combo II-DLD S75",
     "part": "xc7s75fgga484-1",
-    "clock_hz": 50000000
+    "clock_hz": 50000000,
+    "clock_port": "clk_50mhz",
+    "reset_port": "rst_p"
   },
   "tools": {
     "iverilog": "13.0",
@@ -24,7 +26,7 @@
       "xsim": "pass",
       "vivado": "pass",
       "drc_errors": 0,
-      "wns_ns": 8.971,
+      "wns_ns": 8.968,
       "bitstream": "lab3_led_pwm.bit"
     },
     {
@@ -34,7 +36,7 @@
       "xsim": "pass",
       "vivado": "pass",
       "drc_errors": 0,
-      "wns_ns": 8.629,
+      "wns_ns": 8.625,
       "bitstream": "lab3_rgb_pwm.bit"
     },
     {
@@ -54,7 +56,7 @@
       "xsim": "pass",
       "vivado": "pass",
       "drc_errors": 0,
-      "wns_ns": 16.252,
+      "wns_ns": 16.226,
       "bitstream": "lab3_stepper.bit"
     },
     {
@@ -64,7 +66,7 @@
       "xsim": "pass",
       "vivado": "pass",
       "drc_errors": 0,
-      "wns_ns": 15.118,
+      "wns_ns": 15.116,
       "bitstream": "lab3_mmss_clock.bit"
     },
     {
@@ -74,7 +76,7 @@
       "xsim": "pass",
       "vivado": "pass",
       "drc_errors": 0,
-      "wns_ns": 14.220,
+      "wns_ns": 14.218,
       "bitstream": "lab3_character_lcd.bit"
     },
     {
@@ -84,7 +86,7 @@
       "xsim": "pass",
       "vivado": "pass",
       "drc_errors": 0,
-      "wns_ns": 14.617,
+      "wns_ns": 14.615,
       "bitstream": "lab3_uart_echo.bit"
     }
   ],

@@ -2,7 +2,7 @@
 
 2026-09-28 수업용 최신 Vivado 2026.1 예제다. 공식 실험은 PWM LED, RGB PWM, 피에조, 스텝모터, MM:SS 시계, 문자 LCD, UART 에코의 7개다.
 
-모든 예제는 Combo II-DLD의 MAIN CLOCK F 50 MHz와 `xc7s75fgga484-1`을 기준으로 한다. 레거시 소스의 기능과 핀을 참고하되, 버튼 클록·fabric clock·blocking 순차 대입을 제거하고 단일 클록과 clock-enable 구조로 다시 작성한다.
+모든 예제는 Combo II-DLD의 MAIN CLOCK F 50 MHz와 `xc7s75fgga484-1`을 기준으로 한다. 최상위 포트는 주파수와 극성이 드러나도록 `clk_50mhz`, active-high `rst_p`로 통일한다. 주파수를 parameter로 받는 공용 하위 모듈의 클록 포트는 `clk`를 사용한다. 레거시 소스의 기능과 핀을 참고하되, 버튼 클록·fabric clock·blocking 순차 대입을 제거하고 단일 클록과 clock-enable 구조로 다시 작성한다.
 
 `common/`은 검증 기준 원본이다. `vivado_2026_1/`의 각 폴더는 학생이 빈 템플릿에서 직접 작성할 때 비교할 수 있는 독립 완성 예시로 구성한다.
 

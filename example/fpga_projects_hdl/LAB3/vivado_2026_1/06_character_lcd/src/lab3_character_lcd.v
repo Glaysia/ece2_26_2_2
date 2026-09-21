@@ -5,8 +5,8 @@ module lab3_character_lcd #(
     parameter integer NORMAL_WAIT_TICKS = 4,
     parameter integer CLEAR_WAIT_TICKS = 200
 ) (
-    input  wire clk,
-    input  wire rst,
+    input  wire clk_50mhz,
+    input  wire rst_p,
     output reg  lcd_e,
     output reg  lcd_rs,
     output wire lcd_rw,
@@ -23,8 +23,8 @@ module lab3_character_lcd #(
     reg [7:0] byte_data;
     assign lcd_rw = 1'b0;
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk_50mhz or posedge rst_p) begin
+        if (rst_p) begin
             tick_count <= 0;
             tick <= 0;
         end else if (tick_count == TICK_CYCLES - 1) begin
@@ -75,8 +75,8 @@ module lab3_character_lcd #(
         endcase
     end
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk_50mhz or posedge rst_p) begin
+        if (rst_p) begin
             lcd_e <= 0; lcd_rs <= 0; lcd_data <= 0;
             phase <= 0; index <= 0; wait_count <= 0; power_count <= 0;
         end else if (tick) begin

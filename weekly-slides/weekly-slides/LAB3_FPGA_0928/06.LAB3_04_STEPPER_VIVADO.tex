@@ -33,7 +33,7 @@ clock-enable마다 4상 코일 패턴을 이동하여 정·역회전과 정지�
 
 \begin{frame}{입출력과 보드 연결}
 \small
-clk B6 · reset K4 · enable N8 · direction N4 · phase[3:0] Y20/Y22/AA20/AA21\par\vspace{0.32cm}
+clk\_50mhz B6 · rst\_p K4 · enable N8 · direction N4 · phase[3:0] Y20/Y22/AA20/AA21\par\vspace{0.32cm}
 모든 순차 로직은 MAIN CLOCK F의 50 MHz만 사용한다. 느린 동작은 내부 clock-enable로 만든다.\par\vspace{0.28cm}
 XDC의 포트 이름은 top module 선언과 글자·대소문자까지 같아야 한다.
 \end{frame}
@@ -133,7 +133,7 @@ RTL은 합성 가능한 회로, TB는 입력 자극과 기대값 비교, XDC는 
 \end{frame}
 
 \begin{frame}{VS Code · 파형}
-\captureplaceholder{04\_stepper-vscode-wave}{TB top을 펼쳐 clk·rst·주요 입력·내부 상태·출력을 추가하고 경계 조건이 보이게 확대한다.}
+\captureplaceholder{04\_stepper-vscode-wave}{TB top을 펼쳐 clk\_50mhz·rst\_p·주요 입력·내부 상태·출력을 추가하고 경계 조건이 보이게 확대한다.}
 \end{frame}
 
 \begin{frame}{파형에서 설명할 내용}
@@ -179,7 +179,7 @@ Icarus와 XSim은 같은 RTL·TB를 실행해야 한다. 서로 다른 사본을
 \begin{frame}{핀과 클록 제약 확인}
 \small
 Open Elaborated Design 또는 I/O Planning에서 top port와 PACKAGE\_PIN을 대조한다.\par\vspace{0.25cm}
-Reports → Timing → Report Clocks에서 clk 주기 20.000 ns를 확인한다.\par\vspace{0.25cm}
+Reports → Timing → Report Clocks에서 clk\_50mhz 주기 20.000 ns를 확인한다.\par\vspace{0.25cm}
 XDC를 저장한 뒤 Run Synthesis → Run Implementation → Generate Bitstream 순서로 실행한다.
 \end{frame}
 
