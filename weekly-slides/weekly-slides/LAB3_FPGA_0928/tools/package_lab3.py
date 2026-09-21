@@ -2,6 +2,7 @@
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import zipfile
 
 DOC = Path(__file__).resolve().parent.parent
@@ -20,8 +21,14 @@ def main():
         assert sorted(archive.namelist()) == sorted(path.name for path in files)
         for path in files:
             assert archive.read(path.name) == path.read_bytes()
+        with tempfile.TemporaryDirectory(prefix='lab3-package-') as directory:
+            archive.extractall(directory)
+            extracted = Path(directory)
+            assert sorted(path.name for path in extracted.iterdir()) == sorted(path.name for path in files)
+            for path in files:
+                assert (extracted / path.name).read_bytes() == path.read_bytes()
     temporary.replace(output)
-    print(f'LAB3_PACKAGE_PASS {output}')
+    print(f'LAB3_PACKAGE_PASS FreshExtraction=True {output}')
 
 
 if __name__ == '__main__':

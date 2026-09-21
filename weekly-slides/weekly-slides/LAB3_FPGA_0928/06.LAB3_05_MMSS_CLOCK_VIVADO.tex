@@ -33,7 +33,7 @@ Vivado 2026.1 · FPGA Part xc7s75fgga484-1\par\vspace{0.28cm}
 
 \begin{frame}{입출력과 보드 연결}
 \small
-clk\_50mhz B6 · rst\_p K4 · digit[3:0] · seg[7:0], decimal point로 분·초 구분\par\vspace{0.32cm}
+clk\_50mhz B6 · rst\_p K4 · seg\_com[7:0] 자리 선택 · seg\_data[7:0] 세그먼트 출력\par\vspace{0.32cm}
 모든 순차 로직은 MAIN CLOCK F의 50 MHz만 사용한다. 느린 동작은 내부 clock-enable로 만든다.\par\vspace{0.28cm}
 XDC의 포트 이름은 top module 선언과 글자·대소문자까지 같아야 한다.
 \end{frame}
@@ -145,15 +145,18 @@ RTL은 합성 가능한 회로, TB는 입력 자극과 기대값 비교, XDC는 
 \end{frame}
 
 \begin{frame}{VS Code · 프로젝트와 파일}
-\captureplaceholder{05\_mmss\_clock-vscode-workspace}{FPGA.code-workspace를 연 뒤 Explorer에 src·sim·constraints·tools와 작성 파일이 보이게 캡처한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/05_mmss_clock-vscode-workspace.png}\end{center}
+{\tiny 05\_mmss\_clock-vscode-workspace}
 \end{frame}
 
 \begin{frame}{VS Code · 시뮬레이션 PASS}
-\captureplaceholder{05\_mmss\_clock-vscode-pass}{02 Simulate 실행 뒤 LAB3\_MMSS\_PASS checks=7와 종료 시각이 함께 보이게 캡처한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/05_mmss_clock-vscode-pass.png}\end{center}
+{\tiny 05\_mmss\_clock-vscode-pass}
 \end{frame}
 
 \begin{frame}{VS Code · 파형}
-\captureplaceholder{05\_mmss\_clock-vscode-wave}{TB top을 펼쳐 clk\_50mhz·rst\_p·주요 입력·내부 상태·출력을 추가하고 경계 조건이 보이게 확대한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/05_mmss_clock-vscode-wave.png}\end{center}
+{\tiny 05\_mmss\_clock-vscode-wave}
 \end{frame}
 
 \begin{frame}{파형에서 설명할 내용}
@@ -165,7 +168,7 @@ RTL은 합성 가능한 회로, TB는 입력 자극과 기대값 비교, XDC는 
 
 \begin{frame}{수정 실험}
 \small
-시뮬레이션에서 TICKS\_PER\_SECOND를 바꾸어 자리올림 시점이 어떻게 달라지는지 확인한 뒤 복구한다.\par\vspace{0.28cm}
+TB의 mmss\_counter 인스턴스에 전달하는 CLK\_HZ를 바꾸어 자리올림 간격을 비교한 뒤 복구한다. TB 클록 주기는 20 ns로 유지한다.\par\vspace{0.28cm}
 정상 PASS와 파형을 먼저 보관한 뒤 한 항목만 수정한다. 예상값, 실제 FAIL 또는 변화, 복구 PASS를 3행 표로 기록한다.\par\vspace{0.28cm}
 TB의 기대값을 RTL 오류에 맞춰 바꾸지 않는다.
 \end{frame}
@@ -182,7 +185,8 @@ TB의 기대값을 RTL 오류에 맞춰 바꾸지 않는다.
 \end{frame}
 
 \begin{frame}{Vivado · 소스와 top}
-\captureplaceholder{05\_mmss\_clock-vivado-sources}{Sources 창에서 RTL, Simulation Sources의 TB, Constraints의 XDC와 top module이 함께 보이게 캡처한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/05_mmss_clock-vivado-sources.png}\end{center}
+{\tiny 05\_mmss\_clock-vivado-sources}
 \end{frame}
 
 \begin{frame}{Vivado XSim}
@@ -193,7 +197,8 @@ Icarus와 XSim은 같은 RTL·TB를 실행해야 한다. 서로 다른 사본을
 \end{frame}
 
 \begin{frame}{Vivado · XSim PASS와 파형}
-\captureplaceholder{05\_mmss\_clock-xsim-pass}{Tcl Console PASS, waveform 이름, 시간축, 핵심 입출력이 한 화면에 보이게 캡처한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/05_mmss_clock-xsim-pass.png}\end{center}
+{\tiny 05\_mmss\_clock-xsim-pass}
 \end{frame}
 
 \begin{frame}{핀과 클록 제약 확인}
@@ -204,7 +209,8 @@ XDC를 저장한 뒤 Run Synthesis → Run Implementation → Generate Bitstream
 \end{frame}
 
 \begin{frame}{Vivado · 구현과 bit 생성}
-\captureplaceholder{05\_mmss\_clock-vivado-bit}{Implementation 완료, Timing Summary의 WNS, DRC 오류 0건, bitstream 생성 완료가 확인되는 화면을 캡처한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/05_mmss_clock-vivado-bit.png}\end{center}
+{\tiny 05\_mmss\_clock-vivado-bit}
 \end{frame}
 
 \begin{frame}[label=board]{보드에서 확인}

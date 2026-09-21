@@ -145,15 +145,18 @@ RTL은 합성 가능한 회로, TB는 입력 자극과 기대값 비교, XDC는 
 \end{frame}
 
 \begin{frame}{VS Code · 프로젝트와 파일}
-\captureplaceholder{02\_rgb\_pwm-vscode-workspace}{FPGA.code-workspace를 연 뒤 Explorer에 src·sim·constraints·tools와 작성 파일이 보이게 캡처한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/02_rgb_pwm-vscode-workspace.png}\end{center}
+{\tiny 02\_rgb\_pwm-vscode-workspace}
 \end{frame}
 
 \begin{frame}{VS Code · 시뮬레이션 PASS}
-\captureplaceholder{02\_rgb\_pwm-vscode-pass}{02 Simulate 실행 뒤 LAB3\_RGB\_PWM\_PASS checks=2와 종료 시각이 함께 보이게 캡처한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/02_rgb_pwm-vscode-pass.png}\end{center}
+{\tiny 02\_rgb\_pwm-vscode-pass}
 \end{frame}
 
 \begin{frame}{VS Code · 파형}
-\captureplaceholder{02\_rgb\_pwm-vscode-wave}{TB top을 펼쳐 clk\_50mhz·rst\_p·주요 입력·내부 상태·출력을 추가하고 경계 조건이 보이게 확대한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/02_rgb_pwm-vscode-wave.png}\end{center}
+{\tiny 02\_rgb\_pwm-vscode-wave}
 \end{frame}
 
 \begin{frame}{파형에서 설명할 내용}
@@ -182,7 +185,8 @@ TB의 기대값을 RTL 오류에 맞춰 바꾸지 않는다.
 \end{frame}
 
 \begin{frame}{Vivado · 소스와 top}
-\captureplaceholder{02\_rgb\_pwm-vivado-sources}{Sources 창에서 RTL, Simulation Sources의 TB, Constraints의 XDC와 top module이 함께 보이게 캡처한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/02_rgb_pwm-vivado-sources.png}\end{center}
+{\tiny 02\_rgb\_pwm-vivado-sources}
 \end{frame}
 
 \begin{frame}{Vivado XSim}
@@ -193,7 +197,8 @@ Icarus와 XSim은 같은 RTL·TB를 실행해야 한다. 서로 다른 사본을
 \end{frame}
 
 \begin{frame}{Vivado · XSim PASS와 파형}
-\captureplaceholder{02\_rgb\_pwm-xsim-pass}{Tcl Console PASS, waveform 이름, 시간축, 핵심 입출력이 한 화면에 보이게 캡처한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/02_rgb_pwm-xsim-pass.png}\end{center}
+{\tiny 02\_rgb\_pwm-xsim-pass}
 \end{frame}
 
 \begin{frame}{핀과 클록 제약 확인}
@@ -204,7 +209,8 @@ XDC를 저장한 뒤 Run Synthesis → Run Implementation → Generate Bitstream
 \end{frame}
 
 \begin{frame}{Vivado · 구현과 bit 생성}
-\captureplaceholder{02\_rgb\_pwm-vivado-bit}{Implementation 완료, Timing Summary의 WNS, DRC 오류 0건, bitstream 생성 완료가 확인되는 화면을 캡처한다.}
+\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{captures/02_rgb_pwm-vivado-bit.png}\end{center}
+{\tiny 02\_rgb\_pwm-vivado-bit}
 \end{frame}
 
 \begin{frame}[label=board]{보드에서 확인}

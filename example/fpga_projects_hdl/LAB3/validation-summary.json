@@ -95,8 +95,13 @@
     "canonical_files_compared": 42,
     "result": "pass"
   },
+  "gui_captures": {
+    "date": "2026-09-21",
+    "count": 42,
+    "applications": ["VS Code", "Vivado 2026.1"],
+    "result": "complete"
+  },
   "not_performed": [
-    "Vivado GUI screenshot capture",
     "physical board programming and observation"
   ]
 }

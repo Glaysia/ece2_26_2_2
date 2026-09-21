@@ -52,10 +52,10 @@ EXPERIMENTS = [
         pass_marker="LAB3_STEPPER_PASS checks=8",
         purpose="clock-enable마다 4상 코일 패턴을 이동하여 정·역회전과 정지를 제어한다.",
         concepts="clock-enable, 입력 동기화, 4상 시퀀스, 방향 전환",
-        interface="clk_50mhz B6 · rst_p K4 · enable N8 · direction N4 · phase[3:0] Y20/Y22/AA20/AA21",
+        interface="clk_50mhz B6 · rst_p K4 · enable N8 · direction N4 · stepmotor[3:0] Y20/Y22/AA20/AA21",
         tests="정방향 한 주기, 역방향 두 단계, enable=0 유지 조건을 가속된 step rate로 검사한다.",
         board="드라이버 결선 후 회전 방향·단계 속도·정지 유지와 모터 발열을 관찰한다.",
-        modification="STEPS_PER_SEC를 절반으로 바꾸어 단계 간격을 계산하고 회전 속도를 비교한 뒤 복구한다.",
+        modification="STEP_HZ를 절반으로 바꾸어 단계 간격을 계산하고 회전 속도를 비교한 뒤 복구한다.",
     ),
     dict(
         index=5, number=23, slug="MMSS_CLOCK", folder="05_mmss_clock",
@@ -63,10 +63,10 @@ EXPERIMENTS = [
         pass_marker="LAB3_MMSS_PASS checks=7",
         purpose="1초 enable로 00:00부터 59:59까지 계수하고 4자리 7세그먼트를 스캔한다.",
         concepts="BCD 자리올림, 1초 enable, 4자리 동적 스캔, 세그먼트 디코딩",
-        interface="clk_50mhz B6 · rst_p K4 · digit[3:0] · seg[7:0], decimal point로 분·초 구분",
+        interface="clk_50mhz B6 · rst_p K4 · seg_com[7:0] 자리 선택 · seg_data[7:0] 세그먼트 출력",
         tests="00:09→00:10, 00:59→01:00, 59:59→00:00과 전체 3,600초 순환 및 디코더를 검사한다.",
         board="자리 순서와 극성, 분·초 구분점, 1초 간격과 59:59 순환을 확인한다.",
-        modification="시뮬레이션에서 TICKS_PER_SECOND를 바꾸어 자리올림 시점이 어떻게 달라지는지 확인한 뒤 복구한다.",
+        modification="TB의 mmss_counter 인스턴스에 전달하는 CLK_HZ를 바꾸어 자리올림 간격을 비교한 뒤 복구한다. TB 클록 주기는 20 ns로 유지한다.",
     ),
     dict(
         index=6, number=24, slug="CHARACTER_LCD", folder="06_character_lcd",
@@ -433,7 +433,7 @@ LED PWM, 모터 step, 1초 tick, LCD tick, UART bit timing은 counter가 만드�
 기능 & 기준 계산\\\hline
 PWM 주기 & CLK\_HZ / PWM\_HZ\\
 피에조 반주기 & CLK\_HZ / (2·TONE\_HZ)\\
-모터 step 간격 & CLK\_HZ / STEPS\_PER\_SEC\\
+모터 step 간격 & CLK\_HZ / STEP\_HZ\\
 1초 tick & CLK\_HZ 클록마다 1회\\
 UART bit & 반올림한 CLK\_HZ / BAUD\\
 \end{{tabular}}\end{{center}}
@@ -520,7 +520,7 @@ FPGA 응용회로 7개 · Vivado 2026.1\par\vspace{{0.3cm}}
 \small
 모든 PDF를 같은 폴더에 둔다. 각 PDF 좌하단 목차 버튼은 해당 PDF의 2쪽으로 이동한다.\par\vspace{{0.3cm}}
 먼저 \href{{06.LAB3_00_START.pdf}}{{공통 예습}}을 읽고 자신이 맡은 실험 PDF를 연다.\par\vspace{{0.3cm}}
-화면 캡처 칸의 ID는 촬영 목록과 일치한다. 화면 조작 단계에서 실제 캡처로 교체한다.
+실제 VS Code·Vivado 화면 42장이 포함되어 있다. 각 화면 아래 ID는 촬영 목록과 일치한다.
 \end{{frame}}
 \begin{{frame}}{{개별 매뉴얼 · 19–22}}
 \small
@@ -553,6 +553,8 @@ def readme_text() -> str:
 
 [전체 목차](06.LAB3_00_CONTENTS.pdf) · [공통 예습](06.LAB3_00_START.pdf)
 
+[배포 ZIP: PDF 9개와 검증 기록](06.LAB3_0928_MANUALS.zip)
+
 ## 매뉴얼
 
 | 번호 | 자료 | 원고 | 기능 시뮬레이션 기준 |
@@ -561,7 +563,7 @@ def readme_text() -> str:
 
 학생은 [`fpga-lab-template` v2.0.2](https://github.com/Glaysia/fpga-lab-template/tree/v2.0.2)를 실험별 새 폴더로 clone하고, 매뉴얼을 보며 RTL·TB·XDC·`simulation.json`을 직접 작성한다. VS Code에서는 Icarus, Vivado에서는 같은 원본과 TB로 XSim을 실행한다. 구현 뒤 실제 보드 사진·영상·GitHub 링크를 실험 후 레포트에 넣는다.
 
-현재 원고에는 코드 전체, 핀, 검증 절차, 보드 절차, 실험 전후 레포트 기준이 들어 있다. GUI 화면은 `required-captures.json`의 ID와 같은 자리표시자로 남겨 두었으며 다음 화면 촬영 단계에서 실제 캡처로 교체한다.
+현재 원고에는 코드 전체, 핀, 검증 절차, 보드 절차, 실험 전후 레포트 기준과 실제 VS Code·Vivado 화면 42장이 들어 있다. 캡처는 `required-captures.json`의 ID와 연결되며, 실제 보드 동작은 별도로 확인해야 한다.
 
 ## 빌드
 
@@ -569,7 +571,7 @@ def readme_text() -> str:
 
 ```powershell
 python tools/generate_lab3_docs.py
-Get-ChildItem 06.LAB3_*.tex | ForEach-Object {{ xelatex -interaction=nonstopmode -halt-on-error $_.Name }}
+Get-ChildItem 06.LAB3_*.tex | ForEach-Object {{ $tex = $_.Name; 1..2 | ForEach-Object {{ xelatex -interaction=nonstopmode -halt-on-error $tex }} }}
 ```
 
 ## 검증 기준

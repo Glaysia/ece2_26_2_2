@@ -2,51 +2,8 @@
   "version": 1,
   "pdf_count": 9,
   "capture_count": 42,
-  "missing_captures": [
-    "01_led_pwm-vscode-workspace",
-    "01_led_pwm-vscode-pass",
-    "01_led_pwm-vscode-wave",
-    "01_led_pwm-vivado-sources",
-    "01_led_pwm-xsim-pass",
-    "01_led_pwm-vivado-bit",
-    "02_rgb_pwm-vscode-workspace",
-    "02_rgb_pwm-vscode-pass",
-    "02_rgb_pwm-vscode-wave",
-    "02_rgb_pwm-vivado-sources",
-    "02_rgb_pwm-xsim-pass",
-    "02_rgb_pwm-vivado-bit",
-    "03_piezo-vscode-workspace",
-    "03_piezo-vscode-pass",
-    "03_piezo-vscode-wave",
-    "03_piezo-vivado-sources",
-    "03_piezo-xsim-pass",
-    "03_piezo-vivado-bit",
-    "04_stepper-vscode-workspace",
-    "04_stepper-vscode-pass",
-    "04_stepper-vscode-wave",
-    "04_stepper-vivado-sources",
-    "04_stepper-xsim-pass",
-    "04_stepper-vivado-bit",
-    "05_mmss_clock-vscode-workspace",
-    "05_mmss_clock-vscode-pass",
-    "05_mmss_clock-vscode-wave",
-    "05_mmss_clock-vivado-sources",
-    "05_mmss_clock-xsim-pass",
-    "05_mmss_clock-vivado-bit",
-    "06_character_lcd-vscode-workspace",
-    "06_character_lcd-vscode-pass",
-    "06_character_lcd-vscode-wave",
-    "06_character_lcd-vivado-sources",
-    "06_character_lcd-xsim-pass",
-    "06_character_lcd-vivado-bit",
-    "07_uart_echo-vscode-workspace",
-    "07_uart_echo-vscode-pass",
-    "07_uart_echo-vscode-wave",
-    "07_uart_echo-vivado-sources",
-    "07_uart_echo-xsim-pass",
-    "07_uart_echo-vivado-bit"
-  ],
-  "final": false,
+  "missing_captures": [],
+  "final": true,
   "checks": [
     "all expected PDFs exist",
     "every page is 4:3",
@@ -62,7 +19,7 @@
         362.83,
         272.13
       ],
-      "sha256": "63780b235b5fac8e7dcb1575bf9db83d1c510fc8f4ec3c7efeace638a0cf8b35",
+      "sha256": "926c13699e8ff6aa85af0d5c97ccb45bf3d0a8ed45d7b39ebbdee485ca3c32cc",
       "capture_placeholders": 0,
       "uri_links": []
     },
@@ -73,7 +30,7 @@
         362.83,
         272.13
       ],
-      "sha256": "b88bca3eefd367c46000764782affb7cd5a669dcd2de15c70cbc6bb1a7254d7c",
+      "sha256": "54d38915ead12c1421ccf48892786711e6ba470f8e5b4a356bd5ef7b7a3e1102",
       "capture_placeholders": 0,
       "uri_links": []
     },
@@ -84,8 +41,8 @@
         362.83,
         272.13
       ],
-      "sha256": "24c452a3783e1acfe55a7ddf2eae8be02d54c8ea7def68d5264de87b6c104930",
-      "capture_placeholders": 6,
+      "sha256": "80f1c6b7d01ab88fc16bf4e55eb24f28bc0a35b40815b0e136130004be982764",
+      "capture_placeholders": 0,
       "uri_links": []
     },
     {
@@ -95,8 +52,8 @@
         362.83,
         272.13
       ],
-      "sha256": "7284859cddb23c99ea37f791f8fcd1cea4de1805b3c1040a170fb7c5fb7d9018",
-      "capture_placeholders": 6,
+      "sha256": "6236c51a44fc9d04e423d123e58552c70e90012df923a2e939943ae9c7be101a",
+      "capture_placeholders": 0,
       "uri_links": []
     },
     {
@@ -106,8 +63,8 @@
         362.83,
         272.13
       ],
-      "sha256": "f4cb0c8daf6cb1d811e6363941f9b575b801529f26da18997349637bcd8573c1",
-      "capture_placeholders": 6,
+      "sha256": "c4753cf4c877458fe1cf9764fe3b9b34dec84a6f740550531abf6e62419ce66f",
+      "capture_placeholders": 0,
       "uri_links": []
     },
     {
@@ -117,8 +74,8 @@
         362.83,
         272.13
       ],
-      "sha256": "291819df7ac19d0c4c6fd714c044cec4c475a9e96a6ed9502a0bfd6f2afd0fb5",
-      "capture_placeholders": 6,
+      "sha256": "1145ef5ef29beda44dfca784fd737c10ff43d96b07bcd815ec9c8848ef4d9bc3",
+      "capture_placeholders": 0,
       "uri_links": []
     },
     {
@@ -128,8 +85,8 @@
         362.83,
         272.13
       ],
-      "sha256": "23f52bd5a06afc394f80eaa50275224af892fddefffa6f6797ef33482676c793",
-      "capture_placeholders": 6,
+      "sha256": "a825ad684f862649a09a66b3833057c37b0394e3ffe5b1259784cb76734397c7",
+      "capture_placeholders": 0,
       "uri_links": []
     },
     {
@@ -139,8 +96,8 @@
         362.83,
         272.13
       ],
-      "sha256": "7386666c2eb00b33c3c667da9b43ec2feabef8551ece359a6447136534bdaf91",
-      "capture_placeholders": 6,
+      "sha256": "a2846547f4cc9b9533af8a064547ff092857633723f2bfbf35aba63c38071e79",
+      "capture_placeholders": 0,
       "uri_links": []
     },
     {
@@ -150,8 +107,8 @@
         362.83,
         272.13
       ],
-      "sha256": "8b9f7eb4825a8a44d27fc09cc5e0cf1967158049b63cf565e2534869b2b17d5e",
-      "capture_placeholders": 6,
+      "sha256": "049a6d9a72293cd6a8e07f6eb9d722bf097fad73d6981a7d3250017da9c33acf",
+      "capture_placeholders": 0,
       "uri_links": []
     }
   ]
