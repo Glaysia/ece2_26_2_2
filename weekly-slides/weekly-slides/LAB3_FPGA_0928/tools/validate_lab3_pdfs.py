@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 from pathlib import Path
 
@@ -35,12 +36,20 @@ def uri_links(reader: PdfReader) -> list[str]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--final', action='store_true', help='Require all 42 real captures and no PDF placeholders')
+    args = parser.parse_args()
     actual = sorted(path.name for path in DOC.glob("06.LAB3_*.pdf"))
     assert actual == sorted(EXPECTED), (actual, EXPECTED)
 
     capture_manifest = json.loads((DOC / "required-captures.json").read_text(encoding="utf-8"))
     assert capture_manifest["count"] == 42
     assert len({item["id"] for item in capture_manifest["captures"]}) == 42
+    capture_files = {item['id']: DOC / 'captures' / (item['id'] + '.png')
+                     for item in capture_manifest['captures']}
+    missing = [key for key, path in capture_files.items() if not path.is_file()]
+    if args.final and missing:
+        raise SystemExit(f'FINAL_INCOMPLETE missing_captures={len(missing)}: ' + ', '.join(missing))
 
     results: list[dict] = []
     for name in EXPECTED:
@@ -68,7 +77,14 @@ def main() -> None:
             exp = next(exp for exp in EXPERIMENTS if pdf_name(exp) == name)
             assert len(reader.pages) >= 25, name
             assert exp["pass_marker"] in joined, (name, exp["pass_marker"])
-            assert joined.count("실제 화면 캡처 자리") == 6, name
+            expected_missing = sum(key.startswith(exp['folder'] + '-') for key in missing)
+            assert joined.count("실제 화면 캡처 자리") == expected_missing, name
+            if args.final:
+                assert joined.count('실제 화면 캡처 자리') == 0, name
+                for key, image in capture_files.items():
+                    if key.startswith(exp['folder'] + '-'):
+                        assert key in joined, (name, key)
+                        assert path.stat().st_mtime >= image.stat().st_mtime, (name, 'PDF predates capture')
             assert "v2.0.2" in joined, name
             assert "xc7s75fgga484-1" in joined, name
             assert "clk_50mhz" in joined, name
@@ -90,11 +106,13 @@ def main() -> None:
         "version": 1,
         "pdf_count": len(results),
         "capture_count": capture_manifest["count"],
+        "missing_captures": missing,
+        "final": args.final,
         "checks": [
             "all expected PDFs exist",
             "every page is 4:3",
             "all local PDF URI targets exist",
-            "each manual contains its PASS marker and six capture slots",
+            "each manual contains its PASS marker and the expected remaining capture placeholders",
             "each manual contains v2.0.2, FPGA part, and completion checklist",
         ],
         "pdfs": results,

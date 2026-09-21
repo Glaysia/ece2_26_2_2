@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 
@@ -131,6 +132,17 @@ def listing_frames(exp: dict) -> str:
     return "\n".join(frames)
 
 
+def capture_tex(capture_id: str, instruction: str) -> str:
+    path = DOC / 'captures' / (capture_id + '.png')
+    if path.is_file():
+        return (
+            r'\begin{center}\includegraphics[width=\textwidth,height=6.0cm,keepaspectratio]{'
+            + 'captures/' + capture_id + '.png' + r'}\end{center}'
+            + '\n' + r'{\tiny ' + esc(capture_id) + '}'
+        )
+    return r'\captureplaceholder{' + esc(capture_id) + '}{' + instruction + '}'
+
+
 def manual_tex(exp: dict) -> str:
     folder = exp["folder"]
     project_name = f"lab3_{exp['number']}_{folder[3:]}"
@@ -140,7 +152,7 @@ def manual_tex(exp: dict) -> str:
     sim_name = next(path.name for path in files if path.parent.name == "sim")
     title = esc(f"LAB3-{exp['number']} · {exp['title']}")
     clone_text = esc(project_name)
-    return rf"""% !TEX program = xelatex
+    document = rf"""% !TEX program = xelatex
 \input{{shared/lab3_preamble.tex}}
 \hypersetup{{pdftitle={{{title}}},pdfauthor={{이해리}}}}
 \begin{{document}}
@@ -345,6 +357,13 @@ Hardware Manager → Open Target → Auto Connect → Program Device에서 생�
 \end{{frame}}
 \end{{document}}
 """
+
+
+    return re.sub(
+        r'\\captureplaceholder\{([^}]+)\}\{([^\n]*)\}',
+        lambda match: capture_tex(match[1].replace(r'\_', '_'), match[2]),
+        document,
+    )
 
 
 def start_tex() -> str:
