@@ -1,0 +1,9 @@
+* text=auto eol=lf
+simulation*.json -text
+src/** -text
+sim/** -text
+constraints/** -text
+original/** -text
+*.code-workspace -text
+tools/*.py -text
+tools/*.sh text eol=lf

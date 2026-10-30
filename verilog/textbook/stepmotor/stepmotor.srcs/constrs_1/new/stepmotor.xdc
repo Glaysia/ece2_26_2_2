@@ -1,0 +1,13 @@
+set_property PACKAGE_PIN B6 [get_ports clk]
+set_property PACKAGE_PIN K4 [get_ports rst]
+set_property PACKAGE_PIN Y20 [get_ports {stepmotor[3]}]
+set_property PACKAGE_PIN Y22 [get_ports {stepmotor[2]}]
+set_property PACKAGE_PIN AA20 [get_ports {stepmotor[1]}]
+set_property PACKAGE_PIN AA21 [get_ports {stepmotor[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports rst]
+set_property IOSTANDARD LVCMOS33 [get_ports {stepmotor[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {stepmotor[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {stepmotor[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {stepmotor[0]}]
+

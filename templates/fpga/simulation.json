@@ -1,0 +1,5 @@
+{
+  "sources": ["src/design.v"],
+  "testbench": "sim/tb_design.v",
+  "simulation_top": "tb_design"
+}

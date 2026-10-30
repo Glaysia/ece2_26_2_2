@@ -1,0 +1,6 @@
+{
+  "part": "xc7s75fgga484-1",
+  "top": "lab2_segment_scan",
+  "constraints": "constraints/lab2_segment_scan.xdc",
+  "main_clock_hz": 1000
+}

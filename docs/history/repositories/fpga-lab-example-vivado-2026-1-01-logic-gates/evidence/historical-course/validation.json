@@ -1,0 +1,48 @@
+{
+  "project": "vivado_2026_1_01_logic_gates",
+  "part": "xc7s75fgga484-1",
+  "stages": {
+    "vscode": {
+      "project": "vivado_2026_1_01_logic_gates",
+      "action": "simulate",
+      "started_utc": "2026-09-09T17:53:59.258853+00:00",
+      "status": "PASS",
+      "run": "run-70af46d0b0b9432fa0842e05f8c70177",
+      "simulator": "xsim",
+      "cases": 4,
+      "finished_utc": "2026-09-09T17:54:10.525275+00:00"
+    },
+    "vivado-sim": {
+      "status": "PASS",
+      "execution": "Vivado GUI in fresh template clone",
+      "source_commit": "740aef5",
+      "cases": 4,
+      "end_ns": 40,
+      "evidence": "template-gui-wave.vcd",
+      "comparison": "../../docs/simulation-comparison.json"
+    },
+    "build": {
+      "project": "vivado_2026_1_01_logic_gates",
+      "action": "build",
+      "started_utc": "2026-09-09T17:56:24.114719+00:00",
+      "status": "PASS",
+      "run": "run-166bbfdfb72545a4b807a26941b849c0",
+      "vivado_version": "vivado v2026.1 (64-bit)",
+      "finished_utc": "2026-09-09T18:04:19.764418+00:00"
+    },
+    "gui": {
+      "status": "PASS",
+      "evidence": "manifest.json",
+      "source_commit": "740aef5"
+    }
+  },
+  "sha256": {
+    "../../common/rtl/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+    "../../common/tb/tb_logic_gate_modern.sv": "8815d26ae87ee452a7cec9e99d54cab62ab72d35ec1e090e3af6afc154ffb232",
+    "../../common/constraints/logic_gate.xdc": "2e5671a832643a1755be7dcd935ab3ad615f4a09a20f1703db6af009d2c7e263",
+    "release/logic_gate.bit": "4fa6b520781887fa7e6452867b69e462a34064895da66aa3c74970bd16070771"
+  },
+  "hardware_programmed": false,
+  "board_photos_video": false,
+  "legacy_tool_run": null
+}

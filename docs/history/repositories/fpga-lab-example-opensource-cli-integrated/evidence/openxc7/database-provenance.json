@@ -1,0 +1,20 @@
+{
+  "part": "xc7s75fgga484-1",
+  "database_commit": "a3cc0736a90c697b7d4c40319f847a5b6988df62",
+  "upstream_pr": "https://github.com/openXC7/prjxray-db/pull/15",
+  "corrections": [
+    "Upstream S75 -> S100 fabric mapping, with original S75 part.yaml IDCODE and frame geometry.",
+    "338 package I/O pin/site/function entries exported from Vivado 2026.1 on xc7s75fgga484-1. Each site mapped to the corrected tilegrid; all 338 present.",
+    "Compatibility symlink applies upstream mapping for the packaged exporter, which derives fabric from the part name."
+  ],
+  "package_pins_sha256": "34f526ca240f522b9b971e470dd72f5884f7e311e18bc460a6f49431bf80675e",
+  "raw_pin_dump_sha256": "4f9de5d4e581d1c5d22b467084052c1057e73035cf2962288f0a74e383104773",
+  "raw_export_tcl": "open_project <xc7s75fgga484-1 project>; open_run impl_1; foreach pin [get_package_pins] {puts $fp \"$pin,[get_property PIN_FUNC $pin],[get_sites -quiet -of_objects $pin]\"}",
+  "student_vivado_required": false,
+  "physical_board_tested": false,
+  "offline_bitread": {
+    "exit_code": 0,
+    "frames": 9104,
+    "frame_checksum_check": true
+  }
+}

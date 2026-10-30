@@ -1,0 +1,8 @@
+{
+  "sources": [
+    "src/full_adder.v",
+    "src/half_adder.v"
+  ],
+  "testbench": "sim/tb_full_adder.sv",
+  "simulation_top": "tb_full_adder"
+}

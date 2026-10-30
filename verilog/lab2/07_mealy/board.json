@@ -1,0 +1,6 @@
+{
+  "part": "xc7s75fgga484-1",
+  "top": "lab2_mealy",
+  "constraints": "constraints/lab2_mealy.xdc",
+  "main_clock_hz": 1000
+}

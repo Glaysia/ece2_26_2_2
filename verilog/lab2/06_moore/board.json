@@ -1,0 +1,6 @@
+{
+  "part": "xc7s75fgga484-1",
+  "top": "lab2_moore",
+  "constraints": "constraints/lab2_moore.xdc",
+  "main_clock_hz": 1000
+}

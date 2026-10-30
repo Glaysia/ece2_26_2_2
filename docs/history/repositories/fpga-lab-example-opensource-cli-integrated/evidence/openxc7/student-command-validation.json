@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "part": "xc7s75fgga484-1",
+  "scope": "Executed the Markdown manual commands with freshly downloaded/prepared S75 database; no Vivado synthesis or bit generation.",
+  "shell_exit_code": 0,
+  "simulation_pass": "LAB1_PASS lab1_integrated cases=2560",
+  "configuration_frames": 9104,
+  "bitread_frame_checksum_check": true,
+  "bitstream": {
+    "file": "lab1_integrated.bit",
+    "bytes": 3686926,
+    "sha256": "4346edc49d90b00c433ecf3c8a2a8e2e6485ed397586c8bb49c9ae3de6e9c163"
+  },
+  "input_sha256": {
+    "src/logic_gate.v": "e3cbd3a7219ecd100f49ced79059e76f89d0670d03ecc442f82e2bc732494a3b",
+    "src/half_adder.v": "4460df2c4006595ebfec143c763a625ac7ccfc25e9b9963222f05dbf628dbd25",
+    "src/full_adder.v": "390899f84daa09f092ba5cd5095b0aa56734ccc2d67a89354c36f43df6a01b51",
+    "src/adder_4bit.v": "4b08f7b07f122431276dee50f81d0b742adfd4a6d1d0627b3822df77de911bd2",
+    "src/sub_4bit.v": "31da7953f35cac8bfae27186e1d3fde5cac6d99c89ec740a72b97aa3645901fe",
+    "src/compare_4.v": "119872406c47ef807d49d9d7610acaae752651df2629684dcdd542500427fd23",
+    "src/mux_4x1.v": "561a7b45b7e9e354bce5af28d834972f29213bf6fc7c23fdc11208dee8b89129",
+    "src/demux_1x8.v": "5321c0017c95b75cb6b7f7ff322370880509b3c79ab4889d20b5d78edbf24e03",
+    "src/encoder8x3.v": "7b8f07827370b2f5211ba344aa9df2280d53ec582491b84279d6378a6f2f87f0",
+    "src/decoder3x8.v": "a8d4adcd17212d954c1cfeca2bdc9315599774e5d657515465baa896f62d60c5",
+    "src/seg_decoder.v": "8957b4d361ef82c9f94f681d7bed1dfc555af4a0a2a3b8f52aef8fec6ee6c6f7",
+    "src/button_onepulse.v": "117bc1c354c7aceb497fb10969b24e66d36021d70931100cd7bccdc6140ee6d3",
+    "src/lcd_modes.v": "7e2cf92a57751691d90d8c6e5acf744644b30f2ec57b4523c276d7f9b11dc52f",
+    "src/lab1_integrated.v": "9f80ee4cb9d4b1ae6aeef84e06915210582c883a60edf892145319e8cfcc3c69",
+    "constraints/lab1_integrated.xdc": "77fdfa05fe64bbe260f6cbecf988314a5f068873a731622252a10c37eb9a8069",
+    "synth.ys": "5ffdf530dbadb13a2625525c29f75d79b79dcea9996dade95df3f966e3b7f1d3"
+  },
+  "physical_board_tested": false,
+  "macos_execution_tested": false
+}

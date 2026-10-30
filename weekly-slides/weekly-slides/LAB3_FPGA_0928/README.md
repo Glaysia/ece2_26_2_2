@@ -1,5 +1,7 @@
 # LAB3 · 9월 28일 FPGA 응용회로 실습
 
+현재 소스는 [통합 소스 목차](../../../verilog/README.md)를 따른다. 아래 실습 개수와 실행 안내는 당시 배포 기록이다.
+
 작성일: 2026-09-21. 필수 범위는 개별 실험 7개다. 통합판과 명령줄 Vivado 구현은 자동으로 추가하지 않는다.
 
 [전체 목차](06.LAB3_00_CONTENTS.pdf) · [공통 예습](06.LAB3_00_START.pdf)
@@ -18,7 +20,7 @@
 | 24 | [문자 LCD 제어](06.LAB3_06_CHARACTER_LCD_VIVADO.pdf) | [06.LAB3_06_CHARACTER_LCD_VIVADO.tex](06.LAB3_06_CHARACTER_LCD_VIVADO.tex) | `LAB3_LCD_PASS bytes=40` |
 | 25 | [PC–FPGA UART 에코](06.LAB3_07_UART_ECHO_VIVADO.pdf) | [06.LAB3_07_UART_ECHO_VIVADO.tex](06.LAB3_07_UART_ECHO_VIVADO.tex) | `LAB3_UART_ECHO_PASS checks=3` |
 
-학생은 [`fpga-lab-template` v2.0.2](https://github.com/Glaysia/fpga-lab-template/tree/v2.0.2)를 실험별 새 폴더로 clone하고, 매뉴얼을 보며 RTL·TB·XDC·`simulation.json`을 직접 작성한다. VS Code에서는 Icarus, Vivado에서는 같은 원본과 TB로 XSim을 실행한다. 구현 뒤 실제 보드 사진·영상·GitHub 링크를 실험 후 레포트에 넣는다.
+학생은 [`fpga-lab-template` v2.0.2](../../../templates/fpga/README.md)를 실험별 새 폴더로 clone하고, 매뉴얼을 보며 RTL·TB·XDC·`simulation.json`을 직접 작성한다. VS Code에서는 Icarus, Vivado에서는 같은 원본과 TB로 XSim을 실행한다. 구현 뒤 실제 보드 사진·영상·GitHub 링크를 실험 후 레포트에 넣는다.
 
 현재 원고에는 코드 전체, 핀, 검증 절차, 보드 절차, 실험 전후 레포트 기준과 실제 VS Code·Vivado 화면 42장이 들어 있다. 캡처는 `required-captures.json`의 ID와 연결되며, 실제 보드 동작은 별도로 확인해야 한다.
 

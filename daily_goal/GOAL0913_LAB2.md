@@ -33,7 +33,7 @@
 
 - 카운터: 75쪽 완성본을 기준으로 사용한다. VS Code·Vivado 시뮬레이션의 36개 검사/356 ns 종료, 실제 GUI 비트스트림 생성까지 확인한 상태다. 실제 보드 기록·사진·영상은 별도 항목이다.
 - 나머지 9개: 기존 소스, TeX 초안, 시뮬레이션·빌드 기록을 재사용하되 학생 절차와 캡처를 완성한다. 기존 일괄 빌드 성공만으로 GUI 매뉴얼 완성을 판정하지 않는다.
-- [예시 프로젝트 목록](../example/fpga_projects_hdl/LAB2/projects.json)의 최신 Vivado 9개와 CLI 1개를 이번 대상으로 사용한다. 기존 구버전 8개 예시 저장소를 삭제하거나 서브모듈 구조를 바꾸는 작업은 포함하지 않는다.
+- [예시 프로젝트 목록](../docs/history/lab2/projects.json)의 최신 Vivado 9개와 CLI 1개를 이번 대상으로 사용한다. 기존 구버전 8개 예시 저장소를 삭제하거나 서브모듈 구조를 바꾸는 작업은 포함하지 않는다.
 - 카운터 전용 생성기 `weekly-slides/tools/lab2_counter_complete.py`의 승인된 내용을 보존한다. 공통 생성기를 수정할 때 첫 매뉴얼을 과거 초안으로 덮어쓰지 않도록 대상 선택을 분리한다.
 - 과거의 18개 원고·전체 페이지 수·누락 캡처 수는 이력이다. 이번 10개 기준으로 목록과 미완료 수를 다시 산출한다.
 
@@ -42,7 +42,7 @@
 모든 매뉴얼은 **동일한 단일 프로젝트 빈 템플릿**에서 시작한다. 템플릿에 완성 회로나 여러 실험을 미리 넣지 않는다. 예시 정답 프로젝트는 수업 저장소의 서브모듈로 별도 제공한다.
 
 ```powershell
-git clone --branch v2.0.1 https://github.com/Glaysia/fpga-lab-template.git lab2_01_counter
+git clone https://github.com/Glaysia/ece2_26_2_2.git
 cd lab2_01_counter
 git switch -c main
 code LAB1.code-workspace
@@ -91,7 +91,7 @@ code LAB1.code-workspace
 
 ## 8. 통합 CLI 매뉴얼
 
-Vivado 없이 템플릿 복제 → 소스 작성 → VS Code 시뮬레이션 → Yosys 합성 → nextpnr-xilinx 배치·배선 → FASM/frames 변환 → `.bit` 생성 → openFPGALoader 기록까지 완결한다. [기존 CLI 실행 기록과 안내](../example/fpga_projects_hdl/LAB2/docs/cli.md)를 출발점으로 최종 소스에서 재현한다.
+Vivado 없이 템플릿 복제 → 소스 작성 → VS Code 시뮬레이션 → Yosys 합성 → nextpnr-xilinx 배치·배선 → FASM/frames 변환 → `.bit` 생성 → openFPGALoader 기록까지 완결한다. [기존 CLI 실행 기록과 안내](../docs/history/lab2/docs/cli.md)를 출발점으로 최종 소스에서 재현한다.
 
 - 설치 환경, 도구 버전과 고정 다운로드 위치, FPGA 부품·패키지 DB 준비를 적는다. 환경 준비용 파일과 학생이 작성하는 회로 파일을 구분한다.
 - 각 명령의 실행 위치·입력 파일·생성 파일·성공 로그를 화면과 함께 설명한다. 비트스트림의 대상 부품·IDCODE·프레임 읽기 결과를 확인한다.

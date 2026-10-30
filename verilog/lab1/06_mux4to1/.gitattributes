@@ -1,0 +1,17 @@
+* text=auto
+*.py text eol=lf
+*.v text eol=lf
+*.sv text eol=lf
+*.xdc text eol=lf
+*.json text eol=lf
+*.code-workspace text eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.bit binary
+
+# Preserve instructor source and legacy archive bytes across platforms.
+src/** -text
+sim/** -text
+constraints/** -text
+original/** -text

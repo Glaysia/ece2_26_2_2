@@ -1,0 +1,30 @@
+{
+  "project": "legacy_08_encoder8to3",
+  "part": "xc7s75fgga484-1",
+  "stages": {
+    "vscode": {
+      "project": "legacy_08_encoder8to3",
+      "action": "simulate",
+      "started_utc": "2026-09-09T17:42:58.880302+00:00",
+      "status": "PASS",
+      "run": "run-5a76f40a458048e3a3826fc22fce54a7",
+      "simulator": "xsim",
+      "cases": 256,
+      "finished_utc": "2026-09-09T17:43:04.352780+00:00"
+    },
+    "vivado-sim": {
+      "status": "NOT_RUN"
+    },
+    "build": {
+      "status": "NOT_RUN"
+    }
+  },
+  "sha256": {
+    "original/encoder8x3.v": "f068253ad43bba6845ede49a0563eb375024f4b09392c164d8fddd67d1a6586d",
+    "../../common/tb/tb_encoder8x3.sv": "792bbb5d2a2966e30ea9bb75dff7057b474daa0d846e2a679197eb898b66da82",
+    "../../common/constraints/encoder8x3.xdc": "b074acbc6a6f046fd87335f5494843935f83babc53243c5ddc567b83b17ddf9e"
+  },
+  "hardware_programmed": false,
+  "board_photos_video": false,
+  "legacy_tool_run": false
+}

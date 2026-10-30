@@ -1,0 +1,6 @@
+{
+  "top": "lab2_integrated",
+  "part": "xc7s75fgga484-1",
+  "main_clock_hz": 1000,
+  "constraints": "constraints/lab2_integrated.xdc"
+}

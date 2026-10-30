@@ -1,0 +1,31 @@
+{
+  "project": "legacy_02_full_adder",
+  "part": "xc7s75fgga484-1",
+  "stages": {
+    "vscode": {
+      "project": "legacy_02_full_adder",
+      "action": "simulate",
+      "started_utc": "2026-09-09T17:42:25.385572+00:00",
+      "status": "PASS",
+      "run": "run-1e5e89d52b244450ae7e07186bf6b042",
+      "simulator": "xsim",
+      "cases": 8,
+      "finished_utc": "2026-09-09T17:42:30.841321+00:00"
+    },
+    "vivado-sim": {
+      "status": "NOT_RUN"
+    },
+    "build": {
+      "status": "NOT_RUN"
+    }
+  },
+  "sha256": {
+    "original/full_adder.v": "0acb0572610de489b94b902a3fe2b254315f41ca711e790cff185acc5ee5c898",
+    "original/half_adder.v": "959405ba290ffdfbc82521fc5458a706c131082deef0ebb3f539c6bd3d6a4700",
+    "../../common/tb/tb_full_adder.sv": "cd960494724bb13458fc8e265aeebb7dfe5d002c335a01c8f2d230aefc05a49f",
+    "../../common/constraints/full_adder.xdc": "a19c228316ac26a0c0310a539cd5fe7e6f06ee0fbfdd4b479da1e92441da9146"
+  },
+  "hardware_programmed": false,
+  "board_photos_video": false,
+  "legacy_tool_run": false
+}

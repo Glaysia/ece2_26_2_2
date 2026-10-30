@@ -1,5 +1,7 @@
 # LAB2 · 9월 21일 순차논리 실습
 
+현재 소스는 [통합 소스 목차](../../../verilog/README.md)를 따른다. 아래 실습 개수와 실행 안내는 당시 배포 기록이다.
+
 작성일: 2026-09-14. 최신 Vivado 개별 8개 + 버튼·LCD 통합 1개를 완성했다. CLI 교안은 이번 배포에서 제외한다.
 
 [전체 PDF 다운로드 · ZIP](05.LAB2_0921_VIVADO_8plus1.zip) · [전체 목차](05.LAB2_00_CONTENTS.pdf) · [공통 예습](05.LAB2_00_START.pdf)
@@ -22,7 +24,7 @@
 
 ## 학생 진행 순서
 
-[v2.0.1 빈 템플릿](https://github.com/Glaysia/fpga-lab-template/tree/v2.0.1)을 새 프로젝트명으로 clone한 뒤 PDF의 실제 VS Code 코드 화면을 보며 RTL·테스트벤치·XDC를 직접 작성한다. VS Code에서는 Icarus 시뮬레이션을 실행하고, 입력·예상 결과·파형·실행 로그를 실험 전 레포트에 정리한다.
+[v2.0.1 빈 템플릿](../../../templates/fpga/README.md)을 새 프로젝트명으로 clone한 뒤 PDF의 실제 VS Code 코드 화면을 보며 RTL·테스트벤치·XDC를 직접 작성한다. VS Code에서는 Icarus 시뮬레이션을 실행하고, 입력·예상 결과·파형·실행 로그를 실험 전 레포트에 정리한다.
 
 이후 Vivado 2026.1 GUI에서 같은 원본을 연결하여 XSim → 핀 확인 → 합성 → 구현 → 비트스트림 생성을 수행한다. 실제 보드에 기록하고 사진·영상·관찰 결과를 실험 후 레포트 및 GitHub에 연결한다.
 
@@ -38,6 +40,6 @@
 - [통합 VS Code 실행 기록](../../../output/evidence/lab2-integrated-0914/vscode-gui-result.json)
 - [코드 캡처와 원본 연결](required-code-captures.json)
 - [현재 계획 및 완료 기록](../../../daily_goal/GOAL0914_LAB2_RELEASE.md)
-- [공개 예시 프로젝트](../../../example/fpga_projects_hdl/LAB2/README.md)
+- [공개 예시 프로젝트](../../../verilog/lab2/README.md)
 
 이전 계획·CLI 자료는 이력으로 보존하며 위 배포 ZIP에는 포함하지 않는다. 새 PNG는 기존 ignore 정책을 유지한다.
